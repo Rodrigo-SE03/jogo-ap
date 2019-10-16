@@ -11,7 +11,11 @@ import graficos.Janela;
 
 public class Menu_inicial extends Janela {
 
-    Janela menu = new Janela();
+	
+	
+	private static final long serialVersionUID = 1L;
+	
+	Janela menu = new Janela();
     JButton iniciar = new JButton(new ImageIcon("src/imagens/botao_iniciar.png"));
     JButton creditos = new JButton(new ImageIcon("src/imagens/Creditos.png"));
     JLabel titulo = new JLabel(new ImageIcon("src/imagens/titulo.png"));
@@ -50,7 +54,7 @@ public class Menu_inicial extends Janela {
         
         this.menu.setVisible(true);
         //Ações dos butões
-        //ativaCreditos();
+        ativaCreditos();
         //ativaIniciar();
     }
 
@@ -58,8 +62,8 @@ public class Menu_inicial extends Janela {
 
         this.creditos.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //Creditos cr = new Creditos(); //Criar créditos
-                //cr.mostraCreditos();
+                Creditos cr = new Creditos(); //Criar créditos
+                cr.mostraCreditos();
             } });
     }
 }

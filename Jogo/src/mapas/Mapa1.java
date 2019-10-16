@@ -6,6 +6,9 @@ import java.awt.LayoutManager;
 
 import javax.swing.*;
 public class Mapa1 extends Mapa {
+	
+	
+	private static final long serialVersionUID = 1L;
 	JFrame mapa = new JFrame("Mapa");
 	JButton b1 = new JButton("Castelo");
 	JButton b2 = new JButton("Alameda dos três ponteiros");
