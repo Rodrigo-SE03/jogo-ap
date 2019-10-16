@@ -18,6 +18,7 @@ public class Janela extends JFrame {
 		super.setLocationRelativeTo(null);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		super.setLayout(null);
 		super.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 		        if (JOptionPane.showConfirmDialog(null, 

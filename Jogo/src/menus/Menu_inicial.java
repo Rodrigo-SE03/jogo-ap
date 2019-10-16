@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import cenas.Inicio;
 import graficos.Janela;
 
 public class Menu_inicial extends Janela {
@@ -41,7 +42,7 @@ public class Menu_inicial extends Janela {
         this.creditos.setBounds(1050,150,208,95);
 
         //Iniciar
-        this. menu.add(iniciar);
+        this.menu.add(iniciar);
         this.iniciar.setLayout(null);
         this.iniciar.setVisible(true);
         this.iniciar.setContentAreaFilled(false);
@@ -53,9 +54,9 @@ public class Menu_inicial extends Janela {
         
         
         this.menu.setVisible(true);
-        //Ações dos butões
+        //Ações dos botões
         ativaCreditos();
-        //ativaIniciar();
+        ativaIniciar();
     }
 
     public void ativaCreditos() {
@@ -66,4 +67,13 @@ public class Menu_inicial extends Janela {
                 cr.mostraCreditos();
             } });
     }
+    
+    public void ativaIniciar() {
+
+        this.iniciar.addActionListener( new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new Inicio();
+            } });
+    }
+
 }
