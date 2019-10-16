@@ -6,13 +6,14 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
 
 public class Texto extends Janela {
 	
 	private static final long serialVersionUID = 1L;
 	
 	Janela texto = new Janela();
-	JButton continuar = new JButton("Continuar");
+	JButton continuar = new JButton(new ImageIcon("src/imagens/continuar.png"));
 	JLabel txt = new JLabel();
 	JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 	
@@ -26,7 +27,10 @@ public class Texto extends Janela {
 		this.texto.add(continuar);
 		this.continuar.setLayout(null);
 		this.continuar.setVisible(true);
-		this.continuar.setBounds(480,358,100,30);
+		this.continuar.setBounds(430,338,150,50);
+		this.continuar.setContentAreaFilled(false);
+		
+		
 		//definição do texto da janela
 		this.txt.setText(text);
 		this.txt.setBounds(50,52,text.length()*10,30*(1+pulalinha));
@@ -40,6 +44,7 @@ public class Texto extends Janela {
 		
 		this.texto.setVisible(true);
 	}
+	
 	
 	
 }
