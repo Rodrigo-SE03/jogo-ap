@@ -16,7 +16,8 @@ public class Texto extends Janela {
 	JLabel txt = new JLabel();
 	JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 	
-	public Texto(String text) {
+	//os parâmetros são o texto que será inserido na caixa e o número de quebras de linha (<br/>) presentes no texto
+	public Texto(String text,int pulalinha) {
 		//criação da janela de texto
 		this.texto.construirJanela();
 		this.texto.setSize(610,438);
@@ -28,7 +29,7 @@ public class Texto extends Janela {
 		this.continuar.setBounds(480,358,100,30);
 		//definição do texto da janela
 		this.txt.setText(text);
-		this.txt.setBounds(50,52,text.length()*10,30);
+		this.txt.setBounds(50,52,text.length()*10,30*(1+pulalinha));
 		this.txt.setFont(new Font("Georgia",Font.BOLD, 25));
 		this.txt.setForeground(Color.black);
 		this.texto.add(txt);
