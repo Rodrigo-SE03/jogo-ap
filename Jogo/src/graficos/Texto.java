@@ -17,6 +17,14 @@ public class Texto extends Janela {
 	JLabel txt = new JLabel();
 	JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 	
+	
+	
+	public JButton getContinuar() {
+		return continuar;
+	}
+
+
+
 	//os parâmetros são o texto que será inserido na caixa e o número de quebras de linha (<br/>) presentes no texto
 	public Texto(String text,int pulalinha) {
 		//criação da janela de texto
