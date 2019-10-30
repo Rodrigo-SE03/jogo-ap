@@ -7,8 +7,8 @@ import menus.Menu_inicial;
 public class Inicio {
 	
 	Texto t1;
-	String[] tx = new String[18];
-	int[] linhas = new int[18];
+	String[] tx = new String[19];
+	int[] linhas = new int[19];
 	
 	public Inicio() {
 		t1 = new Texto("<html>O dia amanheceu. Voce acorda e se"
@@ -161,6 +161,7 @@ public class Inicio {
 		
 		t.getContinuar().addActionListener( new ActionListener() {	
 			public void actionPerformed(ActionEvent e) {
+				
 				t.getTexto().dispose();
             	if(cont<max) {
             		continuar(new Texto(txt,x),tx[c],linhas[c],max,c);
