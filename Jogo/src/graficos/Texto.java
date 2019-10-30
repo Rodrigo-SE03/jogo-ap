@@ -22,6 +22,10 @@ public class Texto extends Janela {
 	public JButton getContinuar() {
 		return continuar;
 	}
+	
+	public Janela getTexto() {
+		return texto;
+	}
 
 
 

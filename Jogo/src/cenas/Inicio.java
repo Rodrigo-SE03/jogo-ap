@@ -20,6 +20,7 @@ public class Inicio {
         t1.getContinuar().addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new Menu_inicial();
+                t1.getTexto().dispose();
             } });
     }
 	
