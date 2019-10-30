@@ -7,26 +7,24 @@ import menus.Menu_inicial;
 public class Inicio {
 	
 	Texto t1;
-	String[] tx = new String[19];
-	int[] linhas = new int[19];
+	String[] tx = new String[19]; //Strings com os textos a serem mostrados
+	int[] linhas = new int[19]; //Quantidade de pula linha em cada texto
 	
 	public Inicio() {
+		
+		// Textos a serem mostrados nas caixas de texto
+		
 		t1 = new Texto("<html>O dia amanheceu. Voce acorda e se"
 				+ "<br/>levanta de sua cama e sai de seu"
-				+ "<br/> quarto.</html>",2);//teste da classe Texto
-		
-		tx[0] = "<html>Mãe:"
-				+"<br/><br/> Bom dia dorminhoco! "
-				+"</html>";
-		linhas[0] = 2;
-		
+				+ "<br/> quarto.</html>",2);
 		
 		tx[1] = "<html>Mãe:"
-				+"<br/><br/>Já passou das sete da manhã."
-				+"<br/>Venha logo tomar café"
+				+"<br/><br/> Bom dia meu bem! Achei que"
+				+"<br/>não ia mais levantar hoje. Já passou "
+				+"<br/>das sete da manhã. Venha logo tomar "
+				+"<br/>café."
 				+"</html>";
-		linhas[1] = 3;
-		
+		linhas[1] = 5;
 		
 		tx[2] = "<html>Você come tranquilamente"
 				+"<br/>enquanto observa sua pequena "
@@ -46,7 +44,7 @@ public class Inicio {
 		
 		
 		tx[4] = "<html>Mãe:"
-				+"<br/><br/>Filho, será que você poderia ir"
+				+"<br/><br/>Será que você poderia ir"
 				+"<br/>à cidade comprar um incenso "
 				+"<br/>para levarmos ao seu pai? Ele"
 				+"<br/>adorava usá-los em suas "
@@ -63,7 +61,7 @@ public class Inicio {
 		linhas[5] = 3;
 		
 		tx[6] = "<html>Vendedor de incensos:"
-				+"<br/><br/>Olá jovem, faz tempo que não"
+				+"<br/><br/>Olá, faz tempo que não"
 				+"<br/>te vejo. O que deseja levar dessa "
 				+"<br/>vez? "
 				+"</html>";
@@ -90,7 +88,7 @@ public class Inicio {
 				+"<br/>que eles planejam atacar nossa "
 				+"<br/>cidade novamente em breve. Você"
 				+"<br/>deveria fugir daqui com sua família o "
-				+"<br/>quanto antes rapaz."
+				+"<br/>quanto antes."
 				+"</html>";
 		linhas[9] = 8;
 		
@@ -101,7 +99,7 @@ public class Inicio {
 		linhas[10] = 2;
 
 		tx[11] = "<html>Vendedor de incensos:"
-				+"<br/><br/>Olha rapaz, acho que exagerei "
+				+"<br/><br/>Olha, acho que exagerei "
 				+"<br/>um pouco. Não fique muito "
 				+"<br/>preocupado com isso. Leve esse "
 				+"<br/>incenso por minha conta, é meu "
@@ -151,7 +149,7 @@ public class Inicio {
 				+"</html>";
 		linhas[17] = 1;
 		
-		continuar(t1,tx[0],linhas[0],18,0);
+		continuar(t1,tx[1],linhas[1],18,1); //Realiza a ação do botão
 	}
 	
 	public void continuar(Texto t,String txt, int x, int max,int cont) {
@@ -163,8 +161,8 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 				
 				t.getTexto().dispose();
-            	if(cont<max) {
-            		continuar(new Texto(txt,x),tx[c],linhas[c],max,c);
+            	if(cont<max) { // Verifica se ainda há mais textos por vir
+            		continuar(new Texto(txt,x),tx[c],linhas[c],max,c);//Recursividade para chamar o próximi texto
             	}
             	else;
             } });
