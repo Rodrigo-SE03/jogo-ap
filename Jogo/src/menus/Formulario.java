@@ -52,6 +52,7 @@ public class Formulario {
 		frame.setBounds(100, 100, 1031, 697);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 		
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
@@ -64,17 +65,17 @@ public class Formulario {
 		frame.getContentPane().add(frmtdtxtfldNome);
 		
 		JLabel nome = new JLabel("New label");
-		nome.setIcon(new ImageIcon("E:\\Eclipse\\eclipse-workspace\\jogo-ap\\Jogo\\src\\imagens\\formulario_nome.png"));
+		nome.setIcon(new ImageIcon("src\\imagens\\formulario_nome.png"));
 		nome.setBounds(35, 35, 236, 68);
 		frame.getContentPane().add(nome);
 		
 		JLabel idade = new JLabel("New label");
-		idade.setIcon(new ImageIcon("E:\\Eclipse\\eclipse-workspace\\jogo-ap\\Jogo\\src\\imagens\\formulario_idade.png"));
+		idade.setIcon(new ImageIcon("src\\imagens\\formulario_idade.png"));
 		idade.setBounds(35, 186, 233, 79);
 		frame.getContentPane().add(idade);
 		
 		JLabel sexo = new JLabel("New label");
-		sexo.setIcon(new ImageIcon("E:\\Eclipse\\eclipse-workspace\\jogo-ap\\Jogo\\src\\imagens\\formulario_sexo.png"));
+		sexo.setIcon(new ImageIcon("src\\imagens\\formulario_sexo.png"));
 		sexo.setBounds(35, 356, 217, 59);
 		frame.getContentPane().add(sexo);
 		
@@ -86,17 +87,17 @@ public class Formulario {
 		frame.getContentPane().add(Sexo);
 		
 		JLabel origem = new JLabel("New label");
-		origem.setIcon(new ImageIcon("E:\\Eclipse\\eclipse-workspace\\jogo-ap\\Jogo\\src\\imagens\\formulario_origem.png"));
+		origem.setIcon(new ImageIcon("src\\imagens\\formulario_origem.png"));
 		origem.setBounds(35, 503, 299, 68);
 		frame.getContentPane().add(origem);
 		
 		JLabel Monsores = new JLabel("New label");
-		Monsores.setIcon(new ImageIcon("E:\\Eclipse\\eclipse-workspace\\jogo-ap\\Jogo\\src\\imagens\\formulario_monsores.png"));
+		Monsores.setIcon(new ImageIcon("src\\imagens\\formulario_monsores.png"));
 		Monsores.setBounds(379, 500, 587, 74);
 		frame.getContentPane().add(Monsores);
 		
 		JLabel Fundo = new JLabel("New label");
-        Fundo.setIcon(new ImageIcon("E:\\Eclipse\\eclipse-workspace\\jogo-ap\\Jogo\\src\\imagens\\formulario.jpg"));
+        Fundo.setIcon(new ImageIcon("src\\imagens\\formulario.jpg"));
         Fundo.setBounds(0, 0, 1025, 665);
         frame.getContentPane().add(Fundo);
 		

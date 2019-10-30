@@ -72,7 +72,7 @@ public class Menu_inicial extends Janela {
 
         this.iniciar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new Formulario();
+                new Inicio();
                 menu.dispose();
             } });
     }
