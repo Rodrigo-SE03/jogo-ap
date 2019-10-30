@@ -11,14 +11,17 @@ public class Inicio {
 	int[] linhas = new int[5];
 	
 	public Inicio() {
-		t1 = new Texto("<html>O dia amanheceu. Você acorda e se"
+		t1 = new Texto("<html>O dia amanheceu. Vocï¿½ acorda e se"
 				+ "<br/>levanta de sua cama"
 				+ "</html>",1);//teste da classe Texto
-		tx[0] = "<html>O dia amanheceu. Você acorda e se</html>";
+		
+		tx[0] = "<html>O dia amanheceu. Vocï¿½ acorda e se</html>";
 		linhas[0] = 1;
+		
 		tx[1] = "<html>levanta de sua cama</html>";
 		linhas[1]= 1;
-	continuar(t1,tx[0],linhas[0],5,0);
+	
+		continuar(t1,tx[0],linhas[0],1,0);
 	}
 	
 	
