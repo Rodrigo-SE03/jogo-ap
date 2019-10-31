@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -65,17 +66,17 @@ public class Formulario {
 		frame.getContentPane().add(frmtdtxtfldNome);
 		
 		JLabel nome = new JLabel("New label");
-		nome.setIcon(new ImageIcon("src\\imagens\\formulario_nome.png"));
+		nome.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_nome.png")));
 		nome.setBounds(35, 35, 236, 68);
 		frame.getContentPane().add(nome);
 		
 		JLabel idade = new JLabel("New label");
-		idade.setIcon(new ImageIcon("src\\imagens\\formulario_idade.png"));
+		idade.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_idade.png")));
 		idade.setBounds(35, 186, 233, 79);
 		frame.getContentPane().add(idade);
 		
 		JLabel sexo = new JLabel("New label");
-		sexo.setIcon(new ImageIcon("src\\imagens\\formulario_sexo.png"));
+		sexo.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_sexo.png")));
 		sexo.setBounds(35, 356, 217, 59);
 		frame.getContentPane().add(sexo);
 		
@@ -87,17 +88,24 @@ public class Formulario {
 		frame.getContentPane().add(Sexo);
 		
 		JLabel origem = new JLabel("New label");
-		origem.setIcon(new ImageIcon("src\\imagens\\formulario_origem.png"));
+		origem.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_origem.png")));
 		origem.setBounds(35, 503, 299, 68);
 		frame.getContentPane().add(origem);
 		
 		JLabel Monsores = new JLabel("New label");
-		Monsores.setIcon(new ImageIcon("src\\imagens\\formulario_monsores.png"));
+		Monsores.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_monsores.png")));
 		Monsores.setBounds(379, 500, 587, 74);
 		frame.getContentPane().add(Monsores);
 		
+		JButton continuar = new JButton(new ImageIcon(Formulario.class.getResource("/imagens/continuar.png")));
+		continuar.setLayout(null);
+		continuar.setVisible(true);
+		continuar.setBounds(867,606,158,59);
+		continuar.setContentAreaFilled(false);
+		frame.getContentPane().add(continuar);
+		
 		JLabel Fundo = new JLabel("New label");
-        Fundo.setIcon(new ImageIcon("src\\imagens\\formulario.jpg"));
+        Fundo.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario.jpg")));
         Fundo.setBounds(0, 0, 1025, 665);
         frame.getContentPane().add(Fundo);
 		
