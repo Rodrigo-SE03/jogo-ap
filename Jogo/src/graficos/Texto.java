@@ -43,6 +43,7 @@ public class Texto extends Janela {
 		this.continuar.setContentAreaFilled(false);
 		
 		
+		
 		//definição do texto da janela
 		this.txt.setText(text);
 		this.txt.setBounds(50,52,text.length()*10,30*(1+pulalinha));
@@ -53,10 +54,32 @@ public class Texto extends Janela {
 		//fundo
 		this.texto.add(fundo);
 		this.fundo.setBounds(0,0,600,400);
-		
 		this.texto.setVisible(true);
 	}
 	
+	public void atualizaTexto(String tex,int pulalinha) {
+		
+		//botão continuar
+				this.texto.add(continuar);
+				this.continuar.setLayout(null);
+				this.continuar.setVisible(true);
+				this.continuar.setBounds(430,338,150,50);
+				this.continuar.setContentAreaFilled(false);
+				
+				getContinuar().setEnabled(true);
+				//definição do texto da janela
+				this.txt.setText(tex);
+				this.txt.setBounds(50,52,tex.length()*10,30*(1+pulalinha));
+				this.txt.setFont(new Font("Georgia",Font.BOLD, 25));
+				this.txt.setForeground(Color.black);
+				this.texto.add(txt);
+				
+				//fundo
+				this.texto.add(fundo);
+				this.fundo.setBounds(0,0,600,400);
+				
+				this.texto.setVisible(true);
+	}
 	
 	
 }

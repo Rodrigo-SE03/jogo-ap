@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import cenas.Inicio;
+import cenas.TesteInicio;
 import graficos.Janela;
 
 public class Menu_inicial extends Janela {
@@ -72,7 +73,7 @@ public class Menu_inicial extends Janela {
 
         this.iniciar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new Inicio();
+                new TesteInicio();
                 menu.dispose();
             } });
     }

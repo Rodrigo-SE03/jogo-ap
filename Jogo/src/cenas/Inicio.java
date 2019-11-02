@@ -3,6 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import graficos.Texto;
+import mapas.Mapa1;
+import menus.Formulario;
 import menus.Menu_inicial;
 public class Inicio {
 	
@@ -164,7 +166,8 @@ public class Inicio {
             	if(cont<max) { // Verifica se ainda há mais textos por vir
             		continuar(new Texto(txt,x),tx[c],linhas[c],max,c);//Recursividade para chamar o próximi texto
             	}
-            	else;
+            	else
+            		new Mapa1().mostraMapa();
             } });
     }
 	
