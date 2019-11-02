@@ -20,42 +20,42 @@ public class Inicio {
 				+ "<br/>levanta de sua cama e sai de seu"
 				+ "<br/> quarto.</html>",2);
 		
-		tx[1] = "<html>Mãe:"
+		tx[1] = "<html>Mï¿½e:"
 				+"<br/><br/> Bom dia meu bem! Achei que"
-				+"<br/>não ia mais levantar hoje. Já passou "
-				+"<br/>das sete da manhã. Venha logo tomar "
-				+"<br/>café."
+				+"<br/>nï¿½o ia mais levantar hoje. Jï¿½ passou "
+				+"<br/>das sete da manhï¿½. Venha logo tomar "
+				+"<br/>cafï¿½."
 				+"</html>";
 		linhas[1] = 5;
 		
-		tx[2] = "<html>Você come tranquilamente"
+		tx[2] = "<html>Vocï¿½ come tranquilamente"
 				+"<br/>enquanto observa sua pequena "
-				+"<br/>irmã brincando com bonecas de  "
-				+"<br/>pano no chão. O dia está  "
-				+"<br/>agradável."
+				+"<br/>irmï¿½ brincando com bonecas de  "
+				+"<br/>pano no chï¿½o. O dia estï¿½  "
+				+"<br/>agradï¿½vel."
 				+"</html>";
 		linhas[2] = 4;
 		
 		
-		tx[3] = "<html>Mãe:"
+		tx[3] = "<html>Mï¿½e:"
 				+"<br/><br/>Hoje completa um ano da  "
 				+"<br/>morte de seu pai. Vamos ao "
-				+"<br/>cemitério visitá-lo mais tarde."
+				+"<br/>cemitï¿½rio visitï¿½-lo mais tarde."
 				+"</html>";
 		linhas[3] = 4;
 		
 		
-		tx[4] = "<html>Mãe:"
-				+"<br/><br/>Será que você poderia ir"
-				+"<br/>à cidade comprar um incenso "
+		tx[4] = "<html>Mï¿½e:"
+				+"<br/><br/>Serï¿½ que vocï¿½ poderia ir"
+				+"<br/>ï¿½ cidade comprar um incenso "
 				+"<br/>para levarmos ao seu pai? Ele"
-				+"<br/>adorava usá-los em suas "
-				+"<br/>meditações. Tenho certeza de"
-				+"<br/>que ele irá gostar."
+				+"<br/>adorava usï¿½-los em suas "
+				+"<br/>meditaï¿½ï¿½es. Tenho certeza de"
+				+"<br/>que ele irï¿½ gostar."
 				+"</html>";
 		linhas[4] = 7;
 		
-		tx[5] = "<html>Você sai de casa rumo ao mercado da"
+		tx[5] = "<html>Vocï¿½ sai de casa rumo ao mercado da"
 				+"<br/>cidade. Por morar em um local"
 				+"<br/>isolado, leva cerca de uma hora para"
 				+"<br/>chegar ao local."
@@ -63,14 +63,14 @@ public class Inicio {
 		linhas[5] = 3;
 		
 		tx[6] = "<html>Vendedor de incensos:"
-				+"<br/><br/>Olá, faz tempo que não"
+				+"<br/><br/>Olï¿½, faz tempo que nï¿½o"
 				+"<br/>te vejo. O que deseja levar dessa "
 				+"<br/>vez? "
 				+"</html>";
 		linhas[6] = 4;
 		
-		tx[7] = "<html>Você explica que quer comprar"
-				+"<br/>incensos para levar ao túmulo de seu"
+		tx[7] = "<html>Vocï¿½ explica que quer comprar"
+				+"<br/>incensos para levar ao tï¿½mulo de seu"
 				+"<br/>pai."
 				+"</html>";
 		linhas[7] = 2;
@@ -86,72 +86,72 @@ public class Inicio {
 		tx[9] = "<html>Vendedor de incensos:"
 				+"<br/><br/>Aqueles malditos imperiais "
 				+"<br/>continuam querendo nossos "
-				+"<br/>territórios. Tenho ouvido rumores de "
+				+"<br/>territï¿½rios. Tenho ouvido rumores de "
 				+"<br/>que eles planejam atacar nossa "
-				+"<br/>cidade novamente em breve. Você"
-				+"<br/>deveria fugir daqui com sua família o "
+				+"<br/>cidade novamente em breve. Vocï¿½"
+				+"<br/>deveria fugir daqui com sua famï¿½lia o "
 				+"<br/>quanto antes."
 				+"</html>";
 		linhas[9] = 8;
 		
-		tx[10] = "<html>Há alguns segundos de silêncio. O"
+		tx[10] = "<html>Hï¿½ alguns segundos de silï¿½ncio. O"
 				+"<br/>vendedor te entrega o incenso e tenta "
-				+"<br/>cortar a tensão."
+				+"<br/>cortar a tensï¿½o."
 				+"</html>";
 		linhas[10] = 2;
 
 		tx[11] = "<html>Vendedor de incensos:"
 				+"<br/><br/>Olha, acho que exagerei "
-				+"<br/>um pouco. Não fique muito "
+				+"<br/>um pouco. Nï¿½o fique muito "
 				+"<br/>preocupado com isso. Leve esse "
-				+"<br/>incenso por minha conta, é meu "
+				+"<br/>incenso por minha conta, ï¿½ meu "
 				+"<br/>presente ao seu pai."
 				+"</html>";
 		linhas[11] = 6;
 
-		tx[12] = "<html>Você agradece e sai da loja. Ainda é "
-				+"<br/>manhã, há poucas nuvens no céu e "
-				+"<br/>tudo indica que o dia será calmo "
+		tx[12] = "<html>Vocï¿½ agradece e sai da loja. Ainda ï¿½ "
+				+"<br/>manhï¿½, hï¿½ poucas nuvens no cï¿½u e "
+				+"<br/>tudo indica que o dia serï¿½ calmo "
 				+"<br/>como sempre."
 				+"</html>";
 		linhas[12] = 3;
 		
-		tx[13] = "<html>Após uma longa caminhada você "
-				+"<br/>começa a se aproximar de casa. Algo "
-				+"<br/>não parece certo. Há um forte cheiro "
+		tx[13] = "<html>Apï¿½s uma longa caminhada vocï¿½ "
+				+"<br/>comeï¿½a a se aproximar de casa. Algo "
+				+"<br/>nï¿½o parece certo. Hï¿½ um forte cheiro "
 				+"<br/>de queimado no ar e uma grande "
-				+"<br/>nuvem de fumaça vinda da direção da "
+				+"<br/>nuvem de fumaï¿½a vinda da direï¿½ï¿½o da "
 				+"<br/>casa."
 				+"</html>";
 		linhas[13] = 5;
 		
-		tx[14] = "<html>Ao chegar mais perto, você vê as "
+		tx[14] = "<html>Ao chegar mais perto, vocï¿½ vï¿½ as "
 				+"<br/>chamas consumirem tudo. A casa "
-				+"<br/>começa a desabar e sua visão "
-				+"<br/>começa a ficar turva."
+				+"<br/>comeï¿½a a desabar e sua visï¿½o "
+				+"<br/>comeï¿½a a ficar turva."
 				+"</html>";
 		linhas[14] = 3;
 		
-		tx[15] = "<html>Você escuta os gritos de sua mãe e o "
-				+"<br/>choro de sua irmã, que são "
+		tx[15] = "<html>Vocï¿½ escuta os gritos de sua mï¿½e e o "
+				+"<br/>choro de sua irmï¿½, que sï¿½o "
 				+"<br/>bruscamente interrompidos, seguidos"
-				+"<br/>de uma risada sádica."
+				+"<br/>de uma risada sï¿½dica."
 				+"</html>";
 		linhas[15] = 3;
 
-		tx[16] = "<html>Tudo que se pode ver são vultos de "
-				+"<br/>vários homens ao longe. Você perde "
-				+"<br/>toda a noção e cai de joelhos, "
+		tx[16] = "<html>Tudo que se pode ver sï¿½o vultos de "
+				+"<br/>vï¿½rios homens ao longe. Vocï¿½ perde "
+				+"<br/>toda a noï¿½ï¿½o e cai de joelhos, "
 				+"<br/>completamente paralisado."
 				+"</html>";
 		linhas[16] = 3;
 		
-		tx[17] = "<html>Alguém te agarra pelas costas e "
-				+"<br/>começa a te arrastar"
+		tx[17] = "<html>Alguï¿½m te agarra pelas costas e "
+				+"<br/>comeï¿½a a te arrastar"
 				+"</html>";
 		linhas[17] = 1;
 		
-		continuar(t1,tx[1],linhas[1],18,1); //Realiza a ação do botão
+		continuar(t1,tx[1],linhas[1],18,1); //Realiza a aï¿½ï¿½o do botï¿½o
 	}
 	
 	public void continuar(Texto t,String txt, int x, int max,int cont) {
@@ -163,8 +163,8 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 				
 				t.getTexto().dispose();
-            	if(cont<max) { // Verifica se ainda há mais textos por vir
-            		continuar(new Texto(txt,x),tx[c],linhas[c],max,c);//Recursividade para chamar o próximi texto
+            	if(cont<max) { // Verifica se ainda hï¿½ mais textos por vir
+            		continuar(new Texto(txt,x),tx[c],linhas[c],max,c);//Recursividade para chamar o prï¿½ximi texto
             	}
             	else
             		new Mapa1().mostraMapa();

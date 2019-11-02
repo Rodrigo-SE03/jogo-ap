@@ -65,8 +65,7 @@ public class Texto extends Janela {
 				this.continuar.setVisible(true);
 				this.continuar.setBounds(430,338,150,50);
 				this.continuar.setContentAreaFilled(false);
-				
-				getContinuar().setEnabled(true);
+
 				//definição do texto da janela
 				this.txt.setText(tex);
 				this.txt.setBounds(50,52,tex.length()*10,30*(1+pulalinha));
