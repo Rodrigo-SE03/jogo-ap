@@ -21,6 +21,8 @@ public class Mapa1 extends Mapa {
 	
 	
 	public void mostraMapa() {
+		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
+		mapa.setIconImage(icone.getImage());
 		mapa.setBounds(300,50,1280,761);
 		mapa.add(b4);
 		mapa.add(b1);
@@ -36,6 +38,17 @@ public class Mapa1 extends Mapa {
 		b4.setBounds(500,260,110,31);
 		mapa.add(new JLabel(new ImageIcon("src/imagens/cidade.jpg")));
 		mapa.setVisible(true);
+		mapa.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		mapa.addWindowListener(new java.awt.event.WindowAdapter() {
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		        if (JOptionPane.showConfirmDialog(null, 
+		            "Tem certeza que deseja sair do jogo (todo seu progresso será perdido)?", "Sair", 
+		            JOptionPane.YES_NO_OPTION,
+		            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+		            System.exit(0);
+		        }
+		    }
+		});
 	}
 	
 }

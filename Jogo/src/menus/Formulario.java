@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Component;
@@ -51,7 +52,17 @@ public class Formulario {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1031, 697);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.addWindowListener(new java.awt.event.WindowAdapter() {
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		        if (JOptionPane.showConfirmDialog(null, 
+		            "Tem certeza que deseja sair do jogo (todo seu progresso será perdido)?", "Sair", 
+		            JOptionPane.YES_NO_OPTION,
+		            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+		            System.exit(0);
+		        }
+		    }
+		});
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 		
