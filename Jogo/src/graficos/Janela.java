@@ -14,7 +14,7 @@ public class Janela extends JFrame {
 	public void construirJanela() {
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		super.setIconImage(icone.getImage());
-		super.setBounds(500,30,1280,960);
+		super.setSize(1280,960);
 		super.setLocationRelativeTo(null);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

@@ -6,7 +6,6 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.border.LineBorder;
 
 public class Texto extends Janela {
 	
@@ -34,6 +33,7 @@ public class Texto extends Janela {
 		//criação da janela de texto
 		this.texto.construirJanela();
 		this.texto.setSize(610,438);
+		this.texto.setLocationRelativeTo(null);
 		
 		//botão continuar
 		this.texto.add(continuar);

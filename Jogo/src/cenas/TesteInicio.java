@@ -3,15 +3,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import graficos.Texto;
-import mapas.Mapa1;
 import menus.Formulario;
-import menus.Menu_inicial;
 
 public class TesteInicio {
 	
 		Texto t1;
-		String[] tx = new String[19]; //Strings com os textos a serem mostrados
-		int[] linhas = new int[19]; //Quantidade de pula linha em cada texto
+		String[] tx = new String[23]; //Strings com os textos a serem mostrados
+		int[] linhas = new int[23]; //Quantidade de pula linha em cada texto
 		
 		public TesteInicio() {
 			
@@ -152,17 +150,61 @@ public class TesteInicio {
 					+"</html>";
 			linhas[17] = 1;
 			
+			//Fim do sonho 
+			
+			tx[18] = "<html>Você acorda lentamente, ainda  "
+					+"<br/>abalado pelo pesadelo. Havia se"
+					+"<br/>passado apenas uma semana desde"
+					+"<br/>o ocorrido. Você está na parte de trás"
+					+"<br/>de uma carroça guiada pelo homem "
+					+"<br/>que o salvou no momento da "
+					+"<br/>destruição. Em todo esse tempo não "
+					+"<br/>houve nenhuma conversa além do "
+					+"<br/>necessário entre vocês."
+					+"</html>";
+			linhas[18] = 8;
+			
+			tx[19] = "<html>A carroça para. Você escuta o homem "
+					+"<br/>descendo e conversando algo com "
+					+"<br/>alguém. Você desce da carroça."
+					+"</html>";
+			linhas[19] = 2;
+			
+			tx[20] = "<html>Cocheiro:"
+					+"<br/><br/>Essa é a pessoa de quem eu "
+					+"<br/>falei. Sua família foi morta pelos "
+					+"<br/>soldados imperiais e ele está "
+					+"<br/>desabrigado. Vocês aceitam"
+					+"<br/>refugiados não é? Pois então, pode"
+					+"<br/>ficar."
+					+"</html>";
+			linhas[20] = 7;
+			
+			tx[21] = "<html>O homem volta para a carroça sem te "
+					+"<br/>falar mais uma palavra sequer e vai "
+					+"<br/>embora. O guarda com quem ele "
+					+"<br/>conversava se dirige a você."
+					+"</html>";
+			linhas[21] = 3;
+			
+			tx[22] = "<html>Guarda: "
+					+"<br/><br/>Olá, você é muito bem vindo "
+					+"<br/>em nossa cidade. Para entrar basta "
+					+"<br/>preencher esse formulário."
+					+"</html>";
+			linhas[22] = 4;
+			
 			
 			ActionListener continuar = new ActionListener() {
 				int cont=0;
 				public void actionPerformed(ActionEvent actionEvent) {
-		            if(cont<17) { // Verifica se ainda há mais textos por vir
+		            if(cont<22) { // Verifica se ainda há mais textos por vir
 		            	cont++;
 		            	t1.atualizaTexto(tx[cont],linhas[cont]);
 		            }
 		            else {
 		            	t1.getTexto().dispose();
-		            	new Mapa1().mostraMapa();
+		            	new Formulario();
 		        
 		            }
 				}

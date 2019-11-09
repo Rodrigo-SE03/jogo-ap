@@ -4,8 +4,6 @@ import java.awt.event.ActionListener;
 
 import graficos.Texto;
 import mapas.Mapa1;
-import menus.Formulario;
-import menus.Menu_inicial;
 public class Inicio {
 	
 	Texto t1;
