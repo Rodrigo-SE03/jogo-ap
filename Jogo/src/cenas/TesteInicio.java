@@ -7,9 +7,9 @@ import menus.Formulario;
 
 public class TesteInicio {
 	
-		Texto t1;
-		String[] tx = new String[23]; //Strings com os textos a serem mostrados
-		int[] linhas = new int[23]; //Quantidade de pula linha em cada texto
+		private Texto t1;
+		private String[] tx = new String[23]; //Strings com os textos a serem mostrados
+		private int[] linhas = new int[23]; //Quantidade de pula linha em cada texto
 		
 		public TesteInicio() {
 			

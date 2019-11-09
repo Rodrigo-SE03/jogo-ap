@@ -11,10 +11,10 @@ public class Texto extends Janela {
 	
 	private static final long serialVersionUID = 1L;
 	
-	Janela texto = new Janela();
-	JButton continuar = new JButton(new ImageIcon("src/imagens/continuar.png"));
-	JLabel txt = new JLabel();
-	JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
+	private Janela texto = new Janela();
+	private JButton continuar = new JButton(new ImageIcon("src/imagens/continuar.png"));
+	private JLabel txt = new JLabel();
+	private JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 	
 	
 	
