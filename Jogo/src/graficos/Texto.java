@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 public class Texto extends Janela {
 	
 	private static final long serialVersionUID = 1L;
-	
 	private Janela texto = new Janela();
 	private JButton continuar = new JButton(new ImageIcon("src/imagens/continuar.png"));
 	private JLabel txt = new JLabel();
@@ -79,6 +78,13 @@ public class Texto extends Janela {
 				
 				this.texto.setVisible(true);
 	}
+	
+	public void zerar() {
+		this.continuar.setVisible(false);
+		this.txt.setVisible(false);
+		this.fundo.setVisible(false);
+	}
+	
 	
 	
 }
