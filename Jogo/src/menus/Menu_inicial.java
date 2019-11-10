@@ -7,14 +7,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import cenas.Inicio;
+import testes.Inicio;
 import cenas.TesteInicio;
 import graficos.Janela;
 
 public class Menu_inicial extends Janela {
 
-	
-	
 	private static final long serialVersionUID = 1L;
 	
 	Janela menu = new Janela();
@@ -64,8 +62,8 @@ public class Menu_inicial extends Janela {
 
         this.creditos.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Creditos cr = new Creditos(); //Criar créditos
-                cr.mostraCreditos();
+            	  Creditos cr = new Creditos(); //Criar créditos
+            	  cr.mostraCreditos();
             } });
     }
     
@@ -73,7 +71,8 @@ public class Menu_inicial extends Janela {
 
         this.iniciar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new TesteInicio();
+//            	new Inicio().inicio();
+            	new TesteInicio();
                 menu.dispose();
             } });
     }

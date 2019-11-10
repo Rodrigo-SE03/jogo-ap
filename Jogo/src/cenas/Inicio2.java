@@ -9,12 +9,14 @@ import personagens.Jogador;
 
 public class Inicio2 {
 
-	private Texto t1;
-	private String[] tx = new String[23]; // Strings com os textos a serem mostrados
-	private int[] linhas = new int[23]; // Quantidade de pula linha em cada texto
-	private Escolhas choice = new Escolhas();
+	
 	
 	public Inicio2(Jogador player) {
+		
+		Texto t1;
+		String[] tx = new String[23]; // Strings com os textos a serem mostrados
+		int[] linhas = new int[23]; // Quantidade de pula linha em cada texto
+		Escolhas choice = new Escolhas();
 		
 		if(player.getSexo() == 0) {
 			t1 = new Texto("<html>Guarda:" 
@@ -63,11 +65,10 @@ public class Inicio2 {
 		
 		ActionListener continuar = new ActionListener() {
 			int cont = -1;
-			public void actionPerformed( ActionEvent actionEvent) {			
+			public void actionPerformed( ActionEvent actionEvent) {
 				if(cont<2) { // Verifica se ainda há mais textos por vir
 					cont++;
 					t1.atualizaTexto(tx[cont],linhas[cont]);
-	            	
 	            }	
 				else{
 					t1.zerar();
@@ -83,18 +84,17 @@ public class Inicio2 {
 		};
 		
 		ActionListener escolha1 = new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
-				t1.getTexto().dispose();
-				System.out.println("1");
+				choice.zerar();
+				new Inicio_CorrerAtras(t1, player);
+				t1.getContinuar().removeActionListener(continuar);
 			}
 		};
 		
 		ActionListener escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				t1.getTexto().dispose();
-				System.out.println("2");
+				choice.zerar();
 			}
 		};
 		

@@ -10,7 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Escolhas {
-
+	
+	private JPanel panel_1 = new JPanel();
+	private JLabel txt = new JLabel();
+	private JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 	private JButton opcao1 = new JButton("op1");
 	private JButton opcao2 = new JButton("op2");
 	private JButton opcao3 = new JButton("op3");
@@ -31,12 +34,11 @@ public class Escolhas {
 		
 		frame.setSize(610,438);
 		
-		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(0, 0, 610,438);
 		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(null);
+		panel_1.setLayout(null);	
 		
-		JLabel txt = new JLabel(tex);
+		txt.setText(tex);
 		txt.setForeground(Color.BLACK);
 		txt.setFont(new Font("Georgia", Font.BOLD, 25));
 		txt.setBounds(50, 11, 532, 179);
@@ -66,6 +68,7 @@ public class Escolhas {
 
 		JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 		fundo.setBounds(0,0,600,400);
+		fundo.setVisible(true);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
 			
@@ -75,7 +78,6 @@ public class Escolhas {
 		
 		frame.setSize(610,438);
 		
-		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(0, 0, 610,438);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
@@ -119,11 +121,20 @@ public class Escolhas {
 		opcao3.setBounds(33, 309, 532, 43);
 		panel_1.add(opcao3);
 		
-		JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 		fundo.setBounds(0,0,600,400);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
 			
+	}
+	
+	public void zerar() {
+		panel_1.setVisible(false);
+		txt.setVisible(false);
+		opcao1.setVisible(false);
+		opcao2.setVisible(false);
+		opcao3.setVisible(false);
+		fundo.setVisible(false);
+		
 	}
 	
 }

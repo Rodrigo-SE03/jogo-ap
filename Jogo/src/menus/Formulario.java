@@ -10,6 +10,7 @@ import javax.swing.SwingConstants;
 
 import cenas.Inicio2;
 import personagens.Jogador;
+import testes.Inicio;
 
 import java.awt.Color;
 import javax.swing.JComboBox;
@@ -18,7 +19,7 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Formulario {
+public class Formulario{
 
 	private JFrame frame;
 
@@ -134,6 +135,7 @@ public class Formulario {
 					player.setSexo(1);
 
 				frame.dispose();
+//				new Inicio().inicio2(player);
 				new Inicio2(player);
 			}
 		};

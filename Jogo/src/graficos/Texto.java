@@ -17,6 +17,10 @@ public class Texto extends Janela {
 	
 	
 	
+	public JLabel getFundo() {
+		return fundo;
+	}
+
 	public JButton getContinuar() {
 		return continuar;
 	}
@@ -70,11 +74,15 @@ public class Texto extends Janela {
 				this.txt.setBounds(50,52,tex.length()*10,30*(1+pulalinha));
 				this.txt.setFont(new Font("Georgia",Font.BOLD, 25));
 				this.txt.setForeground(Color.black);
+				this.txt.setVisible(true);
 				this.texto.add(txt);
+				
 				
 				//fundo
 				this.texto.add(fundo);
+				this.fundo.setVisible(true);
 				this.fundo.setBounds(0,0,600,400);
+				
 				
 				this.texto.setVisible(true);
 	}

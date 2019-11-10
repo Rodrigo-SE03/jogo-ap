@@ -2,9 +2,8 @@ package menus;
 
 import javax.swing.*;
 
-public class Creditos extends Menu_inicial {
+public class Creditos {
 
-	private static final long serialVersionUID = 1L;
 
 	JFrame tela = new JFrame("Creditos");
 	JLabel rod = new JLabel(new ImageIcon("src/imagens/rod.png"));
