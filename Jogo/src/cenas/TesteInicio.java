@@ -198,7 +198,7 @@ public class TesteInicio {
 			ActionListener continuar = new ActionListener() {
 				int cont=0;
 				public void actionPerformed(ActionEvent actionEvent) {
-		            if(cont<22) { // Verifica se ainda há mais textos por vir
+		            if(cont<0) { // Verifica se ainda há mais textos por vir
 		            	cont++;
 		            	t1.atualizaTexto(tx[cont],linhas[cont]);
 		            }
