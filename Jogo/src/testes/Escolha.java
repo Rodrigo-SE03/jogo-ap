@@ -13,13 +13,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 
-public class Escolha {
+public class Escolha { //Classe para auxiliar no desenho do Frame com escolhas
 
 	private JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,6 +39,7 @@ public class Escolha {
 	/**
 	 * Create the application.
 	 */
+	
 	public Escolha(String tex, String op1, String op2, String op3) {
 		initialize(tex,op1,op2,op3);
 	}

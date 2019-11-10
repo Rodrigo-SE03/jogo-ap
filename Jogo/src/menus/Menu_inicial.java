@@ -22,7 +22,6 @@ public class Menu_inicial extends Janela {
     JLabel fundo = new JLabel(new ImageIcon("src/imagens/menu.png"));
 
     public Menu_inicial() {
-
         //Redimensionar e reposicionar!!!
     	
     	this.menu.construirJanela();//metodo q seta as configurações da janela
@@ -71,8 +70,8 @@ public class Menu_inicial extends Janela {
 
         this.iniciar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//            	new Inicio().inicio();
-            	new TesteInicio();
+            	new Inicio().inicio();
+//            	new TesteInicio();
                 menu.dispose();
             } });
     }

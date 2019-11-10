@@ -85,7 +85,7 @@ public class Inicio2 {
 		
 		ActionListener escolha1 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				choice.zerar();
+				choice.getPanel_1().setVisible(false);
 				new Inicio_CorrerAtras(t1, player);
 				t1.getContinuar().removeActionListener(continuar);
 			}
@@ -94,7 +94,7 @@ public class Inicio2 {
 		ActionListener escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				choice.zerar();
+				choice.getPanel_1().setVisible(false);
 			}
 		};
 		

@@ -57,7 +57,7 @@ public class Inicio_CorrerAtras {
 			
 			escolha1 = new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					choice.zerar();
+					choice.getPanel_1().setVisible(false);
 					tx = new String[6];
 					linhas =  new int[6];
 					t1.atualizaTexto("<html>Você pega novamente seus pertences "
@@ -121,7 +121,7 @@ public class Inicio_CorrerAtras {
 			escolha2 = new ActionListener() {
 
 				public void actionPerformed(ActionEvent e) {
-					choice.zerar();
+					choice.getPanel_1().setVisible(false);
 					t1.getContinuar().removeActionListener(continuar);
 				}
 			};

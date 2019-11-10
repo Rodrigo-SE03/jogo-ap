@@ -1,7 +1,6 @@
 package testes;
 
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -15,7 +14,6 @@ import javax.swing.JLabel;
 public class MovimentarBloco  extends JFrame
 implements MouseListener, MouseMotionListener {
   
-	
 	JButton botao = new JButton(new ImageIcon("src/imagens/continuar.png"));;
 	JLabel txt = new JLabel();
     private int x, y;
@@ -62,7 +60,7 @@ implements MouseListener, MouseMotionListener {
         this.botao.addMouseListener( this );        // listens for own mouse and
         this.botao.addMouseMotionListener( this );  // mouse-motion events
           
-        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();//Adquire o tamanho da tela
         this.setSize(size );
         this.setLayout(null);
         
@@ -78,7 +76,7 @@ implements MouseListener, MouseMotionListener {
  		this.txt.setVisible(true);
  		this.txt.setBounds(250,100,400,250);
           
-        this.setUndecorated(true);
+        this.setUndecorated(true);//Some com a parte de cima da janela que tem os botao de fechar
         this.setVisible( true );
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     	

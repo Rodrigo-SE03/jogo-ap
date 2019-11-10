@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Escolhas {
-	
+
 	private JPanel panel_1 = new JPanel();
 	private JLabel txt = new JLabel();
 	private JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
@@ -18,6 +18,10 @@ public class Escolhas {
 	private JButton opcao2 = new JButton("op2");
 	private JButton opcao3 = new JButton("op3");
 	
+	public JPanel getPanel_1() {
+		return panel_1;
+	}
+
 	public JButton getOpcao1() {
 		return opcao1;
 	}
@@ -29,21 +33,21 @@ public class Escolhas {
 	public JButton getOpcao3() {
 		return opcao3;
 	}
-	
+
 	public void doEscolhas_2(JFrame frame, String tex, String op1, String op2) {
-		
-		frame.setSize(610,438);
-		
-		panel_1.setBounds(0, 0, 610,438);
+
+		frame.setSize(610, 438);
+
+		panel_1.setBounds(0, 0, 610, 438);
 		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(null);	
-		
+		panel_1.setLayout(null);
+
 		txt.setText(tex);
 		txt.setForeground(Color.BLACK);
 		txt.setFont(new Font("Georgia", Font.BOLD, 25));
 		txt.setBounds(50, 11, 532, 179);
 		panel_1.add(txt);
-		
+
 		opcao1.setText(op1);
 		opcao1.setBackground(new Color(139, 69, 19));
 		opcao1.setForeground(Color.BLACK);
@@ -54,7 +58,7 @@ public class Escolhas {
 		opcao1.setFocusPainted(false);
 		opcao1.setBounds(33, 201, 532, 43);
 		panel_1.add(opcao1);
-		
+
 		opcao2.setText(op2);
 		opcao2.setBackground(new Color(139, 69, 19));
 		opcao2.setForeground(Color.BLACK);
@@ -67,27 +71,27 @@ public class Escolhas {
 		panel_1.add(opcao2);
 
 		JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
-		fundo.setBounds(0,0,600,400);
+		fundo.setBounds(0, 0, 600, 400);
 		fundo.setVisible(true);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
-			
+
 	}
 
 	public void doEscolhas_3(JFrame frame, String tex, String op1, String op2, String op3) {
-		
-		frame.setSize(610,438);
-		
-		panel_1.setBounds(0, 0, 610,438);
+
+		frame.setSize(610, 438);
+
+		panel_1.setBounds(0, 0, 610, 438);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
-		
+
 		JLabel txt = new JLabel(tex);
 		txt.setForeground(Color.BLACK);
 		txt.setFont(new Font("Georgia", Font.BOLD, 25));
 		txt.setBounds(50, 11, 532, 179);
 		panel_1.add(txt);
-		
+
 		opcao1.setText(op1);
 		opcao1.setBackground(new Color(139, 69, 19));
 		opcao1.setForeground(Color.BLACK);
@@ -98,7 +102,7 @@ public class Escolhas {
 		opcao1.setFocusPainted(false);
 		opcao1.setBounds(33, 201, 532, 43);
 		panel_1.add(opcao1);
-		
+
 		opcao2.setText(op2);
 		opcao2.setBackground(new Color(139, 69, 19));
 		opcao2.setForeground(Color.BLACK);
@@ -109,7 +113,7 @@ public class Escolhas {
 		opcao2.setFocusPainted(false);
 		opcao2.setBounds(33, 255, 532, 43);
 		panel_1.add(opcao2);
-		
+
 		opcao3.setText(op3);
 		opcao3.setBackground(new Color(139, 69, 19));
 		opcao3.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -120,21 +124,11 @@ public class Escolhas {
 		opcao3.setFocusPainted(false);
 		opcao3.setBounds(33, 309, 532, 43);
 		panel_1.add(opcao3);
-		
-		fundo.setBounds(0,0,600,400);
+
+		fundo.setBounds(0, 0, 600, 400);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
-			
+
 	}
-	
-	public void zerar() {
-		panel_1.setVisible(false);
-		txt.setVisible(false);
-		opcao1.setVisible(false);
-		opcao2.setVisible(false);
-		opcao3.setVisible(false);
-		fundo.setVisible(false);
-		
-	}
-	
+
 }

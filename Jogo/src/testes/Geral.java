@@ -6,85 +6,90 @@ import java.awt.event.ActionListener;
 import graficos.Escolhas;
 import graficos.Texto;
 
-public class Geral {
+public class Geral { // Classe base para criação dos textos
 
-			private Escolhas choice = new Escolhas();
-			private ActionListener continuar;
+	private Escolhas choice = new Escolhas();
+	private ActionListener continuar; // ActionListener para o botão continuar
 
-			public Escolhas getChoice() {
-				return choice;
+	public Escolhas getChoice() { // Getter para poder setar o action listener das escolhas na classe que chama o método
+		return choice;
+	}
+
+	public void escolhas_0(Texto t1, Biblioteca vet) { // Metodo que gera texto sem nenhuma interface de escolha
+
+		// vet: Vetor de textos
+		// t1: classe de criação de Textos que contem o JFrame
+
+		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0)); // Atualiza a pagina para a posiçao 0 do vetor de texto
+
+		continuar = new ActionListener() {// ActionListener para o botão continuar
+			int cont = 0; // Contador para verificar a posição do vetor de texto
+
+			public void actionPerformed(ActionEvent actionEvent) {
+
+				if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
+					cont++;
+					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+				} else { // caso não tenha mais nenhum vetor de texto
+					t1.zerar();// "apaga" os componentes do frame, deixando apenas uma "tela em branco"
+					t1.getContinuar().removeActionListener(continuar); // desvincula o botão do ActionListener
+				}
+
 			}
-			
-			public void escolhas_0(Texto t1, Biblioteca vet) {
-				
-				t1.atualizaTexto(vet.getTx(0),vet.getLinhas(0));		
-				
-				 continuar = new ActionListener() {
-					int cont=0;
-					public void actionPerformed(ActionEvent actionEvent) {
-			            
-						if(cont<(vet.getTx().length-1)) {
-			            	cont++;
-			            	t1.atualizaTexto(vet.getTx(cont),vet.getLinhas(cont));
-			            }
-			            else {
-			            	t1.zerar();
-			            	t1.getContinuar().removeActionListener(continuar);
-			            }
-					}
-				};
-				
-			    t1.getContinuar().addActionListener(continuar);
-				
+		};
+
+		t1.getContinuar().addActionListener(continuar); // Vincula o botão ao ActionListener
+
+	}
+
+	public void escolhas_2(Texto t1, Biblioteca vet) { // 2 opções de escolha no final
+
+		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0));
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent actionEvent) {
+
+				if (cont < (vet.getTx().length - 1)) {
+					cont++;
+					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+				} else {
+					t1.zerar();
+					choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());// Cria uma novainterface com texto + botões
+					t1.getContinuar().removeActionListener(continuar);
+				}
+
 			}
-			
-			public void escolhas_2(Texto t1, Biblioteca vet) {
-				
-				t1.zerar();
-				t1.atualizaTexto(vet.getTx(0),vet.getLinhas(0));		
-				
-				continuar = new ActionListener() {
-					int cont=0;
-					public void actionPerformed(ActionEvent actionEvent) {
-						if(cont<(vet.getTx().length-1)) {
-			            	cont++;
-			            	t1.atualizaTexto(vet.getTx(cont),vet.getLinhas(cont));
-			            }
-			            else {
-			            	t1.zerar();
-			            	choice.doEscolhas_2(t1.getTexto(), vet.getChoice(),vet.getOp1(),vet.getOp2());
-			            	t1.getContinuar().removeActionListener(continuar);
-			            }
-					}
-				};
-				
-			    t1.getContinuar().addActionListener(continuar);
-				
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void escolhas_3(Texto t1, Biblioteca vet) { // 3 opções de escolha no final
+
+		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0));
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent actionEvent) {
+
+				if (cont < (vet.getTx().length - 1)) {
+					cont++;
+					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+				} else {
+					t1.zerar();
+					choice.doEscolhas_3(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2(), vet.getOp3());
+					t1.getContinuar().removeActionListener(continuar);
+				}
+
 			}
-			
-			public void escolhas_3(Texto t1, Biblioteca vet) {
-				
-				
-				t1.atualizaTexto(vet.getTx(0),vet.getLinhas(0));		
-				
-				 continuar = new ActionListener() {
-					int cont=0;
-					public void actionPerformed(ActionEvent actionEvent) {
-			            
-						if(cont<(vet.getTx().length-1)) {
-			            	cont++;
-			            	t1.atualizaTexto(vet.getTx(cont),vet.getLinhas(cont));
-			            }
-			            else {
-			            	t1.zerar();
-			            	choice.doEscolhas_3(t1.getTexto(), vet.getChoice(),vet.getOp1(),vet.getOp2(),vet.getOp3());
-			            	t1.getContinuar().removeActionListener(continuar);
-			            }
-					}
-				};
-				
-			    t1.getContinuar().addActionListener(continuar);
-				
-			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
 
 }
