@@ -15,28 +15,68 @@ public class Inicio2 {
 	private Escolhas choice = new Escolhas();
 	
 	public Inicio2(Jogador player) {
-
-		t1 = new Texto("<html> Prévia : " + "</br>2ª parte do inicio </html>", 1);
-		tx[1] = "<html> Você chegou na cidade, foi no mercado"
-				+ "<br/> e um cara te roubou"
-				+ "<br/>Você corre atras dele e o pega"
+		
+		if(player.getSexo() == 0) {
+			t1 = new Texto("<html>Guarda:" 
+					+ "<br/><br/>Tudo certo, mas antes de você"
+					+ "<br/>entrar, me permita lhe dar um"
+					+ "<br/>conselho: pense muito bem nas suas"
+					+ "<br/>primeiras ações aqui na cidade de "
+					+ "<br/>Helaria, pois elas definirão como será "
+					+ "<br/>seu futuro aqui. Boa sorte garoto"
+					+ "</html>", 8);
+		}
+		
+		else {
+			t1 = new Texto("<html>Guarda:" 
+					+ "<br/><br/>Tudo certo, mas antes de você"
+					+ "<br/>entrar, me permita lhe dar um"
+					+ "<br/>conselho: pense muito bem nas suas"
+					+ "<br/>primeiras ações aqui na cidade de "
+					+ "<br/>Helaria, pois elas definirão como será "
+					+ "<br/>seu futuro aqui. Boa sorte garota"
+					+ "</html>", 8);
+		}
+		
+		tx[0] = "<html> Você entra na cidade e procura pelo"
+				+"<br/> mercado,foi uma viagem longa e difícil"
+				+"<br/>e já tem alguns dias que você"
+				+"<br/>precisa comer."
 				+ "<html>";
-		linhas[1]=2;
-				
+		linhas[0]=3;
+
+		tx[1] = "<html>Chegando ao mercado você vê uma "
+				+"<br/>barraca com frutas frescas, bem "
+				+"<br/>diferente dos lixos ressecados que "
+				+"<br/>você costumava comer em viagens"
+				+ "<html>";
+		linhas[1]=3;
+		
+		tx[2] = "<html>Você vai em direção a barraca "
+				+"<br/>quando, de repente, um homem "
+				+"<br/>esbarra em você, um incidente sem"
+				+"<br/>importância, mas quando você vai"
+				+"<br/>comprar sua tão sonhada refeição "
+				+"<br/>percebe que está sem seu dinheiro"
+				+ "<html>";
+		linhas[2]=5;
 		
 		ActionListener continuar = new ActionListener() {
-			int cont = 0;
-			public void actionPerformed(ActionEvent actionEvent) {			
-				if(cont<1) { // Verifica se ainda há mais textos por vir
-	            	cont++;
-	            	t1.atualizaTexto(tx[cont],linhas[cont]);
+			int cont = -1;
+			public void actionPerformed( ActionEvent actionEvent) {			
+				if(cont<2) { // Verifica se ainda há mais textos por vir
+					cont++;
+					t1.atualizaTexto(tx[cont],linhas[cont]);
+	            	
 	            }	
 				else{
 					t1.zerar();
-					choice.doEscolhas_3(t1.getTexto(), "Oque você faz com o ladino?", 
-							"Recuperar seu dinheiro e deixá-lo ir",
-							"Liberá-lo, afinal ele é um miserável como você",
-							"MATAR O FILHA DA PUTA NA BICUDA");
+					choice.doEscolhas_2(t1.getTexto(), "<html>O homem que esbarrou em você"
+							+ "<br/> ainda está à vista, se você correr"
+							+ "<br/> ainda conseguirá alcançá-lo."
+							+ "<br/> O que fará?", 
+							"Correr atrás do Homem",
+							"Deixá-lo ir embora");
 				}
 			}					
 			
@@ -58,17 +98,8 @@ public class Inicio2 {
 			}
 		};
 		
-		ActionListener escolha3 = new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				t1.getTexto().dispose();
-				System.out.println("3");
-			}
-		};
-
 		choice.getOpcao1().addActionListener(escolha1);
 		choice.getOpcao2().addActionListener(escolha2);
-		choice.getOpcao3().addActionListener(escolha3);
 		t1.getContinuar().addActionListener(continuar);
 	}
 }
