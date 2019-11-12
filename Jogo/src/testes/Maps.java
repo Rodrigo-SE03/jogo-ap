@@ -2,6 +2,9 @@ package testes;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.text.Normalizer.Form;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -18,7 +21,9 @@ public class Maps {
 	private JFrame frame;
 	private JButton btnCastelo, btnCasaNobre, btnCatedral, btnPraaCentral, btnTorreArcana, btnMercado,
 			btnAlamedaPonteiros, btnDocas, btnAraResidencial, btnFloresta;
-	
+	JLabel casteloFundo, casaNobreFundo, catedralFundo, praaCentralFundo, torreArcanaFundo, mercadoFundo,
+			alamedaPonteirosFundo, docasFundo, araResidencialFundo, florestaFundo;
+
 	public JButton getBtnCastelo() {
 		return btnCastelo;
 	}
@@ -78,7 +83,7 @@ public class Maps {
 	/**
 	 * Create the application.
 	 */
-	
+
 	public Maps() {
 		initialize();
 		zerarBotoes();
@@ -88,7 +93,7 @@ public class Maps {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	
+
 	private void initialize() {
 		frame = new JFrame();
 		frame.setSize(1280, 761);
@@ -113,19 +118,31 @@ public class Maps {
 		panel.setLayout(null);
 
 		btnCastelo = new JButton("Castelo");
-		btnCastelo.setBackground(Color.LIGHT_GRAY);
-		btnCastelo.setBounds(743, 315, 75, 23);
-		btnCastelo.setFont(new Font("Georgia", Font.BOLD, 12));
+		btnCastelo.setBackground(Color.BLUE);
+		btnCastelo.setBounds(743, 318, 55, 20);
+		btnCastelo.setFont(new Font("Georgia", Font.BOLD, 14));
 		btnCastelo.setForeground(Color.BLACK);
 		btnCastelo.setBorderPainted(false);
 		btnCastelo.setBorder(null);
 		btnCastelo.setContentAreaFilled(true);
-		btnCastelo.setFocusPainted(false);
+		btnCastelo.setFocusPainted(true);
 		panel.add(btnCastelo);
 
+		ImageIcon img = new ImageIcon("src/imagens/btn1.png");
+		img.setImage(img.getImage().getScaledInstance(130, 130, 100));
+
+		casteloFundo = new JLabel(img);
+		casteloFundo.setSize(110, 110);
+		casteloFundo.setLocation(
+				((btnCastelo.getLocation().x) - (casteloFundo.getSize().width / 2) + (btnCastelo.getSize().width / 2)
+						- 4),
+				(btnCastelo.getLocation().y - (casteloFundo.getSize().height / 2) + (btnCastelo.getSize().height / 2)
+						- 2));
+		panel.add(casteloFundo);
+
 		btnCasaNobre = new JButton("Casa Nobre");
-		btnCasaNobre.setBackground(Color.LIGHT_GRAY);
-		btnCasaNobre.setBounds(855, 335, 89, 23);
+		btnCasaNobre.setBackground(Color.BLUE);
+		btnCasaNobre.setBounds(855, 335, 80, 20);
 		btnCasaNobre.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnCasaNobre.setForeground(Color.BLACK);
 		btnCasaNobre.setBorderPainted(false);
@@ -134,8 +151,20 @@ public class Maps {
 		btnCasaNobre.setFocusPainted(false);
 		panel.add(btnCasaNobre);
 
+		ImageIcon img1 = new ImageIcon("src/imagens/btn1.png");
+		img1.setImage(img.getImage().getScaledInstance(180, 130, 100));
+
+		casaNobreFundo = new JLabel(img1);
+		casaNobreFundo.setSize(180, 130);
+		casaNobreFundo.setLocation(
+				((btnCasaNobre.getLocation().x) - (casaNobreFundo.getSize().width / 2)
+						+ (btnCasaNobre.getSize().width / 2) - 5),
+				(btnCasaNobre.getLocation().y - (casaNobreFundo.getSize().height / 2)
+						+ (btnCasaNobre.getSize().height / 2) - 2));
+		panel.add(casaNobreFundo);
+
 		btnCatedral = new JButton("Catedral");
-		btnCatedral.setBackground(Color.LIGHT_GRAY);
+		btnCatedral.setBackground(Color.BLUE);
 		btnCatedral.setBounds(634, 347, 89, 23);
 		btnCatedral.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnCatedral.setForeground(Color.BLACK);
@@ -145,8 +174,20 @@ public class Maps {
 		btnCatedral.setFocusPainted(false);
 		panel.add(btnCatedral);
 
+		ImageIcon img2 = new ImageIcon("src/imagens/btn1.png");
+		img2.setImage(img.getImage().getScaledInstance(200, 130, 100));
+
+		catedralFundo = new JLabel(img2);
+		catedralFundo.setSize(200, 130);
+		catedralFundo.setLocation(
+				((btnCatedral.getLocation().x) - (catedralFundo.getSize().width / 2) + (btnCatedral.getSize().width / 2)
+						- 5),
+				(btnCatedral.getLocation().y - (catedralFundo.getSize().height / 2) + (btnCatedral.getSize().height / 2)
+						- 2));
+		panel.add(catedralFundo);
+
 		btnPraaCentral = new JButton("Pra\u00E7a Central");
-		btnPraaCentral.setBackground(Color.LIGHT_GRAY);
+		btnPraaCentral.setBackground(Color.BLUE);
 		btnPraaCentral.setBounds(532, 379, 115, 23);
 		btnPraaCentral.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnPraaCentral.setForeground(Color.BLACK);
@@ -156,8 +197,20 @@ public class Maps {
 		btnPraaCentral.setFocusPainted(false);
 		panel.add(btnPraaCentral);
 
+		ImageIcon img3 = new ImageIcon("src/imagens/btn1.png");
+		img3.setImage(img.getImage().getScaledInstance(265, 140, 100));
+
+		praaCentralFundo = new JLabel(img3);
+		praaCentralFundo.setSize(265, 130);
+		praaCentralFundo.setLocation(
+				((btnPraaCentral.getLocation().x) - (praaCentralFundo.getSize().width / 2)
+						+ (btnPraaCentral.getSize().width / 2) - 8),
+				(btnPraaCentral.getLocation().y - (praaCentralFundo.getSize().height / 2)
+						+ (btnPraaCentral.getSize().height / 2) - 2));
+		panel.add(praaCentralFundo);
+
 		btnTorreArcana = new JButton("Torre Arcana");
-		btnTorreArcana.setBackground(Color.LIGHT_GRAY);
+		btnTorreArcana.setBackground(Color.BLUE);
 		btnTorreArcana.setBounds(506, 258, 115, 23);
 		btnTorreArcana.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnTorreArcana.setForeground(Color.BLACK);
@@ -167,8 +220,20 @@ public class Maps {
 		btnTorreArcana.setFocusPainted(false);
 		panel.add(btnTorreArcana);
 
+		ImageIcon img4 = new ImageIcon("src/imagens/btn1.png");
+		img4.setImage(img.getImage().getScaledInstance(265, 140, 100));
+
+		torreArcanaFundo = new JLabel(img4);
+		torreArcanaFundo.setSize(265, 130);
+		torreArcanaFundo.setLocation(
+				((btnTorreArcana.getLocation().x) - (torreArcanaFundo.getSize().width / 2)
+						+ (btnTorreArcana.getSize().width / 2) - 8),
+				(btnTorreArcana.getLocation().y - (torreArcanaFundo.getSize().height / 2)
+						+ (btnTorreArcana.getSize().height / 2) - 2));
+		panel.add(torreArcanaFundo);
+
 		btnMercado = new JButton("Mercado");
-		btnMercado.setBackground(Color.LIGHT_GRAY);
+		btnMercado.setBackground(Color.BLUE);
 		btnMercado.setBounds(376, 335, 89, 23);
 		btnMercado.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnMercado.setForeground(Color.BLACK);
@@ -178,8 +243,20 @@ public class Maps {
 		btnMercado.setFocusPainted(false);
 		panel.add(btnMercado);
 
+		ImageIcon img5 = new ImageIcon("src/imagens/btn1.png");
+		img5.setImage(img.getImage().getScaledInstance(200, 140, 100));
+
+		mercadoFundo = new JLabel(img5);
+		mercadoFundo.setSize(200, 130);
+		mercadoFundo.setLocation(
+				((btnMercado.getLocation().x) - (mercadoFundo.getSize().width / 2) + (btnMercado.getSize().width / 2)
+						- 5),
+				(btnMercado.getLocation().y - (mercadoFundo.getSize().height / 2) + (btnMercado.getSize().height / 2)
+						- 2));
+		panel.add(mercadoFundo);
+
 		btnAlamedaPonteiros = new JButton("Alameda 3 Ponteiros");
-		btnAlamedaPonteiros.setBackground(Color.LIGHT_GRAY);
+		btnAlamedaPonteiros.setBackground(Color.BLUE);
 		btnAlamedaPonteiros.setBounds(376, 435, 182, 23);
 		btnAlamedaPonteiros.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnAlamedaPonteiros.setForeground(Color.BLACK);
@@ -189,8 +266,20 @@ public class Maps {
 		btnAlamedaPonteiros.setFocusPainted(false);
 		panel.add(btnAlamedaPonteiros);
 
+		ImageIcon img6 = new ImageIcon("src/imagens/btn1.png");
+		img6.setImage(img.getImage().getScaledInstance(400, 140, 100));
+
+		alamedaPonteirosFundo = new JLabel(img6);
+		alamedaPonteirosFundo.setSize(400, 130);
+		alamedaPonteirosFundo.setLocation(
+				((btnAlamedaPonteiros.getLocation().x) - (alamedaPonteirosFundo.getSize().width / 2)
+						+ (btnAlamedaPonteiros.getSize().width / 2) - 10),
+				(btnAlamedaPonteiros.getLocation().y - (alamedaPonteirosFundo.getSize().height / 2)
+						+ (btnAlamedaPonteiros.getSize().height / 2) - 2));
+		panel.add(alamedaPonteirosFundo);
+
 		btnDocas = new JButton("Docas");
-		btnDocas.setBackground(Color.LIGHT_GRAY);
+		btnDocas.setBackground(Color.BLUE);
 		btnDocas.setBounds(558, 484, 89, 23);
 		btnDocas.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnDocas.setForeground(Color.BLACK);
@@ -200,8 +289,18 @@ public class Maps {
 		btnDocas.setFocusPainted(false);
 		panel.add(btnDocas);
 
+		ImageIcon img7 = new ImageIcon("src/imagens/btn1.png");
+		img7.setImage(img.getImage().getScaledInstance(200, 140, 100));
+
+		docasFundo = new JLabel(img7);
+		docasFundo.setSize(200, 130);
+		docasFundo.setLocation(
+				((btnDocas.getLocation().x) - (docasFundo.getSize().width / 2) + (btnDocas.getSize().width / 2) - 5),
+				(btnDocas.getLocation().y - (docasFundo.getSize().height / 2) + (btnDocas.getSize().height / 2) - 2));
+		panel.add(docasFundo);
+
 		btnAraResidencial = new JButton("Ar\u00E9a residencial");
-		btnAraResidencial.setBackground(Color.LIGHT_GRAY);
+		btnAraResidencial.setBackground(Color.BLUE);
 		btnAraResidencial.setBounds(743, 435, 132, 23);
 		btnAraResidencial.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnAraResidencial.setForeground(Color.BLACK);
@@ -211,8 +310,20 @@ public class Maps {
 		btnAraResidencial.setFocusPainted(false);
 		panel.add(btnAraResidencial);
 
+		ImageIcon img8 = new ImageIcon("src/imagens/btn1.png");
+		img8.setImage(img.getImage().getScaledInstance(300, 140, 100));
+
+		araResidencialFundo = new JLabel(img8);
+		araResidencialFundo.setSize(300, 130);
+		araResidencialFundo.setLocation(
+				((btnAraResidencial.getLocation().x) - (araResidencialFundo.getSize().width / 2)
+						+ (btnAraResidencial.getSize().width / 2) - 8),
+				(btnAraResidencial.getLocation().y - (araResidencialFundo.getSize().height / 2)
+						+ (btnAraResidencial.getSize().height / 2) - 2));
+		panel.add(araResidencialFundo);
+
 		btnFloresta = new JButton("Floresta");
-		btnFloresta.setBackground(Color.LIGHT_GRAY);
+		btnFloresta.setBackground(Color.BLUE);
 		btnFloresta.setBounds(256, 171, 89, 23);
 		btnFloresta.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnFloresta.setForeground(Color.BLACK);
@@ -222,14 +333,330 @@ public class Maps {
 		btnFloresta.setFocusPainted(false);
 		panel.add(btnFloresta);
 
+		ImageIcon img9 = new ImageIcon("src/imagens/btn1.png");
+		img9.setImage(img.getImage().getScaledInstance(200, 140, 100));
+
+		florestaFundo = new JLabel(img9);
+		florestaFundo.setSize(200, 130);
+		florestaFundo.setLocation(
+				((btnFloresta.getLocation().x) - (florestaFundo.getSize().width / 2) + (btnFloresta.getSize().width / 2)
+						- 5),
+				(btnFloresta.getLocation().y - (florestaFundo.getSize().height / 2) + (btnFloresta.getSize().height / 2)
+						- 2));
+		panel.add(florestaFundo);
+
 		JLabel fundo = new JLabel(new ImageIcon("src/imagens/cidade.jpg"));
 		fundo.setBounds(0, 0, 1280, 761);
 		panel.add(fundo);
 
-	}
-	
-	public void zerarBotoes() {
 		
+
+		MouseListener b1 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnAlamedaPonteiros.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnAlamedaPonteiros.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b2 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnAraResidencial.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnAraResidencial.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b3 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnCasaNobre.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnCasaNobre.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b4 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnCastelo.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnCastelo.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b5 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnCatedral.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnCatedral.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b6 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnDocas.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnDocas.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b7 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnFloresta.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnFloresta.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b8 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnMercado.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnMercado.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b9 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnPraaCentral.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnPraaCentral.setBackground(Color.BLUE);
+			}
+		};
+		
+		MouseListener b10 = new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnTorreArcana.setBackground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnTorreArcana.setBackground(Color.BLUE);
+			}
+		};
+		
+		
+		btnAlamedaPonteiros.addMouseListener(b1);
+		btnAraResidencial.addMouseListener(b2);
+		btnCasaNobre.addMouseListener(b3);
+		btnCastelo.addMouseListener(b4);
+		btnCatedral.addMouseListener(b5);
+		btnDocas.addMouseListener(b6);
+		btnFloresta.addMouseListener(b7);
+		btnMercado.addMouseListener(b8);
+		btnPraaCentral.addMouseListener(b9);
+		btnTorreArcana.addMouseListener(b10);
+		
+	}
+
+	public void zerarBotoes() {
+
 		btnAlamedaPonteiros.setVisible(false);
 		btnAraResidencial.setVisible(false);
 		btnCasaNobre.setVisible(false);
@@ -241,10 +668,21 @@ public class Maps {
 		btnPraaCentral.setVisible(false);
 		btnTorreArcana.setVisible(false);
 		
+		alamedaPonteirosFundo.setVisible(false);
+		araResidencialFundo.setVisible(false);
+		casaNobreFundo.setVisible(false);
+		casteloFundo.setVisible(false);
+		catedralFundo.setVisible(false);
+		docasFundo.setVisible(false);
+		florestaFundo.setVisible(false);
+		mercadoFundo.setVisible(false);
+		praaCentralFundo.setVisible(false);
+		torreArcanaFundo.setVisible(false);
+
 	}
-	
+
 	public void mostrarTudo() {
-		
+
 		btnAlamedaPonteiros.setVisible(true);
 		btnAraResidencial.setVisible(true);
 		btnCasaNobre.setVisible(true);
@@ -256,8 +694,17 @@ public class Maps {
 		btnPraaCentral.setVisible(true);
 		btnTorreArcana.setVisible(true);
 		
+		alamedaPonteirosFundo.setVisible(true);
+		araResidencialFundo.setVisible(true);
+		casaNobreFundo.setVisible(true);
+		casteloFundo.setVisible(true);
+		catedralFundo.setVisible(true);
+		docasFundo.setVisible(true);
+		florestaFundo.setVisible(true);
+		mercadoFundo.setVisible(true);
+		praaCentralFundo.setVisible(true);
+		torreArcanaFundo.setVisible(true);
+
 	}
 
 }
-
-	
