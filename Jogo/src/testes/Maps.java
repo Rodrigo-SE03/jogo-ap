@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.text.Normalizer.Form;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
