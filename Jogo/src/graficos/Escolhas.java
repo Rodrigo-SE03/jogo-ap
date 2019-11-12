@@ -13,7 +13,6 @@ public class Escolhas {
 
 	private JPanel panel_1 = new JPanel();
 	private JLabel txt = new JLabel();
-	private JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
 	private JButton opcao1 = new JButton("op1");
 	private JButton opcao2 = new JButton("op2");
 	private JButton opcao3 = new JButton("op3");
@@ -70,8 +69,11 @@ public class Escolhas {
 		opcao2.setBounds(33, 255, 532, 43);
 		panel_1.add(opcao2);
 
-		JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
-		fundo.setBounds(0, 0, 600, 400);
+		
+		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
+		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width,panel_1.getSize().height,100));
+		JLabel fundo = new JLabel(fund);
+		fundo.setBounds(panel_1.getBounds());
 		fundo.setVisible(true);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
@@ -125,7 +127,11 @@ public class Escolhas {
 		opcao3.setBounds(33, 309, 532, 43);
 		panel_1.add(opcao3);
 
-		fundo.setBounds(0, 0, 600, 400);
+		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
+		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width,panel_1.getSize().height,100));
+		JLabel fundo = new JLabel(fund);
+		fundo.setBounds(panel_1.getBounds());
+		fundo.setVisible(true);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
 

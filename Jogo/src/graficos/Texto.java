@@ -55,8 +55,11 @@ public class Texto extends Janela {
 		this.texto.add(txt);
 		
 		//fundo
+		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
+		fund.setImage(fund.getImage().getScaledInstance(this.texto.getSize().width,this.texto.getSize().height,100));
+		fundo = new JLabel(fund);
 		this.texto.add(fundo);
-		this.fundo.setBounds(0,0,600,400);
+		this.fundo.setBounds(this.texto.getBounds());
 		this.texto.setVisible(true);
 	}
 	
