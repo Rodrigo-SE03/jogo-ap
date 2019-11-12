@@ -60,7 +60,7 @@ public class Porta {
 		
 		Texto_enigma caixa = new Texto_enigma();
 		caixa.getFrame().setBounds(frame.getX()+caixa.getFrame().getWidth()+200,frame.getY(),caixa.getFrame().getWidth(),caixa.getFrame().getHeight());
-		caixa.getTxt1().setText("	Nesse enigma, as luzes na frente das sequências representam dicas para o código. Cada luz branca indica um número que está no código, mas em uma posição diferente da mostrada na sequência. Cada luz laranja indica um número que está no código na mesma posição mostrada na sequência");
+		caixa.getTxt1().setText("	Encontre o código de quatro dígitos que abre a porta. Você pode usar os números de 0 a 5, mas cada um só pode ser usado uma vez. As pequenas luzes ao lado de cada sequência de números são as chaves para a resolução do desafio, uma vez que elas indicam as semelhanças entre a sequência e o código final. Cada luz branca indica um número em comum com o código mas com a posição diferente da que teria no código final. Cada luz laranja indica um número em comum com o código e com a posição correta do código final.");
 		
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
