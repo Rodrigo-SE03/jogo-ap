@@ -70,12 +70,12 @@ public class Formulario{
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
 
-		JFormattedTextField frmtdtxtfldNome = new JFormattedTextField();
-		frmtdtxtfldNome.setBackground(new Color(255, 248, 220));
-		frmtdtxtfldNome.setHorizontalAlignment(SwingConstants.CENTER);
-		frmtdtxtfldNome.setFont(new Font("Georgia", Font.BOLD, 40));
-		frmtdtxtfldNome.setBounds(331, 47, 647, 59);
-		frame.getContentPane().add(frmtdtxtfldNome);
+		JFormattedTextField txtNome = new JFormattedTextField();
+		txtNome.setBackground(new Color(255, 248, 220));
+		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
+		txtNome.setFont(new Font("Georgia", Font.BOLD, 40));
+		txtNome.setBounds(331, 47, 647, 59);
+		frame.getContentPane().add(txtNome);
 
 		JLabel nome = new JLabel("New label");
 		nome.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_nome.png")));
@@ -125,19 +125,30 @@ public class Formulario{
 
 		ActionListener next = new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-
-				Jogador player = new Jogador(); // Arrumar para caso o Player não ponha nada no nome
-				player.setNome(frmtdtxtfldNome.getText());
+				int cont=0;
+				for(int i=0;i<txtNome.getText().length();i++) {
+					if(Character.isWhitespace(txtNome.getText().charAt(i))){
+						cont++;
+					}
+				}
 				
-				if (Sexo.getSelectedItem() == "Masculino")
-					player.setSexo(0);
-				else
-					player.setSexo(1);
-
-				frame.dispose();
-				new Inicio().inicio2(player);
-//				new Inicio2(player);
-			}
+				if(cont == txtNome.getText().length() || txtNome.getText().length()==0) {// Caso o Player não ponha nada no nome
+					JOptionPane.showConfirmDialog(null,"Desculpe, não poderei te deixar entrar sem que tenha um nome. Se não tiver um pode inventar. Helaria te dará a chance de um novo começo para sua vida.");
+				}
+				else {
+					Jogador player = new Jogador(); 
+					player.setNome(txtNome.getText());
+					
+					if (Sexo.getSelectedItem() == "Masculino")
+						player.setSexo(0);
+					else
+						player.setSexo(1);
+	
+					frame.dispose();
+					new Inicio().inicio2(player);
+	//				new Inicio2(player);
+					}
+				}
 		};
 
 		continuar.addActionListener(next);
