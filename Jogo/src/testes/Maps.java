@@ -160,7 +160,7 @@ public class Maps {
 		btnCastelo.setBackground(Color.BLUE);
 		btnCastelo.setBounds(743, 318, 55, 20);
 		btnCastelo.setFont(new Font("Georgia", Font.BOLD, 14));
-		btnCastelo.setForeground(Color.BLACK);
+		btnCastelo.setForeground(Color.WHITE);
 		btnCastelo.setBorderPainted(false);
 		btnCastelo.setBorder(null);
 		btnCastelo.setContentAreaFilled(true);
@@ -171,7 +171,7 @@ public class Maps {
 		img.setImage(img.getImage().getScaledInstance(130, 130, 100));
 
 		casteloFundo = new JLabel(img);
-		casteloFundo.setSize(110, 110);
+		casteloFundo.setSize(130, 130);
 		casteloFundo.setLocation(
 				((btnCastelo.getLocation().x) - (casteloFundo.getSize().width / 2) + (btnCastelo.getSize().width / 2)
 						- 4),
@@ -183,7 +183,7 @@ public class Maps {
 		btnCasaNobre.setBackground(Color.BLUE);
 		btnCasaNobre.setBounds(855, 335, 80, 20);
 		btnCasaNobre.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnCasaNobre.setForeground(Color.BLACK);
+		btnCasaNobre.setForeground(Color.WHITE);
 		btnCasaNobre.setBorderPainted(false);
 		btnCasaNobre.setBorder(null);
 		btnCasaNobre.setContentAreaFilled(true);
@@ -206,7 +206,7 @@ public class Maps {
 		btnCatedral.setBackground(Color.BLUE);
 		btnCatedral.setBounds(634, 347, 89, 23);
 		btnCatedral.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnCatedral.setForeground(Color.BLACK);
+		btnCatedral.setForeground(Color.WHITE);
 		btnCatedral.setBorderPainted(false);
 		btnCatedral.setBorder(null);
 		btnCatedral.setContentAreaFilled(true);
@@ -229,7 +229,7 @@ public class Maps {
 		btnPraaCentral.setBackground(Color.BLUE);
 		btnPraaCentral.setBounds(532, 379, 115, 23);
 		btnPraaCentral.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnPraaCentral.setForeground(Color.BLACK);
+		btnPraaCentral.setForeground(Color.WHITE);
 		btnPraaCentral.setBorderPainted(false);
 		btnPraaCentral.setBorder(null);
 		btnPraaCentral.setContentAreaFilled(true);
@@ -252,7 +252,7 @@ public class Maps {
 		btnTorreArcana.setBackground(Color.BLUE);
 		btnTorreArcana.setBounds(506, 258, 115, 23);
 		btnTorreArcana.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnTorreArcana.setForeground(Color.BLACK);
+		btnTorreArcana.setForeground(Color.WHITE);
 		btnTorreArcana.setBorderPainted(false);
 		btnTorreArcana.setBorder(null);
 		btnTorreArcana.setContentAreaFilled(true);
@@ -275,7 +275,7 @@ public class Maps {
 		btnMercado.setBackground(Color.BLUE);
 		btnMercado.setBounds(376, 335, 89, 23);
 		btnMercado.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnMercado.setForeground(Color.BLACK);
+		btnMercado.setForeground(Color.WHITE);
 		btnMercado.setBorderPainted(false);
 		btnMercado.setBorder(null);
 		btnMercado.setContentAreaFilled(true);
@@ -298,7 +298,7 @@ public class Maps {
 		btnAlamedaPonteiros.setBackground(Color.BLUE);
 		btnAlamedaPonteiros.setBounds(376, 435, 182, 23);
 		btnAlamedaPonteiros.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnAlamedaPonteiros.setForeground(Color.BLACK);
+		btnAlamedaPonteiros.setForeground(Color.WHITE);
 		btnAlamedaPonteiros.setBorderPainted(false);
 		btnAlamedaPonteiros.setBorder(null);
 		btnAlamedaPonteiros.setContentAreaFilled(true);
@@ -321,7 +321,7 @@ public class Maps {
 		btnDocas.setBackground(Color.BLUE);
 		btnDocas.setBounds(558, 484, 89, 23);
 		btnDocas.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnDocas.setForeground(Color.BLACK);
+		btnDocas.setForeground(Color.WHITE);
 		btnDocas.setBorderPainted(false);
 		btnDocas.setBorder(null);
 		btnDocas.setContentAreaFilled(true);
@@ -342,7 +342,7 @@ public class Maps {
 		btnAraResidencial.setBackground(Color.BLUE);
 		btnAraResidencial.setBounds(743, 435, 132, 23);
 		btnAraResidencial.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnAraResidencial.setForeground(Color.BLACK);
+		btnAraResidencial.setForeground(Color.WHITE);
 		btnAraResidencial.setBorderPainted(false);
 		btnAraResidencial.setBorder(null);
 		btnAraResidencial.setContentAreaFilled(true);
@@ -365,7 +365,7 @@ public class Maps {
 		btnFloresta.setBackground(Color.BLUE);
 		btnFloresta.setBounds(256, 171, 89, 23);
 		btnFloresta.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnFloresta.setForeground(Color.BLACK);
+		btnFloresta.setForeground(Color.WHITE);
 		btnFloresta.setBorderPainted(false);
 		btnFloresta.setBorder(null);
 		btnFloresta.setContentAreaFilled(true);
@@ -410,12 +410,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnAlamedaPonteiros.setBackground(Color.CYAN);
+				btnAlamedaPonteiros.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnAlamedaPonteiros.setBackground(Color.BLUE);
+				btnAlamedaPonteiros.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -439,12 +441,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnAraResidencial.setBackground(Color.CYAN);
+				btnAraResidencial.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnAraResidencial.setBackground(Color.BLUE);
+				btnAraResidencial.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -468,12 +472,16 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnCasaNobre.setBackground(Color.CYAN);
+				btnCasaNobre.setForeground(Color.BLACK);
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnCasaNobre.setBackground(Color.BLUE);
+				btnCasaNobre.setForeground(Color.WHITE);
+
 			}
 		};
 		
@@ -497,12 +505,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnCastelo.setBackground(Color.CYAN);
+				btnCastelo.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnCastelo.setBackground(Color.BLUE);
+				btnCastelo.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -526,12 +536,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnCatedral.setBackground(Color.CYAN);
+				btnCatedral.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnCatedral.setBackground(Color.BLUE);
+				btnCatedral.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -555,12 +567,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnDocas.setBackground(Color.CYAN);
+				btnDocas.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnDocas.setBackground(Color.BLUE);
+				btnDocas.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -584,12 +598,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnFloresta.setBackground(Color.CYAN);
+				btnFloresta.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnFloresta.setBackground(Color.BLUE);
+				btnFloresta.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -613,12 +629,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnMercado.setBackground(Color.CYAN);
+				btnMercado.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnMercado.setBackground(Color.BLUE);
+				btnMercado.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -642,12 +660,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnPraaCentral.setBackground(Color.CYAN);
+				btnPraaCentral.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnPraaCentral.setBackground(Color.BLUE);
+				btnPraaCentral.setForeground(Color.WHITE);
 			}
 		};
 		
@@ -671,12 +691,14 @@ public class Maps {
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnTorreArcana.setBackground(Color.CYAN);
+				btnTorreArcana.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				btnTorreArcana.setBackground(Color.BLUE);
+				btnTorreArcana.setForeground(Color.WHITE);
 			}
 		};
 		

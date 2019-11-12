@@ -133,8 +133,10 @@ public class Formulario{
 				}
 				
 				if(cont == txtNome.getText().length() || txtNome.getText().length()==0) {// Caso o Player não ponha nada no nome
-					JOptionPane.showConfirmDialog(null,"Desculpe, não poderei te deixar entrar sem que tenha um nome. Se não tiver um pode inventar. Helaria te dará a chance de um novo começo para sua vida.");
+					JOptionPane.showMessageDialog(null, "Desculpe, não poderei te deixar entrar sem que tenha um nome. Se não tiver um pode inventar. "
+							+ "Helaria te dará a chance de um novo começo para sua vida.","Guarda: ",0);
 				}
+				
 				else {
 					Jogador player = new Jogador(); 
 					player.setNome(txtNome.getText());
