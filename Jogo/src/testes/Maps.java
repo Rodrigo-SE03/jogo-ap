@@ -20,9 +20,49 @@ public class Maps {
 	private JFrame frame;
 	private JButton btnCastelo, btnCasaNobre, btnCatedral, btnPraaCentral, btnTorreArcana, btnMercado,
 			btnAlamedaPonteiros, btnDocas, btnAraResidencial, btnFloresta;
-	JLabel casteloFundo, casaNobreFundo, catedralFundo, praaCentralFundo, torreArcanaFundo, mercadoFundo,
+	private JLabel casteloFundo, casaNobreFundo, catedralFundo, praaCentralFundo, torreArcanaFundo, mercadoFundo,
 			alamedaPonteirosFundo, docasFundo, araResidencialFundo, florestaFundo;
 
+	public JLabel getCasteloFundo() {
+		return casteloFundo;
+	}
+
+	public JLabel getCasaNobreFundo() {
+		return casaNobreFundo;
+	}
+
+	public JLabel getCatedralFundo() {
+		return catedralFundo;
+	}
+
+	public JLabel getPraaCentralFundo() {
+		return praaCentralFundo;
+	}
+
+	public JLabel getTorreArcanaFundo() {
+		return torreArcanaFundo;
+	}
+
+	public JLabel getMercadoFundo() {
+		return mercadoFundo;
+	}
+
+	public JLabel getAlamedaPonteirosFundo() {
+		return alamedaPonteirosFundo;
+	}
+
+	public JLabel getDocasFundo() {
+		return docasFundo;
+	}
+
+	public JLabel getAraResidencialFundo() {
+		return araResidencialFundo;
+	}
+
+	public JLabel getFlorestaFundo() {
+		return florestaFundo;
+	}
+	
 	public JButton getBtnCastelo() {
 		return btnCastelo;
 	}
