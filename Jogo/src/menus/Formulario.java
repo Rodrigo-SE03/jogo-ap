@@ -58,7 +58,7 @@ public class Formulario{
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
 			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 				if (JOptionPane.showConfirmDialog(null,
-						"Tem certeza que deseja sair do jogo (todo seu progresso será perdido)?", "Sair",
+						"Tem certeza que deseja sair do jogo (todo seu progresso serï¿½ perdido)?", "Sair",
 						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
 					System.exit(0);
 				}
@@ -115,6 +115,11 @@ public class Formulario{
 		continuar.setBounds(867, 606, 158, 59);
 		continuar.setContentAreaFilled(false);
 		frame.getContentPane().add(continuar);
+		
+		JLabel label = new JLabel("New label");
+		label.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/17.png")));
+		label.setBounds(335, 188, 82, 74);
+		frame.getContentPane().add(label);
 
 		JLabel Fundo = new JLabel("New label");
 		Fundo.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario.jpg")));
@@ -132,9 +137,9 @@ public class Formulario{
 					}
 				}
 				
-				if(cont == txtNome.getText().length() || txtNome.getText().length()==0) {// Caso o Player não ponha nada no nome
-					JOptionPane.showMessageDialog(null, "Desculpe, não poderei te deixar entrar sem que tenha um nome. Se não tiver um pode inventar. "
-							+ "Helaria te dará a chance de um novo começo para sua vida.","Guarda: ",0);
+				if(cont == txtNome.getText().length() || txtNome.getText().length()==0) {// Caso o Player nï¿½o ponha nada no nome
+					JOptionPane.showMessageDialog(null, "Desculpe, nï¿½o poderei te deixar entrar sem que tenha um nome. Se nï¿½o tiver um pode inventar. "
+							+ "Helaria te darï¿½ a chance de um novo comeï¿½o para sua vida.","Guarda: ",0);
 				}
 				
 				else {
