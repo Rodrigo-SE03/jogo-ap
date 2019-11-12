@@ -18,6 +18,7 @@ import java.awt.Color;
 public class Labirinto implements MouseListener, MouseMotionListener {
 
 	private JFrame frame;
+	boolean on;
 	JLabel player;
 	private int x, y;
 	private JLabel parede;
@@ -69,7 +70,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		img1.setImage(img1.getImage().getScaledInstance(50, 50, 100));
 
 		player = new JLabel(img1);
-		player.setBounds(414, 75,60,60);
+		player.setBounds(414, 75,55,55);
 		player.addMouseListener( this );
 		player.addMouseMotionListener( this ); 
 		panel.add(player);
@@ -117,10 +118,12 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
+		on = true;
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		on = false;
 	}
 
 	@Override
@@ -157,9 +160,6 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		x1 = e.getX() - x;
 		y1 = e.getY() - y;
 		
-		if(x1 >= 15) x1 = 0;
-		if(y1 >= 15) y1 = 0;
-		
 		if( ( ( (xPlayermin + x1) <= xParedemax) && ( (xPlayermax + x1) >= xParedemax) )||
 		    ( ( (xPlayermin + x1) <= xParedemin) && ( (xPlayermax + x1) >= xParedemin) ) ){
 			
@@ -180,8 +180,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 							y1 = 0;
 					}
 		}
-		
-		player.setLocation(player.getBounds().x + x1, player.getBounds().y + y1);
+		if(on)	player.setLocation(player.getBounds().x + x1, player.getBounds().y + y1);
 		
 	}
 }
