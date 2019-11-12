@@ -83,7 +83,7 @@ public class Texto_enigma {
 		txt1.setForeground(Color.BLACK);
 		txt1.setCaretColor(Color.BLACK);
 		txt1.setEditable(false);
-		txt1.setFont(new Font("Georgia", Font.BOLD, 22));
+		txt1.setFont(new Font("Georgia", Font.BOLD, 18));
 		txt1.setOpaque(false);
 		txt1.setBounds(49, 57, 499, 268);
 		panel.add(txt1);
