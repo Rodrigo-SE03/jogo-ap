@@ -21,7 +21,7 @@ import java.awt.Font;
 public class Labirinto implements MouseListener, MouseMotionListener {
 
 	private JFrame frame;
-	JLabel player;
+	JLabel player,fundo,preto;
 	private int x, y;
 	private JLabel[] parede;
 	
@@ -84,116 +84,133 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		player.addMouseMotionListener( this ); 
 		panel.add(player);
 		
+		ImageIcon fund = new ImageIcon("src/imagens/AreaClara.png");
+		fund.setImage(fund.getImage().getScaledInstance(1000, 1000, 100));
+		
+		fundo = new JLabel(fund);
+		fundo.setSize(1000,1000);
+		fundo.setLocation(((player.getLocation().x) - (fundo.getSize().width / 2)
+				+ (player.getSize().width / 2)-30),
+		(player.getLocation().y - (fundo.getSize().height / 2)
+				+ (player.getSize().height / 2))-30);
+		panel.add(fundo);
+		
 		parede = new JLabel[18];
 		parede[0] = new JLabel("PAREDE");
 		parede[0].setFont(new Font("Georgia", Font.BOLD, 20));
 		parede[0].setForeground(Color.WHITE);
-		parede[0].setBackground(Color.BLACK);
+		parede[0].setBackground(Color.RED);
 		parede[0].setBounds(426, 117, 160, 20);
 		parede[0].setOpaque(true);
 		panel.add(parede[0]);
 		
 		parede[1] = new JLabel("New label");
 		parede[1].setOpaque(true);
-		parede[1].setBackground(Color.BLACK);
+		parede[1].setBackground(Color.RED);
 		parede[1].setBounds(356, 20, 90, 20);
 		panel.add(parede[1]);
 		
 		parede[2] = new JLabel("New label");
 		parede[2].setOpaque(true);
-		parede[2].setBackground(Color.BLACK);
+		parede[2].setBackground(Color.RED);
 		parede[2].setBounds(337, 20, 20, 180);
 		panel.add(parede[2]);
 		
 		parede[3] = new JLabel("New label");
 		parede[3].setOpaque(true);
-		parede[3].setBackground(Color.BLACK);
+		parede[3].setBackground(Color.RED);
 		parede[3].setBounds(337, 155, 20, 160);
 		panel.add(parede[3]);
 		
 		parede[4] = new JLabel("New label");
 		parede[4].setOpaque(true);
-		parede[4].setBackground(Color.BLACK);
+		parede[4].setBackground(Color.RED);
 		parede[4].setBounds(347, 212, 180, 20);
 		panel.add(parede[4]);
 		
 		parede[5] = new JLabel("New label");
 		parede[5].setOpaque(true);
-		parede[5].setBackground(Color.BLACK);
+		parede[5].setBackground(Color.RED);
 		parede[5].setBounds(426, 32, 20, 90);
 		panel.add(parede[5]);
 		
 		parede[6] = new JLabel("New parede[6]");
 		parede[6].setOpaque(true);
-		parede[6].setBackground(Color.BLACK);
+		parede[6].setBackground(Color.RED);
 		parede[6].setBounds(513, 212, 90, 20);
 		panel.add(parede[6]);
 		
 		parede[7] = new JLabel("New label");
 		parede[7].setOpaque(true);
-		parede[7].setBackground(Color.BLACK);
+		parede[7].setBackground(Color.RED);
 		parede[7].setBounds(356, 295, 90, 20);
 		panel.add(parede[7]);
 		
 		parede[8] = new JLabel("New label");
 		parede[8].setOpaque(true);
-		parede[8].setBackground(Color.BLACK);
+		parede[8].setBackground(Color.RED);
 		parede[8].setBounds(440, 295, 90, 20);
 		panel.add(parede[8]);
 		
 		parede[9] = new JLabel("New label");
 		parede[9].setOpaque(true);
-		parede[9].setBackground(Color.BLACK);
+		parede[9].setBackground(Color.RED);
 		parede[9].setBounds(513, 295, 90, 20);
 		panel.add(parede[9]);
 		
 		parede[10] = new JLabel("New label");
 		parede[10].setOpaque(true);
-		parede[10].setBackground(Color.BLACK);
+		parede[10].setBackground(Color.RED);
 		parede[10].setBounds(674, 295, 90, 20);
 		panel.add(parede[10]);
 		
 		parede[11] = new JLabel("New label");
 		parede[11].setOpaque(true);
-		parede[11].setBackground(Color.BLACK);
+		parede[11].setBackground(Color.RED);
 		parede[11].setBounds(581, 117, 90, 20);
 		panel.add(parede[11]);
 		
 		parede[12] = new JLabel("New label");
 		parede[12].setOpaque(true);
-		parede[12].setBackground(Color.BLACK);
+		parede[12].setBackground(Color.RED);
 		parede[12].setBounds(595, 295, 90, 20);
 		panel.add(parede[12]);
 		
 		parede[13] = new JLabel("New label");
 		parede[13].setOpaque(true);
-		parede[13].setBackground(Color.BLACK);
+		parede[13].setBackground(Color.RED);
 		parede[13].setBounds(663, 117, 90, 20);
 		panel.add(parede[13]);
 		
 		parede[14] = new JLabel("New label");
 		parede[14].setOpaque(true);
-		parede[14].setBackground(Color.BLACK);
+		parede[14].setBackground(Color.RED);
 		parede[14].setBounds(752, 117, 90, 20);
 		panel.add(parede[14]);
 		
 		parede[15] = new JLabel("New label");
 		parede[15].setOpaque(true);
-		parede[15].setBackground(Color.BLACK);
+		parede[15].setBackground(Color.RED);
 		parede[15].setBounds(822, 130, 20, 90);
 		panel.add(parede[15]);
 		
 		parede[16] = new JLabel("New label");
 		parede[16].setOpaque(true);
-		parede[16].setBackground(Color.BLACK);
+		parede[16].setBackground(Color.RED);
 		parede[16].setBounds(822, 219, 20, 96);
 		panel.add(parede[16]);
 		
 		parede[17] = new JLabel("New label");
 		parede[17].setOpaque(true);
-		parede[17].setBackground(Color.BLACK);
+		parede[17].setBackground(Color.RED);
 		parede[17].setBounds(740, 295, 90, 20);
 		panel.add(parede[17]);
+		
+		preto = new JLabel("");
+		preto.setOpaque(true);
+		preto.setBackground(Color.BLACK);
+		preto.setBounds(0,0,20000,10000);
+		panel.add(preto);
 		
 	}
 
@@ -267,6 +284,10 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		
 		
 		player.setLocation(player.getBounds().x + x1, player.getBounds().y + y1);
-		
+		fundo.setLocation(
+				((player.getLocation().x) - (fundo.getSize().width / 2)
+						+ (player.getSize().width / 2)-30),
+				(player.getLocation().y - (fundo.getSize().height / 2)
+						+ (player.getSize().height / 2))-30);
 	}
 }
