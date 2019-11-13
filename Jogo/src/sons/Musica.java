@@ -7,8 +7,10 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class Musica {
+	private boolean continuar;
 	
 	public void TocaMusica(String local) {
+		this.continuar = true;
 		try {
 			File caminho = new File(local);
 			
@@ -17,9 +19,10 @@ public class Musica {
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInput);
 				clip.start();
-				
-				System.out.println("Digite algo para parar");
-				System.in.read();
+				while(this.isContinuar()) {
+					System.out.println("");
+				}
+				clip.stop();	
 			}
 			else {
 				System.out.println("Musica nao encontrada");
@@ -28,6 +31,14 @@ public class Musica {
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
+	}
+
+	public boolean isContinuar() {
+		return continuar;
+	}
+
+	public void setContinuar(boolean continuar) {
+		this.continuar = continuar;
 	}
 	
 	/*public static void main(String[] args)
