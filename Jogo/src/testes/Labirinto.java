@@ -13,6 +13,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 
 public class Labirinto implements MouseListener, MouseMotionListener {
@@ -60,7 +62,19 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		Dimension size = Toolkit.getDefaultToolkit().getScreenSize();//Adquire o tamanho da tela
 		frame.setSize(size );
 		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.addWindowListener(new java.awt.event.WindowAdapter() {
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+				if (JOptionPane.showConfirmDialog(null,
+						"Tem certeza que deseja sair do jogo (todo seu progresso será perdido)?", "Sair",
+						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -75,41 +89,41 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		player.addMouseMotionListener( this ); 
 		panel.add(player);
 		
-		parede = new JLabel("New label");
+		parede = new JLabel("");
 		parede.setBackground(Color.BLACK);
-		parede.setBounds(426, 67, 160, 20);
+		parede.setBounds(480, 100, 160, 160);
 		parede.setOpaque(true);
 		panel.add(parede);
 		
-		parede1 = new JLabel("New label");
-		parede1.setOpaque(true);
-		parede1.setBackground(Color.BLACK);
-		parede1.setBounds(356, 20, 90, 20);
-		panel.add(parede1);
-		
-		parede2 = new JLabel("New label");
-		parede2.setOpaque(true);
-		parede2.setBackground(Color.BLACK);
-		parede2.setBounds(337, 20, 20, 180);
-		panel.add(parede2);
-		
-		parede3 = new JLabel("New label");
-		parede3.setOpaque(true);
-		parede3.setBackground(Color.BLACK);
-		parede3.setBounds(337, 155, 20, 160);
-		panel.add(parede3);
-		
-		parede4 = new JLabel("New label");
-		parede4.setOpaque(true);
-		parede4.setBackground(Color.BLACK);
-		parede4.setBounds(337, 200, 180, 20);
-		panel.add(parede4);
-		
-		parede5 = new JLabel("New label");
-		parede5.setOpaque(true);
-		parede5.setBackground(Color.BLACK);
-		parede5.setBounds(426, 32, 20, 90);
-		panel.add(parede5);
+//		parede1 = new JLabel("New label");
+//		parede1.setOpaque(true);
+//		parede1.setBackground(Color.BLACK);
+//		parede1.setBounds(356, 20, 90, 20);
+//		panel.add(parede1);
+//		
+//		parede2 = new JLabel("New label");
+//		parede2.setOpaque(true);
+//		parede2.setBackground(Color.BLACK);
+//		parede2.setBounds(337, 20, 20, 180);
+//		panel.add(parede2);
+//		
+//		parede3 = new JLabel("New label");
+//		parede3.setOpaque(true);
+//		parede3.setBackground(Color.BLACK);
+//		parede3.setBounds(337, 155, 20, 160);
+//		panel.add(parede3);
+//		
+//		parede4 = new JLabel("New label");
+//		parede4.setOpaque(true);
+//		parede4.setBackground(Color.BLACK);
+//		parede4.setBounds(337, 200, 180, 20);
+//		panel.add(parede4);
+//		
+//		parede5 = new JLabel("New label");
+//		parede5.setOpaque(true);
+//		parede5.setBackground(Color.BLACK);
+//		parede5.setBounds(426, 32, 20, 90);
+//		panel.add(parede5);
 	}
 
 	@Override
@@ -143,11 +157,11 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseDragged(MouseEvent e) {
 
-		int xPlayermin = player.getBounds().x;
-		int xPlayermax = player.getBounds().x + player.getBounds().width;
+		int xPlayermin = player.getBounds().x; //Esquerda
+		int xPlayermax = player.getBounds().x + player.getBounds().width; //Direita
 		
-		int yPlayermin = player.getBounds().y;
-		int yPlayermax = player.getBounds().y + player.getBounds().height;
+		int yPlayermin = player.getBounds().y; //Cima
+		int yPlayermax = player.getBounds().y + player.getBounds().height;//Baixo
 		
 		int xParedemax = parede.getBounds().x+parede.getBounds().width;
 		int xParedemin = parede.getBounds().x;
@@ -155,32 +169,41 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		int yParedemax = parede.getBounds().y+parede.getBounds().height;
 		int yParedemin = parede.getBounds().y;
 		
+		boolean xs,ys;
 		
 		int x1, y1;
 		x1 = e.getX() - x;
 		y1 = e.getY() - y;
 		
-		if( ( ( (xPlayermin + x1) <= xParedemax) && ( (xPlayermax + x1) >= xParedemax) )||
-		    ( ( (xPlayermin + x1) <= xParedemin) && ( (xPlayermax + x1) >= xParedemin) ) ){
-			
+		if( ( ( xPlayermin  >= xParedemax) && ( (xPlayermin + x1) <= xParedemax) )||
+		    ( ( xPlayermax  <= xParedemin) && ( (xPlayermax + x1) >= xParedemin) ) ){
+				System.out.println("x1");
 				if( ( (yPlayermin <= yParedemax) && (yPlayermax >= yParedemax) )||
 					( (yPlayermin <= yParedemin) && (yPlayermax >= yParedemin) )||
 					( (yPlayermin >= yParedemin) && (yPlayermax <= yParedemax) )) {
 						x1 = 0;
+						xs = false;
+						System.out.println("x2");
 				}
+				else xs = true;
 							
-		
 		}
-		if( ( ( (yPlayermin + y1) <= yParedemax) && ( (yPlayermax + y1) >= yParedemax) )||
-			     ( ( (yPlayermin + y1) <= yParedemin) && ( (yPlayermax + y1) >= yParedemin) ) ){
-			
+		else xs = true;
+		if( ( ( yPlayermin >= yParedemax) && ( (yPlayermin + y1) < yParedemax) )||
+			( ( yPlayermax <= yParedemin) && ( (yPlayermax + y1) > yParedemin) ) ){
+			System.out.println("y1");
 					if( ( (xPlayermin >= xParedemin) && (xPlayermax <= xParedemax) )||
 						( (xPlayermin <= xParedemin) && (xPlayermax >= xParedemin) )||
 						( (xPlayermin <= xParedemax) && (xPlayermax >= xParedemax) ) ) {
 							y1 = 0;
+							ys = false;
+							System.out.println("x2");
 					}
+					else ys = true;
 		}
-		if(on)	player.setLocation(player.getBounds().x + x1, player.getBounds().y + y1);
+		else ys = true;
+		
+		if(on && xs && ys)player.setLocation(player.getBounds().x + x1, player.getBounds().y + y1);
 		
 	}
 }
