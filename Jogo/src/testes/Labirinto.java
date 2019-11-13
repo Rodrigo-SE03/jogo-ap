@@ -16,11 +16,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Color;
+import java.awt.Font;
 
 public class Labirinto implements MouseListener, MouseMotionListener {
 
 	private JFrame frame;
-	boolean on;
 	JLabel player;
 	private int x, y;
 	private JLabel parede;
@@ -89,7 +89,9 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		player.addMouseMotionListener( this ); 
 		panel.add(player);
 		
-		parede = new JLabel("");
+		parede = new JLabel("PAREDE");
+		parede.setFont(new Font("Georgia", Font.BOLD, 20));
+		parede.setForeground(Color.WHITE);
 		parede.setBackground(Color.BLACK);
 		parede.setBounds(480, 100, 160, 160);
 		parede.setOpaque(true);
@@ -132,12 +134,10 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		on = true;
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		on = false;
 	}
 
 	@Override
@@ -169,41 +169,29 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		int yParedemax = parede.getBounds().y+parede.getBounds().height;
 		int yParedemin = parede.getBounds().y;
 		
-		boolean xs,ys;
-		
 		int x1, y1;
 		x1 = e.getX() - x;
 		y1 = e.getY() - y;
 		
 		if( ( ( xPlayermin  >= xParedemax) && ( (xPlayermin + x1) <= xParedemax) )||
 		    ( ( xPlayermax  <= xParedemin) && ( (xPlayermax + x1) >= xParedemin) ) ){
-				System.out.println("x1");
 				if( ( (yPlayermin <= yParedemax) && (yPlayermax >= yParedemax) )||
 					( (yPlayermin <= yParedemin) && (yPlayermax >= yParedemin) )||
 					( (yPlayermin >= yParedemin) && (yPlayermax <= yParedemax) )) {
 						x1 = 0;
-						xs = false;
-						System.out.println("x2");
 				}
-				else xs = true;
 							
 		}
-		else xs = true;
 		if( ( ( yPlayermin >= yParedemax) && ( (yPlayermin + y1) < yParedemax) )||
 			( ( yPlayermax <= yParedemin) && ( (yPlayermax + y1) > yParedemin) ) ){
-			System.out.println("y1");
 					if( ( (xPlayermin >= xParedemin) && (xPlayermax <= xParedemax) )||
 						( (xPlayermin <= xParedemin) && (xPlayermax >= xParedemin) )||
 						( (xPlayermin <= xParedemax) && (xPlayermax >= xParedemax) ) ) {
 							y1 = 0;
-							ys = false;
-							System.out.println("x2");
 					}
-					else ys = true;
 		}
-		else ys = true;
 		
-		if(on && xs && ys)player.setLocation(player.getBounds().x + x1, player.getBounds().y + y1);
+		player.setLocation(player.getBounds().x + x1, player.getBounds().y + y1);
 		
 	}
 }
