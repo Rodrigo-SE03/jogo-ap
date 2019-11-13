@@ -5,7 +5,7 @@ import java.applet.Applet;
 import java.applet.AudioClip;
 import javax.swing.JButton;
 
-@SuppressWarnings("deprecation")
+
 public class SomMapa   {
 	
 	//não sei pq não funciona sem esse JButton
@@ -20,6 +20,7 @@ public class SomMapa   {
 	//metodo
 	public void play (String nome)
 	{URL url= SomMapa.class.getResource(nome+".wav");
+	@SuppressWarnings("deprecation")
 	AudioClip audio = Applet.newAudioClip(url);
 	audio.play();}
 	

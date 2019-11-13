@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import testes.Inicio;
 import cenas.TesteInicio;
 import graficos.Janela;
+import sons.Som;
 
 public class Menu_inicial extends Janela {
 
@@ -55,6 +56,11 @@ public class Menu_inicial extends Janela {
         //Ações dos botões
         ativaCreditos();
         ativaIniciar();
+        
+        
+        //musica de fundo
+        Som musica = new Som();
+        musica.run("MusicaMenu");
     }
 
     public void ativaCreditos() {
