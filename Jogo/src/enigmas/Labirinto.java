@@ -1,24 +1,24 @@
 package enigmas;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.Icon;
+import javax.swing.JPanel;
 
 public class Labirinto implements MouseListener, MouseMotionListener {
 
@@ -26,8 +26,11 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 	JPanel panel;
 	private JFrame frame;
 	private JLabel[] parede;
-	private JLabel player, fundo, piso, fim;
+	private JLabel player, fundo, piso, livro,livroV,livroA;
+	private static JDialog dica;
+	private boolean amarelo,azul;
 	private int x, y;
+	private int ordem = 0;
 
 	/**
 	 * Launch the application.
@@ -38,6 +41,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 				try {
 					Labirinto window = new Labirinto();
 					window.frame.setVisible(true);
+					dica.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -76,6 +80,29 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
+		
+		
+		JLabel txtdica = new JLabel("Escrever um enigma");
+		txtdica.setBounds(0,0,100,100);
+		
+		dica = new JDialog();
+		dica.setModal(true);
+		dica.setBounds(100,100,500,500);
+		dica.add(txtdica);
+		
+		JButton botao = new JButton();
+		botao.setBounds(0,0,50,50);
+		panel.add(botao);
+		
+		botao.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dica.setVisible(true);
+				
+			}
+		});
+		
 
 		ImageIcon img1 = new ImageIcon("src/imagens/mago.png");
 		img1.setImage(img1.getImage().getScaledInstance(50, 50, 100));
@@ -103,28 +130,184 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		ImageIcon imgParedeH = new ImageIcon("src/imagens/ParedeX.png");
 		imgParedeH.setImage(imgParedeH.getImage().getScaledInstance(100, 50, 100));
 		
-		ImageIcon livro = new ImageIcon("src/imagens/Livro.png");
-		livro.setImage(livro.getImage().getScaledInstance(79, 82, 100));
+		ImageIcon livroimg = new ImageIcon("src/imagens/Livro.png");
+		livroimg.setImage(livroimg.getImage().getScaledInstance(79, 82, 100));
 
+		ImageIcon livroVimg = new ImageIcon("src/imagens/LivroV.png");
+		livroVimg.setImage(livroVimg.getImage().getScaledInstance(79, 82, 100));
+		
+		ImageIcon livroAimg = new ImageIcon("src/imagens/LivroA.png");
+		livroAimg.setImage(livroAimg.getImage().getScaledInstance(79, 82, 100));
 
-		fim = new JLabel(livro);
+		livro = new JLabel(livroimg);
+		livroV = new JLabel(livroVimg);
+		livroA = new JLabel(livroAimg);
+
 		
 		switch(new Random().nextInt(4)) {
 			case 0:
-				fim.setBounds(696, 568, 79, 82);
+				livro.setBounds(696, 568, 79, 82);
+				
+				switch(new Random().nextInt(3)) {
+					case 0:
+						livroA.setBounds(885, 570, 79, 82);
+						
+						switch(new Random().nextInt(2)) {
+							case 0:
+								livroV.setBounds(470, 212, 79, 82);
+								break;
+							default:
+								livroV.setBounds(1000, 325, 79, 82);
+								break;	
+					}
+						break;	
+					case 1:
+						livroA.setBounds(470, 212, 79, 82);
+						switch(new Random().nextInt(2)) {
+							case 0:
+								livroV.setBounds(885, 570, 79, 82);
+								break;
+							default:
+								livroV.setBounds(1000, 325, 79, 82);
+								break;	
+						}
+				    	break;
+					default:
+						livroA.setBounds(1000, 325, 79, 82);
+						switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(885, 570, 79, 82);
+							break;
+						default:
+							livroV.setBounds(470, 212, 79, 82);
+							break;	
+					}
+				    	break;	
+				}
 				break;
-		    case 1:
-		    	fim.setBounds(885, 570, 79, 82);
+		    
+			case 1:
+		    	livro.setBounds(885, 570, 79, 82);
+		    	switch(new Random().nextInt(3)) {
+				case 0:
+					livroA.setBounds(696, 568, 79, 82);
+					
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(470, 212, 79, 82);
+							break;
+						default:
+							livroV.setBounds(1000, 325, 79, 82);
+							break;	
+				}
+					break;	
+				case 1:
+					livroA.setBounds(470, 212, 79, 82);
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(696, 568, 79, 82);
+							break;
+						default:
+							livroV.setBounds(1000, 325, 79, 82);
+							break;	
+					}
+			    	break;
+				default:
+					livroA.setBounds(1000, 325, 79, 82);
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(696, 568, 79, 82);
+							break;
+						default:
+							livroV.setBounds(470, 212, 79, 82);
+							break;	
+					}
+			    	break;	
+			}
 		    	break;
 		    case 2:
-		    	fim.setBounds(470, 212, 79, 82);
+		    	livro.setBounds(470, 212, 79, 82);
+		    	switch(new Random().nextInt(3)) {
+				case 0:
+					livroA.setBounds(696, 568, 79, 82);
+					
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(885, 570, 79, 82);
+							break;
+						default:
+							livroV.setBounds(1000, 325, 79, 82);
+							break;	
+				}
+					break;	
+				case 1:
+					livroA.setBounds(885, 570, 79, 82);
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(696, 568, 79, 82);
+							break;
+						default:
+							livroV.setBounds(1000, 325, 79, 82);
+							break;	
+					}
+			    	break;
+				default:
+					livroA.setBounds(1000, 325, 79, 82);
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(696, 568, 79, 82);
+							break;
+						default:
+							livroV.setBounds(885, 570, 79, 82);
+							break;	
+					}
+			    	break;	
+			}
 		    	break;
 		    default:
-		    	fim.setBounds(1000, 325, 79, 82);
+		    	livro.setBounds(1000, 325, 79, 82);
+		    	switch(new Random().nextInt(3)) {
+				case 0:
+					livroA.setBounds(696, 568, 79, 82);
+					
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(885, 570, 79, 82);
+							break;
+						default:
+							livroV.setBounds(470, 212, 79, 82);
+							break;	
+				}
+					break;	
+				case 1:
+					livroA.setBounds(885, 570, 79, 82);
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(696, 568, 79, 82);
+							break;
+						default:
+							livroV.setBounds(470, 212, 79, 82);
+							break;	
+					}
+			    	break;
+				default:
+					livroA.setBounds(470, 212, 79, 82);
+					switch(new Random().nextInt(2)) {
+						case 0:
+							livroV.setBounds(696, 568, 79, 82);
+							break;
+						default:
+							livroV.setBounds(885, 570, 79, 82);
+							break;	
+					}
+			    	break;	
+			}
 		    	break;		
 		}
 		
-		panel.add(fim);
+		panel.add(livro);
+		panel.add(livroA);
+		panel.add(livroV);
 		
 		parede = new JLabel[73];
 		
@@ -477,7 +660,56 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		int yPlayermax = player.getBounds().y + player.getBounds().height;// Baixo
 
 		int xParedemax, xParedemin, yParedemax, yParedemin;
-
+		
+		JDialog confirma = new JDialog();
+		confirma.setBounds(100, 100, 300, 300);
+		confirma.setModal(true);
+		confirma.setUndecorated(true);
+		
+		JButton sim = new JButton("SIM");
+		sim.setBounds(0, 250, 150, 50);
+		sim.addActionListener(new ActionListener() {
+			//amarelo,azul,verde
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				confirma.setVisible(false);
+				switch (ordem) {
+					case 1:
+						amarelo = true;
+						break;
+					case 2:
+						if(amarelo) azul = true;
+						else JOptionPane.showMessageDialog(null,"Errrrou");
+						break;
+					case 3:
+						if(azul) JOptionPane.showMessageDialog(null,"nice");
+						else JOptionPane.showMessageDialog(null,"Errrrou");
+						break;
+					default:
+						JOptionPane.showMessageDialog(null,"Algo deu errado");
+						break;	
+				}
+				
+			}
+		});
+		
+		JButton nao = new JButton("NÃO");
+		nao.setBounds(150, 250, 150, 50);
+		nao.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				confirma.setVisible(false);
+			}
+		});
+		
+		JLabel txtConfirma = new JLabel("Tem certeza de que quer pegar esse livro?");
+		txtConfirma.setBounds(0,0,400,400);
+		
+		confirma.add(sim);
+		confirma.add(nao);
+		confirma.add(txtConfirma);
+		
 		int x1, y1;
 		x1 = e.getX() - x;
 		y1 = e.getY() - y;
@@ -514,22 +746,65 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 				(player.getLocation().y - (fundo.getSize().height / 2) + (player.getSize().height / 2)) - 5);
 		
 
-		if (((yPlayermin >= (fim.getBounds().y + fim.getBounds().width)) && ((yPlayermin + y1) < (fim.getBounds().y + fim.getBounds().height)))
-				|| ((yPlayermax <= fim.getBounds().y) && ((yPlayermax + y1) > fim.getBounds().y))) {
-			if (((xPlayermin >= fim.getBounds().x) && (xPlayermax <= fim.getBounds().x + fim.getBounds().height))
-					|| ((xPlayermin <= fim.getBounds().x) && (xPlayermax >= fim.getBounds().x))
-					|| ((xPlayermin <= fim.getBounds().x + fim.getBounds().height) && (xPlayermax >= fim.getBounds().x + fim.getBounds().height))) {
-				JOptionPane.showMessageDialog(null,"nice");
+		if (((yPlayermin >= (livro.getBounds().y + livro.getBounds().width)) && ((yPlayermin + y1) < (livro.getBounds().y + livro.getBounds().height)))
+				|| ((yPlayermax <= livro.getBounds().y) && ((yPlayermax + y1) > livro.getBounds().y))) {
+			if (((xPlayermin >= livro.getBounds().x) && (xPlayermax <= livro.getBounds().x + livro.getBounds().height))
+					|| ((xPlayermin <= livro.getBounds().x) && (xPlayermax >= livro.getBounds().x))
+					|| ((xPlayermin <= livro.getBounds().x + livro.getBounds().height) && (xPlayermax >= livro.getBounds().x + livro.getBounds().height))) {
+				ordem = 1;	
+				confirma.setVisible(true);
 			}
 		}
-		else if (((xPlayermin >= fim.getBounds().x + fim.getBounds().width) && ((xPlayermin + x1) < fim.getBounds().x + fim.getBounds().width))
-				|| ((xPlayermax <= fim.getBounds().x) && ((xPlayermax + x1) > fim.getBounds().x))) {
-				if (((yPlayermin <= (fim.getBounds().y + fim.getBounds().width)) && (yPlayermax >= (fim.getBounds().y + fim.getBounds().width)))
-					|| ((yPlayermin <= fim.getBounds().y) && (yPlayermax >= fim.getBounds().y))
-					|| ((yPlayermin >= fim.getBounds().y) && (yPlayermax <= (fim.getBounds().y + fim.getBounds().width)))) {
-					JOptionPane.showMessageDialog(null,"nice");
+		else if (((xPlayermin >= livro.getBounds().x + livro.getBounds().width) && ((xPlayermin + x1) < livro.getBounds().x + livro.getBounds().width))
+				|| ((xPlayermax <= livro.getBounds().x) && ((xPlayermax + x1) > livro.getBounds().x))) {
+				if (((yPlayermin <= (livro.getBounds().y + livro.getBounds().width)) && (yPlayermax >= (livro.getBounds().y + livro.getBounds().width)))
+					|| ((yPlayermin <= livro.getBounds().y) && (yPlayermax >= livro.getBounds().y))
+					|| ((yPlayermin >= livro.getBounds().y) && (yPlayermax <= (livro.getBounds().y + livro.getBounds().width)))) {
+					ordem = 1;
+					confirma.setVisible(true);JOptionPane.showMessageDialog(null,"nice");
 				}
 				
+		}
+		
+		if (((yPlayermin >= (livroA.getBounds().y + livroA.getBounds().width)) && ((yPlayermin + y1) < (livroA.getBounds().y + livroA.getBounds().height)))
+				|| ((yPlayermax <= livroA.getBounds().y) && ((yPlayermax + y1) > livroA.getBounds().y))) {
+			if (((xPlayermin >= livroA.getBounds().x) && (xPlayermax <= livroA.getBounds().x + livroA.getBounds().height))
+					|| ((xPlayermin <= livroA.getBounds().x) && (xPlayermax >= livroA.getBounds().x))
+					|| ((xPlayermin <= livroA.getBounds().x + livroA.getBounds().height) && (xPlayermax >= livroA.getBounds().x + livroA.getBounds().height))) {
+				ordem = 2;	
+				confirma.setVisible(true);
 			}
+		}
+		else if (((xPlayermin >= livroA.getBounds().x + livroA.getBounds().width) && ((xPlayermin + x1) < livroA.getBounds().x + livroA.getBounds().width))
+				|| ((xPlayermax <= livroA.getBounds().x) && ((xPlayermax + x1) > livroA.getBounds().x))) {
+				if (((yPlayermin <= (livroA.getBounds().y + livroA.getBounds().width)) && (yPlayermax >= (livroA.getBounds().y + livroA.getBounds().width)))
+					|| ((yPlayermin <= livroA.getBounds().y) && (yPlayermax >= livroA.getBounds().y))
+					|| ((yPlayermin >= livroA.getBounds().y) && (yPlayermax <= (livroA.getBounds().y + livroA.getBounds().width)))) {
+					ordem = 2;	
+					confirma.setVisible(true);
+				}
+				
+		}
+		
+		if (((yPlayermin >= (livroV.getBounds().y + livroV.getBounds().width)) && ((yPlayermin + y1) < (livroV.getBounds().y + livroV.getBounds().height)))
+				|| ((yPlayermax <= livroV.getBounds().y) && ((yPlayermax + y1) > livroV.getBounds().y))) {
+			if (((xPlayermin >= livroV.getBounds().x) && (xPlayermax <= livroV.getBounds().x + livroV.getBounds().height))
+					|| ((xPlayermin <= livroV.getBounds().x) && (xPlayermax >= livroV.getBounds().x))
+					|| ((xPlayermin <= livroV.getBounds().x + livroV.getBounds().height) && (xPlayermax >= livroV.getBounds().x + livroV.getBounds().height))) {
+				ordem = 3;	
+				confirma.setVisible(true);
+			}
+		}
+		else if (((xPlayermin >= livroV.getBounds().x + livroV.getBounds().width) && ((xPlayermin + x1) < livroV.getBounds().x + livroV.getBounds().width))
+				|| ((xPlayermax <= livroV.getBounds().x) && ((xPlayermax + x1) > livroV.getBounds().x))) {
+				if (((yPlayermin <= (livroV.getBounds().y + livroV.getBounds().width)) && (yPlayermax >= (livroV.getBounds().y + livroV.getBounds().width)))
+					|| ((yPlayermin <= livroV.getBounds().y) && (yPlayermax >= livroV.getBounds().y))
+					|| ((yPlayermin >= livroV.getBounds().y) && (yPlayermax <= (livroV.getBounds().y + livroV.getBounds().width)))) {
+					ordem = 3;	
+					confirma.setVisible(true);
+				}
+				
+		}
+	
 	}
 }
