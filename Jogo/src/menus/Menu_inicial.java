@@ -10,11 +10,13 @@ import javax.swing.JLabel;
 import testes.Inicio;
 import cenas.TesteInicio;
 import graficos.Janela;
+import sons.Musica;
+import sons.Som;
 
 public class Menu_inicial extends Janela {
 
 	private static final long serialVersionUID = 1L;
-	
+	Musica musica = new Musica();
 	Janela menu = new Janela();
     JButton iniciar = new JButton(new ImageIcon("src/imagens/botao_iniciar.png"));
     JButton creditos = new JButton(new ImageIcon("src/imagens/Creditos.png"));
@@ -55,6 +57,10 @@ public class Menu_inicial extends Janela {
         //Ações dos botões
         ativaCreditos();
         ativaIniciar();
+        
+        
+        //musica de fundo
+        musica.TocaMusica("src/sons/MusicaMenu.wav");
     }
 
     public void ativaCreditos() {
@@ -70,6 +76,7 @@ public class Menu_inicial extends Janela {
 
         this.iniciar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	musica.setContinuar(false);
             	new Inicio().inicio();
 //            	new TesteInicio();
                 menu.dispose();
