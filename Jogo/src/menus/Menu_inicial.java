@@ -8,10 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import testes.Inicio;
-import cenas.TesteInicio;
 import graficos.Janela;
 import sons.Musica;
-import sons.Som;
 
 public class Menu_inicial extends Janela {
 

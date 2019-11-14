@@ -14,8 +14,9 @@ import javax.swing.JLabel;
 public class MovimentarBloco  extends JFrame
 implements MouseListener, MouseMotionListener {
   
-	JButton botao = new JButton(new ImageIcon("src/imagens/continuar.png"));;
-	JLabel txt = new JLabel();
+	private static final long serialVersionUID = 1L;
+	private JButton botao = new JButton(new ImageIcon("src/imagens/continuar.png"));;
+	private JLabel txt = new JLabel();
     private int x, y;
     
     @Override

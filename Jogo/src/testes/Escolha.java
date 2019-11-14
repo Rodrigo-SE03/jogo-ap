@@ -9,8 +9,6 @@ import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.Color;
 
 public class Escolha { //Classe para auxiliar no desenho do Frame com escolhas

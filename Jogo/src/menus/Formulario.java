@@ -8,7 +8,6 @@ import javax.swing.JFormattedTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
-import cenas.Inicio2;
 import personagens.Jogador;
 import testes.Inicio;
 

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,8 +23,9 @@ import javax.swing.JPanel;
 
 public class Labirinto implements MouseListener, MouseMotionListener {
 
-	Dimension size = Toolkit.getDefaultToolkit().getScreenSize();// Adquire o tamanho da tela
-	JPanel panel;
+	private Dimension size = Toolkit.getDefaultToolkit().getScreenSize();// Adquire o tamanho da tela
+	private JPanel panel;
+	private ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 	private JFrame frame;
 	private JLabel[] parede;
 	private JLabel player, fundo, piso, livro,livroV,livroA;
@@ -39,9 +41,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Labirinto window = new Labirinto();
-					window.frame.setVisible(true);
-					dica.setVisible(true);
+					new Labirinto();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -75,7 +75,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 				}
 			}
 		});
-		frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
+		frame.setIconImage(icone.getImage());
 
 		panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -83,15 +83,32 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		
 		
 		JLabel txtdica = new JLabel("Escrever um enigma");
-		txtdica.setBounds(0,0,100,100);
+		txtdica.setFont(new Font("Georgia",Font.BOLD, 25));
+		txtdica.setForeground(Color.black);
+		txtdica.setBounds(50,50,500,100);
 		
 		dica = new JDialog();
+		dica.setIconImage(icone.getImage());
 		dica.setModal(true);
 		dica.setBounds(100,100,500,500);
 		dica.add(txtdica);
 		
-		JButton botao = new JButton();
-		botao.setBounds(0,0,50,50);
+		ImageIcon background = new ImageIcon("src/imagens/fundo_dialogo.png");
+		background.setImage(background.getImage().getScaledInstance(500, 500, 100));
+		
+		JLabel back = new JLabel (background);
+		back.setBounds(0,0,500,500);
+		dica.add(back);
+		
+		ImageIcon lampada = new ImageIcon("src/imagens/lampada.png");
+		lampada.setImage(lampada.getImage().getScaledInstance(50, 50, 100));
+		
+		JButton botao = new JButton(lampada);
+		botao.setBounds(25,25,50,50);
+		botao.setBorderPainted(false);
+		botao.setContentAreaFilled(false);
+		botao.setBorderPainted(false);
+		botao.setBorder(null);
 		panel.add(botao);
 		
 		botao.addActionListener(new ActionListener() {
@@ -603,7 +620,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		parede[72].setBounds(550, 200, 50, 100);
 		panel.add(parede[72]);
 		
-		JLabel preto = new JLabel("");
+		JLabel preto = new JLabel();
 		preto.setOpaque(true);
 		preto.setBackground(Color.BLACK);
 		preto.setSize(size);
@@ -621,6 +638,9 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		piso.setSize(size);
 		piso.setLocation(0, 0);
 		panel.add(piso);
+		
+		frame.setVisible(true);
+		dica.setVisible(true);
 
 	}
 
@@ -662,12 +682,20 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		int xParedemax, xParedemin, yParedemax, yParedemin;
 		
 		JDialog confirma = new JDialog();
-		confirma.setBounds(100, 100, 300, 300);
+		confirma.setIconImage(icone.getImage());
+		confirma.setBounds(100, 100, 400, 400);
 		confirma.setModal(true);
 		confirma.setUndecorated(true);
 		
 		JButton sim = new JButton("SIM");
-		sim.setBounds(0, 250, 150, 50);
+		sim.setBackground(new Color(139, 69, 19));
+		sim.setForeground(Color.BLACK);
+		sim.setFont(new Font("Georgia", Font.BOLD, 25));
+		sim.setContentAreaFilled(true);
+		sim.setBorderPainted(false);
+		sim.setBorder(null);
+		sim.setFocusPainted(false);
+		sim.setBounds(25, 300, 150, 50);
 		sim.addActionListener(new ActionListener() {
 			//amarelo,azul,verde
 			@Override
@@ -694,7 +722,14 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		});
 		
 		JButton nao = new JButton("NÃO");
-		nao.setBounds(150, 250, 150, 50);
+		nao.setBackground(new Color(139, 69, 19));
+		nao.setForeground(Color.BLACK);
+		nao.setFont(new Font("Georgia", Font.BOLD, 25));
+		nao.setContentAreaFilled(true);
+		nao.setBorderPainted(false);
+		nao.setBorder(null);
+		nao.setFocusPainted(false);
+		nao.setBounds(225, 300, 150, 50);
 		nao.addActionListener(new ActionListener() {
 			
 			@Override
@@ -703,12 +738,23 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 			}
 		});
 		
-		JLabel txtConfirma = new JLabel("Tem certeza de que quer pegar esse livro?");
-		txtConfirma.setBounds(0,0,400,400);
+		JLabel txtConfirma = new JLabel("<html>Tem certeza de que quer pegar esse livro?<html>");
+		txtConfirma.setFont(new Font("Georgia",Font.BOLD, 25));
+		txtConfirma.setForeground(Color.black);
+		txtConfirma.setBounds(50,25,350,300);
+		
+		ImageIcon background = new ImageIcon("src/imagens/fundo_dialogo.png");
+		background.setImage(background.getImage().getScaledInstance(400, 400, 100));
+		
+		JLabel back = new JLabel(background);
+		back.setBounds(0,0,400,400);
+		
 		
 		confirma.add(sim);
 		confirma.add(nao);
 		confirma.add(txtConfirma);
+		confirma.add(back);
+		
 		
 		int x1, y1;
 		x1 = e.getX() - x;
@@ -761,7 +807,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 					|| ((yPlayermin <= livro.getBounds().y) && (yPlayermax >= livro.getBounds().y))
 					|| ((yPlayermin >= livro.getBounds().y) && (yPlayermax <= (livro.getBounds().y + livro.getBounds().width)))) {
 					ordem = 1;
-					confirma.setVisible(true);JOptionPane.showMessageDialog(null,"nice");
+					confirma.add(back);
 				}
 				
 		}

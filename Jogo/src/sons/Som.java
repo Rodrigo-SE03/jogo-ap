@@ -6,12 +6,12 @@ import java.net.URL;
 
 import javax.swing.JButton;
 
+@SuppressWarnings("deprecation")
 public class Som {
 	JButton plei= new JButton ("");
 	private URL url;
 	private AudioClip audio;
 
-	@SuppressWarnings("deprecation")
 	public void run(String nome) {
 		this.url = Som.class.getResource(nome+".wav");
 		this.audio = Applet.newAudioClip(url);
