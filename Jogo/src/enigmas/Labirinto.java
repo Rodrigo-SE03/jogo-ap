@@ -807,7 +807,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 					|| ((yPlayermin <= livro.getBounds().y) && (yPlayermax >= livro.getBounds().y))
 					|| ((yPlayermin >= livro.getBounds().y) && (yPlayermax <= (livro.getBounds().y + livro.getBounds().width)))) {
 					ordem = 1;
-					confirma.add(back);
+					confirma.setVisible(true);
 				}
 				
 		}
