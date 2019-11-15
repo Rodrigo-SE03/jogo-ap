@@ -1,6 +1,7 @@
 package sons;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -8,13 +9,14 @@ import javax.sound.sampled.Clip;
 
 public class Musica {
 	private boolean continuar;
+	private File caminho; 
 	
 	public void TocaMusica(String local) {
 		this.continuar = true;
 		try {
-			File caminho = new File(local);
+			this.caminho = new File(local);
 			
-			if(caminho.exists()) {
+			 
 				AudioInputStream audioInput = AudioSystem.getAudioInputStream(caminho);
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInput);
@@ -23,13 +25,9 @@ public class Musica {
 					System.out.println("");
 				}
 				clip.stop();	
-			}
-			else {
-				System.out.println("Musica nao encontrada");
-			}
-			
+				
 		}catch(Exception ex){
-			ex.printStackTrace();
+			System.out.println(ex.getMessage());
 		}
 	}
 
@@ -39,6 +37,14 @@ public class Musica {
 
 	public void setContinuar(boolean continuar) {
 		this.continuar = continuar;
+	}
+
+	public File getCaminho() {
+		return caminho;
+	}
+
+	public void setCaminho(File caminho) {
+		this.caminho = caminho;
 	}
 	
 	/*public static void main(String[] args)
