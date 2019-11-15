@@ -1,172 +1,129 @@
+
 package cenas;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import graficos.Texto;
-import mapas.Mapa1;
+import menus.Formulario;
+import personagens.Jogador;
+
 public class Inicio {
-	
-	Texto t1;
-	String[] tx = new String[19]; //Strings com os textos a serem mostrados
-	int[] linhas = new int[19]; //Quantidade de pula linha em cada texto
-	
-	public Inicio() {
-		
-		// Textos a serem mostrados nas caixas de texto
-		
-		t1 = new Texto("<html>O dia amanheceu. Voce acorda e se"
-				+ "<br/>levanta de sua cama e sai de seu"
-				+ "<br/> quarto.</html>",2);
-		
-		tx[1] = "<html>Mï¿½e:"
-				+"<br/><br/> Bom dia meu bem! Achei que"
-				+"<br/>nï¿½o ia mais levantar hoje. Jï¿½ passou "
-				+"<br/>das sete da manhï¿½. Venha logo tomar "
-				+"<br/>cafï¿½."
-				+"</html>";
-		linhas[1] = 5;
-		
-		tx[2] = "<html>Vocï¿½ come tranquilamente"
-				+"<br/>enquanto observa sua pequena "
-				+"<br/>irmï¿½ brincando com bonecas de  "
-				+"<br/>pano no chï¿½o. O dia estï¿½  "
-				+"<br/>agradï¿½vel."
-				+"</html>";
-		linhas[2] = 4;
-		
-		
-		tx[3] = "<html>Mï¿½e:"
-				+"<br/><br/>Hoje completa um ano da  "
-				+"<br/>morte de seu pai. Vamos ao "
-				+"<br/>cemitï¿½rio visitï¿½-lo mais tarde."
-				+"</html>";
-		linhas[3] = 4;
-		
-		
-		tx[4] = "<html>Mï¿½e:"
-				+"<br/><br/>Serï¿½ que vocï¿½ poderia ir"
-				+"<br/>ï¿½ cidade comprar um incenso "
-				+"<br/>para levarmos ao seu pai? Ele"
-				+"<br/>adorava usï¿½-los em suas "
-				+"<br/>meditaï¿½ï¿½es. Tenho certeza de"
-				+"<br/>que ele irï¿½ gostar."
-				+"</html>";
-		linhas[4] = 7;
-		
-		tx[5] = "<html>Vocï¿½ sai de casa rumo ao mercado da"
-				+"<br/>cidade. Por morar em um local"
-				+"<br/>isolado, leva cerca de uma hora para"
-				+"<br/>chegar ao local."
-				+"</html>";
-		linhas[5] = 3;
-		
-		tx[6] = "<html>Vendedor de incensos:"
-				+"<br/><br/>Olï¿½, faz tempo que nï¿½o"
-				+"<br/>te vejo. O que deseja levar dessa "
-				+"<br/>vez? "
-				+"</html>";
-		linhas[6] = 4;
-		
-		tx[7] = "<html>Vocï¿½ explica que quer comprar"
-				+"<br/>incensos para levar ao tï¿½mulo de seu"
-				+"<br/>pai."
-				+"</html>";
-		linhas[7] = 2;
-		
-		tx[8] = "<html>Vendedor de incensos:"
-				+"<br/><br/>Ah sim, seu pai. Sinto falta"
-				+"<br/>dele, era um bom homem. Morreu de"
-				+"<br/>forma honrosa lutando contra seus."
-				+"<br/>inimigos."
-				+"</html>";
-		linhas[8] = 5;
-		
-		tx[9] = "<html>Vendedor de incensos:"
-				+"<br/><br/>Aqueles malditos imperiais "
-				+"<br/>continuam querendo nossos "
-				+"<br/>territï¿½rios. Tenho ouvido rumores de "
-				+"<br/>que eles planejam atacar nossa "
-				+"<br/>cidade novamente em breve. Vocï¿½"
-				+"<br/>deveria fugir daqui com sua famï¿½lia o "
-				+"<br/>quanto antes."
-				+"</html>";
-		linhas[9] = 8;
-		
-		tx[10] = "<html>Hï¿½ alguns segundos de silï¿½ncio. O"
-				+"<br/>vendedor te entrega o incenso e tenta "
-				+"<br/>cortar a tensï¿½o."
-				+"</html>";
-		linhas[10] = 2;
 
-		tx[11] = "<html>Vendedor de incensos:"
-				+"<br/><br/>Olha, acho que exagerei "
-				+"<br/>um pouco. Nï¿½o fique muito "
-				+"<br/>preocupado com isso. Leve esse "
-				+"<br/>incenso por minha conta, ï¿½ meu "
-				+"<br/>presente ao seu pai."
-				+"</html>";
-		linhas[11] = 6;
+	private ActionListener continuar, escolha1, escolha2;
+	private Biblioteca vet = new Biblioteca(); // Vetor de texto
+	private Jogador player; // informações do playerS
 
-		tx[12] = "<html>Vocï¿½ agradece e sai da loja. Ainda ï¿½ "
-				+"<br/>manhï¿½, hï¿½ poucas nuvens no cï¿½u e "
-				+"<br/>tudo indica que o dia serï¿½ calmo "
-				+"<br/>como sempre."
-				+"</html>";
-		linhas[12] = 3;
-		
-		tx[13] = "<html>Apï¿½s uma longa caminhada vocï¿½ "
-				+"<br/>comeï¿½a a se aproximar de casa. Algo "
-				+"<br/>nï¿½o parece certo. Hï¿½ um forte cheiro "
-				+"<br/>de queimado no ar e uma grande "
-				+"<br/>nuvem de fumaï¿½a vinda da direï¿½ï¿½o da "
-				+"<br/>casa."
-				+"</html>";
-		linhas[13] = 5;
-		
-		tx[14] = "<html>Ao chegar mais perto, vocï¿½ vï¿½ as "
-				+"<br/>chamas consumirem tudo. A casa "
-				+"<br/>comeï¿½a a desabar e sua visï¿½o "
-				+"<br/>comeï¿½a a ficar turva."
-				+"</html>";
-		linhas[14] = 3;
-		
-		tx[15] = "<html>Vocï¿½ escuta os gritos de sua mï¿½e e o "
-				+"<br/>choro de sua irmï¿½, que sï¿½o "
-				+"<br/>bruscamente interrompidos, seguidos"
-				+"<br/>de uma risada sï¿½dica."
-				+"</html>";
-		linhas[15] = 3;
+	public void inicio() { // 1ª parte do prólogo
 
-		tx[16] = "<html>Tudo que se pode ver sï¿½o vultos de "
-				+"<br/>vï¿½rios homens ao longe. Vocï¿½ perde "
-				+"<br/>toda a noï¿½ï¿½o e cai de joelhos, "
-				+"<br/>completamente paralisado."
-				+"</html>";
-		linhas[16] = 3;
-		
-		tx[17] = "<html>Alguï¿½m te agarra pelas costas e "
-				+"<br/>comeï¿½a a te arrastar"
-				+"</html>";
-		linhas[17] = 1;
-		
-		continuar(t1,tx[1],linhas[1],18,1); //Realiza a aï¿½ï¿½o do botï¿½o
+		Texto t1 = new Texto("", 0); // Cria o JFrame e instancia a classe que gera os textos
+		Geral geral = new Geral(); // Classe geral para manipular a geração dos textos
+
+		vet.inicio(); // Instancia os vetores de texto para o conjunto de textos do metodo inicio
+		geral.escolhas_0(t1, vet); // Chama a funçao para manipular a geração de textos
+
+		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
+			int cont = 0; // Contador para verificar a posição do vetor de texto
+
+			public void actionPerformed(ActionEvent e) {
+				if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+					new Formulario(); // Chama a função para abrir o formulário
+					t1.getTexto().dispose(); // Fecha a janela de textos
+				} else // Atualiza o contador para verificar a posição do vetor de texto
+					cont++;
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar); // Vincula o botão ao ActionListener
 	}
-	
-	public void continuar(Texto t,String txt, int x, int max,int cont) {
-		
-		int c;
-		c = cont + 1;
-		
-		t.getContinuar().addActionListener( new ActionListener() {	
+
+	public void inicio2(Jogador player) {// 2ª parte do prólogo
+
+		Geral geral = new Geral();
+		this.player = player; // Atualiza as informações do player
+		Texto t1 = new Texto("", 0);
+
+		vet.setSexo(player.getSexo()); // Atualiza o gênero do player nos textos
+		vet.inicio2();
+		geral.escolhas_2(t1, vet);
+
+		escolha1 = new ActionListener() { // Action caso escolha a 1ª opção
+
+			public void actionPerformed(ActionEvent e) {
+
+				geral.getChoice().getPanel_1().setVisible(false);; // "apaga" os componentes do frame, deixando apenas uma "tela em branco"
+				correrAtras(t1); // Chama o próximo componente da história
+
+			}
+		};
+
+		escolha2 = new ActionListener() {// Action caso escolha a 2ª opção
+
+			public void actionPerformed(ActionEvent e) {
+
+				geral.getChoice().getPanel_1().setVisible(false);
+
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void correrAtras(Texto t1) {
+
+		Geral geral = new Geral();
+
+		vet.setSexo(player.getSexo());
+		vet.inicio_correr();
+		geral.escolhas_2(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+			
+				geral.getChoice().getPanel_1().setVisible(false);;
+				inicio_Artemis(t1);
+			
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+			
+				geral.getChoice().getPanel_1().setVisible(false);
+				
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void inicio_Artemis(Texto t1) {
+
+		Geral geral = new Geral();
+
+		vet.inicio_artemis();
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
 			public void actionPerformed(ActionEvent e) {
 				
-				t.getTexto().dispose();
-            	if(cont<max) { // Verifica se ainda hï¿½ mais textos por vir
-            		continuar(new Texto(txt,x),tx[c],linhas[c],max,c);//Recursividade para chamar o prï¿½ximi texto
-            	}
-            	else
-            		new Mapa1().mostraMapa();
-            } });
-    }
-	
+				if (cont == (vet.getTx().length - 1)) {
+					t1.getContinuar().removeActionListener(continuar);
+				} else
+					cont++;
+			
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+	}
+
 }

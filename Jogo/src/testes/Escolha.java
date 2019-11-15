@@ -47,7 +47,7 @@ public class Escolha { //Classe para auxiliar no desenho do Frame com escolhas
 	 */
 	private void initialize(String tex, String op1, String op2, String op3) {
 		frame = new JFrame();
-		frame.setSize(610,438);
+		frame.setSize(600,400);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -66,7 +66,7 @@ public class Escolha { //Classe para auxiliar no desenho do Frame com escolhas
 		frame.setIconImage(icone.getImage());
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(1, 1, 610,438);
+		panel_1.setBounds(0,0, 610,438);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -109,8 +109,10 @@ public class Escolha { //Classe para auxiliar no desenho do Frame com escolhas
 		opcao3.setBounds(33, 309, 532, 43);
 		panel_1.add(opcao3);
 		
-		JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
-		fundo.setBounds(0,0,600,400);
+		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
+		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width,panel_1.getSize().height,100));
+		JLabel fundo = new JLabel(fund);
+		fundo.setBounds(panel_1.getBounds());
 		panel_1.add(fundo);
 	}
 }

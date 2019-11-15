@@ -1,4 +1,4 @@
-package testes;
+package cenas;
 
 public class Biblioteca { // Classe que armazena os vetores de texto a serem usados
 

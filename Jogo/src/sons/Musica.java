@@ -13,6 +13,7 @@ public class Musica {
 	
 	public void TocaMusica(String local) {
 		this.continuar = true;
+		
 		try {
 			this.caminho = new File(local);
 			

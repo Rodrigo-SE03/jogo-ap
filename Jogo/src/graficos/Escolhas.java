@@ -35,9 +35,9 @@ public class Escolhas {
 
 	public void doEscolhas_2(JFrame frame, String tex, String op1, String op2) {
 
-		frame.setSize(610, 438);
+		frame.setSize(600, 400);
 
-		panel_1.setBounds(0, 0, 610, 438);
+		panel_1.setBounds(0,0, 600, 400);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
@@ -73,7 +73,7 @@ public class Escolhas {
 		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
 		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width,panel_1.getSize().height,100));
 		JLabel fundo = new JLabel(fund);
-		fundo.setBounds(panel_1.getBounds());
+		fundo.setBounds(0,-10,panel_1.getSize().width,panel_1.getSize().height);
 		fundo.setVisible(true);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
@@ -82,9 +82,9 @@ public class Escolhas {
 
 	public void doEscolhas_3(JFrame frame, String tex, String op1, String op2, String op3) {
 
-		frame.setSize(610, 438);
+		frame.setSize(600, 400);
 
-		panel_1.setBounds(0, 0, 610, 438);
+		panel_1.setBounds(0, 0, 600, 390);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
@@ -130,7 +130,7 @@ public class Escolhas {
 		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
 		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width,panel_1.getSize().height,100));
 		JLabel fundo = new JLabel(fund);
-		fundo.setBounds(panel_1.getBounds());
+		fundo.setBounds(-10,-10,panel_1.getSize().width,panel_1.getSize().height);
 		fundo.setVisible(true);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);

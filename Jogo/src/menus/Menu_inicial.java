@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import testes.Inicio;
+import cenas.Inicio;
 import graficos.Janela;
 import sons.Musica;
 
