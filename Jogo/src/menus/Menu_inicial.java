@@ -45,7 +45,7 @@ public class Menu_inicial extends Janela {
         this.iniciar.setVisible(true);
         this.iniciar.setContentAreaFilled(false);
         this.iniciar.setBounds(1050,10,208,95);
-        
+         
         //Fundo
         this.menu.add(fundo);
         this.fundo.setBounds(0,0,1280,960);

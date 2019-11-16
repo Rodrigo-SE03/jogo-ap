@@ -7,15 +7,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import sons.Musica;
+
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Window.Type;
 
 public class Hidra {
-
-	private JFrame frame[] = new JFrame[600];
+	
+	private JFrame frame[] = new JFrame[200];
 	private static int cont;
+	private int numb;
 	private int numero;
 	private static int cut;
 	private static int controlCut;
@@ -27,7 +30,6 @@ public class Hidra {
 	private JFrame cbc_5;
 	private JFrame cbc_6;
 	private JFrame cbc_7;
-	
 	/**
 	 * Launch the application.
 	 */
@@ -50,17 +52,17 @@ public class Hidra {
 	 */
 	@SuppressWarnings("static-access")
 	public Hidra() {
-		
 		for(int i=0;i<frame.length;i++) {
 			frame[i] = new JFrame();
 			frame[i].setVisible(false);
 		}
 		
-		
+		this.numb=8;
 		this.cont = 0;
 		this.cut = 0;
 		this.controlCut=0;
 		initialize();
+		
 	}
 	
 	public int getCut() {
@@ -317,7 +319,7 @@ public class Hidra {
 		Random dis = new Random();
 		
 		JFrame frame_2 = new JFrame();
-		frame_2.setName(""+(numero+8));
+		frame_2.setName(""+numb);
 		//System.out.println(frame_2.getName());
 		frame_2.setAlwaysOnTop(true);
 		frame_2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -341,13 +343,13 @@ public class Hidra {
 		lblNewLabel.setBounds(0, 0, 278, 236);
 		panel.add(lblNewLabel);
 		
-		frame[numero+8] = frame_2;
-		frame[numero+8].setVisible(true);
+		frame[numb] = frame_2;
+		frame[numb].setVisible(true);
 		
-		
+		numb++;
 		
 		JFrame frame_3 = new JFrame();
-		frame_3.setName(""+(numero+9));
+		frame_3.setName(""+numb);
 		frame_3.setAlwaysOnTop(true);
 		//System.out.println(frame_3.getName());
 		frame_3.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -371,8 +373,10 @@ public class Hidra {
 		lblNewLabel_2.setBounds(0, 0, 278, 236);
 		panel_2.add(lblNewLabel_2);
 		
-		frame[numero+9] = frame_3;
-		frame[numero+9].setVisible(true);
+		frame[numb] = frame_3;
+		frame[numb].setVisible(true);
+		
+		numb++;
 		
 	}
 	
