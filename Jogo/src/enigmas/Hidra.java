@@ -3,7 +3,7 @@ package enigmas;
 import java.awt.EventQueue;
 import java.util.Random;
 
-import javax.swing.JFrame;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -16,20 +16,21 @@ import java.awt.Window.Type;
 
 public class Hidra {
 	
-	private JFrame frame[] = new JFrame[200];
+	private JDialog frame[] = new JDialog[200];
+	private static Musica musica;
 	private static int cont;
 	private int numb;
 	private int numero;
 	private static int cut;
 	private static int controlCut;
-	private JFrame top;
-	private JFrame cbc_1;
-	private JFrame cbc_2;
-	private JFrame cbc_3;
-	private JFrame cbc_4;
-	private JFrame cbc_5;
-	private JFrame cbc_6;
-	private JFrame cbc_7;
+	private JDialog top;
+	private JDialog cbc_1;
+	private JDialog cbc_2;
+	private JDialog cbc_3;
+	private JDialog cbc_4;
+	private JDialog cbc_5;
+	private JDialog cbc_6;
+	private JDialog cbc_7;
 	/**
 	 * Launch the application.
 	 */
@@ -39,10 +40,14 @@ public class Hidra {
 				try {
 					@SuppressWarnings("unused")
 					Hidra window = new Hidra();
+					
+					
 					//window.frame[cont].setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				musica = new Musica();
+				musica.TocaMusica("src/sons/musicaHidra.wav");
 			}
 		});
 	}
@@ -53,7 +58,7 @@ public class Hidra {
 	@SuppressWarnings("static-access")
 	public Hidra() {
 		for(int i=0;i<frame.length;i++) {
-			frame[i] = new JFrame();
+			frame[i] = new JDialog();
 			frame[i].setVisible(false);
 		}
 		
@@ -78,8 +83,8 @@ public class Hidra {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		cbc_1 = new JFrame();
-		cbc_1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		cbc_1 = new JDialog();
+		cbc_1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_1.setResizable(false);
 		cbc_1.setAlwaysOnTop(true);
 		cbc_1.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -106,8 +111,8 @@ public class Hidra {
 		
 		
 		
-		cbc_2 = new JFrame();
-		cbc_2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		cbc_2 = new JDialog();
+		cbc_2.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_2.setResizable(false);
 		cbc_2.setAlwaysOnTop(true);
 		cbc_2.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -133,8 +138,8 @@ public class Hidra {
 		cbc_2.setVisible(true);
 		
 		
-		cbc_3 = new JFrame();
-		cbc_3.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		cbc_3 = new JDialog();
+		cbc_3.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_3.setResizable(false);
 		cbc_3.setAlwaysOnTop(true);
 		cbc_3.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -160,8 +165,8 @@ public class Hidra {
 		cbc_3.setVisible(true);
 		
 		
-		cbc_4 = new JFrame();
-		cbc_4.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		cbc_4 = new JDialog();
+		cbc_4.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_4.setResizable(false);
 		cbc_4.setAlwaysOnTop(true);
 		cbc_4.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -187,8 +192,8 @@ public class Hidra {
 		cbc_4.setVisible(true);
 		
 		
-		cbc_5 = new JFrame();
-		cbc_5.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		cbc_5 = new JDialog();
+		cbc_5.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_5.setResizable(false);
 		cbc_5.setAlwaysOnTop(true);
 		cbc_5.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -214,8 +219,8 @@ public class Hidra {
 		cbc_5.setVisible(true);
 		
 		
-		cbc_6 = new JFrame();
-		cbc_6.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		cbc_6 = new JDialog();
+		cbc_6.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_6.setResizable(false);
 		cbc_6.setAlwaysOnTop(true);
 		cbc_6.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -241,8 +246,8 @@ public class Hidra {
 		cbc_6.setVisible(true);
 		
 		
-		cbc_7 = new JFrame();
-		cbc_7.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		cbc_7 = new JDialog();
+		cbc_7.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_7.setResizable(false);
 		cbc_7.setAlwaysOnTop(true);
 		cbc_7.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -300,7 +305,6 @@ public class Hidra {
 		}
 		
 		
-		
 	}
 	
 	private void spawn() {
@@ -318,11 +322,11 @@ public class Hidra {
     	
 		Random dis = new Random();
 		
-		JFrame frame_2 = new JFrame();
+		JDialog frame_2 = new JDialog();
 		frame_2.setName(""+numb);
 		//System.out.println(frame_2.getName());
 		frame_2.setAlwaysOnTop(true);
-		frame_2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame_2.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		frame_2.setResizable(false);
 		frame_2.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
@@ -348,11 +352,11 @@ public class Hidra {
 		
 		numb++;
 		
-		JFrame frame_3 = new JFrame();
+		JDialog frame_3 = new JDialog();
 		frame_3.setName(""+numb);
 		frame_3.setAlwaysOnTop(true);
 		//System.out.println(frame_3.getName());
-		frame_3.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame_3.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		frame_3.setResizable(false);
 		frame_3.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
@@ -381,12 +385,13 @@ public class Hidra {
 	}
 	
 	public void inicializaCoracao() {
-		top = new JFrame();
+		top = new JDialog();
 		top.setResizable(false);
-		top.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		top.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		top.setResizable(false);
 		top.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		    		musica.stop();
 		    		for(int i=0;i<frame.length;i++) {
 		    			if(frame[i].isVisible()) {
 		    				frame[i].dispose();
@@ -466,6 +471,9 @@ public class Hidra {
 				central[i].setVisible(false);
 			}
 		}*/
+		
+		
+		
 	}
 
 	public static int getControlCut() {
