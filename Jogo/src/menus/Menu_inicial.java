@@ -74,7 +74,7 @@ public class Menu_inicial extends Janela {
 
         this.iniciar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	musica.setContinuar(false);
+            	musica.stop();
             	new Inicio().inicio();
 //            	new TesteInicio();
                 menu.dispose();
