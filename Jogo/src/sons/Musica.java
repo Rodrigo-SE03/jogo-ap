@@ -7,37 +7,42 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class Musica {
-	private boolean continuar;
+//	private boolean continuar;
 	private File caminho; 
+	private Clip clip;
 	
 	public void TocaMusica(String local) {
-		this.continuar = true;
+//		this.continuar = true;
 		
 		try {
 			this.caminho = new File(local);
 			
 			 
 				AudioInputStream audioInput = AudioSystem.getAudioInputStream(caminho);
-				Clip clip = AudioSystem.getClip();
+				clip = AudioSystem.getClip();
 				clip.open(audioInput);
 				clip.start();
-				while(this.isContinuar()) {
-					System.out.println("");
-				}
-				clip.stop();	
+//				while(this.isContinuar()) {
+//					System.out.println("");
+//				}
+//				clip.stop();	
 				
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}
 	}
 
-	public boolean isContinuar() {
-		return continuar;
+	
+	public void stop() {
+		clip.stop();
 	}
-
-	public void setContinuar(boolean continuar) {
-		this.continuar = continuar;
-	}
+//	public boolean isContinuar() {
+//		return continuar;
+//	}
+//
+//	public void setContinuar(boolean continuar) {
+//		this.continuar = continuar;
+//	}
 
 	public File getCaminho() {
 		return caminho;
