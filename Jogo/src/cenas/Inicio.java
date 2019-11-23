@@ -51,8 +51,11 @@ public class Inicio {
 		escolha1 = new ActionListener() { // Action caso escolha a 1ª opção
 
 			public void actionPerformed(ActionEvent e) {
+				
+				player.setBonus_inicio(true);
 
-				geral.getChoice().getPanel_1().setVisible(false);; // "apaga" os componentes do frame, deixando apenas uma "tela em branco"
+				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame, deixando
+																		// apenas uma "tela em branco"
 				correrAtras(t1); // Chama o próximo componente da história
 
 			}
@@ -62,7 +65,9 @@ public class Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 
-				geral.getChoice().getPanel_1().setVisible(false);
+				player.setBonus_inicio(false);
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				inicio_NaoCorrer(t1);
 
 			}
 		};
@@ -81,21 +86,22 @@ public class Inicio {
 		geral.escolhas_2(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-			
-				geral.getChoice().getPanel_1().setVisible(false);;
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				inicio_Artemis(t1);
-			
+
 			}
 		};
 
 		ActionListener escolha2 = new ActionListener() {
 
-			public void actionPerformed(ActionEvent e) {
-			
-				geral.getChoice().getPanel_1().setVisible(false);
-				
+		public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				inicio_ManterPreso(t1);
+
 			}
 		};
 
@@ -107,7 +113,7 @@ public class Inicio {
 	public void inicio_Artemis(Texto t1) {
 
 		Geral geral = new Geral();
-
+		
 		vet.inicio_artemis();
 		geral.escolhas_0(t1, vet);
 
@@ -115,16 +121,128 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
-				
+
 				if (cont == (vet.getTx().length - 1)) {
 					t1.getContinuar().removeActionListener(continuar);
 				} else
 					cont++;
-			
+
 			}
 		};
 
 		t1.getContinuar().addActionListener(continuar);
+	}
+
+	public void inicio_ManterPreso(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.inicio_manterPreso();
+		geral.escolhas_2(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				inicio_Ladino(t1);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				inicio_Guerreiro(t1);
+
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void inicio_Ladino(Texto t1) {
+		Geral geral = new Geral();
+		
+		vet.inicio_ladino();
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+
+				if (cont == (vet.getTx().length - 1)) {
+					t1.getContinuar().removeActionListener(continuar);
+				} else
+					cont++;
+
+			}
+		};
+		
+		t1.getContinuar().addActionListener(continuar);
+	}
+	
+	public void inicio_Guerreiro(Texto t1) {
+		Geral geral = new Geral();
+		
+		vet.inicio_guerreiro();
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+
+				if (cont == (vet.getTx().length - 1)) {
+					t1.getContinuar().removeActionListener(continuar);
+				} else
+					cont++;
+
+			}
+		};
+		
+		t1.getContinuar().addActionListener(continuar);
+	}
+	
+	public void inicio_NaoCorrer(Texto t1) {
+		Geral geral = new Geral();
+		
+		vet.inicio_naoCorrer();
+		geral.escolhas_3(t1, vet);
+
+		 ActionListener escolha1 = new ActionListener() {
+
+				public void actionPerformed(ActionEvent e) {
+
+					t1.getTexto().remove(geral.getChoice().getPanel_1());
+
+				}
+			};
+
+			ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+					t1.getTexto().remove(geral.getChoice().getPanel_1());
+
+				}
+			};
+
+			ActionListener escolha3 = new ActionListener() {
+
+				public void actionPerformed(ActionEvent e) {
+
+						t1.getTexto().remove(geral.getChoice().getPanel_1());
+
+					}
+				};
+			
+			geral.getChoice().getOpcao1().addActionListener(escolha1);
+			geral.getChoice().getOpcao2().addActionListener(escolha2);
+			geral.getChoice().getOpcao3().addActionListener(escolha3);
 	}
 
 }

@@ -11,7 +11,8 @@ public class Geral { // Classe base para criação dos textos
 	private Escolhas choice = new Escolhas();
 	private ActionListener continuar; // ActionListener para o botão continuar
 
-	public Escolhas getChoice() { // Getter para poder setar o action listener das escolhas na classe que chama o método
+	public Escolhas getChoice() { // Getter para poder setar o action listener das escolhas na classe que chama o
+									// método
 		return choice;
 	}
 
@@ -56,7 +57,9 @@ public class Geral { // Classe base para criação dos textos
 					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
 				} else {
 					t1.zerar();
-					choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());// Cria uma novainterface com texto + botões
+					choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());// Cria uma
+																									// novainterface com
+																									// texto + botões
 					t1.getContinuar().removeActionListener(continuar);
 				}
 
@@ -68,9 +71,9 @@ public class Geral { // Classe base para criação dos textos
 	}
 
 	public void escolhas_3(Texto t1, Biblioteca vet) { // 3 opções de escolha no final
-
+		
 		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0));
-
+		
 		continuar = new ActionListener() {
 			int cont = 0;
 

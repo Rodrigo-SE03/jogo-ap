@@ -213,8 +213,8 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	public void inicio_artemis() { // 0 opções
 
-		tx = new String[7];
-		linhas = new int[7];
+		tx = new String[8];
+		linhas = new int[8];
 
 		tx[0] = "<html>Você pega novamente seus pertences " + "<br/>e libera o ladrão, que corre em "
 				+ "<br/>direção a liberdade, uma mulher " + "<br/>misteriosa se aproxima e começa a"
@@ -242,14 +242,177 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		linhas[4] = 8;
 
 		tx[5] = "<html>Artemisia: " + "<br/><br/>Se você tiver interesse venha me  "
-				+ "<br/>procurar na Torre Anciã (colocar " + "<br/>localização baseada no mapa) está " + "<br/>noite"
+				+ "<br/>procurar na Torre Anciã (colocar " + "<br/>localização baseada no mapa) esta " + "<br/>noite"
 				+ "<html>";
 		linhas[5] = 5;
 
 		tx[6] = "<html>Artemisia vai embora e te deixa " + "<br/>pensando em sua oferta. " + "<html>";
 		linhas[6] = 1;
+		
+		tx[7] = "<html>O dia está caminhando para o seu "
+				  + "<br/>final e você tem que decidir para onde "
+				  + "<br/>irá esta noite ou se não irá para local" 
+				  + "<br/>algum"
+				  +"<html>";
+		 linhas[7] = 3;
 
 	}
+
+	public void inicio_manterPreso() { // 2 opções
+
+		tx = new String[3];
+		linhas = new int[3];
+
+		tx[0] = "<html>Você consegue recuperar seus " + "<br/>pertences, mas  o mantém com a cara"
+				+ "<br/>no chão. Ele vê seu olhar de relance e  " + "<br/>começa a pedir por misericórdia" + "<html>";
+		linhas[0] = 3;
+
+		tx[1] = "<html>Ladrão:" + "<br/><br/>Por favor, você não precisa fazer isso, "
+				+ "<br/>sou só uma pessoa comum. Sei que" + "<br/>cometi erros, mas eu tenho uma "
+				+ "<br/>família que precisa de mim." + "<html>";
+		linhas[1] = 5;
+
+		tx[2] = "<html>Ladrão:" + "<br/><br/>Somos párias, não existe dignidade"
+				+ "<br/>em nossas vidas, para sobrevivermos" + "<br/>faço tudo que está ao meu alcance, "
+				+ "<br/>mesmo que para isso eu tenha até " + "<br/>que roubar de pessoas que não tem"
+				+ "<br/>nada como eu." + "<html>";
+		linhas[2] = 7;
+
+		choice = "<html>Após escutar essas palavras cabe a " + "<br/>você decidir destino do homem que te "
+				+ "<br/>assaltou" + "<html>";
+
+		op1 = "Liberá-lo";
+		op2 = "Matá-lo";
+
+	}
+
+	public void inicio_ladino() { // 0 opções
+
+		tx = new String[7];
+		linhas = new int[7];
+
+		tx[0] = "<html>Ladrão:" + "<br/><br/>Muito obrigado senhor, você possui "
+				+ "<br/>uma alma nobre e determinação, o " + "<br/>que é raro nesta cidade de "
+				+ "<br/>hipocrisias. Seus cidadãos são uns " + "<br/>puta hipócritas que adoram a um "
+				+ "<br/>deus caridoso, mas cospem no " + "<br/>mendigo da rua. " + "<html>";
+		linhas[0] = 8;
+
+		tx[1] = "<html>Ladrão:" + "<br/><br/>São poucos os locais que ainda se "
+				+ "<br/>encontram valores como os seus. Na " + "<br/>verdade, eu só penso na Alameda "
+				+ "<br/>dos Três Ponteiros, um local da mais " + "<br/>pura corrupção, onde é revelado o "
+				+ "<br/>melhor e o pior das pessoas." + "<html>";
+		linhas[1] = 7;
+
+		tx[2] = "<html>Ladrão:" + "<br/><br/>Você deveria fazer uma visita lá, você "
+				+ "<br/>poderia encontrar coisas além da sua" + "<br/>imaginação. " + "<html>";
+		linhas[2] = 4;
+
+		tx[3] = "<html>Ladrão:" + "<br/><br/>Há muito não vejo alguém tão nobre "
+				+ "<br/>quanto o senhor, mesmo depois de eu " + "<br/>ter te assaltado você me poupou, pelo "
+				+ "<br/>jeito a miséria te revolta mais do que " + "<br/>um crime." + "<html>";
+		linhas[3] = 6;
+
+		tx[4] = "<html>Cassius: " + "<br/><br/>Meu nome é Cassius e, se eu estiver "
+				+ "<br/>certo, me preste uma visita na " + "<br/>Alameda dos Três Ponteiro na (parte "
+				+ "<br/>tal da cidade), lá você poderá usar " + "<br/>suas habilidades para ajudar a acabar"
+				+ "<br/>com as injustiças que existem nessa " + "<br/>cidade." + "<html>";
+		linhas[4] = 8;
+
+		tx[5] = "<html>Ele vai embora e você vê o guarda" + "<br/>abandonar o local decepcionado. " + "<html>";
+		linhas[5] = 1;
+		
+		tx[6] = "<html>O dia está caminhando para o seu "
+				  + "<br/>final e você tem que decidir para onde "
+				  + "<br/>irá esta noite ou se não irá para local" 
+				  + "<br/>algum"
+				  +"<html>";
+		linhas[6] = 3;
+
+	}
+
+	public void inicio_guerreiro() { // 0 opções
+
+		tx = new String[5];
+		linhas = new int[5];
+
+		tx[0] = "<html>Você ignora o que esse miserável te" + "<br/>falou e começa a bater sua cabeça "
+				+ "<br/>contra o chão incessantemente, sem" + "<br/>se importar com as pessoas perto ou"
+				+ "<br/>com o guarda que te observa. Você" + "<br/>bate a cabeça dele no chão até ele "
+				+ "<br/>desmaiar, e depois continua a " + "<br/>espanca-lo" + "<html>";
+		linhas[0] = 7;
+
+		tx[1] = "<html>Após alguns minutos, o guarda retira" + "<br/>sua espada e perfura o crânio do "
+				+ "<br/>pobre diabo e vira-se para conversar" + "<br/>contigo. " + "<html>";
+		linhas[1] = 3;
+
+		tx[2] = "<html>Guarda:" + "<br/><br/>Um homem de fibra que está disposto"
+				+ "<br/>a colocar esses miseráveis em seu" + "<br/>devido lugar." + "<html>";
+		linhas[2] = 4;
+
+		tx[3] = "<html>Guarda:" + "<br/><br/>A Guarda Real precisa de homens "
+				+ "<br/>como o senhor. Apareça esta noite " + "<br/>nos domínios do Castelo e procure "
+				+ "<br/>pelo Capitão Alexander do Sétimo " + "<br/>Comando, garanto que não irá se "
+				+ "<br/>arrepender." + "<html>";
+		linhas[3] = 7;
+		
+		tx[4] = "<html>O dia está caminhando para o seu "
+				  + "<br/>final e você tem que decidir para onde "
+				  + "<br/>irá esta noite ou se não irá para local" 
+				  + "<br/>algum"
+				  +"<html>";
+		linhas[4] = 3;
+
+	}
+
+	public void inicio_naoCorrer() {// 3 opções
+		
+		tx = new String[3];
+		linhas = new int[3];
+		
+ 		tx[0] = "<html> Você decide não ir atrás de quem te "
+		 + "<br/>assaltou e começa a conversar com "
+		 + "<br/>as pessoas no Mercado, afinal você " 
+		 + "<br/>está com fome e está sem dinheiro, "
+		 + "<br/>precisa saber de possibilidades de "
+		 + "<br/>conseguir uma renda."
+		 +"<html>";
+ 		linhas[0] = 5;
+ 		
+ 		tx[1] ="<html>Nisso você ouve falar da Alameda dos "
+		 + "<br/>Três Ponteiros, onde estão " 
+		 + "<br/>concentrados os mais vis ladrões e"
+		 + "<br/>assassinos da cidade, da Torre Anciã, "
+		 + "<br/>onde se localizam os maiores " 
+		 + "<br/>estudiosos das artes arcanas do "
+		 + "<br/>mundo, e da Guarda Real, lar dos "
+		 + "<br/>guerreiros mais destemidos e ferozes"
+		 + "<br/>que existem."
+		 +"<html>";
+ 		linhas[1] = 8;
+ 		
+ 		tx[2] = "<html>O dia está caminhando para o seu "
+ 				  + "<br/>final e você tem que decidir para onde "
+ 				  + "<br/>irá esta noite ou se não irá para local" 
+ 				  + "<br/>algum"
+ 				  +"<html>";
+ 		 linhas[2] = 3;
+ 		 		
+ 		 choice = "<html>Antes de decidir-se, tem a impressão"
+ 		 		+ "<br/>de que tal escolha terá profunda"
+ 		 		+ "<br/>influência em seu fururo"
+ 		 		+ "<html>";
+ 		 op1 = "Alameda dos Três Ponteiros";
+ 		 op2 = "Torre Arcana";
+ 		 op3 = "Alistar - se a Guarda Real";
+		
+	}
+
+// tx[] = "<html>"
+//		 + "<br/>"
+//		 + "<br/>" 
+//		 + "<br/>"
+//		 +"<html>";
+//  linhas[] = ;
 
 	// Fim dos textos do Prólogo
 }
