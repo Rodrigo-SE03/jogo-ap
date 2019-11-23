@@ -5,14 +5,12 @@ import java.util.Random;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
 import sons.Musica;
 
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import java.awt.Window.Type;
 
 public class Hidra {
 	

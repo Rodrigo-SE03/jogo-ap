@@ -31,11 +31,7 @@ public class Geral { // Classe base para criação dos textos
 				if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
 					cont++;
 					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
-				} else { // caso não tenha mais nenhum vetor de texto
-					t1.zerar();// "apaga" os componentes do frame, deixando apenas uma "tela em branco"
-					t1.getContinuar().removeActionListener(continuar); // desvincula o botão do ActionListener
 				}
-
 			}
 		};
 
