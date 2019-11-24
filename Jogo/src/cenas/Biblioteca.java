@@ -244,7 +244,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		linhas[4] = 8;
 
 		tx[5] = "<html>Artemisia: " + "<br/><br/>Se você tiver interesse venha me  "
-				+ "<br/>procurar na Torre Anciã (colocar " + "<br/>localização baseada no mapa) esta " + "<br/>noite"
+				+ "<br/>procurar na Torre Anciã no norte da cidade esta " + "<br/>noite"
 				+ "<html>";
 		linhas[5] = 5;
 
@@ -312,8 +312,8 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		linhas[3] = 6;
 
 		tx[4] = "<html>Cassius: " + "<br/><br/>Meu nome é Cassius e, se eu estiver "
-				+ "<br/>certo, me preste uma visita na " + "<br/>Alameda dos Três Ponteiro na (parte "
-				+ "<br/>tal da cidade), lá você poderá usar " + "<br/>suas habilidades para ajudar a acabar"
+				+ "<br/>certo, me preste uma visita na " + "<br/>Alameda dos Três Ponteiro na área "
+				+ "<br/>sudoeste da cidade, lá você poderá usar " + "<br/>suas habilidades para ajudar a acabar"
 				+ "<br/>com as injustiças que existem nessa " + "<br/>cidade." + "<html>";
 		linhas[4] = 8;
 
@@ -573,6 +573,355 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	}
 
+	
+	//Intro Ladino:
+	
+	public void intro_ladino(Jogador player) { // 3 opções
+		tx = new String[3];
+		linhas = new int[3];
+		
+		 tx[0] = "<html>Você vai para a Alameda dos Três "
+			 + "<br/>Ponteiros. Um lugar sujo, abandonado "
+			 + "<br/>pelos deuses (se é que existe algum) " 
+			 + "<br/>e pelo Estado."
+			 +"<html>";
+		 linhas[0] = 3;
+
+		 tx[1] = "<html>A corrupção humana corre por todo "
+				 + "<br/>local, nas ruas se vê prostitutas"
+				 + "<br/>ladrões, assassinos, agiotas, " 
+				 + "<br/>traficantes, se vê a fome, a miséria, o "
+				 + "<br/>sofrimento, a dor e o ódio, mas "
+				 + "<br/>também se vê o carinho, a luta, a "
+				 + "<br/>esperança e o amor no coração de "
+				 + "<br/>várias pessoas. "
+				 +"<html>";
+		linhas[1] = 7;
+		
+		tx[2] = "<html>Você segue andando, sem rumo, até "
+				 + "<br/>que vê uma taverna, chamada O Bom "
+				 + "<br/>Tom, na qual você entra." 
+				 +"<html>";
+		linhas[2] = 2;
+		
+		choice = "<html>Você vai até o balcão e o taverneiro pergunta "
+				+ "<br/>o você que quer<html>";
+		op1 = "Cerveja";
+		op2 = "Água";
+		op3 = "Nada";
+	}
+	
+	public void bebida_ladino(Jogador player, int x) { // 3 opções
+		tx = new String[4];
+		linhas = new int[4];
+		
+		switch(x) {
+		case 1:
+			tx[0] = "<html>Taverneiro: "
+					+ "<br/><br/>Clássica cerveja rivesiana. Boa "
+					 + "<br/>pedida!"
+					 +"<html>";
+			linhas[0] = 3;
+			break;
+		case 2:
+			tx[0] = "<html>Taverneiro: "
+					+ "<br/><br/>Você não é velho demais para beber"
+					 + "<br/>isso?"
+					 +"<html>";
+			linhas[0] = 3;
+			break;
+		case 3:
+			tx[0] = "<html>Taverneiro: "
+					+ "<br/><br/>Em uma taverna sem uma bebida."
+					 + "<br/>Vejo que você não é do tipo divertido."
+					 +"<html>";
+			linhas[0] = 3;
+			break;
+		}
+		
+		 tx[1] = "<html>Você senta em uma mesa vazia e"
+			 + "<br/>começa a observar as pessoas, "
+			 + "<br/>segredos contados, transações " 
+			 + "<br/>realizadas, contratos fechados e," 
+			 + "<br/>principalmente, capuzes escondendo o "
+			 + "<br/>rosto. É nítido que as pessoas vão" 
+			 + "<br/>para fazer tudo nesta taberna, menos " 
+			 + "<br/>comer e beber, isso é só um bônus." 
+			 +"<html>";
+		 linhas[1] = 7;
+
+		 
+		 if(player.isBonus_inicio()) {
+			 tx[2] = "<html>Depois de alguns minutos sozinho "
+				 + "<br/>alguém te aborda, você não o "
+				 + "<br/>reconhece a princípio até que ele " 
+				 + "<br/>começa a falar."
+				 +"<html>";
+			linhas[2] = 3;
+			
+			tx[3] = "<html>Cassiu:"
+				+ "<br/><br/>Não somos tão diferentes quanto "
+				+ "<br/>parecemos. Eu sou pária desde que " 
+				+ "<br/>nasci, sempre tive que lutar pela"
+				+ "<br/>sobrevivência."
+				+"<html>";
+			linhas[3] = 5;
+			
+			tx[3] = "<html>Cassiu:"
+					+ "<br/><br/>Eu também vejo o sofrimento em seu"
+					+ "<br/>rosto, vejo que também é um lutador, " 
+					+ "<br/>e, suas feições, não são daqui. Eu  "
+					+ "<br/>ouvi sobre a guerra em Iriandra e  " 
+					+ "<br/>conheço uma ou duas pessoas de lá"
+					+"<html>";
+			linhas[3] = 6;
+
+			choice= "<html>Cassiu:"
+					+ "<br/><br/>Você veio aqui fugindo dela não foi?";
+		 }else {
+			 tx[2] = "<html>Depois de alguns minutos sozinho  "
+					 + "<br/>alguém que você não conhece te  "
+					 + "<br/>aborda e começa a falar " 
+					 +"<html>";
+				linhas[2] = 2;
+				
+				tx[3] = "<html>Estranho:"
+					+ "<br/><br/>Não somos tão diferentes quanto "
+					+ "<br/>parecemos. Eu sou pária desde que " 
+					+ "<br/>nasci, sempre tive que lutar pela"
+					+ "<br/>sobrevivência."
+					+"<html>";
+				linhas[3] = 5;
+				
+				tx[3] = "<html>Estranho:"
+						+ "<br/><br/>Eu também vejo o sofrimento em seu"
+						+ "<br/>rosto, vejo que também é um lutador, " 
+						+ "<br/>e, suas feições, não são daqui. Eu  "
+						+ "<br/>ouvi sobre a guerra em Iriandra e  " 
+						+ "<br/>conheço uma ou duas pessoas de lá"
+						+"<html>";
+				linhas[3] = 6;
+
+				choice= "<html>Estranho:"
+						+ "<br/><br/>Você veio aqui fugindo dela não foi?";
+		 }
+		 op1 = "Não te interessa";
+		 op2 = "Sim";
+		 op3 = "Nasci e cresci em Helaria";
+	}
+	
+	public void resp_lad(Jogador player, int x) {
+	
+		tx = new String[1];
+		linhas = new int[1];
+		
+		switch(x) {
+		case 1:
+			if(player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: "
+						+ "<br/><br/>Você pode até não querer dizer, mas  "
+						 + "<br/>isso é claro."
+						 +"<html>";
+				linhas[0] = 3;
+			}else {
+			tx[0] = "<html>Estranho: "
+					+ "<br/><br/>Você pode até não querer dizer, mas  "
+					 + "<br/>isso é claro."
+					 +"<html>";
+			linhas[0] = 3;
+			}
+			break;
+		case 2:
+			if(player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: "
+						+ "<br/><br/>A verdade pode ser dura, mas não  "
+						 + "<br/>podemos fugir dela, eu te entendo e"
+						 + "<br/>respeito meu amigo" 
+						 +"<html>";
+				linhas[0] = 3;
+			}else {
+			tx[0] = "<html>Estranho: "
+					+ "<br/><br/>A verdade pode ser dura, mas não  "
+					 + "<br/>podemos fugir dela, eu te entendo e"
+					 + "<br/>respeito meu amigo" 
+					 +"<html>";
+			linhas[0] = 4;
+			}
+			break;
+		case 3:
+			if(player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: "
+						+ "<br/><br/>E eu sou o Rei do Norte! Hahahaha!" 
+						 + "<br/>Não precisa mentir para mim, amigo. "
+						 + "<br/>Eu não sou um idiota." 
+						 +"<html>";
+				linhas[0] = 4;
+			}else{
+			tx[0] = "<html>Estranho: "
+					+ "<br/><br/>E eu sou o Rei do Norte! Hahahaha!" 
+					 + "<br/>Não precisa mentir para mim, amigo. "
+					 + "<br/>Eu não sou um idiota."
+					 +"<html>";
+			linhas[0] = 4;
+			}
+			break;
+		}
+		if(player.isBonus_inicio()) {
+			choice="<html>Cassiu:"
+					+ "<br/><br/>Bom, de qualquer forma, vamos agora "
+					+ "<br/>ao que interessa. Está disposto a me ouvir?<html>";
+		}else {
+			choice="<html>Estranho:"
+					+ "<br/><br/>Bom, de qualquer forma, vamos agora "
+					+ "<br/>ao que interessa. Está disposto a me ouvir??<html>";
+		}
+		
+		op1 = "Eu não tenho nada mais a perder.";
+		op2 = "Lógico, porque não?";
+
+	}
+	
+	public void neg_lad(Jogador player,int x) {
+		
+		tx = new String[7];
+		linhas = new int[7];
+		
+		switch(x) {
+		case 1:
+			if(player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: "
+						+ "<br/><br/>Eu estava certo sobre você. É um  "
+						 + "<br/>lutador, tem coragem e está pronto "
+						 + "<br/>para novos desafios"
+						 +"<html>";
+				linhas[0] = 4;
+			}else {
+			tx[0] = "<html>Estranho: "
+					+ "<br/><br/>Eu estava certo sobre você. É um  "
+					 + "<br/>lutador, tem coragem e está pronto "
+					 + "<br/>para novos desafios"
+					 +"<html>";
+			linhas[0] = 4;
+			}
+			break;
+		case 2:
+			if(player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: "
+						+ "<br/><br/>Arrogante... Eu gosto disso. Nem   "
+						 + "<br/>todos sabem apreciar como uma "
+						 + "<br/>virtude, mas eu, sem dúvida alguma, " 
+						 + "<br/>sei." 
+						 +"<html>";
+				linhas[0] = 5;
+			}else {
+			tx[0] = "<html>Estranho: "
+					+ "<br/><br/>Arrogante... Eu gosto disso. Nem   "
+					 + "<br/>todos sabem apreciar como uma "
+					 + "<br/>virtude, mas eu, sem dúvida alguma, " 
+					 + "<br/>sei." 
+					 +"<html>";
+			linhas[0] = 5;
+			break;
+			}
+		}
+		
+		if(player.isBonus_inicio()) {
+			tx[1] = "<html>Cassiu: "
+					+ "<br/><br/>vamos para um lugar mais privado"
+					 + "<br/>para conversarmos em paz "
+					 +"<html>";
+			linhas[1] = 3;
+		}else {
+			tx[1] = "<html>Estranho: "
+					+ "<br/><br/>vamos para um lugar mais privado"
+					 + "<br/>para conversarmos em paz "
+					 +"<html>";
+			linhas[1] = 3;
+		}
+		
+		 tx[2] = "<html>Vocês saem da taberna e vão para "
+				 + "<br/>uma pequena casa escondida no "
+				 + "<br/>meio da podridão do lugar. Lá" 
+				 + "<br/>você vê que não estão sozinhos, "
+				 + "<br/>existem outras pessoas no lugar, sete"
+				 + "<br/>ao todo, mas nenhuma fala nada." 
+				 +"<html>";
+		 linhas[2] = 5;
+		 
+		 if(player.isBonus_inicio()) {
+				tx[3] = "<html>Cassiu: "
+						+ "<br/><br/>Nós somos a Guilda Vigilante."
+						 + "<br/>Está cidade está indo para o inferno e  "
+						 + "<br/>nós estamos tentando impedir isso. "
+						 + "<br/>Para isso nos valemos de diversos"
+						 + "<br/>meios como assaltos, assassinatos e "
+						 + "<br/>extorsões entre outras coisas"
+						 +"<html>";
+				linhas[3] = 7;
+				
+				tx[4] = "<html>Cassiu: "
+						+ "<br/><br/>Nós te chamamos aqui por acharmos "
+						 + "<br/>que você tem o que é preciso para  "
+						 + "<br/>entrar nesta Guilda. Desde que você  "
+						 + "<br/>chegou na cidade estivemos te "
+						 + "<br/>observando. Então, oque me diz?"
+						 +"<html>";
+				linhas[4] = 6;
+				
+				tx[5] = "<html>Você ouve e sabe que tudo que foi dito "
+						+"<br/>é verdade, e não hesita em aceitar "
+						+"<br/>a oferta."
+						+"<html>";
+				linhas[5] = 2;
+				
+				tx[6] = "<html>Cassiu: "
+						+ "<br/><br/>Perfeito, mas antes temos que testá-lo"
+						 +"<html>";
+				linhas[6] = 2;
+				
+				
+				
+			}else {
+				tx[3] = "<html>Estranho: "
+						+ "<br/><br/>Nós somos a Guilda Vigilante."
+						 + "<br/>Está cidade está indo para o inferno e  "
+						 + "<br/>nós estamos tentando impedir isso. "
+						 + "<br/>Para isso nos valemos de diversos"
+						 + "<br/>meios como assaltos, assassinatos e "
+						 + "<br/>extorsões entre outras coisas"
+						 +"<html>";
+				linhas[3] = 7;
+				
+				tx[4] = "<html>Estranho: "
+						+ "<br/><br/>Nós te chamamos aqui por acharmos "
+						 + "<br/>que você tem o que é preciso para  "
+						 + "<br/>entrar nesta Guilda. Desde que você  "
+						 + "<br/>chegou na cidade estivemos te "
+						 + "<br/>observando. Então, oque me diz?"
+						 +"<html>";
+				linhas[4] = 6;
+				
+				tx[5] = "<html>Você ouve e sabe que tudo que foi dito "
+						+"<br/>é verdade, e não hesita em aceitar "
+						+"<br/>a oferta."
+						+"<html>";
+				linhas[5] = 2;
+				
+				tx[6] = "<html>Estranho: "
+						+ "<br/><br/>Perfeito, mas antes temos que testá-lo"
+						 +"<html>";
+				linhas[6] = 2;
+			}
+		 
+		 
+		 
+		 
+		 
+
+		
+	}
+	
+	
 // tx[] = "<html>"
 //		 + "<br/>"
 //		 + "<br/>" 

@@ -164,7 +164,7 @@ public class Maps {
 		btnCastelo.setBorderPainted(false);
 		btnCastelo.setBorder(null);
 		btnCastelo.setContentAreaFilled(true);
-		btnCastelo.setFocusPainted(true);
+		btnCastelo.setFocusPainted(false);
 		panel.add(btnCastelo);
 
 		ImageIcon img = new ImageIcon("src/imagens/btn1.png");

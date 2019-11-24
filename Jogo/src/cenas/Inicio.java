@@ -178,7 +178,9 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				if (cont == (vet.getTx().length - 1)) {
+					t1.zerar();
 					t1.getContinuar().removeActionListener(continuar);
+					alameda3(t1);
 				} else
 					cont++;
 
@@ -221,6 +223,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				alameda3(t1);
 
 			}
 		};
@@ -377,4 +380,133 @@ public class Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
+	
+	public void alameda3 (Texto t1) {
+		Geral geral = new Geral();
+
+		vet.intro_ladino(player);
+		geral.escolhas_3(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				bebidaLadino(t1, 1);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				bebidaLadino(t1, 2);
+			}
+		};
+
+		ActionListener escolha3 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				bebidaLadino(t1, 3);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+		geral.getChoice().getOpcao3().addActionListener(escolha3);
+	}
+	
+	public void bebidaLadino(Texto t1,int x) {
+		Geral geral = new Geral();
+
+		vet.bebida_ladino(player, x);
+		geral.escolhas_3(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				resposta1Ladino(t1,1);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				resposta1Ladino(t1,2);
+			}
+		};
+
+		ActionListener escolha3 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				resposta1Ladino(t1,3);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+		geral.getChoice().getOpcao3().addActionListener(escolha3);
+	}
+
+	public void resposta1Ladino(Texto t1, int x) {
+		Geral geral = new Geral();
+
+		vet.resp_lad(player, x);
+		geral.escolhas_2(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				resposta2Ladino(t1,1);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				resposta2Ladino(t1,2);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void resposta2Ladino(Texto t1,int x) {
+		Geral geral = new Geral();
+
+		vet.neg_lad(player, x);
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+
+				if (cont == (vet.getTx().length - 1)) {
+					t1.zerar();
+					t1.getContinuar().removeActionListener(continuar);
+				} else
+					cont++;
+
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+	}
+	
 }
