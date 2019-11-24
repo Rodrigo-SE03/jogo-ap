@@ -202,7 +202,9 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				if (cont == (vet.getTx().length - 1)) {
+					t1.zerar();
 					t1.getContinuar().removeActionListener(continuar);
+					castelo(t1);
 				} else
 					cont++;
 
@@ -242,6 +244,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				castelo(t1);
 
 			}
 		};
@@ -509,4 +512,30 @@ public class Inicio {
 		t1.getContinuar().addActionListener(continuar);
 	}
 	
+	public void castelo(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.intro_guerreiro();
+		geral.escolhas_2(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+	}
+
 }

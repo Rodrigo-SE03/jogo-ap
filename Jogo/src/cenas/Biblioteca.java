@@ -9,6 +9,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	private int[] linhas; // variavel para ajustar o JLabel ao tamanho do texto
 	private int sexo; // variavel para corrigir o g�nero do personagem nos textos
 
+	
 	// Getters and Setters
 
 	public void setSexo(int sexo) {
@@ -45,13 +46,15 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	// Fim dos Getter and Setters
 
+	
+	
 	// Textos para o pr�logo
 
 	public void inicio() { // 0 op��es
 		tx = new String[23];
 		linhas = new int[23];
 
-		tx[0] = "<html>O dia amanheceu. Voce acorda, se" + "<br/>levanta de sua cama e sai de seu" + "<br/> quarto."
+		tx[0] = "<html>O dia amanheceu. Voc� acorda e se" + "<br/>levanta de sua cama e sai de seu" + "<br/> quarto."
 				+ "</html>";
 		linhas[0] = 2;
 
@@ -237,15 +240,26 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				+ "<br/>os dias." + "<html>";
 		linhas[3] = 7;
 
-		tx[4] = "<html>Estranho de capuz: " + "<br/><br/>Meu nome � Artemisia, sou uma  "
-				+ "<br/>arcana da Torre Anci� e despertei um " + "<br/>certo interesse em ti. Percebo em voc� "
-				+ "<br/>um potencial raro, uma for�a de " + "<br/>vontade, determina��o e  "
-				+ "<br/>principalmente bondade e autocontrole, " + "<br/>elementos essenciais para um arcano." + "<html>";
-		linhas[4] = 8;
+		if (sexo == 0) {
 
-		tx[5] = "<html>Artemisia: " + "<br/><br/>Caso essa ideia te interesse, me  "
-				+ "<br/>procure na Torre Anci� esta noite."
-				+ "<html>";
+			tx[4] = "<html>Estranho de capuz: " + "<br/><br/>Meu nome � Artemisia, sou uma  "
+					+ "<br/>arcana da Torre Anci� E. Quanto ao " + "<br/>que eu quero, percebo em voc� tem "
+					+ "<br/>um potencial raro, uma for�a de " + "<br/>vontade, determina��o e  "
+					+ "<br/>principalmente bondade e controle " + "<br/>para se tornar um arcano." + "<html>";
+			linhas[4] = 8;
+
+		} else {
+
+			tx[4] = "<html>Estranho de capuz: " + "<br/><br/>Meu nome � Artemisia, sou uma  "
+					+ "<br/>arcana da Torre Anci� E. Quanto ao " + "<br/>que eu quero, percebo em voc� tem "
+					+ "<br/>um potencial raro, uma for�a de " + "<br/>vontade, determina��o e  "
+					+ "<br/>principalmente bondade e controle " + "<br/>para se tornar uma arcana." + "<html>";
+			linhas[4] = 8;
+
+		}
+
+		tx[5] = "<html>Artemisia: " + "<br/><br/>Se voc� tiver interesse venha me  "
+				+ "<br/>procurar na Torre Anci� no norte da " + "<br/>cidade esta noite" + "<html>";
 		linhas[5] = 5;
 
 		tx[6] = "<html>Artemisia vai embora e te deixa " + "<br/>pensando em sua oferta. " + "<html>";
@@ -418,6 +432,9 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	}
 
+	
+	
+	
 	// Intro Arcanista:
 
 	public void intro_arcanista(Jogador player) { // 2 op��es
@@ -450,17 +467,17 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>vestes mais parecidas com a de um " + "<br/>arcano." + "<html>";
 			linhas[0] = 3;
 
-			tx[1] = "<html>Artemisia:" + "<br/><br/>o que te trouxe aqui? Uma mulher "
+			tx[1] = "<html>Artemisia:" + "<br/><br/>O que te trouxe aqui? Uma mulher "
 					+ "<br/>desconhecida numa cidade estranha " + "<br/>te chama para um lugar no qual voc�"
-					+ "<br/>nunca ouviu falar e voc� vem sem " + "<br/>hesitar? Me pergunto � loucura ou "
-					+ "<br/>burrice..." + "<html>";
+					+ "<br/>nunca ouviu falar e voc� vem sem " + "<br/>hesitar, me pergunto se � loucura ou "
+					+ "<br/>burrisse..." + "<html>";
 			linhas[1] = 7;
 		} else {
 
 			tx[0] = "<html>Voc� acaba por encontrar uma mulher" + "<br/>misteriosa com vestes de arcano." + "<html>";
 			linhas[0] = 1;
 
-			tx[1] = "<html>Arcana:" + "<br/><br/>o que te trouxe aqui? Voc� entra sem "
+			tx[1] = "<html>Arcana:" + "<br/><br/>O que te trouxe aqui? Voc� entra sem "
 					+ "<br/>convite na torre dos maiores arcanos " + "<br/>conhecidos, me pergunto se voc� � "
 					+ "<br/>nunca ouviu falar e voc� vem sem " + "<br/>hesitar, me pergunto se � sinal de  "
 					+ "<br/>loucura ou burrisse...-\r\n" + "." + "<html>";
@@ -500,9 +517,9 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>vestes mais parecidas com a de um " + "<br/>arcano" + "<html>";
 			linhas[4] = 3;
 
-			tx[5] = "<html>Artemisia:" + "<br/><br/>o que te trouxe aqui? Uma mulher "
+			tx[5] = "<html>Artemisia:" + "<br/><br/>O que te trouxe aqui? Uma mulher "
 					+ "<br/>desconhecida numa cidade estranha " + "<br/>te chama para um lugar no qual voc�"
-					+ "<br/>nunca ouviu falar e voc� vem sem " + "<br/>hesitar, me pergunto � loucura ou "
+					+ "<br/>nunca ouviu falar e voc� vem sem " + "<br/>hesitar, me pergunto se � loucura ou "
 					+ "<br/>burrisse..." + "<html>";
 			linhas[5] = 7;
 		} else {
@@ -510,7 +527,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 			tx[4] = "<html>Voc� acaba por encontrar uma mulher" + "<br/>misteriosa com vestes de arcano." + "<html>";
 			linhas[4] = 1;
 
-			tx[5] = "<html>Arcana:" + "<br/><br/>o que te trouxe aqui? Voc� entra sem "
+			tx[5] = "<html>Arcana:" + "<br/><br/>O que te trouxe aqui? Voc� entra sem "
 					+ "<br/>convite na torre dos maiores arcanos " + "<br/>conhecidos, me pergunto se voc� � "
 					+ "<br/>nunca ouviu falar e voc� vem sem " + "<br/>hesitar, me pergunto se � sinal de  "
 					+ "<br/>loucura ou burrisse...-\r\n" + "." + "<html>";
@@ -523,7 +540,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		op3 = "Sou apenas algu�m sem nada a perder";
 	}
 
-	public void resposta_arcana(int x, Jogador player) {
+	public void resposta_arcana(int x, Jogador player) { // 0 op��es
 
 		tx = new String[5];
 		linhas = new int[5];
@@ -544,12 +561,12 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				tx[0] = "<html>Artemisia:" + "<br/><br/>Diga isso para as milhares de "
 						+ "<br/>pessoas que est�o sofrendo com essa " + "<br/>guerra iniciada por homens loucos."
 						+ "<html>";
-				linhas[0] = 3;
+				linhas[0] = 4;
 			} else {
 				tx[0] = "<html>Arcana:" + "<br/><br/>Diga isso para as milhares de "
 						+ "<br/>pessoas que est�o sofrendo com essa " + "<br/>guerra iniciada por homens loucos."
 						+ "<html>";
-				linhas[0] = 3;
+				linhas[0] = 4;
 			}
 			break;
 		case 3:
@@ -587,6 +604,10 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>responde que sim." + "<html>";
 			linhas[3] = 2;
 
+				tx[3] = "<html>Algo mais forte que voc� te impele a" + "<br/>aceitar, e voc�, mesmo resoluta, "
+						+ "<br/>responde que sim." + "<html>";
+				linhas[3] = 2;
+			}
 			tx[4] = "<html>Artemisia:" + "<br/><br/>Agora que isso est� acertado,voc�"
 					+ "<br/>precisa passar por um pequeno teste " + "<br/>para sabermos do que voc� � capaz. "
 					+ "<html>";
@@ -597,14 +618,27 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>mas poucos conseguem." + "<html>";
 			linhas[1] = 5;
 
-			tx[2] = "<html>Arcana:" + "<br/><br/>" + player.getNome() + "," + "<br/>voc� acha que tem o que � preciso "
-					+ "<br/>para se juntar a ordem arcana? Est� " + "<br/>disposto a renunciar muito do que a"
-					+ "<br/>vida poderia te dar, tudo em nome de" + "<br/>um prop�sito maior?" + "<html>";
-			linhas[2] = 7;
+			if (sexo == 0) {
+				tx[2] = "<html>Arcana:" + "<br/><br/>" + player.getNome() + ","
+						+ "<br/>voc� acha que tem o que � preciso " + "<br/>para se juntar a ordem arcana? Est� "
+						+ "<br/>disposto a renunciar muito do que a" + "<br/>vida poderia te dar, tudo em nome de"
+						+ "<br/>um prop�sito maior?" + "<html>";
+				linhas[2] = 7;
 
-			tx[3] = "<html>Algo mais forte que voc� te impele a" + "<br/>aceitar, e voc� mesmo resoluto, "
-					+ "<br/>responde que sim." + "<html>";
-			linhas[3] = 2;
+				tx[3] = "<html>Algo mais forte que voc� te impele a" + "<br/>aceitar, e voc� mesmo resoluto, "
+						+ "<br/>responde que sim." + "<html>";
+				linhas[3] = 2;
+			} else {
+				tx[2] = "<html>Arcana:" + "<br/><br/>" + player.getNome() + ","
+						+ "<br/>voc� acha que tem o que � preciso " + "<br/>para se juntar a ordem arcana? Est� "
+						+ "<br/>disposta a renunciar muito do que a" + "<br/>vida poderia te dar, tudo em nome de"
+						+ "<br/>um prop�sito maior?" + "<html>";
+				linhas[2] = 7;
+
+				tx[3] = "<html>Algo mais forte que voc� te impele a" + "<br/>aceitar, e voc�, mesmo resoluta, "
+						+ "<br/>responde que sim." + "<html>";
+				linhas[3] = 2;
+			}
 
 			tx[4] = "<html>Arcana:" + "<br/><br/>Agora que isso est� acertado,voc�"
 					+ "<br/>precisa passar por um pequeno teste " + "<br/>para sabermos do que voc� � capaz. "
@@ -615,355 +649,333 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	}
 
 	
-	//Intro Ladino:
 	
+	
+	// Intro Ladino:
+
 	public void intro_ladino(Jogador player) { // 3 op��es
 		tx = new String[3];
 		linhas = new int[3];
-		
-		 tx[0] = "<html>Voc� vai para a Alameda dos Tr�s "
-			 + "<br/>Ponteiros. Um lugar sujo, abandonado "
-			 + "<br/>pelos deuses (se � que existe algum) " 
-			 + "<br/>e pelo Estado."
-			 +"<html>";
-		 linhas[0] = 3;
 
-		 tx[1] = "<html>A corrup��o humana corre por todo "
-				 + "<br/>local, nas ruas se v� prostitutas"
-				 + "<br/>ladr�es, assassinos, agiotas, " 
-				 + "<br/>traficantes, se v� a fome, a mis�ria, o "
-				 + "<br/>sofrimento, a dor e o �dio, mas "
-				 + "<br/>tamb�m se v� o carinho, a luta, a "
-				 + "<br/>esperan�a e o amor no cora��o de "
-				 + "<br/>v�rias pessoas. "
-				 +"<html>";
+		tx[0] = "<html>Voc� vai para a Alameda dos Tr�s " + "<br/>Ponteiros. Um lugar sujo, abandonado "
+				+ "<br/>pelos deuses (se � que existe algum) " + "<br/>e pelo Estado." + "<html>";
+		linhas[0] = 3;
+
+		tx[1] = "<html>A corrup��o humana corre por todo " + "<br/>local, nas ruas se v� prostitutas"
+				+ "<br/>ladr�es, assassinos, agiotas, " + "<br/>traficantes, se v� a fome, a mis�ria, o "
+				+ "<br/>sofrimento, a dor e o �dio, mas " + "<br/>tamb�m se v� o carinho, a luta, a "
+				+ "<br/>esperan�a e o amor no cora��o de " + "<br/>v�rias pessoas. " + "<html>";
 		linhas[1] = 7;
-		
-		tx[2] = "<html>Voc� segue andando, sem rumo, at� "
-				 + "<br/>que v� uma taverna, chamada O Bom "
-				 + "<br/>Tom, na qual voc� entra." 
-				 +"<html>";
+
+		tx[2] = "<html>Voc� segue andando, sem rumo, at� " + "<br/>que v� uma taverna, chamada O Bom "
+				+ "<br/>Tom, na qual voc� entra." + "<html>";
 		linhas[2] = 2;
-		
-		choice = "<html>Voc� vai at� o balc�o e o taverneiro pergunta "
-				+ "<br/>o voc� que quer<html>";
+
+		choice = "<html>Voc� vai at� o balc�o e o taverneiro pergunta " + "<br/>o voc� que quer<html>";
 		op1 = "Cerveja";
 		op2 = "�gua";
 		op3 = "Nada";
 	}
-	
+
 	public void bebida_ladino(Jogador player, int x) { // 3 op��es
 		tx = new String[4];
 		linhas = new int[4];
-		
-		switch(x) {
+
+		switch (x) {
 		case 1:
-			tx[0] = "<html>Taverneiro: "
-					+ "<br/><br/>Cl�ssica cerveja rivesiana. Boa "
-					 + "<br/>pedida!"
-					 +"<html>";
+			tx[0] = "<html>Taverneiro: " + "<br/><br/>Cl�ssica cerveja rivesiana. Boa " + "<br/>pedida!" + "<html>";
 			linhas[0] = 3;
 			break;
 		case 2:
-			tx[0] = "<html>Taverneiro: "
-					+ "<br/><br/>Voc� n�o � velho demais para beber"
-					 + "<br/>isso?"
-					 +"<html>";
-			linhas[0] = 3;
+			if (sexo == 0) {
+				tx[0] = "<html>Taverneiro: " + "<br/><br/>Voc� n�o � velho demais para beber" + "<br/>isso?" + "<html>";
+				linhas[0] = 3;
+			} else {
+				tx[0] = "<html>Taverneiro: " + "<br/><br/>Voc� n�o � velha demais para beber" + "<br/>isso?" + "<html>";
+				linhas[0] = 3;
+			}
 			break;
 		case 3:
-			tx[0] = "<html>Taverneiro: "
-					+ "<br/><br/>Em uma taverna sem uma bebida."
-					 + "<br/>Vejo que voc� n�o � do tipo divertido."
-					 +"<html>";
+			tx[0] = "<html>Taverneiro: " + "<br/><br/>Em uma taverna sem uma bebida."
+					+ "<br/>Vejo que voc� n�o � do tipo divertido." + "<html>";
 			linhas[0] = 3;
 			break;
 		}
-		
-		 tx[1] = "<html>Voc� senta em uma mesa vazia e"
-			 + "<br/>come�a a observar as pessoas, "
-			 + "<br/>segredos contados, transa��es " 
-			 + "<br/>realizadas, contratos fechados e," 
-			 + "<br/>principalmente, capuzes escondendo o "
-			 + "<br/>rosto. � n�tido que as pessoas v�o" 
-			 + "<br/>para fazer tudo nesta taberna, menos " 
-			 + "<br/>comer e beber, isso � s� um b�nus." 
-			 +"<html>";
-		 linhas[1] = 7;
 
-		 
-		 if(player.isBonus_inicio()) {
-			 tx[2] = "<html>Depois de alguns minutos sozinho "
-				 + "<br/>algu�m te aborda, voc� n�o o "
-				 + "<br/>reconhece a princ�pio at� que ele " 
-				 + "<br/>come�a a falar."
-				 +"<html>";
+		tx[1] = "<html>Voc� senta em uma mesa vazia e" + "<br/>come�a a observar as pessoas, "
+				+ "<br/>segredos contados, transa��es " + "<br/>realizadas, contratos fechados e,"
+				+ "<br/>principalmente, capuzes escondendo o " + "<br/>rosto. � n�tido que as pessoas v�o"
+				+ "<br/>para fazer tudo nesta taberna, menos " + "<br/>comer e beber, isso � s� um b�nus." + "<html>";
+		linhas[1] = 7;
+
+		if (player.isBonus_inicio()) {
+			tx[2] = "<html>Depois de alguns minutos sozinho " + "<br/>algu�m te aborda, voc� n�o o "
+					+ "<br/>reconhece a princ�pio at� que ele " + "<br/>come�a a falar." + "<html>";
 			linhas[2] = 3;
-			
-			tx[3] = "<html>Cassiu:"
-				+ "<br/><br/>N�o somos t�o diferentes quanto "
-				+ "<br/>parecemos. Eu sou p�ria desde que " 
-				+ "<br/>nasci, sempre tive que lutar pela"
-				+ "<br/>sobreviv�ncia."
-				+"<html>";
+
+			tx[3] = "<html>Cassiu:" + "<br/><br/>N�o somos t�o diferentes quanto "
+					+ "<br/>parecemos. Eu sou p�ria desde que " + "<br/>nasci, sempre tive que lutar pela"
+					+ "<br/>sobreviv�ncia." + "<html>";
 			linhas[3] = 5;
-			
-			tx[3] = "<html>Cassiu:"
-					+ "<br/><br/>Eu tamb�m vejo o sofrimento em seu"
-					+ "<br/>rosto, vejo que tamb�m � um lutador, " 
-					+ "<br/>e, suas fei��es, n�o s�o daqui. Eu  "
-					+ "<br/>ouvi sobre a guerra em Iriandra e  " 
-					+ "<br/>conhe�o uma ou duas pessoas de l�"
-					+"<html>";
-			linhas[3] = 6;
 
-			choice= "<html>Cassiu:"
-					+ "<br/><br/>Voc� veio aqui fugindo dela n�o foi?";
-		 }else {
-			 tx[2] = "<html>Depois de alguns minutos sozinho  "
-					 + "<br/>algu�m que voc� n�o conhece te  "
-					 + "<br/>aborda e come�a a falar " 
-					 +"<html>";
-				linhas[2] = 2;
-				
-				tx[3] = "<html>Estranho:"
-					+ "<br/><br/>N�o somos t�o diferentes quanto "
-					+ "<br/>parecemos. Eu sou p�ria desde que " 
-					+ "<br/>nasci, sempre tive que lutar pela"
-					+ "<br/>sobreviv�ncia."
-					+"<html>";
-				linhas[3] = 5;
-				
-				tx[3] = "<html>Estranho:"
-						+ "<br/><br/>Eu tamb�m vejo o sofrimento em seu"
-						+ "<br/>rosto, vejo que tamb�m � um lutador, " 
-						+ "<br/>e, suas fei��es, n�o s�o daqui. Eu  "
-						+ "<br/>ouvi sobre a guerra em Iriandra e  " 
-						+ "<br/>conhe�o uma ou duas pessoas de l�"
-						+"<html>";
+			if (sexo == 0) {
+				tx[3] = "<html>Cassiu:" + "<br/><br/>Eu tamb�m vejo o sofrimento em seu"
+						+ "<br/>rosto, vejo que tamb�m � um lutador, " + "<br/>e, suas fei��es, n�o s�o daqui. Eu  "
+						+ "<br/>ouvi sobre a guerra em Iriandra e  " + "<br/>conhe�o uma ou duas pessoas de l�"
+						+ "<html>";
 				linhas[3] = 6;
+			} else {
+				tx[3] = "<html>Cassiu:" + "<br/><br/>Eu tamb�m vejo o sofrimento em seu"
+						+ "<br/>rosto, vejo que tamb�m � uma lutadora, " + "<br/>e, suas fei��es, n�o s�o daqui. Eu  "
+						+ "<br/>ouvi sobre a guerra em Iriandra e  " + "<br/>conhe�o uma ou duas pessoas de l�"
+						+ "<html>";
+				linhas[3] = 6;
+			}
+			choice = "<html>Cassiu:" + "<br/><br/>Voc� veio aqui fugindo dela n�o foi?";
+		} else {
+			tx[2] = "<html>Depois de alguns minutos sozinho  " + "<br/>algu�m que voc� n�o conhece te  "
+					+ "<br/>aborda e come�a a falar " + "<html>";
+			linhas[2] = 2;
 
-				choice= "<html>Estranho:"
-						+ "<br/><br/>Voc� veio aqui fugindo dela n�o foi?";
-		 }
-		 op1 = "N�o te interessa";
-		 op2 = "Sim";
-		 op3 = "Nasci e cresci em Helaria";
+			tx[3] = "<html>Estranho:" + "<br/><br/>N�o somos t�o diferentes quanto "
+					+ "<br/>parecemos. Eu sou p�ria desde que " + "<br/>nasci, sempre tive que lutar pela"
+					+ "<br/>sobreviv�ncia." + "<html>";
+			linhas[3] = 5;
+
+			if (sexo == 0) {
+				tx[3] = "<html>Estranho:" + "<br/><br/>Eu tamb�m vejo o sofrimento em seu"
+						+ "<br/>rosto, vejo que tamb�m � um lutador, " + "<br/>e, suas fei��es, n�o s�o daqui. Eu  "
+						+ "<br/>ouvi sobre a guerra em Iriandra e  " + "<br/>conhe�o uma ou duas pessoas de l�"
+						+ "<html>";
+				linhas[3] = 6;
+			} else {
+				tx[3] = "<html>Estranho:" + "<br/><br/>Eu tamb�m vejo o sofrimento em seu"
+						+ "<br/>rosto, vejo que tamb�m � uma lutadora, " + "<br/>e, suas fei��es, n�o s�o daqui. Eu  "
+						+ "<br/>ouvi sobre a guerra em Iriandra e  " + "<br/>conhe�o uma ou duas pessoas de l�"
+						+ "<html>";
+				linhas[3] = 6;
+			}
+
+			choice = "<html>Estranho:" + "<br/><br/>Voc� veio aqui fugindo dela n�o foi?";
+		}
+		op1 = "N�o te interessa";
+		op2 = "Sim";
+		op3 = "Nasci e cresci em Helaria";
 	}
-	
-	public void resp_lad(Jogador player, int x) {
-	
+
+	public void resp_lad(Jogador player, int x) { // 2 op��es
+
 		tx = new String[1];
 		linhas = new int[1];
-		
-		switch(x) {
+
+		switch (x) {
 		case 1:
-			if(player.isBonus_inicio()) {
-				tx[0] = "<html>Cassiu: "
-						+ "<br/><br/>Voc� pode at� n�o querer dizer, mas  "
-						 + "<br/>isso � claro."
-						 +"<html>";
+			if (player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: " + "<br/><br/>Voc� pode at� n�o querer dizer, mas  " + "<br/>isso � claro."
+						+ "<html>";
 				linhas[0] = 3;
-			}else {
-			tx[0] = "<html>Estranho: "
-					+ "<br/><br/>Voc� pode at� n�o querer dizer, mas  "
-					 + "<br/>isso � claro."
-					 +"<html>";
-			linhas[0] = 3;
+			} else {
+				tx[0] = "<html>Estranho: " + "<br/><br/>Voc� pode at� n�o querer dizer, mas  " + "<br/>isso � claro."
+						+ "<html>";
+				linhas[0] = 3;
 			}
 			break;
 		case 2:
-			if(player.isBonus_inicio()) {
-				tx[0] = "<html>Cassiu: "
-						+ "<br/><br/>A verdade pode ser dura, mas n�o  "
-						 + "<br/>podemos fugir dela, eu te entendo e"
-						 + "<br/>respeito meu amigo" 
-						 +"<html>";
-				linhas[0] = 3;
-			}else {
-			tx[0] = "<html>Estranho: "
-					+ "<br/><br/>A verdade pode ser dura, mas n�o  "
-					 + "<br/>podemos fugir dela, eu te entendo e"
-					 + "<br/>respeito meu amigo" 
-					 +"<html>";
-			linhas[0] = 4;
+			if (player.isBonus_inicio()) {
+				if (sexo == 0) {
+					tx[0] = "<html>Cassiu: " + "<br/><br/>A verdade pode ser dura, mas n�o  "
+							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito meu amigo" + "<html>";
+					linhas[0] = 3;
+				} else {
+					tx[0] = "<html>Cassiu: " + "<br/><br/>A verdade pode ser dura, mas n�o  "
+							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito minha amiga" + "<html>";
+					linhas[0] = 3;
+				}
+			} else {
+				if (sexo == 0) {
+					tx[0] = "<html>Estranho: " + "<br/><br/>A verdade pode ser dura, mas n�o  "
+							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito meu amigo" + "<html>";
+					linhas[0] = 3;
+				} else {
+					tx[0] = "<html>Estranho: " + "<br/><br/>A verdade pode ser dura, mas n�o  "
+							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito minha amiga" + "<html>";
+					linhas[0] = 3;
+				}
 			}
 			break;
 		case 3:
-			if(player.isBonus_inicio()) {
-				tx[0] = "<html>Cassiu: "
-						+ "<br/><br/>E eu sou o Rei do Norte! Hahahaha!" 
-						 + "<br/>N�o precisa mentir para mim, amigo. "
-						 + "<br/>Eu n�o sou um idiota." 
-						 +"<html>";
+			if (player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: " + "<br/><br/>E eu sou o Rei do Norte! Hahahaha!"
+						+ "<br/>N�o precisa mentir para mim. " + "<br/>Eu n�o sou um idiota." + "<html>";
 				linhas[0] = 4;
-			}else{
-			tx[0] = "<html>Estranho: "
-					+ "<br/><br/>E eu sou o Rei do Norte! Hahahaha!" 
-					 + "<br/>N�o precisa mentir para mim, amigo. "
-					 + "<br/>Eu n�o sou um idiota."
-					 +"<html>";
-			linhas[0] = 4;
+			} else {
+				tx[0] = "<html>Estranho: " + "<br/><br/>E eu sou o Rei do Norte! Hahahaha!"
+						+ "<br/>N�o precisa mentir para mim. " + "<br/>Eu n�o sou um idiota." + "<html>";
+				linhas[0] = 4;
 			}
 			break;
 		}
-		if(player.isBonus_inicio()) {
-			choice="<html>Cassiu:"
-					+ "<br/><br/>Bom, de qualquer forma, vamos agora "
-					+ "<br/>ao que interessa. Est� disposto a me ouvir?<html>";
-		}else {
-			choice="<html>Estranho:"
-					+ "<br/><br/>Bom, de qualquer forma, vamos agora "
-					+ "<br/>ao que interessa. Est� disposto a me ouvir??<html>";
+		if (player.isBonus_inicio()) {
+			if (sexo == 0) {
+				choice = "<html>Cassiu:" + "<br/><br/>Bom, de qualquer forma, vamos agora "
+						+ "<br/>ao que interessa. Est� disposto a me ouvir?<html>";
+			} else {
+				choice = "<html>Cassiu:" + "<br/><br/>Bom, de qualquer forma, vamos agora "
+						+ "<br/>ao que interessa. Est� disposta a me ouvir?<html>";
+			}
+		} else {
+			if (sexo == 0) {
+				choice = "<html>Estranho:" + "<br/><br/>Bom, de qualquer forma, vamos agora "
+						+ "<br/>ao que interessa. Est� disposto a me ouvir?<html>";
+			} else {
+				choice = "<html>Estranho:" + "<br/><br/>Bom, de qualquer forma, vamos agora "
+						+ "<br/>ao que interessa. Est� disposta a me ouvir?<html>";
+			}
 		}
-		
+
 		op1 = "Eu n�o tenho nada mais a perder.";
 		op2 = "L�gico, porque n�o?";
 
 	}
-	
-	public void neg_lad(Jogador player,int x) {
-		
+
+	public void neg_lad(Jogador player, int x) { // 0 op��es
+
 		tx = new String[7];
 		linhas = new int[7];
-		
-		switch(x) {
+
+		switch (x) {
 		case 1:
-			if(player.isBonus_inicio()) {
-				tx[0] = "<html>Cassiu: "
-						+ "<br/><br/>Eu estava certo sobre voc�. � um  "
-						 + "<br/>lutador, tem coragem e est� pronto "
-						 + "<br/>para novos desafios"
-						 +"<html>";
-				linhas[0] = 4;
-			}else {
-			tx[0] = "<html>Estranho: "
-					+ "<br/><br/>Eu estava certo sobre voc�. � um  "
-					 + "<br/>lutador, tem coragem e est� pronto "
-					 + "<br/>para novos desafios"
-					 +"<html>";
-			linhas[0] = 4;
+			if (player.isBonus_inicio()) {
+				if (sexo == 0) {
+					tx[0] = "<html>Cassiu: " + "<br/><br/>Eu estava certo sobre voc�. � um  "
+							+ "<br/>lutador, tem coragem e est� pronto " + "<br/>para novos desafios" + "<html>";
+					linhas[0] = 4;
+				} else {
+					tx[0] = "<html>Cassiu: " + "<br/><br/>Eu estava certo sobre voc�. � uma  "
+							+ "<br/>lutadora, tem coragem e est� pronta " + "<br/>para novos desafios" + "<html>";
+					linhas[0] = 4;
+				}
+			} else {
+				if (sexo == 0) {
+					tx[0] = "<html>Estranho: " + "<br/><br/>Eu estava certo sobre voc�. � um  "
+							+ "<br/>lutador, tem coragem e est� pronto " + "<br/>para novos desafios" + "<html>";
+					linhas[0] = 4;
+				} else {
+					tx[0] = "<html>Estranho: " + "<br/><br/>Eu estava certo sobre voc�. � uma  "
+							+ "<br/>lutadora, tem coragem e est� pronta " + "<br/>para novos desafios" + "<html>";
+					linhas[0] = 4;
+				}
 			}
 			break;
 		case 2:
-			if(player.isBonus_inicio()) {
-				tx[0] = "<html>Cassiu: "
-						+ "<br/><br/>Arrogante... Eu gosto disso. Nem   "
-						 + "<br/>todos sabem apreciar como uma "
-						 + "<br/>virtude, mas eu, sem d�vida alguma, " 
-						 + "<br/>sei." 
-						 +"<html>";
+			if (player.isBonus_inicio()) {
+				tx[0] = "<html>Cassiu: " + "<br/><br/>Arrogante... Eu gosto disso. Nem   "
+						+ "<br/>todos sabem apreciar como uma " + "<br/>virtude, mas eu, sem d�vida alguma, "
+						+ "<br/>sei." + "<html>";
 				linhas[0] = 5;
-			}else {
-			tx[0] = "<html>Estranho: "
-					+ "<br/><br/>Arrogante... Eu gosto disso. Nem   "
-					 + "<br/>todos sabem apreciar como uma "
-					 + "<br/>virtude, mas eu, sem d�vida alguma, " 
-					 + "<br/>sei." 
-					 +"<html>";
-			linhas[0] = 5;
-			break;
+			} else {
+				tx[0] = "<html>Estranho: " + "<br/><br/>Arrogante... Eu gosto disso. Nem   "
+						+ "<br/>todos sabem apreciar como uma " + "<br/>virtude, mas eu, sem d�vida alguma, "
+						+ "<br/>sei." + "<html>";
+				linhas[0] = 5;
+				break;
 			}
 		}
-		
-		if(player.isBonus_inicio()) {
-			tx[1] = "<html>Cassiu: "
-					+ "<br/><br/>vamos para um lugar mais privado"
-					 + "<br/>para conversarmos em paz "
-					 +"<html>";
-			linhas[1] = 3;
-		}else {
-			tx[1] = "<html>Estranho: "
-					+ "<br/><br/>vamos para um lugar mais privado"
-					 + "<br/>para conversarmos em paz "
-					 +"<html>";
-			linhas[1] = 3;
-		}
-		
-		 tx[2] = "<html>Voc�s saem da taberna e v�o para "
-				 + "<br/>uma pequena casa escondida no "
-				 + "<br/>meio da podrid�o do lugar. L�" 
-				 + "<br/>voc� v� que n�o est�o sozinhos, "
-				 + "<br/>existem outras pessoas no lugar, sete"
-				 + "<br/>ao todo, mas nenhuma fala nada." 
-				 +"<html>";
-		 linhas[2] = 5;
-		 
-		 if(player.isBonus_inicio()) {
-				tx[3] = "<html>Cassiu: "
-						+ "<br/><br/>N�s somos a Guilda Vigilante."
-						 + "<br/>Est� cidade est� indo para o inferno e  "
-						 + "<br/>n�s estamos tentando impedir isso. "
-						 + "<br/>Para isso nos valemos de diversos"
-						 + "<br/>meios como assaltos, assassinatos e "
-						 + "<br/>extors�es entre outras coisas"
-						 +"<html>";
-				linhas[3] = 7;
-				
-				tx[4] = "<html>Cassiu: "
-						+ "<br/><br/>N�s te chamamos aqui por acharmos "
-						 + "<br/>que voc� tem o que � preciso para  "
-						 + "<br/>entrar nesta Guilda. Desde que voc�  "
-						 + "<br/>chegou na cidade estivemos te "
-						 + "<br/>observando. Ent�o, oque me diz?"
-						 +"<html>";
-				linhas[4] = 6;
-				
-				tx[5] = "<html>Voc� ouve e sabe que tudo que foi dito "
-						+"<br/>� verdade, e n�o hesita em aceitar "
-						+"<br/>a oferta."
-						+"<html>";
-				linhas[5] = 2;
-				
-				tx[6] = "<html>Cassiu: "
-						+ "<br/><br/>Perfeito, mas antes temos que test�-lo"
-						 +"<html>";
-				linhas[6] = 2;
-				
-				
-				
-			}else {
-				tx[3] = "<html>Estranho: "
-						+ "<br/><br/>N�s somos a Guilda Vigilante."
-						 + "<br/>Est� cidade est� indo para o inferno e  "
-						 + "<br/>n�s estamos tentando impedir isso. "
-						 + "<br/>Para isso nos valemos de diversos"
-						 + "<br/>meios como assaltos, assassinatos e "
-						 + "<br/>extors�es entre outras coisas"
-						 +"<html>";
-				linhas[3] = 7;
-				
-				tx[4] = "<html>Estranho: "
-						+ "<br/><br/>N�s te chamamos aqui por acharmos "
-						 + "<br/>que voc� tem o que � preciso para  "
-						 + "<br/>entrar nesta Guilda. Desde que voc�  "
-						 + "<br/>chegou na cidade estivemos te "
-						 + "<br/>observando. Ent�o, oque me diz?"
-						 +"<html>";
-				linhas[4] = 6;
-				
-				tx[5] = "<html>Voc� ouve e sabe que tudo que foi dito "
-						+"<br/>� verdade, e n�o hesita em aceitar "
-						+"<br/>a oferta."
-						+"<html>";
-				linhas[5] = 2;
-				
-				tx[6] = "<html>Estranho: "
-						+ "<br/><br/>Perfeito, mas antes temos que test�-lo"
-						 +"<html>";
-				linhas[6] = 2;
-			}
-		 
-		 
-		 
-		 
-		 
 
-		
+		if (player.isBonus_inicio()) {
+			tx[1] = "<html>Cassiu: " + "<br/><br/>vamos para um lugar mais privado" + "<br/>para conversarmos em paz "
+					+ "<html>";
+			linhas[1] = 3;
+		} else {
+			tx[1] = "<html>Estranho: " + "<br/><br/>vamos para um lugar mais privado" + "<br/>para conversarmos em paz "
+					+ "<html>";
+			linhas[1] = 3;
+		}
+
+		tx[2] = "<html>Voc�s saem da taberna e v�o para " + "<br/>uma pequena casa escondida no "
+				+ "<br/>meio da podrid�o do lugar. L�" + "<br/>voc� v� que n�o est�o sozinhos, "
+				+ "<br/>existem outras pessoas no lugar, sete" + "<br/>ao todo, mas nenhuma fala nada." + "<html>";
+		linhas[2] = 5;
+
+		if (player.isBonus_inicio()) {
+			tx[3] = "<html>Cassiu: " + "<br/><br/>N�s somos a Guilda Vigilante."
+					+ "<br/>Esta cidade est� indo para o inferno e  " + "<br/>n�s estamos tentando impedir isso. "
+					+ "<br/>Para isso nos valemos de diversos" + "<br/>meios como assaltos, assassinatos e "
+					+ "<br/>extors�es entre outras coisas" + "<html>";
+			linhas[3] = 7;
+
+			tx[4] = "<html>Cassiu: " + "<br/><br/>N�s te chamamos aqui por acharmos "
+					+ "<br/>que voc� tem o que � preciso para  " + "<br/>entrar nesta Guilda. Desde que voc�  "
+					+ "<br/>chegou na cidade estivemos te " + "<br/>observando. Ent�o, oque me diz?" + "<html>";
+			linhas[4] = 6;
+
+			tx[5] = "<html>Voc� ouve e sabe que tudo que foi dito " + "<br/>� verdade, e n�o hesita em aceitar "
+					+ "<br/>a oferta." + "<html>";
+			linhas[5] = 2;
+
+			if (sexo == 0) {
+				tx[6] = "<html>Cassiu: " + "<br/><br/>Perfeito, mas antes temos que test�-lo" + "<html>";
+				linhas[6] = 2;
+			} else {
+				tx[6] = "<html>Cassiu: " + "<br/><br/>Perfeito, mas antes temos que test�-la" + "<html>";
+				linhas[6] = 2;
+			}
+
+		} else {
+			tx[3] = "<html>Estranho: " + "<br/><br/>N�s somos a Guilda Vigilante."
+					+ "<br/>Est� cidade est� indo para o inferno e  " + "<br/>n�s estamos tentando impedir isso. "
+					+ "<br/>Para isso nos valemos de diversos" + "<br/>meios como assaltos, assassinatos e "
+					+ "<br/>extors�es entre outras coisas" + "<html>";
+			linhas[3] = 7;
+
+			tx[4] = "<html>Estranho: " + "<br/><br/>N�s te chamamos aqui por acharmos "
+					+ "<br/>que voc� tem o que � preciso para  " + "<br/>entrar nesta Guilda. Desde que voc�  "
+					+ "<br/>chegou na cidade estivemos te " + "<br/>observando. Ent�o, oque me diz?" + "<html>";
+			linhas[4] = 6;
+
+			tx[5] = "<html>Voc� ouve e sabe que tudo que foi dito " + "<br/>� verdade, e n�o hesita em aceitar "
+					+ "<br/>a oferta." + "<html>";
+			linhas[5] = 2;
+
+			if (sexo == 0) {
+				tx[6] = "<html>Estranho: " + "<br/><br/>Perfeito, mas antes temos que test�-lo" + "<html>";
+				linhas[6] = 2;
+			} else {
+				tx[6] = "<html>Estranho: " + "<br/><br/>Perfeito, mas antes temos que test�-la" + "<html>";
+				linhas[6] = 2;
+			}
+		}
+
 	}
+
 	
 	
-// tx[] = "<html>"
+	
+	// Intro Guerreiro
+
+	public void intro_guerreiro() {// 2 op��es
+
+		tx = new String[2];
+		linhas = new int[2];
+
+		tx[0] = "<html>Voc� vai para o castelo. Um magn�fico " + "<br/>edif�cio que, em todo seu esplendor, "
+				+ "<br/>se destaca da mis�ria da cidade." + "<html>";
+		linhas[0] = 2;
+
+		tx[1] = "<html>Voc� nunca viu nada que ao menos" + "<br/>se comparasse com o Pal�cio Real, "
+				+ "<br/>na verdade, � improv�vel a exist�ncia " + "<br/>algo que possa se comparar com isso."
+				+ "<br/>No port�o, um guarda te para" + "<html>";
+		linhas[1] = 4;
+
+		choice = "<html>Guarda:" + "<br/><br/>O que voc� faz aqui?" + "<html>";
+		op1 = "Contar sua hist�ria";
+		op2 = "Interesses pessoais";
+	}
+
+	
+	
+	
+//  tx[] = "<html>"
 //		 + "<br/>"
 //		 + "<br/>" 
 //		 + "<br/>"

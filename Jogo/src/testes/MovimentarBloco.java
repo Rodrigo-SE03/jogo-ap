@@ -72,7 +72,7 @@ implements MouseListener, MouseMotionListener {
  		this.botao.setContentAreaFilled(false);
  		
  		this.add(txt);
- 		this.txt.setText("Arraste o botão (Cuidado com as paredes)");
+ 		this.txt.setText("Arraste o botï¿½o (Cuidado com as paredes)");
  		this.txt.setLayout(null);
  		this.txt.setVisible(true);
  		this.txt.setBounds(250,100,400,250);

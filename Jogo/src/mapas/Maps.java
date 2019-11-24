@@ -62,7 +62,7 @@ public class Maps {
 	public JLabel getFlorestaFundo() {
 		return florestaFundo;
 	}
-	
+
 	public JButton getBtnCastelo() {
 		return btnCastelo;
 	}
@@ -158,7 +158,7 @@ public class Maps {
 
 		btnCastelo = new JButton("Castelo");
 		btnCastelo.setBackground(Color.BLUE);
-		btnCastelo.setBounds(743, 318, 55, 20);
+		btnCastelo.setBounds(750, 310, 55, 20);
 		btnCastelo.setFont(new Font("Georgia", Font.BOLD, 14));
 		btnCastelo.setForeground(Color.WHITE);
 		btnCastelo.setBorderPainted(false);
@@ -181,7 +181,7 @@ public class Maps {
 
 		btnCasaNobre = new JButton("Casa Nobre");
 		btnCasaNobre.setBackground(Color.BLUE);
-		btnCasaNobre.setBounds(855, 335, 80, 20);
+		btnCasaNobre.setBounds(860, 335, 80, 20);
 		btnCasaNobre.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnCasaNobre.setForeground(Color.WHITE);
 		btnCasaNobre.setBorderPainted(false);
@@ -227,7 +227,7 @@ public class Maps {
 
 		btnPraaCentral = new JButton("Pra\u00E7a Central");
 		btnPraaCentral.setBackground(Color.BLUE);
-		btnPraaCentral.setBounds(532, 379, 115, 23);
+		btnPraaCentral.setBounds(532, 385, 115, 23);
 		btnPraaCentral.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnPraaCentral.setForeground(Color.WHITE);
 		btnPraaCentral.setBorderPainted(false);
@@ -319,7 +319,7 @@ public class Maps {
 
 		btnDocas = new JButton("Docas");
 		btnDocas.setBackground(Color.BLUE);
-		btnDocas.setBounds(558, 484, 89, 23);
+		btnDocas.setBounds(575, 500, 89, 23);
 		btnDocas.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnDocas.setForeground(Color.WHITE);
 		btnDocas.setBorderPainted(false);
@@ -340,7 +340,7 @@ public class Maps {
 
 		btnAraResidencial = new JButton("Ar\u00E9a residencial");
 		btnAraResidencial.setBackground(Color.BLUE);
-		btnAraResidencial.setBounds(743, 435, 132, 23);
+		btnAraResidencial.setBounds(745, 440, 132, 23);
 		btnAraResidencial.setFont(new Font("Georgia", Font.BOLD, 12));
 		btnAraResidencial.setForeground(Color.WHITE);
 		btnAraResidencial.setBorderPainted(false);
@@ -388,89 +388,73 @@ public class Maps {
 		fundo.setBounds(0, 0, 1280, 761);
 		panel.add(fundo);
 
-		
-
 		MouseListener b1 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnAlamedaPonteiros.setBackground(Color.CYAN);
 				btnAlamedaPonteiros.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnAlamedaPonteiros.setBackground(Color.BLUE);
 				btnAlamedaPonteiros.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b2 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnAraResidencial.setBackground(Color.CYAN);
 				btnAraResidencial.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnAraResidencial.setBackground(Color.BLUE);
 				btnAraResidencial.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b3 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnCasaNobre.setBackground(Color.CYAN);
 				btnCasaNobre.setForeground(Color.BLACK);
 
@@ -478,231 +462,195 @@ public class Maps {
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnCasaNobre.setBackground(Color.BLUE);
 				btnCasaNobre.setForeground(Color.WHITE);
 
 			}
 		};
-		
+
 		MouseListener b4 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnCastelo.setBackground(Color.CYAN);
 				btnCastelo.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnCastelo.setBackground(Color.BLUE);
 				btnCastelo.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b5 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnCatedral.setBackground(Color.CYAN);
 				btnCatedral.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnCatedral.setBackground(Color.BLUE);
 				btnCatedral.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b6 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnDocas.setBackground(Color.CYAN);
 				btnDocas.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnDocas.setBackground(Color.BLUE);
 				btnDocas.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b7 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnFloresta.setBackground(Color.CYAN);
 				btnFloresta.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnFloresta.setBackground(Color.BLUE);
 				btnFloresta.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b8 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnMercado.setBackground(Color.CYAN);
 				btnMercado.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnMercado.setBackground(Color.BLUE);
 				btnMercado.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b9 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnPraaCentral.setBackground(Color.CYAN);
 				btnPraaCentral.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnPraaCentral.setBackground(Color.BLUE);
 				btnPraaCentral.setForeground(Color.WHITE);
 			}
 		};
-		
+
 		MouseListener b10 = new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnTorreArcana.setBackground(Color.CYAN);
 				btnTorreArcana.setForeground(Color.BLACK);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				btnTorreArcana.setBackground(Color.BLUE);
 				btnTorreArcana.setForeground(Color.WHITE);
 			}
 		};
-		
-		
+
 		btnAlamedaPonteiros.addMouseListener(b1);
 		btnAraResidencial.addMouseListener(b2);
 		btnCasaNobre.addMouseListener(b3);
@@ -713,7 +661,7 @@ public class Maps {
 		btnMercado.addMouseListener(b8);
 		btnPraaCentral.addMouseListener(b9);
 		btnTorreArcana.addMouseListener(b10);
-		
+
 	}
 
 	public void zerarBotoes() {
@@ -728,7 +676,7 @@ public class Maps {
 		btnMercado.setVisible(false);
 		btnPraaCentral.setVisible(false);
 		btnTorreArcana.setVisible(false);
-		
+
 		alamedaPonteirosFundo.setVisible(false);
 		araResidencialFundo.setVisible(false);
 		casaNobreFundo.setVisible(false);
@@ -754,7 +702,7 @@ public class Maps {
 		btnMercado.setVisible(true);
 		btnPraaCentral.setVisible(true);
 		btnTorreArcana.setVisible(true);
-		
+
 		alamedaPonteirosFundo.setVisible(true);
 		araResidencialFundo.setVisible(true);
 		casaNobreFundo.setVisible(true);
