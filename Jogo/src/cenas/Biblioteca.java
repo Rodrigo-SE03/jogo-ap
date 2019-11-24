@@ -607,7 +607,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				tx[3] = "<html>Algo mais forte que voc� te impele a" + "<br/>aceitar, e voc�, mesmo resoluta, "
 						+ "<br/>responde que sim." + "<html>";
 				linhas[3] = 2;
-			}
+				
 			tx[4] = "<html>Artemisia:" + "<br/><br/>Agora que isso est� acertado,voc�"
 					+ "<br/>precisa passar por um pequeno teste " + "<br/>para sabermos do que voc� � capaz. "
 					+ "<html>";
