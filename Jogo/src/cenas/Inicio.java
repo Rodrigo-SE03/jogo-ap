@@ -523,6 +523,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				contHist(t1);
 			}
 		};
 
@@ -531,11 +532,158 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				naoCont(t1);
 			}
 		};
 
 		geral.getChoice().getOpcao1().addActionListener(escolha1);
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
 	}
+	
+	public void contHist(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.contar_hist(player);
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+
+				if (cont == (vet.getTx().length - 1)) {
+					t1.zerar();
+					t1.getContinuar().removeActionListener(continuar);
+				} else
+					cont++;
+
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+	}
+	
+	public void naoCont(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.naoEdaSuaConta(player);
+		geral.escolhas_3(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				entrJardim(t1);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				entrEstabulo(t1);
+			}
+		};
+
+		ActionListener escolha3 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				salaCap(t1, 5);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+		geral.getChoice().getOpcao3().addActionListener(escolha3);
+	}
+
+	public void entrJardim(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.jardins();
+		geral.escolhas_2(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				salaCap(t1, 1);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				salaCap(t1, 2);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+	
+	public void entrEstabulo(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.estabulos();
+		geral.escolhas_2(t1, vet);
+
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				salaCap(t1, 3);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				salaCap(t1, 4);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void salaCap(Texto t1, int x) {
+
+		Geral geral = new Geral();
+
+		vet.salaCap(player, x);
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+
+				if (cont == (vet.getTx().length - 1)) {
+					t1.zerar();
+					t1.getContinuar().removeActionListener(continuar);
+				} else
+					cont++;
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+	}
+
+
+
+
 
 }
