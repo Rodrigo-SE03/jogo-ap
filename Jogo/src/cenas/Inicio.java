@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import graficos.Texto;
 import menus.Formulario;
 import personagens.Jogador;
-import cenas.Biblioteca;
 
 public class Inicio {
 

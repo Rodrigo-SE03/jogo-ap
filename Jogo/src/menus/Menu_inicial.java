@@ -76,7 +76,6 @@ public class Menu_inicial extends Janela {
             public void actionPerformed(ActionEvent e) {
             	musica.stop();
             	new Inicio().inicio();
-//            	new TesteInicio();
                 menu.dispose();
             } });
     }

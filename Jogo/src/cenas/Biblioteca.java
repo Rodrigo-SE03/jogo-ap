@@ -116,7 +116,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				+ "<br/>deveria fugir daqui com sua fam\u00EDlia o " + "<br/>quanto antes." + "</html>";
 		linhas[9] = 8;
 
-		tx[10] = "<html>H\u00E1 alguns segundos de sil\u00E1ncio. O" + "<br/>vendedor te entrega o incenso e tenta "
+		tx[10] = "<html>H\u00E1 alguns segundos de sil\u00EAncio. O" + "<br/>vendedor te entrega o incenso e tenta "
 				+ "<br/>cortar a tens\u00E3o." + "</html>";
 		linhas[10] = 2;
 
@@ -1392,7 +1392,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	}
 	
 	
-	//  tx[] = "<html>"
+//	  tx[] = "<html>"
 //		 + "<br/>"
 //		 + "<br/>" 
 //		 + "<br/>"
