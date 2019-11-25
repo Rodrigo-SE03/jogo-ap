@@ -119,10 +119,12 @@ public class Formulario{
 		label.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/17.png")));
 		label.setBounds(335, 188, 82, 74);
 		frame.getContentPane().add(label);
-
-		JLabel Fundo = new JLabel("New label");
-		Fundo.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario.jpg")));
-		Fundo.setBounds(0, 0, 1025, 665);
+		
+		ImageIcon fund = new ImageIcon("src/imagens/formulario.jpg");
+		fund.setImage(fund.getImage().getScaledInstance(this.frame.getSize().width,this.frame.getSize().height,100));
+		JLabel Fundo = new JLabel(fund);
+		Fundo.setBounds(frame.getBounds());
+		Fundo.setLocation(0, 0);
 		frame.getContentPane().add(Fundo);
 
 		frame.setVisible(true);
