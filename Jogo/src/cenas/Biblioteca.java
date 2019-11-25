@@ -1532,6 +1532,141 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		  linhas[10] = 3;
 		  
 	}
+	public void hpAssassin(Jogador player)
+	{//tx=new String[];
+	//linhas=new int[];
+		
+		  tx[0] = "<html>Quinze anos se passaram desde que"
+					 + "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante. Voc\u00EA se "
+					 + "<br/>tornou um membro valioso, um assassino " 
+					 + "<br/>r\u00E1pido e eficiente, completou in\u00FAmeras "
+					 + "<br/>miss\u00F5es, deixou in\u00FAmeros cad\u00E1veres."
+					 +"<html>";
+			  linhas[0] = 4;
+			  
+		  tx[1] =  "<html>"
+					 + "<br/>Em todos esses anos as pessoas da Ordem"
+					 + "<br/>se tornaram sua fam\u00EDlia, em especial " 
+					 + "<br/>Cassius, ele foi um irm\u00E3o mais velho, um"
+					 + "<br/>amigo e um mentor para você. Te ajudou"
+					 + "<br/>a superar a morte da sua fam\u00EDlia e a" 
+					 + "<br/>destruiç\u00E3o de seu lar, te ofereceu uma"
+					 + "<br/>nova casa e uma nova fam\u00EDlia." 
+					 +"<html>";
+				  linhas[1] = 7;
+				  
+		   tx[2] = "<html>Hoje foi marcada uma reuni\u00E3o com todos "
+					 + "<br/>os membros da Guilda."
+					 + "<br/>Isso n\u00E3o \u00E9 um " 
+					 + "<br/>bom sinal, geralmente significam ou"
+					 + "<br/>morte ou problemas, mas, hoje em"
+					 + "<br/>especial, parece significar os dois"
+					 +"<html> ";
+			  linhas[2] =5 ;	
+			  
+			 tx[3] = "<html>"
+						 + "<br/>Os diversos membros começam a se "
+						 + "<br/>juntar e o l\u00EDder da Guilda, por definiç\u00E3o, o " 
+						 + "<br/>membro mais antigo vivo, Homero,começa a falar:"
+						 +"<html>";
+				  linhas[3] = 3;
+				  
+		     tx[4] = "<html>Homero:"
+							 + "<br/><br/>Durante muito tempo vivemos em um"
+							 + "<br/>per\u00EDodo de relativa paz. Tivemos nossos"
+							 + "<br/>conflitos internos e externos, \u00E9 claro, mas"
+							 + "<br/>nunca enfrentamos ameaça que pudesse"
+							 + "<br/>nos dizimar. Hoje a situaç\u00E3o \u00E9 diferente,"
+							 + "<br/>pela primeira vez todos nós corremos o"
+							 + "<br/>risco de sermos dizimados."
+							 +"<html>";
+					linhas[4] = 8;
+					
+			tx[5] = "<html>Todos começam a se agitar e debater o"
+							 + "<br/>que Homero estava dizendo, afinal, que"
+							 + "<br/>ameaça poderia ser t\u00E3o grande para"
+							 + "<br/>destruir toda a Guilda? No passado vocês"
+							 + "<br/>j\u00E1 tinham tido in\u00FAmeros conflitos com a"
+							 + "<br/>Guarda Real, mas nenhum representou"
+							 + "<br/>ameaça t\u00E3o grande."
+							 +"<html>";
+					linhas[5] = 6;
+					
+			 tx[6] = "<html>Homero:"
+							 + "<br/><br/>SILÊNCIO!"
+							 + "<br/>Eu sei que todos est\u00E3o preocupados com o que"
+							 + "<br/>acabei de dizer, mas pelo menos me"
+							 + "<br/>deixem terminar antes de pensar"
+							 + "<br/>qualquer coisa est\u00FApida."
+							 +"<html>";
+					linhas[6] = 6;
+			
+			 tx[7] = "<html>O silêncio aos poucos volta,"
+							 + "<br/>permitindo Homero continuar."
+							 +"<html>";
+					linhas[7] = 1;
+		
+			 tx[8] = "<html>Homero:"
+							 + "<br/><br/>O Imp\u00E9rio de Bethesda declarou guerra"
+							 + "<br/>contra Helaria na noite de ontem."
+							 + "<br/>Bethesda \u00E9 conhecido por destruir"
+							 + "<br/>qualquer um que esteja em seu caminho,"
+							 + "<br/>cidades s\u00E3o queimadas, populaç\u00F5es s\u00E3o"
+							 +"<html>";
+					linhas[8] = 6;	
+					
+				tx[9] = "<html>Homero:"
+						   + "<br/><br/>destru\u00EDdas e culturas apagadas, e, \u00E9 isso"
+						   + "<br/>que acontecer\u00E1 com Helaria se n\u00E3o"
+						   + "<br/>fizermos nada. Mas por que nós "
+						   + "<br/>far\u00EDamos alguma coisa por Helaria"
+						   + "<br/>se Helaria nunca fez nada por nós?!"
+						   +"<html>"; 
+					 linhas[9] = 6;	
+					 
+				 tx[10] = "<html>Um homem irritado:"
+							   + "<br/><br/> Porque nós vivemos aqui seu imbecil!"
+							   +"<html>"; 
+						 linhas[10] = 2;
+						 
+				 tx[11] = "<html>Você retruca com ferocidade,"
+								   + "<br/>afinal foi Bethesda que"
+								   + "<br/>destruiu sua vila, queimou sua casa e"
+								   + "<br/>matou sua fam\u00EDlia."
+								   +"<html>"; 
+							 linhas[11] = 3;
+							 
+				  tx[12] = "<html>Pelo seu tom ficou claro para todos que conhecem um pouco"
+									   + "<br/>da sua história que você est\u00E1 disposto a"
+									   + "<br/>tudo para obter vingança."
+									   +"<html>"; 
+								 linhas[12] = 2;
+								 
+				   tx[13] = "<html>Homero:"
+										   + "<br/><br/>Percebo que"
+										   + "<br/>posso contar com você nessa guerra,"+player.getNome()+"."
+										   +"<html>"; 
+									 linhas[13] = 2;
+									 
+				   tx[14] = "<html>Você diz, pode apostar!"
+											   + "<br/>A reuni\u00E3o continua por mais um tempo,"
+											   + "<br/>detalhes da guerra s\u00E3o discutidos e"
+											   + "<br/>esclarecidos. O Imp\u00E9rio de Bethesda est\u00E1"
+											   + "<br/>marchando em direç\u00E3o a Helaria e tem"
+											   + "<br/>previs\u00E3o de chegar dentro de três dias."
+											   +"<html>"; 
+										 linhas[14] = 5;
+										 
+					tx[15] = "<html>Nesse per\u00EDodo você ser\u00E1 apresentado \u00E0"
+												   + "<br/>algumas miss\u00F5es e poder\u00E1 completar"
+												   + "<br/>uma parte delas, mas lembre-se que elas"
+												   + "<br/>ter\u00E3o consequências, ent\u00E3o escolha bem"
+												   + "<br/>quais você ir\u00E1 fazer, pois assim que uma"
+												   + "<br/>miss\u00E3o for iniciada, você n\u00E3o poder\u00E1"
+												   + "<br/>iniciar outra at\u00E9 que termine a primeira."
+												   +"<html>"; 
+											 linhas[15] = 6;}
+									 
 
 	
 	
