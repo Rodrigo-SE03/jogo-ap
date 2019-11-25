@@ -5,49 +5,60 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import graficos.Texto;
+import mapas.Maps;
 import menus.Formulario;
 import personagens.Jogador;
+import sons.Musica;
 
 public class Inicio {
 
 	private ActionListener continuar, escolha1, escolha2;
 	private Biblioteca vet = new Biblioteca(); // Vetor de texto
-	private Jogador player; // informações do playerS
+	private Jogador player; // informaï¿½ï¿½es do playerS
+	private Musica musica = new Musica();
 
-	public void inicio() { // 1ª parte do prólogo
+	public void inicio() { // 1ï¿½ parte do prï¿½logo
 
 		Texto t1 = new Texto("", 0); // Cria o JFrame e instancia a classe que gera os textos
-		Geral geral = new Geral(); // Classe geral para manipular a geração dos textos
+		Geral geral = new Geral(); // Classe geral para manipular a geraï¿½ï¿½o dos textos
 
 		vet.inicio(); // Instancia os vetores de texto para o conjunto de textos do metodo inicio
-		geral.escolhas_0(t1, vet); // Chama a funçao para manipular a geração de textos
-
+		geral.escolhas_0(t1, vet); // Chama a funï¿½ao para manipular a geraï¿½ï¿½o de textos
+		musica.TocaMusica("src/sons/musicaCasa.wav");
+		
 		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
-			int cont = 0; // Contador para verificar a posição do vetor de texto
+			int cont = 0; // Contador para verificar a posiï¿½ï¿½o do vetor de texto
 
 			public void actionPerformed(ActionEvent e) {
+				switch (cont) {
+				case 12:
+					musica.stop();
+					break;
+				default:
+					break;
+				}
 				if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
-					new Formulario(); // Chama a função para abrir o formulário
+					new Formulario(); // Chama a funï¿½ï¿½o para abrir o formulï¿½rio
 					t1.getTexto().dispose(); // Fecha a janela de textos
-				} else // Atualiza o contador para verificar a posição do vetor de texto
+				} else // Atualiza o contador para verificar a posiï¿½ï¿½o do vetor de texto
 					cont++;
 			}
 		};
 
-		t1.getContinuar().addActionListener(continuar); // Vincula o botão ao ActionListener
+		t1.getContinuar().addActionListener(continuar); // Vincula o botï¿½o ao ActionListener
 	}
 
-	public void inicio2(Jogador player) {// 2ª parte do prólogo
+	public void inicio2(Jogador player) {// 2ï¿½ parte do prï¿½logo
 
 		Geral geral = new Geral();
-		this.player = player; // Atualiza as informações do player
+		this.player = player; // Atualiza as informaï¿½ï¿½es do player
 		Texto t1 = new Texto("", 0);
 
-		vet.setSexo(player.getSexo()); // Atualiza o gênero do player nos textos
+		vet.setSexo(player.getSexo()); // Atualiza o gï¿½nero do player nos textos
 		vet.inicio2();
 		geral.escolhas_2(t1, vet);
 
-		escolha1 = new ActionListener() { // Action caso escolha a 1ª opção
+		escolha1 = new ActionListener() { // Action caso escolha a 1ï¿½ opï¿½ï¿½o
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -55,12 +66,12 @@ public class Inicio {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame, deixando
 																		// apenas uma "tela em branco"
-				correrAtras(t1); // Chama o próximo componente da história
+				correrAtras(t1); // Chama o prï¿½ximo componente da histï¿½ria
 
 			}
 		};
 
-		escolha2 = new ActionListener() {// Action caso escolha a 2ª opção
+		escolha2 = new ActionListener() {// Action caso escolha a 2ï¿½ opï¿½ï¿½o
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -120,15 +131,21 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
-
+				
+				switch(cont) {
+				case 1:
+				default:
+					break;
+				}
+				
 				if (cont == (vet.getTx().length - 1)) {
 					t1.zerar();
 					t1.getContinuar().removeActionListener(continuar);
 					torreArcana(t1);
-
+					
 				} else
 					cont++;
-
+				
 			}
 		};
 
@@ -217,40 +234,75 @@ public class Inicio {
 		Geral geral = new Geral();
 
 		vet.inicio_naoCorrer();
-		geral.escolhas_3(t1, vet);
+		geral.escolhas_0(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		continuar = new ActionListener() {
+			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
 
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				alameda3(t1);
+				if (cont == (vet.getTx().length - 1)) {
+					t1.zerar();
+					t1.getContinuar().removeActionListener(continuar);
+					t1.getTexto().dispose();
+					
+					Maps mapa = new Maps();
+					mapa.zerarBotoes();
+					
+					ActionListener castelo = new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							mapa.getFrame().dispose();
+							castelo(new Texto("",0));
+							
+						}
+						
+					};
+					
+					ActionListener alameda = new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							mapa.getFrame().dispose();
+							alameda3(new Texto("",0));
+							
+						}
+						
+					};
+					
+					ActionListener torre = new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							mapa.getFrame().dispose();
+							torreArcana(new Texto("",0));
+							
+						}
+						
+					};
+					
+					mapa.getBtnCastelo().setVisible(true);
+					mapa.getCasteloFundo().setVisible(true);
+					mapa.getBtnAlamedaPonteiros().setVisible(true);
+					mapa.getAlamedaPonteirosFundo().setVisible(true);
+					mapa.getBtnTorreArcana().setVisible(true);
+					mapa.getTorreArcanaFundo().setVisible(true);
+					
+					mapa.getBtnCastelo().addActionListener(castelo);
+					mapa.getBtnAlamedaPonteiros().addActionListener(alameda);
+					mapa.getBtnTorreArcana().addActionListener(torre);
+					
+					
+				} else
+					cont++;
 
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		t1.getContinuar().addActionListener(continuar);
 
-			public void actionPerformed(ActionEvent e) {
 
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				torreArcana(t1);
-			}
-		};
-
-		ActionListener escolha3 = new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				castelo(t1);
-
-			}
-		};
-
-		geral.getChoice().getOpcao1().addActionListener(escolha1);
-		geral.getChoice().getOpcao2().addActionListener(escolha2);
-		geral.getChoice().getOpcao3().addActionListener(escolha3);
 	}
 
 	public void torreArcana(Texto t1) {

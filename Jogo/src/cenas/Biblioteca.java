@@ -15,7 +15,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à \u00E1 á \u00E2 â \u00E3 ã
+	 * \u00E0 à \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
 	 * \u00EA ê \u00E9 é \u00C9 É
 	 * 
@@ -451,14 +451,17 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				+ "<br/>ir\u00E1 esta noite." + "<html>";
 		linhas[2] = 3;
 
-		choice = "<html>Antes de decidir-se, tem a impress\u00E3o" + "<br/>de que tal escolha ter\u00E1 profunda"
-				+ "<br/>influ\u00EAncia em seu fururo" + "<html>";
-		op1 = "Alameda dos Tr\u00EAs Ponteiros";
-		op2 = "Torre Arcana";
-		op3 = "Alistar - se a Guarda Real";
+//		choice = "<html>Antes de decidir-se, tem a impress\u00E3o" + "<br/>de que tal escolha ter\u00E1 profunda"
+//				+ "<br/>influ\u00EAncia em seu fururo" + "<html>";
+//		op1 = "Alameda dos Tr\u00EAs Ponteiros";
+//		op2 = "Torre Arcana";
+//		op3 = "Alistar - se a Guarda Real";
 
 	}
 
+	
+	
+	
 	// Intro Arcanista:
 
 	public void intro_arcanista(Jogador player) { // 2 op\u00E7\u00F5es
@@ -700,7 +703,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		choice = "<html>Voc\u00EA vai at\u00E9 o balc\u00E3o e o taverneiro pergunta "
 				+ "<br/>o voc\u00EA que quer<html>";
 		op1 = "Cerveja";
-		op2 = "\u00E1gua";
+		op2 = "\u00C1gua";
 		op3 = "Nada";
 	}
 
@@ -1390,6 +1393,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		}
 		
 	}
+
 	
 	
 //	  tx[] = "<html>"
