@@ -7,12 +7,10 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class Musica {
-//	private boolean continuar;
 	private File caminho; 
 	private Clip clip;
 	
 	public void TocaMusica(String local) {
-//		this.continuar = true;
 		
 		try {
 			this.caminho = new File(local);
@@ -23,10 +21,7 @@ public class Musica {
 				clip.open(audioInput);
 				clip.start();
 				clip.loop(Clip.LOOP_CONTINUOUSLY);
-//				while(this.isContinuar()) {
-//					System.out.println("");
-//				}
-//				clip.stop();	
+
 				
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -37,13 +32,7 @@ public class Musica {
 	public void stop() {
 		clip.stop();
 	}
-//	public boolean isContinuar() {
-//		return continuar;
-//	}
-//
-//	public void setContinuar(boolean continuar) {
-//		this.continuar = continuar;
-//	}
+
 
 	public File getCaminho() {
 		return caminho;
@@ -53,9 +42,13 @@ public class Musica {
 		this.caminho = caminho;
 	}
 	
-	/*public static void main(String[] args)
-	{Musica a1=new Musica();
-	a1.TocaMusica("src/sons/MusicaMenu.wav");
-	}*/
+	
+	/* Comando para chamar musica:
+	 * 
+	 * 		musica.TocaMusica("caminho");
+	 * 
+	 */
+	
 
 }
+
