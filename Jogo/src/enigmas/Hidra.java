@@ -29,6 +29,7 @@ public class Hidra {
 	private JDialog cbc_5;
 	private JDialog cbc_6;
 	private JDialog cbc_7;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -94,7 +95,10 @@ public class Hidra {
 		    }
 		});
 		cbc_1.setName("0");
-		cbc_1.setBounds(560,200, 294, 275);
+		cbc_1.setSize(294,275);
+		cbc_1.setLocationRelativeTo(null);
+		cbc_1.setLocation(cbc_1.getBounds().x-290,cbc_1.getBounds().y-(270/2));
+		cbc_1.setTitle(cbc_1.getName());
 		
 		JPanel panel = new JPanel();
 		cbc_1.getContentPane().add(panel, BorderLayout.CENTER);
@@ -122,7 +126,10 @@ public class Hidra {
 		    }
 		});
 		cbc_2.setName("1");
-		cbc_2.setBounds(550+294,100, 294, 275);
+		cbc_2.setSize(294,275);
+		cbc_2.setLocationRelativeTo(null);
+		cbc_2.setLocation(cbc_2.getBounds().x,cbc_2.getBounds().y-(270));
+		cbc_2.setTitle(cbc_2.getName());
 		
 		JPanel panel_2 = new JPanel();
 		cbc_2.getContentPane().add(panel_2, BorderLayout.CENTER);
@@ -149,7 +156,10 @@ public class Hidra {
 		    }
 		});
 		cbc_3.setName("2");
-		cbc_3.setBounds(340+294+200+294,200, 294, 275);
+		cbc_3.setSize(294,275);
+		cbc_3.setLocationRelativeTo(null);
+		cbc_3.setLocation(cbc_3.getBounds().x+290,cbc_3.getBounds().y-(270/2));
+		cbc_3.setTitle(cbc_3.getName());
 		
 		JPanel panel_3 = new JPanel();
 		cbc_3.getContentPane().add(panel_3, BorderLayout.CENTER);
@@ -176,7 +186,10 @@ public class Hidra {
 		    }
 		});
 		cbc_4.setName("3");
-		cbc_4.setBounds(560,275+200, 294, 275);
+		cbc_4.setSize(294,275);
+		cbc_4.setLocationRelativeTo(null);
+		cbc_4.setLocation(cbc_4.getBounds().x-290,cbc_4.getBounds().y+(270/2));
+		cbc_4.setTitle(cbc_4.getName());
 		
 		JPanel panel_4 = new JPanel();
 		cbc_4.getContentPane().add(panel_4, BorderLayout.CENTER);
@@ -203,7 +216,10 @@ public class Hidra {
 		    }
 		});
 		cbc_5.setName("4");
-		cbc_5.setBounds(550+294,275+100+275, 294, 275);
+		cbc_5.setSize(294,275);
+		cbc_5.setLocationRelativeTo(null);
+		cbc_5.setLocation(cbc_5.getBounds().x,cbc_5.getBounds().y+(270));
+		cbc_5.setTitle(cbc_5.getName());
 		
 		JPanel panel_5 = new JPanel();
 		cbc_5.getContentPane().add(panel_5, BorderLayout.CENTER);
@@ -230,7 +246,10 @@ public class Hidra {
 		    }
 		});
 		cbc_6.setName("5");
-		cbc_6.setBounds(340+294+294+200,275+200, 294, 275);
+		cbc_6.setSize(294,275);
+		cbc_6.setLocationRelativeTo(null);
+		cbc_6.setLocation(cbc_6.getBounds().x+290,cbc_6.getBounds().y+(270/2));
+		cbc_6.setTitle(cbc_6.getName());
 		
 		JPanel panel_6 = new JPanel();
 		cbc_6.getContentPane().add(panel_6, BorderLayout.CENTER);
@@ -257,7 +276,9 @@ public class Hidra {
 		    }
 		});
 		cbc_7.setName("6");
-		cbc_7.setBounds(550+294,275+100, 294, 275);
+		cbc_7.setSize( 294, 275);
+		cbc_7.setLocationRelativeTo(null);
+		cbc_7.setTitle(cbc_7.getName());
 		
 		JPanel panel_7 = new JPanel();
 		cbc_7.getContentPane().add(panel_7, BorderLayout.CENTER);
@@ -274,31 +295,31 @@ public class Hidra {
 		
 		for(cont=0;cont<7;cont++) {
 		if(cont==0) {
-		frame[cont].setBounds(560,200, 294, 275);
+		frame[cont].setBounds(cbc_1.getBounds());
 		}
 
 		else if(cont==1) {
-		frame[cont].setBounds(550+294,100, 294, 275);
+		frame[cont].setBounds(cbc_2.getBounds());
 		}
 
 		else if(cont==2) {
-		frame[cont].setBounds(340+294+200+294,200, 294, 275);
+		frame[cont].setBounds(cbc_3.getBounds());
 		}
 
 		else if(cont==3) {
-		frame[cont].setBounds(560,275+200, 294, 275);
+		frame[cont].setBounds(cbc_4.getBounds());
 		}
 
 		else if(cont==4) {
-		frame[cont].setBounds(550+294,275+100+275, 294, 275);
+		frame[cont].setBounds(cbc_5.getBounds());
 		}
 
 		else if(cont==5) {
-		frame[cont].setBounds(340+294+294+200,275+200, 294, 275);
+		frame[cont].setBounds(cbc_6.getBounds());
 		}
 
 		else if(cont==6) {
-		frame[cont].setBounds(550+294,275+100, 294, 275);
+		frame[cont].setBounds(cbc_7.getBounds());
 		}
 		}
 		
@@ -387,6 +408,9 @@ public class Hidra {
 		top.setResizable(false);
 		top.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		top.setResizable(false);
+		top.setSize(100,100);
+		
+		
 		top.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 		    		musica.stop();
@@ -424,9 +448,10 @@ public class Hidra {
 		top.getContentPane().add(painel, BorderLayout.CENTER);
 		painel.setLayout(null);
 		
-		JLabel coracao = new JLabel("New label");
-		coracao.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/coracao.png")));
-		coracao.setBounds(0, 0, 100, 99);
+		ImageIcon fund = new ImageIcon("src/imagens/coracao.png");
+		fund.setImage(fund.getImage().getScaledInstance(top.getSize().width,top.getSize().height,100));
+		JLabel coracao = new JLabel(fund);
+		coracao.setBounds(12, 0, 100,100);
 		painel.add(coracao);
 		
 		
@@ -440,28 +465,28 @@ public class Hidra {
 	public void mudaCoracao() {
 		Random cot = new Random();
 		if(cot.nextInt(7)==0) {
-			top.setBounds(560+20,200+40,50,130);
+			top.setBounds(560+10,200+42,50,130);
 		}
 		else if(cot.nextInt(7)==1) {
-			top.setBounds(550+294+20,275+100+40,50,130);
+			top.setBounds(550+294+10,275+100+42,50,130);
 		}
 		else if(cot.nextInt(7)==2) {
-			top.setBounds(340+294+200+294+20,200+40,50,130);
+			top.setBounds(340+294+200+294+10,200+50,50,130);
 		}
 		else if(cot.nextInt(7)==3) {
-			top.setBounds(560+20,275+200+40,50,130);
+			top.setBounds(560+10,275+200+42,50,130);
 		}
 		else if(cot.nextInt(7)==4) {
-			top.setBounds(550+294+20,275+100+275+40,50,130);
+			top.setBounds(550+294+10,275+100+275+42,50,130);
 		}
 		else if(cot.nextInt(7)==5) {
-			top.setBounds(340+294+294+200+20,275+200+40,50,130);
+			top.setBounds(340+294+294+200+10,275+200+42,50,130);
 		}
 		else if(cot.nextInt(7)==6) {
-			top.setBounds(550+294+20,275+100+40,50,130);
+			top.setBounds(550+294+10,275+100+42,50,130);
 		}
 		else
-			top.setBounds(550+294+20,275+100+40,50,130);
+			top.setBounds(550+294+10,275+100+42,50,130);
 		top.setVisible(true);
 		
 		/*for(i=0;i<7;i++) {
