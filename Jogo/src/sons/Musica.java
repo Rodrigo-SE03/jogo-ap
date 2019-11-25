@@ -22,6 +22,7 @@ public class Musica {
 				clip = AudioSystem.getClip();
 				clip.open(audioInput);
 				clip.start();
+				clip.loop(Clip.LOOP_CONTINUOUSLY);
 //				while(this.isContinuar()) {
 //					System.out.println("");
 //				}
