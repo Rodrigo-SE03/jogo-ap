@@ -9,23 +9,6 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	private int[] linhas; // variavel para ajustar o JLabel ao tamanho do texto
 	private int sexo; // variavel para corrigir o g\u00EAnero do personagem nos textos
 
-	/*
-	 * 
-	 * Lista de acentos (evita que bugue ao mandar pro GitKraken)
-	 * 
-	 * \u00E7 ç
-	 * 
-	 * \u00E0 à \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
-	 * 
-	 * \u00EA ê \u00E9 é \u00C9 É
-	 * 
-	 * \u00ED í
-	 * 
-	 * \u00FA ú
-	 * 
-	 * \u00F3 ó \u00F4 ô \u00F5 õ
-	 * 
-	 */
 
 	// Getters and Setters
 
@@ -1012,12 +995,12 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		op2 = "Interesses pessoais";
 	}
 
-	public void contar_hist(Jogador player) {// 0 op\u00E7\u00F5es
+	public void contar_hist(Jogador player) {// 0 opcoes
 
 		tx = new String[6];
 		linhas = new int[6];
 
-		if (player.isBonus_inicio()) { // 0 op\u00E7\u00F5es
+		if (player.isBonus_inicio()) { // 0 opcoes
 
 			tx[0] = "<html>Voc\u00EA conta como sobre tudo o que " + "<br/>aconteceu com voc\u00EA e que um "
 					+ "<br/>soldado o havia convidado para se " + "<br/>apresentar ao capit\u00E3o Alexander."
@@ -1149,7 +1132,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	}
 
-	public void naoEdaSuaConta(Jogador player) { // 3 op\u00E7\u00F5es
+	public void naoEdaSuaConta(Jogador player) { // 3 opcoes
 	  
 		tx = new String[2];
 		linhas = new int[2];
@@ -1183,7 +1166,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	  
 	}
 	
-	public void jardins() { // 2 op\u00E7\u00F5es
+	public void jardins() { // 2 opcoes
 
 		tx = new String[1];
 		linhas = new int[1];
@@ -1200,7 +1183,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	   op2 = "Se esconder";
 	}
 	
-	public void estabulos() { // 2 op\u00E7\u00F5es
+	public void estabulos() { // 2 opcoes
 
 		tx = new String[1];
 		linhas = new int[1];
@@ -1220,7 +1203,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 	   op2 = "N\u00E3o pegar";
 	}
 	
-	public void salaCap(Jogador player,int x) { // 0 op\u00E7\u00F5es
+	public void salaCap(Jogador player,int x) { // 0 opcoes
 		
 		tx = new String[8];
 		linhas = new int[8];
@@ -1394,54 +1377,54 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		
 	}
 
-	public void grr_1() { //2 opcoes
+	public void guerreiro15a_1() { //2 opcoes
 		
 		tx = new String[5];
 		linhas = new int[5];
 		
 		  tx[0] = "<html>Quinze anos se passaram desde que "
-					 + "<br/>voc\u00EA entrou para a Guarda Real. Voc\u00EA "
-					 + "<br/>foi acolhido e eles se tornaram sua " 
-					 + "<br/>nova fam\u00EDlia, em especial o Capit\u00E3o"
-					 + "<br/>Alexander, atualmente General "
-					 + "<br/>Alexander e voc\u00EA \u00E9 o novo Capit\u00E3o do "
-					 + "<br/>mesmo S\u00E9timo Comando. "
-					 +"<html>";
+				  + "<br/>voc\u00EA entrou para a Guarda Real. Voc\u00EA "
+				  + "<br/>foi acolhido e eles se tornaram sua " 
+				  + "<br/>nova fam\u00EDlia, em especial o Capit\u00E3o"
+				  + "<br/>Alexander, atualmente General "
+				  + "<br/>Alexander e voc\u00EA \u00E9 o novo Capit\u00E3o do "
+				  + "<br/>mesmo S\u00E9timo Comando. "
+				  +"<html>";
 		  linhas[0] = 6 ;
 			  
 		  tx[1] = "<html>Em todo esse per\u00EDodo Alexander "
-					  + "<br/>atuou como um pai para voc\u00EA, um  "
-					  + "<br/>amigo nos momentos em que voc\u00EA " 
-					  + "<br/>precisava e, principalmente um "
-					  + "<br/>mentor em todos os momentos, te "
-					  + "<br/>treinou nas artes de combate e na "
-					  + "<br/>diplomacia. "
-					  +"<html>";
+				  + "<br/>atuou como um pai para voc\u00EA, um  "
+				  + "<br/>amigo nos momentos em que voc\u00EA " 
+				  + "<br/>precisava e, principalmente um "
+				  + "<br/>mentor em todos os momentos, te "
+				  + "<br/>treinou nas artes de combate e na "
+				  + "<br/>diplomacia. "
+				  +"<html>";
 		  linhas[1] = 6 ;
 
 		  tx[2] = "<html>Hoje voc\u00EA \u00E9 um dos melhores "
-						+ "<br/>combatentes que Helaria j\u00E1 viu um "
-						+ "<br/>diplomata extremamente habilidoso, " 
-						+ "<br/>tudo isso gra\u00E7as a Alexander e a seu "
-						+ "<br/>irm\u00E3o, assassinado h\u00E1 poucos anos "
-						+"<br/>pela Guilda Vigilante. "
-						+"<html>";
+				  + "<br/>combatentes que Helaria j\u00E1 viu um "
+				  + "<br/>diplomata extremamente habilidoso, " 
+				  + "<br/>tudo isso gra\u00E7as a Alexander e a seu "
+				  + "<br/>irm\u00E3o, assassinado h\u00E1 poucos anos "
+				  +"<br/>pela Guilda Vigilante. "
+				  +"<html>";
 		  linhas[2] = 5;
 
 		  tx[3] = "<html>Voc\u00EAs sentem muita falta dele, afinal "
-						+ "<br/>ele era um membro da fam\u00EDlia, mas "
-						+ "<br/>juntos conseguiram superar sua " 
-						+ "<br/>morte, por\u00E9m nunca conseguiram "
-						+"<br/> prender os culpados. "
-						+"<html>";
+				  + "<br/>ele era um membro da fam\u00EDlia, mas "
+				  + "<br/>juntos conseguiram superar sua " 
+				  + "<br/>morte, por\u00E9m nunca conseguiram "
+				  +"<br/> prender os culpados. "
+				  +"<html>";
 		  linhas[3] = 4;
 
 		  tx[4] = "<html> Hoje voc\u00EA acorda com a chegada de "
-					  + "<br/> um mensageiro em seus aposentos, "
-					  + "<br/> General Alexander pede seu " 
-					  + "<br/>comparecimento imediato em seus "
-					  +"<br/>aposentos."
-					  +"<html>";
+				  + "<br/> um mensageiro em seus aposentos, "
+				  + "<br/> General Alexander pede seu " 
+				  + "<br/>comparecimento imediato em seus "
+				  +"<br/>aposentos."
+				  +"<html>";
 		  linhas[4] = 4;
 		  
 		  choice = "<html>Nos aposentos do general voc\u00EA tem " 
@@ -1457,11 +1440,11 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		
 	}
 	
-	public void grr_2(Jogador player) {
+	public void guerreiro15a_2(Jogador player) { 
 		
-//		tx = new String[5];
-//		linhas = new int[5];
-		//
+		tx = new String[10];
+		linhas = new int[10];
+		
 		  tx[0] = "<html>- Agora que terminamos de comer, por" 
 					 + "<br/>que me chamou aqui t\u00E3o de repente?"
 					 +"<html>";
@@ -1476,14 +1459,14 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		  tx[2] = "<html>Voc\u00EA fica em choque com essa "
 					 + "<br/>informa\u00E7\u00E3o, uma guerra sendo "
 					 + "<br/>iniciada sem nenhum precedente, de" 
-					 + "<br/>forma t\u00E3o súbita. "
+					 + "<br/>forma t\u00E3o sÃºbita. "
 					 +"<html>";
 		  linhas[2] = 3;
 		
 		  tx[3] = "<html>Desde que voc\u00EA entrou na Guarda "
 					 + "<br/>Real isso nunca tinha acontecido, "
 					 + "<br/>ainda mais que o oponente em " 
-					 + "<br/>quest\u00E3o \u00E9 o Imp\u00E9rio Bethesda… "
+					 + "<br/>quest\u00E3o \u00E9 o Imp\u00E9rio Bethesdaâ€¦ "
 					 +"<html>";
 		  linhas[3] = 3;
 		  
@@ -1500,7 +1483,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		  linhas[5] = 3;
 		  
 		  tx[6] = "<html> - Mas, Bethesda? "
-					 +"<html>";
+				  	+"<html>";
 		  linhas[6] = 0;
 		  
 		  tx[7] = "<html>- Foram eles que destru\u00EDram sua vila e "
@@ -1518,7 +1501,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					 + "<br/>vingar deles, mas est\u00E1 em jogo algo "
 					 + "<br/>muito maior. N\u00E3o deixe que seu \u00F3dio e "
 					 + "<br/>seu desejo de vingan\u00E7a tomem conta"
-					 + "<br/>de suas a\u00E7\u00F3es. Às vezes as atitudes  "
+					 + "<br/>de suas a\u00E7\u00F3es. Ã€s vezes as atitudes  "
 					 + "<br/>de uma pessoa podem mudar o rumo  "
 					 + "<br/>de uma guerra totalmente.  "
 					 +"<html>";
@@ -1532,140 +1515,144 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		  linhas[10] = 3;
 		  
 	}
-	public void hpAssassin(Jogador player)
-	{//tx=new String[];
-	//linhas=new int[];
+	public void assassino15_1(Jogador player)
+	{
+		tx = new String[15];
+		linhas = new int[15];
 		
-		  tx[0] = "<html>Quinze anos se passaram desde que"
-					 + "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante. Voc\u00EA se "
-					 + "<br/>tornou um membro valioso, um assassino " 
-					 + "<br/>r\u00E1pido e eficiente, completou in\u00FAmeras "
-					 + "<br/>miss\u00F5es, deixou in\u00FAmeros cad\u00E1veres."
-					 +"<html>";
-			  linhas[0] = 4;
+		tx[0] = "<html>Quinze anos se passaram desde que"
+				+ "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante. Voc\u00EA se "
+				+ "<br/>tornou um membro valioso, um assassino " 
+				+ "<br/>r\u00E1pido e eficiente, completou in\u00FAmeras "
+				+ "<br/>miss\u00F5es, deixou in\u00FAmeros cad\u00E1veres."
+				+"<html>";
+		linhas[0] = 4;
 			  
-		  tx[1] =  "<html>"
-					 + "<br/>Em todos esses anos as pessoas da Ordem"
-					 + "<br/>se tornaram sua fam\u00EDlia, em especial " 
-					 + "<br/>Cassius, ele foi um irm\u00E3o mais velho, um"
-					 + "<br/>amigo e um mentor para você. Te ajudou"
-					 + "<br/>a superar a morte da sua fam\u00EDlia e a" 
-					 + "<br/>destruiç\u00E3o de seu lar, te ofereceu uma"
-					 + "<br/>nova casa e uma nova fam\u00EDlia." 
-					 +"<html>";
-				  linhas[1] = 7;
+		tx[1] =  "<html>"
+				+ "<br/>Em todos esses anos as pessoas da Ordem"
+				+ "<br/>se tornaram sua fam\u00EDlia, em especial " 
+				+ "<br/>Cassius, ele foi um irm\u00E3o mais velho, um"
+				+ "<br/>amigo e um mentor para voc\u00EA. Te ajudou"
+				+ "<br/>a superar a morte da sua fam\u00EDlia e a" 
+				+ "<br/>destrui\u00E7\u00E3o de seu lar, te ofereceu uma"
+				+ "<br/>nova casa e uma nova fam\u00EDlia." 
+				+"<html>";
+		linhas[1] = 7;
 				  
-		   tx[2] = "<html>Hoje foi marcada uma reuni\u00E3o com todos "
-					 + "<br/>os membros da Guilda."
-					 + "<br/>Isso n\u00E3o \u00E9 um " 
-					 + "<br/>bom sinal, geralmente significam ou"
-					 + "<br/>morte ou problemas, mas, hoje em"
-					 + "<br/>especial, parece significar os dois"
-					 +"<html> ";
-			  linhas[2] =5 ;	
+		tx[2] = "<html>Hoje foi marcada uma reuni\u00E3o com todos "
+				+ "<br/>os membros da Guilda."
+				+ "<br/>Isso n\u00E3o \u00E9 um " 
+				+ "<br/>bom sinal, geralmente significam ou"
+				+ "<br/>morte ou problemas, mas, hoje em"
+				+ "<br/>especial, parece significar os dois"
+				+"<html> ";
+		linhas[2] =5 ;	
 			  
-			 tx[3] = "<html>"
-						 + "<br/>Os diversos membros começam a se "
-						 + "<br/>juntar e o l\u00EDder da Guilda, por definiç\u00E3o, o " 
-						 + "<br/>membro mais antigo vivo, Homero,começa a falar:"
-						 +"<html>";
-				  linhas[3] = 3;
+		tx[3] = "<html>"
+				+ "<br/>Os diversos membros come\u00E7am a se "
+				+ "<br/>juntar e o l\u00EDder da Guilda, por defini\u00E7\u00E3o, o " 
+				+ "<br/>membro mais antigo vivo, Homero,come\u00E7a a falar:"
+				+"<html>";
+		linhas[3] = 3;
 				  
-		     tx[4] = "<html>Homero:"
-							 + "<br/><br/>Durante muito tempo vivemos em um"
-							 + "<br/>per\u00EDodo de relativa paz. Tivemos nossos"
-							 + "<br/>conflitos internos e externos, \u00E9 claro, mas"
-							 + "<br/>nunca enfrentamos ameaça que pudesse"
-							 + "<br/>nos dizimar. Hoje a situaç\u00E3o \u00E9 diferente,"
-							 + "<br/>pela primeira vez todos nós corremos o"
-							 + "<br/>risco de sermos dizimados."
-							 +"<html>";
-					linhas[4] = 8;
+		tx[4] = "<html>Homero:"
+				+ "<br/><br/>Durante muito tempo vivemos em um"
+				+ "<br/>per\u00EDodo de relativa paz. Tivemos nossos"
+				+ "<br/>conflitos internos e externos, \u00E9 claro, mas"
+				+ "<br/>nunca enfrentamos amea\u00E7a que pudesse"
+				+ "<br/>nos dizimar. Hoje a situa\u00E7\u00E3o \u00E9 diferente,"
+				+ "<br/>pela primeira vez todos n\u00e3s corremos o"
+				+ "<br/>risco de sermos dizimados."
+				+"<html>";
+		linhas[4] = 8;
 					
-			tx[5] = "<html>Todos começam a se agitar e debater o"
-							 + "<br/>que Homero estava dizendo, afinal, que"
-							 + "<br/>ameaça poderia ser t\u00E3o grande para"
-							 + "<br/>destruir toda a Guilda? No passado vocês"
-							 + "<br/>j\u00E1 tinham tido in\u00FAmeros conflitos com a"
-							 + "<br/>Guarda Real, mas nenhum representou"
-							 + "<br/>ameaça t\u00E3o grande."
-							 +"<html>";
-					linhas[5] = 6;
+		tx[5] = "<html>Todos come\u00E7am a se agitar e debater o"
+				+ "<br/>que Homero estava dizendo, afinal, que"
+				+ "<br/>amea\u00E7a poderia ser t\u00E3o grande para"
+				+ "<br/>destruir toda a Guilda? No passado voc\u00EAs"
+				+ "<br/>j\u00E1 tinham tido in\u00FAmeros conflitos com a"
+				+ "<br/>Guarda Real, mas nenhum representou"
+				+ "<br/>amea\u00E7a t\u00E3o grande."
+				+"<html>";
+		linhas[5] = 6;
 					
-			 tx[6] = "<html>Homero:"
-							 + "<br/><br/>SILÊNCIO!"
-							 + "<br/>Eu sei que todos est\u00E3o preocupados com o que"
-							 + "<br/>acabei de dizer, mas pelo menos me"
-							 + "<br/>deixem terminar antes de pensar"
-							 + "<br/>qualquer coisa est\u00FApida."
-							 +"<html>";
-					linhas[6] = 6;
+		tx[6] = "<html>Homero:"
+				+ "<br/><br/>SIL\u00caNCIO!"
+				+ "<br/>Eu sei que todos est\u00E3o preocupados com o que"
+				+ "<br/>acabei de dizer, mas pelo menos me"
+				+ "<br/>deixem terminar antes de pensar"
+				+ "<br/>qualquer coisa est\u00FApida."
+				+"<html>";
+		linhas[6] = 6;
 			
-			 tx[7] = "<html>O silêncio aos poucos volta,"
-							 + "<br/>permitindo Homero continuar."
-							 +"<html>";
-					linhas[7] = 1;
+		tx[7] = "<html>O sil\u00EAncio aos poucos volta,"
+				+ "<br/>permitindo Homero continuar."
+				+"<html>";
+		linhas[7] = 1;
 		
-			 tx[8] = "<html>Homero:"
-							 + "<br/><br/>O Imp\u00E9rio de Bethesda declarou guerra"
-							 + "<br/>contra Helaria na noite de ontem."
-							 + "<br/>Bethesda \u00E9 conhecido por destruir"
-							 + "<br/>qualquer um que esteja em seu caminho,"
-							 + "<br/>cidades s\u00E3o queimadas, populaç\u00F5es s\u00E3o"
-							 +"<html>";
-					linhas[8] = 6;	
+		tx[8] = "<html>Homero:"
+				+ "<br/><br/>O Imp\u00E9rio de Bethesda declarou guerra"
+				+ "<br/>contra Helaria na noite de ontem."
+				+ "<br/>Bethesda \u00E9 conhecido por destruir"
+				+ "<br/>qualquer um que esteja em seu caminho,"
+				+ "<br/>cidades s\u00E3o queimadas, popula\u00E7\u00F5es s\u00E3o"
+				+"<html>";
+		linhas[8] = 6;	
 					
-				tx[9] = "<html>Homero:"
-						   + "<br/><br/>destru\u00EDdas e culturas apagadas, e, \u00E9 isso"
-						   + "<br/>que acontecer\u00E1 com Helaria se n\u00E3o"
-						   + "<br/>fizermos nada. Mas por que nós "
-						   + "<br/>far\u00EDamos alguma coisa por Helaria"
-						   + "<br/>se Helaria nunca fez nada por nós?!"
-						   +"<html>"; 
-					 linhas[9] = 6;	
+		tx[9] = "<html>Homero:"
+				+ "<br/><br/>destru\u00EDdas e culturas apagadas, e, \u00E9 isso"
+				+ "<br/>que acontecer\u00E1 com Helaria se n\u00E3o"
+				+ "<br/>fizermos nada. Mas por que n\u00e3s "
+				+ "<br/>far\u00EDamos alguma coisa por Helaria"
+				+ "<br/>se Helaria nunca fez nada por n\u00e3s?!"
+				+"<html>"; 
+		linhas[9] = 6;	
 					 
-				 tx[10] = "<html>Um homem irritado:"
-							   + "<br/><br/> Porque nós vivemos aqui seu imbecil!"
-							   +"<html>"; 
-						 linhas[10] = 2;
+		tx[10] = "<html>Um homem irritado:"
+				+ "<br/><br/> Porque n\u00e3s vivemos aqui seu imbecil!"
+				+"<html>"; 
+		linhas[10] = 2;
 						 
-				 tx[11] = "<html>Você retruca com ferocidade,"
-								   + "<br/>afinal foi Bethesda que"
-								   + "<br/>destruiu sua vila, queimou sua casa e"
-								   + "<br/>matou sua fam\u00EDlia."
-								   +"<html>"; 
-							 linhas[11] = 3;
+		tx[11] = "<html>Voc\u00EA retruca com ferocidade,"
+				+ "<br/>afinal foi Bethesda que"
+				+ "<br/>destruiu sua vila, queimou sua casa e"
+				+ "<br/>matou sua fam\u00EDlia."
+				+"<html>"; 
+		linhas[11] = 3;
 							 
-				  tx[12] = "<html>Pelo seu tom ficou claro para todos que conhecem um pouco"
-									   + "<br/>da sua história que você est\u00E1 disposto a"
-									   + "<br/>tudo para obter vingança."
-									   +"<html>"; 
-								 linhas[12] = 2;
+		tx[12] = "<html>Pelo seu tom ficou claro para todos que conhecem um pouco"
+				+ "<br/>da sua hist\u00e3ria que voc\u00EA est\u00E1 disposto a"
+				+ "<br/>tudo para obter vingan\u00E7a."
+				+"<html>"; 
+		linhas[12] = 2;
 								 
-				   tx[13] = "<html>Homero:"
-										   + "<br/><br/>Percebo que"
-										   + "<br/>posso contar com você nessa guerra,"+player.getNome()+"."
-										   +"<html>"; 
-									 linhas[13] = 2;
+		tx[13] = "<html>Homero:"
+				+ "<br/><br/>Percebo que"
+				+ "<br/>posso contar com voc\u00EA nessa guerra,"+player.getNome()+"."
+				+"<html>"; 
+		linhas[13] = 2;
 									 
-				   tx[14] = "<html>Você diz, pode apostar!"
-											   + "<br/>A reuni\u00E3o continua por mais um tempo,"
-											   + "<br/>detalhes da guerra s\u00E3o discutidos e"
-											   + "<br/>esclarecidos. O Imp\u00E9rio de Bethesda est\u00E1"
-											   + "<br/>marchando em direç\u00E3o a Helaria e tem"
-											   + "<br/>previs\u00E3o de chegar dentro de três dias."
-											   +"<html>"; 
-										 linhas[14] = 5;
+		tx[14] = "<html>Voc\u00EA diz, pode apostar!"
+				+ "<br/>A reuni\u00E3o continua por mais um tempo,"
+				+ "<br/>detalhes da guerra s\u00E3o discutidos e"
+				+ "<br/>esclarecidos. O Imp\u00E9rio de Bethesda est\u00E1"
+				+ "<br/>marchando em dire\u00E7\u00E3o a Helaria e tem"
+				+ "<br/>previs\u00E3o de chegar dentro de tr\u00EAs dias."
+				+"<html>"; 
+		linhas[14] = 5;
 										 
-					tx[15] = "<html>Nesse per\u00EDodo você ser\u00E1 apresentado \u00E0"
-												   + "<br/>algumas miss\u00F5es e poder\u00E1 completar"
-												   + "<br/>uma parte delas, mas lembre-se que elas"
-												   + "<br/>ter\u00E3o consequências, ent\u00E3o escolha bem"
-												   + "<br/>quais você ir\u00E1 fazer, pois assim que uma"
-												   + "<br/>miss\u00E3o for iniciada, você n\u00E3o poder\u00E1"
-												   + "<br/>iniciar outra at\u00E9 que termine a primeira."
-												   +"<html>"; 
-											 linhas[15] = 6;}
+		tx[15] = "<html>Nesse per\u00EDodo voc\u00EA ser\u00E1 apresentado \u00E0"
+				+ "<br/>algumas miss\u00F5es e poder\u00E1 completar"
+				+ "<br/>uma parte delas, mas lembre-se que elas"
+				+ "<br/>ter\u00E3o consequ\u00EAncias, ent\u00E3o escolha bem"
+				+ "<br/>quais voc\u00EA ir\u00E1 fazer, pois assim que uma"
+				+ "<br/>miss\u00E3o for iniciada, voc\u00EA n\u00E3o poder\u00E1"
+				+ "<br/>iniciar outra at\u00E9 que termine a primeira."
+				+"<html>"; 
+		linhas[15] = 6;
+		
+	}
+	
 									 
 
 	
@@ -1677,5 +1664,5 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 //		 +"<html>";
 //  linhas[] = ;
 
-	// Fim dos textos do Pr\u00F3logo
+
 }
