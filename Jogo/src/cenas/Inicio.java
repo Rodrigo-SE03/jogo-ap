@@ -37,7 +37,7 @@ public class Inicio {
 		};
 
 		escolha2 = new ActionListener() {// Action caso escolha a 2� op��o
-					
+
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().dispose();
 				admin1(player);
@@ -46,14 +46,14 @@ public class Inicio {
 
 		choice.getOpcao1().addActionListener(escolha1);
 		choice.getOpcao2().addActionListener(escolha2);
-		
+
 	}
-	
+
 	public void admin1(Jogador player) {
 		Texto t1 = new Texto();
 		t1.zerar();
 		Escolhas choice = new Escolhas();
-		choice.doEscolhas_3(t1.getTexto(), "Qual classe?", "Arcano", "Guerreiro","Assassino");
+		choice.doEscolhas_3(t1.getTexto(), "Qual classe?", "Arcano", "Guerreiro", "Assassino");
 		ActionListener escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -76,7 +76,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().remove(choice.getPanel_1());
 				new Hist_Assassin().assassin1(t1, player);
-				
+
 			}
 		};
 
@@ -535,7 +535,6 @@ public class Inicio {
 					new Hist_Arcan().arcan1(t1, vet.getPlayer());
 				} else
 					cont++;
-					
 
 			}
 		};
@@ -665,7 +664,6 @@ public class Inicio {
 					new Hist_Assassin().assassin1(t1, vet.getPlayer());
 				} else
 					cont++;
-					
 
 			}
 		};

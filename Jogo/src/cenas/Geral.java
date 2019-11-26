@@ -34,7 +34,7 @@ public class Geral { // Classe base para criação dos textos
 					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
 					Thread.currentThread();
 					try {
-						Thread.sleep(50);
+						Thread.sleep(100);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
