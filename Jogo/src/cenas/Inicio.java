@@ -21,6 +21,7 @@ public class Inicio {
 	private Musica musica = new Musica();
 	private Musica[] musicasSegunda;
 	
+	private Musica musica2 = new Musica();
 
 	public void inicio() { // 1� parte do pr�logo
 
@@ -31,15 +32,34 @@ public class Inicio {
 		vet.inicio(); // Instancia os vetores de texto para o conjunto de textos do metodo inicio
 		geral.escolhas_0(t1, vet); // Chama a fun�ao para manipular a gera��o de textos
 		musica.TocaMusica("src/sons/musicaCasa.wav");
-		//musicasSegunda[0].TocaMusica("src/sons/musicaHidra.wav");
+
+		musica.setVolume(0.8f);
 		
 		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
 			int cont = 0; // Contador para verificar a posi��o do vetor de texto
 
 			public void actionPerformed(ActionEvent e) {
+				System.out.println(cont);
 				switch (cont) {
+				case 10:
+					musica.reduzVolume(0.4f,90);
+					break;
 				case 12:
+					musica.reduzVolume(0.02f,40);
+					musica2.TocaMusica("src/sons/musicaDesespero.wav");
+					musica2.setVolume(0.0f);
+					musica2.aumentaVolume(0.8f,100);
+					break;
+				case 13:
 					musica.stop();
+					//musica2.TocaMusica("src/sons/musicaDesespero.wav");
+					
+					break;
+				case 15:
+					musica2.reduzVolume(0.15f,50);
+					break;
+				case 18:
+					musica2.stop();
 					break;
 				default:
 					break;
@@ -59,6 +79,7 @@ public class Inicio {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				musica.stop();
 				// TODO Auto-generated method stub
 				new Formulario(); // Chama a fun��o para abrir o formul�rio
 				t1.getTexto().dispose();

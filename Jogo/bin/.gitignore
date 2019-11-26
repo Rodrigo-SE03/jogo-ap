@@ -1,6 +1,10 @@
 /cenas/
 /enigmas/
 /graficos/
+<<<<<<< Updated upstream
+=======
+/imagens/
+>>>>>>> Stashed changes
 /lixo/
 /mapas/
 /menus/
@@ -8,4 +12,7 @@
 /principal/
 /sons/
 /testes/
+<<<<<<< Updated upstream
 /bibliotecas/
+=======
+>>>>>>> Stashed changes
