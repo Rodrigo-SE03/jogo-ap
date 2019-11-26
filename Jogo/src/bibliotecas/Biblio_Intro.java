@@ -27,7 +27,7 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 		tx = new String[23];
 		linhas = new int[23];
 
-		tx[0] = "<html>O dia amanheceu. Voc\u00EA acorda e se" + "<br/>levanta de sua cama e sai de seu"
+		tx[0] = "<html>O dia amanheceu. Voc\u00EA acorda, se" + "<br/>levanta de sua cama e sai de seu"
 				+ "<br/> quarto." + "</html>";
 		linhas[0] = 2;
 

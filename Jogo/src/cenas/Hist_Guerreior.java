@@ -11,11 +11,10 @@ import sons.Musica;
 public class Hist_Guerreior {
 	private ActionListener continuar, escolha1, escolha2;
 	private Biblio_Guerreiro vet = new Biblio_Guerreiro(); // Vetor de texto
-	private Jogador player; // informa��es do playerS
 	private Musica musica = new Musica();
 	private Musica[] musicasSegunda;
 	
-	public void guerreiro1(Texto t1, Jogador Player) {
+	public void guerreiro1(Texto t1, Jogador player) {
 		Geral geral = new Geral();
 
 		vet.setPlayer(player);

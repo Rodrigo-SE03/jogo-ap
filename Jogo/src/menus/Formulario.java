@@ -153,8 +153,8 @@ public class Formulario{
 						player.setSexo(1);
 	
 					frame.dispose();
-					new Inicio().inicio2(player);
-	//				new Inicio2(player);
+//					new Inicio().inicio2(player);
+					new Inicio().admin(player);
 					}
 				}
 		};

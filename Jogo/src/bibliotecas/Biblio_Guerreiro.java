@@ -1,6 +1,6 @@
 package bibliotecas;
 
-public class Biblio_Guerreiro extends Biblioteca{
+public class Biblio_Guerreiro extends Biblioteca {
 
 	/*
 	 * 
@@ -8,7 +8,7 @@ public class Biblio_Guerreiro extends Biblioteca{
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à  \u00E1 á  \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
 	 * \u00EA é \u00E9 ê \u00C9 É
 	 * 
@@ -19,7 +19,7 @@ public class Biblio_Guerreiro extends Biblioteca{
 	 * \u00F3 Ó \u00F4 ô \u00F5 õ
 	 * 
 	 */
-	
+
 	public void grr_1() { // 2 opcoes
 
 		tx = new String[5];
@@ -67,7 +67,7 @@ public class Biblio_Guerreiro extends Biblioteca{
 
 		tx = new String[11];
 		linhas = new int[11];
-		
+
 		tx[0] = "<html>- Agora que terminamos de comer, por" + "<br/>que me chamou aqui t\u00E3o de repente?"
 				+ "<html>";
 		linhas[0] = 1;
@@ -116,7 +116,7 @@ public class Biblio_Guerreiro extends Biblioteca{
 		linhas[10] = 3;
 
 	}
-	
+
 //	  tx[] = "<html>"
 //		 + "<br/>"
 //		 + "<br/>" 

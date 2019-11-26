@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import bibliotecas.Biblio_Intro;
+import graficos.Escolhas;
 import graficos.Texto;
 import mapas.Maps;
 import menus.Formulario;
@@ -17,24 +18,87 @@ public class Inicio {
 
 	private ActionListener continuar, escolha1, escolha2;
 	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
-	private Jogador player; // informaï¿½ï¿½es do playerS
 	private Musica musica = new Musica();
 	private Musica[] musicasSegunda;
-	
+
 	private Musica musica2 = new Musica();
+
+	public void admin(Jogador player) {
+		Texto t1 = new Texto();
+		Escolhas choice = new Escolhas();
+		t1.zerar();
+		choice.doEscolhas_2(t1.getTexto(), "", "Seguir história", "Pular pras classes");
+		escolha1 = new ActionListener() { // Action caso escolha a 1ï¿½ opï¿½ï¿½o
+
+			public void actionPerformed(ActionEvent e) {
+				t1.getTexto().dispose();
+				inicio2(player);
+			}
+		};
+
+		escolha2 = new ActionListener() {// Action caso escolha a 2ï¿½ opï¿½ï¿½o
+					
+			public void actionPerformed(ActionEvent e) {
+				t1.getTexto().dispose();
+				admin1(player);
+			}
+		};
+
+		choice.getOpcao1().addActionListener(escolha1);
+		choice.getOpcao2().addActionListener(escolha2);
+		
+	}
+	
+	public void admin1(Jogador player) {
+		Texto t1 = new Texto();
+		t1.zerar();
+		Escolhas choice = new Escolhas();
+		choice.doEscolhas_3(t1.getTexto(), "Qual classe?", "Arcano", "Guerreiro","Assassino");
+		ActionListener escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				t1.getTexto().remove(choice.getPanel_1());
+				new Hist_Arcan().arcan1(t1, player);
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				t1.getTexto().remove(choice.getPanel_1());
+				new Hist_Guerreior().guerreiro1(t1, player);
+
+			}
+		};
+
+		ActionListener escolha3 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				t1.getTexto().remove(choice.getPanel_1());
+				new Hist_Assassin().assassin1(t1, player);
+				
+			}
+		};
+
+		choice.getOpcao1().addActionListener(escolha1);
+		choice.getOpcao2().addActionListener(escolha2);
+		choice.getOpcao3().addActionListener(escolha3);
+
+	}
 
 	public void inicio() { // 1ï¿½ parte do prï¿½logo
 
 		Texto t1 = new Texto(); // Cria o JFrame e instancia a classe que gera os textos
 		Geral geral = new Geral(); // Classe geral para manipular a geraï¿½ï¿½o dos textos
 		musicasSegunda = new Musica[1];
-		for(int cont = 0; cont< musicasSegunda.length;cont ++) musicasSegunda[cont] = new Musica();
+		for (int cont = 0; cont < musicasSegunda.length; cont++)
+			musicasSegunda[cont] = new Musica();
 		vet.inicio(); // Instancia os vetores de texto para o conjunto de textos do metodo inicio
 		geral.escolhas_0(t1, vet); // Chama a funï¿½ao para manipular a geraï¿½ï¿½o de textos
 		musica.TocaMusica("src/sons/musicaCasa.wav");
 
 		musica.setVolume(0.8f);
-		
+
 		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
 			int cont = 0; // Contador para verificar a posiï¿½ï¿½o do vetor de texto
 
@@ -42,21 +106,21 @@ public class Inicio {
 				System.out.println(cont);
 				switch (cont) {
 				case 10:
-					musica.reduzVolume(0.4f,90);
+					musica.reduzVolume(0.4f, 90);
 					break;
 				case 12:
-					musica.reduzVolume(0.02f,40);
+					musica.reduzVolume(0.02f, 40);
 					musica2.TocaMusica("src/sons/musicaDesespero.wav");
 					musica2.setVolume(0.0f);
-					musica2.aumentaVolume(0.8f,100);
+					musica2.aumentaVolume(0.8f, 100);
 					break;
 				case 13:
 					musica.stop();
-					//musica2.TocaMusica("src/sons/musicaDesespero.wav");
-					
+					// musica2.TocaMusica("src/sons/musicaDesespero.wav");
+
 					break;
 				case 15:
-					musica2.reduzVolume(0.15f,50);
+					musica2.reduzVolume(0.15f, 50);
 					break;
 				case 18:
 					musica2.stop();
@@ -72,26 +136,28 @@ public class Inicio {
 			}
 		};
 		JButton pular = new JButton("Pular");
-		pular.setBounds(500,0,100,30);
+		pular.setBounds(500, 0, 100, 30);
 		t1.getTexto().add(pular);
-		
+
 		pular.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				musica.stop();
 				// TODO Auto-generated method stub
+				musica.stop();
+//				musicasSegunda[0].stop();
 				new Formulario(); // Chama a funï¿½ï¿½o para abrir o formulï¿½rio
 				t1.getTexto().dispose();
 			}
 		});
+
 		t1.getContinuar().addActionListener(continuar); // Vincula o botï¿½o ao ActionListener
 	}
 
 	public void inicio2(Jogador player) {// 2ï¿½ parte do prï¿½logo
 
-		Geral geral = new Geral();
-		this.player = player; // Atualiza as informaï¿½ï¿½es do player
+		Geral geral = new Geral(); // Atualiza as informaï¿½ï¿½es do player
 		vet.setPlayer(player);
 		Texto t1 = new Texto();
 
@@ -173,21 +239,21 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
-				
-				switch(cont) {
+
+				switch (cont) {
 				case 1:
 				default:
 					break;
 				}
-				
+
 				if (cont == (vet.getTx().length - 1)) {
 					t1.zerar();
 					t1.getContinuar().removeActionListener(continuar);
 					torreArcana(t1);
-					
+
 				} else
 					cont++;
-				
+
 			}
 		};
 
@@ -287,55 +353,54 @@ public class Inicio {
 					t1.zerar();
 					t1.getContinuar().removeActionListener(continuar);
 					t1.getTexto().dispose();
-					
+
 					Maps mapa = new Maps();
 					mapa.zerarBotoes();
-					
+
 					ActionListener castelo = new ActionListener() {
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							mapa.getFrame().dispose();
 							castelo(new Texto());
-							
+
 						}
-						
+
 					};
-					
+
 					ActionListener alameda = new ActionListener() {
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							mapa.getFrame().dispose();
 							alameda3(new Texto());
-							
+
 						}
-						
+
 					};
-					
+
 					ActionListener torre = new ActionListener() {
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							mapa.getFrame().dispose();
 							torreArcana(new Texto());
-							
+
 						}
-						
+
 					};
-					
+
 					mapa.getBtnCastelo().setVisible(true);
 					mapa.getCasteloFundo().setVisible(true);
 					mapa.getBtnAlamedaPonteiros().setVisible(true);
 					mapa.getAlamedaPonteirosFundo().setVisible(true);
 					mapa.getBtnTorreArcana().setVisible(true);
 					mapa.getTorreArcanaFundo().setVisible(true);
-					
+
 					mapa.getBtnCastelo().addActionListener(castelo);
 					mapa.getBtnAlamedaPonteiros().addActionListener(alameda);
 					mapa.getBtnTorreArcana().addActionListener(torre);
-					
-					
+
 				} else
 					cont++;
 
@@ -343,7 +408,6 @@ public class Inicio {
 		};
 
 		t1.getContinuar().addActionListener(continuar);
-
 
 	}
 
@@ -476,8 +540,8 @@ public class Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-	
-	public void alameda3 (Texto t1) {
+
+	public void alameda3(Texto t1) {
 		Geral geral = new Geral();
 
 		vet.intro_ladino();
@@ -514,8 +578,8 @@ public class Inicio {
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
 		geral.getChoice().getOpcao3().addActionListener(escolha3);
 	}
-	
-	public void bebidaLadino(Texto t1,int x) {
+
+	public void bebidaLadino(Texto t1, int x) {
 		Geral geral = new Geral();
 
 		vet.bebida_ladino(x);
@@ -526,7 +590,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				resposta1Ladino(t1,1);
+				resposta1Ladino(t1, 1);
 			}
 		};
 
@@ -535,7 +599,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				resposta1Ladino(t1,2);
+				resposta1Ladino(t1, 2);
 			}
 		};
 
@@ -544,7 +608,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				resposta1Ladino(t1,3);
+				resposta1Ladino(t1, 3);
 			}
 		};
 
@@ -564,7 +628,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				resposta2Ladino(t1,1);
+				resposta2Ladino(t1, 1);
 			}
 		};
 
@@ -573,7 +637,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				resposta2Ladino(t1,2);
+				resposta2Ladino(t1, 2);
 			}
 		};
 
@@ -582,10 +646,10 @@ public class Inicio {
 
 	}
 
-	public void resposta2Ladino(Texto t1,int x) {
+	public void resposta2Ladino(Texto t1, int x) {
 		Geral geral = new Geral();
 
-		vet.neg_lad (x);
+		vet.neg_lad(x);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -604,7 +668,7 @@ public class Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-	
+
 	public void castelo(Texto t1) {
 		Geral geral = new Geral();
 
@@ -632,7 +696,7 @@ public class Inicio {
 		geral.getChoice().getOpcao1().addActionListener(escolha1);
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
 	}
-	
+
 	public void contHist(Texto t1) {
 		Geral geral = new Geral();
 
@@ -655,7 +719,7 @@ public class Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-	
+
 	public void naoCont(Texto t1) {
 		Geral geral = new Geral();
 
@@ -722,7 +786,7 @@ public class Inicio {
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
 
 	}
-	
+
 	public void entrEstabulo(Texto t1) {
 		Geral geral = new Geral();
 
@@ -774,9 +838,5 @@ public class Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-
-
-
-
 
 }

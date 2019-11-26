@@ -1,14 +1,14 @@
 package bibliotecas;
 
-public class Biblio_Assassin extends Biblioteca{
-	
+public class Biblio_Assassin extends Biblioteca {
+
 	/*
 	 * 
 	 * Lista de acentos (evita que bugue ao mandar pro GitKraken)
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à  \u00E1 á  \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
 	 * \u00EA é \u00E9 ê \u00C9 É
 	 * 
@@ -25,11 +25,12 @@ public class Biblio_Assassin extends Biblioteca{
 		linhas = new int[16];
 
 		tx[0] = "<html>Quinze anos se passaram desde que"
-				+ "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante. Voc\u00EA se "
-				+ "<br/>tornou um membro valioso, um assassino "
-				+ "<br/>r\u00E1pido e eficiente, completou in\u00FAmeras "
-				+ "<br/>miss\u00F5es, deixou in\u00FAmeros cad\u00E1veres." + "<html>";
-		linhas[0] = 4;
+				+ "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante."
+				+ "<br/>Voc\\u00EA se tornou um membro "
+				+ "<br/>valioso, um assassino  r\u00E1pido e eficiente,  "
+				+ "<br/>completou in\\u00FAmeras miss\u00F5es, deixou "
+				+ "<br/>in\\u00FAmeros cad\\u00E1veres." + "<html>";
+		linhas[0] = 5;
 
 		tx[1] = "<html>" + "<br/>Em todos esses anos as pessoas da Ordem"
 				+ "<br/>se tornaram sua fam\u00EDlia, em especial "
@@ -43,9 +44,9 @@ public class Biblio_Assassin extends Biblioteca{
 				+ "<br/>morte ou problemas, mas, hoje em" + "<br/>especial, parece significar os dois" + "<html> ";
 		linhas[2] = 5;
 
-		tx[3] = "<html>" + "<br/>Os diversos membros comeÃ§am a se "
+		tx[3] = "<html>" + "<br/>Os diversos membros começam a se "
 				+ "<br/>juntar e o l\u00EDder da Guilda, por definiÃ§\u00E3o, o "
-				+ "<br/>membro mais antigo vivo, Homero,comeÃ§a a falar:" + "<html>";
+				+ "<br/>membro mais antigo vivo, Homero,começa a falar:" + "<html>";
 		linhas[3] = 3;
 
 		tx[4] = "<html>Homero:" + "<br/><br/>Durante muito tempo vivemos em um"
@@ -77,7 +78,7 @@ public class Biblio_Assassin extends Biblioteca{
 
 		tx[9] = "<html>Homero:" + "<br/><br/>destru\u00EDdas e culturas apagadas, e, \u00E9 isso"
 				+ "<br/>que acontecer\u00E1 com Helaria se n\u00E3o" + "<br/>fizermos nada. Mas por que nÃ³s "
-				+ "<br/>far\u00EDamos alguma coisa por Helaria" + "<br/>se Helaria nunca fez nada por nÃ³s?!"
+				+ "<br/>far\u00EDamos alguma coisa por Helaria" + "<br/>se Helaria nunca fez nada por nós?!"
 				+ "<html>";
 		linhas[9] = 6;
 
@@ -118,5 +119,5 @@ public class Biblio_Assassin extends Biblioteca{
 //		 + "<br/>"
 //		 +"<html>";
 //linhas[] = ;
-	
+
 }

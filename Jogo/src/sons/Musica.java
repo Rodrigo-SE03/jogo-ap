@@ -63,7 +63,8 @@ public class Musica {
 		try {
 			while(getVolume()>volume) {
 				System.out.println(getVolume());
-				Thread.currentThread().sleep(tempo);
+				Thread.currentThread();
+				Thread.sleep(tempo);
 				setVolume(getVolume()-0.01f);
 			}
 		} catch (InterruptedException e) {
@@ -80,7 +81,8 @@ public class Musica {
 		try {
 			while(getVolume()<volume) {
 				System.out.println(getVolume());
-				Thread.currentThread().sleep(tempo);
+				Thread.currentThread();
+				Thread.sleep(tempo);
 				setVolume(getVolume()+0.01f);
 			}
 		} catch (InterruptedException e) {

@@ -32,6 +32,13 @@ public class Geral { // Classe base para criação dos textos
 				if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
 					cont++;
 					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+					Thread.currentThread();
+					try {
+						Thread.sleep(50);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		};
@@ -52,6 +59,13 @@ public class Geral { // Classe base para criação dos textos
 				if (cont < (vet.getTx().length - 1)) {
 					cont++;
 					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+					Thread.currentThread();
+					try {
+						Thread.sleep(50);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				} else {
 					t1.zerar();
 					choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());// Cria uma
@@ -79,6 +93,13 @@ public class Geral { // Classe base para criação dos textos
 				if (cont < (vet.getTx().length - 1)) {
 					cont++;
 					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+					Thread.currentThread();
+					try {
+						Thread.sleep(50);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				} else {
 					t1.zerar();
 					choice.doEscolhas_3(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2(), vet.getOp3());

@@ -1,7 +1,6 @@
 package graficos;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Rectangle;
 
@@ -50,9 +49,22 @@ public class Texto {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.frame.setSize(610,438);
-		this.frame.setLocationRelativeTo(null);
+		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
+		frame.setIconImage(icone.getImage());
+		frame.setSize(610,438);
+		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
+		frame.setDefaultCloseOperation(0);
+		frame.addWindowListener(new java.awt.event.WindowAdapter() {
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		        if (JOptionPane.showConfirmDialog(null, 
+		            "Tem certeza que deseja sair do jogo (todo seu progresso será perdido)?", "Sair", 
+		            JOptionPane.YES_NO_OPTION,
+		            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+		            System.exit(0);
+		        }
+		    }
+		});
 		
 		//botão continuar
 		continuar = new JButton();

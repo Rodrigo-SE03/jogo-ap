@@ -13,6 +13,10 @@ public abstract class Biblioteca {
 		this.player = player;
 	}
 
+	public Jogador getPlayer() {
+		return player;
+	}
+
 	public String getChoice() {
 		return choice;
 	}
