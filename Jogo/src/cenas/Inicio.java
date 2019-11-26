@@ -4,6 +4,8 @@ package cenas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+
 import bibliotecas.Biblio_Intro;
 import graficos.Texto;
 import mapas.Maps;
@@ -49,7 +51,19 @@ public class Inicio {
 					cont++;
 			}
 		};
-
+		JButton pular = new JButton("Pular");
+		pular.setBounds(500,0,100,30);
+		t1.getTexto().add(pular);
+		
+		pular.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new Formulario(); // Chama a fun��o para abrir o formul�rio
+				t1.getTexto().dispose();
+			}
+		});
 		t1.getContinuar().addActionListener(continuar); // Vincula o bot�o ao ActionListener
 	}
 
