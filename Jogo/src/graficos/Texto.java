@@ -2,44 +2,74 @@ package graficos;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
-public class Texto extends Janela {
+import testes.Yo;
+
+public class Texto {
 	
-	private static final long serialVersionUID = 1L;
-	private Janela texto = new Janela();
-	private JButton continuar = new JButton(new ImageIcon("src/imagens/continuar.png"));
-	private JLabel txt = new JLabel();
-	private JLabel fundo = new JLabel(new ImageIcon("src/imagens/fundo_dialogo.png"));
-	
-	
-	
-	public JLabel getFundo() {
-		return fundo;
+	private JFrame frame;
+	private JButton continuar;
+	private JLabel txt;
+	private JLabel fundo;
+
+	/**
+	 * Launch the application.
+	 */
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Yo window = new Yo();
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+
+	/**
+	 * Create the application.
+	 */
+	public Texto() {
+		initialize();
 	}
 
-	public JButton getContinuar() {
-		return continuar;
-	}
-	
-	public Janela getTexto() {
-		return texto;
-	}
-
-
-
-	//os parâmetros são o texto que será inserido na caixa e o número de quebras de linha (<br/>) presentes no texto
-	public Texto(String text,int pulalinha) {
-		//criação da janela de texto
-		this.texto.construirJanela();
-		this.texto.setSize(610,438);
-		this.texto.setLocationRelativeTo(null);
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
+		frame.setIconImage(icone.getImage());
+		frame.setSize(610,438);
+		frame.setLocationRelativeTo(null);
+		frame.getContentPane().setLayout(null);
+		frame.setDefaultCloseOperation(0);
+		frame.addWindowListener(new java.awt.event.WindowAdapter() {
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		        if (JOptionPane.showConfirmDialog(null, 
+		            "Tem certeza que deseja sair do jogo (todo seu progresso será perdido)?", "Sair", 
+		            JOptionPane.YES_NO_OPTION,
+		            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+		            System.exit(0);
+		        }
+		    }
+		});
 		
 		//botão continuar
-		this.texto.add(continuar);
+		continuar = new JButton();
+		continuar.setIcon(new ImageIcon(Yo.class.getResource("/imagens/continuar.png")));
+		this.frame.getContentPane().add(continuar);
 		this.continuar.setLayout(null);
 		this.continuar.setVisible(true);
 		this.continuar.setBounds(430,338,150,50);
@@ -48,25 +78,59 @@ public class Texto extends Janela {
 		
 		
 		//definição do texto da janela
-		this.txt.setText(text);
-		this.txt.setBounds(50,52,text.length()*10,30*(1+pulalinha));
+		txt = new JLabel();
+//		this.txt.setText("Carapaça");
+		this.txt.setBounds(50,52,500,30);
 		this.txt.setFont(new Font("Georgia",Font.BOLD, 25));
 		this.txt.setForeground(Color.black);
-		this.texto.add(txt);
+		this.frame.getContentPane().add(txt);
 		
 		//fundo
 		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
-		fund.setImage(fund.getImage().getScaledInstance(this.texto.getSize().width,this.texto.getSize().height,100));
+		fund.setImage(fund.getImage().getScaledInstance(this.frame.getSize().width,this.frame.getSize().height,100));
 		fundo = new JLabel(fund);
-		this.texto.add(fundo);
-		this.fundo.setBounds(this.texto.getBounds());
-		this.texto.setVisible(true);
+		this.frame.getContentPane().add(fundo);
+		this.fundo.setBounds(new Rectangle(96, 0, 498, 399));
+		this.frame.setVisible(true);
+		
 	}
 	
-	public void atualizaTexto(String tex,int pulalinha) {
+public JFrame getTexto() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public JButton getContinuar() {
+		return continuar;
+	}
+
+	public void setContinuar(JButton continuar) {
+		this.continuar = continuar;
+	}
+
+	public JLabel getTxt() {
+		return txt;
+	}
+
+	public void setTxt(JLabel txt) {
+		this.txt = txt;
+	}
+
+	public JLabel getFundo() {
+		return fundo;
+	}
+
+	public void setFundo(JLabel fundo) {
+		this.fundo = fundo;
+	}
+
+public void atualizaTexto(String tex,int pulalinha) {
 		
 		//botão continuar
-				this.texto.add(continuar);
+				this.frame.add(continuar);
 				this.continuar.setLayout(null);
 				this.continuar.setVisible(true);
 				this.continuar.setBounds(430,338,150,50);
@@ -78,16 +142,16 @@ public class Texto extends Janela {
 				this.txt.setFont(new Font("Georgia",Font.BOLD, 25));
 				this.txt.setForeground(Color.black);
 				this.txt.setVisible(true);
-				this.texto.add(txt);
+				this.frame.add(txt);
 				
 				
 				//fundo
-				this.texto.add(fundo);
+				this.frame.add(fundo);
 				this.fundo.setVisible(true);
 				this.fundo.setBounds(0,0,600,400);
 				
 				
-				this.texto.setVisible(true);
+				this.frame.setVisible(true);
 	}
 	
 	public void zerar() {
@@ -95,7 +159,5 @@ public class Texto extends Janela {
 		this.txt.setVisible(false);
 		this.fundo.setVisible(false);
 	}
-	
-	
 	
 }
