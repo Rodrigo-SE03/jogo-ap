@@ -3,6 +3,7 @@ package cenas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import bibliotecas.Biblioteca;
 import graficos.Escolhas;
 import graficos.Texto;
 

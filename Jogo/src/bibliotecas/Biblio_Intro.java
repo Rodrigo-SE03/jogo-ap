@@ -1,67 +1,25 @@
-package cenas;
+package bibliotecas;
 
-import personagens.Jogador;
+public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores de texto a serem usados
 
-public class Biblioteca { // Classe que armazena os vetores de texto a serem usados
-
-	private String[] tx; // textos
-	private String choice, op1, op2, op3; // Strings para a interface de escolhas
-	private int[] linhas; // variavel para ajustar o JLabel ao tamanho do texto
-	private int sexo; // variavel para corrigir o g\u00EAnero do personagem nos textos
-
+ 
 	/*
 	 * 
 	 * Lista de acentos (evita que bugue ao mandar pro GitKraken)
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à  \u00E1 á  \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
-	 * \u00EA ê \u00E9 é \u00C9 É
+	 * \u00EA é \u00E9 ê \u00C9 É
 	 * 
 	 * \u00ED í
 	 * 
 	 * \u00FA ú
 	 * 
-	 * \u00F3 ó \u00F4 ô \u00F5 õ
+	 * \u00F3 Ó \u00F4 ô \u00F5 õ
 	 * 
 	 */
-
-	// Getters and Setters
-
-	public void setSexo(int sexo) {
-		this.sexo = sexo;
-	}
-
-	public String getChoice() {
-		return choice;
-	}
-
-	public String getOp1() {
-		return op1;
-	}
-
-	public String getOp2() {
-		return op2;
-	}
-
-	public String getOp3() {
-		return op3;
-	}
-
-	public String[] getTx() {
-		return tx;
-	}
-
-	public String getTx(int x) {
-		return tx[x];
-	}
-
-	public int getLinhas(int x) {
-		return linhas[x];
-	}
-
-	// Fim dos Getter and Setters
 
 	// Textos para o pr\u00F3logo
 
@@ -182,7 +140,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		tx = new String[4];
 		linhas = new int[4];
 
-		if (sexo == 0) {
+		if (player.getSexo() == 0) {
 			tx[0] = "<html>Guarda:" + "<br/><br/>Tudo certo, mas antes de voc\u00EA"
 					+ "<br/>entrar, me permita lhe dar um" + "<br/>conselho: pense muito bem nas suas"
 					+ "<br/>primeiras a\u00E7\u00F5es aqui na cidade de "
@@ -261,7 +219,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				+ "<br/>liberou. N\u00E3o \u00E9 algo que se veja todos " + "<br/>os dias." + "<html>";
 		linhas[3] = 7;
 
-		if (sexo == 0) {
+		if (player.getSexo() == 0) {
 
 			tx[4] = "<html>Estranho de capuz: " + "<br/><br/>Meu nome \u00E9 Artemisia, sou uma  "
 					+ "<br/>arcana da Torre Anci\u00E3 E. Quanto ao " + "<br/>que eu quero, percebo em voc\u00EA tem "
@@ -326,7 +284,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		tx = new String[7];
 		linhas = new int[7];
 
-		if (sexo == 0) {
+		if (player.getSexo() == 0) {
 			tx[0] = "<html>Ladr\u00E3o:" + "<br/><br/>Muito obrigado senhor, voc\u00EA possui "
 					+ "<br/>uma alma nobre e caridosa, o " + "<br/>que \u00E9 raro nesta cidade de "
 					+ "<br/>hipocrisias. Nesta cidade s\u00E3o todos uns " + "<br/>hip\u00F3critas que adoram a um "
@@ -352,7 +310,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				+ "<html>";
 		linhas[2] = 4;
 
-		if (sexo == 0) {
+		if (player.getSexo() == 0) {
 			tx[3] = "<html>Ladr\u00E3o:" + "<br/><br/>H\u00E1 muito n\u00E3o vejo algu\u00EAm t\u00E3o nobre "
 					+ "<br/>quanto o senhor, mesmo depois de eu " + "<br/>ter te assaltado voc\u00EA me poupou, pelo "
 					+ "<br/>jeito a mis\u00E9ria te revolta mais do que " + "<br/>um crime." + "<html>";
@@ -397,7 +355,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 				+ "<br/>pobre diabo e vira-se para conversar" + "<br/>contigo. " + "<html>";
 		linhas[1] = 3;
 
-		if (sexo == 0) {
+		if (player.getSexo() == 0) {
 			tx[2] = "<html>Guarda:" + "<br/><br/>Um homem de fibra que est\u00E1 disposto"
 					+ "<br/>a colocar esses miser\u00E1veis em seu" + "<br/>devido lugar." + "<html>";
 			linhas[2] = 4;
@@ -459,12 +417,9 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	}
 
-	
-	
-	
 	// Intro Arcanista:
 
-	public void intro_arcanista(Jogador player) { // 2 op\u00E7\u00F5es
+	public void intro_arcanista() { // 2 op\u00E7\u00F5es
 		tx = new String[2];
 		linhas = new int[2];
 
@@ -485,7 +440,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	}
 
-	public void seguir_voz(Jogador player) { // 3 op\u00E7\u00F5es
+	public void seguir_voz() { // 3 op\u00E7\u00F5es
 
 		tx = new String[2];
 		linhas = new int[2];
@@ -519,7 +474,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		op3 = "Sou apenas algu\u00EAm sem nada a perder";
 	}
 
-	public void ignorar_voz(Jogador player) {// 3 op\u00E7\u00F5es
+	public void ignorar_voz() {// 3 op\u00E7\u00F5es
 
 		tx = new String[6];
 		linhas = new int[6];
@@ -572,7 +527,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		op3 = "Sou apenas algu\u00EAm sem nada a perder";
 	}
 
-	public void resposta_arcana(int x, Jogador player) { // 0 op\u00E7\u00F5es
+	public void resposta_arcana(int x) { // 0 op\u00E7\u00F5es
 
 		tx = new String[5];
 		linhas = new int[5];
@@ -618,7 +573,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>maior, um poder que muitos cobi\u00E7am, " + "<br/>mas poucos conseguem." + "<html>";
 			linhas[1] = 5;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[2] = "<html>Artemisia:" + "<br/><br/>" + player.getNome() + ","
 						+ "<br/>voc\u00EA acha que tem o que \u00E9 preciso "
 						+ "<br/>para se juntar a ordem arcana? Est\u00E1 " + "<br/>disposto a renunciar muito do que a"
@@ -650,7 +605,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>maior, um poder que muitos cobi\u00E7am, " + "<br/>mas poucos conseguem." + "<html>";
 			linhas[1] = 5;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[2] = "<html>Arcana:" + "<br/><br/>" + player.getNome() + ","
 						+ "<br/>voc\u00EA acha que tem o que \u00E9 preciso "
 						+ "<br/>para se juntar a ordem arcana? Est\u00E1 " + "<br/>disposto a renunciar muito do que a"
@@ -682,7 +637,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	// Intro Ladino:
 
-	public void intro_ladino(Jogador player) { // 3 op\u00E7\u00F5es
+	public void intro_ladino() { // 3 op\u00E7\u00F5es
 		tx = new String[3];
 		linhas = new int[3];
 
@@ -707,7 +662,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		op3 = "Nada";
 	}
 
-	public void bebida_ladino(Jogador player, int x) { // 3 op\u00E7\u00F5es
+	public void bebida_ladino(int x) { // 3 op\u00E7\u00F5es
 		tx = new String[4];
 		linhas = new int[4];
 
@@ -718,7 +673,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 			linhas[0] = 3;
 			break;
 		case 2:
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[0] = "<html>Taverneiro: " + "<br/><br/>Voc\u00EA n\u00E3o \u00E9 velho demais para beber"
 						+ "<br/>isso?" + "<html>";
 				linhas[0] = 3;
@@ -753,7 +708,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>sobreviv\u00EAncia." + "<html>";
 			linhas[3] = 5;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[3] = "<html>Cassiu:" + "<br/><br/>Eu tamb\u00E9m vejo o sofrimento em seu"
 						+ "<br/>rosto, vejo que tamb\u00E9m \u00E9 um lutador, "
 						+ "<br/>e, suas fei\u00E7\u00F5es, n\u00E3o s\u00E3o daqui. Eu  "
@@ -779,7 +734,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>sobreviv\u00EAncia." + "<html>";
 			linhas[3] = 5;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[3] = "<html>Estranho:" + "<br/><br/>Eu tamb\u00E9m vejo o sofrimento em seu"
 						+ "<br/>rosto, vejo que tamb\u00E9m \u00E9 um lutador, "
 						+ "<br/>e, suas fei\u00E7\u00F5es, n\u00E3o s\u00E3o daqui. Eu  "
@@ -802,7 +757,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		op3 = "Nasci e cresci em Helaria";
 	}
 
-	public void resp_lad(Jogador player, int x) { // 2 op\u00E7\u00F5es
+	public void resp_lad(int x) { // 2 op\u00E7\u00F5es
 
 		tx = new String[1];
 		linhas = new int[1];
@@ -821,7 +776,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 			break;
 		case 2:
 			if (player.isBonus_inicio()) {
-				if (sexo == 0) {
+				if (player.getSexo() == 0) {
 					tx[0] = "<html>Cassiu: " + "<br/><br/>A verdade pode ser dura, mas n\u00E3o  "
 							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito meu amigo" + "<html>";
 					linhas[0] = 3;
@@ -831,7 +786,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					linhas[0] = 3;
 				}
 			} else {
-				if (sexo == 0) {
+				if (player.getSexo() == 0) {
 					tx[0] = "<html>Estranho: " + "<br/><br/>A verdade pode ser dura, mas n\u00E3o  "
 							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito meu amigo" + "<html>";
 					linhas[0] = 3;
@@ -855,7 +810,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 			break;
 		}
 		if (player.isBonus_inicio()) {
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				choice = "<html>Cassiu:" + "<br/><br/>Bom, de qualquer forma, vamos agora "
 						+ "<br/>ao que interessa. Est\u00E1 disposto a me ouvir?<html>";
 			} else {
@@ -863,7 +818,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 						+ "<br/>ao que interessa. Est\u00E1 disposta a me ouvir?<html>";
 			}
 		} else {
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				choice = "<html>Estranho:" + "<br/><br/>Bom, de qualquer forma, vamos agora "
 						+ "<br/>ao que interessa. Est\u00E1 disposto a me ouvir?<html>";
 			} else {
@@ -877,7 +832,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	}
 
-	public void neg_lad(Jogador player, int x) { // 0 op\u00E7\u00F5es
+	public void neg_lad(int x) { // 0 op\u00E7\u00F5es
 
 		tx = new String[7];
 		linhas = new int[7];
@@ -885,7 +840,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		switch (x) {
 		case 1:
 			if (player.isBonus_inicio()) {
-				if (sexo == 0) {
+				if (player.getSexo() == 0) {
 					tx[0] = "<html>Cassiu: " + "<br/><br/>Eu estava certo sobre voc\u00EA. \u00E9 um  "
 							+ "<br/>lutador, tem coragem e est\u00E1 pronto " + "<br/>para novos desafios" + "<html>";
 					linhas[0] = 4;
@@ -895,7 +850,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					linhas[0] = 4;
 				}
 			} else {
-				if (sexo == 0) {
+				if (player.getSexo() == 0) {
 					tx[0] = "<html>Estranho: " + "<br/><br/>Eu estava certo sobre voc\u00EA. \u00C9 um  "
 							+ "<br/>lutador, tem coragem e est\u00E1 pronto " + "<br/>para novos desafios" + "<html>";
 					linhas[0] = 4;
@@ -953,7 +908,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>\u00E9 verdade, e n\u00E3o hesita em aceitar " + "<br/>a oferta." + "<html>";
 			linhas[5] = 2;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[6] = "<html>Cassiu: " + "<br/><br/>Perfeito, mas antes temos que test\u00E1-lo" + "<html>";
 				linhas[6] = 2;
 			} else {
@@ -979,7 +934,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>\u00E9 verdade, e n\u00E3o hesita em aceitar " + "<br/>a oferta." + "<html>";
 			linhas[5] = 2;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[6] = "<html>Estranho: " + "<br/><br/>Perfeito, mas antes temos que test\u00E1-lo" + "<html>";
 				linhas[6] = 2;
 			} else {
@@ -1012,7 +967,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 		op2 = "Interesses pessoais";
 	}
 
-	public void contar_hist(Jogador player) {// 0 op\u00E7\u00F5es
+	public void contar_hist() {// 0 op\u00E7\u00F5es
 
 		tx = new String[6];
 		linhas = new int[6];
@@ -1024,7 +979,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<html>";
 			linhas[0] = 3;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[1] = "<html>Soldado:" + "<br/><br/>Me lembro de Erebor falando sobre"
 						+ "<br/>um estranho vir ver o capit\u00E3o hoje.  "
 						+ "<br/>Tudo certo pode entrar, \u00E9 s\u00F3 seguir "
@@ -1088,7 +1043,7 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 					+ "<br/>deseja se alistar a Guarda Real." + "<html>";
 			linhas[0] = 2;
 
-			if (sexo == 0) {
+			if (player.getSexo() == 0) {
 				tx[1] = "<html>Soldado:" + "<br/><br/>N\u00E3o sei por que a Guarda precisaria"
 						+ "<br/>de um garoto como voc\u00EA, mas tudo "
 						+ "<br/>bem.Pode entrar, \u00E9 s\u00F3 seguir reto e"
@@ -1149,527 +1104,182 @@ public class Biblioteca { // Classe que armazena os vetores de texto a serem usa
 
 	}
 
-	public void naoEdaSuaConta(Jogador player) { // 3 op\u00E7\u00F5es
-	  
+	public void naoEdaSuaConta() { // 3 op\u00E7\u00F5es
+
 		tx = new String[2];
 		linhas = new int[2];
-		
-		tx[0] = "<html>Soldado:"
-			 + "<br/><br/>Isso n\u00E3o \u00E9 problema meu."
-			 + "<br/>V\u00E1 embora daqui !" 
-			 +"<html>";
-	    linhas[0] = 3;
-	    
-	    tx[1] = "<html>Soldado:"
-				 + "<br/><br/>Voc\u00EA se afasta da vis\u00E3o dele e "
-				 + "<br/>procura outra forma de entrar no " 
-				 + "<br/>pal\u00E1cio. Voc\u00EA consegue entrar no " 
-				 + "<br/>castelo gra\u00E7as a uma falha no muro " 
-				 + "<br/>que voc\u00EA consegue escalar, mas a" 
-				 + "<br/>guarda do lado de dentro \u00E9 grande. " 
-				 +"<html>";
-	   linhas[1] = 7;
-	   
-	   choice = "<html>Existem tr\u00EAs caminhos poss\u00EDveis, "
-				 + "<br/>pelos jardins pelos est\u00E1bulos, "
-				 + "<br/>anexados \u00E0 parte central ou por uma" 
-				 + "<br/>porta aparentemente sem guardas.  " 
-				 +"<html>";
-	   
-	   op1 = "Jardins";
-	   op2 = "Est\u00E1bulos";
-	   op3 = "Porta";
-	  
-	  
+
+		tx[0] = "<html>Soldado:" + "<br/><br/>Isso n\u00E3o \u00E9 problema meu." + "<br/>V\u00E1 embora daqui !"
+				+ "<html>";
+		linhas[0] = 3;
+
+		tx[1] = "<html>Soldado:" + "<br/><br/>Voc\u00EA se afasta da vis\u00E3o dele e "
+				+ "<br/>procura outra forma de entrar no " + "<br/>pal\u00E1cio. Voc\u00EA consegue entrar no "
+				+ "<br/>castelo gra\u00E7as a uma falha no muro " + "<br/>que voc\u00EA consegue escalar, mas a"
+				+ "<br/>guarda do lado de dentro \u00E9 grande. " + "<html>";
+		linhas[1] = 7;
+
+		choice = "<html>Existem tr\u00EAs caminhos poss\u00EDveis, " + "<br/>pelos jardins pelos est\u00E1bulos, "
+				+ "<br/>anexados \u00E0 parte central ou por uma" + "<br/>porta aparentemente sem guardas.  "
+				+ "<html>";
+
+		op1 = "Jardins";
+		op2 = "Est\u00E1bulos";
+		op3 = "Porta";
+
 	}
-	
+
 	public void jardins() { // 2 op\u00E7\u00F5es
 
 		tx = new String[1];
 		linhas = new int[1];
 
-	    tx[0] = "<html>O caminho pelos jardins est\u00E1 livre, "
-				 + "<br/>voc\u00EA consegue entrar no castelo. Mas"
-				 + "<br/>voc\u00EA est\u00E1 perdido, n\u00E3o sabe onde \u00E9 a  " 
-				 + "<br/>sala do capit\u00E3o."
-				 +"<html>";
-	   linhas[0] = 3;
-	   
-	   choice = "<html>Dois soldados se aproximam <br/>lentamente<html>";
-	   op1 = "Falar com eles";
-	   op2 = "Se esconder";
+		tx[0] = "<html>O caminho pelos jardins est\u00E1 livre, " + "<br/>voc\u00EA consegue entrar no castelo. Mas"
+				+ "<br/>voc\u00EA est\u00E1 perdido, n\u00E3o sabe onde \u00E9 a  " + "<br/>sala do capit\u00E3o."
+				+ "<html>";
+		linhas[0] = 3;
+
+		choice = "<html>Dois soldados se aproximam <br/>lentamente<html>";
+		op1 = "Falar com eles";
+		op2 = "Se esconder";
 	}
-	
+
 	public void estabulos() { // 2 op\u00E7\u00F5es
 
 		tx = new String[1];
 		linhas = new int[1];
 
-	    tx[0] = "<html>Os est\u00E1bulos est\u00E3o vazios quase  "
-				 + "<br/>totalmente vazios, exceto por um "
-				 + "<br/>soldado b\u00EAbado desacordado." 
-				 +"<html>";
-	   linhas[0] = 2;
-	   
-	   choice = "<html>Pegar as vestes dele pode ser uma "
-	   		+ " <br/>boa ideia para se camuflar, mas elas "
-	   		+ " <br/>s\u00E3o grandes e pesadas. O que voc\u00EA"
-	   		+ "<html>";
-	   
-	   op1 = "Pegar vestes";
-	   op2 = "N\u00E3o pegar";
+		tx[0] = "<html>Os est\u00E1bulos est\u00E3o vazios quase  " + "<br/>totalmente vazios, exceto por um "
+				+ "<br/>soldado b\u00EAbado desacordado." + "<html>";
+		linhas[0] = 2;
+
+		choice = "<html>Pegar as vestes dele pode ser uma " + " <br/>boa ideia para se camuflar, mas elas "
+				+ " <br/>s\u00E3o grandes e pesadas. O que voc\u00EA" + "<html>";
+
+		op1 = "Pegar vestes";
+		op2 = "N\u00E3o pegar";
 	}
-	
-	public void salaCap(Jogador player,int x) { // 0 op\u00E7\u00F5es
-		
+
+	public void salaCap(int x) { // 0 op\u00E7\u00F5es
+
 		tx = new String[8];
 		linhas = new int[8];
-		
+
 		switch (x) {
-			case 1:
-				tx[0] = "<html>Eles est\u00E3o um pouco embriagados e "
-						 + "<br/>cansados, de bom grado lhe d\u00E3o a"
-						 + "<br/>informa\u00E7\u00E3o e voc\u00EA pode prosseguir" 
-						 + "<br/>para a sala do capit\u00E3o sem " 
-						 + "<br/>problemas." 
-						 +"<html>";
-				linhas[0] = 5;
-				break;
-			case 2:
-				tx[0] = "<html>Eles v\u00E3o embora e voc\u00EA pode "
-						 + "<br/>prosseguir. Depois de muito se "
-						 + "<br/>esconder voc\u00EA consegue chegar at\u00E9 a "
-						 + "<br/>sala do capit\u00E3o." 
-						 +"<html>";
-				linhas[0] = 3;
-				break;
-			case 3:
-				tx[0] = "<html>Voc\u00EA coloca os trajes militares e entra "
-						 + "<br/>no castelo. Camuflado, voc\u00EA n\u00E3o "
-						 + "<br/>enfrenta muitos problemas para " 
-						 + "<br/>encontrar a sala do capit\u00E3o.Chegando" 
-						 + "<br/>l\u00E1 voc\u00EA deixa a roupa e abre a porta."
-						 +"<html>";
-				linhas[0] = 4;
-				break;
-			case 4:
-				tx[0] = "<html>Voc\u00EA entra no castelo com suas "
-						 + "<br/>roupas de campon\u00EAs. N\u00E3o demora "
-						 + "<br/>muito para encontrar soldados. Eles  " 
-						 + "<br/>v\u00E3o na sua dire\u00E7\u00E3o, voc\u00EA come\u00E7a a " 
-						 + "<br/>correr at\u00E9 que entra em uma sala. Por "
-						 + "<br/>coincid\u00EAncia esta \u00E9 a sala do capit\u00E3o"
-						 +"<html>";
-				linhas[0] = 5;
-				break;
-			
-			case 5:
-				tx[0] = "<html>O caminho pela porta est\u00E1 totalmente "
-						 + "<br/>vazio e cont\u00E9m um mapa com as "
-						 + "<br/>principais salas do castelo, voc\u00EA "
-						 + "<br/>consegue chegar na sala do capit\u00E3o " 
-						 + "<br/>sem grandes problemas." 
-						 +"<html>";
-				linhas[0] = 4;
-				break;
+		case 1:
+			tx[0] = "<html>Eles est\u00E3o um pouco embriagados e " + "<br/>cansados, de bom grado lhe d\u00E3o a"
+					+ "<br/>informa\u00E7\u00E3o e voc\u00EA pode prosseguir" + "<br/>para a sala do capit\u00E3o sem "
+					+ "<br/>problemas." + "<html>";
+			linhas[0] = 5;
+			break;
+		case 2:
+			tx[0] = "<html>Eles v\u00E3o embora e voc\u00EA pode " + "<br/>prosseguir. Depois de muito se "
+					+ "<br/>esconder voc\u00EA consegue chegar at\u00E9 a " + "<br/>sala do capit\u00E3o." + "<html>";
+			linhas[0] = 3;
+			break;
+		case 3:
+			tx[0] = "<html>Voc\u00EA coloca os trajes militares e entra "
+					+ "<br/>no castelo. Camuflado, voc\u00EA n\u00E3o " + "<br/>enfrenta muitos problemas para "
+					+ "<br/>encontrar a sala do capit\u00E3o.Chegando"
+					+ "<br/>l\u00E1 voc\u00EA deixa a roupa e abre a porta." + "<html>";
+			linhas[0] = 4;
+			break;
+		case 4:
+			tx[0] = "<html>Voc\u00EA entra no castelo com suas " + "<br/>roupas de campon\u00EAs. N\u00E3o demora "
+					+ "<br/>muito para encontrar soldados. Eles  "
+					+ "<br/>v\u00E3o na sua dire\u00E7\u00E3o, voc\u00EA come\u00E7a a "
+					+ "<br/>correr at\u00E9 que entra em uma sala. Por "
+					+ "<br/>coincid\u00EAncia esta \u00E9 a sala do capit\u00E3o" + "<html>";
+			linhas[0] = 5;
+			break;
+
+		case 5:
+			tx[0] = "<html>O caminho pela porta est\u00E1 totalmente " + "<br/>vazio e cont\u00E9m um mapa com as "
+					+ "<br/>principais salas do castelo, voc\u00EA " + "<br/>consegue chegar na sala do capit\u00E3o "
+					+ "<br/>sem grandes problemas." + "<html>";
+			linhas[0] = 4;
+			break;
 		}
-		
-		if(player.isBonus_inicio()) {
-			
-			tx[1] = "<html>O capit\u00E3o se assusta com a sua  "
-					 + "<br/>chegada  repentina, e desembainha a "
-					 + "<br/>espada."
-					 +"<html>";
+
+		if (player.isBonus_inicio()) {
+
+			tx[1] = "<html>O capit\u00E3o se assusta com a sua  " + "<br/>chegada  repentina, e desembainha a "
+					+ "<br/>espada." + "<html>";
 			linhas[1] = 2;
-			
-			tx[2] = "<html>Capit\u00E3o Alexander:"
-					 + "<br/><br/>Quem \u00E9 voc\u00EA?"
-					 +"<html>";
+
+			tx[2] = "<html>Capit\u00E3o Alexander:" + "<br/><br/>Quem \u00E9 voc\u00EA?" + "<html>";
 			linhas[2] = 2;
-			
+
 			tx[3] = "<html>Voc\u00EA se sente confuso porque ele \u00E9 "
-					 + "<br/>id\u00EAntico ao guarda que encontrou  "
-					 + "<br/>mais cedo, mas conta a sua hist\u00F3ria"
-					 +"<html>";
+					+ "<br/>id\u00EAntico ao guarda que encontrou  " + "<br/>mais cedo, mas conta a sua hist\u00F3ria"
+					+ "<html>";
 			linhas[3] = 2;
-			
-			tx[4] = "<html>Capit\u00E3o Alexander:"
-					 + "<br/><br/>Quem voc\u00EA encontrou mais cedo foi"
-					 + "<br/>meu irm\u00E3o, Erebor. Ele me avisou que "
-					 + "<br/>algu\u00E9m iria me ver hoje, s\u00F3 n\u00E3o "
-					 + "<br/>esperava que fosse entrar de repente "
-					 + "<br/>e sem ser anunciado."
-					 +"<html>";
+
+			tx[4] = "<html>Capit\u00E3o Alexander:" + "<br/><br/>Quem voc\u00EA encontrou mais cedo foi"
+					+ "<br/>meu irm\u00E3o, Erebor. Ele me avisou que "
+					+ "<br/>algu\u00E9m iria me ver hoje, s\u00F3 n\u00E3o "
+					+ "<br/>esperava que fosse entrar de repente " + "<br/>e sem ser anunciado." + "<html>";
 			linhas[4] = 6;
-			if(sexo == 0) {
-				tx[5] = "<html>Capit\u00E3o Alexander:"
-						 + "<br/><br/>N\u00E3o \u00E9 qualquer um que conseguiria "
-						 + "<br/>invadir esse castelo. Entendo o  "
-						 + "<br/>porqu\u00EA de Erebor ter te mandado "
-						 + "<br/>aqui. Diga meu jovem, voc\u00EA tem"
-						 + "<br/>interesse em entrar para a Guarda "
-						 + "<br/>Real?"
-						 +"<html>";
+			if (player.getSexo() == 0) {
+				tx[5] = "<html>Capit\u00E3o Alexander:" + "<br/><br/>N\u00E3o \u00E9 qualquer um que conseguiria "
+						+ "<br/>invadir esse castelo. Entendo o  " + "<br/>porqu\u00EA de Erebor ter te mandado "
+						+ "<br/>aqui. Diga meu jovem, voc\u00EA tem" + "<br/>interesse em entrar para a Guarda "
+						+ "<br/>Real?" + "<html>";
 				linhas[5] = 7;
-			}else {
-					tx[5] = "<html>Capit\u00E3o Alexander:"
-							 + "<br/><br/>N\u00E3o \u00E9 qualquer um que conseguiria "
-							 + "<br/>invadir esse castelo. Entendo o  "
-							 + "<br/>porqu\u00EA de Erebor ter te mandado "
-							 + "<br/>aqui. Diga minha jovem, voc\u00EA tem"
-							 + "<br/>interesse em entrar para a Guarda "
-							 + "<br/>Real?"
-							 +"<html>";
-					linhas[5] = 7;
+			} else {
+				tx[5] = "<html>Capit\u00E3o Alexander:" + "<br/><br/>N\u00E3o \u00E9 qualquer um que conseguiria "
+						+ "<br/>invadir esse castelo. Entendo o  " + "<br/>porqu\u00EA de Erebor ter te mandado "
+						+ "<br/>aqui. Diga minha jovem, voc\u00EA tem" + "<br/>interesse em entrar para a Guarda "
+						+ "<br/>Real?" + "<html>";
+				linhas[5] = 7;
 			}
-			
-			tx[6] = "<html>Voc\u00EA nem pensa antes de responder "
-					 + "<br/>positivamente."
-					 +"<html>";
+
+			tx[6] = "<html>Voc\u00EA nem pensa antes de responder " + "<br/>positivamente." + "<html>";
 			linhas[6] = 1;
-			
-			tx[7] = "<html>Capit\u00E3o Alexander:"
-					 + "<br/><br/>Muito bem, mas antes vamos testar "
-					 + "<br/>suas outras habilidades."
-					 +"<html>";
+
+			tx[7] = "<html>Capit\u00E3o Alexander:" + "<br/><br/>Muito bem, mas antes vamos testar "
+					+ "<br/>suas outras habilidades." + "<html>";
 			linhas[7] = 3;
-		}else {
-			
-			tx[1] = "<html>O capit\u00E3o se assusta com a sua  "
-					 + "<br/>chegada  repentina, e desembainha a "
-					 + "<br/>espada."
-					 +"<html>";
+		} else {
+
+			tx[1] = "<html>O capit\u00E3o se assusta com a sua  " + "<br/>chegada  repentina, e desembainha a "
+					+ "<br/>espada." + "<html>";
 			linhas[1] = 2;
-			
-			tx[2] = "<html>Capit\u00E3o:"
-					 + "<br/><br/>Quem \u00E9 voc\u00EA?"
-					 +"<html>";
+
+			tx[2] = "<html>Capit\u00E3o:" + "<br/><br/>Quem \u00E9 voc\u00EA?" + "<html>";
 			linhas[2] = 2;
-			
-			tx[3] = "<html>Voc\u00EA se sente assustado com a "
-					 + "<br/>presen\u00E7a do capit\u00E3o e se apressa em  "
-					 + "<br/>contar sua hist\u00F3ria"
-					 +"<html>";
+
+			tx[3] = "<html>Voc\u00EA se sente assustado com a " + "<br/>presen\u00E7a do capit\u00E3o e se apressa em  "
+					+ "<br/>contar sua hist\u00F3ria" + "<html>";
 			linhas[3] = 2;
-			
-			tx[4] = "<html>Capit\u00E3o:"
-					 + "<br/><br/>Muita ousadia da sua parte invadir o"
-					 + "<br/>castelo dessa maneira, eu n\u00E3o  "
-					 + "<br/>esperava ningu\u00E9m para se alistar  "
-					 + "<br/>hoje. "
-					 +"<html>";
+
+			tx[4] = "<html>Capit\u00E3o:" + "<br/><br/>Muita ousadia da sua parte invadir o"
+					+ "<br/>castelo dessa maneira, eu n\u00E3o  " + "<br/>esperava ningu\u00E9m para se alistar  "
+					+ "<br/>hoje. " + "<html>";
 			linhas[4] = 5;
-			
-			if(sexo == 0) {
-				tx[5] = "<html>Capit\u00E3o:"
-						 + "<br/><br/>Mas, n\u00E3o \u00E9 qualquer um que "
-						 + "<br/>conseguiria invadir esse castelo.   "
-						 + "<br/>Ent\u00E3o, diga meu jovem, voc\u00EA  "
-						 + "<br/>realmente tem interesse em entrar "
-						 + "<br/>para a Guarda Real?"
-						 +"<html>";
+
+			if (player.getSexo() == 0) {
+				tx[5] = "<html>Capit\u00E3o:" + "<br/><br/>Mas, n\u00E3o \u00E9 qualquer um que "
+						+ "<br/>conseguiria invadir esse castelo.   " + "<br/>Ent\u00E3o, diga meu jovem, voc\u00EA  "
+						+ "<br/>realmente tem interesse em entrar " + "<br/>para a Guarda Real?" + "<html>";
 				linhas[5] = 6;
-			}else {
-				tx[5] = "<html>Capit\u00E3o:"
-						 + "<br/><br/>Mas, n\u00E3o \u00E9 qualquer um que "
-						 + "<br/>conseguiria invadir esse castelo.   "
-						 + "<br/>Ent\u00E3o, diga minha jovem, voc\u00EA  "
-						 + "<br/>realmente tem interesse em entrar "
-						 + "<br/>para a Guarda Real?"
-						 +"<html>";
+			} else {
+				tx[5] = "<html>Capit\u00E3o:" + "<br/><br/>Mas, n\u00E3o \u00E9 qualquer um que "
+						+ "<br/>conseguiria invadir esse castelo.   " + "<br/>Ent\u00E3o, diga minha jovem, voc\u00EA  "
+						+ "<br/>realmente tem interesse em entrar " + "<br/>para a Guarda Real?" + "<html>";
 				linhas[5] = 6;
 			}
-			
-			tx[6] = "<html>Voc\u00EA nem pensa antes de responder "
-					 + "<br/>positivamente."
-					 +"<html>";
+
+			tx[6] = "<html>Voc\u00EA nem pensa antes de responder " + "<br/>positivamente." + "<html>";
 			linhas[6] = 1;
-			
-			tx[7] = "<html>Capit\u00E3o:"
-					 + "<br/><br/>Muito bem, mas antes vamos testar "
-					 + "<br/>suas outras habilidades."
-					 +"<html>";
+
+			tx[7] = "<html>Capit\u00E3o:" + "<br/><br/>Muito bem, mas antes vamos testar "
+					+ "<br/>suas outras habilidades." + "<html>";
 			linhas[7] = 3;
 		}
-		
+
 	}
 
-	public void grr_1() { //2 opcoes
-		
-		tx = new String[5];
-		linhas = new int[5];
-		
-		  tx[0] = "<html>Quinze anos se passaram desde que "
-					 + "<br/>voc\u00EA entrou para a Guarda Real. Voc\u00EA "
-					 + "<br/>foi acolhido e eles se tornaram sua " 
-					 + "<br/>nova fam\u00EDlia, em especial o Capit\u00E3o"
-					 + "<br/>Alexander, atualmente General "
-					 + "<br/>Alexander e voc\u00EA \u00E9 o novo Capit\u00E3o do "
-					 + "<br/>mesmo S\u00E9timo Comando. "
-					 +"<html>";
-		  linhas[0] = 6 ;
-			  
-		  tx[1] = "<html>Em todo esse per\u00EDodo Alexander "
-					  + "<br/>atuou como um pai para voc\u00EA, um  "
-					  + "<br/>amigo nos momentos em que voc\u00EA " 
-					  + "<br/>precisava e, principalmente um "
-					  + "<br/>mentor em todos os momentos, te "
-					  + "<br/>treinou nas artes de combate e na "
-					  + "<br/>diplomacia. "
-					  +"<html>";
-		  linhas[1] = 6 ;
-
-		  tx[2] = "<html>Hoje voc\u00EA \u00E9 um dos melhores "
-						+ "<br/>combatentes que Helaria j\u00E1 viu um "
-						+ "<br/>diplomata extremamente habilidoso, " 
-						+ "<br/>tudo isso gra\u00E7as a Alexander e a seu "
-						+ "<br/>irm\u00E3o, assassinado h\u00E1 poucos anos "
-						+"<br/>pela Guilda Vigilante. "
-						+"<html>";
-		  linhas[2] = 5;
-
-		  tx[3] = "<html>Voc\u00EAs sentem muita falta dele, afinal "
-						+ "<br/>ele era um membro da fam\u00EDlia, mas "
-						+ "<br/>juntos conseguiram superar sua " 
-						+ "<br/>morte, por\u00E9m nunca conseguiram "
-						+"<br/> prender os culpados. "
-						+"<html>";
-		  linhas[3] = 4;
-
-		  tx[4] = "<html> Hoje voc\u00EA acorda com a chegada de "
-					  + "<br/> um mensageiro em seus aposentos, "
-					  + "<br/> General Alexander pede seu " 
-					  + "<br/>comparecimento imediato em seus "
-					  +"<br/>aposentos."
-					  +"<html>";
-		  linhas[4] = 4;
-		  
-		  choice = "<html>Nos aposentos do general voc\u00EA tem " 
-				  + "<br/> algumas op\u00E7\u00F3es para comer, o que ser\u00E1?" 
-				  + "<html>";
-			  
-		  op1 = "Caf\u00E9 com p\u00E3es e roscas ";
-		  
-		  op2 = "Leite com fatias de bolo ";
-		  
-		  op3 = "Vinho com frutas ";
-			
-		
-	}
-	
-	public void grr_2(Jogador player) {
-		
-//		tx = new String[5];
-//		linhas = new int[5];
-		//
-		  tx[0] = "<html>- Agora que terminamos de comer, por" 
-					 + "<br/>que me chamou aqui t\u00E3o de repente?"
-					 +"<html>";
-		  linhas[0] = 1;
-
-		  tx[1] = "<html>- Ontem de noite o Imp\u00E9rio de "
-					 +"<br/>Bethesda declarou guerra contra"
-					 +"<br/>Helaria. "
-					 +"<html>";
-		  linhas[1] = 2;
-		  
-		  tx[2] = "<html>Voc\u00EA fica em choque com essa "
-					 + "<br/>informa\u00E7\u00E3o, uma guerra sendo "
-					 + "<br/>iniciada sem nenhum precedente, de" 
-					 + "<br/>forma t\u00E3o súbita. "
-					 +"<html>";
-		  linhas[2] = 3;
-		
-		  tx[3] = "<html>Desde que voc\u00EA entrou na Guarda "
-					 + "<br/>Real isso nunca tinha acontecido, "
-					 + "<br/>ainda mais que o oponente em " 
-					 + "<br/>quest\u00E3o \u00E9 o Imp\u00E9rio Bethesda… "
-					 +"<html>";
-		  linhas[3] = 3;
-		  
-		  tx[4] = "<html>- O que voc\u00EA quer dizer com isso, "
-					 + "<br/>General? "
-					 +"<html>";
-		  linhas[4] = 1;
-		  
-		  tx[5] = "<html>- Aparentemente Bethesda tem "
-					 + "<br/>interesse nestas ricas terras de "
-					 + "<br/>Helaria e, para eles conseguirem o " 
-					 + "<br/>que querem, n\u00F3s precisamos sair. "
-					 +"<html>";
-		  linhas[5] = 3;
-		  
-		  tx[6] = "<html> - Mas, Bethesda? "
-					 +"<html>";
-		  linhas[6] = 0;
-		  
-		  tx[7] = "<html>- Foram eles que destru\u00EDram sua vila e "
-					 + "<br/>mataram sua fam\u00EDlia, n\u00E3o foi?"
-					 +"<html>";
-		  linhas[7] = 1;
-		  
-		  tx[8] = "<html> - Sim... "
-					 +"<html>";
-		  linhas[8] = 0;
-		  
-		  tx[9] = "<html>"+player.getNome()+", pe\u00E7o que mantenha sua "
-					 + "<br/>cabe\u00E7a no lugar nesta guerra que se "
-					 + "<br/>aproxima. Sei o quanto deseja se " 
-					 + "<br/>vingar deles, mas est\u00E1 em jogo algo "
-					 + "<br/>muito maior. N\u00E3o deixe que seu \u00F3dio e "
-					 + "<br/>seu desejo de vingan\u00E7a tomem conta"
-					 + "<br/>de suas a\u00E7\u00F3es. Às vezes as atitudes  "
-					 + "<br/>de uma pessoa podem mudar o rumo  "
-					 + "<br/>de uma guerra totalmente.  "
-					 +"<html>";
-		  linhas[9] = 8;
-		  
-		  tx[10] = "<html>- Sim, eu sei disso. Eu n\u00E3o deixarei "
-					 + "<br/>minhas emo\u00E7\u00F3es tomarem conta de"
-					 + "<br/>mim e farei o que for preciso para" 
-					 + "<br/>proteger Helaria e vencer a guerra."
-					 +"<html>";
-		  linhas[10] = 3;
-		  
-	}
-	public void hpAssassin(Jogador player)
-	{//tx=new String[];
-	//linhas=new int[];
-		
-		  tx[0] = "<html>Quinze anos se passaram desde que"
-					 + "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante. Voc\u00EA se "
-					 + "<br/>tornou um membro valioso, um assassino " 
-					 + "<br/>r\u00E1pido e eficiente, completou in\u00FAmeras "
-					 + "<br/>miss\u00F5es, deixou in\u00FAmeros cad\u00E1veres."
-					 +"<html>";
-			  linhas[0] = 4;
-			  
-		  tx[1] =  "<html>"
-					 + "<br/>Em todos esses anos as pessoas da Ordem"
-					 + "<br/>se tornaram sua fam\u00EDlia, em especial " 
-					 + "<br/>Cassius, ele foi um irm\u00E3o mais velho, um"
-					 + "<br/>amigo e um mentor para você. Te ajudou"
-					 + "<br/>a superar a morte da sua fam\u00EDlia e a" 
-					 + "<br/>destruiç\u00E3o de seu lar, te ofereceu uma"
-					 + "<br/>nova casa e uma nova fam\u00EDlia." 
-					 +"<html>";
-				  linhas[1] = 7;
-				  
-		   tx[2] = "<html>Hoje foi marcada uma reuni\u00E3o com todos "
-					 + "<br/>os membros da Guilda."
-					 + "<br/>Isso n\u00E3o \u00E9 um " 
-					 + "<br/>bom sinal, geralmente significam ou"
-					 + "<br/>morte ou problemas, mas, hoje em"
-					 + "<br/>especial, parece significar os dois"
-					 +"<html> ";
-			  linhas[2] =5 ;	
-			  
-			 tx[3] = "<html>"
-						 + "<br/>Os diversos membros começam a se "
-						 + "<br/>juntar e o l\u00EDder da Guilda, por definiç\u00E3o, o " 
-						 + "<br/>membro mais antigo vivo, Homero,começa a falar:"
-						 +"<html>";
-				  linhas[3] = 3;
-				  
-		     tx[4] = "<html>Homero:"
-							 + "<br/><br/>Durante muito tempo vivemos em um"
-							 + "<br/>per\u00EDodo de relativa paz. Tivemos nossos"
-							 + "<br/>conflitos internos e externos, \u00E9 claro, mas"
-							 + "<br/>nunca enfrentamos ameaça que pudesse"
-							 + "<br/>nos dizimar. Hoje a situaç\u00E3o \u00E9 diferente,"
-							 + "<br/>pela primeira vez todos nós corremos o"
-							 + "<br/>risco de sermos dizimados."
-							 +"<html>";
-					linhas[4] = 8;
-					
-			tx[5] = "<html>Todos começam a se agitar e debater o"
-							 + "<br/>que Homero estava dizendo, afinal, que"
-							 + "<br/>ameaça poderia ser t\u00E3o grande para"
-							 + "<br/>destruir toda a Guilda? No passado vocês"
-							 + "<br/>j\u00E1 tinham tido in\u00FAmeros conflitos com a"
-							 + "<br/>Guarda Real, mas nenhum representou"
-							 + "<br/>ameaça t\u00E3o grande."
-							 +"<html>";
-					linhas[5] = 6;
-					
-			 tx[6] = "<html>Homero:"
-							 + "<br/><br/>SILÊNCIO!"
-							 + "<br/>Eu sei que todos est\u00E3o preocupados com o que"
-							 + "<br/>acabei de dizer, mas pelo menos me"
-							 + "<br/>deixem terminar antes de pensar"
-							 + "<br/>qualquer coisa est\u00FApida."
-							 +"<html>";
-					linhas[6] = 6;
-			
-			 tx[7] = "<html>O silêncio aos poucos volta,"
-							 + "<br/>permitindo Homero continuar."
-							 +"<html>";
-					linhas[7] = 1;
-		
-			 tx[8] = "<html>Homero:"
-							 + "<br/><br/>O Imp\u00E9rio de Bethesda declarou guerra"
-							 + "<br/>contra Helaria na noite de ontem."
-							 + "<br/>Bethesda \u00E9 conhecido por destruir"
-							 + "<br/>qualquer um que esteja em seu caminho,"
-							 + "<br/>cidades s\u00E3o queimadas, populaç\u00F5es s\u00E3o"
-							 +"<html>";
-					linhas[8] = 6;	
-					
-				tx[9] = "<html>Homero:"
-						   + "<br/><br/>destru\u00EDdas e culturas apagadas, e, \u00E9 isso"
-						   + "<br/>que acontecer\u00E1 com Helaria se n\u00E3o"
-						   + "<br/>fizermos nada. Mas por que nós "
-						   + "<br/>far\u00EDamos alguma coisa por Helaria"
-						   + "<br/>se Helaria nunca fez nada por nós?!"
-						   +"<html>"; 
-					 linhas[9] = 6;	
-					 
-				 tx[10] = "<html>Um homem irritado:"
-							   + "<br/><br/> Porque nós vivemos aqui seu imbecil!"
-							   +"<html>"; 
-						 linhas[10] = 2;
-						 
-				 tx[11] = "<html>Você retruca com ferocidade,"
-								   + "<br/>afinal foi Bethesda que"
-								   + "<br/>destruiu sua vila, queimou sua casa e"
-								   + "<br/>matou sua fam\u00EDlia."
-								   +"<html>"; 
-							 linhas[11] = 3;
-							 
-				  tx[12] = "<html>Pelo seu tom ficou claro para todos que conhecem um pouco"
-									   + "<br/>da sua história que você est\u00E1 disposto a"
-									   + "<br/>tudo para obter vingança."
-									   +"<html>"; 
-								 linhas[12] = 2;
-								 
-				   tx[13] = "<html>Homero:"
-										   + "<br/><br/>Percebo que"
-										   + "<br/>posso contar com você nessa guerra,"+player.getNome()+"."
-										   +"<html>"; 
-									 linhas[13] = 2;
-									 
-				   tx[14] = "<html>Você diz, pode apostar!"
-											   + "<br/>A reuni\u00E3o continua por mais um tempo,"
-											   + "<br/>detalhes da guerra s\u00E3o discutidos e"
-											   + "<br/>esclarecidos. O Imp\u00E9rio de Bethesda est\u00E1"
-											   + "<br/>marchando em direç\u00E3o a Helaria e tem"
-											   + "<br/>previs\u00E3o de chegar dentro de três dias."
-											   +"<html>"; 
-										 linhas[14] = 5;
-										 
-					tx[15] = "<html>Nesse per\u00EDodo você ser\u00E1 apresentado \u00E0"
-												   + "<br/>algumas miss\u00F5es e poder\u00E1 completar"
-												   + "<br/>uma parte delas, mas lembre-se que elas"
-												   + "<br/>ter\u00E3o consequências, ent\u00E3o escolha bem"
-												   + "<br/>quais você ir\u00E1 fazer, pois assim que uma"
-												   + "<br/>miss\u00E3o for iniciada, você n\u00E3o poder\u00E1"
-												   + "<br/>iniciar outra at\u00E9 que termine a primeira."
-												   +"<html>"; 
-											 linhas[15] = 6;}
-									 
-
-	
-	
 //	  tx[] = "<html>"
 //		 + "<br/>"
 //		 + "<br/>" 

@@ -4,6 +4,7 @@ package cenas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import bibliotecas.Biblio_Intro;
 import graficos.Texto;
 import mapas.Maps;
 import menus.Formulario;
@@ -13,18 +14,22 @@ import sons.Musica;
 public class Inicio {
 
 	private ActionListener continuar, escolha1, escolha2;
-	private Biblioteca vet = new Biblioteca(); // Vetor de texto
+	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
 	private Jogador player; // informa��es do playerS
 	private Musica musica = new Musica();
+	private Musica[] musicasSegunda;
+	
 
 	public void inicio() { // 1� parte do pr�logo
 
-		Texto t1 = new Texto("", 0); // Cria o JFrame e instancia a classe que gera os textos
+		Texto t1 = new Texto(); // Cria o JFrame e instancia a classe que gera os textos
 		Geral geral = new Geral(); // Classe geral para manipular a gera��o dos textos
-
+		musicasSegunda = new Musica[1];
+		for(int cont = 0; cont< musicasSegunda.length;cont ++) musicasSegunda[cont] = new Musica();
 		vet.inicio(); // Instancia os vetores de texto para o conjunto de textos do metodo inicio
 		geral.escolhas_0(t1, vet); // Chama a fun�ao para manipular a gera��o de textos
 		musica.TocaMusica("src/sons/musicaCasa.wav");
+		//musicasSegunda[0].TocaMusica("src/sons/musicaHidra.wav");
 		
 		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
 			int cont = 0; // Contador para verificar a posi��o do vetor de texto
@@ -52,9 +57,10 @@ public class Inicio {
 
 		Geral geral = new Geral();
 		this.player = player; // Atualiza as informa��es do player
-		Texto t1 = new Texto("", 0);
+		vet.setPlayer(player);
+		Texto t1 = new Texto();
 
-		vet.setSexo(player.getSexo()); // Atualiza o g�nero do player nos textos
+		vet.setPlayer(player); // Atualiza o g�nero do player nos textos
 		vet.inicio2();
 		geral.escolhas_2(t1, vet);
 
@@ -63,6 +69,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				player.setBonus_inicio(true);
+				vet.setPlayer(player);
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame, deixando
 																		// apenas uma "tela em branco"
@@ -76,6 +83,7 @@ public class Inicio {
 			public void actionPerformed(ActionEvent e) {
 
 				player.setBonus_inicio(false);
+				vet.setPlayer(player);
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				inicio_NaoCorrer(t1);
 
@@ -91,7 +99,6 @@ public class Inicio {
 
 		Geral geral = new Geral();
 
-		vet.setSexo(player.getSexo());
 		vet.inicio_correr();
 		geral.escolhas_2(t1, vet);
 
@@ -254,7 +261,7 @@ public class Inicio {
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							mapa.getFrame().dispose();
-							castelo(new Texto("",0));
+							castelo(new Texto());
 							
 						}
 						
@@ -265,7 +272,7 @@ public class Inicio {
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							mapa.getFrame().dispose();
-							alameda3(new Texto("",0));
+							alameda3(new Texto());
 							
 						}
 						
@@ -276,7 +283,7 @@ public class Inicio {
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							mapa.getFrame().dispose();
-							torreArcana(new Texto("",0));
+							torreArcana(new Texto());
 							
 						}
 						
@@ -308,7 +315,7 @@ public class Inicio {
 	public void torreArcana(Texto t1) {
 
 		Geral geral = new Geral();
-		vet.intro_arcanista(player);
+		vet.intro_arcanista();
 		geral.escolhas_2(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
@@ -337,7 +344,7 @@ public class Inicio {
 	public void seguir_voz(Texto t1) {
 		Geral geral = new Geral();
 
-		vet.seguir_voz(player);
+		vet.seguir_voz();
 		geral.escolhas_3(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
@@ -376,7 +383,7 @@ public class Inicio {
 
 		Geral geral = new Geral();
 
-		vet.ignorar_voz(player);
+		vet.ignorar_voz();
 		geral.escolhas_3(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
@@ -415,7 +422,7 @@ public class Inicio {
 
 		Geral geral = new Geral();
 
-		vet.resposta_arcana(x, player);
+		vet.resposta_arcana(x);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -438,7 +445,7 @@ public class Inicio {
 	public void alameda3 (Texto t1) {
 		Geral geral = new Geral();
 
-		vet.intro_ladino(player);
+		vet.intro_ladino();
 		geral.escolhas_3(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
@@ -476,7 +483,7 @@ public class Inicio {
 	public void bebidaLadino(Texto t1,int x) {
 		Geral geral = new Geral();
 
-		vet.bebida_ladino(player, x);
+		vet.bebida_ladino(x);
 		geral.escolhas_3(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
@@ -514,7 +521,7 @@ public class Inicio {
 	public void resposta1Ladino(Texto t1, int x) {
 		Geral geral = new Geral();
 
-		vet.resp_lad(player, x);
+		vet.resp_lad(x);
 		geral.escolhas_2(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
@@ -543,7 +550,7 @@ public class Inicio {
 	public void resposta2Ladino(Texto t1,int x) {
 		Geral geral = new Geral();
 
-		vet.neg_lad(player, x);
+		vet.neg_lad (x);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -594,7 +601,7 @@ public class Inicio {
 	public void contHist(Texto t1) {
 		Geral geral = new Geral();
 
-		vet.contar_hist(player);
+		vet.contar_hist();
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -617,7 +624,7 @@ public class Inicio {
 	public void naoCont(Texto t1) {
 		Geral geral = new Geral();
 
-		vet.naoEdaSuaConta(player);
+		vet.naoEdaSuaConta();
 		geral.escolhas_3(t1, vet);
 
 		ActionListener escolha1 = new ActionListener() {
@@ -714,7 +721,7 @@ public class Inicio {
 
 		Geral geral = new Geral();
 
-		vet.salaCap(player, x);
+		vet.salaCap(x);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
