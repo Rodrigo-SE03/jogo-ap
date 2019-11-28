@@ -39,6 +39,8 @@ public class Geral { // Classe base para criação dos textos
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+				}else {
+					cont = 0;
 				}
 			}
 		};
@@ -68,6 +70,7 @@ public class Geral { // Classe base para criação dos textos
 					}
 				} else {
 					t1.zerar();
+					cont = 0;
 					choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());// Cria uma
 																									// novainterface com
 																									// texto + botões
@@ -103,6 +106,7 @@ public class Geral { // Classe base para criação dos textos
 				} else {
 					t1.zerar();
 					choice.doEscolhas_3(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2(), vet.getOp3());
+					cont = 0;
 					t1.getContinuar().removeActionListener(continuar);
 				}
 

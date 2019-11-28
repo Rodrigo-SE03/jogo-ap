@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import bibliotecas.Biblio_Guerreiro;
 import bibliotecas.Biblio_Intro;
 import graficos.Escolhas;
 import graficos.Texto;
@@ -18,6 +19,7 @@ public class Inicio {
 
 	private ActionListener continuar, escolha1, escolha2;
 	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
+	private Biblio_Guerreiro vet1 = new Biblio_Guerreiro();
 	private Musica musica = new Musica();
 	private Musica[] musicasSegunda;
 
@@ -713,6 +715,7 @@ public class Inicio {
 				if (cont == (vet.getTx().length - 1)) {
 					t1.zerar();
 					t1.getContinuar().removeActionListener(continuar);
+					new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
 				} else
 					cont++;
 
@@ -841,5 +844,6 @@ public class Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
+
 
 }

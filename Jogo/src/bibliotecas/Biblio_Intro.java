@@ -779,11 +779,11 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 				if (player.getSexo() == 0) {
 					tx[0] = "<html>Cassiu: " + "<br/><br/>A verdade pode ser dura, mas n\u00E3o  "
 							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito meu amigo" + "<html>";
-					linhas[0] = 3;
+					linhas[0] = 4;
 				} else {
 					tx[0] = "<html>Cassiu: " + "<br/><br/>A verdade pode ser dura, mas n\u00E3o  "
 							+ "<br/>podemos fugir dela, eu te entendo e" + "<br/>respeito minha amiga" + "<html>";
-					linhas[0] = 3;
+					linhas[0] = 4;
 				}
 			} else {
 				if (player.getSexo() == 0) {
