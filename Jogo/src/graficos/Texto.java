@@ -130,7 +130,6 @@ public JFrame getTexto() {
 public void atualizaTexto(String tex,int pulalinha) {
 		
 		//botão continuar
-				System.out.println(tex);
 				this.frame.add(continuar);
 				this.continuar.setLayout(null);
 				this.continuar.setVisible(true);

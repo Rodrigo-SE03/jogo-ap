@@ -45,8 +45,6 @@ public class Hidra {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				musica = new Musica();
-				musica.TocaMusica("src/sons/musicaHidra.wav");
 			}
 		});
 	}
@@ -82,6 +80,8 @@ public class Hidra {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		musica = new Musica();
+		musica.TocaMusica("src/sons/musicaHidra.wav");
 		cbc_1 = new JDialog();
 		cbc_1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_1.setResizable(false);

@@ -28,7 +28,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro_1_cafe(t1);
+				guerreiro2(t1,1);
 
 			}
 		};
@@ -38,7 +38,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro_1_leite(t1);
+				guerreiro2(t1,2);
 				
 
 			}
@@ -50,7 +50,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro_1_vinho(t1);
+				guerreiro2(t1,3);
 
 			}
 		};
@@ -60,89 +60,11 @@ public class Hist_Guerreior {
 		geral.getChoice().getOpcao3().addActionListener(escolha3);
 	}
 	
-	public void guerreiro_1_cafe(Texto t1) {
+	public void guerreiro2(Texto t1, int x) {
 
 		Geral geral = new Geral();
 
-		vet.grr_1_cafe();
-		geral.escolhas_0(t1, vet);
-
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					guerreiro2(t1);
-
-				} else
-					cont++;
-
-			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
-	}
-	
-	public void guerreiro_1_leite(Texto t1) {
-
-		Geral geral = new Geral();
-
-		vet.grr_1_leite();
-		geral.escolhas_0(t1, vet);
-
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					guerreiro2(t1);
-
-				} else
-					cont++;
-
-			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
-	}
-	
-	public void guerreiro_1_vinho(Texto t1) {
-
-		Geral geral = new Geral();
-
-		vet.grr_1_vinho();
-		geral.escolhas_0(t1, vet);
-
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					guerreiro2(t1);
-
-				} else
-					cont++;
-
-			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
-	}
-	
-	public void guerreiro2(Texto t1) {
-
-		Geral geral = new Geral();
-
-		vet.grr_2();
+		vet.grr_2(x);
 		geral.escolhas_3(t1, vet);
 		
 		ActionListener escolha1 = new ActionListener() {
@@ -150,7 +72,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 				t1.zerar();
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro_3_vinho(t1);
+				guerreiro3(t1,1);
 
 			}
 		};
@@ -160,7 +82,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro_3_licor(t1);
+				guerreiro3(t1,2);
 
 			}
 		};
@@ -170,7 +92,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro_3_nada(t1);
+				guerreiro3(t1,3);
 
 			}
 		};
@@ -180,88 +102,12 @@ public class Hist_Guerreior {
 		geral.getChoice().getOpcao3().addActionListener(escolha3);
 	}
 	
-	public void guerreiro_3_vinho(Texto t1) {
 
+
+	public void guerreiro3(Texto t1, int x) {
 		Geral geral = new Geral();
 
-		vet.grr_3_vinho();
-		geral.escolhas_0(t1, vet);
-
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					guerreiro4(t1);;
-
-				} else
-					cont++;
-
-			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
-	}
-	
-	public void guerreiro_3_nada(Texto t1) {
-
-		Geral geral = new Geral();
-
-		vet.grr_3_nada();
-		geral.escolhas_0(t1, vet);
-
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					guerreiro4(t1);;
-
-				} else
-					cont++;
-
-			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
-	}
-	
-	public void guerreiro_3_licor(Texto t1) {
-
-		Geral geral = new Geral();
-
-		vet.grr_3_licor();
-		geral.escolhas_0(t1, vet);
-
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					guerreiro4(t1);;
-
-				} else
-					cont++;
-
-			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
-	}
-
-	public void guerreiro4(Texto t1) {
-		Geral geral = new Geral();
-
-		vet.grr_4();
+		vet.grr_3(x);
 
 		geral.escolhas_2(t1, vet);
 
@@ -270,7 +116,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro5(t1,1);
+				guerreiro4(t1,1);
 
 			}
 		};
@@ -280,7 +126,7 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				guerreiro5(t1, 2);
+				guerreiro4(t1, 2);
 
 			}
 		};
@@ -290,15 +136,16 @@ public class Hist_Guerreior {
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
 	}
  	
-	public void guerreiro5(Texto t1,int x) {
+	
+	public void guerreiro4(Texto t1,int x) {
 		Geral geral = new Geral();
 		
 		switch(x) {
 		case 1:
-			vet.grr_5_agressivo();
+			vet.grr_4_cinismo();
 			break;
 		case 2:
-			vet.grr_5_cinismo();
+			vet.grr_4_agressivo();
 			break;
 		}
 		

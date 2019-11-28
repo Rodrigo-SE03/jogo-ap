@@ -38,7 +38,6 @@ public abstract class Biblioteca {
 	}
 
 	public String getTx(int x) {
-		System.out.println(x);
 		return tx[x];
 	}
 
