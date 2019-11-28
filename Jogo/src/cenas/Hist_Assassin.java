@@ -20,7 +20,7 @@ public class Hist_Assassin {
 		vet.setPlayer(player);
 		vet.hpAssassin();
 
-		geral.escolhas_2(t1, vet);
+		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
 			int cont = 0;

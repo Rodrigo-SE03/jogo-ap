@@ -410,7 +410,6 @@ public class Hidra {
 		top.setResizable(false);
 		top.setSize(100,100);
 		
-		
 		top.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 		    		musica.stop();
@@ -418,7 +417,6 @@ public class Hidra {
 		    			if(frame[i].isVisible()) {
 		    				frame[i].dispose();
 		    			}
-		    			
 		    		}
 		    		if(cbc_1.isVisible()) {
 		    			cbc_1.dispose();

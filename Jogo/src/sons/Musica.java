@@ -31,7 +31,10 @@ public class Musica {
 
 	
 	public void stop() {
-		clip.stop();
+		try {
+			clip.stop();
+		}catch(Exception NullPointerException) {
+		}
 	}
 
 
