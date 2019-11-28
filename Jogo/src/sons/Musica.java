@@ -52,10 +52,13 @@ public class Musica {
 	}
 
 	public void setVolume(float volume) {
-	    if (volume < 0f || volume > 1f)
+	    try{
+		if (volume < 0f || volume > 1f)
 	        throw new IllegalArgumentException("Volume not valid: " + volume);
 	    FloatControl gainControl = (FloatControl) this.getClip().getControl(FloatControl.Type.MASTER_GAIN);        
 	    gainControl.setValue(20f * (float) Math.log10(volume));
+	    }catch(Exception NullPointerException) {
+		}
 	}
 	
 	

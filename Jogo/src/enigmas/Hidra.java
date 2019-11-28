@@ -1,16 +1,18 @@
 package enigmas;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 import java.util.Random;
 
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import sons.Musica;
-
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 
 public class Hidra {
 	
@@ -21,6 +23,7 @@ public class Hidra {
 	private int numero;
 	private static int cut;
 	private static int controlCut;
+	private JFrame background;
 	private JDialog top;
 	private JDialog cbc_1;
 	private JDialog cbc_2;
@@ -82,6 +85,39 @@ public class Hidra {
 	private void initialize() {
 		musica = new Musica();
 		musica.TocaMusica("src/sons/musicaHidra.wav");
+		
+		background = new JFrame();
+		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
+		background.setIconImage(icone.getImage());
+		background.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+		background.setLocationRelativeTo(null);
+		background.setResizable(false);
+		background.setDefaultCloseOperation(0);
+		background.setLayout(null);
+		background.addWindowListener(new java.awt.event.WindowAdapter() {
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		    	JFrame exiting = new JFrame();
+		    	exiting.setAlwaysOnTop(true);
+		    	if (JOptionPane.showConfirmDialog(exiting, 
+			            "Tem certeza que deseja sair do jogo (todo seu progresso será perdido)?", "Sair", 
+			            JOptionPane.YES_NO_OPTION,
+			            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+			            System.exit(0);
+			        }
+		    	else {
+		    		exiting.dispose();
+		    	}
+		    	
+		    }
+		});
+		
+		JLabel fundo = new JLabel("fundoooo");
+		fundo.setLocation(0,0);
+		fundo.setSize(background.getSize());
+		fundo.setVisible(true);
+		background.getContentPane().add(fundo);
+		background.setVisible(true);
+		
 		cbc_1 = new JDialog();
 		cbc_1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_1.setResizable(false);
