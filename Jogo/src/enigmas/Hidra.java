@@ -21,6 +21,7 @@ public class Hidra {
 	private static Musica musica;
 	private static int cont, cut, controlCut;
 	private int numb, numero;
+	private boolean perdeu = false;
 
 	/**
 	 * Launch the application.
@@ -56,6 +57,7 @@ public class Hidra {
 		this.cont = 0;
 		this.cut = 0;
 		this.controlCut = 0;
+		tempo();
 		initialize();
 
 	}
@@ -95,7 +97,7 @@ public class Hidra {
 				} else {
 					exiting.dispose();
 				}
-
+				System.out.println(perdeu);
 			}
 		});
 
@@ -341,6 +343,7 @@ public class Hidra {
 				frame[cont].setBounds(cbc_7.getBounds());
 			}
 		}
+		
 
 	}
 
@@ -377,7 +380,7 @@ public class Hidra {
 				// System.out.println(cut);
 			}
 		});
-		frame_2.setBounds(frame[numero].getX() - 133, frame[numero].getY() + dis.nextInt(80) - 40,
+		frame_2.setBounds(frame[numero].getX() - 133, frame[numero].getY() + dis.nextInt(40) - 20,
 				frame[numero].getWidth(), frame[numero].getHeight());
 		if (frame_2.getLocation().y <= 50) frame_2.setLocation(frame_2.getLocation().x, 50);
 		JPanel panel = new JPanel();
@@ -390,7 +393,9 @@ public class Hidra {
 		panel.add(lblNewLabel);
 		frame[numb] = frame_2;
 		frame[numb].setVisible(true);
-
+		
+		numb++;
+		
 		JDialog frame_3 = new JDialog(background);
 		frame_3.setName("" + numb);
 		frame_3.setAlwaysOnTop(true);
@@ -407,7 +412,7 @@ public class Hidra {
 		});
 		frame_3.setBounds(frame[numero].getX() + 133, frame[numero].getY() + dis.nextInt(80) - 40,
 				frame[numero].getWidth(), frame[numero].getHeight());
-		if(frame_2.getLocation().y<50) frame_3.setLocation(frame_3.getLocation().x,50);
+		if(frame_3.getLocation().y<50) frame_3.setLocation(frame_3.getLocation().x,50);
 
 		JPanel panel_2 = new JPanel();
 		frame_3.getContentPane().add(panel_2, BorderLayout.CENTER);
@@ -481,26 +486,49 @@ public class Hidra {
 		Random cot = new Random();
 		if (cot.nextInt(7) == 0) {
 			top.setBounds(560 + 10, 200 + 42, 50, 130);
+			top.setLocation(cbc_1.getLocation().x+10,cbc_1.getLocation().y+80);
 		} else if (cot.nextInt(7) == 1) {
 			top.setBounds(550 + 294 + 10, 275 + 100 + 42, 50, 130);
+			top.setLocation(cbc_2.getLocation().x+20,cbc_2.getLocation().y+80);
 		} else if (cot.nextInt(7) == 2) {
 			top.setBounds(340 + 294 + 200 + 294 + 10, 200 + 50, 50, 130);
+			top.setLocation(cbc_3.getLocation().x+20,cbc_3.getLocation().y+80);
 		} else if (cot.nextInt(7) == 3) {
 			top.setBounds(560 + 10, 275 + 200 + 42, 50, 130);
+			top.setLocation(cbc_4.getLocation().x+20,cbc_4.getLocation().y+80);
 		} else if (cot.nextInt(7) == 4) {
 			top.setBounds(550 + 294 + 10, 275 + 100 + 275 + 42, 50, 130);
+			top.setLocation(cbc_5.getLocation().x+20,cbc_5.getLocation().y+80);
 		} else if (cot.nextInt(7) == 5) {
 			top.setBounds(340 + 294 + 294 + 200 + 10, 275 + 200 + 42, 50, 130);
+			top.setLocation(cbc_6.getLocation().x+20,cbc_6.getLocation().y+80);
 		} else if (cot.nextInt(7) == 6) {
 			top.setBounds(550 + 294 + 10, 275 + 100 + 42, 50, 130);
-		} else
+			top.setLocation(cbc_7.getLocation().x+20,cbc_7.getLocation().y+80);
+		} else {
 			top.setBounds(550 + 294 + 10, 275 + 100 + 42, 50, 130);
+			top.setLocation(cbc_1.getLocation().x+20,cbc_1.getLocation().y+80);
+			}
 		top.setVisible(true);
 
 		/*
 		 * for(i=0;i<7;i++) { if(i!=cot.nextInt(7)) { central[i].setVisible(false); } }
 		 */
 
+	}
+	
+	public void tempo() {
+		new Thread() {
+			public void run(){
+				try {
+					Thread.sleep(300000);
+					perdeu = true;
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}.start();
 	}
 
 	public static int getControlCut() {
