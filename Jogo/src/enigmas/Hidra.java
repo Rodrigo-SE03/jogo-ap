@@ -110,8 +110,9 @@ public class Hidra {
 		    	
 		    }
 		});
-		
-		JLabel fundo = new JLabel("fundoooo");
+		ImageIcon back = new ImageIcon("src/imagens/Dungeon.png");
+		back.setImage(back.getImage().getScaledInstance(background.getSize().width,background.getSize().height,100));
+		JLabel fundo = new JLabel(back);
 		fundo.setLocation(0,0);
 		fundo.setSize(background.getSize());
 		fundo.setVisible(true);
@@ -133,7 +134,7 @@ public class Hidra {
 		cbc_1.setName("0");
 		cbc_1.setSize(294,275);
 		cbc_1.setLocationRelativeTo(null);
-		cbc_1.setLocation(cbc_1.getBounds().x-290,cbc_1.getBounds().y-(270/2));
+		cbc_1.setLocation(cbc_1.getBounds().x-290,cbc_1.getBounds().y-(270/2)+50);
 		cbc_1.setTitle(cbc_1.getName());
 		
 		JPanel panel = new JPanel();
@@ -164,7 +165,7 @@ public class Hidra {
 		cbc_2.setName("1");
 		cbc_2.setSize(294,275);
 		cbc_2.setLocationRelativeTo(null);
-		cbc_2.setLocation(cbc_2.getBounds().x,cbc_2.getBounds().y-(270));
+		cbc_2.setLocation(cbc_2.getBounds().x,cbc_2.getBounds().y-(270)+50);
 		cbc_2.setTitle(cbc_2.getName());
 		
 		JPanel panel_2 = new JPanel();
@@ -194,7 +195,7 @@ public class Hidra {
 		cbc_3.setName("2");
 		cbc_3.setSize(294,275);
 		cbc_3.setLocationRelativeTo(null);
-		cbc_3.setLocation(cbc_3.getBounds().x+290,cbc_3.getBounds().y-(270/2));
+		cbc_3.setLocation(cbc_3.getBounds().x+290,cbc_3.getBounds().y-(270/2)+50);
 		cbc_3.setTitle(cbc_3.getName());
 		
 		JPanel panel_3 = new JPanel();
@@ -224,7 +225,7 @@ public class Hidra {
 		cbc_4.setName("3");
 		cbc_4.setSize(294,275);
 		cbc_4.setLocationRelativeTo(null);
-		cbc_4.setLocation(cbc_4.getBounds().x-290,cbc_4.getBounds().y+(270/2));
+		cbc_4.setLocation(cbc_4.getBounds().x-290,cbc_4.getBounds().y+(270/2)+50);
 		cbc_4.setTitle(cbc_4.getName());
 		
 		JPanel panel_4 = new JPanel();
@@ -254,7 +255,7 @@ public class Hidra {
 		cbc_5.setName("4");
 		cbc_5.setSize(294,275);
 		cbc_5.setLocationRelativeTo(null);
-		cbc_5.setLocation(cbc_5.getBounds().x,cbc_5.getBounds().y+(270));
+		cbc_5.setLocation(cbc_5.getBounds().x,cbc_5.getBounds().y+(270)+50);
 		cbc_5.setTitle(cbc_5.getName());
 		
 		JPanel panel_5 = new JPanel();
@@ -284,7 +285,7 @@ public class Hidra {
 		cbc_6.setName("5");
 		cbc_6.setSize(294,275);
 		cbc_6.setLocationRelativeTo(null);
-		cbc_6.setLocation(cbc_6.getBounds().x+290,cbc_6.getBounds().y+(270/2));
+		cbc_6.setLocation(cbc_6.getBounds().x+290,cbc_6.getBounds().y+(270/2)+50);
 		cbc_6.setTitle(cbc_6.getName());
 		
 		JPanel panel_6 = new JPanel();
@@ -314,6 +315,7 @@ public class Hidra {
 		cbc_7.setName("6");
 		cbc_7.setSize( 294, 275);
 		cbc_7.setLocationRelativeTo(null);
+		cbc_7.setLocation(cbc_7.getBounds().x,cbc_7.getBounds().y+50);
 		cbc_7.setTitle(cbc_7.getName());
 		
 		JPanel panel_7 = new JPanel();
