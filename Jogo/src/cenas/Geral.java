@@ -41,6 +41,7 @@ public class Geral { // Classe base para criação dos textos
 					}
 				}else {
 					cont = 0;
+					t1.getContinuar().removeActionListener(continuar);
 				}
 			}
 		};

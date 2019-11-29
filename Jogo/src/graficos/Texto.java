@@ -52,6 +52,7 @@ public class Texto {
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
 		frame.setSize(610,438);
+		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
 		frame.setDefaultCloseOperation(0);
