@@ -19,10 +19,10 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 
 		vet.setPlayer(player);
-//		vet.arcan();
+		vet.arcan1();
 
 		geral.escolhas_2(t1, vet);
-
+		
 		continuar = new ActionListener() {
 			int cont = 0;
 
@@ -31,12 +31,40 @@ public class Hist_Arcan {
 				if (cont == (vet.getTx().length - 1)) {
 					t1.zerar();
 					t1.getContinuar().removeActionListener(continuar);
+					
 				} else
 					cont++;
 
 			}
 		};
+		
+		ActionListener escolha1 = new ActionListener() {
 
-		t1.getContinuar().addActionListener(continuar);
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				vet.arcan1_mentir();
+				geral.escolhas_0(t1, vet);
+				t1.getContinuar().addActionListener(continuar);
+
+			}
+		};
+
+		ActionListener escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				vet.arcan1_sincero();
+				geral.escolhas_0(t1, vet);
+				t1.getContinuar().addActionListener(continuar);
+
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+		
 	}
 }

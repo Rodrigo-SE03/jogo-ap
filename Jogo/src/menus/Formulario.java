@@ -142,57 +142,53 @@ public class Formulario {
 							"Desculpe, não poderei te deixar entrar sem que tenha um nome. Se não tiver um pode inventar. "
 									+ "Helaria te dará a chance de um novo começo para sua vida.",
 							"Guarda: ", 0);
-				} else{
-					
+				} else {
+
 					cont = 0;
-					for (int i = 0; Character.isWhitespace(txtNome.getText().charAt(i)) ; i++) {
-							cont++;
+					for (int i = 0; Character.isWhitespace(txtNome.getText().charAt(i)); i++) {
+						cont++;
 					}
 					name = txtNome.getText().substring(cont);
-					
+
 					cont = name.length();
-					for(int i=name.length()-1;Character.isWhitespace(name.charAt(i));i--) {
-						cont -- ;
+					for (int i = name.length() - 1; Character.isWhitespace(name.charAt(i)); i--) {
+						cont--;
 					}
 					name = name.substring(0, cont);
-					
+
 					if (name.length() > 12) {
-					
+
 						if (JOptionPane.showConfirmDialog(null,
-								"Me perdoe, aqui na cidade de Helaria temos a tradição de manter nomes curtos, com não mais de 12 caracteres."
-										+ "O registrarei como " +name.substring(0, 12) + ",Tudo bem?",
-								"Guarda:", JOptionPane.YES_NO_OPTION,
+								"Você percebe que o formulário não tem espaço o suficiente para o seu nome. "
+										+ "\nParece que há espaço para até 12 caracteres.\n Deseja se registrar apenas como  "
+										+ name.substring(0, 12) + "?",
+								"", JOptionPane.YES_NO_OPTION,
 								JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
-									
-									Jogador player = new Jogador();
-									player.setNome(name.substring(0, 12));
-		
-									if (Sexo.getSelectedItem() == "Masculino")
-										player.setSexo(0);
-									else
-										player.setSexo(1);
-		
-									frame.dispose();
-									new Inicio().admin(player);
-									
-									
+
+							Jogador player = new Jogador();
+							player.setNome(name.substring(0, 12));
+
+							if (Sexo.getSelectedItem() == "Masculino")
+								player.setSexo(0);
+							else
+								player.setSexo(1);
+
+							frame.dispose();
+							new Inicio().admin(player);
+
 						} else {
-							JOptionPane.showMessageDialog(null,
-									"Desculpe, nesse caso não poderei te deixar entrar. Se quiser pode inventar um novo nome. "
-											+ "Helaria te dará a chance de um novo começo para sua vida.",
-									"Guarda: ", 0);
+							JOptionPane.showMessageDialog(null, "É melhor registrar-se com um nome menor...", "", 0);
 						}
-					
-					}
-					else {
+
+					} else {
 						Jogador player = new Jogador();
 						player.setNome(name);
-	
+
 						if (Sexo.getSelectedItem() == "Masculino")
 							player.setSexo(0);
 						else
 							player.setSexo(1);
-	
+
 						frame.dispose();
 						new Inicio().admin(player);
 					}

@@ -9,6 +9,7 @@ import graficos.Texto;
 
 public class Geral { // Classe base para criação dos textos
 
+	private boolean flag = true;
 	private Escolhas choice = new Escolhas();
 	private ActionListener continuar; // ActionListener para o botão continuar
 
@@ -28,20 +29,26 @@ public class Geral { // Classe base para criação dos textos
 			int cont = 0; // Contador para verificar a posição do vetor de texto
 
 			public void actionPerformed(ActionEvent actionEvent) {
-
-				if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
-					cont++;
-					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
-					Thread.currentThread();
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				if (flag) {
+					flag = false;
+					if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
+						cont++;
+						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+					} else {
+						cont = 0;
+						t1.getContinuar().removeActionListener(continuar);
 					}
-				}else {
-					cont = 0;
-					t1.getContinuar().removeActionListener(continuar);
+					new Thread() {
+						public void run() {
+							try {
+								sleep(500);
+								flag = true;
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					}.start();
 				}
 			}
 		};
@@ -58,27 +65,35 @@ public class Geral { // Classe base para criação dos textos
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent actionEvent) {
-
-				if (cont < (vet.getTx().length - 1)) {
-					cont++;
-					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
-					Thread.currentThread();
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				if (flag) {
+					flag = false;
+					if (cont < (vet.getTx().length - 1)) {
+						cont++;
+						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+					} else {
+						t1.zerar();
+						cont = 0;
+						choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());// Cria uma
+																										// novainterface
+																										// com
+																										// texto +
+																										// botões
+						t1.getContinuar().removeActionListener(continuar);
 					}
-				} else {
-					t1.zerar();
-					cont = 0;
-					choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());// Cria uma
-																									// novainterface com
-																									// texto + botões
-					t1.getContinuar().removeActionListener(continuar);
+					new Thread() {
+						public void run() {
+							try {
+								sleep(500);
+								flag = true;
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					}.start();
 				}
-
 			}
+
 		};
 
 		t1.getContinuar().addActionListener(continuar);
@@ -86,29 +101,36 @@ public class Geral { // Classe base para criação dos textos
 	}
 
 	public void escolhas_3(Texto t1, Biblioteca vet) { // 3 opções de escolha no final
-		
+
 		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0));
-		
+
 		continuar = new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent actionEvent) {
+				if (flag) {
+					flag = false;
 
-				if (cont < (vet.getTx().length - 1)) {
-					cont++;
-					t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
-					Thread.currentThread();
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					if (cont < (vet.getTx().length - 1)) {
+						cont++;
+						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+					} else {
+						t1.zerar();
+						choice.doEscolhas_3(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2(), vet.getOp3());
+						cont = 0;
+						t1.getContinuar().removeActionListener(continuar);
 					}
-				} else {
-					t1.zerar();
-					choice.doEscolhas_3(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2(), vet.getOp3());
-					cont = 0;
-					t1.getContinuar().removeActionListener(continuar);
+					new Thread() {
+						public void run() {
+							try {
+								sleep(500);
+								flag = true;
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					}.start();
 				}
 
 			}

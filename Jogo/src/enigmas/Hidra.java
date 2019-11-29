@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.util.Random;
-
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -16,26 +15,17 @@ import sons.Musica;
 
 public class Hidra {
 
+	private JFrame background;
+	private JDialog top, cbc_1, cbc_2, cbc_3, cbc_4, cbc_5, cbc_6, cbc_7;
 	private JDialog frame[] = new JDialog[200];
 	private static Musica musica;
-	private static int cont;
-	private int numb;
-	private int numero;
-	private static int cut;
-	private static int controlCut;
-	private JFrame background;
-	private JDialog top;
-	private JDialog cbc_1;
-	private JDialog cbc_2;
-	private JDialog cbc_3;
-	private JDialog cbc_4;
-	private JDialog cbc_5;
-	private JDialog cbc_6;
-	private JDialog cbc_7;
+	private static int cont, cut, controlCut;
+	private int numb, numero;
 
 	/**
 	 * Launch the application.
 	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -55,6 +45,7 @@ public class Hidra {
 	 * Create the application.
 	 */
 	@SuppressWarnings("static-access")
+
 	public Hidra() {
 		for (int i = 0; i < frame.length; i++) {
 			frame[i] = new JDialog(background);
@@ -80,6 +71,7 @@ public class Hidra {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+
 	private void initialize() {
 		musica = new Musica();
 		musica.TocaMusica("src/sons/musicaHidra.wav");
@@ -370,6 +362,8 @@ public class Hidra {
 		Random dis = new Random();
 
 		JDialog frame_2 = new JDialog(background);
+		if (numb == frame.length)
+			numb = 0;
 		frame_2.setName("" + numb);
 		// System.out.println(frame_2.getName());
 		frame_2.setAlwaysOnTop(true);
@@ -385,7 +379,7 @@ public class Hidra {
 		});
 		frame_2.setBounds(frame[numero].getX() - 133, frame[numero].getY() + dis.nextInt(80) - 40,
 				frame[numero].getWidth(), frame[numero].getHeight());
-
+		if (frame_2.getLocation().y <= 50) frame_2.setLocation(frame_2.getLocation().x, 50);
 		JPanel panel = new JPanel();
 		frame_2.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
@@ -394,11 +388,8 @@ public class Hidra {
 		lblNewLabel.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
 		lblNewLabel.setBounds(0, 0, 278, 236);
 		panel.add(lblNewLabel);
-
 		frame[numb] = frame_2;
 		frame[numb].setVisible(true);
-
-		numb++;
 
 		JDialog frame_3 = new JDialog(background);
 		frame_3.setName("" + numb);
@@ -416,6 +407,7 @@ public class Hidra {
 		});
 		frame_3.setBounds(frame[numero].getX() + 133, frame[numero].getY() + dis.nextInt(80) - 40,
 				frame[numero].getWidth(), frame[numero].getHeight());
+		if(frame_2.getLocation().y<50) frame_3.setLocation(frame_3.getLocation().x,50);
 
 		JPanel panel_2 = new JPanel();
 		frame_3.getContentPane().add(panel_2, BorderLayout.CENTER);
@@ -428,7 +420,6 @@ public class Hidra {
 
 		frame[numb] = frame_3;
 		frame[numb].setVisible(true);
-
 		numb++;
 
 	}
@@ -439,7 +430,6 @@ public class Hidra {
 		top.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		top.setResizable(false);
 		top.setSize(100, 100);
-
 		top.addWindowListener(new java.awt.event.WindowAdapter() {
 			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 				musica.stop();
