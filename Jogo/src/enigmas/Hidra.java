@@ -451,32 +451,33 @@ public class Hidra {
 		top.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 		    		musica.stop();
-		    		for(int i=0;i<frame.length;i++) {
-		    			if(frame[i].isVisible()) {
-		    				frame[i].dispose();
-		    			}
-		    		}
-		    		if(cbc_1.isVisible()) {
-		    			cbc_1.dispose();
-		    		}
-		    		if(cbc_2.isVisible()) {
-		    			cbc_2.dispose();
-		    		}
-		    		if(cbc_3.isVisible()) {
-		    			cbc_3.dispose();
-		    		}
-		    		if(cbc_4.isVisible()) {
-		    			cbc_4.dispose();
-		    		}
-		    		if(cbc_5.isVisible()) {
-		    			cbc_5.dispose();
-		    		}
-		    		if(cbc_6.isVisible()) {
-		    			cbc_6.dispose();
-		    		}
-		    		if(cbc_7.isVisible()) {
-		    			cbc_7.dispose();
-		    		}
+//		    		for(int i=0;i<frame.length;i++) {
+//		    			if(frame[i].isVisible()) {
+//		    				frame[i].dispose();
+//		    			}
+//		    		}
+//		    		if(cbc_1.isVisible()) {
+//		    			cbc_1.dispose();
+//		    		}
+//		    		if(cbc_2.isVisible()) {
+//		    			cbc_2.dispose();
+//		    		}
+//		    		if(cbc_3.isVisible()) {
+//		    			cbc_3.dispose();
+//		    		}
+//		    		if(cbc_4.isVisible()) {
+//		    			cbc_4.dispose();
+//		    		}
+//		    		if(cbc_5.isVisible()) {
+//		    			cbc_5.dispose();
+//		    		}
+//		    		if(cbc_6.isVisible()) {
+//		    			cbc_6.dispose();
+//		    		}
+//		    		if(cbc_7.isVisible()) {
+//		    			cbc_7.dispose();
+//		    		}
+		    		background.dispose();
 		    }
 		});
 
