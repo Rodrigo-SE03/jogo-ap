@@ -482,7 +482,8 @@ public class Hist_Inicio {
 	public void ignorar_voz(Texto t1) {
 
 		Geral geral = new Geral();
-
+		
+		vet.getPlayer().setAndarPelaTorreArcan(true);
 		vet.ignorar_voz();
 		geral.escolhas_3(t1, vet);
 
