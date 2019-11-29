@@ -6,23 +6,20 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import bibliotecas.Biblio_Guerreiro;
 import bibliotecas.Biblio_Intro;
 import graficos.Escolhas;
+import graficos.Geral;
 import graficos.Texto;
 import mapas.Maps;
 import menus.Formulario;
 import personagens.Jogador;
 import sons.Musica;
 
-public class Inicio {
+public class Hist_Inicio {
 
-	private ActionListener continuar, escolha1, escolha2;
+	private ActionListener continuar, escolha1, escolha2, escolha3;
 	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
-	private Biblio_Guerreiro vet1 = new Biblio_Guerreiro();
 	private Musica musica = new Musica();
-	private Musica[] musicasSegunda;
-
 	private Musica musica2 = new Musica();
 
 	public void admin(Jogador player) {
@@ -92,9 +89,6 @@ public class Inicio {
 
 		Texto t1 = new Texto(); // Cria o JFrame e instancia a classe que gera os textos
 		Geral geral = new Geral(); // Classe geral para manipular a gera��o dos textos
-		musicasSegunda = new Musica[1];
-		for (int cont = 0; cont < musicasSegunda.length; cont++)
-			musicasSegunda[cont] = new Musica();
 		vet.inicio(); // Instancia os vetores de texto para o conjunto de textos do metodo inicio
 		geral.escolhas_0(t1, vet); // Chama a fun�ao para manipular a gera��o de textos
 		musica.TocaMusica("src/sons/musicaCasa.wav");
@@ -105,36 +99,38 @@ public class Inicio {
 			int cont = 0; // Contador para verificar a posi��o do vetor de texto
 
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(cont);
-				switch (cont) {
-				case 10:
-					musica.reduzVolume(0.4f, 90);
-					break;
-				case 12:
-					musica.reduzVolume(0.02f, 40);
-					musica2.TocaMusica("src/sons/musicaDesespero.wav");
-					musica2.setVolume(0.0f);
-					musica2.aumentaVolume(0.8f, 100);
-					break;
-				case 13:
-					musica.stop();
-					// musica2.TocaMusica("src/sons/musicaDesespero.wav");
+				if (geral.isFlag()) {
+					System.out.println(cont);
+					switch (cont) {
+					case 10:
+						musica.reduzVolume(0.4f, 90);
+						break;
+					case 12:
+						musica.reduzVolume(0.02f, 40);
+						musica2.TocaMusica("src/sons/musicaDesespero.wav");
+						musica2.setVolume(0.0f);
+						musica2.aumentaVolume(0.8f, 100);
+						break;
+					case 13:
+						musica.stop();
+						// musica2.TocaMusica("src/sons/musicaDesespero.wav");
 
-					break;
-				case 15:
-					musica2.reduzVolume(0.15f, 50);
-					break;
-				case 18:
-					musica2.stop();
-					break;
-				default:
-					break;
+						break;
+					case 15:
+						musica2.reduzVolume(0.15f, 50);
+						break;
+					case 18:
+						musica2.stop();
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						new Formulario(); // Chama a fun��o para abrir o formul�rio
+						t1.getTexto().dispose(); // Fecha a janela de textos
+					} else // Atualiza o contador para verificar a posi��o do vetor de texto
+						cont++;
 				}
-				if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
-					new Formulario(); // Chama a fun��o para abrir o formul�rio
-					t1.getTexto().dispose(); // Fecha a janela de textos
-				} else // Atualiza o contador para verificar a posi��o do vetor de texto
-					cont++;
 			}
 		};
 		JButton pular = new JButton("Pular");
@@ -241,21 +237,22 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					switch (cont) {
+					case 1:
+					default:
+						break;
+					}
 
-				switch (cont) {
-				case 1:
-				default:
-					break;
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						torreArcana(t1);
+
+					} else
+						cont++;
+
 				}
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					torreArcana(t1);
-
-				} else
-					cont++;
-
 			}
 		};
 
@@ -326,14 +323,15 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						castelo(t1);
+					} else
+						cont++;
 
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					castelo(t1);
-				} else
-					cont++;
-
+				}
 			}
 		};
 
@@ -350,62 +348,63 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
 
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					t1.getTexto().dispose();
+						Maps mapa = new Maps();
+						mapa.zerarBotoes();
 
-					Maps mapa = new Maps();
-					mapa.zerarBotoes();
+						ActionListener castelo = new ActionListener() {
 
-					ActionListener castelo = new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								mapa.getFrame().dispose();
+								castelo(new Texto());
 
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							mapa.getFrame().dispose();
-							castelo(new Texto());
+							}
 
-						}
+						};
 
-					};
+						ActionListener alameda = new ActionListener() {
 
-					ActionListener alameda = new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								mapa.getFrame().dispose();
+								alameda3(new Texto());
 
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							mapa.getFrame().dispose();
-							alameda3(new Texto());
+							}
 
-						}
+						};
 
-					};
+						ActionListener torre = new ActionListener() {
 
-					ActionListener torre = new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								mapa.getFrame().dispose();
+								torreArcana(new Texto());
 
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							mapa.getFrame().dispose();
-							torreArcana(new Texto());
+							}
 
-						}
+						};
 
-					};
+						mapa.getBtnCastelo().setVisible(true);
+						mapa.getCasteloFundo().setVisible(true);
+						mapa.getBtnAlamedaPonteiros().setVisible(true);
+						mapa.getAlamedaPonteirosFundo().setVisible(true);
+						mapa.getBtnTorreArcana().setVisible(true);
+						mapa.getTorreArcanaFundo().setVisible(true);
 
-					mapa.getBtnCastelo().setVisible(true);
-					mapa.getCasteloFundo().setVisible(true);
-					mapa.getBtnAlamedaPonteiros().setVisible(true);
-					mapa.getAlamedaPonteirosFundo().setVisible(true);
-					mapa.getBtnTorreArcana().setVisible(true);
-					mapa.getTorreArcanaFundo().setVisible(true);
+						mapa.getBtnCastelo().addActionListener(castelo);
+						mapa.getBtnAlamedaPonteiros().addActionListener(alameda);
+						mapa.getBtnTorreArcana().addActionListener(torre);
 
-					mapa.getBtnCastelo().addActionListener(castelo);
-					mapa.getBtnAlamedaPonteiros().addActionListener(alameda);
-					mapa.getBtnTorreArcana().addActionListener(torre);
+					} else
+						cont++;
 
-				} else
-					cont++;
-
+				}
 			}
 		};
 
@@ -419,7 +418,7 @@ public class Inicio {
 		vet.intro_arcanista();
 		geral.escolhas_2(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -428,7 +427,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -487,7 +486,7 @@ public class Inicio {
 		vet.ignorar_voz();
 		geral.escolhas_3(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -496,7 +495,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -505,7 +504,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha3 = new ActionListener() {
+		escolha3 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -530,14 +529,15 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						new Hist_Arcan().arcan1(t1, vet.getPlayer());
+					} else
+						cont++;
 
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					new Hist_Arcan().arcan1(t1, vet.getPlayer());
-				} else
-					cont++;
-
+				}
 			}
 		};
 
@@ -550,7 +550,7 @@ public class Inicio {
 		vet.intro_ladino();
 		geral.escolhas_3(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -559,7 +559,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -588,7 +588,7 @@ public class Inicio {
 		vet.bebida_ladino(x);
 		geral.escolhas_3(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -597,7 +597,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -606,7 +606,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha3 = new ActionListener() {
+		escolha3 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -626,7 +626,7 @@ public class Inicio {
 		vet.resp_lad(x);
 		geral.escolhas_2(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -635,7 +635,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -659,14 +659,15 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						new Hist_Assassin().assassin1(t1, vet.getPlayer());
+					} else
+						cont++;
 
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					new Hist_Assassin().assassin1(t1, vet.getPlayer());
-				} else
-					cont++;
-
+				}
 			}
 		};
 
@@ -679,7 +680,7 @@ public class Inicio {
 		vet.intro_guerreiro();
 		geral.escolhas_2(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -688,7 +689,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -711,14 +712,15 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
+					} else
+						cont++;
 
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
-				} else
-					cont++;
-
+				}
 			}
 		};
 
@@ -731,7 +733,7 @@ public class Inicio {
 		vet.naoEdaSuaConta();
 		geral.escolhas_3(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -740,7 +742,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -749,7 +751,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha3 = new ActionListener() {
+		escolha3 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -769,7 +771,7 @@ public class Inicio {
 		vet.jardins();
 		geral.escolhas_2(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -778,7 +780,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -798,7 +800,7 @@ public class Inicio {
 		vet.estabulos();
 		geral.escolhas_2(t1, vet);
 
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -807,7 +809,7 @@ public class Inicio {
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -832,18 +834,18 @@ public class Inicio {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
-				} else
-					cont++;
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
+					} else
+						cont++;
+				}
 			}
 		};
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-
 
 }

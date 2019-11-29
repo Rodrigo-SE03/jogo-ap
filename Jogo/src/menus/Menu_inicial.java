@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import cenas.Inicio;
+import cenas.Hist_Inicio;
 import graficos.Janela;
 import sons.Musica;
 
@@ -75,7 +75,7 @@ public class Menu_inicial extends Janela {
         this.iniciar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             		musica.stop();
-            	new Inicio().inicio();
+            	new Hist_Inicio().inicio();
                 menu.dispose();
             } });
     }

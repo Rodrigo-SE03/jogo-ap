@@ -8,7 +8,7 @@ import javax.swing.JFormattedTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
-import cenas.Inicio;
+import cenas.Hist_Inicio;
 import personagens.Jogador;
 
 import java.awt.Color;
@@ -174,7 +174,7 @@ public class Formulario {
 								player.setSexo(1);
 
 							frame.dispose();
-							new Inicio().admin(player);
+							new Hist_Inicio().admin(player);
 
 						} else {
 							JOptionPane.showMessageDialog(null, "É melhor registrar-se com um nome menor...", "", 0);
@@ -190,7 +190,7 @@ public class Formulario {
 							player.setSexo(1);
 
 						frame.dispose();
-						new Inicio().admin(player);
+						new Hist_Inicio().admin(player);
 					}
 				}
 			}

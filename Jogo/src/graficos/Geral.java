@@ -1,15 +1,17 @@
-package cenas;
+package graficos;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import bibliotecas.Biblioteca;
-import graficos.Escolhas;
-import graficos.Texto;
 
 public class Geral { // Classe base para criação dos textos
 
 	private boolean flag = true;
+	public boolean isFlag() {
+		return flag;
+	}
+
 	private Escolhas choice = new Escolhas();
 	private ActionListener continuar; // ActionListener para o botão continuar
 
@@ -35,8 +37,9 @@ public class Geral { // Classe base para criação dos textos
 						cont++;
 						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
 					} else {
-						cont = 0;
+						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
+						cont = 0;
 					}
 					new Thread() {
 						public void run() {

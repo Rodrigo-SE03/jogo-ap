@@ -4,17 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import bibliotecas.Biblio_Arcan;
+import enigmas.Hidra;
+import enigmas.Labirinto;
+import graficos.Geral;
 import graficos.Texto;
 import personagens.Jogador;
 import sons.Musica;
 
 public class Hist_Arcan {
-	private ActionListener continuar, escolha1, escolha2;
-	private Biblio_Arcan vet = new  Biblio_Arcan(); // Vetor de texto
-	private Jogador player; // informa��es do playerS
+	private ActionListener continuar, escolha1, escolha2, escolha3;
+	private Biblio_Arcan vet = new Biblio_Arcan(); // Vetor de texto
 	private Musica musica = new Musica();
 	private Musica[] musicasSegunda;
-	
+
 	public void arcan1(Texto t1, Jogador player) {
 		Geral geral = new Geral();
 
@@ -22,49 +24,55 @@ public class Hist_Arcan {
 		vet.arcan1();
 
 		geral.escolhas_2(t1, vet);
-		
-		continuar = new ActionListener() {
-			int cont = 0;
 
-			public void actionPerformed(ActionEvent e) {
-
-				if (cont == (vet.getTx().length - 1)) {
-					t1.zerar();
-					t1.getContinuar().removeActionListener(continuar);
-					
-				} else
-					cont++;
-
-			}
-		};
-		
-		ActionListener escolha1 = new ActionListener() {
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				vet.arcan1_mentir();
-				geral.escolhas_0(t1, vet);
 				t1.getContinuar().addActionListener(continuar);
+				arcan2(t1, 1);
 
 			}
 		};
 
-		ActionListener escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				vet.arcan1_sincero();
-				geral.escolhas_0(t1, vet);
-				t1.getContinuar().addActionListener(continuar);
+				arcan2(t1, 2);
 
 			}
 		};
 
 		geral.getChoice().getOpcao1().addActionListener(escolha1);
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
+	}
 
-		
+	public void arcan2(Texto t1, int x) {
+		Geral geral = new Geral();
+
+		vet.arcan2(x);
+
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.zerar();
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
+						new Labirinto();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
 	}
 }
