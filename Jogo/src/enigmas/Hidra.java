@@ -58,7 +58,7 @@ public class Hidra {
 	@SuppressWarnings("static-access")
 	public Hidra() {
 		for(int i=0;i<frame.length;i++) {
-			frame[i] = new JDialog();
+			frame[i] = new JDialog(background);
 			frame[i].setVisible(false);
 		}
 		
@@ -110,7 +110,7 @@ public class Hidra {
 		    	
 		    }
 		});
-		ImageIcon back = new ImageIcon("src/imagens/Dungeon.png");
+		ImageIcon back = new ImageIcon("src/imagens/masmorra.jpg");
 		back.setImage(back.getImage().getScaledInstance(background.getSize().width,background.getSize().height,100));
 		JLabel fundo = new JLabel(back);
 		fundo.setLocation(0,0);
@@ -119,7 +119,7 @@ public class Hidra {
 		background.getContentPane().add(fundo);
 		background.setVisible(true);
 		
-		cbc_1 = new JDialog();
+		cbc_1 = new JDialog(background);
 		cbc_1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_1.setResizable(false);
 		cbc_1.setAlwaysOnTop(true);
@@ -150,7 +150,7 @@ public class Hidra {
 		
 		
 		
-		cbc_2 = new JDialog();
+		cbc_2 = new JDialog(background);
 		cbc_2.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_2.setResizable(false);
 		cbc_2.setAlwaysOnTop(true);
@@ -180,7 +180,7 @@ public class Hidra {
 		cbc_2.setVisible(true);
 		
 		
-		cbc_3 = new JDialog();
+		cbc_3 = new JDialog(background);
 		cbc_3.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_3.setResizable(false);
 		cbc_3.setAlwaysOnTop(true);
@@ -210,7 +210,7 @@ public class Hidra {
 		cbc_3.setVisible(true);
 		
 		
-		cbc_4 = new JDialog();
+		cbc_4 = new JDialog(background);
 		cbc_4.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_4.setResizable(false);
 		cbc_4.setAlwaysOnTop(true);
@@ -240,7 +240,7 @@ public class Hidra {
 		cbc_4.setVisible(true);
 		
 		
-		cbc_5 = new JDialog();
+		cbc_5 = new JDialog(background);
 		cbc_5.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_5.setResizable(false);
 		cbc_5.setAlwaysOnTop(true);
@@ -270,7 +270,7 @@ public class Hidra {
 		cbc_5.setVisible(true);
 		
 		
-		cbc_6 = new JDialog();
+		cbc_6 = new JDialog(background);
 		cbc_6.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_6.setResizable(false);
 		cbc_6.setAlwaysOnTop(true);
@@ -300,7 +300,7 @@ public class Hidra {
 		cbc_6.setVisible(true);
 		
 		
-		cbc_7 = new JDialog();
+		cbc_7 = new JDialog(background);
 		cbc_7.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		cbc_7.setResizable(false);
 		cbc_7.setAlwaysOnTop(true);
@@ -379,7 +379,7 @@ public class Hidra {
     	
 		Random dis = new Random();
 		
-		JDialog frame_2 = new JDialog();
+		JDialog frame_2 = new JDialog(background);
 		frame_2.setName(""+numb);
 		//System.out.println(frame_2.getName());
 		frame_2.setAlwaysOnTop(true);
@@ -409,7 +409,7 @@ public class Hidra {
 		
 		numb++;
 		
-		JDialog frame_3 = new JDialog();
+		JDialog frame_3 = new JDialog(background);
 		frame_3.setName(""+numb);
 		frame_3.setAlwaysOnTop(true);
 		//System.out.println(frame_3.getName());
@@ -442,7 +442,7 @@ public class Hidra {
 	}
 	
 	public void inicializaCoracao() {
-		top = new JDialog();
+		top = new JDialog(background);
 		top.setResizable(false);
 		top.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		top.setResizable(false);
