@@ -196,7 +196,7 @@ public class Hist_Inicio {
 					//System.out.println(cont);
 					switch (cont) {
 					case 3:
-						musica.reduzVolume(0.2f,10);
+						musica.reduzVolume(0.3f,10);
 						break;
 					default:
 						break;
@@ -244,7 +244,11 @@ public class Hist_Inicio {
 	}
 
 	public void correrAtras(Texto t1) {
-
+		musica.reduzVolume(0.0f,60);
+		musica2.TocaMusica("src/sons/beco.wav");
+		musica2.setVolume(0.0f);
+		musica2.aumentaVolume(0.6f,100);
+		
 		Geral geral = new Geral();
 
 		vet.inicio_correr();
@@ -291,6 +295,9 @@ public class Hist_Inicio {
 					//System.out.println(cont);
 					switch (cont) {
 					case 7:
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
 						musica2.TocaMusica("src/sons/torre.wav");
 						musica2.setVolume(0.0f);
 						musica2.aumentaVolume(0.7f,60);
@@ -430,7 +437,7 @@ public class Hist_Inicio {
 
 	public void inicio_NaoCorrer(Texto t1) {
 		Geral geral = new Geral();
-
+		musica.aumentaVolume(0.6f,20);
 		vet.inicio_naoCorrer();
 		geral.escolhas_0(t1, vet);
 
@@ -441,9 +448,6 @@ public class Hist_Inicio {
 				if (geral.isFlag()) {
 					System.out.println(cont);
 					switch(cont) {
-					case 0:
-						musica.aumentaVolume(0.6f,20);
-						break;
 					case 1:
 						musica.reduzVolume(0.1f,30);
 					default:
