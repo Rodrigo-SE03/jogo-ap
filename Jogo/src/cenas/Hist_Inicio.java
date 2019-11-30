@@ -245,9 +245,32 @@ public class Hist_Inicio {
 		
 		vet.inicio_artemis();
 		
-		//System.out.println("yoooooo");
-		
 		geral.escolhas_2(t1, vet);
+		
+		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
+			int cont = 0; // Contador para verificar a posi��o do vetor de texto
+			
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					//System.out.println(cont);
+					switch (cont) {
+					case 7:
+						musica2.TocaMusica("src/sons/torre.wav");
+						musica2.setVolume(0.0f);
+						musica2.aumentaVolume(0.7f,60);
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						
+					} else // Atualiza o contador para verificar a posi��o do vetor de texto
+						cont++;
+				}
+			}
+		};
+		
+		t1.getContinuar().addActionListener(continuar);
 		
 		escolha1 = new ActionListener() {
 
@@ -563,6 +586,22 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 3:
+						if(musica.isPlaying())
+							musica.reduzVolume(0.2f,60);
+						if(musica2.isPlaying())
+							musica2.reduzVolume(0.2f,60);
+						break;
+					case 4:
+						if(musica.isPlaying())
+							musica.stop();
+						if(musica2.isPlaying())
+							musica2.stop();
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);

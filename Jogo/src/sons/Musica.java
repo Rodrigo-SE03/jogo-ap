@@ -10,6 +10,7 @@ import javax.sound.sampled.FloatControl;
 public class Musica {
 	private File caminho; 
 	private Clip clip;
+	private boolean isPlaying=false;
 	
 	public void TocaMusica(String local) {
 		
@@ -22,7 +23,7 @@ public class Musica {
 				clip.open(audioInput);
 				clip.start();
 				clip.loop(Clip.LOOP_CONTINUOUSLY);
-
+				isPlaying = true;
 				
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -33,6 +34,7 @@ public class Musica {
 	public void stop() {
 		try {
 			clip.stop();
+			isPlaying = false;
 		}catch(Exception NullPointerException) {
 		}
 	}
@@ -98,6 +100,7 @@ public class Musica {
 		}.start();
 	}
 
+	
 
 	public Clip getClip() {
 		return clip;
@@ -107,6 +110,18 @@ public class Musica {
 	public void setClip(Clip clip) {
 		this.clip = clip;
 	}
+
+
+	public boolean isPlaying() {
+		return isPlaying;
+	}
+
+
+	public void setPlaying(boolean isPlaying) {
+		this.isPlaying = isPlaying;
+	}
+	
+	
 	
 	
 	/* Comando para chamar musica:
