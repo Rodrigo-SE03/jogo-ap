@@ -1,7 +1,9 @@
 package enigmas;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.util.Random;
 import javax.swing.ImageIcon;
@@ -10,18 +12,21 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 import sons.Musica;
 
 public class Hidra {
 
 	private JFrame background;
-	private JDialog top, cbc_1, cbc_2, cbc_3, cbc_4, cbc_5, cbc_6, cbc_7;
+	private JTextPane text;
+	private JDialog top, cbc_1, cbc_2, cbc_3, cbc_4, cbc_5, cbc_6, cbc_7,relogio;
 	private JDialog frame[] = new JDialog[200];
 	private static Musica musica;
 	private static int cont, cut, controlCut;
-	private int numb, numero;
+	private int numb, numero, min, seg;
 	private boolean perdeu = false;
+	private double time = 180000;
 
 	/**
 	 * Launch the application.
@@ -57,9 +62,10 @@ public class Hidra {
 		this.cont = 0;
 		this.cut = 0;
 		this.controlCut = 0;
-		tempo();
+		this.min = 3;
+		this.seg = 0;
 		initialize();
-
+		tempo();
 	}
 
 	public int getCut() {
@@ -77,7 +83,11 @@ public class Hidra {
 	private void initialize() {
 		musica = new Musica();
 		musica.TocaMusica("src/sons/musicaHidra.wav");
+		musica.setVolume(0.7f);
 
+		
+		
+		
 		background = new JFrame();
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		background.setIconImage(icone.getImage());
@@ -97,7 +107,6 @@ public class Hidra {
 				} else {
 					exiting.dispose();
 				}
-				System.out.println(perdeu);
 			}
 		});
 
@@ -110,6 +119,38 @@ public class Hidra {
 		fundo.setVisible(true);
 		background.getContentPane().add(fundo);
 		background.setVisible(true);
+		
+		
+		
+		
+		relogio = new JDialog();
+		relogio.setLocationRelativeTo(null);
+		relogio.setSize(300,150);
+		relogio.setUndecorated(true);
+		relogio.setAlwaysOnTop(true);
+		relogio.setLocation(background.getLocation());
+		
+		text = new JTextPane();
+		text.setBounds(0,0,300,150);
+		text.setOpaque(false);
+		relogio.add(text);
+		
+		text.setFont(new Font("Georgia",Font.BOLD,100));
+		text.setForeground(Color.black);
+		
+		ImageIcon back = new ImageIcon("src/imagens/contador.png");
+		back.setImage(back.getImage().getScaledInstance(relogio.getSize().width, relogio.getSize().height, 100));
+		JLabel fundo1 = new JLabel(back);
+		fundo1.setLocation(0,0);
+		fundo1.setSize(relogio.getSize());
+		fundo1.setVisible(true);
+		relogio.getContentPane().add(fundo1);
+		relogio.add(fundo1);
+		
+		relogio.setVisible(true);
+		
+		
+		
 
 		cbc_1 = new JDialog(background);
 		cbc_1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -127,7 +168,7 @@ public class Hidra {
 		cbc_1.setSize(294, 275);
 		cbc_1.setLocationRelativeTo(null);
 		cbc_1.setLocation(cbc_1.getBounds().x - 290, cbc_1.getBounds().y - (270 / 2) + 50);
-		cbc_1.setTitle(cbc_1.getName());
+		//cbc_1.setTitle(cbc_1.getName());
 
 		JPanel panel = new JPanel();
 		cbc_1.getContentPane().add(panel, BorderLayout.CENTER);
@@ -156,7 +197,7 @@ public class Hidra {
 		cbc_2.setSize(294, 275);
 		cbc_2.setLocationRelativeTo(null);
 		cbc_2.setLocation(cbc_2.getBounds().x, cbc_2.getBounds().y - (270) + 50);
-		cbc_2.setTitle(cbc_2.getName());
+		//cbc_2.setTitle(cbc_2.getName());
 
 		JPanel panel_2 = new JPanel();
 		cbc_2.getContentPane().add(panel_2, BorderLayout.CENTER);
@@ -185,7 +226,7 @@ public class Hidra {
 		cbc_3.setSize(294, 275);
 		cbc_3.setLocationRelativeTo(null);
 		cbc_3.setLocation(cbc_3.getBounds().x + 290, cbc_3.getBounds().y - (270 / 2) + 50);
-		cbc_3.setTitle(cbc_3.getName());
+		//cbc_3.setTitle(cbc_3.getName());
 
 		JPanel panel_3 = new JPanel();
 		cbc_3.getContentPane().add(panel_3, BorderLayout.CENTER);
@@ -214,7 +255,7 @@ public class Hidra {
 		cbc_4.setSize(294, 275);
 		cbc_4.setLocationRelativeTo(null);
 		cbc_4.setLocation(cbc_4.getBounds().x - 290, cbc_4.getBounds().y + (270 / 2) + 50);
-		cbc_4.setTitle(cbc_4.getName());
+		//cbc_4.setTitle(cbc_4.getName());
 
 		JPanel panel_4 = new JPanel();
 		cbc_4.getContentPane().add(panel_4, BorderLayout.CENTER);
@@ -243,7 +284,7 @@ public class Hidra {
 		cbc_5.setSize(294, 275);
 		cbc_5.setLocationRelativeTo(null);
 		cbc_5.setLocation(cbc_5.getBounds().x, cbc_5.getBounds().y + (270) + 50);
-		cbc_5.setTitle(cbc_5.getName());
+		//cbc_5.setTitle(cbc_5.getName());
 
 		JPanel panel_5 = new JPanel();
 		cbc_5.getContentPane().add(panel_5, BorderLayout.CENTER);
@@ -272,7 +313,7 @@ public class Hidra {
 		cbc_6.setSize(294, 275);
 		cbc_6.setLocationRelativeTo(null);
 		cbc_6.setLocation(cbc_6.getBounds().x + 290, cbc_6.getBounds().y + (270 / 2) + 50);
-		cbc_6.setTitle(cbc_6.getName());
+		//cbc_6.setTitle(cbc_6.getName());
 
 		JPanel panel_6 = new JPanel();
 		cbc_6.getContentPane().add(panel_6, BorderLayout.CENTER);
@@ -301,7 +342,7 @@ public class Hidra {
 		cbc_7.setSize(294, 275);
 		cbc_7.setLocationRelativeTo(null);
 		cbc_7.setLocation(cbc_7.getBounds().x, cbc_7.getBounds().y + 50);
-		cbc_7.setTitle(cbc_7.getName());
+		//cbc_7.setTitle(cbc_7.getName());
 
 		JPanel panel_7 = new JPanel();
 		cbc_7.getContentPane().add(panel_7, BorderLayout.CENTER);
@@ -380,7 +421,7 @@ public class Hidra {
 				// System.out.println(cut);
 			}
 		});
-		frame_2.setBounds(frame[numero].getX() - 133, frame[numero].getY() + dis.nextInt(40) - 20,
+		frame_2.setBounds(frame[numero].getX() - 133 + dis.nextInt(40)-20, frame[numero].getY() + dis.nextInt(40) - 20,
 				frame[numero].getWidth(), frame[numero].getHeight());
 		if (frame_2.getLocation().y <= 50) frame_2.setLocation(frame_2.getLocation().x, 50);
 		JPanel panel = new JPanel();
@@ -410,7 +451,7 @@ public class Hidra {
 				// System.out.println(cut);
 			}
 		});
-		frame_3.setBounds(frame[numero].getX() + 133, frame[numero].getY() + dis.nextInt(80) - 40,
+		frame_3.setBounds(frame[numero].getX() + 133 + dis.nextInt(40)-20, frame[numero].getY() + dis.nextInt(80) - 40,
 				frame[numero].getWidth(), frame[numero].getHeight());
 		if(frame_3.getLocation().y<50) frame_3.setLocation(frame_3.getLocation().x,50);
 
@@ -426,7 +467,10 @@ public class Hidra {
 		frame[numb] = frame_3;
 		frame[numb].setVisible(true);
 		numb++;
-
+		
+		if(numb>180) {
+			perdeu = true;
+		}
 	}
 
 	public void inicializaCoracao() {
@@ -465,6 +509,8 @@ public class Hidra {
 //		    			cbc_7.dispose();
 //		    		}
 				background.dispose();
+				relogio.dispose();
+				time = 0;
 			}
 		});
 
@@ -521,8 +567,48 @@ public class Hidra {
 		new Thread() {
 			public void run(){
 				try {
-					Thread.sleep(300000);
+					int s;
+					
+					
+					
+					while(time>0 && !perdeu) {
+						
+					if(seg<10) {
+						text.setText(" "+min+":"+"0"+seg);
+					}
+					else if(seg>=10) {
+						text.setText(" "+min+":"+seg);
+					}
+						
+					s=min;
+						
+					//System.out.println(time);
+					//System.out.println(min);
+					//System.out.println(seg);
+					Thread.sleep(1000);
+					if(time<180000) {
+						min=2;
+					}
+					else if(time<60000) {
+						min = 0;
+					}
+					if(min != s) {
+						seg = 59;
+					}
+					else if(min == s && time!=180000){
+						seg--;
+					}
+					time--;
+					}
 					perdeu = true;
+					
+					//SÓ PRA SINALIZAR QUE PERDEU MESMO, DEPOIS TIRA ISSO
+					if(perdeu) {
+						text.setFont(new Font("Georgia",Font.BOLD,50));
+						text.setText("perdeste");
+					}
+					
+					
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
