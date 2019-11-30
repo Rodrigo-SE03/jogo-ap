@@ -21,6 +21,7 @@ public class Hist_Inicio {
 	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
 	private Musica musica = new Musica();
 	private Musica musica2 = new Musica();
+	private Musica musica3 = new Musica();
 
 	public void admin(Jogador player) {
 		Texto t1 = new Texto();
@@ -110,14 +111,26 @@ public class Hist_Inicio {
 						musica2.TocaMusica("src/sons/musicaDesespero.wav");
 						musica2.setVolume(0.0f);
 						musica2.aumentaVolume(0.8f, 100);
+						musica3.TocaMusica("src/sons/fogo.wav");
+						musica3.setVolume(0.0f);
+						musica3.aumentaVolume(0.4f,40);
 						break;
 					case 13:
 						musica.stop();
-						// musica2.TocaMusica("src/sons/musicaDesespero.wav");
-
+						musica3.aumentaVolume(0.6f,40);
+						break;
+					case 14:
+						musica.TocaMusica("src/sons/grito.wav");
+						musica.setVolume(0.2f);
+						musica.reduzVolume(0.0f,50);
 						break;
 					case 15:
-						musica2.reduzVolume(0.15f, 50);
+						musica.stop();
+						musica2.reduzVolume(0.2f, 50);
+						musica3.aumentaVolume(0.8f,40);
+						break;
+					case 17:
+						musica3.stop();
 						break;
 					case 18:
 						musica2.stop();
@@ -143,7 +156,7 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				musica.stop();
 				// TODO Auto-generated method stub
-				musica.stop();
+				musica2.stop();
 //				musicasSegunda[0].stop();
 				new Formulario(); // Chama a fun��o para abrir o formul�rio
 				t1.getTexto().dispose();
