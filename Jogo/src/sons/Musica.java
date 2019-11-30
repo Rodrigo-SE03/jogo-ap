@@ -68,6 +68,7 @@ public class Musica {
 	public void reduzVolume(float volume,int tempo) {
 		new Thread() {
 			public void run() {
+				if(isPlaying) {
 		try {
 			while(getVolume()>volume) {
 				//System.out.println(getVolume());
@@ -78,7 +79,7 @@ public class Musica {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}}
+		}}}
 		}.start();
 	}
 	
@@ -86,6 +87,7 @@ public class Musica {
 	public void aumentaVolume(float volume,int tempo) {
 		new Thread() {
 			public void run() {
+				if(isPlaying) {
 		try {
 			while(getVolume()<volume) {
 				//System.out.println(getVolume());
@@ -96,7 +98,7 @@ public class Musica {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}}
+		}}}
 		}.start();
 	}
 

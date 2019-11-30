@@ -101,7 +101,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					//System.out.println(cont);
+					System.out.println(cont);
 					switch (cont) {
 					case 10:
 						musica.reduzVolume(0.4f, 90);
@@ -135,6 +135,11 @@ public class Hist_Inicio {
 					case 18:
 						musica2.stop();
 						break;
+					case 19:
+						musica.TocaMusica("src/sons/mercado.wav");
+						musica.setVolume(0.0f);
+						musica.aumentaVolume(0.6f,80);
+						break;
 					default:
 						break;
 					}
@@ -157,7 +162,7 @@ public class Hist_Inicio {
 				musica.stop();
 				// TODO Auto-generated method stub
 				musica2.stop();
-//				musicasSegunda[0].stop();
+				//musicasSegunda[0].stop();
 				new Formulario(); // Chama a fun��o para abrir o formul�rio
 				t1.getTexto().dispose();
 			}
@@ -174,7 +179,38 @@ public class Hist_Inicio {
 
 		vet.setPlayer(player); // Atualiza o g�nero do player nos textos
 		vet.inicio2();
+	
+		
 		geral.escolhas_2(t1, vet);
+		
+		
+		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
+			int cont = 0; // Contador para verificar a posi��o do vetor de texto
+			int no =0;
+			public void actionPerformed(ActionEvent e) {
+				if(!musica.isPlaying() && no==0) {
+					musica.TocaMusica("src/sons/mercado.wav");
+					no=1;
+				}
+				if (geral.isFlag()) {
+					//System.out.println(cont);
+					switch (cont) {
+					case 3:
+						musica.reduzVolume(0.2f,10);
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						
+					} else // Atualiza o contador para verificar a posi��o do vetor de texto
+						cont++;
+				}
+			}
+		};
+		
+		t1.getContinuar().addActionListener(continuar);
+		
 
 		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
 
@@ -403,12 +439,23 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					System.out.println(cont);
+					switch(cont) {
+					case 0:
+						musica.aumentaVolume(0.6f,20);
+						break;
+					case 1:
+						musica.reduzVolume(0.1f,30);
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 
 						Maps mapa = new Maps();
+						musica.stop();
 						mapa.zerarBotoes();
 
 						ActionListener castelo = new ActionListener() {
