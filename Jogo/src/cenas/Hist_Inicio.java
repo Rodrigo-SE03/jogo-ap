@@ -101,7 +101,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					System.out.println(cont);
+					//System.out.println(cont);
 					switch (cont) {
 					case 10:
 						musica.reduzVolume(0.4f, 90);
@@ -242,10 +242,13 @@ public class Hist_Inicio {
 	public void inicio_Artemis(Texto t1) {
 
 		Geral geral = new Geral();
-
+		
 		vet.inicio_artemis();
+		
+		//System.out.println("yoooooo");
+		
 		geral.escolhas_2(t1, vet);
-
+		
 		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -441,7 +444,8 @@ public class Hist_Inicio {
 	}
 
 	public void torreArcana(Texto t1) {
-
+		musica.TocaMusica("src/sons/torre.wav");
+		musica.setVolume(0.7f);
 		Geral geral = new Geral();
 		vet.intro_arcanista();
 		geral.escolhas_2(t1, vet);
@@ -449,7 +453,7 @@ public class Hist_Inicio {
 		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
+				
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				seguir_voz(t1);
 			}
@@ -458,7 +462,7 @@ public class Hist_Inicio {
 		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
+	
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				ignorar_voz(t1);
 
@@ -474,11 +478,11 @@ public class Hist_Inicio {
 
 		vet.seguir_voz();
 		geral.escolhas_3(t1, vet);
-
+		
 		ActionListener escolha1 = new ActionListener() {
-
+			
 			public void actionPerformed(ActionEvent e) {
-
+				
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				resposta_a_arcana(t1, 1);
 			}

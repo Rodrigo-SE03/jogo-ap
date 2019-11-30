@@ -1,8 +1,13 @@
 package bibliotecas;
 
+import sons.Musica;
+
 public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores de texto a serem usados
 
- 
+	private Musica musica;
+	
+	
+	
 	/*
 	 * 
 	 * Lista de acentos (evita que bugue ao mandar pro GitKraken)
@@ -179,7 +184,7 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 	}
 
 	public void inicio_correr() { // 2 op\u00E7\u00F5es
-
+		
 		tx = new String[1];
 		linhas = new int[1];
 
@@ -472,7 +477,8 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 	public void intro_arcanista() { // 2 op\u00E7\u00F5es
 		tx = new String[2];
 		linhas = new int[2];
-
+		
+		
 		tx[0] = "<html>Voc\u00EA se encaminha para a Torre" + "<br/>Arcana. Chegando, voc\u00EA v\u00EA uma "
 				+ "<br/>enorme torre branca, com expans\u00F5es " + "<br/>laterais que parece estarem flutuando. "
 				+ "<br/>Ela \u00E9 impressionante, uma torre como " + "<br/>nunca se v\u00EA outra na vida." + "<html>";
@@ -581,7 +587,7 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 
 		tx = new String[5];
 		linhas = new int[5];
-
+		
 		switch (x) {
 		case 1:
 			if (player.isBonus_inicio()) {
