@@ -250,9 +250,9 @@ public class Hist_Inicio {
 	}
 
 	public void correrAtras(Texto t1) {
-		musica.reduzVolume(0.0f,60);
+		musica.stop();
 		musica2.TocaMusica("src/sons/beco.wav");
-		musica2.setVolume(0.0f);
+		musica2.setVolume(0.1f);
 		musica2.aumentaVolume(0.6f,100);
 
 		Geral geral = new Geral();
@@ -767,6 +767,14 @@ public class Hist_Inicio {
 	}
 
 	public void castelo(Texto t1) {
+		if(musica.isPlaying()) {
+			musica.stop();
+		}
+		if(musica2.isPlaying()) {
+			musica2.stop();
+		}
+		musica.TocaMusica("src/sons/castelo.wav");
+		musica.setVolume(0.7f);
 		Geral geral = new Geral();
 
 		vet.intro_guerreiro();
@@ -915,7 +923,6 @@ public class Hist_Inicio {
 	}
 
 	public void salaCap(Texto t1, int x) {
-
 		Geral geral = new Geral();
 
 		vet.salaCap(x);
