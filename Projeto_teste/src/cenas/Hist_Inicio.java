@@ -636,6 +636,15 @@ public class Hist_Inicio {
 	}
 
 	public void alameda3(Texto t1) {
+		if(musica.isPlaying()) {
+			musica.stop();
+		}
+		if(musica2.isPlaying()) {
+			musica2.stop();
+		}
+		musica.TocaMusica("src/sons/alameda.wav");
+		musica.setVolume(0.6f);
+		
 		Geral geral = new Geral();
 
 		vet.intro_ladino();
@@ -751,6 +760,17 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 6:
+						if(musica.isPlaying()) {
+							musica.stop();
+						}
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Assassin().assassin1(t1, vet.getPlayer());
@@ -920,7 +940,7 @@ public class Hist_Inicio {
                                                                                           
 	}                                                                                     
                                                                                           
-	public void salaCap(Texto t1, int x) {                                                
+	/*public void salaCap(Texto t1, int x) {                                                
                                                                                           
 		Geral geral = new Geral();                                                        
                                                                                           
@@ -951,7 +971,7 @@ public class Hist_Inicio {
 		geral.getChoice().getOpcao1().addActionListener(escolha1);
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
 
-	}
+	}*/
 
 	public void salaCap(Texto t1, int x) {
 		Geral geral = new Geral();
