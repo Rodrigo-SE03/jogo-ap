@@ -22,9 +22,11 @@ public class Hist_Inicio {
 	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
 	private Musica musica = new Musica();
 	private Musica musica2 = new Musica();
+	private Musica musica3 = new Musica();
 
 	public void admin(Jogador player) {
-
+		musica.TocaMusica("src/sons/mercado.wav");
+		musica.setVolume(0.7f);
 		Texto t1 = new Texto();
 		Escolhas choice = new Escolhas();
 		t1.zerar();
@@ -53,6 +55,8 @@ public class Hist_Inicio {
 	}
 
 	public void admin1(Jogador player) {
+		if(musica.isPlaying())
+			musica.stop();
 		Texto t1 = new Texto();
 		t1.zerar();
 		Escolhas choice = new Escolhas();
@@ -104,7 +108,6 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					System.out.println(cont);
 					switch (cont) {
 					case 10:
 						musica.reduzVolume(0.4f, 90);
@@ -114,17 +117,34 @@ public class Hist_Inicio {
 						musica2.TocaMusica("src/sons/musicaDesespero.wav");
 						musica2.setVolume(0.0f);
 						musica2.aumentaVolume(0.8f, 100);
+						musica3.TocaMusica("src/sons/fogo.wav");
+						musica3.setVolume(0.0f);
+						musica3.aumentaVolume(0.4f,40);
 						break;
 					case 13:
 						musica.stop();
-						// musica2.TocaMusica("src/sons/musicaDesespero.wav");
-
+						musica3.aumentaVolume(0.6f,40);
+						break;
+					case 14:
+						musica.TocaMusica("src/sons/grito.wav");
+						musica.setVolume(0.2f);
+						musica.reduzVolume(0.0f,50);
 						break;
 					case 15:
-						musica2.reduzVolume(0.15f, 50);
+						musica.stop();
+						musica2.reduzVolume(0.2f, 50);
+						musica3.aumentaVolume(0.8f,40);
+						break;
+					case 17:
+						musica3.stop();
 						break;
 					case 18:
 						musica2.stop();
+						break;
+					case 19:
+						musica.TocaMusica("src/sons/mercado.wav");
+						musica.setVolume(0.0f);
+						musica.aumentaVolume(0.6f,80);
 						break;
 					default:
 						break;
@@ -147,7 +167,7 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				musica.stop();
 				// TODO Auto-generated method stub
-				musica.stop();
+				musica2.stop();
 //				musicasSegunda[0].stop();
 				new Formulario(); // Chama a fun��o para abrir o formul�rio
 				t1.getTexto().dispose();
@@ -166,6 +186,37 @@ public class Hist_Inicio {
 		vet.setPlayer(player); // Atualiza o g�nero do player nos textos
 		vet.inicio2();
 		geral.escolhas_2(t1, vet);
+		
+		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
+			int cont = 0; // Contador para verificar a posi��o do vetor de texto
+			//int no =0;
+			public void actionPerformed(ActionEvent e) {
+				//if(!musica.isPlaying() && no==0) {
+					//musica.TocaMusica("src/sons/mercado.wav");
+					//musica.setVolume(0.7f);
+					//no=1;
+				//}
+				if (geral.isFlag()) {
+					int no = 0;
+					//System.out.println(cont);
+					switch (cont) {
+					case 2:
+						if(no==0) {
+						musica.reduzVolume(0.3f,10);
+						no++;
+						}
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						
+					} else // Atualiza o contador para verificar a posi��o do vetor de texto
+						cont++;
+				}
+			}
+		};
+		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
 
@@ -199,6 +250,10 @@ public class Hist_Inicio {
 	}
 
 	public void correrAtras(Texto t1) {
+		musica.reduzVolume(0.0f,60);
+		musica2.TocaMusica("src/sons/beco.wav");
+		musica2.setVolume(0.0f);
+		musica2.aumentaVolume(0.6f,100);
 
 		Geral geral = new Geral();
 
@@ -242,6 +297,18 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch (cont) {
+					case 7:
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
+						musica2.TocaMusica("src/sons/torre.wav");
+						musica2.setVolume(0.0f);
+						musica2.aumentaVolume(0.7f,60);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						torreArcana(t1);
@@ -297,6 +364,15 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch (cont) {
+					case 6:
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						alameda3(t1);
@@ -321,6 +397,18 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch (cont) {
+					case 5:
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
+						musica2.TocaMusica("src/sons/torre.wav");
+						musica2.setVolume(0.0f);
+						musica2.aumentaVolume(0.7f,60);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						castelo(t1);
@@ -336,7 +424,7 @@ public class Hist_Inicio {
 
 	public void inicio_NaoCorrer(Texto t1) {
 		Geral geral = new Geral();
-
+		musica.aumentaVolume(0.6f,20);
 		vet.inicio_naoCorrer();
 		geral.escolhas_0(t1, vet);
 
@@ -345,6 +433,11 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					System.out.println(cont);
+					switch(cont) {
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
@@ -352,7 +445,7 @@ public class Hist_Inicio {
 						JFrame frame = new JFrame();
 						Maps mapa = new Maps(frame);
 						mapa.zerarBotoes();
-
+						musica.stop();
 						ActionListener castelo = new ActionListener() {
 
 							@Override
@@ -409,7 +502,11 @@ public class Hist_Inicio {
 	}
 
 	public void torreArcana(Texto t1) {
-
+		if(!musica.isPlaying()) {
+			musica.TocaMusica("src/sons/torre.wav");
+			musica.setVolume(0.7f);
+		}
+		
 		Geral geral = new Geral();
 		vet.intro_arcanista();
 		geral.escolhas_2(t1, vet);
