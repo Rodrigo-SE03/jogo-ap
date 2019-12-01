@@ -37,7 +37,6 @@ public class Geral { // Classe base para criação dos textos
 						cont++;
 						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
 					} else {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						cont = 0;
 					}

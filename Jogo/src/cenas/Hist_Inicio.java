@@ -707,7 +707,6 @@ public class Hist_Inicio {
 						break;
 					}
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Arcan().arcan1(t1, vet.getPlayer());
 					} else
@@ -837,8 +836,6 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
-						t1.getTexto().remove(t1.getTexto().getContentPane());
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Assassin().assassin1(t1, vet.getPlayer());
 					} else
@@ -891,7 +888,6 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
 					} else
@@ -1013,7 +1009,6 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
 					} else
