@@ -31,10 +31,6 @@ public class Maps {
 		return casaNobreFundo;
 	}
 
-//	public JFrame getFrame() {
-//		return frame;
-//	}
-
 	public JLabel getCatedralFundo() {
 		return catedralFundo;
 	}
@@ -107,35 +103,11 @@ public class Maps {
 		return btnFloresta;
 	}
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Maps window = new Maps();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
-	/**
-	 * Create the application.
-	 */
-
 	public Maps(JFrame frame) {
 		initialize(frame);
 		zerarBotoes();
 		mostrarTudo();
 	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
 
 	private void initialize(JFrame frame) {
 		frame.setSize(1280, 761);

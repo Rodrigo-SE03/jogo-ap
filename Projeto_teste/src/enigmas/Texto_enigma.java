@@ -23,9 +23,8 @@ public class Texto_enigma {
 	public void setTxt1(JTextPane txt1) {
 		this.txt1 = txt1;
 	}
-	/**
-	 * Launch the application.
-	 */
+
+	
 	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -47,16 +46,10 @@ public class Texto_enigma {
 		this.frame = frame;
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Texto_enigma() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 607, 417);

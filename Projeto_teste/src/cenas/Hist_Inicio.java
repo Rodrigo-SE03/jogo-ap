@@ -25,8 +25,10 @@ public class Hist_Inicio {
 
 	public void admin(Jogador player) {
 		Texto t1 = new Texto();
+		
 		Escolhas choice = new Escolhas();
 		t1.zerar();
+		
 		choice.doEscolhas_2(t1.getTexto(), "", "Seguir história", "Pular pras classes");
 		escolha1 = new ActionListener() { // Action caso escolha a 1ï¿½ opï¿½ï¿½o
 
@@ -679,7 +681,7 @@ public class Hist_Inicio {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.zerar();
-						t1.getTexto().remove(t1.getTexto().getContentPane());
+						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Assassin().assassin1(t1, vet.getPlayer());
 					} else

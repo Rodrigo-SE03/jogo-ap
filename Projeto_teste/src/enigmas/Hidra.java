@@ -170,9 +170,9 @@ public class Hidra {
 			hasCoracao = true;
 			inicializaCoracao();// Cria o coracao
 		}
-		
+
 		JLabel[] cabecaImg = new JLabel[2];
-		for (int i = 0; i < 2; i++) {//Cria as 2 novas cabeças
+		for (int i = 0; i < 2; i++) {// Cria as 2 novas cabeças
 			cabeca[numb] = new JDialog(background);
 			cabeca[numb].setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			cabeca[numb].setResizable(false);
@@ -214,16 +214,15 @@ public class Hidra {
 		cabeca[numb - 2].setVisible(true);
 		cabeca[numb - 1].setVisible(true);
 
-
-		if (numb > 180) {//Verifica se atingiu o limite de cabecas
+		if (numb > 180) {// Verifica se atingiu o limite de cabecas
 			mtcabeca = true;
 			perdeu = true;
 		}
 	}
 
 	public void inicializaCoracao() {
-		
-		//Cria o coracao
+
+		// Cria o coracao
 		int x = new Random().nextInt(7);
 		coracao = new JDialog(background);
 		coracao.setResizable(false);

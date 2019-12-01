@@ -133,11 +133,11 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		ImageIcon fund = new ImageIcon("src/imagens/AreaClara.png");
 		fund.setImage(fund.getImage().getScaledInstance(frame.getBounds().width * 2, frame.getBounds().width * 2, 100));
 
-//		fundo = new JLabel(fund);
-//		fundo.setSize(frame.getBounds().width * 2, frame.getBounds().width * 2);
-//		fundo.setLocation(((player.getLocation().x) - (fundo.getSize().width / 2) + (player.getSize().width / 2) + 30),
-//				(player.getLocation().y - (fundo.getSize().height / 2) + (player.getSize().height / 2)) - 5);
-//		panel.add(fundo);
+		fundo = new JLabel(fund);
+		fundo.setSize(frame.getBounds().width * 2, frame.getBounds().width * 2);
+		fundo.setLocation(((player.getLocation().x) - (fundo.getSize().width / 2) + (player.getSize().width / 2) + 30),
+				(player.getLocation().y - (fundo.getSize().height / 2) + (player.getSize().height / 2)) - 5);
+		panel.add(fundo);
 
 		ImageIcon imgParedeV = new ImageIcon("src/imagens/Tile2-export.png");
 		imgParedeV.setImage(imgParedeV.getImage().getScaledInstance(100, 200, 100));
