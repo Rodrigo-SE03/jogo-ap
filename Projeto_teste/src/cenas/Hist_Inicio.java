@@ -24,11 +24,12 @@ public class Hist_Inicio {
 	private Musica musica2 = new Musica();
 
 	public void admin(Jogador player) {
+
 		Texto t1 = new Texto();
-		
 		Escolhas choice = new Escolhas();
 		t1.zerar();
-		
+		t1.getTexto().setVisible(true);
+
 		choice.doEscolhas_2(t1.getTexto(), "", "Seguir história", "Pular pras classes");
 		escolha1 = new ActionListener() { // Action caso escolha a 1ï¿½ opï¿½ï¿½o
 
@@ -234,29 +235,24 @@ public class Hist_Inicio {
 		Geral geral = new Geral();
 
 		vet.inicio_artemis();
-		geral.escolhas_2(t1, vet);
+		geral.escolhas_0(t1, vet);
 
-		escolha1 = new ActionListener() {
+		continuar = new ActionListener() {
+			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						torreArcana(t1);
+					} else
+						cont++;
 
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				seguir_voz(t1);
+				}
 			}
 		};
 
-		escolha2 = new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				ignorar_voz(t1);
-
-			}
-		};
-
-		geral.getChoice().getOpcao1().addActionListener(escolha1);
-		geral.getChoice().getOpcao2().addActionListener(escolha2);
+		t1.getContinuar().addActionListener(continuar);
 
 	}
 
@@ -294,66 +290,48 @@ public class Hist_Inicio {
 		Geral geral = new Geral();
 
 		vet.inicio_ladino();
-		geral.escolhas_3(t1, vet);
+		geral.escolhas_0(t1, vet);
 
-		escolha1 = new ActionListener() {
+		continuar = new ActionListener() {
+			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						alameda3(t1);
+					} else
+						cont++;
 
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				bebidaLadino(t1, 1);
+				}
 			}
 		};
 
-		escolha2 = new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				bebidaLadino(t1, 2);
-			}
-		};
-
-		ActionListener escolha3 = new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				bebidaLadino(t1, 3);
-			}
-		};
-
-		geral.getChoice().getOpcao1().addActionListener(escolha1);
-		geral.getChoice().getOpcao2().addActionListener(escolha2);
-		geral.getChoice().getOpcao3().addActionListener(escolha3);
+		t1.getContinuar().addActionListener(continuar);
 	}
 
 	public void inicio_Guerreiro(Texto t1) {
 		Geral geral = new Geral();
 
 		vet.inicio_guerreiro();
-		geral.escolhas_2(t1, vet);
+		geral.escolhas_0(t1, vet);
 
-		escolha1 = new ActionListener() {
+		continuar = new ActionListener() {
+			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						castelo(t1);
+					} else
+						cont++;
 
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				contHist(t1);
+				}
 			}
 		};
 
-		escolha2 = new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-
-				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				naoCont(t1);
-			}
-		};
-
-		geral.getChoice().getOpcao1().addActionListener(escolha1);
-		geral.getChoice().getOpcao2().addActionListener(escolha2);
+		t1.getContinuar().addActionListener(continuar);
 	}
 
 	public void inicio_NaoCorrer(Texto t1) {
@@ -500,7 +478,7 @@ public class Hist_Inicio {
 	public void ignorar_voz(Texto t1) {
 
 		Geral geral = new Geral();
-		
+
 		vet.getPlayer().setAndarPelaTorreArcan(true);
 		vet.ignorar_voz();
 		geral.escolhas_3(t1, vet);
@@ -550,7 +528,6 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Arcan().arcan1(t1, vet.getPlayer());
 					} else
@@ -680,8 +657,6 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Assassin().assassin1(t1, vet.getPlayer());
 					} else
@@ -734,7 +709,6 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
 					} else
@@ -856,7 +830,6 @@ public class Hist_Inicio {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
 					} else
@@ -867,5 +840,4 @@ public class Hist_Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-
 }

@@ -9,25 +9,32 @@ import modelo.Fase;
 
 
 public class Teste extends JFrame {
-	public Fase fase = new Fase();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public Fase fase = new Fase(this);
 	//construtor 
 	public Teste () {
+		//tamanho
+		setSize(1280,1280);
+		//localização no meio
+		setLocationRelativeTo(null);
 		//chamar fase
 		add (fase);
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		this.setIconImage(icone.getImage());
-		Contador cont = new Contador();
+		
+		Contador cont = new Contador(this);
 		cont.teste = this;
 		cont.setLocation(this.getLocation());
 		
 		//titulo
 		setTitle("Defesa de Helaria");
-		//tamanho
-		setSize(1280,1280);
+		
 		//sair
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//localização no meio
-		setLocationRelativeTo(null);
+		
 		//não mexer na resolução
 		this.setResizable(false);
 		setVisible(true);

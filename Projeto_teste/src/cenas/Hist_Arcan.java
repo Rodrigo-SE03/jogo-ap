@@ -28,6 +28,7 @@ public class Hist_Arcan {
 	public void arcan1(Texto t1, Jogador player) {
 		Geral geral = new Geral();
 
+		
 		this.player = player;
 		this.player.setClase(0);
 		vet.setPlayer(player);
@@ -40,7 +41,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				t1.getContinuar().addActionListener(continuar);
 				arcan2(t1, 1);
 
 			}
@@ -73,7 +73,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
@@ -112,8 +111,8 @@ public class Hist_Arcan {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
-					if(player.isTst1()) {
-						player.setTst1(false);
+					if(player.getFirstTry(0)) {
+						player.setFirstTry(0, false);
 						catedral();
 					}else {
 						catedral3();
@@ -145,17 +144,17 @@ public class Hist_Arcan {
 				}
 
 			};
-			if (!player.isEnigma1()) {
+			if (!player.getEnigma(0)) {
 				mapa.getBtnCatedral().setVisible(true);
 				mapa.getCatedralFundo().setVisible(true);
 				mapa.getBtnCatedral().addActionListener(catedral);
 			}
-			if (!player.isEnigma2()) {
+			if (!player.getEnigma(1)) {
 				mapa.getBtnAlamedaPonteiros().setVisible(true);
 				mapa.getAlamedaPonteirosFundo().setVisible(true);
 				mapa.getBtnAlamedaPonteiros().addActionListener(alameda);
 			}
-			if (!player.isEnigma3()) {
+			if (!player.getEnigma(2)) {
 				mapa.getBtnTorreArcana().setVisible(true);
 				mapa.getTorreArcanaFundo().setVisible(true);
 				mapa.getBtnTorreArcana().addActionListener(torre);
@@ -169,9 +168,9 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		if (player.isTst3()) {
+		if (player.getFirstTry(2)) {
 			vet.torre();
-			player.setTst3(false);
+			player.setFirstTry(2, false);
 		} else
 			vet.torre2();
 
@@ -183,7 +182,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						new Labirinto(player);
@@ -213,7 +211,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
@@ -233,7 +230,7 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 		this.player = player;
-		this.player.setEnigma3(true);
+		this.player.setEnigma(2, true);
 		this.player.passaDia();
 
 		vet.setPlayer(this.player);
@@ -247,7 +244,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
@@ -274,7 +270,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-				t1.getContinuar().addActionListener(continuar);
 				catedral2(t1, 1);
 
 			}
@@ -308,7 +303,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						new Hidra(player);
@@ -336,7 +330,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						new Hidra(player);
@@ -366,7 +359,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
@@ -385,7 +377,7 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 		this.player = player;
-		this.player.setEnigma1(true);
+		this.player.setEnigma(0, true);
 		this.player.passaDia();
 
 		vet.setPlayer(this.player);
@@ -399,7 +391,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
@@ -427,7 +418,6 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();

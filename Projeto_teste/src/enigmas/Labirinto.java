@@ -26,17 +26,17 @@ import personagens.Jogador;
 
 public class Labirinto {
 
-	private Dimension size; // Adquire o tamanho da tela
-	MouseMotionListener mover;
-	private JPanel panel;
-	private ImageIcon icone;
 	private JFrame frame;
+	private JDialog dica;
+	private JPanel panel;
 	private JLabel[] parede, livros;
 	private JLabel playerImg, fundo, piso;
-	private static JDialog dica;
+	private ImageIcon icone;
+	private Dimension size; // Adquire o tamanho da tela
 	private Jogador player;
-	private boolean amarelo, azul;
+	private MouseMotionListener mover;
 	private int x, y;
+	private boolean amarelo, azul;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

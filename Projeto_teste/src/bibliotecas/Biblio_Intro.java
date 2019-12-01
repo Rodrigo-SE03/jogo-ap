@@ -197,8 +197,8 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 
 	public void inicio_artemis() { // 2 op\u00E7\u00F5es
 
-		tx = new String[10];
-		linhas = new int[10];
+		tx = new String[8];
+		linhas = new int[8];
 
 		tx[0] = "<html>Voc\u00EA pega novamente seus pertences " + "<br/>e libera o ladr\u00E3o, que corre em "
 				+ "<br/>dire\u00E7\u00E3o a liberdade. O estranho " + "<br/>encapuzado se aproxima e come\u00E7a a"
@@ -247,21 +247,21 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 		tx[7] = "<html>O dia est\u00E1 caminhando para o seu " + "<br/>final e voc\u00EA tem que decidir para onde "
 				+ "<br/>ir\u00E1 esta noite." + "<html>";
 		linhas[7] = 2;
-		
-		tx[8] = "<html>Voc\u00EA se encaminha para a Torre" + "<br/>Arcana. Chegando, voc\u00EA v\u00EA uma "
-				+ "<br/>enorme torre branca, com expans\u00F5es " + "<br/>laterais que parece estarem flutuando. "
-				+ "<br/>Ela \u00E9 impressionante, uma torre como " + "<br/>nunca se v\u00EA outra na vida." + "<html>";
-		linhas[8] = 5;
-
-		tx[9] = "<html>Voc\u00EA se aproxima do port\u00E3o,que se " + "<br/>abre sozinho. A ala de entrada est\u00E1 "
-				+ "<br/>totalmente vazia, na verdade, parece "
-				+ "<br/>que a torre inteira est\u00E1 vazia, at\u00E9 que "
-				+ "<br/>voc\u00EA escuta uma voz baixinha:  " + "<br/><br/>..." + player.getNome() + "..." + "<html>";
-		linhas[9] = 6;
-
-		choice = "O que voc\u00EA ira fazer?";
-		op1 = "Seguir a voz";
-		op2 = "Ignorar a voz";
+//		
+//		tx[8] = "<html>Voc\u00EA se encaminha para a Torre" + "<br/>Arcana. Chegando, voc\u00EA v\u00EA uma "
+//				+ "<br/>enorme torre branca, com expans\u00F5es " + "<br/>laterais que parece estarem flutuando. "
+//				+ "<br/>Ela \u00E9 impressionante, uma torre como " + "<br/>nunca se v\u00EA outra na vida." + "<html>";
+//		linhas[8] = 5;
+//
+//		tx[9] = "<html>Voc\u00EA se aproxima do port\u00E3o,que se " + "<br/>abre sozinho. A ala de entrada est\u00E1 "
+//				+ "<br/>totalmente vazia, na verdade, parece "
+//				+ "<br/>que a torre inteira est\u00E1 vazia, at\u00E9 que "
+//				+ "<br/>voc\u00EA escuta uma voz baixinha:  " + "<br/><br/>..." + player.getNome() + "..." + "<html>";
+//		linhas[9] = 6;
+//
+//		choice = "O que voc\u00EA ira fazer?";
+//		op1 = "Seguir a voz";
+//		op2 = "Ignorar a voz";
 
 	}
 
@@ -296,8 +296,8 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 
 	public void inicio_ladino() { // 0 op\u00E7\u00F5es
 
-		tx = new String[10];
-		linhas = new int[10];
+		tx = new String[7];
+		linhas = new int[7];
 
 		if (player.getSexo() == 0) {
 			tx[0] = "<html>Ladr\u00E3o:" + "<br/><br/>Muito obrigado senhor, voc\u00EA possui "
@@ -351,33 +351,13 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 		tx[6] = "<html>O dia est\u00E1 caminhando para o seu " + "<br/>final e voc\u00EA tem que decidir para onde "
 				+ "<br/>ir\u00E1 esta noite." + "<html>";
 		linhas[6] = 2;
-
-		tx[7] = "<html>Voc\u00EA vai para a Alameda dos Tr\u00EAs " + "<br/>Ponteiros. Um lugar sujo, abandonado "
-				+ "<br/>pelos deuses (se \u00E9 que existe algum) " + "<br/>e pelo Estado." + "<html>";
-		linhas[7] = 3;
-
-		tx[8] = "<html>A corrup\u00E7\u00E3o humana corre por todo " + "<br/>local, nas ruas se v\u00EA prostitutas"
-				+ "<br/>ladr\u00F5es, assassinos, agiotas, " + "<br/>traficantes, se v\u00EA a fome, a mis\u00E9ria, o "
-				+ "<br/>sofrimento, a dor e o \u00F3dio, mas " + "<br/>tamb\u00E9m se v\u00EA o carinho, a luta, a "
-				+ "<br/>esperan\u00E7a e o amor no cora\u00E7\u00E3o de " + "<br/>v\u00E1rias pessoas. " + "<html>";
-		linhas[8] = 7;
-
-		tx[9] = "<html>Voc\u00EA segue andando, sem rumo, at\u00E9 " + "<br/>que vv\u00EA uma taverna, chamada O Bom "
-				+ "<br/>Tom, na qual voc\u00EA entra." + "<html>";
-		linhas[9] = 2;
-
-		choice = "<html>Voc\u00EA vai at\u00E9 o balc\u00E3o e o taverneiro pergunta "
-				+ "<br/>o voc\u00EA que quer<html>";
-		op1 = "Cerveja";
-		op2 = "\u00C1gua";
-		op3 = "Nada";
 		
 	}
 
 	public void inicio_guerreiro() { // 0 op\u00E7\u00F5es
 
-		tx = new String[8];
-		linhas = new int[8];
+		tx = new String[6];
+		linhas = new int[6];
 
 		tx[0] = "<html>Voc\u00EA ignora o que esse miser\u00E1vel te"
 				+ "<br/>falou e come\u00E7a a bater sua cabe\u00E7a " + "<br/>contra o ch\u00E3o incessantemente, sem"
@@ -419,21 +399,6 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 		tx[5] = "<html>O dia est\u00E1 caminhando para o seu " + "<br/>final e voc\u00EA tem que decidir para onde "
 				+ "<br/>ir\u00E1 esta noite." + "<html>";
 		linhas[5] = 3;
-		
-
-		tx[6] = "<html>Voc\u00EA vai para o castelo. Um magn\u00EDfico "
-				+ "<br/>edf\u00EDcio que, em todo seu esplendor, " + "<br/>se destaca da mis\u00E9ria da cidade."
-				+ "<html>";
-		linhas[6] = 2;
-
-		tx[7] = "<html>Voc\u00EA nunca viu nada que ao menos" + "<br/>se comparasse com o Pal\u00E1cio Real, "
-				+ "<br/>na verdade, \u00E9 improv\u00E2vel a exist\u00EAncia "
-				+ "<br/>algo que possa se comparar com isso." + "<br/>No port\u00E3o, um guarda te para" + "<html>";
-		linhas[7] = 4;
-
-		choice = "<html>Guarda:" + "<br/><br/>O que voc\u00EA faz aqui?" + "<html>";
-		op1 = "Contar sua hist\u00F3ria";
-		op2 = "Interesses pessoais";
 
 	}
 
