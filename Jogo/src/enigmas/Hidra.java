@@ -149,8 +149,7 @@ public class Hidra {
 		
 		relogio.setVisible(true);
 		
-		
-		
+
 
 		cbc_1 = new JDialog(background);
 		cbc_1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

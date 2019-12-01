@@ -374,6 +374,31 @@ public class Hist_Inicio {
 
 		vet.inicio_ladino();
 		geral.escolhas_3(t1, vet);
+		
+		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
+			int cont = 0; // Contador para verificar a posi��o do vetor de texto
+			
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					//System.out.println(cont);
+					switch (cont) {
+					case 6:
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						
+					} else // Atualiza o contador para verificar a posi��o do vetor de texto
+						cont++;
+				}
+			}
+		};
+		
+		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() {
 
@@ -412,6 +437,34 @@ public class Hist_Inicio {
 
 		vet.inicio_guerreiro();
 		geral.escolhas_2(t1, vet);
+		
+		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
+			int cont = 0; // Contador para verificar a posi��o do vetor de texto
+			
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					//System.out.println(cont);
+					switch (cont) {
+					case 5:
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
+						musica2.TocaMusica("src/sons/torre.wav");
+						musica2.setVolume(0.0f);
+						musica2.aumentaVolume(0.7f,60);
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						
+					} else // Atualiza o contador para verificar a posi��o do vetor de texto
+						cont++;
+				}
+			}
+		};
+		
+		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() {
 

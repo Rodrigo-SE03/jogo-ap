@@ -26,38 +26,34 @@ import personagens.Jogador;
 
 public class Labirinto implements MouseListener, MouseMotionListener {
 
-	private Dimension size = Toolkit.getDefaultToolkit().getScreenSize();// Adquire o tamanho da tela
+	private Dimension size; // Adquire o tamanho da tela
 	private JPanel panel;
-	private ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
+	private ImageIcon icone;
 	private JFrame frame;
 	private JLabel[] parede;
 	private JLabel playerImg, fundo, piso, livro, livroV, livroA;
 	private static JDialog dica;
+	private Jogador player;
 	private boolean amarelo, azul;
 	private int x, y;
 	private int ordem = 0;
-	private Jogador player;
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					new Labirinto();
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					new Labirinto(new Jogador());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
-	/**
-	 * Create the application.
-	 */
 	public Labirinto(Jogador player) {
 		this.player = player;
+		this.icone = new ImageIcon("src/imagens/Icone.png");
+		this.size = Toolkit.getDefaultToolkit().getScreenSize();
 		initialize();
 	}
 
@@ -89,15 +85,12 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		JLabel txtdica = new JLabel();
 		txtdica.setFont(new Font("Georgia", Font.BOLD, 25));
 		txtdica.setForeground(Color.black);
-		txtdica.setBounds(50, 50,500, 500);
-		if(player.getClase() == 0) {
-			txtdica.setText("<html>Segundo as lendas, o livro de Merlim "
-					+ "<br/>foi separado em 3 diferentes livros. A"
-					+ "<br/>única forma de recuperar o livro "
-					+ "<br/>original é pegando suas partes na "
-					+ "<br/>ordem correta. Tudo que se sabe "
-					+ "<br/>sobre a ordem é que … "
-					+ "<html>");
+		txtdica.setBounds(50, 50, 500, 500);
+		if (player.getClase() == 0) {
+			txtdica.setText(
+					"<html>Segundo as lendas, o livro de Merlim " + "<br/>foi separado em 3 diferentes livros. A"
+							+ "<br/>única forma de recuperar o livro " + "<br/>original é pegando suas partes na "
+							+ "<br/>ordem correta. Tudo que se sabe " + "<br/>sobre a ordem é que … " + "<html>");
 		}
 
 		dica = new JDialog();
@@ -147,9 +140,10 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		ImageIcon fund = new ImageIcon("src/imagens/AreaClara.png");
 		fund.setImage(fund.getImage().getScaledInstance(frame.getBounds().width * 2, frame.getBounds().width * 2, 100));
 
-		fundo = new JLabel(fund);
+		fundo = new JLabel();
 		fundo.setSize(frame.getBounds().width * 2, frame.getBounds().width * 2);
-		fundo.setLocation(((playerImg.getLocation().x) - (fundo.getSize().width / 2) + (playerImg.getSize().width / 2) + 30),
+		fundo.setLocation(
+				((playerImg.getLocation().x) - (fundo.getSize().width / 2) + (playerImg.getSize().width / 2) + 30),
 				(playerImg.getLocation().y - (fundo.getSize().height / 2) + (playerImg.getSize().height / 2)) - 5);
 		panel.add(fundo);
 
@@ -337,304 +331,45 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 		panel.add(livroA);
 		panel.add(livroV);
 
-		parede = new JLabel[73];
-
-		parede[0] = new JLabel(imgParedeH);
-		parede[0].setBounds(0, 650, 100, 50);
-		panel.add(parede[0]);
-
-		parede[1] = new JLabel(imgParedeH);
-		parede[1].setBounds(100, 650, 100, 50);
-		panel.add(parede[1]);
-
-		parede[2] = new JLabel(imgParedeH);
-		parede[2].setBounds(200, 650, 100, 50);
-		panel.add(parede[2]);
-
-		parede[3] = new JLabel(imgParedeH);
-		parede[3].setBounds(300, 650, 100, 50);
-		panel.add(parede[3]);
-
-		parede[4] = new JLabel(imgParedeH);
-		parede[4].setBounds(500, 650, 100, 50);
-		panel.add(parede[4]);
-
-		parede[5] = new JLabel(imgParedeH);
-		parede[5].setBounds(400, 650, 100, 50);
-		panel.add(parede[5]);
-
-		parede[6] = new JLabel(imgParedeV);
-		parede[6].setBounds(800, 550, 50, 100);
-		panel.add(parede[6]);
-
-		parede[7] = new JLabel(imgParedeV);
-		parede[7].setBounds(450, 450, 50, 100);
-		panel.add(parede[7]);
-
-		parede[8] = new JLabel(imgParedeV);
-		parede[8].setBounds(150, 450, 50, 100);
-		panel.add(parede[8]);
-
-		parede[9] = new JLabel(imgParedeV);
-		parede[9].setBounds(0, 350, 50, 100);
-		panel.add(parede[9]);
-
-		parede[10] = new JLabel(imgParedeV);
-		parede[10].setBounds(0, 250, 50, 100);
-		panel.add(parede[10]);
-
-		parede[11] = new JLabel(imgParedeV);
-		parede[11].setBounds(300, 400, 50, 100);
-		panel.add(parede[11]);
-
-		parede[12] = new JLabel(imgParedeV);
-		parede[12].setBounds(300, 300, 50, 100);
-		panel.add(parede[12]);
-
-		parede[13] = new JLabel(imgParedeH);
-		parede[13].setBounds(900, 650, 100, 50);
-		panel.add(parede[13]);
-
-		parede[14] = new JLabel(imgParedeH);
-		parede[14].setBounds(800, 650, 100, 50);
-		panel.add(parede[14]);
-
-		parede[15] = new JLabel(imgParedeH);
-		parede[15].setBounds(700, 650, 100, 50);
-		panel.add(parede[15]);
-
-		parede[16] = new JLabel(imgParedeH);
-		parede[16].setBounds(600, 650, 100, 50);
-		panel.add(parede[16]);
-
-		parede[17] = new JLabel(imgParedeH);
-		parede[17].setBounds(300, 150, 100, 50);
-		panel.add(parede[17]);
-
-		parede[18] = new JLabel(imgParedeH);
-		parede[18].setBounds(650, 300, 100, 50);
-		panel.add(parede[18]);
-
-		parede[19] = new JLabel(imgParedeH);
-		parede[19].setBounds(850, 500, 100, 50);
-		panel.add(parede[19]);
-
-		parede[20] = new JLabel(imgParedeV);
-		parede[20].setBounds(950, 450, 50, 100);
-		panel.add(parede[20]);
-
-		parede[21] = new JLabel(imgParedeV);
-		parede[21].setBounds(0, 150, 50, 100);
-		panel.add(parede[21]);
-
-		parede[22] = new JLabel(imgParedeH);
-		parede[22].setBounds(0, 0, 100, 50);
-		panel.add(parede[22]);
-
-		parede[23] = new JLabel(imgParedeH);
-		parede[23].setBounds(200, 0, 100, 50);
-		panel.add(parede[23]);
-
-		parede[24] = new JLabel(imgParedeH);
-		parede[24].setBounds(750, 300, 100, 50);
-		panel.add(parede[24]);
-
-		parede[25] = new JLabel(imgParedeH);
-		parede[25].setBounds(1000, 450, 100, 50);
-		panel.add(parede[25]);
-
-		parede[26] = new JLabel(imgParedeV);
-		parede[26].setBounds(950, 200, 50, 100);
-		panel.add(parede[26]);
-
-		parede[27] = new JLabel(imgParedeV);
-		parede[27].setBounds(800, 200, 50, 100);
-		panel.add(parede[27]);
-
-		parede[28] = new JLabel(imgParedeH);
-		parede[28].setBounds(1100, 650, 100, 50);
-		panel.add(parede[28]);
-
-		parede[29] = new JLabel(imgParedeH);
-		parede[29].setBounds(1200, 650, 100, 50);
-		panel.add(parede[29]);
-
-		parede[30] = new JLabel(imgParedeV);
-		parede[30].setBounds(1300, 600, 50, 100);
-		panel.add(parede[30]);
-
-		parede[31] = new JLabel(imgParedeV);
-		parede[31].setBounds(1300, 500, 50, 100);
-		panel.add(parede[31]);
-
-		parede[32] = new JLabel(imgParedeV);
-		parede[32].setBounds(1300, 400, 50, 100);
-		panel.add(parede[32]);
-
-		parede[33] = new JLabel(imgParedeV);
-		parede[33].setBounds(1300, 300, 50, 100);
-		panel.add(parede[33]);
-
-		parede[34] = new JLabel(imgParedeV);
-		parede[34].setBounds(1300, 200, 50, 100);
-		panel.add(parede[34]);
-
-		parede[35] = new JLabel(imgParedeV);
-		parede[35].setBounds(1300, 100, 50, 100);
-		panel.add(parede[35]);
-
-		parede[36] = new JLabel(imgParedeV);
-		parede[36].setBounds(1300, 0, 50, 100);
-		panel.add(parede[36]);
-
-		parede[37] = new JLabel(imgParedeH);
-		parede[37].setBounds(1200, 0, 100, 50);
-		panel.add(parede[37]);
-
-		parede[38] = new JLabel(imgParedeH);
-		parede[38].setBounds(1100, 0, 100, 50);
-		panel.add(parede[38]);
-
-		parede[39] = new JLabel(imgParedeH);
-		parede[39].setBounds(1000, 0, 100, 50);
-		panel.add(parede[39]);
-
-		parede[40] = new JLabel(imgParedeH);
-		parede[40].setBounds(900, 0, 100, 50);
-		panel.add(parede[40]);
-
-		parede[41] = new JLabel(imgParedeH);
-		parede[41].setBounds(800, 0, 100, 50);
-		panel.add(parede[41]);
-
-		parede[42] = new JLabel(imgParedeH);
-		parede[42].setBounds(700, 0, 100, 50);
-		panel.add(parede[42]);
-
-		parede[43] = new JLabel(imgParedeH);
-		parede[43].setBounds(600, 0, 100, 50);
-		panel.add(parede[43]);
-
-		parede[44] = new JLabel(imgParedeH);
-		parede[44].setBounds(500, 0, 100, 50);
-		panel.add(parede[44]);
-
-		parede[45] = new JLabel(imgParedeH);
-		parede[45].setBounds(400, 0, 100, 50);
-		panel.add(parede[45]);
-
-		parede[46] = new JLabel(imgParedeH);
-		parede[46].setBounds(300, 0, 100, 50);
-		panel.add(parede[46]);
-
-		parede[47] = new JLabel(imgParedeH);
-		parede[47].setBounds(500, 150, 100, 50);
-		panel.add(parede[47]);
-
-		parede[48] = new JLabel(imgParedeH);
-		parede[48].setBounds(400, 150, 100, 50);
-		panel.add(parede[48]);
-
-		parede[49] = new JLabel(imgParedeH);
-		parede[49].setBounds(950, 150, 100, 50);
-		panel.add(parede[49]);
-
-		parede[50] = new JLabel(imgParedeV);
-		parede[50].setBounds(600, 550, 50, 100);
-		panel.add(parede[50]);
-
-		parede[51] = new JLabel(imgParedeH);
-		parede[51].setBounds(1000, 650, 100, 50);
-		panel.add(parede[51]);
-
-		parede[52] = new JLabel(imgParedeH);
-		parede[52].setBounds(1100, 450, 100, 50);
-		panel.add(parede[52]);
-
-		parede[53] = new JLabel(imgParedeH);
-		parede[53].setBounds(1050, 150, 100, 50);
-		panel.add(parede[53]);
-
-		parede[54] = new JLabel(imgParedeV);
-		parede[54].setBounds(1150, 250, 50, 100);
-		panel.add(parede[54]);
-
-		parede[55] = new JLabel(imgParedeV);
-		parede[55].setBounds(1150, 150, 50, 100);
-		panel.add(parede[55]);
-
-		parede[56] = new JLabel(imgParedeV);
-		parede[56].setBounds(1150, 350, 50, 100);
-		panel.add(parede[56]);
-
-		parede[57] = new JLabel(imgParedeV);
-		parede[57].setBounds(600, 450, 50, 100);
-		panel.add(parede[57]);
-
-		parede[58] = new JLabel(imgParedeV);
-		parede[58].setBounds(800, 450, 50, 100);
-		panel.add(parede[58]);
-
-		parede[59] = new JLabel(imgParedeV);
-		parede[59].setBounds(800, 350, 50, 100);
-		panel.add(parede[59]);
-
-		parede[60] = new JLabel(imgParedeV);
-		parede[60].setBounds(450, 350, 50, 100);
-		panel.add(parede[60]);
-
-		parede[61] = new JLabel(imgParedeH);
-		parede[61].setBounds(350, 300, 100, 50);
-		panel.add(parede[61]);
-
-		parede[62] = new JLabel(imgParedeH);
-		parede[62].setBounds(450, 300, 100, 50);
-		panel.add(parede[62]);
-
-		parede[63] = new JLabel(imgParedeV);
-		parede[63].setBounds(0, 50, 50, 100);
-		panel.add(parede[63]);
-
-		parede[64] = new JLabel(imgParedeH);
-		parede[64].setBounds(100, 0, 100, 50);
-		panel.add(parede[64]);
-
-		parede[65] = new JLabel(imgParedeH);
-		parede[65].setBounds(550, 300, 100, 50);
-		panel.add(parede[65]);
-
-		parede[66] = new JLabel(imgParedeH);
-		parede[66].setBounds(750, 150, 100, 50);
-		panel.add(parede[66]);
-
-		parede[67] = new JLabel(imgParedeV);
-		parede[67].setBounds(0, 450, 50, 100);
-		panel.add(parede[67]);
-
-		parede[68] = new JLabel(imgParedeV);
-		parede[68].setBounds(150, 350, 50, 100);
-		panel.add(parede[68]);
-
-		parede[69] = new JLabel(imgParedeV);
-		parede[69].setBounds(150, 250, 50, 100);
-		panel.add(parede[69]);
-
-		parede[70] = new JLabel(imgParedeV);
-		parede[70].setBounds(150, 150, 50, 100);
-		panel.add(parede[70]);
-
-		parede[71] = new JLabel(imgParedeH);
-		parede[71].setBounds(200, 150, 100, 50);
-		panel.add(parede[71]);
-
-		parede[72] = new JLabel(imgParedeV);
-		parede[72].setBounds(550, 200, 50, 100);
-		panel.add(parede[72]);
+		JLabel parede[] = new JLabel[18];
+
+		for (int i = 0; i < 10; i++) {
+			parede[i] = new JLabel(imgParedeV);
+		}
+		for (int i = 10; i < 18; i++) {
+			parede[i] = new JLabel(imgParedeH);
+		}
+
+		parede[0].setBounds(0, 50, 50, 500);
+		parede[1].setBounds(150, 150, 50, 400);
+		parede[2].setBounds(300, 300, 50, 200);
+		parede[3].setBounds(450, 350, 50, 200);
+		parede[4].setBounds(550, 200, 50, 100);
+		parede[5].setBounds(600, 450, 50, 200);
+		parede[6].setBounds(800, 200, 50, 450);
+		parede[7].setBounds(950, 200, 50, 100);
+		parede[8].setBounds(1150, 150, 50, 300);
+		parede[9].setBounds(1300, 0, 50, 650);
+		parede[10].setBounds(0, 0, 1350, 50);
+		parede[11].setBounds(200, 150, 400, 50);
+		parede[12].setBounds(750, 150, 100, 50);
+		parede[13].setBounds(950, 150, 200, 50);
+		parede[14].setBounds(350, 300, 500, 50);
+		parede[15].setBounds(850, 500, 100, 50);
+		parede[16].setBounds(1000, 450, 200, 50);
+		parede[17].setBounds(0, 650, 1350, 50);
+
+		for (int i = 0; i < 18; i++) {
+			parede[i].setOpaque(true);
+			parede[i].setBackground(Color.BLACK);
+			panel.add(parede[i]);
+		}
 
 		JLabel preto = new JLabel();
+
+		preto.setSize(size);
 		preto.setOpaque(true);
 		preto.setBackground(Color.BLACK);
-		preto.setSize(size);
 		preto.setLocation(0, 0);
 		preto.setBounds(0, 664, 1366, 75);
 		panel.add(preto);
@@ -732,7 +467,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 					livroA.setVisible(false);
 					break;
 				case 3:
-					if (azul){
+					if (azul) {
 						switch (player.getClase()) {
 						case 0:
 							frame.dispose();
@@ -741,8 +476,7 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 						default:
 							break;
 						}
-					}
-					else{
+					} else {
 						switch (player.getClase()) {
 						case 0:
 							frame.dispose();
@@ -827,7 +561,8 @@ public class Labirinto implements MouseListener, MouseMotionListener {
 
 		playerImg.setLocation(playerImg.getBounds().x + x1, playerImg.getBounds().y + y1);
 
-		fundo.setLocation(((playerImg.getLocation().x) - (fundo.getSize().width / 2) + (playerImg.getSize().width / 2) + 30),
+		fundo.setLocation(
+				((playerImg.getLocation().x) - (fundo.getSize().width / 2) + (playerImg.getSize().width / 2) + 30),
 				(playerImg.getLocation().y - (fundo.getSize().height / 2) + (playerImg.getSize().height / 2)) - 5);
 
 		if (((yPlayermin >= (livro.getBounds().y + livro.getBounds().width))
