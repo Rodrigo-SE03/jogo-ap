@@ -28,7 +28,6 @@ public class Hist_Arcan {
 	public void arcan1(Texto t1, Jogador player) {
 		Geral geral = new Geral();
 
-		
 		this.player = player;
 		this.player.setClase(0);
 		vet.setPlayer(player);
@@ -111,10 +110,10 @@ public class Hist_Arcan {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
-					if(player.getFirstTry(0)) {
+					if (player.getFirstTry(0)) {
 						player.setFirstTry(0, false);
 						catedral();
-					}else {
+					} else {
 						catedral3();
 					}
 
@@ -288,7 +287,7 @@ public class Hist_Arcan {
 		geral.getChoice().getOpcao1().addActionListener(escolha1);
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
 	}
-	
+
 	public void catedral2(Texto t1, int x) {
 
 		Geral geral = new Geral();
@@ -314,12 +313,11 @@ public class Hist_Arcan {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-	
+
 	public void catedral3() {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		
 		vet.catedral3();
 
 		geral.escolhas_0(t1, vet);
@@ -342,9 +340,9 @@ public class Hist_Arcan {
 		t1.getContinuar().addActionListener(continuar);
 
 	}
-	
-	public void catedralDerrota(Jogador player,int x) {
-		
+
+	public void catedralDerrota(Jogador player, int x) {
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 		this.player = player;
@@ -403,13 +401,13 @@ public class Hist_Arcan {
 		t1.getContinuar().addActionListener(continuar);
 
 	}
-	
+
 	public void alameda() {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
 		vet.alameda();
-		
+
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {

@@ -1,15 +1,14 @@
 package bibliotecas;
 
-public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores de texto a serem usados
+public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores de texto a serem usados
 
- 
 	/*
 	 * 
 	 * Lista de acentos (evita que bugue ao mandar pro GitKraken)
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à  \u00E1 á  \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
 	 * \u00EA é \u00E9 ê \u00C9 É
 	 * 
@@ -247,21 +246,6 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 		tx[7] = "<html>O dia est\u00E1 caminhando para o seu " + "<br/>final e voc\u00EA tem que decidir para onde "
 				+ "<br/>ir\u00E1 esta noite." + "<html>";
 		linhas[7] = 2;
-//		
-//		tx[8] = "<html>Voc\u00EA se encaminha para a Torre" + "<br/>Arcana. Chegando, voc\u00EA v\u00EA uma "
-//				+ "<br/>enorme torre branca, com expans\u00F5es " + "<br/>laterais que parece estarem flutuando. "
-//				+ "<br/>Ela \u00E9 impressionante, uma torre como " + "<br/>nunca se v\u00EA outra na vida." + "<html>";
-//		linhas[8] = 5;
-//
-//		tx[9] = "<html>Voc\u00EA se aproxima do port\u00E3o,que se " + "<br/>abre sozinho. A ala de entrada est\u00E1 "
-//				+ "<br/>totalmente vazia, na verdade, parece "
-//				+ "<br/>que a torre inteira est\u00E1 vazia, at\u00E9 que "
-//				+ "<br/>voc\u00EA escuta uma voz baixinha:  " + "<br/><br/>..." + player.getNome() + "..." + "<html>";
-//		linhas[9] = 6;
-//
-//		choice = "O que voc\u00EA ira fazer?";
-//		op1 = "Seguir a voz";
-//		op2 = "Ignorar a voz";
 
 	}
 
@@ -351,7 +335,7 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 		tx[6] = "<html>O dia est\u00E1 caminhando para o seu " + "<br/>final e voc\u00EA tem que decidir para onde "
 				+ "<br/>ir\u00E1 esta noite." + "<html>";
 		linhas[6] = 2;
-		
+
 	}
 
 	public void inicio_guerreiro() { // 0 op\u00E7\u00F5es
@@ -423,13 +407,6 @@ public class Biblio_Intro extends Biblioteca{ // Classe que armazena os vetores 
 		tx[2] = "<html>O dia est\u00E1 caminhando para o seu " + "<br/>final e voc\u00EA tem que decidir para onde "
 				+ "<br/>ir\u00E1 esta noite." + "<html>";
 		linhas[2] = 3;
-
-//		choice = "<html>Antes de decidir-se, tem a impress\u00E3o" + "<br/>de que tal escolha ter\u00E1 profunda"
-//				+ "<br/>influ\u00EAncia em seu fururo" + "<html>";
-//		op1 = "Alameda dos Tr\u00EAs Ponteiros";
-//		op2 = "Torre Arcana";
-//		op3 = "Alistar - se a Guarda Real";
-
 	}
 
 	// Intro Arcanista:

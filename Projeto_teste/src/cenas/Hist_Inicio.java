@@ -32,8 +32,8 @@ public class Hist_Inicio {
 		t1.zerar();
 		t1.getTexto().setVisible(true);
 
-		choice.doEscolhas_2(t1.getTexto(), "", "Seguir história", "Pular pras classes");
-		escolha1 = new ActionListener() { // Action caso escolha a 1ï¿½ opï¿½ï¿½o
+		choice.doEscolhas_2(t1.getTexto(), "", "Seguir histï¿½ria", "Pular pras classes");
+		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().dispose();
@@ -41,7 +41,7 @@ public class Hist_Inicio {
 			}
 		};
 
-		escolha2 = new ActionListener() {// Action caso escolha a 2ï¿½ opï¿½ï¿½o
+		escolha2 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().dispose();
@@ -224,9 +224,7 @@ public class Hist_Inicio {
 
 				player.setBonus_inicio(true);
 				vet.setPlayer(player);
-
-				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame, deixando
-																		// apenas uma "tela em branco"
+				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame
 				correrAtras(t1); // Chama o prï¿½ximo componente da histï¿½ria
 
 			}
@@ -908,7 +906,40 @@ public class Hist_Inicio {
 			}
 		};
 
-		escolha2 = new ActionListener() {
+		escolha2 = new ActionListener() {                                                 
+                                                                                          
+			public void actionPerformed(ActionEvent e) {                                  
+                                                                                          
+				t1.getTexto().remove(geral.getChoice().getPanel_1());                     
+				salaCap(t1, 4);                                                           
+			}                                                                             
+		};                                                                                
+                                                                                          
+		geral.getChoice().getOpcao1().addActionListener(escolha1);                        
+		geral.getChoice().getOpcao2().addActionListener(escolha2);                        
+                                                                                          
+	}                                                                                     
+                                                                                          
+	public void salaCap(Texto t1, int x) {                                                
+                                                                                          
+		Geral geral = new Geral();                                                        
+                                                                                          
+		vet.salaCap(x);                                                                   
+		geral.escolhas_0(t1, vet);                                                        
+                                                                                          
+		continuar = new ActionListener() {                                                
+			int cont = 0;                                                                 
+                                                                                          
+			public void actionPerformed(ActionEvent e) {                                  
+				if (geral.isFlag()) {                                                     
+					if (cont == (vet.getTx().length - 1)) {                               
+						t1.getContinuar().removeActionListener(continuar);                
+						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());             
+					} else                                                                
+						cont++;                                                           
+				}                                                                         
+			}                                                                             
+		};                                                                                
 
 			public void actionPerformed(ActionEvent e) {
 
