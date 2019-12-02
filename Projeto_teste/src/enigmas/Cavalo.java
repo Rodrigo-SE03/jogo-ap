@@ -73,7 +73,7 @@ public class Cavalo {
 		panel.setLayout(null);
 
 		ImageIcon cav_img = new ImageIcon("src/imagens/Cav.png");
-		cav_img.setImage(cav_img.getImage().getScaledInstance(70, 60, 100));
+		cav_img.setImage(cav_img.getImage().getScaledInstance(70, 80, 100));
 
 		JButton[] bot = new JButton[6];
 		for (cont = 0; cont < 6; cont++) {
@@ -84,6 +84,7 @@ public class Cavalo {
 			bot[cont].setBorder(null);
 			bot[cont].setOpaque(false);
 			bot[cont].setSelectedIcon(null);
+			bot[cont].setSize(65, 70);
 			bot[cont].addActionListener(new ActionListener() {
 				int y = cont;
 
@@ -100,13 +101,14 @@ public class Cavalo {
 			panel.add(bot[cont]);
 		}
 
-		bot[0].setBounds(168, 125, 65, 55);
-		bot[1].setBounds(232, 125, 65, 55);
-		bot[2].setBounds(296, 125, 65, 55);
-		bot[3].setBounds(168, 186, 65, 55);
-		bot[4].setBounds(232, 186, 65, 55);
-		bot[5].setBounds(296, 186, 65, 55);
-
+		
+		bot[0].setLocation(170, 118);
+		bot[1].setLocation(234, 118);
+		bot[2].setLocation(298, 118);
+		bot[3].setLocation(170, 179);
+		bot[4].setLocation(234, 179);
+		bot[5].setLocation(298, 179);
+                                 
 		JButton btnNewButton = new JButton();
 		btnNewButton.setFocusPainted(false);
 		btnNewButton.setBorderPainted(false);
