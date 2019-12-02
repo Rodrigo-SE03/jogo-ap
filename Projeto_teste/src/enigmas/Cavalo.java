@@ -57,19 +57,14 @@ public class Cavalo {
 		Texto_enigma caixa = new Texto_enigma();
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
-		caixa.getTxt1().setText(
-				"\r\n" + 
-				"Equipes de cavalos estão participando de partidas do cabo de guerra. Todas as equipes são sorteadas a partir de um estábulo de oito cavalos. As três primeiras partidas terminam em empates, como mostrado:\r\n" + 
-				"\r\n" + 
-				"Jogo 1: A B C D x E F G H\r\n" + 
-				"Jogo 2: H C B x G A\r\n" + 
-				"Jogo 3: D A x F H E\r\n" + 
-				"\r\n" + 
-				"Se você deseja que a quarta partida também resulte em um empate, quais cavalos devem estar no time que está puxando contra E e F?\r\n" + 
-				"\r\n" + 
-				"Toque em um cavalo para adicioná-lo à equipe");
+		caixa.getTxt1().setText("\r\n"
+				+ "Equipes de cavalos estão participando de partidas do cabo de guerra. Todas as equipes são sorteadas a partir de um estábulo de oito cavalos. As três primeiras partidas terminam em empates, como mostrado:\r\n"
+				+ "\r\n" + "Jogo 1: A B C D x E F G H\r\n" + "Jogo 2: H C B x G A\r\n" + "Jogo 3: D A x F H E\r\n"
+				+ "\r\n"
+				+ "Se você deseja que a quarta partida também resulte em um empate, quais cavalos devem estar no time que está puxando contra E e F?\r\n"
+				+ "\r\n" + "Toque em um cavalo para adicioná-lo à equipe");
 		caixa.resize(0, 100);
-		
+
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
 
@@ -130,7 +125,7 @@ public class Cavalo {
 						JOptionPane.showMessageDialog(null, "nice");
 					} else {
 						JOptionPane.showMessageDialog(null, "errrrrrrrrou");
-						k=0;
+						k = 0;
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "errrrrrrrrou");
