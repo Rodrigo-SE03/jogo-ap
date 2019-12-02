@@ -20,13 +20,16 @@ public class Hist_Inicio {
 
 	private ActionListener continuar, escolha1, escolha2, escolha3;
 	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
-	private Musica musica = new Musica();
+	private static Musica musica = new Musica();
 	private Musica musica2 = new Musica();
 	private Musica musica3 = new Musica();
 
 	public void admin(Jogador player) {
+		if(!musica.isPlaying()) {
+		System.out.println("yo");
 		musica.TocaMusica("src/sons/mercado.wav");
 		musica.setVolume(0.7f);
+		}
 		Texto t1 = new Texto();
 		Escolhas choice = new Escolhas();
 		t1.zerar();
