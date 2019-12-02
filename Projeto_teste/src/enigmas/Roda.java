@@ -16,23 +16,24 @@ public class Roda {
 
 	private JFrame frame;
 
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Roda window = new Roda();
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Roda window = new Roda();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public Roda() {
 		initialize();
 	}
 
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 527, 423);
 		frame.setResizable(false);
@@ -81,62 +82,36 @@ public class Roda {
 			}
 
 		};
+		
+		JButton[] opcao = new JButton[5];
+		for(int i = 0; i < 5; i++) {
+			opcao[i] = new JButton();
+			opcao[i].setFocusPainted(false);
+			opcao[i].setBorderPainted(false);
+			opcao[i].setBorder(null);
+			opcao[i].setContentAreaFilled(false);
+			opcao[i].setSelectedIcon(null);
+			opcao[i].setSize(33,36);
+			opcao[i].addActionListener(perdeu);
+			panel.add(opcao[i]);
+		}
+		
+		opcao[0].setLocation(159, 37);
+		opcao[1].setLocation(159, 98);
+		opcao[2].setLocation(159, 170);
+		opcao[3].setLocation(159, 257);
+		opcao[4].setLocation(159, 333);
 
-		JButton bot1 = new JButton();
-		bot1.setFocusPainted(false);
-		bot1.setBorderPainted(false);
-		bot1.setBorder(null);
-		bot1.setContentAreaFilled(false);
-		bot1.setSelectedIcon(null);
-		bot1.setBounds(159, 37, 33, 36);
-		bot1.addActionListener(venceu);
-		panel.add(bot1);
-
-		JButton bot2 = new JButton();
-		bot2.setFocusPainted(false);
-		bot2.setBorderPainted(false);
-		bot2.setBorder(null);
-		bot2.setContentAreaFilled(false);
-		bot2.setBounds(159, 98, 33, 36);
-
-		panel.add(bot2);
-
-		JButton bot3 = new JButton();
-		bot3.setFocusPainted(false);
-		bot3.setBorderPainted(false);
-		bot3.setBorder(null);
-		bot3.setContentAreaFilled(false);
-		bot3.setBounds(159, 170, 33, 36);
-		panel.add(bot3);
-
-		JButton bot4 = new JButton();
-		bot4.setFocusPainted(false);
-		bot4.setBorderPainted(false);
-		bot4.setBorder(null);
-		bot4.setContentAreaFilled(false);
-		bot4.setBounds(159, 257, 33, 36);
-		panel.add(bot4);
-
-		JButton bot5 = new JButton();
-		bot5.setFocusPainted(false);
-		bot5.setBorderPainted(false);
-		bot5.setBorder(null);
-		bot5.setContentAreaFilled(false);
-		bot5.setBounds(159, 333, 33, 36);
-		panel.add(bot5);
+		opcao[0].removeActionListener(perdeu);
+		opcao[0].addActionListener(venceu);
 
 		ImageIcon enigma = new ImageIcon("src/imagens/EnigmaRoda.jpg");
 		enigma.setImage(enigma.getImage().getScaledInstance(513, 387, 100));
-		JLabel Fundo = new JLabel("New label");
+		JLabel Fundo = new JLabel();
 		Fundo.setIcon(enigma);
 		Fundo.setBounds(0, 0, 513, 387);
 		panel.add(Fundo);
-
-		bot2.addActionListener(perdeu);
-		bot3.addActionListener(perdeu);
-		bot4.addActionListener(perdeu);
-		bot5.addActionListener(perdeu);
-
+		
 		frame.setVisible(true);
 	}
 

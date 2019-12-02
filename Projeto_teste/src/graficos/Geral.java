@@ -7,17 +7,16 @@ import bibliotecas.Biblioteca;
 
 public class Geral { // Classe base para criação dos textos
 
-	private boolean flag = true;
-	public boolean isFlag() {
-		return flag;
-	}
-
 	private Escolhas choice = new Escolhas();
 	private ActionListener continuar; // ActionListener para o botão continuar
+	private boolean flag = true;
 
-	public Escolhas getChoice() { // Getter para poder setar o action listener das escolhas na classe que chama o
-									// método
+	public Escolhas getChoice() { // Getter para poder setar o action listener das escolhas
 		return choice;
+	}
+
+	public boolean isFlag() {
+		return flag;
 	}
 
 	public void escolhas_0(Texto t1, Biblioteca vet) { // Metodo que gera texto sem nenhuma interface de escolha
@@ -33,12 +32,11 @@ public class Geral { // Classe base para criação dos textos
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
 					flag = false;
-					
+
 					if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
 						cont++;
 						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
-					} 
-					else {
+					} else {
 						t1.getContinuar().removeActionListener(continuar);
 						cont = 0;
 					}
@@ -71,20 +69,20 @@ public class Geral { // Classe base para criação dos textos
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
 					flag = false;
-					
+
 					if (cont < (vet.getTx().length - 1)) {
 						cont++;
 						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
-					
+
 					} else {
-						
+
 						cont = 0;
 						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
-						choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());	
-					
+						choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());
+
 					}
-					
+
 					new Thread() {
 						public void run() {
 							try {
@@ -96,7 +94,7 @@ public class Geral { // Classe base para criação dos textos
 							}
 						}
 					}.start();
-					
+
 				}
 			}
 

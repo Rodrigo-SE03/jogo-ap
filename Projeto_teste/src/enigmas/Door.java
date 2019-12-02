@@ -21,14 +21,12 @@ import javax.swing.JPanel;
 public class Door {
 
 	private JFrame frame;
-	private int cont = 0;
 	private JPanel[] panel = new JPanel[10];
 	private JPanel cards;
 	private JButton[][] portas = new JButton[10][4];
+	private ActionListener passar, perder;
+	private int cont = 0;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,19 +39,15 @@ public class Door {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Door() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
+
 		frame = new JFrame();
 		frame.setSize(528, 423);
+		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -68,7 +62,7 @@ public class Door {
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
 
-		ActionListener passar = new ActionListener() {
+		passar = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -83,7 +77,7 @@ public class Door {
 			}
 		};
 
-		ActionListener perder = new ActionListener() {
+		perder = new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -112,7 +106,7 @@ public class Door {
 
 		// fundo
 		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
-		fund.setImage(fund.getImage().getScaledInstance(this.frame.getSize().width, this.frame.getSize().height, 100));
+		fund.setImage(fund.getImage().getScaledInstance(frame.getSize().width, frame.getSize().height, 100));
 		JLabel fundo = new JLabel(fund);
 		fundo.setBounds(new Rectangle(0, 0, 515, 399));
 
@@ -121,6 +115,19 @@ public class Door {
 		pan.add(continuar);
 		pan.add(txt);
 		pan.add(fundo);
+
+		criarPortas();
+
+		cards = new JPanel(new CardLayout());
+		cards.add(pan);
+		for (int i = 0; i < 10; i++) {
+			cards.add(panel[i], "" + i);
+		}
+		frame.getContentPane().add(cards, BorderLayout.CENTER);
+		frame.setVisible(true);
+	}
+
+	public void criarPortas() {
 
 		ImageIcon[] portaImg = new ImageIcon[4];
 		ImageIcon[] portaAbtImg = new ImageIcon[4];
@@ -136,7 +143,7 @@ public class Door {
 			rand[i] = false;
 		}
 		int x;
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < panel.length; i++) {
 			panel[i] = new JPanel();
 			panel[i].setLayout(new GridLayout(1, 0, 0, 0));
 			for (int j = 0; j < 4; j++) {
@@ -177,13 +184,6 @@ public class Door {
 		portas[8][2].addActionListener(passar);
 		portas[9][3].addActionListener(passar);
 
-		cards = new JPanel(new CardLayout());
-		cards.add(pan);
-		for (int i = 0; i < 10; i++) {
-			cards.add(panel[i], "" + i);
-		}
-		frame.getContentPane().add(cards, BorderLayout.CENTER);
-		frame.setVisible(true);
 	}
 
 }

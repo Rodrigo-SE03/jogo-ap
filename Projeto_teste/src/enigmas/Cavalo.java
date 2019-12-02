@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 public class Cavalo {
 
 	private JFrame frame;
-	private boolean[] select = new boolean[6];
+	private boolean[] isSelect = new boolean[6];
 	private int cont;
 
 	public static void main(String[] args) {
@@ -35,11 +35,12 @@ public class Cavalo {
 
 	public Cavalo() {
 		for (int i = 0; i < 6; i++)
-			select[i] = false;
+			isSelect[i] = false;
 		initialize();
 	}
 
 	private void initialize() {
+
 		frame = new JFrame();
 		frame.setBounds(100, 100, 527, 423);
 		frame.setResizable(false);
@@ -65,62 +66,61 @@ public class Cavalo {
 				+ "\r\n" + "Toque em um cavalo para adicioná-lo à equipe");
 		caixa.resize(0, 100);
 
-		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
-		frame.setIconImage(icone.getImage());
+		frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
 
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 
 		ImageIcon cav_img = new ImageIcon("src/imagens/Cav.png");
-		cav_img.setImage(cav_img.getImage().getScaledInstance(70, 80, 100));
+		cav_img.setImage(cav_img.getImage().getScaledInstance(70, 70, 100));
 
-		JButton[] bot = new JButton[6];
+		JButton[] cavalo = new JButton[6];
 		for (cont = 0; cont < 6; cont++) {
-			bot[cont] = new JButton();
-			bot[cont].setContentAreaFilled(false);
-			bot[cont].setFocusPainted(false);
-			bot[cont].setBorderPainted(false);
-			bot[cont].setBorder(null);
-			bot[cont].setOpaque(false);
-			bot[cont].setSelectedIcon(null);
-			bot[cont].setSize(65, 70);
-			bot[cont].addActionListener(new ActionListener() {
+			cavalo[cont] = new JButton();
+			cavalo[cont].setContentAreaFilled(false);
+			cavalo[cont].setFocusPainted(false);
+			cavalo[cont].setBorderPainted(false);
+			cavalo[cont].setBorder(null);
+			cavalo[cont].setOpaque(false);
+			cavalo[cont].setSelectedIcon(null);
+			cavalo[cont].setSize(65, 70);
+			cavalo[cont].addActionListener(new ActionListener() {
 				int y = cont;
 
 				public void actionPerformed(ActionEvent e) {
-					if (select[y]) {
-						bot[y].setIcon(new ImageIcon());
-						select[y] = false;
+					if (isSelect[y]) {
+						cavalo[y].setIcon(new ImageIcon());
+						isSelect[y] = false;
 					} else {
-						bot[y].setIcon(cav_img);
-						select[y] = true;
+						cavalo[y].setIcon(cav_img);
+						isSelect[y] = true;
 					}
 				}
 			});
-			panel.add(bot[cont]);
+			panel.add(cavalo[cont]);
 		}
 
-		
-		bot[0].setLocation(170, 118);
-		bot[1].setLocation(234, 118);
-		bot[2].setLocation(298, 118);
-		bot[3].setLocation(170, 179);
-		bot[4].setLocation(234, 179);
-		bot[5].setLocation(298, 179);
-                                 
-		JButton btnNewButton = new JButton();
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setBorder(null);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.addActionListener(new ActionListener() {
+		cavalo[0].setLocation(170, 116);
+		cavalo[1].setLocation(234, 116);
+		cavalo[2].setLocation(298, 116);
+		cavalo[3].setLocation(170, 177);
+		cavalo[4].setLocation(234, 177);
+		cavalo[5].setLocation(298, 177);
+
+		JButton confirmar = new JButton();
+		confirmar.setFocusPainted(false);
+		confirmar.setBorderPainted(false);
+		confirmar.setBorder(null);
+		confirmar.setContentAreaFilled(false);
+		confirmar.setBounds(385, 300, 125, 85);
+		confirmar.addActionListener(new ActionListener() {
 			int k = 0;
 
 			public void actionPerformed(ActionEvent e) {
-				if (select[3]) {
+				if (isSelect[3]) {
 					for (int i = 0; i < 6; i++) {
-						if (select[i])
+						if (isSelect[i])
 							k++;
 					}
 					if (k == 1) {
@@ -134,8 +134,7 @@ public class Cavalo {
 				}
 			}
 		});
-		btnNewButton.setBounds(385, 300, 125, 85);
-		panel.add(btnNewButton);
+		panel.add(confirmar);
 
 		ImageIcon enigma = new ImageIcon("src/imagens/Cavalo.png");
 		enigma.setImage(enigma.getImage().getScaledInstance(513, 387, 100));

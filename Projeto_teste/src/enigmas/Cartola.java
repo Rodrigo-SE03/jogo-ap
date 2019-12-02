@@ -40,6 +40,7 @@ public class Cartola {
 	}
 
 	private void initialize() {
+
 		frame = new JFrame();
 		frame.setSize(680, 375);
 		frame.setLocationRelativeTo(null);
@@ -54,7 +55,6 @@ public class Cartola {
 				}
 			}
 		});
-
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
 
@@ -62,13 +62,13 @@ public class Cartola {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 
-		JFormattedTextField txtresp = new JFormattedTextField();
-		txtresp.setBackground(new Color(255, 248, 220));
-		txtresp.setHorizontalAlignment(SwingConstants.CENTER);
-		txtresp.setFont(new Font("Georgia", Font.BOLD, 30));
-		txtresp.setBounds(350, 270, 150, 60);
-		maskLetter(txtresp);
-		panel.add(txtresp);
+		JFormattedTextField resp = new JFormattedTextField();
+		resp.setBackground(new Color(255, 248, 220));
+		resp.setHorizontalAlignment(SwingConstants.CENTER);
+		resp.setFont(new Font("Georgia", Font.BOLD, 30));
+		resp.setBounds(350, 270, 150, 60);
+		maskLetter(resp);
+		panel.add(resp);
 
 		JButton continuar = new JButton(new ImageIcon("src/imagens/continuar.png"));
 		continuar.setLayout(null);
@@ -76,16 +76,17 @@ public class Cartola {
 		continuar.setBounds(500, 270, 158, 60);
 		continuar.setContentAreaFilled(false);
 		panel.add(continuar);
-		ActionListener next = new ActionListener() {
+		continuar.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent actionEvent) {
-				if (txtresp.getText().equalsIgnoreCase("ASS")) {
+
+				if (resp.getText().equalsIgnoreCase("ASS")) {
 					JOptionPane.showMessageDialog(null, "nice");
 				} else {
 					JOptionPane.showMessageDialog(null, "errrrrrrrrou");
 				}
 			}
-		};
-		continuar.addActionListener(next);
+		});
 
 		JLabel Fundo = new JLabel();
 		Fundo.setIcon(new ImageIcon("src/imagens/Cartola.png"));

@@ -2,7 +2,6 @@ package graficos;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,29 +15,17 @@ public class Texto {
 	private JButton continuar;
 	private JLabel txt;
 	private JLabel fundo;
+	
+	public JFrame getTexto() {
+		return frame;
+	}
 
 	public JButton getContinuar() {
 		return continuar;
 	}
 
-	public void setContinuar(JButton continuar) {
-		this.continuar = continuar;
-	}
-
-	public JLabel getTxt() {
-		return txt;
-	}
-
 	public void setTxt(JLabel txt) {
 		this.txt = txt;
-	}
-
-	public JLabel getFundo() {
-		return fundo;
-	}
-
-	public void setFundo(JLabel fundo) {
-		this.fundo = fundo;
 	}
 
 	public Texto() {
@@ -46,11 +33,9 @@ public class Texto {
 	}
 
 	private void initialize() {
+		
 		frame = new JFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
-		frame.setIconImage(icone.getImage());
+		frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
 		frame.setSize(610, 438);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
@@ -70,16 +55,9 @@ public class Texto {
 		continuar = new JButton();
 		continuar.setIcon(new ImageIcon("src/imagens/continuar.png"));
 		this.frame.getContentPane().add(continuar);
-		this.continuar.setLayout(null);
-		this.continuar.setVisible(true);
-		this.continuar.setBounds(430, 338, 150, 50);
-		this.continuar.setContentAreaFilled(false);
 
 		// definição do texto da janela
 		txt = new JLabel();
-		this.txt.setBounds(50, 52, 500, 30);
-		this.txt.setFont(new Font("Georgia", Font.BOLD, 25));
-		this.txt.setForeground(Color.black);
 		this.frame.getContentPane().add(txt);
 
 		// fundo
@@ -87,17 +65,7 @@ public class Texto {
 		fund.setImage(fund.getImage().getScaledInstance(this.frame.getSize().width, this.frame.getSize().height, 100));
 		fundo = new JLabel(fund);
 		this.frame.getContentPane().add(fundo);
-		this.fundo.setBounds(new Rectangle(96, 0, 498, 399));
-		this.frame.setVisible(true);
 
-	}
-
-	public JFrame getTexto() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
 	}
 
 	public void atualizaTexto(String tex, int pulalinha) {
@@ -121,7 +89,6 @@ public class Texto {
 		this.frame.add(fundo);
 		this.fundo.setVisible(true);
 		this.fundo.setBounds(0, 0, 600, 400);
-		
 		this.frame.setVisible(true);
 	}
 

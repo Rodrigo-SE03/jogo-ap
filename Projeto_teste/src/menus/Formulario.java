@@ -22,31 +22,14 @@ public class Formulario {
 
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
-	/*
-	 * public static void main(String[] args) { EventQueue.invokeLater(new
-	 * Runnable() { public void run() { try { Formulario window = new Formulario();
-	 * window.frame.setVisible(true); } catch (Exception e) { e.printStackTrace(); }
-	 * } }); }
-	 */
-
-	/**
-	 * Create the application.
-	 */
-
 	public Formulario() {
 		initialize();
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-
 	private void initialize() {
+
 		frame = new JFrame();
 		frame.setSize(1040, 703);
 		frame.setLocationRelativeTo(null);
@@ -63,8 +46,7 @@ public class Formulario {
 
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
-		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
-		frame.setIconImage(icone.getImage());
+		frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
 
 		JFormattedTextField txtNome = new JFormattedTextField();
 		txtNome.setBackground(new Color(255, 248, 220));
@@ -73,17 +55,17 @@ public class Formulario {
 		txtNome.setBounds(331, 47, 647, 59);
 		frame.getContentPane().add(txtNome);
 
-		JLabel nome = new JLabel("New label");
+		JLabel nome = new JLabel();
 		nome.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_nome.png")));
 		nome.setBounds(35, 35, 236, 68);
 		frame.getContentPane().add(nome);
 
-		JLabel idade = new JLabel("New label");
+		JLabel idade = new JLabel();
 		idade.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_idade.png")));
 		idade.setBounds(35, 186, 233, 79);
 		frame.getContentPane().add(idade);
 
-		JLabel sexo = new JLabel("New label");
+		JLabel sexo = new JLabel();
 		sexo.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_sexo.png")));
 		sexo.setBounds(35, 356, 217, 59);
 		frame.getContentPane().add(sexo);
@@ -95,12 +77,12 @@ public class Formulario {
 		Sexo.setBounds(331, 356, 647, 59);
 		frame.getContentPane().add(Sexo);
 
-		JLabel origem = new JLabel("New label");
+		JLabel origem = new JLabel();
 		origem.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_origem.png")));
 		origem.setBounds(35, 503, 299, 68);
 		frame.getContentPane().add(origem);
 
-		JLabel Monsores = new JLabel("New label");
+		JLabel Monsores = new JLabel();
 		Monsores.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/formulario_monsores.png")));
 		Monsores.setBounds(379, 500, 587, 74);
 		frame.getContentPane().add(Monsores);
@@ -112,7 +94,7 @@ public class Formulario {
 		continuar.setContentAreaFilled(false);
 		frame.getContentPane().add(continuar);
 
-		JLabel label = new JLabel("New label");
+		JLabel label = new JLabel();
 		label.setIcon(new ImageIcon(Formulario.class.getResource("/imagens/17.png")));
 		label.setBounds(335, 188, 82, 74);
 		frame.getContentPane().add(label);
