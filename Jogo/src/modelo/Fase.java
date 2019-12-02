@@ -146,6 +146,10 @@ public class Fase extends JPanel implements ActionListener {
 				if (in.getX() < 0) {
 					System.out.println("yo");
 					setContP(contP + 1);
+					if(contP>=50)
+					{
+						emJogo = false;
+					}
 					inimigo1.remove(j);
 				}
 				if (in.isVisible()) {

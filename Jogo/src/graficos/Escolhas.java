@@ -12,11 +12,11 @@ import javax.swing.JPanel;
 public class Escolhas {
 
 	private JPanel panel_1 = new JPanel();
+	private JButton opcao1 = new JButton();
+	private JButton opcao2 = new JButton();
+	private JButton opcao3 = new JButton();
 	private JLabel txt = new JLabel();
-	private JButton opcao1 = new JButton("op1");
-	private JButton opcao2 = new JButton("op2");
-	private JButton opcao3 = new JButton("op3");
-	
+
 	public JPanel getPanel_1() {
 		return panel_1;
 	}
@@ -35,7 +35,7 @@ public class Escolhas {
 
 	public void doEscolhas_2(JFrame frame, String tex, String op1, String op2) {
 
-		panel_1.setBounds(0,0, 610, 438);
+		panel_1.setBounds(0, 0, 610, 438);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
@@ -46,7 +46,7 @@ public class Escolhas {
 		panel_1.add(txt);
 
 		opcao1.setText(op1);
-		opcao1.setBackground(new Color(139, 69, 19));
+		opcao1.setBackground(new Color(246, 221, 59));
 		opcao1.setForeground(Color.BLACK);
 		opcao1.setFont(new Font("Georgia", Font.BOLD, 20));
 		opcao1.setContentAreaFilled(true);
@@ -57,7 +57,7 @@ public class Escolhas {
 		panel_1.add(opcao1);
 
 		opcao2.setText(op2);
-		opcao2.setBackground(new Color(139, 69, 19));
+		opcao2.setBackground(new Color(246, 221, 59));
 		opcao2.setForeground(Color.BLACK);
 		opcao2.setFont(new Font("Georgia", Font.BOLD, 20));
 		opcao2.setContentAreaFilled(true);
@@ -67,11 +67,10 @@ public class Escolhas {
 		opcao2.setBounds(33, 255, 532, 43);
 		panel_1.add(opcao2);
 
-		
-		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
-		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width,panel_1.getSize().height,100));
+		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo1.png");
+		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width, panel_1.getSize().height, 100));
 		JLabel fundo = new JLabel(fund);
-		fundo.setBounds(-5,-20,610,438);
+		fundo.setBounds(-5, -20, 610, 438);
 		fundo.setVisible(true);
 		panel_1.add(fundo);
 		panel_1.setVisible(true);
@@ -79,7 +78,6 @@ public class Escolhas {
 	}
 
 	public void doEscolhas_3(JFrame frame, String tex, String op1, String op2, String op3) {
-
 
 		panel_1.setBounds(0, 0, 610, 438);
 		frame.getContentPane().add(panel_1);
@@ -92,7 +90,7 @@ public class Escolhas {
 		panel_1.add(txt);
 
 		opcao1.setText(op1);
-		opcao1.setBackground(new Color(139, 69, 19));
+		opcao1.setBackground(new Color(246, 221, 59));
 		opcao1.setForeground(Color.BLACK);
 		opcao1.setFont(new Font("Georgia", Font.BOLD, 20));
 		opcao1.setContentAreaFilled(true);
@@ -102,9 +100,8 @@ public class Escolhas {
 		opcao1.setBounds(33, 201, 532, 43);
 		panel_1.add(opcao1);
 
-		
 		opcao2.setText(op2);
-		opcao2.setBackground(new Color(139, 69, 19));
+		opcao2.setBackground(new Color(246, 221, 59));
 		opcao2.setForeground(Color.BLACK);
 		opcao2.setFont(new Font("Georgia", Font.BOLD, 20));
 		opcao2.setContentAreaFilled(true);
@@ -115,7 +112,7 @@ public class Escolhas {
 		panel_1.add(opcao2);
 
 		opcao3.setText(op3);
-		opcao3.setBackground(new Color(139, 69, 19));
+		opcao3.setBackground(new Color(246, 221, 59));
 		opcao3.setFont(new Font("Georgia", Font.BOLD, 20));
 		opcao3.setForeground(Color.BLACK);
 		opcao3.setBorderPainted(false);
@@ -125,13 +122,13 @@ public class Escolhas {
 		opcao3.setBounds(33, 309, 532, 43);
 		panel_1.add(opcao3);
 
-		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
-		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width,panel_1.getSize().height,100));
+		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo1.png");
+		fund.setImage(fund.getImage().getScaledInstance(panel_1.getSize().width, panel_1.getSize().height, 100));
 		JLabel fundo = new JLabel(fund);
-		fundo.setBounds(-5,-20,610,438);
+		fundo.setBounds(-5, -20, 610, 438);
 		fundo.setVisible(true);
 		panel_1.add(fundo);
-		panel_1.setVisible(true);;
+		panel_1.setVisible(true);
 
 	}
 

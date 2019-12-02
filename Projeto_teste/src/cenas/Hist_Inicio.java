@@ -58,6 +58,7 @@ public class Hist_Inicio {
 		if(musica.isPlaying())
 			musica.stop();
 		Texto t1 = new Texto();
+		t1.getTexto().setVisible(true);
 		t1.zerar();
 		Escolhas choice = new Escolhas();
 		choice.doEscolhas_3(t1.getTexto(), "Qual classe?", "Arcano", "Guerreiro", "Assassino");

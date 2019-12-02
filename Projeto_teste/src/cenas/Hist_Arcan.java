@@ -158,8 +158,10 @@ public class Hist_Arcan {
 				mapa.getTorreArcanaFundo().setVisible(true);
 				mapa.getBtnTorreArcana().addActionListener(torre);
 			}
-		} else
-			;
+		} else {
+			System.out.println("Acabou");
+		}
+			
 
 	}
 

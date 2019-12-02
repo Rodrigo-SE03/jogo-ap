@@ -5,29 +5,25 @@ public abstract class Character { // NPCs têm os msm atributos
 	private String nome;
 	private String profissão;
 	private int sexo;
-	private int raça;
 	private int idade;
 
 	public Character() {
 	}
 
-	public Character(String nome, int sexo, int raça) {
+	public Character(String nome, int sexo) {
 		this.nome = nome;
 		this.sexo = sexo;
-		this.raça = raça;
 	}
 
-	public Character(String nome, int sexo, int raça, int idade) {
+	public Character(String nome, int sexo, int idade) {
 		this.nome = nome;
 		this.sexo = sexo;
-		this.raça = raça;
 		this.idade = idade;
 	}
 
-	public Character(String nome, int sexo, int raça, int idade, String profissão) {
+	public Character(String nome, int sexo, int idade, String profissão) {
 		this.nome = nome;
 		this.sexo = sexo;
-		this.raça = raça;
 		this.idade = idade;
 		this.profissão = profissão;
 	}
@@ -64,11 +60,4 @@ public abstract class Character { // NPCs têm os msm atributos
 		this.sexo = sexo;
 	}
 
-	public int getRaça() {
-		return raça;
-	}
-
-	public void setRaça(int raça) {
-		this.raça = raça;
-	}
 }

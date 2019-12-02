@@ -155,7 +155,7 @@ public class Hist_Guerreior {
 						t1.zerar();
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
-						new Hidra();
+						new Hidra(new Jogador());
 					} else
 						cont++;
 				}

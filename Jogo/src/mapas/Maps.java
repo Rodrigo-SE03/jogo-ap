@@ -16,7 +16,7 @@ import javax.swing.JButton;
 
 public class Maps {
 
-	private JFrame frame;
+//	private JFrame frame;
 	private JButton btnCastelo, btnCasaNobre, btnCatedral, btnPraaCentral, btnTorreArcana, btnMercado,
 			btnAlamedaPonteiros, btnDocas, btnAraResidencial, btnFloresta;
 	private JLabel casteloFundo, casaNobreFundo, catedralFundo, praaCentralFundo, torreArcanaFundo, mercadoFundo,
@@ -28,10 +28,6 @@ public class Maps {
 
 	public JLabel getCasaNobreFundo() {
 		return casaNobreFundo;
-	}
-
-	public JFrame getFrame() {
-		return frame;
 	}
 
 	public JLabel getCatedralFundo() {
@@ -106,38 +102,13 @@ public class Maps {
 		return btnFloresta;
 	}
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Maps window = new Maps();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
-	/**
-	 * Create the application.
-	 */
-
-	public Maps() {
-		initialize();
+	public Maps(JFrame frame) {
+		initialize(frame);
 		zerarBotoes();
 		mostrarTudo();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-
-	private void initialize() {
-		frame = new JFrame();
+	private void initialize(JFrame frame) {
 		frame.setSize(1280, 761);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);

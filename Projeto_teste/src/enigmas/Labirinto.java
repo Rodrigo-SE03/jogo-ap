@@ -117,6 +117,12 @@ public class Labirinto {
 				y = e.getY() - (playerImg.getSize().height / 2);
 				colisao();
 				playerImg.setLocation(playerImg.getBounds().x + x, playerImg.getBounds().y + y);
+				fundo.setLocation(
+						((playerImg.getLocation().x) - (fundo.getSize().width / 2) + (playerImg.getSize().width / 2)
+								+ 30),
+						(playerImg.getLocation().y - (fundo.getSize().height / 2) + (playerImg.getSize().height / 2))
+								- 5);
+
 			}
 
 			public void mouseMoved(MouseEvent e) {
@@ -404,10 +410,6 @@ public class Labirinto {
 				}
 			}
 		}
-
-		fundo.setLocation(
-				((playerImg.getLocation().x) - (fundo.getSize().width / 2) + (playerImg.getSize().width / 2) + 30),
-				(playerImg.getLocation().y - (fundo.getSize().height / 2) + (playerImg.getSize().height / 2)) - 5);
 
 		if (((yPlayermin >= (livros[0].getBounds().y + livros[0].getBounds().width))
 				&& ((yPlayermin + y) < (livros[0].getBounds().y + livros[0].getBounds().height)))

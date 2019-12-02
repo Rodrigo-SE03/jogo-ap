@@ -53,7 +53,7 @@ public class Texto {
 
 		// botão continuar
 		continuar = new JButton();
-		continuar.setIcon(new ImageIcon("src/imagens/continuar.png"));
+		continuar.setIcon(new ImageIcon("src/imagens/continuar1.png"));
 		this.frame.getContentPane().add(continuar);
 
 		// definição do texto da janela
@@ -61,7 +61,7 @@ public class Texto {
 		this.frame.getContentPane().add(txt);
 
 		// fundo
-		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo.png");
+		ImageIcon fund = new ImageIcon("src/imagens/fundo_dialogo1.png");
 		fund.setImage(fund.getImage().getScaledInstance(this.frame.getSize().width, this.frame.getSize().height, 100));
 		fundo = new JLabel(fund);
 		this.frame.getContentPane().add(fundo);

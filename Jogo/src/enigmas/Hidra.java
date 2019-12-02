@@ -1,43 +1,41 @@
 package enigmas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
 import java.util.Random;
+
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import cenas.Hist_Arcan;
+import personagens.Jogador;
 import sons.Musica;
 
 public class Hidra {
 
+	private JDialog cabeca[] = new JDialog[200];
+	private JDialog coracao, relogio;
 	private JFrame background;
 	private JTextPane text;
-	private JDialog top, cbc_1, cbc_2, cbc_3, cbc_4, cbc_5, cbc_6, cbc_7,relogio;
-	private JDialog frame[] = new JDialog[200];
-	private static Musica musica;
-	private static int cont, cut, controlCut;
+	private Musica musica;
+	private Jogador player;
+	private boolean perdeu, ganhou, mtcabeca, hasCoracao;
 	private int numb, numero, min, seg;
-	private boolean perdeu = false;
-	private double time = 180000;
-
-	/**
-	 * Launch the application.
-	 */
+	private double time;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					@SuppressWarnings("unused")
-					Hidra window = new Hidra();
+					Hidra window = new Hidra(new Jogador());
 
 					// window.frame[cont].setVisible(true);
 				} catch (Exception e) {
@@ -50,47 +48,28 @@ public class Hidra {
 	/**
 	 * Create the application.
 	 */
-	@SuppressWarnings("static-access")
 
-	public Hidra() {
-		for (int i = 0; i < frame.length; i++) {
-			frame[i] = new JDialog(background);
-			frame[i].setVisible(false);
-		}
-
-		this.numb = 8;
-		this.cont = 0;
-		this.cut = 0;
-		this.controlCut = 0;
+	public Hidra(Jogador player) {
+		this.player = player;
+		this.time = 180000;
 		this.min = 3;
 		this.seg = 0;
+		this.perdeu = false;
+		this.ganhou = false;
+		this.mtcabeca = false;
+		this.hasCoracao = false;
 		initialize();
 		tempo();
 	}
-
-	public int getCut() {
-		return cut;
-	}
-
-	public void setCut(int cut) {
-		Hidra.cut = cut;
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
 
 	private void initialize() {
 		musica = new Musica();
 		musica.TocaMusica("src/sons/musicaHidra.wav");
 		musica.setVolume(0.7f);
 
-		
-		
-		
+		// Frame de fundo
 		background = new JFrame();
-		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
-		background.setIconImage(icone.getImage());
+		background.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
 		background.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		background.setLocationRelativeTo(null);
 		background.setResizable(false);
@@ -113,514 +92,239 @@ public class Hidra {
 		ImageIcon back1 = new ImageIcon("src/imagens/masmorra.jpg");
 		back1.setImage(
 				back1.getImage().getScaledInstance(background.getSize().width, background.getSize().height, 100));
+
 		JLabel fundo = new JLabel(back1);
 		fundo.setLocation(0, 0);
 		fundo.setSize(background.getSize());
 		fundo.setVisible(true);
 		background.getContentPane().add(fundo);
-		background.setVisible(true);
-		
-		
-		
-		
-		relogio = new JDialog();
-		relogio.setLocationRelativeTo(null);
-		relogio.setSize(300,150);
+
+		// Temporizador
+		relogio = new JDialog(background);
+		relogio.setSize(300, 150);
 		relogio.setUndecorated(true);
 		relogio.setAlwaysOnTop(true);
 		relogio.setLocation(background.getLocation());
-		
+
 		text = new JTextPane();
-		text.setBounds(0,0,300,150);
+		text.setBounds(0, 0, 300, 150);
 		text.setOpaque(false);
-		relogio.add(text);
-		
-		text.setFont(new Font("Georgia",Font.BOLD,100));
+		text.setFont(new Font("Georgia", Font.BOLD, 100));
 		text.setForeground(Color.black);
-		
+		relogio.getContentPane().add(text);
+
 		ImageIcon back = new ImageIcon("src/imagens/contador.png");
 		back.setImage(back.getImage().getScaledInstance(relogio.getSize().width, relogio.getSize().height, 100));
 		JLabel fundo1 = new JLabel(back);
-		fundo1.setLocation(0,0);
+		fundo1.setLocation(0, 0);
 		fundo1.setSize(relogio.getSize());
 		fundo1.setVisible(true);
 		relogio.getContentPane().add(fundo1);
-		relogio.add(fundo1);
-		
-		relogio.setVisible(true);
-		
 
+		// 7 cabacas iniciasis
+		JLabel[] cabecaImg = new JLabel[7];
+		for (numb = 0; numb < 7; numb++) {
+			cabeca[numb] = new JDialog(background);
+			cabeca[numb].setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			cabeca[numb].setResizable(false);
+			cabeca[numb].setAlwaysOnTop(true);
+			cabeca[numb].setSize(294, 275);
+			cabeca[numb].setLocationRelativeTo(null);
+			cabeca[numb].addWindowListener(new WindowAdapter() {
+				int y = numb;
 
-		cbc_1 = new JDialog(background);
-		cbc_1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		cbc_1.setResizable(false);
-		cbc_1.setAlwaysOnTop(true);
-		cbc_1.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(cbc_1.getName());
-				spawn();
-				controlCut++;
-				// System.out.println(cut);
-			}
-		});
-		cbc_1.setName("0");
-		cbc_1.setSize(294, 275);
-		cbc_1.setLocationRelativeTo(null);
-		cbc_1.setLocation(cbc_1.getBounds().x - 290, cbc_1.getBounds().y - (270 / 2) + 50);
-		//cbc_1.setTitle(cbc_1.getName());
+				public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+					numero = y;
+					spawn();
+				}
+			});
+			cabecaImg[numb] = new JLabel();
+			cabecaImg[numb].setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
+			cabecaImg[numb].setBounds(0, 0, 278, 236);
+			cabeca[numb].getContentPane().add(cabecaImg[numb]);
 
-		JPanel panel = new JPanel();
-		cbc_1.getContentPane().add(panel, BorderLayout.CENTER);
-		panel.setLayout(null);
-
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel.setBounds(0, 0, 278, 236);
-		panel.add(lblNewLabel);
-
-		cbc_1.setVisible(true);
-
-		cbc_2 = new JDialog(background);
-		cbc_2.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		cbc_2.setResizable(false);
-		cbc_2.setAlwaysOnTop(true);
-		cbc_2.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(cbc_2.getName());
-				spawn();
-				controlCut++;
-				// System.out.println(cut);
-			}
-		});
-		cbc_2.setName("1");
-		cbc_2.setSize(294, 275);
-		cbc_2.setLocationRelativeTo(null);
-		cbc_2.setLocation(cbc_2.getBounds().x, cbc_2.getBounds().y - (270) + 50);
-		//cbc_2.setTitle(cbc_2.getName());
-
-		JPanel panel_2 = new JPanel();
-		cbc_2.getContentPane().add(panel_2, BorderLayout.CENTER);
-		panel_2.setLayout(null);
-
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel_2.setBounds(0, 0, 278, 236);
-		panel_2.add(lblNewLabel_2);
-
-		cbc_2.setVisible(true);
-
-		cbc_3 = new JDialog(background);
-		cbc_3.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		cbc_3.setResizable(false);
-		cbc_3.setAlwaysOnTop(true);
-		cbc_3.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(cbc_3.getName());
-				spawn();
-				controlCut++;
-				// System.out.println(cut);
-			}
-		});
-		cbc_3.setName("2");
-		cbc_3.setSize(294, 275);
-		cbc_3.setLocationRelativeTo(null);
-		cbc_3.setLocation(cbc_3.getBounds().x + 290, cbc_3.getBounds().y - (270 / 2) + 50);
-		//cbc_3.setTitle(cbc_3.getName());
-
-		JPanel panel_3 = new JPanel();
-		cbc_3.getContentPane().add(panel_3, BorderLayout.CENTER);
-		panel_3.setLayout(null);
-
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel_3.setBounds(0, 0, 278, 236);
-		panel_3.add(lblNewLabel_3);
-
-		cbc_3.setVisible(true);
-
-		cbc_4 = new JDialog(background);
-		cbc_4.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		cbc_4.setResizable(false);
-		cbc_4.setAlwaysOnTop(true);
-		cbc_4.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(cbc_4.getName());
-				spawn();
-				controlCut++;
-				// System.out.println(cut);
-			}
-		});
-		cbc_4.setName("3");
-		cbc_4.setSize(294, 275);
-		cbc_4.setLocationRelativeTo(null);
-		cbc_4.setLocation(cbc_4.getBounds().x - 290, cbc_4.getBounds().y + (270 / 2) + 50);
-		//cbc_4.setTitle(cbc_4.getName());
-
-		JPanel panel_4 = new JPanel();
-		cbc_4.getContentPane().add(panel_4, BorderLayout.CENTER);
-		panel_4.setLayout(null);
-
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel_4.setBounds(0, 0, 278, 236);
-		panel_4.add(lblNewLabel_4);
-
-		cbc_4.setVisible(true);
-
-		cbc_5 = new JDialog(background);
-		cbc_5.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		cbc_5.setResizable(false);
-		cbc_5.setAlwaysOnTop(true);
-		cbc_5.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(cbc_5.getName());
-				spawn();
-				controlCut++;
-				// System.out.println(cut);
-			}
-		});
-		cbc_5.setName("4");
-		cbc_5.setSize(294, 275);
-		cbc_5.setLocationRelativeTo(null);
-		cbc_5.setLocation(cbc_5.getBounds().x, cbc_5.getBounds().y + (270) + 50);
-		//cbc_5.setTitle(cbc_5.getName());
-
-		JPanel panel_5 = new JPanel();
-		cbc_5.getContentPane().add(panel_5, BorderLayout.CENTER);
-		panel_5.setLayout(null);
-
-		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel_5.setBounds(0, 0, 278, 236);
-		panel_5.add(lblNewLabel_5);
-
-		cbc_5.setVisible(true);
-
-		cbc_6 = new JDialog(background);
-		cbc_6.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		cbc_6.setResizable(false);
-		cbc_6.setAlwaysOnTop(true);
-		cbc_6.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(cbc_6.getName());
-				spawn();
-				controlCut++;
-				// System.out.println(cut);
-			}
-		});
-		cbc_6.setName("5");
-		cbc_6.setSize(294, 275);
-		cbc_6.setLocationRelativeTo(null);
-		cbc_6.setLocation(cbc_6.getBounds().x + 290, cbc_6.getBounds().y + (270 / 2) + 50);
-		//cbc_6.setTitle(cbc_6.getName());
-
-		JPanel panel_6 = new JPanel();
-		cbc_6.getContentPane().add(panel_6, BorderLayout.CENTER);
-		panel_6.setLayout(null);
-
-		JLabel lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel_6.setBounds(0, 0, 278, 236);
-		panel_6.add(lblNewLabel_6);
-
-		cbc_6.setVisible(true);
-
-		cbc_7 = new JDialog(background);
-		cbc_7.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		cbc_7.setResizable(false);
-		cbc_7.setAlwaysOnTop(true);
-		cbc_7.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(cbc_7.getName());
-				spawn();
-				controlCut++;
-				// System.out.println(cut);
-			}
-		});
-		cbc_7.setName("6");
-		cbc_7.setSize(294, 275);
-		cbc_7.setLocationRelativeTo(null);
-		cbc_7.setLocation(cbc_7.getBounds().x, cbc_7.getBounds().y + 50);
-		//cbc_7.setTitle(cbc_7.getName());
-
-		JPanel panel_7 = new JPanel();
-		cbc_7.getContentPane().add(panel_7, BorderLayout.CENTER);
-		panel_7.setLayout(null);
-
-		JLabel lblNewLabel_7 = new JLabel("New label");
-		lblNewLabel_7.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel_7.setBounds(0, 0, 278, 236);
-		panel_7.add(lblNewLabel_7);
-
-		cbc_7.setVisible(true);
-
-		for (cont = 0; cont < 7; cont++) {
-			if (cont == 0) {
-				frame[cont].setBounds(cbc_1.getBounds());
-			}
-
-			else if (cont == 1) {
-				frame[cont].setBounds(cbc_2.getBounds());
-			}
-
-			else if (cont == 2) {
-				frame[cont].setBounds(cbc_3.getBounds());
-			}
-
-			else if (cont == 3) {
-				frame[cont].setBounds(cbc_4.getBounds());
-			}
-
-			else if (cont == 4) {
-				frame[cont].setBounds(cbc_5.getBounds());
-			}
-
-			else if (cont == 5) {
-				frame[cont].setBounds(cbc_6.getBounds());
-			}
-
-			else if (cont == 6) {
-				frame[cont].setBounds(cbc_7.getBounds());
-			}
 		}
-		
+		cabeca[0].setLocation(cabeca[0].getBounds().x - 290, cabeca[0].getBounds().y - (270 / 2) + 50);
+		cabeca[1].setLocation(cabeca[1].getBounds().x, cabeca[1].getBounds().y - (270) + 50);
+		cabeca[2].setLocation(cabeca[2].getBounds().x + 290, cabeca[2].getBounds().y - (270 / 2) + 50);
+		cabeca[3].setLocation(cabeca[3].getBounds().x - 290, cabeca[3].getBounds().y + (270 / 2) + 50);
+		cabeca[4].setLocation(cabeca[4].getBounds().x, cabeca[4].getBounds().y + (270) + 50);
+		cabeca[5].setLocation(cabeca[5].getBounds().x + 290, cabeca[5].getBounds().y + (270 / 2) + 50);
+		cabeca[6].setLocation(cabeca[6].getBounds().x, cabeca[6].getBounds().y + 50);
 
+		// setvisibles
+		cabeca[0].setVisible(true);
+		cabeca[1].setVisible(true);
+		cabeca[2].setVisible(true);
+		cabeca[3].setVisible(true);
+		cabeca[4].setVisible(true);
+		cabeca[5].setVisible(true);
+		cabeca[6].setVisible(true);
+		relogio.setVisible(true);
+		background.setVisible(true);
 	}
 
 	private void spawn() {
 
-		if (controlCut == 0) {
-			inicializaCoracao();
-			mudaCoracao();
-		}
-		if (numero >= 6) {
-			if (cut == 6) {
-				cut = 0;
-			}
-			if (cut < 6) {
-				cut++;
-			}
+		if (!hasCoracao) {// Verifica se ja ha coraçao
+			hasCoracao = true;
+			inicializaCoracao();// Cria o coracao
 		}
 
-		Random dis = new Random();
+		JLabel[] cabecaImg = new JLabel[2];
+		for (int i = 0; i < 2; i++) {// Cria as 2 novas cabeças
+			cabeca[numb] = new JDialog(background);
+			cabeca[numb].setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			cabeca[numb].setResizable(false);
+			cabeca[numb].setAlwaysOnTop(true);
+			cabeca[numb].setSize(294, 275);
+			cabeca[numb].setLocationRelativeTo(null);
+			cabeca[numb].addWindowListener(new WindowAdapter() {
+				int y = numb;
 
-		JDialog frame_2 = new JDialog(background);
-		if (numb == frame.length)
-			numb = 0;
-		frame_2.setName("" + numb);
-		// System.out.println(frame_2.getName());
-		frame_2.setAlwaysOnTop(true);
-		frame_2.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		frame_2.setResizable(false);
-		frame_2.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(frame_2.getName());
-				controlCut++;
-				spawn();
-				// System.out.println(cut);
-			}
-		});
-		frame_2.setBounds(frame[numero].getX() - 133 + dis.nextInt(40)-20, frame[numero].getY() + dis.nextInt(40) - 20,
-				frame[numero].getWidth(), frame[numero].getHeight());
-		if (frame_2.getLocation().y <= 50) frame_2.setLocation(frame_2.getLocation().x, 50);
-		JPanel panel = new JPanel();
-		frame_2.getContentPane().add(panel, BorderLayout.CENTER);
-		panel.setLayout(null);
+				public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+					numero = y;
+					spawn();
+				}
+			});
+			cabecaImg[i] = new JLabel();
+			cabecaImg[i].setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
+			cabecaImg[i].setBounds(0, 0, 278, 236);
+			cabeca[numb].getContentPane().add(cabecaImg[i]);
+			numb++;
+		}
+		cabeca[numb - 2].setBounds(cabeca[numero].getX() - 133 + new Random().nextInt(40) - 20,
+				cabeca[numero].getY() + new Random().nextInt(40) - 20, cabeca[numero].getWidth(),
+				cabeca[numero].getHeight());
 
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel.setBounds(0, 0, 278, 236);
-		panel.add(lblNewLabel);
-		frame[numb] = frame_2;
-		frame[numb].setVisible(true);
-		
-		numb++;
-		
-		JDialog frame_3 = new JDialog(background);
-		frame_3.setName("" + numb);
-		frame_3.setAlwaysOnTop(true);
-		// System.out.println(frame_3.getName());
-		frame_3.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		frame_3.setResizable(false);
-		frame_3.addWindowListener(new java.awt.event.WindowAdapter() {
-			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				numero = Integer.parseInt(frame_3.getName());
-				controlCut++;
-				spawn();
-				// System.out.println(cut);
-			}
-		});
-		frame_3.setBounds(frame[numero].getX() + 133 + dis.nextInt(40)-20, frame[numero].getY() + dis.nextInt(80) - 40,
-				frame[numero].getWidth(), frame[numero].getHeight());
-		if(frame_3.getLocation().y<50) frame_3.setLocation(frame_3.getLocation().x,50);
+		cabeca[numb - 1].setBounds(cabeca[numero].getX() + 133 + new Random().nextInt(40) - 20,
+				cabeca[numero].getY() + new Random().nextInt(80) - 40, cabeca[numero].getWidth(),
+				cabeca[numero].getHeight());
 
-		JPanel panel_2 = new JPanel();
-		frame_3.getContentPane().add(panel_2, BorderLayout.CENTER);
-		panel_2.setLayout(null);
+		if (cabeca[numb - 2].getLocation().y <= 50)
+			cabeca[numb - 2].setLocation(cabeca[numb - 2].getLocation().x, 50);
 
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon(Hidra.class.getResource("/imagens/cabeca.png")));
-		lblNewLabel_2.setBounds(0, 0, 278, 236);
-		panel_2.add(lblNewLabel_2);
+		if (cabeca[numb - 1].getLocation().y < 50)
+			cabeca[numb - 1].setLocation(cabeca[numb - 1].getLocation().x, 50);
 
-		frame[numb] = frame_3;
-		frame[numb].setVisible(true);
-		numb++;
-		
-		if(numb>180) {
+		cabeca[numb - 2].setVisible(true);
+		cabeca[numb - 1].setVisible(true);
+		cabeca[numb - 2].setVisible(false);
+		cabeca[numb - 1].setVisible(false);
+		cabeca[numb - 2].setVisible(true);
+		cabeca[numb - 1].setVisible(true);
+
+		if (numb > 180) {// Verifica se atingiu o limite de cabecas
+			mtcabeca = true;
 			perdeu = true;
 		}
 	}
 
 	public void inicializaCoracao() {
-		top = new JDialog(background);
-		top.setResizable(false);
-		top.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		top.setResizable(false);
-		top.setSize(100, 100);
-		top.addWindowListener(new java.awt.event.WindowAdapter() {
+
+		// Cria o coracao
+		int x = new Random().nextInt(7);
+		coracao = new JDialog(background);
+		coracao.setResizable(false);
+		coracao.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		coracao.setResizable(false);
+		coracao.setSize(100, 130);
+		coracao.setLocation(cabeca[x].getLocation().x + 20, cabeca[x].getLocation().y + 80);
+
+		coracao.addWindowListener(new java.awt.event.WindowAdapter() {
 			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 				musica.stop();
-//		    		for(int i=0;i<frame.length;i++) {
-//		    			if(frame[i].isVisible()) {
-//		    				frame[i].dispose();
-//		    			}
-//		    		}
-//		    		if(cbc_1.isVisible()) {
-//		    			cbc_1.dispose();
-//		    		}
-//		    		if(cbc_2.isVisible()) {
-//		    			cbc_2.dispose();
-//		    		}
-//		    		if(cbc_3.isVisible()) {
-//		    			cbc_3.dispose();
-//		    		}
-//		    		if(cbc_4.isVisible()) {
-//		    			cbc_4.dispose();
-//		    		}
-//		    		if(cbc_5.isVisible()) {
-//		    			cbc_5.dispose();
-//		    		}
-//		    		if(cbc_6.isVisible()) {
-//		    			cbc_6.dispose();
-//		    		}
-//		    		if(cbc_7.isVisible()) {
-//		    			cbc_7.dispose();
-//		    		}
 				background.dispose();
 				relogio.dispose();
 				time = 0;
+				ganhou = true;
+				switch (player.getClase()) {
+				case 0:
+					new Hist_Arcan().catedralVitoria(player);
+					break;
+				default:
+					break;
+				}
+
 			}
 		});
 
-		JPanel painel = new JPanel();
-		top.getContentPane().add(painel, BorderLayout.CENTER);
-		painel.setLayout(null);
-
 		ImageIcon fund = new ImageIcon("src/imagens/coracao.png");
-		fund.setImage(fund.getImage().getScaledInstance(top.getSize().width, top.getSize().height, 100));
-		JLabel coracao = new JLabel(fund);
-		coracao.setBounds(12, 0, 100, 100);
-		painel.add(coracao);
-
-		// System.out.println(cut);
-
-	}
-
-	public void mudaCoracao() {
-		Random cot = new Random();
-		if (cot.nextInt(7) == 0) {
-			top.setBounds(560 + 10, 200 + 42, 50, 130);
-			top.setLocation(cbc_1.getLocation().x+10,cbc_1.getLocation().y+80);
-		} else if (cot.nextInt(7) == 1) {
-			top.setBounds(550 + 294 + 10, 275 + 100 + 42, 50, 130);
-			top.setLocation(cbc_2.getLocation().x+20,cbc_2.getLocation().y+80);
-		} else if (cot.nextInt(7) == 2) {
-			top.setBounds(340 + 294 + 200 + 294 + 10, 200 + 50, 50, 130);
-			top.setLocation(cbc_3.getLocation().x+20,cbc_3.getLocation().y+80);
-		} else if (cot.nextInt(7) == 3) {
-			top.setBounds(560 + 10, 275 + 200 + 42, 50, 130);
-			top.setLocation(cbc_4.getLocation().x+20,cbc_4.getLocation().y+80);
-		} else if (cot.nextInt(7) == 4) {
-			top.setBounds(550 + 294 + 10, 275 + 100 + 275 + 42, 50, 130);
-			top.setLocation(cbc_5.getLocation().x+20,cbc_5.getLocation().y+80);
-		} else if (cot.nextInt(7) == 5) {
-			top.setBounds(340 + 294 + 294 + 200 + 10, 275 + 200 + 42, 50, 130);
-			top.setLocation(cbc_6.getLocation().x+20,cbc_6.getLocation().y+80);
-		} else if (cot.nextInt(7) == 6) {
-			top.setBounds(550 + 294 + 10, 275 + 100 + 42, 50, 130);
-			top.setLocation(cbc_7.getLocation().x+20,cbc_7.getLocation().y+80);
-		} else {
-			top.setBounds(550 + 294 + 10, 275 + 100 + 42, 50, 130);
-			top.setLocation(cbc_1.getLocation().x+20,cbc_1.getLocation().y+80);
-			}
-		top.setVisible(true);
-
-		/*
-		 * for(i=0;i<7;i++) { if(i!=cot.nextInt(7)) { central[i].setVisible(false); } }
-		 */
+		fund.setImage(fund.getImage().getScaledInstance(coracao.getSize().width, coracao.getSize().height, 100));
+		JLabel coracaoImg = new JLabel(fund);
+		coracaoImg.setBounds(12, 0, 100, 100);
+		coracao.getContentPane().add(coracaoImg);
+		coracao.setVisible(true);
+		coracao.setVisible(false);
+		coracao.setVisible(true);
 
 	}
-	
+
 	public void tempo() {
+
 		new Thread() {
-			public void run(){
+			public void run() {
 				try {
 					int s;
-					
-					
-					
-					while(time>0 && !perdeu) {
-						
-					if(seg<10) {
-						text.setText(" "+min+":"+"0"+seg);
-					}
-					else if(seg>=10) {
-						text.setText(" "+min+":"+seg);
-					}
-						
-					s=min;
-						
-					//System.out.println(time);
-					//System.out.println(min);
-					//System.out.println(seg);
-					Thread.sleep(1000);
-					if(time<180000) {
-						min=2;
-					}
-					else if(time<60000) {
-						min = 0;
-					}
-					if(min != s) {
-						seg = 59;
-					}
-					else if(min == s && time!=180000){
-						seg--;
-					}
-					time--;
+					while (time > 0 && !perdeu) {
+						if (seg < 10) {
+							text.setText(" " + min + ":" + "0" + seg);
+						} else if (seg >= 10) {
+							text.setText(" " + min + ":" + seg);
+						}
+
+						s = min;
+						Thread.sleep(1000);
+
+						if (time < 180000) {
+							min = 2;
+						} else if (time < 60000) {
+							min = 0;
+						}
+						if (min != s) {
+							seg = 59;
+						} else if (min == s && time != 180000) {
+							seg--;
+						}
+						time--;
 					}
 					perdeu = true;
-					
-					//SÓ PRA SINALIZAR QUE PERDEU MESMO, DEPOIS TIRA ISSO
-					if(perdeu) {
-						text.setFont(new Font("Georgia",Font.BOLD,50));
+
+					if (perdeu && !ganhou) {
+						if (mtcabeca) {
+							switch (player.getClase()) {
+							case 0:
+								musica.stop();
+								background.dispose();
+								relogio.dispose();
+								time = 0;
+								new Hist_Arcan().catedralDerrota(player, 1);
+								break;
+							default:
+								break;
+							}
+						} else {
+							switch (player.getClase()) {
+							case 0:
+								musica.stop();
+								background.dispose();
+								time = 0;
+								new Hist_Arcan().catedralDerrota(player, 2);
+								break;
+							default:
+								break;
+							}
+						}
+						// SÓ PRA SINALIZAR QUE PERDEU MESMO, DEPOIS TIRA ISSO
+						text.setFont(new Font("Georgia", Font.BOLD, 50));
 						text.setText("perdeste");
 					}
-					
-					
+
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		}.start();
 	}
 
-	public static int getControlCut() {
-		return controlCut;
-	}
-
-	public static void setControlCut(int controlCut) {
-		Hidra.controlCut = controlCut;
-	}
 }
