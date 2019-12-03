@@ -12,9 +12,12 @@ import javax.swing.JLabel;
 import bibliotecas.Biblio_Arcan;
 import enigmas.Hidra;
 import enigmas.Labirinto;
+import enigmas.Porta;
 import graficos.Geral;
 import graficos.Texto;
 import mapas.Maps;
+import menus.Creditos;
+import modelo.Teste;
 import personagens.Jogador;
 import sons.Musica;
 
@@ -159,9 +162,21 @@ public class Hist_Arcan {
 				mapa.getBtnTorreArcana().addActionListener(torre);
 			}
 		} else {
-			System.out.println("Acabou");
+			player.setQtd();
+			switch (player.getQtd()) {
+			case 2:
+				if (player.isBonus_inicio()) {
+					guerra1();
+				}
+				break;
+			case 3:
+				guerra1();
+				break;
+			default:
+				guerra2();
+				break;
+			}
 		}
-			
 
 	}
 
@@ -408,7 +423,12 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		vet.alameda();
+		if (player.getFirstTry(1)) {
+			player.setFirstTry(1, false);
+			vet.alameda();
+		} else {
+			vet.alameda2();
+		}
 
 		geral.escolhas_0(t1, vet);
 
@@ -420,7 +440,252 @@ public class Hist_Arcan {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						new Porta(player);
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void alamedaDerrota(Jogador player) {
+
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+		this.player = player;
+		vet.setPlayer(player);
+
+		vet.alamedaDerrota();
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
 						destino();
+
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void alamedaVitoria(Jogador player) {
+
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+		this.player = player;
+		this.player.setEnigma(2, true);
+		this.player.passaDia();
+
+		vet.setPlayer(this.player);
+
+		vet.alamedaVitoria();
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
+						destino();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void guerra1() {
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+		if (player.getQtd() == 3) {
+			vet.todosItens();
+		} else {
+			vet.itens2BI();
+		}
+
+		geral.escolhas_2(t1, vet);
+
+		escolha1 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				player.setSacrificio(true);
+				if (player.getQtd() == 3)
+					sacrificio(t1);
+				else
+					itens2BISIM(t1);
+			}
+		};
+
+		escolha2 = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				sacrificio(t1);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+	}
+
+	public void itens2BISIM(Texto t1) {
+		Geral geral = new Geral();
+		vet.itens2BISIM();
+
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						new Creditos();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+	}
+
+	public void sacrificio(Texto t1) {
+		Geral geral = new Geral();
+
+		if (player.isSacrificio()) {
+			if (player.getQtd() == 3)
+				vet.todosItensMatar();
+		} else {
+			if (player.getQtd() == 3)
+				vet.todosItensPoup();
+			else
+				vet.itens2BINao();
+		}
+		vet.itensMin();
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						new Teste();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+	}
+
+	public void guerra2() {
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+
+		vet.itensMin();
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						new Teste();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void guerraVitoria() {
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+
+		if (player.getQtd() == 3) {
+			if (player.isSacrificio())
+				vet.vitoriaPerfectMatar();
+			else
+				vet.vitoriaPerfectPoup();
+		} else {
+			if (player.getQtd() == 2 && player.isBonus_inicio())
+				vet.vitoriaPerfectPoup();
+			else
+				vet.vitoriaMin();
+		}
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						new Creditos();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void guerraDerrota() {
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+
+		if (player.getQtd() == 3) {
+			if (player.isSacrificio()) {
+				if (player.isBonus_inicio())
+					vet.derrotaPerfectBIMatar();
+				else
+					vet.derrotaPerfectMatar();
+			} else
+				vet.derrotaPerfectPoup();
+		} else if (player.getQtd() == 2 && player.isBonus_inicio())
+			vet.itens2BIDerrota();
+		else
+			vet.derrotaMin();
+
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						new Creditos();
 					} else
 						cont++;
 				}

@@ -1,41 +1,42 @@
 package enigmas;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import cenas.Hist_Arcan;
+import personagens.Jogador;
 
 public class Porta {
 
 	private JFrame frame;
 	private int i;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Porta window = new Porta();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Porta window = new Porta(new Player());
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+
+	public Porta(Jogador player) {
+		initialize(player);
 	}
 
-	public Porta() {
-		initialize();
-	}
-
-	private void initialize() {
+	private void initialize(Jogador player) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 527, 423);
 		frame.setResizable(false);
@@ -104,9 +105,9 @@ public class Porta {
 			public void actionPerformed(ActionEvent e) {
 				if (digitos[0].getText().contentEquals("0") && digitos[1].getText().contentEquals("1")
 						&& digitos[2].getText().contentEquals("5") && digitos[3].getText().contentEquals("4")) {
-					JOptionPane.showMessageDialog(null, "nice"); // Acertou a combinação
+					vencer(player); // Acertou a combinação
 				} else {
-					JOptionPane.showMessageDialog(null, "errrrrrrrrou");
+					perder(player);
 				}
 			}
 		});
@@ -117,5 +118,34 @@ public class Porta {
 		Fundo.setIcon(new ImageIcon(Porta.class.getResource("/imagens/senha.png")));
 		Fundo.setBounds(0, 0, 513, 387);
 		panel.add(Fundo);
+		frame.setVisible(true);
+	}
+	public void perder(Jogador player) {
+
+		switch (player.getClase()) {
+
+		case 0:
+			frame.dispose();
+			new Hist_Arcan().alamedaDerrota(player);
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	public void vencer(Jogador player) {
+
+		switch (player.getClase()) {
+
+		case 0:
+			frame.dispose();
+			new Hist_Arcan().alamedaVitoria(player);
+			break;
+
+		default:
+			break;
+		}
 	}
 }

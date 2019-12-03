@@ -430,4 +430,11 @@ public class Hist_Arcan {
 		t1.getContinuar().addActionListener(continuar);
 
 	}
+
+	
+	
+	
+	
+	
+	
 }
