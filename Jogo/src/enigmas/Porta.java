@@ -106,8 +106,10 @@ public class Porta {
 				if (digitos[0].getText().contentEquals("0") && digitos[1].getText().contentEquals("1")
 						&& digitos[2].getText().contentEquals("5") && digitos[3].getText().contentEquals("4")) {
 					vencer(player); // Acertou a combinação
+					caixa.getFrame().dispose();
 				} else {
 					perder(player);
+					caixa.getFrame().dispose();
 				}
 			}
 		});

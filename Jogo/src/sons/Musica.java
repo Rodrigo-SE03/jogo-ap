@@ -76,7 +76,7 @@ public class Musica {
 				Thread.sleep(tempo);
 				setVolume(getVolume()-0.01f);
 			}
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}}}
@@ -101,6 +101,31 @@ public class Musica {
 		}}}
 		}.start();
 	}
+	
+	
+	public void verifica() {
+		new Thread() {
+			
+			
+			public void run() {
+				int time=0;
+				while (isPlaying && time<=10) {
+					try {
+						if(getVolume() <0.05f) {
+							clip.stop();
+							setPlaying(false);
+						}
+						Thread.sleep(1000);
+						time++;
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}.start();
+	}
+
 
 	
 

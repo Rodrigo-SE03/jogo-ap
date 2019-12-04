@@ -20,11 +20,16 @@ public class Hist_Inicio {
 
 	private ActionListener continuar, escolha1, escolha2, escolha3;
 	private Biblio_Intro vet = new Biblio_Intro(); // Vetor de texto
-	private Musica musica = new Musica();
+	private static Musica musica = new Musica();
 	private Musica musica2 = new Musica();
 	private Musica musica3 = new Musica();
 
 	public void admin(Jogador player) {
+		if(!musica.isPlaying()) {
+			//System.out.println("yo");
+			musica.TocaMusica("src/sons/mercado.wav");
+			musica.setVolume(0.7f);
+			}
 		Texto t1 = new Texto();
 		Escolhas choice = new Escolhas();
 		t1.zerar();
@@ -34,6 +39,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().dispose();
+				
 				inicio2(player);
 			}
 		};
@@ -190,15 +196,12 @@ public class Hist_Inicio {
 			int no = 0;
 
 			public void actionPerformed(ActionEvent e) {
-				if (!musica.isPlaying() && no == 0) {
-					musica.TocaMusica("src/sons/mercado.wav");
-					no = 1;
-				}
+				
 				if (geral.isFlag()) {
 					// System.out.println(cont);
 					switch (cont) {
 					case 3:
-						musica.reduzVolume(0.3f, 10);
+						//musica.reduzVolume(0.3f, 10);
 						break;
 					default:
 						break;
@@ -246,6 +249,7 @@ public class Hist_Inicio {
 
 	public void correrAtras(Texto t1) {
 		musica.reduzVolume(0.0f, 60);
+		musica.verifica();
 		musica2.TocaMusica("src/sons/beco.wav");
 		musica2.setVolume(0.0f);
 		musica2.aumentaVolume(0.6f, 100);
@@ -293,13 +297,20 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
-						t1.getContinuar().removeActionListener(continuar);
-
-						musica2.stop();
+					switch (cont) {
+					case 7:
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
 						musica2.TocaMusica("src/sons/torre.wav");
 						musica2.setVolume(0.0f);
-						musica2.aumentaVolume(0.7f, 60);
+						musica2.aumentaVolume(0.7f,60);
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						t1.getContinuar().removeActionListener(continuar);
 						torreArcana(t1);
 
 					} else // Atualiza o contador para verificar a posi��o do vetor de texto
@@ -407,8 +418,6 @@ public class Hist_Inicio {
 				if (geral.isFlag()) {
 					System.out.println(cont);
 					switch (cont) {
-					case 1:
-						musica.reduzVolume(0.1f, 30);
 					default:
 						break;
 					}
@@ -477,8 +486,10 @@ public class Hist_Inicio {
 	}
 
 	public void torreArcana(Texto t1) {
-		musica.TocaMusica("src/sons/torre.wav");
-		musica.setVolume(0.7f);
+		if(!musica.isPlaying()) {
+			musica.TocaMusica("src/sons/torre.wav");
+			musica.setVolume(0.7f);
+		}
 		Geral geral = new Geral();
 		vet.intro_arcanista();
 		geral.escolhas_2(t1, vet);
@@ -596,18 +607,16 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch (cont) {
+					switch(cont) {
 					case 3:
-						if (musica.isPlaying())
-							musica.reduzVolume(0.2f, 60);
-						if (musica2.isPlaying())
-							musica2.reduzVolume(0.2f, 60);
-						break;
-					case 4:
-						if (musica.isPlaying())
-							musica.stop();
-						if (musica2.isPlaying())
-							musica2.stop();
+						if(musica.isPlaying()) {
+							musica.reduzVolume(0.0f,80);
+							musica.verifica();
+						}
+						if(musica2.isPlaying()) {
+							musica2.reduzVolume(0.0f,50);
+							musica2.verifica();
+						}
 						break;
 					default:
 						break;
@@ -627,6 +636,14 @@ public class Hist_Inicio {
 	}
 
 	public void alameda3(Texto t1) {
+		if(musica.isPlaying()) {
+			musica.stop();
+		}
+		if(musica2.isPlaying()) {
+			musica2.stop();
+		}
+		musica.TocaMusica("src/sons/alameda.wav");
+		musica.setVolume(0.6f);
 		Geral geral = new Geral();
 
 		vet.intro_ladino();
@@ -742,6 +759,17 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 6:
+						if(musica.isPlaying()) {
+							musica.stop();
+						}
+						if(musica2.isPlaying()) {
+							musica2.stop();
+						}
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(1);
@@ -757,6 +785,14 @@ public class Hist_Inicio {
 	}
 
 	public void castelo(Texto t1) {
+		if(musica.isPlaying()) {
+			musica.stop();
+		}
+		if(musica2.isPlaying()) {
+			musica2.stop();
+		}
+		musica.TocaMusica("src/sons/castelo.wav");
+		musica.setVolume(0.7f);
 		Geral geral = new Geral();
 
 		vet.intro_guerreiro();
