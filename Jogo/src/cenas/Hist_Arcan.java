@@ -22,6 +22,7 @@ import personagens.Jogador;
 import sons.Musica;
 
 public class Hist_Arcan {
+	
 	private ActionListener continuar, escolha1, escolha2, escolha3;
 	private Biblio_Arcan vet = new Biblio_Arcan(); // Vetor de texto
 	private Musica musica = new Musica();
@@ -32,8 +33,8 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 
 		this.player = player;
-		this.player.setClase(0);
 		vet.setPlayer(player);
+
 		vet.arcan1();
 
 		geral.escolhas_2(t1, vet);
@@ -73,11 +74,15 @@ public class Hist_Arcan {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+
 				if (geral.isFlag()) {
+
 					if (cont == (vet.getTx().length - 1)) {
+
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
+
 					} else
 						cont++;
 				}
@@ -486,7 +491,7 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 		this.player = player;
-		this.player.setEnigma(2, true);
+		this.player.setEnigma(1, true);
 		this.player.passaDia();
 
 		vet.setPlayer(this.player);
@@ -514,16 +519,19 @@ public class Hist_Arcan {
 	}
 
 	public void guerra1() {
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
+
 		if (player.getQtd() == 3) {
+
 			vet.todosItens();
+
 		} else {
 			vet.itens2BI();
 		}
 
 		geral.escolhas_2(t1, vet);
-
 		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {

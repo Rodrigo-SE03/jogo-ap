@@ -614,6 +614,7 @@ public class Hist_Inicio {
 					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						vet.getPlayer().setClase(0);
 						new Hist_Arcan().arcan1(t1, vet.getPlayer());
 					} else
 						cont++;
@@ -743,6 +744,7 @@ public class Hist_Inicio {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						vet.getPlayer().setClase(1);
 						new Hist_Assassin().assassin1(t1, vet.getPlayer());
 					} else
 						cont++;
@@ -795,6 +797,7 @@ public class Hist_Inicio {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						vet.getPlayer().setClase(2);
 						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
 					} else
 						cont++;
@@ -916,6 +919,7 @@ public class Hist_Inicio {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						vet.getPlayer().setClase(2);
 						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
 					} else
 						cont++;
