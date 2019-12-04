@@ -24,16 +24,45 @@ public class Hist_Arcan {
 	private Musica musica = new Musica();
 	private Musica[] musicasSegunda;
 	private Jogador player;
-
+	
 	public void arcan1(Texto t1, Jogador player) {
 		Geral geral = new Geral();
-
+		
 		this.player = player;
 		this.player.setClase(0);
 		vet.setPlayer(player);
 		vet.arcan1();
 
 		geral.escolhas_2(t1, vet);
+		
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					System.out.println(cont);
+					switch(cont) {
+					case 0:
+						musica.TocaMusica("src/sons/reuniaoArcana.wav");
+						musica.setVolume(0.0f);
+						musica.aumentaVolume(0.2f,80);
+						break;
+					case 4:
+						musica.aumentaVolume(0.6f,50);
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+					} else
+						cont++;
+
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() {
 
@@ -72,6 +101,7 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
+						
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
@@ -85,7 +115,10 @@ public class Hist_Arcan {
 	}
 
 	public void destino() {
-
+		if(musica.isPlaying()) {
+		musica.reduzVolume(0.0f,30);
+		musica.verifica();
+		}
 		if (player.getDias() != 0) {
 
 			JFrame frame = new JFrame();
@@ -166,6 +199,7 @@ public class Hist_Arcan {
 	}
 
 	public void torre() {
+		
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -182,9 +216,20 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 0:
+						if(musica.isPlaying())
+							musica.stop();
+						musica.TocaMusica("src/sons/torre.wav");
+						musica.setVolume(0.4f);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.stop();
 						new Labirinto(player);
 					} else
 						cont++;
@@ -244,6 +289,14 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 2:
+						musica.TocaMusica("src/sons/mercado.wav");
+						musica.setVolume(0.1f);
+						musica.aumentaVolume(0.6f,50);
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();

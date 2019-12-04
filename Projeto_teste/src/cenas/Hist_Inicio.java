@@ -26,7 +26,7 @@ public class Hist_Inicio {
 
 	public void admin(Jogador player) {
 		if(!musica.isPlaying()) {
-		System.out.println("yo");
+		//System.out.println("yo");
 		musica.TocaMusica("src/sons/mercado.wav");
 		musica.setVolume(0.7f);
 		}
@@ -626,6 +626,25 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 3:
+						if(musica.isPlaying()) {
+							musica.reduzVolume(0.0f,80);
+							musica.verifica();
+						}
+						if(musica2.isPlaying()) {
+							musica2.reduzVolume(0.0f,50);
+							musica2.verifica();
+						}
+					case 4:
+						if(musica2.isPlaying()) {
+							System.out.println("aaaa");
+						}
+						else
+							System.out.println("bbbb");
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						new Hist_Arcan().arcan1(t1, vet.getPlayer());
@@ -998,5 +1017,14 @@ public class Hist_Inicio {
 		};
 
 		t1.getContinuar().addActionListener(continuar);
+	}
+	
+	
+	public Musica getMusica() {
+		return musica;
+	}
+
+	public static void setMusica(Musica musica) {
+		Hist_Inicio.musica = musica;
 	}
 }

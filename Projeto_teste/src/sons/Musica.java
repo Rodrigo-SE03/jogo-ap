@@ -74,6 +74,8 @@ public class Musica {
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+					}catch(IllegalArgumentException e) {
+						System.out.println("skkrr");
 					}
 				}
 			}
@@ -94,6 +96,8 @@ public class Musica {
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+					}catch(IllegalArgumentException e) {
+						System.out.println("skkrr");
 					}
 				}
 			}
@@ -114,6 +118,30 @@ public class Musica {
 
 	public void setPlaying(boolean isPlaying) {
 		this.isPlaying = isPlaying;
+	}
+	
+	
+	public void verifica() {
+		new Thread() {
+			
+			
+			public void run() {
+				int time=0;
+				while (isPlaying && time<=10) {
+					try {
+						if(getVolume() <0.05f) {
+							clip.stop();
+							setPlaying(false);
+						}
+						Thread.sleep(1000);
+						time++;
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}.start();
 	}
 
 	/*
