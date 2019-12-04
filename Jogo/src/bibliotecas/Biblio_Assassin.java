@@ -116,6 +116,83 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>miss\u00E3o for iniciada, voc\u00EA n\u00E3o poder\u00E1"
 				+ "<br/>iniciar outra at\u00E9 que termine a primeira." + "<html>";
 		linhas[16] = 6;
+		tx[17] = "<html>No final da reunião Cassius"
+				+ "<br/>te chama para conversar."+ "<html>";
+		linhas[17] = 1;
+		
+		choice = "<html>Cassius:" + "<br/><br/>Voc\u00EA est\u00E1 bem?" + "<html>";
+		op1 = "Mentir";
+		op2 = "Dizer a verdade";
+	}
+	
+	public void Escolha1Assassin(int a)
+	{tx = new String[17];
+	linhas = new int[17];
+	
+	switch (a) {
+	case 1:
+		tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Estou bem, nenhum problema com isso." + "<html>";
+		linhas[0] = 2;
+		
+		tx[1]="<html>Cassius:" + "<br/><br/>Fico feliz de ouvir isso." + "<html>";
+		linhas[1] = 2;
+		break;
+	case 2:
+		tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Não estou confortável com Bethesda,"
+				+ "<br/>mas isso não atrapalhará minha luta" + "<html>";
+		linhas[0] = 3;
+		
+		tx[1]="<html>Cassius:" + "<br/><br/>Fique tranquilo, nós vamos passar por isso juntos." + "<html>";
+		linhas[1] = 2;
+		break;
+	}
+	  tx[2] = "<html>Voc\u00EA:" + "<br/><br/>Mas não foi só para ver como"
+		 + "<br/>estou que você me chamou aqui"
+		 +"<html>";
+	  linhas[2] =3 ;
+	  
+	  tx[3]="<html>Cassius:" + "<br/><br/>Eu preciso que você recrute"
+		 + "<br/>algumas pessoas para nos ajudar."
+		 +"<html>";
+	  linhas[3] =3 ;
+	  
+	  tx[4]="<html>Voc\\u00EA:" + "<br/><br/>Quem?"
+				 +"<html>";
+			  linhas[4] =2 ;
+			  
+	   tx[5]="<html>Cassius:" + "<br/><br/>Ariandra, a Elfa arqueira que"
+		 + "<br/>recentemente chegou em Helaria, ela vive"
+		 + "<br/>na Casa Nobre Letos, o Anão, que está preso"
+		 + "<br/>dentro da Catedral. E Terraira, uma"
+	         + "<br/>sacerdotisa da Torre Arcana."
+		 +"<html>";
+					  linhas[5] =6 ;	
+					  
+	   tx[6]="<html>Voc\\\\u00EA:"+ "<br/><br/>E por que o interesse"
+			+ "<br/>nessas pessoas em específico?"
+		        +"<html>";
+							  linhas[6] =3 ;
+							  
+	   tx[7]="<html>Cassius:"+ "<br/><br/>Eles são os melhores no que"
+				 + "<br/>fazem e nós vamos montar um pequeno"
+				 + "<br/> grupo para atacar os acampamentos"
+			         + "<br/>de Bethesda antes da guerra começar."
+				 +"<html>";
+									  linhas[7] =5 ;
+									  
+		tx[8]="<html>Voc\\\\u00EA:"+ "<br/><br/>Entendo."
+				+"<html>";
+									  linhas[8] =2;
+											  
+	 tx[9] = "<html>Jogador agora você terá três opções"
+				+ "<br/>de locais para ir,"
+			        + "<br/>faça sua escolha com sabedoria. "
+				+ "<html>";
+	                                  linhas[9] =2;
+					   
+			 
+	  
+	  
 	}
 
 //	  tx[] = "<html>"
