@@ -21,8 +21,8 @@ public class Biblio_Assassin extends Biblioteca {
 	 */
 
 	public void hpAssassin() {
-		tx = new String[17];
-		linhas = new int[17];
+		tx = new String[18];
+		linhas = new int[18];
 
 		tx[0] = "<html>Quinze anos se passaram desde que" + "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante."
 				+ "<br/>Voc\u00EA se tornou um membro " + "<br/>valioso, um assassino  r\u00E1pido e eficiente,  "
@@ -126,8 +126,8 @@ public class Biblio_Assassin extends Biblioteca {
 	}
 	
 	public void Escolha1Assassin(int a)
-	{tx = new String[17];
-	linhas = new int[17];
+	{tx = new String[10];
+	linhas = new int[10];
 	
 	switch (a) {
 	case 1:
@@ -189,10 +189,32 @@ public class Biblio_Assassin extends Biblioteca {
 			        + "<br/>faça sua escolha com sabedoria. "
 				+ "<html>";
 	                                  linhas[9] =2;
-					   
-			 
-	  
-	  
+	}
+	
+	public void CasaNobreAssassin()
+	{tx = new String[2];
+	linhas = new int[2];
+	
+	 tx[0] = "<html>Você chega nas proximidades da Casa"
+				+ "<br/>Nobre, mas ela é extremamente vigiada,"
+				+ "<br/>entrar pela porta da frente"
+				+ "<br/>é impossível."
+				+ "<br/>Tem um sistema de esgotos que"
+				+ "<br/>talvez possa te"
+				+ "<br/>levar para dentro dela,"
+				+ "<br/>você decide usá-lo. "
+				+ "<html>";
+       linhas[0] =7;
+       
+       tx[1] = "<html>Os esgotos são úmidos e imundos"
+				+ "<br/>e a travessia é cansativa, mas você"
+				+ "<br/>entra nas fronteiras da casa."
+				+ "<br/>Você continua prosseguindo até chegar no"
+				+ "<br/> ponto em que deve sair,"
+				+ "<br/>no entanto uma porta impede seu caminho. "
+				+ "<html>";
+      linhas[1] =5;
+		
 	}
 
 //	  tx[] = "<html>"
