@@ -113,7 +113,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					System.out.println(cont);
+					//System.out.println(cont);
 					switch (cont) {
 					case 10:
 						musica.reduzVolume(0.4f, 90);
