@@ -6,7 +6,6 @@ import javax.swing.JLabel;
 
 public class Creditos extends JDialog {
 
-
 	private static final long serialVersionUID = 1L;
 	JLabel rod = new JLabel(new ImageIcon("src/imagens/rod.png"));
 	JLabel pp = new JLabel(new ImageIcon("src/imagens/pp.png"));

@@ -191,30 +191,32 @@ public class Biblio_Guerreiro extends Biblioteca {
 		int y = 0;
 		switch (x) {
 		case 1:
-			tx = new String[3];
-			linhas = new int[3];
+			tx = new String[12];
+			linhas = new int[12];
 			
 			tx[0] = "<html>Bispo: "
 					+ "<br/><br/>Nada melhor que um bom e " + "<br/>tradicional vinho, n\u00E3o \u00EA mesmo "
 					+ "<br/>capit\u00E3o? " + "<html>";
 			linhas[0] = 4;
 
-			tx[1] = "<html><br/>- N\u00E3o posso dizer que discordo de voc\u00EA. - Voc\u00EA brinca. " + "<html>";
-			linhas[1] = 1;
+			tx[1] = "<html>Voc\u00EA<br/><br/> N\u00E3o posso dizer que discordo de voc\u00EA." + "<html>";
+			linhas[1] = 2;
 			y=2;
 			break;
 		case 2:
-			tx = new String[3];
-			linhas = new int[3];
+			tx = new String[12];
+			linhas = new int[12];
 			
 			tx[0] = "<html>Bispo:" + "<br/><br/>Vejo que voc\u00EA tem um paladar " + "<br/>refinado. " + "<html>";
 			linhas[0] = 3;
 
-			tx[1] = "<html><br/>- Nada melhor do que frutas com \u00E1lcool. - Voc\u00EA brinca." + "<html>";
-			linhas[1] = 1;
+			tx[1] = "<html>Voc\\u00EA<br/><br/> Nada melhor do que frutas com \u00E1lcool." + "<html>";
+			linhas[1] = 2;
 			y=2;
 			break;
 		case 3:
+			tx = new String[11];
+			linhas = new int[11];
 			tx[0] = "<html>Bispo: " + "<br/><br/>Se este \u00E9 o seu desejo, nada " + "<br/>posso fazer. " + "<html>";
 			linhas[0] = 3;
 			y=1;
@@ -396,8 +398,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 	
 	public void grr_3_torre() { // dialogo antes do puzzle do labirinto na primeira vez que ele entra na torre
 		
-		tx = new String[20];
-		linhas = new int[20];	
+		tx = new String[19];
+		linhas = new int[19];	
 		
 		  tx[0] = "<html>Voc\u00EA precisa recrutar alguns arcanistas "+ "<br/>para lutar ao seu lado nesta guerra. Para"
 			 + "<br/>isso voc\u00EA vai para a Torre Arcana e \u00E9 " + "<br/>recebido por arcanistas menores. "
@@ -444,28 +446,28 @@ public class Biblio_Guerreiro extends Biblioteca {
 		  linhas[11] = 1;
 
 		  tx[12] = "<html>Quando voc\u00EA est\u00E1 no caminho para o "+ "<br/>labirinto Muriel te chama."+"<html>";
+		  linhas[12] = 2;
+
+		  tx[13] = "<html>- Espere, tem algo que preciso te dizer."+ "<br/>- diz Muriel."+"<html>";
 		  linhas[13] = 1;
 
-		  tx[14] = "<html>- Espere, tem algo que preciso te dizer."+ "<br/>- diz Muriel."+"<html>";
-		  linhas[14] = 1;
-
-		  tx[15] = "<html>- As partes precisam ser unidas em uma"+ "<br/>ordem espec\u00EDfica de acordo com um"
+		  tx[14] = "<html>- As partes precisam ser unidas em uma"+ "<br/>ordem espec\u00EDfica de acordo com um"
 				  + "<br/>poema, se pegar uma parte errada, ser\u00E1" + "<br/>obrigado a sair e tentar de novo algumas"
 				  + "<br/>horas depois, quando o equil\u00EDbrio do "+ "<br/>labirinto for restabelecido. - Muriel diz." +"<html>";
-		  linhas[15] = 5;
+		  linhas[14] = 5;
 		  
-		  tx[16] = "<html>- Muito bem, qual \u00E9 o poema. - Voc\u00EA"+ "<br/>pergunta."+"<html>";
-		  linhas[16] = 1;
+		  tx[15] = "<html>- Muito bem, qual \u00E9 o poema. - Voc\u00EA"+ "<br/>pergunta."+"<html>";
+		  linhas[15] = 1;
 		  
-		  tx[17] = "<html>“Abaixo do das nuvens, o Sol brilha"+ "<br/>O c\u00E9u azul reflete o verde das \u00E1rvores"
+		  tx[16] = "<html>“Abaixo do das nuvens, o Sol brilha"+ "<br/>O c\u00E9u azul reflete o verde das \u00E1rvores"
 				  + "<br/>E, embaixo de todos est\u00E1 o vermelho da terra." + "<br/>Junte-os corretamente e o pr\u00EAmio conseguir\u00E1. ”"+"<html>";
-		  linhas[17] = 3;
+		  linhas[16] = 3;
 		  
-		  tx[18] = "<html>- Obrigado, agora se prepare para se "+ "<br/>juntar a minha equipe. - Voc\u00EA brinca."+"<html>";
-		  linhas[18] = 1;
+		  tx[17] = "<html>- Obrigado, agora se prepare para se "+ "<br/>juntar a minha equipe. - Voc\u00EA brinca."+"<html>";
+		  linhas[17] = 1;
 
-		  tx[19] = "<html><br/>Voc\u00EA vai para o labirinto."+"<html>";
-		  linhas[19] = 1;
+		  tx[18] = "<html><br/>Voc\u00EA vai para o labirinto."+"<html>";
+		  linhas[18] = 1;
 	}
 	
 	public void grr_4_torre_win() {
@@ -505,30 +507,30 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ "<br/>uma emboscada, mas de repente uma voz:" +"<html>";
 		linhas[1] = 2;
 
-		tx[2] = "<html>- Parem, ele \u00E9 meu. - diz o Homem."+ "<br/>E todos se afastam."+"<html>";
+		tx[2] = "<html>Homem<br/><br/>Parem, ele \u00E9 meu."+"<html>";
 		linhas[2] = 1;
 		
-		tx[3] = "<html>Voc\u00EA retira sua espada e diz:"+ "<br/>- Quem \u00E9 voc\u00EA?"+"<html>";
-		linhas[3] = 0;
+		tx[3] = "<html>Voc\u00EA:<br/><br/>Quem \u00E9 voc\u00EA?"+"<html>";
+		linhas[3] = 2;
 
-		tx[4] = "<html>- Sou Kelastar. Ouvi que estava "+ "<br/>procurando por mim e vim pessoalmente "
+		tx[4] = "<html>Kelastar:<br/><br/>Sou Kelastar. Ouvi que estava "+ "<br/>procurando por mim e vim pessoalmente "
 				+ "<br/>ao seu encontro. N\u00E3o \u00E9 sempre que um " + "<br/>Capit\u00E3o da Guarda Real vem me "
 				+ "<br/>procurar, pelo menos n\u00E3o em paz eu "+ "<br/>suponho. " +"<html>";
-		linhas[4] = 5;
+		linhas[4] = 7;
 
-		tx[5] = "<html>- Eu n\u00E3o diria paz... Podemos conversar"+ "<br/>em um local um pouco mais privado? - "
-				+ "<br/>Voc\u00EA diz." +"<html>";
-		linhas[5] = 2;
+		tx[5] = "<html>Voc\u00EA:<br/><br/>Eu n\u00E3o diria paz... Podemos conversar"+ "<br/>em um local um pouco mais privado? "
+				 +"<html>";
+		linhas[5] = 3;
 
-		tx[6] = "<html>- Vamos para meu escrit\u00F3rio ent\u00E3o. "+ "<br/>- diz Kalastar."+"<html>";
-		linhas[6] = 1;
+		tx[6] = "<html>Kalastar:<br/><br/> Vamos para meu escrit\u00F3rio ent\u00E3o. "+"<html>";
+		linhas[6] = 2;
 
 		tx[7] = "<html>Kelastar lidera o caminho e voc\u00EA o segue"+ "<br/>O escrit\u00F3rio \u00E9 um lugar sujo e feio, tudo l\u00E1 "
 				+ "<br/>lembra decad\u00EAncia e corrup\u00E7\u00E3o, mas " + "<br/>voc\u00EAs est\u00E3o sozinhos e \u00E9 isso que "+ "<br/>importa."+"<html>";
 		linhas[7] = 4;
 
-		tx[8] = "<html>- O que voc\u00EA quer comigo, capit\u00E3o? - "+ "<br/>Kelastar diz."+"<html>";
-		linhas[8] = 1;
+		tx[8] = "<html>Kelastar:<br/><br/> O que voc\u00EA quer comigo, capit\u00E3o? "+"<html>";
+		linhas[8] = 2;
 
 		tx[9] = "<html>- Voc\u00EA \u00E9 um dos ladr\u00F5es mais habilidosos"+ "<br/>dessa cidade, dizem que n\u00E3o exista uma "
 				+ "<br/>porta que voc\u00EA n\u00E3o consiga arrombar, um" + "<br/>local que n\u00E3o consiga roubar. - Voc\u00EA diz."+"<html>";
@@ -828,8 +830,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 	
 	public void grr_6_sem_mapa_win_sem_rec() {
 		
-		tx = new String[4];
-		linhas = new int[4];	
+		tx = new String[5];
+		linhas = new int[5];	
 
 		tx[0] = "<html>		Voc\u00EAs est\u00E3o conseguindo conter "
 				+ "<br/>com dificuldade as tropas inimigas, eles "

@@ -120,6 +120,7 @@ public class Fase extends JPanel implements ActionListener {
 		}
 		// aparecer tela de game over
 		else {
+			terminar();
 			ImageIcon fimJogo = new ImageIcon(getClass().getResource("game_over.jpeg"));
 			graficos.drawImage(fimJogo.getImage(), 0, 0, null);
 
@@ -212,6 +213,8 @@ public class Fase extends JPanel implements ActionListener {
 	}
 
 	public void terminar() {
+		System.out.println(jogador.getClase());
+		frame.dispose();
 		switch (jogador.getClase()) {
 		case 0:
 

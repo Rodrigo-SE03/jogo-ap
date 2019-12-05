@@ -65,7 +65,6 @@ public class Texto {
 		fund.setImage(fund.getImage().getScaledInstance(this.frame.getSize().width, this.frame.getSize().height, 100));
 		fundo = new JLabel(fund);
 		this.frame.getContentPane().add(fundo);
-
 	}
 
 	public void atualizaTexto(String tex, int pulalinha) {

@@ -17,6 +17,7 @@ import graficos.Geral;
 import graficos.Texto;
 import mapas.Maps;
 import menus.Creditos;
+import menus.Menu_inicial;
 import modelo.Teste;
 import personagens.Jogador;
 import sons.Musica;
@@ -30,7 +31,8 @@ public class Hist_Assassin {
 
 	public Hist_Assassin(Jogador player) {
 		this.player = player;
-		vet.setPlayer(player);
+		this.player.setClase(2);
+		vet.setPlayer(this.player);
 	}
 
 	public void assassin1(Texto t1) {
@@ -410,6 +412,7 @@ public class Hist_Assassin {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
 						new Teste(player);
 					} else
 						cont++;
@@ -444,7 +447,23 @@ public class Hist_Assassin {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						new Creditos();
+						t1.getTexto().dispose();
+						Creditos cr = new Creditos();
+
+						new Thread() {
+							public void run() {
+								try {
+									sleep(5000);
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								cr.setVisible(false);
+								new Menu_inicial();
+							}
+						}.start();
+
+						cr.mostraCreditos();
 					} else
 						cont++;
 				}
@@ -467,7 +486,23 @@ public class Hist_Assassin {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						new Creditos();
+						t1.getTexto().dispose();
+						Creditos cr = new Creditos();
+
+						new Thread() {
+							public void run() {
+								try {
+									sleep(5000);
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								cr.setVisible(false);
+								new Menu_inicial();
+							}
+						}.start();
+
+						cr.mostraCreditos();
 					} else
 						cont++;
 				}
