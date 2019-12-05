@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.text.MaskFormatter;
 
 import cenas.Hist_Inicio;
 import personagens.Jogador;
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 public class Formulario {
 
@@ -53,6 +55,7 @@ public class Formulario {
 		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNome.setFont(new Font("Georgia", Font.BOLD, 40));
 		txtNome.setBounds(331, 47, 647, 59);
+		maskLetter(txtNome);
 		frame.getContentPane().add(txtNome);
 
 		JLabel nome = new JLabel();
@@ -178,5 +181,17 @@ public class Formulario {
 			}
 		};
 		continuar.addActionListener(next);
+	}
+	
+	public void maskLetter(JFormattedTextField jtf) {
+		MaskFormatter formatoDois;
+		try {
+			formatoDois = new MaskFormatter("************");
+			formatoDois.setValidCharacters("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
+			formatoDois.install(jtf);
+		} catch (ParseException e) {
+			JOptionPane.showMessageDialog(null, this,
+					"Não foi possivel inserir mask nos campos letras: " + e.getMessage(), 0);
+		}
 	}
 }

@@ -11,7 +11,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
 	 * \u00EA ê  \u00E9 é \u00C9 É
 	 * 
@@ -187,11 +187,13 @@ public class Biblio_Guerreiro extends Biblioteca {
 	
 	public void grr_4_catedral (int x) { // cinismo ou agressao
 
-		tx = new String[3];
-		linhas = new int[3];
 
+		int y = 0;
 		switch (x) {
 		case 1:
+			tx = new String[3];
+			linhas = new int[3];
+			
 			tx[0] = "<html>Bispo: "
 					+ "<br/><br/>Nada melhor que um bom e " + "<br/>tradicional vinho, n\u00E3o \u00EA mesmo "
 					+ "<br/>capit\u00E3o? " + "<html>";
@@ -199,67 +201,73 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 			tx[1] = "<html><br/>- N\u00E3o posso dizer que discordo de voc\u00EA. - Voc\u00EA brinca. " + "<html>";
 			linhas[1] = 1;
+			y=2;
 			break;
 		case 2:
+			tx = new String[3];
+			linhas = new int[3];
+			
 			tx[0] = "<html>Bispo:" + "<br/><br/>Vejo que voc\u00EA tem um paladar " + "<br/>refinado. " + "<html>";
 			linhas[0] = 3;
 
 			tx[1] = "<html><br/>- Nada melhor do que frutas com \u00E1lcool. - Voc\u00EA brinca." + "<html>";
 			linhas[1] = 1;
+			y=2;
 			break;
 		case 3:
 			tx[0] = "<html>Bispo: " + "<br/><br/>Se este \u00E9 o seu desejo, nada " + "<br/>posso fazer. " + "<html>";
 			linhas[0] = 3;
+			y=1;
 		}
 		
-		tx[2] = "<html>Bispo:"
+		tx[y+0] = "<html>Bispo:"
 				+ "<br/><br/>Mas vamos ao que interessa, o que" + "<br/>um capit\u00E3o da Guarda Real est\u00E1"
 				+ "<br/>fazendo aqui?" + "<html>";
-		linhas[2] = 4;
+		linhas[y+0] = 4;
 
-		tx[3] = "<html>Voc\u00EA:"
+		tx[y+1] = "<html>Voc\u00EA:"
 				+ "<br/><br/>Vim a mando do General " + "<br/>Alexander, tem algo em posse"
 				+ "<br/>da Catedral que interessa a " + "<br/>Guarda Real." + "<html>";
-		linhas[3] = 5;
+		linhas[y+1] = 5;
 
-		tx[4] = "<html>Bispo:"
+		tx[y+2] = "<html>Bispo:"
 				+ "<br/><br/>E o que seria isso?" + "<html>";
-		linhas[4] = 2;
+		linhas[y+2] = 2;
 
-		tx[5] = "<html>Voc\u00EA:"
+		tx[y+3] = "<html>Voc\u00EA:"
 				+ "<br/><br/>Mapas, do subterr\u00E2neo da " + "<br/>cidade, preciso de todos que a "
 				+ "<br/>Igreja possuir. " + "<html>";
-		linhas[5] = 4;
+		linhas[y+3] = 4;
 
-		tx[6] = "<html>Bispo:"
+		tx[y+4] = "<html>Bispo:"
 				+ "<br/><br/>E por que eu daria para voc\u00EA? " + "<br/>O que n\u00F3s vamos ganhar com " + "<br/>isso? "
 				+ "<html>";
-		linhas[6] = 4;
+		linhas[y+4] = 4;
 
-		tx[7] = "<html>Voc\u00EA:"
+		tx[y+5] = "<html>Voc\u00EA:"
 				+ "<br/><br/>A prote\u00E7\u00E3o da cidade, n\u00E3o sei " + "<br/>se o senhor sabe, mas Bethesda "
 				+ "<br/>est\u00E1 se aproximando e ela vai " + "<br/>destruir todos n\u00F3s. " + "<html>";
-		linhas[7] = 5;
+		linhas[y+5] = 5;
 
-		tx[8] = "<html>Bispo:"
+		tx[y+6] = "<html>Bispo:"
 				+ "<br/><br/>Todos voc\u00EAs no caso. " + "<html>";
-		linhas[8] = 2;
+		linhas[y+6] = 2;
 
-		tx[9] = "<html>Voc\u00EA:"
+		tx[y+7] = "<html>Voc\u00EA:"
 				+ "<br/><br/>Bethesda compartilha da " + "<br/>mesma f\u00EA que Helaria, eles "
 				+ "<br/>nunca amea\u00E7ariam a Igreja." + "<html>";
-		linhas[9] = 4;
+		linhas[y+7] = 4;
 
-		tx[10] = "<html>Bispo:"
+		tx[y+8] = "<html>Bispo:"
 				+ "<br/><br/>Como voc\u00EA pode ser t\u00E3o " + "<br/>ego\u00EDsta? Pense em quantas "
 				+ "<br/>pessoas v\u00E3o morrer se n\u00F3s " + "<br/>falharmos em proteger a " + "<br/>cidade. " + "<html>";
-		linhas[10] = 6;
+		linhas[y+8] = 6;
 
-		tx[11] = "<html>Voc\u00EA:"
+		tx[y+9] = "<html>Voc\u00EA:"
 				+ "<br/><br/>Helarianos v\u00E3o morrer se " + "<br/>voc\u00EAs falharem e Bethesdences "
 				+ "<br/>ir\u00E3o morrer se voc\u00EAs vencerem. " + "<br/>A Igreja n\u00E3o pode escolher "
 				+ "<br/>sobre a vida de dois fi\u00EAis." + "<html>";
-		linhas[11] = 6;
+		linhas[y+9] = 6;
 		
 		choice = "<html>Qual \u00EA sua resposta? " + "<html>";
 
@@ -619,8 +627,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 	
 	public void grr_6_kelastar() { // se conseguir mapa e arrombou porta
 		
-		tx = new String[4];
-		linhas = new int[4];	
+		tx = new String[3];
+		linhas = new int[3];	
 		
 		  tx[0] = "<html>	Voc\u00EAs est\u00E3o conseguindo conter as "
 			 + "<br/>tropas inimigas, mas elas n\u00E3o param de"
@@ -631,27 +639,18 @@ public class Biblio_Guerreiro extends Biblioteca {
 			 + "<br/>\u00E1gua no esgoto."+"<html>";
 		  linhas[0] = 6;
 		  
-		  tx[1] = "<html>	Voc\u00EAs est\u00E3o conseguindo conter as "
-			 + "<br/>tropas inimigas, mas elas n\u00E3o param de"
-			 + "<br/>chegar. Ent\u00E3o, voc\u00EA ouve um grito, " 
-			 + "<br/>Kelastar est\u00E1 sinalizando para voc\u00EAs"
-			 + "<br/>procurarem abrigo em um piso superior,"
-			 + "<br/>ele abriu as comportas que retinham" 
-			 +"<br/>\u00E1gua no esgoto."+"<html>";
-		  linhas[1] = 6;
-		  
-		  tx[2] = "<html>	As tropas de Bethesda foram  "
+		  tx[1] = "<html>	As tropas de Bethesda foram  "
 			 + "<br/>severamente flageladas e Helaria   "
 			 + "<br/>consegue uma vit\u00F3ria f\u00E1cil. Todos voc\u00EAs " 
 			 + "<br/>conseguem gl\u00F3ria perante a cidade,  "
 			 + "<br/>t\u00EDtulos e ouro, como Kelastar queria."+"<html>";
-		  linhas[2] = 4;
+		  linhas[1] = 4;
 		  
-		  tx[3] = "<html>	Depois da guerra Helaria se torna um "
+		  tx[2] = "<html>	Depois da guerra Helaria se torna um "
 			 + "<br/>local melhor para se viver com a uni\u00E3o de"
 			 + "<br/>seus habitantes e voc\u00EA teve um papel "
 			 + "<br/>importante nisso."+"<html>";
-		  linhas[3] = 3;
+		  linhas[2] = 3;
 		  
 		  
 	}
@@ -917,5 +916,4 @@ public class Biblio_Guerreiro extends Biblioteca {
 //			+"<html>";
 //	linhas[] = ;
 }
-	
 	

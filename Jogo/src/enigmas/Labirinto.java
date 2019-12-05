@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import cenas.Hist_Arcan;
+import graficos.Loading;
 import personagens.Jogador;
 
 public class Labirinto {
@@ -38,26 +39,26 @@ public class Labirinto {
 	private int x, y;
 	private boolean amarelo, azul;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					new Labirinto(new Jogador());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					new Labirinto(new Jogador(), new Loading(new JFrame()));
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
-	public Labirinto(Jogador player) {
+	public Labirinto(Jogador player, JFrame carregar) {
 		this.player = player;
 		this.icone = new ImageIcon("src/imagens/Icone.png");
 		this.size = Toolkit.getDefaultToolkit().getScreenSize();
-		initialize();
+		initialize(carregar);
 	}
 
-	private void initialize() {
+	private void initialize(JFrame carregar) {
 
 		frame = new JFrame();
 		frame.setSize(size);
@@ -104,10 +105,11 @@ public class Labirinto {
 		piso.setSize(size);
 		piso.setLocation(0, 0);
 		panel.add(piso);
-
 		frame.setVisible(true);
+//		carregar.setCarregando(false);
+		carregar.dispose();
 		dica.setVisible(true);
-
+		
 	}
 
 	private void Criarlistener() {

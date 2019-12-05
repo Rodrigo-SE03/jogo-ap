@@ -54,6 +54,7 @@ public class Texto_enigma {
 				}
 			}
 		});
+		frame.setUndecorated(true);
 
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);

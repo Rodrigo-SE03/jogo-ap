@@ -82,7 +82,7 @@ public class Biblio_Assassin extends Biblioteca {
 		linhas[9] = 4;
 
 		tx[10] = "<html>Um homem irritado:" + "<br/><br/>  Mas por que n\u00F3s far\u00EDamos"
-				+ "<br/> alguma coisa por Helaria" + "<br/>se Helaria nunca fez nada por n\u00F3s?!"+ "<html>";
+				+ "<br/> alguma coisa por Helaria" + "<br/>se Helaria nunca fez nada por n\u00F3s?!" + "<html>";
 		linhas[10] = 4;
 
 		tx[11] = "<html>Voc\u00EA:" + "<br/><br/> Porque n\u00F3s vivemos aqui seu imbecil!" + "<html>";
@@ -92,18 +92,15 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>destruiu sua vila, queimou sua casa e" + "<br/>matou sua fam\u00EDlia." + "<html>";
 		linhas[12] = 3;
 
-		tx[13] = "<html>Pelo seu tom ficou claro para todos que "
-				+ "<br/>conhecem um pouco da sua hist\u00F3ria que "
-				+ "<br/>voc\u00EA est\u00E1 disposto a tudo para "
-				+ "<br/>obter vingan\u00E7a." + "<html>";
+		tx[13] = "<html>Pelo seu tom ficou claro para todos que " + "<br/>conhecem um pouco da sua hist\u00F3ria que "
+				+ "<br/>voc\u00EA est\u00E1 disposto a tudo para " + "<br/>obter vingan\u00E7a." + "<html>";
 		linhas[13] = 3;
 
 		tx[14] = "<html>Homero:" + "<br/><br/>Percebo que" + "<br/>posso contar com voc\u00EA nessa guerra,<br/>"
 				+ player.getNome() + "." + "<html>";
 		linhas[14] = 4;
 
-		tx[15] = "<html>A reuni\u00E3o continua por mais um tempo,"
-				+ "<br/>detalhes da guerra s\u00E3o discutidos e"
+		tx[15] = "<html>A reuni\u00E3o continua por mais um tempo," + "<br/>detalhes da guerra s\u00E3o discutidos e"
 				+ "<br/>esclarecidos. O Imp\u00E9rio de Bethesda est\u00E1"
 				+ "<br/>marchando em dire\u00E7\u00E3o a Helaria e tem"
 				+ "<br/>previs\u00E3o de chegar dentro de tr\u00EAs dias." + "<html>";
@@ -116,105 +113,82 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>miss\u00E3o for iniciada, voc\u00EA n\u00E3o poder\u00E1"
 				+ "<br/>iniciar outra at\u00E9 que termine a primeira." + "<html>";
 		linhas[16] = 6;
-		tx[17] = "<html>No final da reunião Cassius"
-				+ "<br/>te chama para conversar."+ "<html>";
+		tx[17] = "<html>No final da reunião Cassius" + "<br/>te chama para conversar." + "<html>";
 		linhas[17] = 1;
-		
+
 		choice = "<html>Cassius:" + "<br/><br/>Voc\u00EA est\u00E1 bem?" + "<html>";
 		op1 = "Mentir";
 		op2 = "Dizer a verdade";
 	}
-	
-	public void Escolha1Assassin(int a)
-	{tx = new String[10];
-	linhas = new int[10];
-	
-	switch (a) {
-	case 1:
-		tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Estou bem, nenhum problema com isso." + "<html>";
-		linhas[0] = 2;
-		
-		tx[1]="<html>Cassius:" + "<br/><br/>Fico feliz de ouvir isso." + "<html>";
-		linhas[1] = 2;
-		break;
-	case 2:
-		tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Não estou confortável com Bethesda,"
-				+ "<br/>mas isso não atrapalhará minha luta" + "<html>";
-		linhas[0] = 3;
-		
-		tx[1]="<html>Cassius:" + "<br/><br/>Fique tranquilo, nós vamos passar por isso juntos." + "<html>";
-		linhas[1] = 2;
-		break;
+
+	public void Escolha1Assassin(int a) {
+		tx = new String[10];
+		linhas = new int[10];
+
+		switch (a) {
+		case 1:
+			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Estou bem, nenhum problema com isso." + "<html>";
+			linhas[0] = 2;
+
+			tx[1] = "<html>Cassius:" + "<br/><br/>Fico feliz de ouvir isso." + "<html>";
+			linhas[1] = 2;
+			break;
+		case 2:
+			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Não estou confortável com Bethesda,"
+					+ "<br/>mas isso não atrapalhará minha luta" + "<html>";
+			linhas[0] = 3;
+
+			tx[1] = "<html>Cassius:" + "<br/><br/>Fique tranquilo, nós vamos passar por isso juntos." + "<html>";
+			linhas[1] = 2;
+			break;
+		}
+		tx[2] = "<html>Voc\u00EA:" + "<br/><br/>Mas não foi só para ver como" + "<br/>estou que você me chamou aqui"
+				+ "<html>";
+		linhas[2] = 3;
+
+		tx[3] = "<html>Cassius:" + "<br/><br/>Eu preciso que você recrute" + "<br/>algumas pessoas para nos ajudar."
+				+ "<html>";
+		linhas[3] = 3;
+
+		tx[4] = "<html>Voc\u00EA:" + "<br/><br/>Quem?" + "<html>";
+		linhas[4] = 2;
+
+		tx[5] = "<html>Cassius:" + "<br/><br/>Ariandra, a Elfa arqueira que"
+				+ "<br/>recentemente chegou em Helaria, ela vive" + "<br/>na Casa Nobre Letos, o Anão, que "
+				+ "<br/>está preso dentro da Catedral. " + "<br/>E Terraira, uma sacerdotisa da Torre Arcana."
+				+ "<html>";
+		linhas[5] = 6;
+
+		tx[6] = "<html>Voc\u00EA:" + "<br/><br/>E por que o interesse" + "<br/>nessas pessoas em específico?"
+				+ "<html>";
+		linhas[6] = 3;
+
+		tx[7] = "<html>Cassius:" + "<br/><br/>Eles são os melhores no que" + "<br/>fazem e nós vamos montar um pequeno"
+				+ "<br/> grupo para atacar os acampamentos" + "<br/>de Bethesda antes da guerra começar." + "<html>";
+		linhas[7] = 5;
+
+		tx[8] = "<html>Voc\u00EA:" + "<br/><br/>Entendo." + "<html>";
+		linhas[8] = 2;
+
+		tx[9] = "<html>Jogador agora você terá três opções" + "<br/>de locais para ir,"
+				+ "<br/>faça sua escolha com sabedoria. " + "<html>";
+		linhas[9] = 2;
 	}
-	  tx[2] = "<html>Voc\u00EA:" + "<br/><br/>Mas não foi só para ver como"
-		 + "<br/>estou que você me chamou aqui"
-		 +"<html>";
-	  linhas[2] =3 ;
-	  
-	  tx[3]="<html>Cassius:" + "<br/><br/>Eu preciso que você recrute"
-		 + "<br/>algumas pessoas para nos ajudar."
-		 +"<html>";
-	  linhas[3] =3 ;
-	  
-	  tx[4]="<html>Voc\\u00EA:" + "<br/><br/>Quem?"
-				 +"<html>";
-			  linhas[4] =2 ;
-			  
-	   tx[5]="<html>Cassius:" + "<br/><br/>Ariandra, a Elfa arqueira que"
-		 + "<br/>recentemente chegou em Helaria, ela vive"
-		 + "<br/>na Casa Nobre Letos, o Anão, que está preso"
-		 + "<br/>dentro da Catedral. E Terraira, uma"
-	         + "<br/>sacerdotisa da Torre Arcana."
-		 +"<html>";
-					  linhas[5] =6 ;	
-					  
-	   tx[6]="<html>Voc\\\\u00EA:"+ "<br/><br/>E por que o interesse"
-			+ "<br/>nessas pessoas em específico?"
-		        +"<html>";
-							  linhas[6] =3 ;
-							  
-	   tx[7]="<html>Cassius:"+ "<br/><br/>Eles são os melhores no que"
-				 + "<br/>fazem e nós vamos montar um pequeno"
-				 + "<br/> grupo para atacar os acampamentos"
-			         + "<br/>de Bethesda antes da guerra começar."
-				 +"<html>";
-									  linhas[7] =5 ;
-									  
-		tx[8]="<html>Voc\\\\u00EA:"+ "<br/><br/>Entendo."
-				+"<html>";
-									  linhas[8] =2;
-											  
-	 tx[9] = "<html>Jogador agora você terá três opções"
-				+ "<br/>de locais para ir,"
-			        + "<br/>faça sua escolha com sabedoria. "
-				+ "<html>";
-	                                  linhas[9] =2;
-	}
-	
-	public void CasaNobreAssassin()
-	{tx = new String[2];
-	linhas = new int[2];
-	
-	 tx[0] = "<html>Você chega nas proximidades da Casa"
-				+ "<br/>Nobre, mas ela é extremamente vigiada,"
-				+ "<br/>entrar pela porta da frente"
-				+ "<br/>é impossível."
-				+ "<br/>Tem um sistema de esgotos que"
-				+ "<br/>talvez possa te"
-				+ "<br/>levar para dentro dela,"
-				+ "<br/>você decide usá-lo. "
-				+ "<html>";
-       linhas[0] =7;
-       
-       tx[1] = "<html>Os esgotos são úmidos e imundos"
-				+ "<br/>e a travessia é cansativa, mas você"
-				+ "<br/>entra nas fronteiras da casa."
-				+ "<br/>Você continua prosseguindo até chegar no"
-				+ "<br/> ponto em que deve sair,"
-				+ "<br/>no entanto uma porta impede seu caminho. "
-				+ "<html>";
-      linhas[1] =5;
-		
+
+	public void CasaNobreAssassin() {
+		tx = new String[2];
+		linhas = new int[2];
+
+		tx[0] = "<html>Você chega nas proximidades da Casa" + "<br/>Nobre, mas ela é extremamente vigiada,"
+				+ "<br/>entrar pela porta da frente" + "<br/>é impossível." + "<br/>Tem um sistema de esgotos que"
+				+ "<br/>talvez possa te" + "<br/>levar para dentro dela," + "<br/>você decide usá-lo. " + "<html>";
+		linhas[0] = 7;
+
+		tx[1] = "<html>Os esgotos são úmidos e imundos" + "<br/>e a travessia é cansativa, mas você"
+				+ "<br/>entra nas fronteiras da casa." + "<br/>Você continua prosseguindo até chegar "
+				+ "<br/>no ponto em que deve sair,no entanto" + "<br/> uma porta impede seu caminho. " + "<html>";
+		linhas[1] = 5;
+
 	}
 
 //	  tx[] = "<html>"

@@ -35,24 +35,51 @@ public class Hist_Assassin {
 		vet.setPlayer(player);
 		vet.hpAssassin();
 
-		geral.escolhas_0(t1, vet);
+		geral.escolhas_2(t1, vet);
 
 		continuar = new ActionListener() {
-			int cont = 0;
+			int cont = 0; // Contador para verificar a posi��o do vetor de texto
 
 			public void actionPerformed(ActionEvent e) {
-				if (geral.isFlag()) {
-					if (cont == (vet.getTx().length - 1)) {
-						t1.zerar();
-						t1.getContinuar().removeActionListener(continuar);
-					} else
-						cont++;
 
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
+						destino();
+					} else // Atualiza o contador para verificar a posi��o do vetor de texto
+						cont++;
 				}
 			}
 		};
 
-		t1.getContinuar().addActionListener(continuar);
+		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame, deixando
+																		// apenas uma "tela em branco"
+				vet.Escolha1Assassin(1); // Chama o pr�ximo componente da hist�ria
+				geral.escolhas_0(t1, vet);
+				t1.getContinuar().addActionListener(continuar);
+			}
+		};
+
+		escolha2 = new ActionListener() {// Action caso escolha a 2� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+
+				vet.Escolha1Assassin(2);
+				geral.escolhas_0(t1, vet);
+				t1.getContinuar().addActionListener(continuar);
+
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
 	}
 
 	public void destino() {
@@ -81,6 +108,7 @@ public class Hist_Assassin {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
+					CasaNobre();
 				}
 
 			};
@@ -137,8 +165,8 @@ public class Hist_Assassin {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						new Labirinto(player);
+//						t1.getTexto().dispose();
+						new Labirinto(player,t1.getTexto());
 					} else
 						cont++;
 				}
@@ -298,6 +326,7 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		vet.CasaNobreAssassin();
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
