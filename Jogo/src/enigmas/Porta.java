@@ -103,13 +103,12 @@ public class Porta {
 		JButton confirma = new JButton("confirma");
 		confirma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				caixa.getFrame().dispose();
 				if (digitos[0].getText().contentEquals("0") && digitos[1].getText().contentEquals("1")
 						&& digitos[2].getText().contentEquals("5") && digitos[3].getText().contentEquals("4")) {
 					vencer(player); // Acertou a combinação
-					caixa.getFrame().dispose();
 				} else {
 					perder(player);
-					caixa.getFrame().dispose();
 				}
 			}
 		});
@@ -138,10 +137,11 @@ public class Porta {
 	}
 
 	public void vencer(Jogador player) {
-
+		//System.out.println("yooo");	
 		switch (player.getClase()) {
 
 		case 0:
+			//System.out.println("yooo");
 			frame.dispose();
 			new Hist_Arcan().alamedaVitoria(player);
 			break;

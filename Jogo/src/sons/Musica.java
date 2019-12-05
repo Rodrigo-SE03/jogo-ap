@@ -70,7 +70,7 @@ public class Musica {
 			public void run() {
 				if(isPlaying) {
 		try {
-			while(getVolume()>volume) {
+			while(getVolume()>volume && isPlaying) {
 				//System.out.println(getVolume());
 				Thread.currentThread();
 				Thread.sleep(tempo);
@@ -89,7 +89,7 @@ public class Musica {
 			public void run() {
 				if(isPlaying) {
 		try {
-			while(getVolume()<volume) {
+			while(getVolume()<volume && isPlaying) {
 				//System.out.println(getVolume());
 				Thread.currentThread();
 				Thread.sleep(tempo);

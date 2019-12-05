@@ -25,7 +25,7 @@ public class Hist_Arcan {
 	
 	private ActionListener continuar, escolha1, escolha2, escolha3;
 	private Biblio_Arcan vet = new Biblio_Arcan(); // Vetor de texto
-	private Musica musica = new Musica();
+	private static Musica musica = new Musica();
 	private Musica[] musicasSegunda;
 	private Jogador player;
 
@@ -33,6 +33,7 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 
 		this.player = player;
+		player.setClase(0);
 		vet.setPlayer(player);
 
 		vet.arcan1();
@@ -336,6 +337,33 @@ public class Hist_Arcan {
 		vet.catedral();
 
 		geral.escolhas_2(t1, vet);
+		
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					//System.out.println(cont);
+					switch (cont) {
+					case 0:
+						if(musica.isPlaying()) {
+							musica.stop();
+						}
+						musica.TocaMusica("src/sons/catedral.wav");
+						musica.setVolume(0.8f);
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {	
+						t1.getContinuar().removeActionListener(continuar);
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() {
 
@@ -377,6 +405,7 @@ public class Hist_Arcan {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.setVolume(0.0f);
 						new Hidra(player);
 					} else
 						cont++;
@@ -403,6 +432,7 @@ public class Hist_Arcan {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.setVolume(0.0f);
 						new Hidra(player);
 					} else
 						cont++;
@@ -461,9 +491,17 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 0:
+						musica.aumentaVolume(0.7f,80);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.reduzVolume(0.0f,40);
 						destino();
 					} else
 						cont++;
@@ -476,6 +514,7 @@ public class Hist_Arcan {
 	}
 
 	public void alameda() {
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -493,6 +532,19 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 0:
+						if(musica.isPlaying())
+							musica.stop();
+						musica.TocaMusica("src/sons/alameda.wav");
+						musica.setVolume(0.3f);
+						break;
+					case 2:
+						musica.aumentaVolume(0.6f,50);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
@@ -555,6 +607,12 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 3:
+						musica.reduzVolume(0.0f,40);
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();

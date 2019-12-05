@@ -58,6 +58,9 @@ public class Hist_Inicio {
 	}
 
 	public void admin1(Jogador player) {
+		if(musica.isPlaying()) {
+			musica.stop();
+			}
 		Texto t1 = new Texto();
 		t1.zerar();
 		t1.getTexto().setVisible(true);
