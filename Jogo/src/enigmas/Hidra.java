@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
 import cenas.Hist_Arcan;
+import cenas.Hist_Assassin;
+import cenas.Hist_Guerreior;
 import personagens.Jogador;
 import sons.Musica;
 
@@ -240,7 +242,13 @@ public class Hidra {
 				ganhou = true;
 				switch (player.getClase()) {
 				case 0:
-					new Hist_Arcan().catedralVitoria(player);
+					new Hist_Arcan(player).catedralVitoria();
+					break;
+				case 1:
+					new Hist_Assassin(player).catedralVitoria();
+					break;
+				case 2:
+					new Hist_Guerreior(player).catedralVitoria();
 					break;
 				default:
 					break;
@@ -291,14 +299,21 @@ public class Hidra {
 					perdeu = true;
 
 					if (perdeu && !ganhou) {
+						musica.stop();
+						background.dispose();
+						relogio.dispose();
+						time = 0;
+
 						if (mtcabeca) {
 							switch (player.getClase()) {
 							case 0:
-								musica.stop();
-								background.dispose();
-								relogio.dispose();
-								time = 0;
-								new Hist_Arcan().catedralDerrota(player, 1);
+								new Hist_Arcan(player).catedralDerrota(1);
+								break;
+							case 1:
+								new Hist_Assassin(player).catedralDerrota(1);
+								break;
+							case 2:
+								new Hist_Guerreior(player).catedralDerrota(1);
 								break;
 							default:
 								break;
@@ -306,10 +321,13 @@ public class Hidra {
 						} else {
 							switch (player.getClase()) {
 							case 0:
-								musica.stop();
-								background.dispose();
-								time = 0;
-								new Hist_Arcan().catedralDerrota(player, 2);
+								new Hist_Arcan(player).catedralDerrota(2);
+								break;
+							case 1:
+								new Hist_Assassin(player).catedralDerrota(2);
+								break;
+							case 2:
+								new Hist_Guerreior(player).catedralDerrota(2);
 								break;
 							default:
 								break;

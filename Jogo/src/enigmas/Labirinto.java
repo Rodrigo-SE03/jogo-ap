@@ -22,6 +22,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import cenas.Hist_Arcan;
+import cenas.Hist_Assassin;
+import cenas.Hist_Guerreior;
 import graficos.Loading;
 import personagens.Jogador;
 
@@ -109,7 +111,7 @@ public class Labirinto {
 //		carregar.setCarregando(false);
 		carregar.dispose();
 		dica.setVisible(true);
-		
+
 	}
 
 	private void Criarlistener() {
@@ -354,9 +356,16 @@ public class Labirinto {
 
 		case 0:
 			frame.dispose();
-			new Hist_Arcan().torreDerrota(player);
+			new Hist_Arcan(player).torreDerrota();
 			break;
-
+		case 1:
+			frame.dispose();
+			new Hist_Assassin(player).torreDerrota();
+			break;
+		case 2:
+			frame.dispose();
+			new Hist_Guerreior(player).torreDerrota();
+			break;
 		default:
 			break;
 		}
@@ -369,9 +378,16 @@ public class Labirinto {
 
 		case 0:
 			frame.dispose();
-			new Hist_Arcan().torreVitoria(player);
+			new Hist_Arcan(player).torreVitoria();
 			break;
-
+		case 1:
+			frame.dispose();
+			new Hist_Assassin(player).torreVitoria();
+			break;
+		case 2:
+			frame.dispose();
+			new Hist_Guerreior(player).torreVitoria();
+			break;
 		default:
 			break;
 		}

@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import cenas.Hist_Arcan;
+import cenas.Hist_Assassin;
+import cenas.Hist_Guerreior;
 import personagens.Jogador;
 
 public class Porta {
@@ -121,13 +123,22 @@ public class Porta {
 		panel.add(Fundo);
 		frame.setVisible(true);
 	}
+
 	public void perder(Jogador player) {
 
 		switch (player.getClase()) {
 
 		case 0:
 			frame.dispose();
-			new Hist_Arcan().alamedaDerrota(player);
+			new Hist_Arcan(player).alamedaDerrota();
+			break;
+		case 1:
+			frame.dispose();
+			new Hist_Assassin(player).CasaNobreDerrota();
+			break;
+		case 2:
+			frame.dispose();
+			new Hist_Guerreior(player).alamedaDerrota();
 			break;
 
 		default:
@@ -137,17 +148,23 @@ public class Porta {
 	}
 
 	public void vencer(Jogador player) {
-		//System.out.println("yooo");	
 		switch (player.getClase()) {
 
 		case 0:
-			//System.out.println("yooo");
 			frame.dispose();
-			new Hist_Arcan().alamedaVitoria(player);
+			new Hist_Arcan(player).alamedaVitoria();
 			break;
-
+		case 1:
+			frame.dispose();
+			new Hist_Assassin(player).CasaNobreVitoria();
+			break;
+		case 2:
+			frame.dispose();
+			new Hist_Guerreior(player).alamedaVitoria();
+			break;
 		default:
 			break;
+
 		}
 	}
 }

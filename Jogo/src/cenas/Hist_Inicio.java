@@ -70,7 +70,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().remove(choice.getPanel_1());
-				new Hist_Arcan().arcan1(t1, player);
+				new Hist_Arcan(player).arcan1(t1);
 			}
 		};
 
@@ -78,7 +78,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().remove(choice.getPanel_1());
-				new Hist_Guerreior().guerreiro1(t1, player);
+				new Hist_Guerreior(player).guerreiro1(t1);
 
 			}
 		};
@@ -87,7 +87,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().remove(choice.getPanel_1());
-				new Hist_Assassin().assassin1(t1, player);
+				new Hist_Assassin(player).assassin1(t1);
 
 			}
 		};
@@ -627,7 +627,7 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(0);
-						new Hist_Arcan().arcan1(t1, vet.getPlayer());
+						new Hist_Arcan(vet.getPlayer()).arcan1(t1);
 					} else
 						cont++;
 
@@ -776,7 +776,7 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(1);
-						new Hist_Assassin().assassin1(t1, vet.getPlayer());
+						new Hist_Assassin(vet.getPlayer()).assassin1(t1);
 					} else
 						cont++;
 
@@ -837,7 +837,7 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(2);
-						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
+						new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
 					} else
 						cont++;
 
@@ -959,7 +959,7 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(2);
-						new Hist_Guerreior().guerreiro1(t1, vet.getPlayer());
+						new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
 					} else
 						cont++;
 				}

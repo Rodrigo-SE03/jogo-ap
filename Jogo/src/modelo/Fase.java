@@ -16,6 +16,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import cenas.Hist_Arcan;
+import cenas.Hist_Assassin;
+import cenas.Hist_Guerreior;
+import personagens.Jogador;
+
 public class Fase extends JPanel implements ActionListener {
 	/**
 	 * 
@@ -26,9 +31,10 @@ public class Fase extends JPanel implements ActionListener {
 	private Player player;
 	private Timer timer;
 	private List<Inimigo1> inimigo1;
-	private boolean emJogo;
+	private boolean emJogo, vitoria;
 	private int situacao, cont = 0, contP = 0;
 	private JFrame frame;
+	Jogador jogador;
 
 	public int getContP() {
 		return contP;
@@ -39,9 +45,12 @@ public class Fase extends JPanel implements ActionListener {
 	}
 
 	// construtor
-	public Fase(JFrame frame)
+	public Fase(JFrame frame, Jogador jogador)
 
-	{// ficar mais bonitu
+	{
+		this.jogador = jogador;
+
+		// ficar mais bonitu
 		setFocusable(true);
 		setDoubleBuffered(true);
 
@@ -63,6 +72,7 @@ public class Fase extends JPanel implements ActionListener {
 		inicializaInimigos();
 		// botar em jogo
 		emJogo = true;
+		vitoria = false;
 
 		this.frame = frame;
 	}
@@ -112,6 +122,7 @@ public class Fase extends JPanel implements ActionListener {
 		else {
 			ImageIcon fimJogo = new ImageIcon(getClass().getResource("game_over.jpeg"));
 			graficos.drawImage(fimJogo.getImage(), 0, 0, null);
+
 		}
 		g.dispose();
 	}
@@ -146,8 +157,7 @@ public class Fase extends JPanel implements ActionListener {
 				if (in.getX() < 0) {
 					System.out.println("yo");
 					setContP(contP + 1);
-					if(contP>=50)
-					{
+					if (contP >= 50) {
 						emJogo = false;
 					}
 					inimigo1.remove(j);
@@ -193,10 +203,40 @@ public class Fase extends JPanel implements ActionListener {
 					setCont(cont + 1);
 					if (cont > 50) {
 						situacao = 1;
+						vitoria = true;
 						emJogo = false;
 					}
 				}
 			}
+		}
+	}
+
+	public void terminar() {
+		switch (jogador.getClase()) {
+		case 0:
+
+			if (vitoria)
+				new Hist_Arcan(jogador).guerraVitoria();
+			else
+				new Hist_Arcan(jogador).guerraDerrota();
+
+			break;
+		case 1:
+
+			if (vitoria)
+				new Hist_Assassin(jogador).guerraVitoria();
+			else
+				new Hist_Assassin(jogador).guerraDerrota();
+
+			break;
+		case 2:
+
+			if (vitoria)
+				new Hist_Guerreior(jogador).guerraVitoria();
+			else
+				new Hist_Guerreior(jogador).guerraDerrota();
+
+			break;
 		}
 	}
 

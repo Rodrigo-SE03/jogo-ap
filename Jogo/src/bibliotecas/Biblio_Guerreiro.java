@@ -148,10 +148,10 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ "<br/>Alexander com tr\u00EAs miss\u00F5es, conseguir " + "<br/>os mapas do subterr\u00E2neo da cidade na " 
 				+ "<br/>Catedral, recrutar os arcanos treinados " + "<br/>em combate na Torre Arcana e conseguir" 
 				+ "<br/>a ajuda do ladr\u00E3o Kelastar, na Alameda " + "<br/>dos Tr\u00EAs Ponteiros. Para onde voc\u00EA ir\u00E1 "+ "<html>";
-		linhas[14] = 5;
+		linhas[14] = 6;
 		
 		tx[15] = "<html><br/>Para onde voc\u00EA ir\u00E1 primeiro ? " + "<html>";
-		linhas[15] = 0;
+		linhas[15] = 1;
 		
 	}
 	
@@ -167,14 +167,14 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ "<br/>inclusive relativos \u00E0 seguran\u00E7a " + "<br/>nacional. " + "<html>";
 		linhas[0] = 7;
 
-		tx[0] = "<html>Voc\u00E9 deve conseguir o mapa " + "<br/>com a Igreja de qualquer forma, "
+		tx[1] = "<html>Voc\u00E9 deve conseguir o mapa " + "<br/>com a Igreja de qualquer forma, "
 				+ "<br/>mas primeiro voc\u00EA deve tentar " + "<br/>vias diplom\u00E1ticas. " + "<html>";
-		linhas[0] = 3;
+		linhas[1] = 3;
 
-		tx[0] = "<html>Na mesma manh\u00E3 voc\u00EA se " + "<br/>encaminha para a Catedral, "
+		tx[2] = "<html>Na mesma manh\u00E3 voc\u00EA se " + "<br/>encaminha para a Catedral, "
 				+ "<br/>chegando l\u00E1 pede para falar" + "<br/>com o Bispo. Ele te atende e"
 				+ "<br/>ent\u00E3o come\u00E7a a discuss\u00E3o. " + "<html>";
-		linhas[0] = 4;
+		linhas[2] = 4;
 
 		choice = "<html>Bispo:" + "<br/><br/>Aceita alguma bebida, Capit\u00E3o? " + "<html>";
 

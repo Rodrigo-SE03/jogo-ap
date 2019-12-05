@@ -46,12 +46,12 @@ public class Contador extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 
-		mortos = new JLabel("New label");
+		mortos = new JLabel();
 		mortos.setFont(new Font("Georgia", Font.BOLD, 25));
 		mortos.setBounds(10, 11, 396, 44);
 		contentPanel.add(mortos);
 
-		passaram = new JLabel("New label");
+		passaram = new JLabel();
 		passaram.setFont(new Font("Georgia", Font.BOLD, 25));
 		passaram.setBounds(10, 66, 396, 44);
 		contentPanel.add(passaram);

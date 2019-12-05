@@ -30,15 +30,15 @@ public class Hist_Arcan {
 	private Musica[] musicasSegunda;
 	private Jogador player;
 
-	public void arcan1(Texto t1, Jogador player) {
+	public Hist_Arcan(Jogador player) {
+		this.player = player;
+		vet.setPlayer(player);
+	}
+
+	public void arcan1(Texto t1) {
 		Geral geral = new Geral();
 
-		this.player = player;
-		player.setClase(0);
-		vet.setPlayer(player);
-
 		vet.arcan1();
-
 		geral.escolhas_2(t1, vet);
 
 		continuar = new ActionListener() {
@@ -269,12 +269,10 @@ public class Hist_Arcan {
 
 	}
 
-	public void torreDerrota(Jogador player) {
+	public void torreDerrota() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		vet.torreDerrota();
 		geral.escolhas_0(t1, vet);
@@ -299,15 +297,13 @@ public class Hist_Arcan {
 
 	}
 
-	public void torreVitoria(Jogador player) {
+	public void torreVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
+
 		this.player.setEnigma(2, true);
 		this.player.passaDia();
-
-		vet.setPlayer(this.player);
 
 		vet.torreVitoria();
 		geral.escolhas_0(t1, vet);
@@ -453,12 +449,10 @@ public class Hist_Arcan {
 
 	}
 
-	public void catedralDerrota(Jogador player, int x) {
+	public void catedralDerrota(int x) {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		vet.catedralDerrota(x);
 		geral.escolhas_0(t1, vet);
@@ -482,15 +476,13 @@ public class Hist_Arcan {
 		t1.getContinuar().addActionListener(continuar);
 	}
 
-	public void catedralVitoria(Jogador player) {
+	public void catedralVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
+
 		this.player.setEnigma(0, true);
 		this.player.passaDia();
-
-		vet.setPlayer(this.player);
 
 		vet.catedralVitoria();
 		geral.escolhas_0(t1, vet);
@@ -568,12 +560,10 @@ public class Hist_Arcan {
 
 	}
 
-	public void alamedaDerrota(Jogador player) {
+	public void alamedaDerrota() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		vet.alamedaDerrota();
 		geral.escolhas_0(t1, vet);
@@ -598,15 +588,13 @@ public class Hist_Arcan {
 
 	}
 
-	public void alamedaVitoria(Jogador player) {
+	public void alamedaVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
+
 		this.player.setEnigma(1, true);
 		this.player.passaDia();
-
-		vet.setPlayer(this.player);
 
 		vet.alamedaVitoria();
 		geral.escolhas_0(t1, vet);
@@ -718,7 +706,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						new Teste();
+						new Teste(player);
 					} else
 						cont++;
 				}
@@ -741,7 +729,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						new Teste();
+						new Teste(player);
 					} else
 						cont++;
 				}

@@ -29,11 +29,14 @@ public class Hist_Guerreior {
 	private Musica[] musicasSegunda;
 	private Jogador player;
 
-	public void guerreiro1(Texto t1, Jogador player) {
-		Geral geral = new Geral();
-
+	public Hist_Guerreior(Jogador player) {
 		this.player = player;
 		vet.setPlayer(player);
+	}
+
+	public void guerreiro1(Texto t1) {
+		Geral geral = new Geral();
+
 		vet.grr_1();
 		geral.escolhas_3(t1, vet);
 
@@ -111,12 +114,14 @@ public class Hist_Guerreior {
 			Maps mapa = new Maps(frame);
 			mapa.zerarBotoes();
 
-			ActionListener casaNobre = new ActionListener() {
+			ActionListener alameda = new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
+					alameda();
+			
 				}
 
 			};
@@ -126,6 +131,7 @@ public class Hist_Guerreior {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
+					catedral();
 				}
 
 			};
@@ -135,13 +141,14 @@ public class Hist_Guerreior {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
+					torre();
 				}
 
 			};
 			if (!player.getEnigma(0)) {
 				mapa.getBtnAlamedaPonteiros().setVisible(true);
 				mapa.getAlamedaPonteirosFundo().setVisible(true);
-				mapa.getBtnAlamedaPonteiros().addActionListener(casaNobre);
+				mapa.getBtnAlamedaPonteiros().addActionListener(alameda);
 			}
 			if (!player.getEnigma(1)) {
 				mapa.getBtnCatedral().setVisible(true);
@@ -186,12 +193,10 @@ public class Hist_Guerreior {
 
 	}
 
-	public void torreDerrota(Jogador player) {
+	public void torreDerrota() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		vet.grr_4_torre_lose();
 		geral.escolhas_0(t1, vet);
@@ -216,16 +221,14 @@ public class Hist_Guerreior {
 
 	}
 
-	public void torreVitoria(Jogador player) {
+	public void torreVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		this.player = player;
 		this.player.setEnigma(2, true);
 		this.player.passaDia();
 
-		vet.setPlayer(this.player);
 		vet.grr_4_torre_win();
 		geral.escolhas_0(t1, vet);
 
@@ -341,12 +344,10 @@ public class Hist_Guerreior {
 
 	}
 
-	public void catedralDerrota(Jogador player, int x) {
+	public void catedralDerrota(int x) {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		geral.escolhas_0(t1, vet);
 
@@ -369,15 +370,14 @@ public class Hist_Guerreior {
 		t1.getContinuar().addActionListener(continuar);
 	}
 
-	public void catedralVitoria(Jogador player) {
+	public void catedralVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
+
 		this.player.setEnigma(1, true);
 		this.player.passaDia();
 
-		vet.setPlayer(this.player);
 		vet.grr_6();
 		geral.escolhas_0(t1, vet);
 
@@ -426,12 +426,11 @@ public class Hist_Guerreior {
 
 	}
 
-	public void alamedaDerrota(Jogador player) {
+	public void alamedaDerrota() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
+
 		vet.grr_4_alameda_lose();
 		geral.escolhas_0(t1, vet);
 
@@ -455,16 +454,14 @@ public class Hist_Guerreior {
 
 	}
 
-	public void alamedaVitoria(Jogador player) {
+	public void alamedaVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		this.player = player;
 		this.player.setEnigma(0, true);
 		this.player.passaDia();
 
-		vet.setPlayer(this.player);
 		vet.grr_4_alameda_win();
 		geral.escolhas_0(t1, vet);
 
@@ -504,7 +501,7 @@ public class Hist_Guerreior {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						new Teste();
+						new Teste(player);
 					} else
 						cont++;
 				}

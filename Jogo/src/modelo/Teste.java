@@ -3,8 +3,7 @@ package modelo;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-
-import modelo.Fase;
+import personagens.Jogador;
 
 
 
@@ -13,9 +12,10 @@ public class Teste extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public Fase fase = new Fase(this);
+	public Fase fase;
 	//construtor 
-	public Teste () {
+	public Teste (Jogador player) {
+		fase = new Fase(this,player);
 		//tamanho
 		setSize(1280,1280);
 		//localização no meio
@@ -42,7 +42,7 @@ public class Teste extends JFrame {
 	}
 	
 	public static void main (String[] args)
-	{new Teste();
+	{new Teste(new Jogador());
 	        /* Set the Nimbus look and feel */
 	        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
 	        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

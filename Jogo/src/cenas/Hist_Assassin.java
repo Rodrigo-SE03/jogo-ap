@@ -28,11 +28,14 @@ public class Hist_Assassin {
 	private Musica[] musicasSegunda;
 	private Jogador player;
 
-	public void assassin1(Texto t1, Jogador player) {
-		Geral geral = new Geral();
-
+	public Hist_Assassin(Jogador player) {
 		this.player = player;
 		vet.setPlayer(player);
+	}
+
+	public void assassin1(Texto t1) {
+		Geral geral = new Geral();
+
 		vet.hpAssassin();
 
 		geral.escolhas_2(t1, vet);
@@ -166,7 +169,7 @@ public class Hist_Assassin {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 //						t1.getTexto().dispose();
-						new Labirinto(player,t1.getTexto());
+						new Labirinto(player, t1.getTexto());
 					} else
 						cont++;
 				}
@@ -177,12 +180,10 @@ public class Hist_Assassin {
 
 	}
 
-	public void torreDerrota(Jogador player) {
+	public void torreDerrota() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		geral.escolhas_0(t1, vet);
 
@@ -206,16 +207,13 @@ public class Hist_Assassin {
 
 	}
 
-	public void torreVitoria(Jogador player) {
+	public void torreVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		this.player = player;
 		this.player.setEnigma(2, true);
 		this.player.passaDia();
-
-		vet.setPlayer(this.player);
 
 		geral.escolhas_0(t1, vet);
 
@@ -263,12 +261,10 @@ public class Hist_Assassin {
 
 	}
 
-	public void catedralDerrota(Jogador player, int x) {
+	public void catedralDerrota(int x) {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		geral.escolhas_0(t1, vet);
 
@@ -291,15 +287,13 @@ public class Hist_Assassin {
 		t1.getContinuar().addActionListener(continuar);
 	}
 
-	public void catedralVitoria(Jogador player) {
+	public void catedralVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
+
 		this.player.setEnigma(1, true);
 		this.player.passaDia();
-
-		vet.setPlayer(this.player);
 
 		geral.escolhas_0(t1, vet);
 
@@ -348,12 +342,10 @@ public class Hist_Assassin {
 
 	}
 
-	public void CasaNobreDerrota(Jogador player) {
+	public void CasaNobreDerrota() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
-		vet.setPlayer(player);
 
 		geral.escolhas_0(t1, vet);
 
@@ -377,15 +369,13 @@ public class Hist_Assassin {
 
 	}
 
-	public void CasaNobreVitoria(Jogador player) {
+	public void CasaNobreVitoria() {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		this.player = player;
+
 		this.player.setEnigma(0, true);
 		this.player.passaDia();
-
-		vet.setPlayer(this.player);
 
 		geral.escolhas_0(t1, vet);
 
@@ -420,7 +410,7 @@ public class Hist_Assassin {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						new Teste();
+						new Teste(player);
 					} else
 						cont++;
 				}
