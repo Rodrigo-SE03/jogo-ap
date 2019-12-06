@@ -12,11 +12,17 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import cenas.Hist_Arcan;
+import graficos.Texto;
+import personagens.Jogador;
+import sons.Musica;
+
 public class Roda {
 
 	private JFrame frame;
+	private Musica musica;
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -26,13 +32,15 @@ public class Roda {
 				}
 			}
 		});
+	}*/
+
+	public Roda(Jogador player,Texto t1) {
+		initialize(player,t1);
+		musica = new Musica();
+		testaMusica();
 	}
 
-	public Roda() {
-		initialize();
-	}
-
-	private void initialize() {
+	private void initialize(Jogador player,Texto t1) {
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 527, 423);
@@ -68,7 +76,11 @@ public class Roda {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				JOptionPane.showMessageDialog(null, "errrrrrrrrou");
+				JOptionPane.showMessageDialog(null, "Estou decepcionada, mas não tem problema, estamos precisando de mais gente mesmo.");
+				musica.stop();
+				frame.dispose();
+				caixa.getFrame().dispose();
+				new Hist_Arcan(player).arcan1(t1);
 			}
 
 		};
@@ -78,7 +90,14 @@ public class Roda {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				JOptionPane.showMessageDialog(null, "nice");
+				JOptionPane.showMessageDialog(null, "Parabéns! Você sabe pensar! Está aceito na Ordem dos Arcanos");
+				musica.stop();
+				if(!player.isBonus_inicio()) {
+					player.setBonus_inicio(true);
+				}
+				frame.dispose();
+				caixa.getFrame().dispose();
+				new Hist_Arcan(player).arcan1(t1);
 			}
 
 		};
@@ -113,6 +132,18 @@ public class Roda {
 		panel.add(Fundo);
 		
 		frame.setVisible(true);
+	}
+	
+	public void testaMusica() {
+		new Thread() {
+			public void run() {
+				while (!frame.isVisible()) {
+					System.out.println("");
+				}
+				musica.TocaMusica("src/sons/puzzle.wav");
+				musica.setVolume(0.6f);
+			}
+		}.start();
 	}
 
 }

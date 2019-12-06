@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import bibliotecas.Biblio_Intro;
+import enigmas.Roda;
 import graficos.Escolhas;
 import graficos.Geral;
 import graficos.Texto;
@@ -627,7 +628,9 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(0);
-						new Hist_Arcan(vet.getPlayer()).arcan1(t1);
+						t1.getTexto().dispose();
+						new Roda(vet.getPlayer(),t1);
+						//new Hist_Arcan(vet.getPlayer()).arcan1(t1);
 					} else
 						cont++;
 
@@ -637,6 +640,7 @@ public class Hist_Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
+	
 
 	public void alameda3(Texto t1) {
 		if (musica.isPlaying()) {
