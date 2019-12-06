@@ -130,8 +130,7 @@ public class Hist_Arcan {
 	public void destino() {
 		
 		if (musica.isPlaying()) {
-			musica.reduzVolume(0.0f, 30);
-			musica.verifica();
+			musica.stop();
 		}
 		if (player.getDias() != 0 && !(player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2))) {
 
@@ -214,11 +213,16 @@ public class Hist_Arcan {
 				if (player.isBonus_inicio()) {
 					guerra1();
 				}
+				else
+					guerra2();
 				break;
 			case 3:
 				guerra1();
 				break;
-			default:
+			case 1:
+				guerra2();
+				break;
+			case 0:
 				guerra2();
 				break;
 			}
@@ -706,7 +710,7 @@ public class Hist_Arcan {
 			else
 				vet.itens2BINao();
 		}
-		vet.itensMin();
+		
 		geral.escolhas_0(t1, vet);
 		continuar = new ActionListener() {
 			int cont = 0;
