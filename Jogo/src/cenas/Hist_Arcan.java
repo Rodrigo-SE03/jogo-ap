@@ -205,7 +205,8 @@ public class Hist_Arcan {
 				mapa.getBtnTorreArcana().addActionListener(torre);
 			}
 		}
-		if(player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2)) {
+		/*if((player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2)) || player.getDias()==0)*/
+		else {
 			
 			player.setQtd();
 			switch (player.getQtd()) {
@@ -213,16 +214,11 @@ public class Hist_Arcan {
 				if (player.isBonus_inicio()) {
 					guerra1();
 				}
-				else
-					guerra2();
 				break;
 			case 3:
 				guerra1();
 				break;
-			case 1:
-				guerra2();
-				break;
-			case 0:
+			default:
 				guerra2();
 				break;
 			}
