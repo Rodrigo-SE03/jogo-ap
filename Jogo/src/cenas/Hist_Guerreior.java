@@ -134,7 +134,12 @@ public class Hist_Guerreior {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
-					catedral();
+					if (player.getFirstTry(1)) {
+						catedral();
+						player.setFirstTry(1, false);
+					} else {
+						catedral2Try();
+					}
 				}
 
 			};
@@ -174,7 +179,12 @@ public class Hist_Guerreior {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		vet.grr_3_torre();
+		if (player.getFirstTry(2)) {
+			vet.grr_3_torre();
+			player.setFirstTry(2, false);
+		} else
+			vet.grr_3_torre2Try();
+
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -381,10 +391,38 @@ public class Hist_Guerreior {
 
 	}
 
+	public void catedral2Try() {
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+
+		vet.grr_5_catedral2Try();
+
+		geral.escolhas_0(t1, vet);
+
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						new Hidra(player);
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
 	public void catedralDerrota(int x) {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
+
+		vet.grr_6catedralDerrota(x);
 
 		geral.escolhas_0(t1, vet);
 
@@ -465,7 +503,12 @@ public class Hist_Guerreior {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		vet.grr_3_alameda();
+		if (player.getFirstTry(0)) {
+			vet.grr_3_alameda();
+			player.setFirstTry(0, false);
+		} else
+			vet.grr_3_alameda2Try();
+
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -647,8 +690,9 @@ public class Hist_Guerreior {
 								new Menu_inicial();
 							}
 						}.start();
-
+						cr.setUndecorated(true);
 						cr.mostraCreditos();
+
 					} else
 						cont++;
 				}
@@ -691,7 +735,7 @@ public class Hist_Guerreior {
 								new Menu_inicial();
 							}
 						}.start();
-
+						cr.setUndecorated(true);
 						cr.mostraCreditos();
 					} else
 						cont++;

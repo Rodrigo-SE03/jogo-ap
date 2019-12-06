@@ -399,6 +399,14 @@ public class Biblio_Guerreiro extends Biblioteca {
 		linhas[3] = 6;
 	}
 
+	public void grr_5_catedral2Try() {
+		tx = new String[1];
+		linhas = new int[1];
+		tx[0] = "<html>Voc\u00EA vai para a Catedral, mas " + "<br/>antes de chegar entra em bueiro "
+				+ "<br/>e abre seu caminho em dire\u00E7\u00E3o " + "<br/>\u00E0 aos arquivos à hidra " + "<html>";
+		linhas[0] = 3;
+	}
+
 	public void grr_6() { // caso derrote a hidra
 
 		tx = new String[1];
@@ -410,6 +418,31 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ "<br/>mapas. Assim que o encontra, voc\u00EA foge " + "<br/>da Catedral e volta para o Castelo da "
 				+ "<br/>Guarda Real para descansar." + "<html>";
 		linhas[0] = 6;
+	}
+
+	public void grr_6catedralDerrota(int x) {
+
+		tx = new String[2];
+		linhas = new int[2];
+		switch (x) {
+		case 1:
+			tx[0] = "<html>A luta torna - se muito longa, voc\u00EA n\u00E3o "
+					+ "<br/>conseguir\u00E1 batalhar por muito mais  " + "<br/>tempo." + "<html>";
+			linhas[0] = 3;
+			break;
+		case 2:
+			tx[0] = "<html>A Hidra \u00E9 forte de mais e a cada ataque  "
+					+ "<br/>ela cresce mais. Voc\u00EA n\u00E3o tem chances " + "<br/>de venc\u00EA-la agora."
+					+ "<html>";
+			linhas[0] = 3;
+			break;
+		}
+		tx[1] = "<html>Sua \u00FAnica op\u00E7\u00E3o \u00E9 fugir, voc\u00EA se vira e "
+				+ "<br/>come\u00E7a a correr, voc\u00EA encontra uma " + "<br/>passagem que "
+				+ "<br/>d\u00E1 nos esgotos da cidade. Depois de "
+				+ "<br/>restaurar suas for\u00E7as voc\u00EA pode tentar" + "<br/>enfrentar a besta de novo."
+				+ "<html>";
+		linhas[1] = 5;
 	}
 
 	public void grr_3_torre() { // dialogo antes do puzzle do labirinto na primeira vez que ele entra na torre
@@ -489,6 +522,14 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx[18] = "<html>Voc\u00EA vai para o labirinto." + "<html>";
 		linhas[18] = 1;
+	}
+
+	public void grr_3_torre2Try() {
+		tx = new String[1];
+		linhas = new int[1];
+		tx[0] = "<html>Você se dirige imediatamente" + "<br/>ao labirinto para buscar" + "<br/>os livros de Muriel."
+				+ "<html>";
+		linhas[0] = 2;
 	}
 
 	public void grr_4_torre_win() {
@@ -616,10 +657,17 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx[18] = "<html>Kalastar:<br/><br/>Est\u00E1 vendo aquela porta? Prove para"
 				+ "<br/>mim que voc\u00EA consegue abri-la com sua "
-				+ "<br/>intelig\u00EAncia, assim saberei o tipo de "
-				+ "<br/>pessoa que lutarei ao lado." + "<html>";
+				+ "<br/>intelig\u00EAncia, assim saberei o tipo de " + "<br/>pessoa que lutarei ao lado." + "<html>";
 		linhas[18] = 5;
 
+	}
+
+	public void grr_3_alameda2Try() {
+		tx = new String[1];
+		linhas = new int[1];
+
+		tx[0] = "<html>Você se dirige a porta, pronto para" + "<br/>novamente tentar abri-la  " + "<html>";
+		linhas[0] = 2;
 	}
 
 	public void grr_4_alameda_win() {
@@ -702,9 +750,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx = new String[3];
 		linhas = new int[3];
 
-		tx[0] = "<html> Voc\u00EAs est\u00E3o conseguindo conter grande "
-				+ "<br/>parte das tropas inimigas, mas uma " + "<br/>quantidade significativa ainda consegue"
-				+ "<br/>passar por voc\u00EAs. Bethesda consegue "
+		tx[0] = "<html> Voc\u00EAs est\u00E3o conseguindo conter grande " + "<br/>parte das tropas inimigas, mas uma "
+				+ "<br/>quantidade significativa ainda consegue" + "<br/>passar por voc\u00EAs. Bethesda consegue "
 				+ "<br/>invadir um peda\u00E7o da cidade e tanto l\u00E1 "
 				+ "<br/>em cima, como aqui em baixo est\u00E1 tendo" + "<br/>uma violenta batalha." + "<html>";
 		linhas[0] = 6;
@@ -713,7 +760,6 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ "<br/>guerra, no entanto uma parte significativa  "
 				+ "<br/>da cidade foi destru\u00EDda e muitas pessoas " + "<br/>foram mortas." + "<html>";
 		linhas[1] = 4;
-
 
 		tx[2] = "<html>	Voc\u00EAs s\u00E3o homenageados pelo rei e  "
 				+ "<br/>recebem t\u00EDtulos e posses. Agora voc\u00EA \u00E9"
@@ -745,9 +791,9 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx = new String[2];
 		linhas = new int[2];
 
-		tx[0] = "<html>	As tropas inimigas s\u00E3o muito numerosas,"
-				+ "<br/>elas conseguem esmagar suas defesas e " + "<br/>passar sem problemas, deixando uma "
-				+ "<br/>mancha com seu sangue no ch\u00E3o. " + "<br/>Helaria \u00E9 totalmente invadida e n\u00E3o tem"
+		tx[0] = "<html>	As tropas inimigas s\u00E3o muito numerosas," + "<br/>elas conseguem esmagar suas defesas e "
+				+ "<br/>passar sem problemas, deixando uma " + "<br/>mancha com seu sangue no ch\u00E3o. "
+				+ "<br/>Helaria \u00E9 totalmente invadida e n\u00E3o tem"
 				+ "<br/>esperan\u00E7as de sobreviv\u00EAncia, destinada " + "<br/>ao esquecimento." + "<html>";
 		linhas[0] = 6;
 
@@ -761,14 +807,12 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx = new String[3];
 		linhas = new int[3];
 
-		tx[0] = "<html>	O terceiro dia chega, mas sem os "
-				+ "<br/>mapas da cidade \u00E9 imposs\u00EDvel verificar os "
+		tx[0] = "<html>	O terceiro dia chega, mas sem os " + "<br/>mapas da cidade \u00E9 imposs\u00EDvel verificar os "
 				+ "<br/>pontos de fraqueza subterr\u00E2neos, por " + "<br/>isso sua equipe \u00E9 encarregada de"
 				+ "<br/>defender o port\u00E3o principal." + "<html>";
 		linhas[0] = 4;
 
-		tx[1] = "<html>	De noite voc\u00EA vai para seu quarto "
-				+ "<br/>e descansa at\u00E9 o dia seguinte. Amanhece"
+		tx[1] = "<html>	De noite voc\u00EA vai para seu quarto " + "<br/>e descansa at\u00E9 o dia seguinte. Amanhece"
 				+ "<br/>e chega a hora, voc\u00EA deve se arrumar " + "<br/>para a batalha." + "<html>";
 		linhas[1] = 3;
 
