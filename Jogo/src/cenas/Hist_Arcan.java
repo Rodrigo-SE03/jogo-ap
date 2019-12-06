@@ -613,6 +613,7 @@ public class Hist_Arcan {
 					switch (cont) {
 					case 3:
 						musica.reduzVolume(0.0f, 40);
+						break;
 					default:
 						break;
 					}
@@ -646,6 +647,32 @@ public class Hist_Arcan {
 		}
 
 		geral.escolhas_2(t1, vet);
+		
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					switch (cont) {
+					case 0:
+						musica.TocaMusica("src/sons/sacrificio.wav");
+						musica.setVolume(0.0f);
+						musica.aumentaVolume(0.6f,60);
+						break;
+					default:
+						break;
+					}
+					if (geral.isGo()) {
+						t1.getTexto().dispose();
+						t1.getContinuar().removeActionListener(continuar);
+
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() {
 
@@ -684,6 +711,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						musica.stop();
 						new Creditos();
 					} else
 						cont++;
@@ -716,6 +744,7 @@ public class Hist_Arcan {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.stop();
 						new Teste(player);
 					} else
 						cont++;
@@ -737,9 +766,19 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch (cont) {
+					case 0:
+						musica.TocaMusica("src/sons/sacrificio.wav");
+						musica.setVolume(0.0f);
+						musica.aumentaVolume(0.6f,60);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.stop();
 						new Teste(player);
 					} else
 						cont++;
