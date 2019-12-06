@@ -34,12 +34,14 @@ public class Hist_Arcan {
 	public Hist_Arcan(Jogador player) {
 		this.player = player;
 		this.player.setClase(0);
+		this.player.setDias(3);
+		this.player.setHoras(3);
 		vet.setPlayer(this.player);
 	}
 
 	public void arcan1(Texto t1) {
 		Geral geral = new Geral();
-
+		
 		vet.arcan1();
 		geral.escolhas_2(t1, vet);
 
@@ -126,11 +128,12 @@ public class Hist_Arcan {
 	}
 
 	public void destino() {
+		
 		if (musica.isPlaying()) {
 			musica.reduzVolume(0.0f, 30);
 			musica.verifica();
 		}
-		if (player.getDias() != 0) {
+		if (player.getDias() != 0 && !(player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2))) {
 
 			JFrame frame = new JFrame();
 			JLabel dias = new JLabel("faltam " + player.getDias() + " dias");
@@ -202,7 +205,9 @@ public class Hist_Arcan {
 				mapa.getTorreArcanaFundo().setVisible(true);
 				mapa.getBtnTorreArcana().addActionListener(torre);
 			}
-		} else {
+		}
+		if(player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2)) {
+			
 			player.setQtd();
 			switch (player.getQtd()) {
 			case 2:
@@ -320,6 +325,7 @@ public class Hist_Arcan {
 						musica.TocaMusica("src/sons/mercado.wav");
 						musica.setVolume(0.1f);
 						musica.aumentaVolume(0.6f, 50);
+						break;
 					default:
 						break;
 					}
@@ -357,7 +363,7 @@ public class Hist_Arcan {
 							musica.stop();
 						}
 						musica.TocaMusica("src/sons/catedral.wav");
-						musica.setVolume(0.8f);
+						musica.setVolume(0.9f);
 						break;
 					default:
 						break;
@@ -628,6 +634,7 @@ public class Hist_Arcan {
 
 	public void guerra1() {
 
+		
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 

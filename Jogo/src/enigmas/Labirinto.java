@@ -26,6 +26,7 @@ import cenas.Hist_Assassin;
 import cenas.Hist_Guerreior;
 import graficos.Loading;
 import personagens.Jogador;
+import sons.Musica;
 
 public class Labirinto {
 
@@ -40,6 +41,7 @@ public class Labirinto {
 	private MouseMotionListener mover;
 	private int x, y;
 	private boolean amarelo, azul;
+	private Musica musica;
 
 //	public static void main(String[] args) {
 //		EventQueue.invokeLater(new Runnable() {
@@ -57,7 +59,9 @@ public class Labirinto {
 		this.player = player;
 		this.icone = new ImageIcon("src/imagens/Icone.png");
 		this.size = Toolkit.getDefaultToolkit().getScreenSize();
+		musica = new Musica();
 		initialize(carregar);
+		testaMusica();
 	}
 
 	private void initialize(JFrame carregar) {
@@ -351,7 +355,7 @@ public class Labirinto {
 	}
 
 	public void perder() {
-
+		musica.stop();
 		switch (player.getClase()) {
 
 		case 0:
@@ -373,7 +377,7 @@ public class Labirinto {
 	}
 
 	public void vencer() {
-
+		musica.stop();
 		switch (player.getClase()) {
 
 		case 0:
@@ -510,5 +514,17 @@ public class Labirinto {
 
 		}
 
+	}
+	
+	public void testaMusica() {
+		new Thread() {
+			public void run() {
+				while(!frame.isVisible()) {
+					System.out.println("");
+				}
+				musica.TocaMusica("src/sons/labirinto.wav");
+				musica.setVolume(0.6f);
+			}
+		}.start();
 	}
 }
