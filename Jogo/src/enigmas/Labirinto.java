@@ -169,10 +169,13 @@ public class Labirinto {
 
 		switch (player.getClase()) {
 		case 0:
-			txtdica.setText(
-					"<html>Segundo as lendas, o livro de Merlim " + "<br/>foi separado em 3 diferentes livros. A"
-							+ "<br/>única forma de recuperar o livro " + "<br/>original é pegando suas partes na "
-							+ "<br/>ordem correta. Tudo que se sabe " + "<br/>sobre a ordem é que … " + "<html>");
+			txtdica.setText("<html>Segundo as lendas, o livro de Merlim "
+					+ "<br/>foi separado em 3 diferentes livros. A" + "<br/>única forma de recuperar o livro "
+					+ "<br/>original é pegando suas partes na " + "<br/>ordem correta. Tudo que se sabe "
+					+ "<br/>sobre a ordem é que …<br/> “Abaixo das nuvens, o Sol brilha"
+					+ "<br/>O c\u00E9u azul reflete o verde das \u00E1rvores"
+					+ "<br/>E, embaixo de todos est\u00E1 o vermelho da terra."
+					+ "<br/>Junte-os corretamente e o pr\u00EAmio conseguir\u00E1. ”" + "<html>");
 			break;
 		case 2:
 			txtdica.setText(

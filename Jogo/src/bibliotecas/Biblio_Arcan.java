@@ -126,12 +126,12 @@ public class Biblio_Arcan extends Biblioteca {
 		linhas[12] = 3;
 
 		choice = "<html>Artemisia:" + "<br/><br/>Voc\u00EA est\u00E1 bem?" + "<html>";
-		if(masculino){
+		if (masculino) {
 			op2 = "Ser sincero";
-		} else op2 = "Ser sincera";
-		
+		} else
+			op2 = "Ser sincera";
+
 		op1 = "Mentir";
-		
 
 	}
 
@@ -641,24 +641,9 @@ public class Biblio_Arcan extends Biblioteca {
 	}
 
 	public void catedralDerrota(int x) {
-		if (player.getHoras() == 3) {
 
-			tx = new String[4];
-			linhas = new int[4];
-
-			tx[1] = "<html>J\u00E1 est\u00E1 muito tarde, todos os esfor\u00E7os "
-					+ "<br/>do dia pesam sobre seu corpo e voc\u00EA "
-					+ "<br/>n\u00E3o conseguiria fazer mais nada sem " + "<br/>dormir um pouco" + "<html>";
-			linhas[1] = 3;
-
-			tx[2] = "<html>Voc\u00EA acorda e percebe que j\u00E1 \u00E9 o fim "
-					+ "<br/>da manh\u00E3, voc\u00EA deve se apressar " + "<html>";
-			linhas[2] = 1;
-		} else {
-
-			tx = new String[2];
-			linhas = new int[2];
-		}
+		tx = new String[2];
+		linhas = new int[2];
 
 		switch (x) {
 		case 1:
@@ -784,7 +769,7 @@ public class Biblio_Arcan extends Biblioteca {
 		tx = new String[1];
 		linhas = new int[1];
 
-		tx[0] = "<htmlO alarme é soado e você precisa  " + "<br/>correr. Horas passam até que os  "
+		tx[0] = "<html>O alarme é soado e você precisa  " + "<br/>correr. Horas passam até que os  "
 				+ "<br/>túneis estejam seguros novamente. " + "<html>";
 		linhas[0] = 2;
 	}

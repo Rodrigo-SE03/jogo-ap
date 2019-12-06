@@ -34,8 +34,6 @@ public class Hist_Arcan {
 	public Hist_Arcan(Jogador player) {
 		this.player = player;
 		this.player.setClase(0);
-		this.player.setDias(3);
-		this.player.setHoras(3);
 		vet.setPlayer(this.player);
 	}
 

@@ -30,7 +30,7 @@ public class Hidra {
 	private Jogador player;
 	private boolean perdeu, ganhou, mtcabeca, hasCoracao;
 	private int numb, numero, min, seg;
-	private double time;
+	private int time;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -53,8 +53,8 @@ public class Hidra {
 
 	public Hidra(Jogador player) {
 		this.player = player;
-		this.time = 180000;
-		this.min = 3;
+		this.time = 60;
+		this.min = 1;
 		this.seg = 0;
 		this.perdeu = false;
 		this.ganhou = false;
@@ -272,32 +272,22 @@ public class Hidra {
 
 		new Thread() {
 			public void run() {
-				try {
-					int s;
+				try {			
 					while (time > 0 && !perdeu) {
+						
 						if (seg < 10) {
 							text.setText(" " + min + ":" + "0" + seg);
-						} else if (seg >= 10) {
+						} else{
 							text.setText(" " + min + ":" + seg);
 						}
-
-						s = min;
 						Thread.sleep(1000);
-
-						if (time < 180000) {
-							min = 2;
-						} else if (time < 60000) {
-							min = 0;
-						}
-						if (min != s) {
-							seg = 59;
-						} else if (min == s && time != 180000) {
-							seg--;
-						}
 						time--;
+						seg = time;
+						min = seg/60;
+						seg = seg%60;
 					}
+					
 					perdeu = true;
-
 					if (perdeu && !ganhou) {
 						musica.stop();
 						background.dispose();
