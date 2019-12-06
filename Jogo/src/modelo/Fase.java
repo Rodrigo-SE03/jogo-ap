@@ -20,6 +20,7 @@ import cenas.Hist_Arcan;
 import cenas.Hist_Assassin;
 import cenas.Hist_Guerreior;
 import personagens.Jogador;
+import sons.Musica;
 
 public class Fase extends JPanel implements ActionListener {
 	/**
@@ -35,6 +36,7 @@ public class Fase extends JPanel implements ActionListener {
 	private int situacao, cont = 0, contP = 0;
 	private JFrame frame;
 	Jogador jogador;
+	private Musica musica;
 
 	public int getContP() {
 		return contP;
@@ -48,6 +50,9 @@ public class Fase extends JPanel implements ActionListener {
 	public Fase(JFrame frame, Jogador jogador)
 
 	{
+		musica = new Musica();
+		musica.TocaMusica("src/sons/batalha.wav");
+		musica.setVolume(0.7f);
 		this.jogador = jogador;
 
 		// ficar mais bonitu
@@ -120,6 +125,7 @@ public class Fase extends JPanel implements ActionListener {
 		}
 		// aparecer tela de game over
 		else {
+			musica.stop();
 			terminar();
 			ImageIcon fimJogo = new ImageIcon(getClass().getResource("game_over.jpeg"));
 			graficos.drawImage(fimJogo.getImage(), 0, 0, null);

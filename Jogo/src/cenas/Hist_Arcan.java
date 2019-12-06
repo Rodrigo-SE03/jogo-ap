@@ -328,7 +328,7 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					switch (cont) {
-					case 2:
+					case 1:
 						musica.TocaMusica("src/sons/mercado.wav");
 						musica.setVolume(0.1f);
 						musica.aumentaVolume(0.6f, 50);
@@ -533,7 +533,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					switch (cont) {
 					case 0:
-						musica.aumentaVolume(0.7f, 80);
+						musica.aumentaVolume(0.9f, 50);
 						break;
 					default:
 						break;
@@ -726,7 +726,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					switch (cont) {
 					case 0:
-						musica.TocaMusica("src/sons/sacrificio.wav");
+						musica.TocaMusica("src/sons/sarcificio.wav");
 						musica.setVolume(0.0f);
 						musica.aumentaVolume(0.6f,60);
 						break;
@@ -864,6 +864,8 @@ public class Hist_Arcan {
 	public void guerraVitoria() {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
+		musica.TocaMusica("src/sons/final.wav");
+		musica.setVolume(1.0f);
 
 		if (player.getQtd() == 3) {
 			if (player.isSacrificio())
@@ -885,6 +887,7 @@ public class Hist_Arcan {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.stop();
 						Creditos cr = new Creditos();
 
 						new Thread() {
@@ -912,6 +915,8 @@ public class Hist_Arcan {
 	}
 
 	public void guerraDerrota() {
+		musica.TocaMusica("src/sons/final.wav");
+		musica.setVolume(1.0f);
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -937,6 +942,7 @@ public class Hist_Arcan {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.stop();
 						Creditos cr = new Creditos();
 
 						new Thread() {

@@ -15,6 +15,7 @@ public class Teste extends JFrame {
 	public Fase fase;
 	//construtor 
 	public Teste (Jogador player) {
+		
 		fase = new Fase(this,player);
 		//tamanho
 		setSize(1280,1280);
