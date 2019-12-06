@@ -126,14 +126,14 @@ public class Biblio_Assassin extends Biblioteca {
 		linhas = new int[10];
 
 		switch (a) {
-		case 1:
+		case 1://mentir
 			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Estou bem, nenhum problema com isso." + "<html>";
 			linhas[0] = 2;
 
 			tx[1] = "<html>Cassius:" + "<br/><br/>Fico feliz de ouvir isso." + "<html>";
 			linhas[1] = 2;
 			break;
-		case 2:
+		case 2://dizer a verdade
 			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Não estou confortável com Bethesda,"
 					+ "<br/>mas isso não atrapalhará minha luta" + "<html>";
 			linhas[0] = 3;
@@ -225,7 +225,7 @@ public class Biblio_Assassin extends Biblioteca {
 		linhas = new int[2];
 		
 		switch (x) {
-		case 1:
+		case 1://cassius me mandou
 			tx[0] = "<html>Ariandra:\" + \"<br/><br/>Cassius?"
 					+ "<html>";
 	      linhas[0] =2;
@@ -240,7 +240,7 @@ public class Biblio_Assassin extends Biblioteca {
 			op1 = "Voc\u00EA \u00E9 uma ex\u00EDmia arqueira, que ajuda n\u00E3o poderia oferecer?";
 			op2 = "Bethesda est\u00E1 se aproximando, ele quer sua ajuda para lutar.";
 			break;
-		case 2:
+		case 2://sou...
 			tx[0] = "<html>Ariandra:\" + \"<br/><br/>Ajuda para que??"
 					+ "<html>";
 	      linhas[0] =2;
@@ -262,7 +262,7 @@ public class Biblio_Assassin extends Biblioteca {
 		tx = new String[9];
 		linhas = new int[9];
 		switch (x) {
-		case 1:
+		case 1://voce é uma...
 			tx[0] = "<html>Ela baixa um pouco a guarda"
 					 + "<br/>e afrouxa a corda do arco."  
 					+ "<html>";
@@ -313,7 +313,7 @@ public class Biblio_Assassin extends Biblioteca {
 	      linhas[8] =2;
 	      
 			break;
-		case 2:
+		case 2://Bethesheda está chegando
 			
 	      choice = "<html>Ariandra:" + "<br/><br/>Essa guerra \u00E9 imposs\u00EDvel. Voc\u00EA est\u00E1 louco?" + "<html>";
 			op1 = "\u00C9 loucura querer proteger sua cidade? Se for ent\u00E3o estou louco.";
@@ -324,7 +324,7 @@ public class Biblio_Assassin extends Biblioteca {
 		public void voceEstaLouco(int x) {
 			switch (x)
 			{
-			case 1:
+			case 1://locura querer protegr a cidade?
 				tx = new String[5];
 				linhas = new int[5];
 				 tx[0] =  "<html>Ariandra:" + "<br/><br/>Voc\u00EA tem determina\u00E7\u00E3o, mas s\u00F3 isso"
@@ -360,7 +360,7 @@ public class Biblio_Assassin extends Biblioteca {
 											+ "<html>";
 							      linhas[4] =2;   
 			      break;
-			case 2:
+			case 2://suas habilidades são unicas
 				tx = new String[2];
 				linhas = new int[2];
 				
@@ -383,7 +383,7 @@ public class Biblio_Assassin extends Biblioteca {
 		public void porqueDeveriaMeImportar(int x) {
 			switch (x) {
 			
-			case 1:
+			case 1://alguem com quem voce se importa
 				
 			tx = new String[5];
 			linhas = new int[5];
@@ -417,7 +417,7 @@ public class Biblio_Assassin extends Biblioteca {
 						+ "<html>";
 		      linhas[4] =2;  
 		      break;
-			case 2:
+			case 2:// não se importa com as vidas perdidas
 				tx = new String[5];
 				linhas = new int[5];
 				tx[0] =  "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA n\u00E3o se preocupa com"
@@ -550,7 +550,7 @@ public class Biblio_Assassin extends Biblioteca {
 			
 			public void posLabirinto(int x) {
 				switch (x){
-				case 1:
+				case 1://ganhar
 					tx = new String[2];
 					linhas = new int[2];
 					
@@ -566,7 +566,7 @@ public class Biblio_Assassin extends Biblioteca {
 								+ "<html>";
 				      linhas[1] =2;    
 				      break;
-				case 2:
+				case 2://perder
 					   tx[1] = "<html>Voc\u00EA sente uma forte dor de cabe\u00E7a"
 								 + "<br/>e desmaia. Pouco depois "  
 								 + "<br/>voc\u00EA acorda na enfermaria."  
@@ -626,7 +626,7 @@ public class Biblio_Assassin extends Biblioteca {
 			
 			public void posHidra(int x) {
 				switch (x) {
-				case 1:
+				case 1://ganhar
 				tx = new String[13];
 				linhas = new int[13];
 				tx[0] = "<html>Voc\u00EA consegue superar a"
@@ -836,7 +836,7 @@ public class Biblio_Assassin extends Biblioteca {
 			
 			public void derrotaComBonusOuVitoriaSemRecrutas2(int x) {
 				switch (x) {
-				case 1:
+				case 1://lutar
 					tx = new String[4];
 					linhas = new int[4];
 					tx[0] = "<html>Voc\u00EA fugiu uma vez de Bethesda"
@@ -872,7 +872,7 @@ public class Biblio_Assassin extends Biblioteca {
 							+ "<html>";
 			      linhas[3] =1; 
 			      break;
-				case 2:
+				case 2://fugir
 					tx = new String[2];
 					linhas = new int[2];
 					tx[0] = "<html>N\u00E3o \u00E9 porque Helaria"
