@@ -287,9 +287,21 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 
 					} else
 						cont++;
@@ -327,9 +339,21 @@ public class Hist_Arcan {
 						break;
 					}
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -468,9 +492,21 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 
 					} else
 						cont++;
@@ -505,10 +541,23 @@ public class Hist_Arcan {
 						break;
 					}
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						musica.reduzVolume(0.0f, 40);
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								musica.reduzVolume(0.0f, 40);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
+
 					} else
 						cont++;
 				}
@@ -579,9 +628,21 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 
 					} else
 						cont++;
@@ -617,10 +678,22 @@ public class Hist_Arcan {
 					default:
 						break;
 					}
-					if (geral.isGo()) {
-						t1.getTexto().dispose();
-						t1.getContinuar().removeActionListener(continuar);
-						destino();
+					if (cont == (vet.getTx().length - 1)) {
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 
 					} else
 						cont++;

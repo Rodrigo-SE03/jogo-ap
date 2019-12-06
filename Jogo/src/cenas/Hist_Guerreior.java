@@ -184,7 +184,6 @@ public class Hist_Guerreior {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-//						t1.getTexto().dispose();
 						new Labirinto(player, t1.getTexto());
 					} else
 						cont++;
@@ -210,9 +209,21 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 
 					} else
 						cont++;
@@ -241,9 +252,21 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -304,21 +327,6 @@ public class Hist_Guerreior {
 		vet.grr_4_catedral(x);
 		geral.escolhas_2(t1, vet);
 
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-				if (geral.isFlag()) {
-					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						new Hidra(player);
-					} else
-						cont++;
-				}
-			}
-		};
-
 		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -326,7 +334,20 @@ public class Hist_Guerreior {
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				vet.grr_5_catedral_cinismo();
 				geral.escolhas_0(t1, vet);
-				t1.getContinuar().addActionListener(continuar);
+				t1.getContinuar().addActionListener(new ActionListener() {
+					int cont = 0;
+
+					public void actionPerformed(ActionEvent e) {
+						if (geral.isFlag()) {
+							if (cont == (vet.getTx().length - 1)) {
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								new Hidra(player);
+							} else
+								cont++;
+						}
+					}
+				});
 
 			}
 		};
@@ -338,7 +359,20 @@ public class Hist_Guerreior {
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				vet.grr_5_catedral_agressivo();
 				geral.escolhas_0(t1, vet);
-				t1.getContinuar().addActionListener(continuar);
+				t1.getContinuar().addActionListener(new ActionListener() {
+					int cont = 0;
+
+					public void actionPerformed(ActionEvent e) {
+						if (geral.isFlag()) {
+							if (cont == (vet.getTx().length - 1)) {
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								new Hidra(player);
+							} else
+								cont++;
+						}
+					}
+				});
 			}
 		};
 
@@ -360,9 +394,21 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 
 					} else
 						cont++;
@@ -390,9 +436,21 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -443,10 +501,21 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
-
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -468,22 +537,32 @@ public class Hist_Guerreior {
 		vet.grr_4_alameda_win();
 		geral.escolhas_0(t1, vet);
 
-		continuar = new ActionListener() {
+		t1.getContinuar().addActionListener(new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
 			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
+		});
 
 	}
 

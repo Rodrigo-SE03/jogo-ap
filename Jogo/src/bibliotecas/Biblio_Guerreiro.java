@@ -230,7 +230,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 			tx[0] = "<html>Bispo:" + "<br/><br/>Vejo que voc\u00EA tem um paladar " + "<br/>refinado. " + "<html>";
 			linhas[0] = 3;
 
-			tx[1] = "<html>Voc\\u00EA<br/><br/> Nada melhor do que frutas com \u00E1lcool." + "<html>";
+			tx[1] = "<html>Voc\u00EA<br/><br/> Nada melhor do que frutas com \u00E1lcool." + "<html>";
 			linhas[1] = 2;
 			y = 2;
 			break;
@@ -288,7 +288,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ "<br/>A Igreja n\u00E3o pode escolher " + "<br/>sobre a vida de dois fi\u00EAis." + "<html>";
 		linhas[y + 9] = 6;
 
-		choice = "<html>Qual \u00EA sua resposta? " + "<html>";
+		choice = "<html>Qual \u00E9 sua resposta? " + "<html>";
 
 		op1 = "<html>Seu cinismo me impressiona." + "<html>";
 
@@ -372,7 +372,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		linhas = new int[4];
 
 		if (masculino) {
-			tx[1] = "<html>Por conta de suas a\u00E7\u00F5es " + "<br/>voc\u00EA \u00EA jogado na pris\u00E3o dentro "
+			tx[1] = "<html>Por conta de suas a\u00E7\u00F5es " + "<br/>voc\u00EA \u00E9 jogado na pris\u00E3o dentro "
 					+ "<br/>da Catedral e agora precisa " + "<br/>conseguir o mapa e escapar "
 					+ "<br/>antes que seja tarde demais. " + "<html>";
 			linhas[1] = 4;
@@ -457,17 +457,17 @@ public class Biblio_Guerreiro extends Biblioteca {
 		linhas[8] = 4;
 
 		tx[9] = "<html>Você:<br/><br/> S\u00E3o tr\u00EAs partes?" + "<html>";
-		linhas[9] = 1;
+		linhas[9] = 2;
 
 		tx[10] = "<html>Muriel:<br/><br/> Precisamente, espalhadas pelo labirinto. " + "<html>";
-		linhas[10] = 1;
+		linhas[10] = 2;
 
 		tx[11] = "<html>Você:<br/><br/> Tudo bem, antes do fim do dia voc\u00EA ter\u00E1" + "<br/>esse livro."
 				+ "<html>";
-		linhas[11] = 1;
+		linhas[11] = 3;
 
 		tx[12] = "<html>Quando voc\u00EA est\u00E1 no caminho para o " + "<br/>labirinto Muriel te chama." + "<html>";
-		linhas[12] = 2;
+		linhas[12] = 1;
 
 		tx[13] = "<html>Muriel:<br/><br/> Espere, tem algo que preciso te dizer." + "<html>";
 		linhas[13] = 2;
@@ -485,7 +485,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		linhas[16] = 1;
 
 		tx[17] = "<html>Você:<br/><br/> Obrigado, agora se prepare para se " + "<br/>juntar a minha equipe." + "<html>";
-		linhas[17] = 2;
+		linhas[17] = 3;
 
 		tx[18] = "<html>Voc\u00EA vai para o labirinto." + "<html>";
 		linhas[18] = 1;
@@ -586,7 +586,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[11] = "<html>Voc\u00EA:<br/><br/> Preciso das suas habilidades. Uma "
 				+ "<br/>guerra est\u00E1 vindo e estou montando uma " + "<br/>equipe. Os melhores da Guarda Real, da"
 				+ "<br/>Torre Arcana e da Alameda dos Tr\u00EAs"
-				+ "<br/>Ponteiros e n\u00F3s queremos voc\u00EA e os seus" + "<br/>dentro. - Voc\u00EA diz." + "<html>";
+				+ "<br/>Ponteiros e n\u00F3s queremos voc\u00EA e os seus" + "<br/>dentro." + "<html>";
 		linhas[11] = 7;
 
 		tx[12] = "<html>Kalastar:<br/><br/> Hum... Parece interessante, mas o que " + "<br/>eu ganho com isso?"
@@ -614,10 +614,10 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[17] = "<html>Voc\u00EA:<br/><br/> O que voc\u00EA quer que eu fa\u00E7a?" + "<html>";
 		linhas[17] = 2;
 
-		tx[18] = "<htmlKalastar:<br/><br/>Est\u00E1 vendo aquela porta? Prove para"
+		tx[18] = "<html>Kalastar:<br/><br/>Est\u00E1 vendo aquela porta? Prove para"
 				+ "<br/>mim que voc\u00EA consegue abri-la com sua "
 				+ "<br/>intelig\u00EAncia, assim saberei o tipo de "
-				+ "<br/>pessoa que lutarei ao lado. - diz Kelastar." + "<html>";
+				+ "<br/>pessoa que lutarei ao lado." + "<html>";
 		linhas[18] = 5;
 
 	}
@@ -816,7 +816,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ "<br/>subterr\u00E2neos. A mais violenta batalha j\u00E1 "
 				+ "<br/>vista tem in\u00EDcio. Muitos s\u00E3o os mortos e"
 				+ "<br/>uma grande parte da cidade \u00E9 destru\u00EDda, "
-				+ "<br/>mas no fim do dia as tropas de Bethesda " + "<br/>minguem e Helaria sai vitoriosa." + "<html>";
+				+ "<br/>mas no fim do dia as tropas de Bethesda " + "<br/>minguam e Helaria sai vitoriosa." + "<html>";
 		linhas[0] = 8;
 
 		tx[1] = "<html>		O Rei decide homenagear sua equipe por" + "<br/>ser a primeira linha de defesa da cidade."

@@ -12,12 +12,11 @@ public class Jogador extends Character {
 
 	private boolean sacrificio = false;
 
-	public boolean isSacrificio() {
-		return sacrificio;
-	}
-
-	public void setSacrificio(boolean sacrificio) {
-		this.sacrificio = sacrificio;
+	public Jogador() {
+		for (int i = 0; i < 3; i++) {
+			this.enigma[i] = false;
+			this.firstTry[i] = true;
+		}
 	}
 
 	private int dias = 3;
@@ -51,6 +50,7 @@ public class Jogador extends Character {
 	public int getDias() {
 		return dias;
 	}
+
 	public void setDias(int dias) {
 		this.dias = dias;
 	}
@@ -58,7 +58,7 @@ public class Jogador extends Character {
 	public int getHoras() {
 		return horas;
 	}
-	
+
 	public void setHoras(int horas) {
 		this.horas = horas;
 	}
@@ -77,13 +77,6 @@ public class Jogador extends Character {
 
 	public void setFirstTry(int x, boolean firstTry) {
 		this.firstTry[x] = firstTry;
-	}
-
-	public Jogador() {
-		for (int i = 0; i < 3; i++) {
-			this.enigma[i] = false;
-			this.firstTry[i] = true;
-		}
 	}
 
 	public void passaHora() {
@@ -108,6 +101,14 @@ public class Jogador extends Character {
 
 	public int getQtd() {
 		return qtd;
+	}
+
+	public boolean isSacrificio() {
+		return sacrificio;
+	}
+
+	public void setSacrificio(boolean sacrificio) {
+		this.sacrificio = sacrificio;
 	}
 
 }

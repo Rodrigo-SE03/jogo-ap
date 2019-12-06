@@ -38,7 +38,7 @@ public class Geral { // Classe base para criação dos textos
 			int cont = 0; // Contador para verificar a posição do vetor de texto
 
 			public void actionPerformed(ActionEvent actionEvent) {
-
+				System.out.println(1);
 				if (flag) {
 					flag = false;
 
@@ -71,8 +71,7 @@ public class Geral { // Classe base para criação dos textos
 	public void escolhas_2(Texto t1, Biblioteca vet) { // 2 opções de escolha no final
 
 		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0));
-		System.out.println(vet.getTx(0));
-
+		
 		t1.getContinuar().addActionListener(new ActionListener() {
 			int cont = 0;
 
