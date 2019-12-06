@@ -25,11 +25,11 @@ public class Hist_Inicio {
 	private Musica musica3 = new Musica();
 
 	public void admin(Jogador player) {
-		if(!musica.isPlaying()) {
-			//System.out.println("yo");
+		if (!musica.isPlaying()) {
+			// System.out.println("yo");
 			musica.TocaMusica("src/sons/mercado.wav");
 			musica.setVolume(0.7f);
-			}
+		}
 		Texto t1 = new Texto();
 		Escolhas choice = new Escolhas();
 		t1.zerar();
@@ -39,7 +39,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				t1.getTexto().dispose();
-				
+
 				inicio2(player);
 			}
 		};
@@ -58,9 +58,9 @@ public class Hist_Inicio {
 	}
 
 	public void admin1(Jogador player) {
-		if(musica.isPlaying()) {
+		if (musica.isPlaying()) {
 			musica.stop();
-			}
+		}
 		Texto t1 = new Texto();
 		t1.zerar();
 		t1.getTexto().setVisible(true);
@@ -113,7 +113,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					//System.out.println(cont);
+					// System.out.println(cont);
 					switch (cont) {
 					case 10:
 						musica.reduzVolume(0.4f, 90);
@@ -199,12 +199,12 @@ public class Hist_Inicio {
 			int no = 0;
 
 			public void actionPerformed(ActionEvent e) {
-				
+
 				if (geral.isFlag()) {
 					// System.out.println(cont);
 					switch (cont) {
 					case 3:
-						//musica.reduzVolume(0.3f, 10);
+						// musica.reduzVolume(0.3f, 10);
 						break;
 					default:
 						break;
@@ -302,12 +302,12 @@ public class Hist_Inicio {
 				if (geral.isFlag()) {
 					switch (cont) {
 					case 7:
-						if(musica2.isPlaying()) {
+						if (musica2.isPlaying()) {
 							musica2.stop();
 						}
 						musica2.TocaMusica("src/sons/torre.wav");
 						musica2.setVolume(0.0f);
-						musica2.aumentaVolume(0.7f,60);
+						musica2.aumentaVolume(0.7f, 60);
 						break;
 					default:
 						break;
@@ -360,7 +360,7 @@ public class Hist_Inicio {
 		Geral geral = new Geral();
 
 		vet.inicio_ladino();
-		geral.escolhas_3(t1, vet);
+		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
 			int cont = 0; // Contador para verificar a posi��o do vetor de texto
@@ -381,11 +381,11 @@ public class Hist_Inicio {
 	}
 
 	public void inicio_Guerreiro(Texto t1) {
-		
+
 		Geral geral = new Geral();
 
 		vet.inicio_guerreiro();
-		geral.escolhas_2(t1, vet);
+		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
 			int cont = 0; // Contador para verificar a posi��o do vetor de texto
@@ -489,7 +489,7 @@ public class Hist_Inicio {
 	}
 
 	public void torreArcana(Texto t1) {
-		if(!musica.isPlaying()) {
+		if (!musica.isPlaying()) {
 			musica.TocaMusica("src/sons/torre.wav");
 			musica.setVolume(0.7f);
 		}
@@ -610,14 +610,14 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch(cont) {
+					switch (cont) {
 					case 3:
-						if(musica.isPlaying()) {
-							musica.reduzVolume(0.0f,80);
+						if (musica.isPlaying()) {
+							musica.reduzVolume(0.0f, 80);
 							musica.verifica();
 						}
-						if(musica2.isPlaying()) {
-							musica2.reduzVolume(0.0f,50);
+						if (musica2.isPlaying()) {
+							musica2.reduzVolume(0.0f, 50);
 							musica2.verifica();
 						}
 						break;
@@ -639,10 +639,10 @@ public class Hist_Inicio {
 	}
 
 	public void alameda3(Texto t1) {
-		if(musica.isPlaying()) {
+		if (musica.isPlaying()) {
 			musica.stop();
 		}
-		if(musica2.isPlaying()) {
+		if (musica2.isPlaying()) {
 			musica2.stop();
 		}
 		musica.TocaMusica("src/sons/alameda.wav");
@@ -762,12 +762,12 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch(cont) {
+					switch (cont) {
 					case 6:
-						if(musica.isPlaying()) {
+						if (musica.isPlaying()) {
 							musica.stop();
 						}
-						if(musica2.isPlaying()) {
+						if (musica2.isPlaying()) {
 							musica2.stop();
 						}
 					default:
@@ -788,10 +788,10 @@ public class Hist_Inicio {
 	}
 
 	public void castelo(Texto t1) {
-		if(musica.isPlaying()) {
+		if (musica.isPlaying()) {
 			musica.stop();
 		}
-		if(musica2.isPlaying()) {
+		if (musica2.isPlaying()) {
 			musica2.stop();
 		}
 		musica.TocaMusica("src/sons/castelo.wav");

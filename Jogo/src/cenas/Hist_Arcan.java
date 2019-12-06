@@ -41,7 +41,7 @@ public class Hist_Arcan {
 
 	public void arcan1(Texto t1) {
 		Geral geral = new Geral();
-		
+
 		vet.arcan1();
 		geral.escolhas_2(t1, vet);
 
@@ -128,7 +128,7 @@ public class Hist_Arcan {
 	}
 
 	public void destino() {
-		
+
 		if (musica.isPlaying()) {
 			musica.stop();
 		}
@@ -204,10 +204,7 @@ public class Hist_Arcan {
 				mapa.getTorreArcanaFundo().setVisible(true);
 				mapa.getBtnTorreArcana().addActionListener(torre);
 			}
-		}
-		/*if((player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2)) || player.getDias()==0)*/
-		else {
-			
+		} else {
 			player.setQtd();
 			switch (player.getQtd()) {
 			case 2:
@@ -606,6 +603,7 @@ public class Hist_Arcan {
 
 		vet.alamedaVitoria();
 		geral.escolhas_0(t1, vet);
+		geral.setGo(false);
 
 		continuar = new ActionListener() {
 			int cont = 0;
@@ -618,10 +616,11 @@ public class Hist_Arcan {
 					default:
 						break;
 					}
-					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
+					if (geral.isGo()) {
 						t1.getTexto().dispose();
+						t1.getContinuar().removeActionListener(continuar);
 						destino();
+
 					} else
 						cont++;
 				}
@@ -634,7 +633,6 @@ public class Hist_Arcan {
 
 	public void guerra1() {
 
-		
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -643,10 +641,12 @@ public class Hist_Arcan {
 			vet.todosItens();
 
 		} else {
+
 			vet.itens2BI();
 		}
 
 		geral.escolhas_2(t1, vet);
+
 		escolha1 = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -706,7 +706,7 @@ public class Hist_Arcan {
 			else
 				vet.itens2BINao();
 		}
-		
+
 		geral.escolhas_0(t1, vet);
 		continuar = new ActionListener() {
 			int cont = 0;
@@ -715,6 +715,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
 						new Teste(player);
 					} else
 						cont++;

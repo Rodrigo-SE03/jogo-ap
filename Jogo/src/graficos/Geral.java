@@ -8,8 +8,16 @@ import bibliotecas.Biblioteca;
 public class Geral { // Classe base para criação dos textos
 
 	private Escolhas choice = new Escolhas();
-	private ActionListener continuar; // ActionListener para o botão continuar
 	private boolean flag = true;
+	private boolean go = false;
+
+	public boolean isGo() {
+		return go;
+	}
+
+	public void setGo(boolean go) {
+		this.go = go;
+	}
 
 	public Escolhas getChoice() { // Getter para poder setar o action listener das escolhas
 		return choice;
@@ -26,19 +34,22 @@ public class Geral { // Classe base para criação dos textos
 
 		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0)); // Atualiza a pagina para a posiçao 0 do vetor de texto
 
-		continuar = new ActionListener() {// ActionListener para o botão continuar
+		t1.getContinuar().addActionListener(new ActionListener() {// ActionListener para o botão continuar
 			int cont = 0; // Contador para verificar a posição do vetor de texto
 
 			public void actionPerformed(ActionEvent actionEvent) {
+
 				if (flag) {
 					flag = false;
 
 					if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
 						cont++;
 						t1.atualizaTexto(vet.getTx(cont), vet.getLinhas(cont));
+
 					} else {
-						t1.getContinuar().removeActionListener(continuar);
+						t1.getContinuar().removeActionListener(this);
 						cont = 0;
+						go = true;
 					}
 					new Thread() {
 						public void run() {
@@ -53,17 +64,16 @@ public class Geral { // Classe base para criação dos textos
 					}.start();
 				}
 			}
-		};
-
-		t1.getContinuar().addActionListener(continuar); // Vincula o botão ao ActionListener
+		});
 
 	}
 
 	public void escolhas_2(Texto t1, Biblioteca vet) { // 2 opções de escolha no final
 
 		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0));
+		System.out.println(vet.getTx(0));
 
-		continuar = new ActionListener() {
+		t1.getContinuar().addActionListener(new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent actionEvent) {
@@ -78,7 +88,7 @@ public class Geral { // Classe base para criação dos textos
 
 						cont = 0;
 						t1.zerar();
-						t1.getContinuar().removeActionListener(continuar);
+						t1.getContinuar().removeActionListener(this);
 						choice.doEscolhas_2(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2());
 
 					}
@@ -98,9 +108,7 @@ public class Geral { // Classe base para criação dos textos
 				}
 			}
 
-		};
-
-		t1.getContinuar().addActionListener(continuar);
+		});
 
 	}
 
@@ -108,7 +116,7 @@ public class Geral { // Classe base para criação dos textos
 
 		t1.atualizaTexto(vet.getTx(0), vet.getLinhas(0));
 
-		continuar = new ActionListener() {
+		t1.getContinuar().addActionListener(new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent actionEvent) {
@@ -122,7 +130,7 @@ public class Geral { // Classe base para criação dos textos
 						t1.zerar();
 						choice.doEscolhas_3(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2(), vet.getOp3());
 						cont = 0;
-						t1.getContinuar().removeActionListener(continuar);
+						t1.getContinuar().removeActionListener(this);
 					}
 					new Thread() {
 						public void run() {
@@ -138,10 +146,6 @@ public class Geral { // Classe base para criação dos textos
 				}
 
 			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
-
+		});
 	}
-
 }

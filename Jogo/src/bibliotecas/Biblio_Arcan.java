@@ -57,7 +57,7 @@ public class Biblio_Arcan extends Biblioteca {
 		tx[4] = "<html>Reuni\u00F5es de emerg\u00EAncia s\u00E3o uma " + "<br/>coisa rara, e sempre significam "
 				+ "<br/>problemas, algo est\u00E1 acontecendo, os" + "<br/>outros mestres, l\u00EDderes do Conselho "
 				+ "<br/>est\u00E3o estranhos nos \u00FAltimos dias, o "
-				+ "<br/>clima est\u00E1 piorando \u00E9 como se voc\u00EA "
+				+ "<br/>clima est\u00E1 piorando, \u00E9 como se voc\u00EA "
 				+ "<br/>pudesse sentir a aproxima\u00E7\u00E3o de algo " + "<br/>ruim." + "<html>";
 		linhas[4] = 7;
 
@@ -126,8 +126,12 @@ public class Biblio_Arcan extends Biblioteca {
 		linhas[12] = 3;
 
 		choice = "<html>Artemisia:" + "<br/><br/>Voc\u00EA est\u00E1 bem?" + "<html>";
+		if(masculino){
+			op2 = "Ser sincero";
+		} else op2 = "Ser sincera";
+		
 		op1 = "Mentir";
-		op2 = "Ser sincero";
+		
 
 	}
 
@@ -172,7 +176,7 @@ public class Biblio_Arcan extends Biblioteca {
 			tx[2] = "<html>Voc\u00EA:" + "<br/><br/>Um pouco... " + "<html>";
 			linhas[2] = 2;
 
-			if (player.getSexo() == 0) {
+			if (masculino) {
 				tx[3] = "<html>Artemisia:" + "<br/><br/> Voc\u00EA est\u00E1 pronto para lutar contra  " + "<br/>eles? "
 						+ "<html>";
 				linhas[3] = 3;
@@ -215,7 +219,7 @@ public class Biblio_Arcan extends Biblioteca {
 				+ "<html>";
 		linhas[x + 4] = 4;
 
-		if (player.getSexo() == 0) {
+		if (masculino) {
 			tx[x + 5] = "<html>Guradam:" + "<br/><br/>Acreditamos que voc\u00EA \u00E9 o \u00FAnico que  "
 					+ "<br/>pode. O feiti\u00E7o est\u00E1 ligado ao sangue. "
 					+ "<br/>Somente aqueles que partilham do " + "<br/>sangue de Merlin podem us\u00E1-lo. " + "<html>";
@@ -442,7 +446,7 @@ public class Biblio_Arcan extends Biblioteca {
 
 		tx[4] = "<html>Voz: " + "<br/><br/> o que aconteceu? " + "<html>";
 		linhas[4] = 2;
-		if (player.getSexo() == 0) {
+		if (masculino) {
 			tx[5] = "<html>Artemisia: " + "<br/><br/>Voc\u00EA estava demorando muito "
 					+ " <br/>tempo naquele labirinto ent\u00E3o fomos " + " <br/>procur\u00E1-lo. Te encontramos "
 					+ " <br/>desmaiado e com o livro aberto, te " + " <br/>trouxemos para o seu quarto e voc\u00EA"
@@ -453,6 +457,7 @@ public class Biblio_Arcan extends Biblioteca {
 					+ " <br/>tempo naquele labirinto ent\u00E3o fomos " + " <br/>procur\u00E1-la. Te encontramos "
 					+ " <br/>desmaiado e com o livro aberto, te " + " <br/>trouxemos para o seu quarto e voc\u00EA"
 					+ " <br/>est\u00E1 dormindo desde ontem." + "<html>";
+			linhas[5] = 7;
 		}
 		tx[6] = "<html>Voc\u00EA: " + "<br/><br/>Caramba, eu n\u00E3o deveria ter dormido " + " <br/>tanto tempo! "
 				+ "<html>";
@@ -470,9 +475,9 @@ public class Biblio_Arcan extends Biblioteca {
 
 		tx[0] = "<html>Voc\u00EA se encaminha para a Catedral, "
 				+ "<br/>chegando l\u00E1 voc\u00EA encontra o Bispo. \u00C9 "
-				+ "<br/>vis\u00EDvel que ele n\u00E3o est\u00E1 feliz em te verâ€¦" + "<html>";
+				+ "<br/>vis\u00EDvel que ele n\u00E3o est\u00E1 feliz em te ver" + "<html>";
 		linhas[0] = 2;
-		if (player.getSexo() == 0) {
+		if (masculino) {
 			tx[1] = "<html>Bispo:" + "<br/><br/>O que levou um herege da Torre Arcana"
 					+ "<br/>a pisar no solo sagrado da Catedral?" + "<html>";
 			linhas[1] = 3;
@@ -486,7 +491,7 @@ public class Biblio_Arcan extends Biblioteca {
 					+ "<html>";
 			linhas[3] = 4;
 		} else {
-			tx[1] = "<html>Bispo:" + "<br/><br/>O que levou uma herege da Torre Arcana a "
+			tx[1] = "<html>Bispo:" + "<br/><br/>O que levou uma herege da Torre Arcana"
 					+ "<br/>a pisar no solo sagrado da Catedral?" + "<html>";
 			linhas[1] = 3;
 
@@ -548,7 +553,7 @@ public class Biblio_Arcan extends Biblioteca {
 					+ "<br/>atravessar o port\u00E3o, o bispo o fecha e" + "<br/>tranca - o." + "<html>";
 			linhas[1] = 3;
 
-			if (player.getSexo() == 0) {
+			if (masculino) {
 				tx[2] = "<html>Bispo: " + "<br/><br/>Eu lhe disse que te guiaria at\u00E9 as  "
 						+ "<br/>catacumbas, nunca disse que voc\u00EA iria" + "<br/>voltar vivo." + "<html>";
 				linhas[2] = 4;
@@ -563,7 +568,7 @@ public class Biblio_Arcan extends Biblioteca {
 						+ "<br/>catacumbas, nunca disse que voc\u00EA iria" + "<br/>voltar viva." + "<html>";
 				linhas[2] = 4;
 
-				tx[3] = "<html>A fala do bispo te deixa confuso e "
+				tx[3] = "<html>A fala do bispo te deixa confusa e "
 						+ "<br/>preocupada. Mas voc\u00EA n\u00E3o tem op\u00E7\u00E3o "
 						+ "<br/>al\u00E9m de explorar as catacumbas." + "<html>";
 				linhas[3] = 2;
@@ -579,11 +584,11 @@ public class Biblio_Arcan extends Biblioteca {
 				tx = new String[5];
 				linhas = new int[5];
 			}
-			if (player.getSexo() == 0) {
+			if (masculino) {
 				tx[0] = "<html>Voc\u00EA sai da Catedral, troca suas roupas "
 						+ "<br/>para se parecer como um fiel da Igreja e " + "<br/>n\u00E3o tem muitos problemas para "
-						+ "<br/>encontrar  a passagem para as catacumbas." + "<html>";
-				linhas[0] = 3;
+						+ "<br/>encontrar  a passagem para as <br/> catacumbas." + "<html>";
+				linhas[0] = 4;
 			} else {
 				tx[0] = "<html>Voc\u00EA sai da Catedral, troca suas roupas "
 						+ "<br/>para se parecer como uma fiel da Igreja e "
@@ -643,7 +648,7 @@ public class Biblio_Arcan extends Biblioteca {
 
 			tx[1] = "<html>J\u00E1 est\u00E1 muito tarde, todos os esfor\u00E7os "
 					+ "<br/>do dia pesam sobre seu corpo e voc\u00EA "
-					+ "<br/>n\u00E3o conseguiria fazer mais nada sem " + "<br/>dormir um poucoâ€¦" + "<html>";
+					+ "<br/>n\u00E3o conseguiria fazer mais nada sem " + "<br/>dormir um pouco" + "<html>";
 			linhas[1] = 3;
 
 			tx[2] = "<html>Voc\u00EA acorda e percebe que j\u00E1 \u00E9 o fim "
@@ -681,14 +686,14 @@ public class Biblio_Arcan extends Biblioteca {
 	public void catedralVitoria() {
 		tx = new String[6];
 		linhas = new int[6];
-		if (player.getSexo() == 0) {
+		if (masculino) {
 			tx[0] = "<html>Depois de destruir o cora\u00E7\u00E3o da Hidra" + "<br/>voc\u00EA segue as catacumbas.  "
 					+ "<br/>Estranhamente voc\u00EA chega a um  " + "<br/>beco vazio. Decepcionado voc\u00EA volta"
 					+ "<br/>para a torre, mas mal chega na porta, " + "<br/>desmaia." + "<br/>" + "<html>";
 			linhas[0] = 5;
 		} else {
 			tx[0] = "<html>Depois de destruir o cora\u00E7\u00E3o da Hidra" + "<br/>voc\u00EA segue as catacumbas.  "
-					+ "<br/>Estranhamente voc\u00EA chega a um  " + "<br/>beco vazio. Decepcionadoa voc\u00EA volta"
+					+ "<br/>Estranhamente voc\u00EA chega a um  " + "<br/>beco vazio. Decepcionada voc\u00EA volta"
 					+ "<br/>para a torre, mas mal chega na porta, " + "<br/>desmaia." + "<br/>" + "<html>";
 			linhas[0] = 5;
 		}
@@ -752,8 +757,8 @@ public class Biblio_Arcan extends Biblioteca {
 	}
 
 	public void alamedaVitoria() {
-		tx = new String[4];
-		linhas = new int[4];
+		tx = new String[3];
+		linhas = new int[3];
 
 		tx[0] = "<html>Você consegue abrir a porta e entra   " + "<br/>no esconderijo de Elrond. Você não  "
 				+ "<br/>precisa vasculhar muito, pois o cetro " + "<br/>está pendurado na parede. Você se "
@@ -770,9 +775,9 @@ public class Biblio_Arcan extends Biblioteca {
 				+ "<br/>você precisa descansar." + "<html>";
 		linhas[2] = 2;
 
-		tx[3] = "<html>Quando voc\u00EA finalmente acorda a "
-				+ "<br/>manh\u00E3 j\u00E1 acabou, e voc\u00EA tem muito o" + "<br/>que fazer." + "<html>";
-		linhas[3] = 2;
+//		tx[3] = "<html>Quando voc\u00EA finalmente acorda a "
+//				+ "<br/>manh\u00E3 j\u00E1 acabou, e voc\u00EA tem muito o" + "<br/>que fazer." + "<html>";
+//		linhas[3] = 2;
 	}
 
 	public void alamedaDerrota() {
@@ -789,7 +794,7 @@ public class Biblio_Arcan extends Biblioteca {
 		tx = new String[5];
 		linhas = new int[5];
 
-		tx[0] = "<html>Depois de pegar todos os itens você " + "<br/está de volta na Torre Arcana e sabe >"
+		tx[0] = "<html>Depois de pegar todos os itens você " + "<br/>está de volta na Torre Arcana e sabe"
 				+ "<br/>o que precisa fazer, matar alguém que" + "<br/>você ama pela salvação de todos. "
 				+ "<br/>Desde a morte de sua família, você só " + "<br/>realmente amou uma pessoa, "
 				+ "<br/>Artemisia, e é a vida dela que você" + "<br/>deve tirar." + "<html>";
