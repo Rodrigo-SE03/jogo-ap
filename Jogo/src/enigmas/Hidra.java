@@ -297,20 +297,6 @@ public class Hidra {
 						if (mtcabeca) {
 							switch (player.getClase()) {
 							case 0:
-								new Hist_Arcan(player).catedralDerrota(1);
-								break;
-							case 1:
-								new Hist_Assassin(player).catedralDerrota(1);
-								break;
-							case 2:
-								new Hist_Guerreior(player).catedralDerrota(1);
-								break;
-							default:
-								break;
-							}
-						} else {
-							switch (player.getClase()) {
-							case 0:
 								new Hist_Arcan(player).catedralDerrota(2);
 								break;
 							case 1:
@@ -318,6 +304,20 @@ public class Hidra {
 								break;
 							case 2:
 								new Hist_Guerreior(player).catedralDerrota(2);
+								break;
+							default:
+								break;
+							}
+						} else {
+							switch (player.getClase()) {
+							case 0:
+								new Hist_Arcan(player).catedralDerrota(1);
+								break;
+							case 1:
+								new Hist_Assassin(player).catedralDerrota(1);
+								break;
+							case 2:
+								new Hist_Guerreior(player).catedralDerrota(1);
 								break;
 							default:
 								break;

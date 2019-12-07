@@ -42,31 +42,30 @@ public class Hist_Assassin {
 
 		geral.escolhas_2(t1, vet);
 
-		continuar = new ActionListener() {
-			int cont = 0; // Contador para verificar a posi��o do vetor de texto
-
-			public void actionPerformed(ActionEvent e) {
-
-				if (geral.isFlag()) {
-					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
-					} else // Atualiza o contador para verificar a posi��o do vetor de texto
-						cont++;
-				}
-			}
-		};
-
 		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
 
 			public void actionPerformed(ActionEvent e) {
 
-				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame, deixando
+				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame,
+																		// deixando
 																		// apenas uma "tela em branco"
 				vet.Escolha1Assassin(1); // Chama o pr�ximo componente da hist�ria
 				geral.escolhas_0(t1, vet);
-				t1.getContinuar().addActionListener(continuar);
+				t1.getContinuar().addActionListener(new ActionListener() {
+					int cont = 0; // Contador para verificar a posi��o do vetor de texto
+
+					public void actionPerformed(ActionEvent e) {
+
+						if (geral.isFlag()) {
+							if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							} else // Atualiza o contador para verificar a posi��o do vetor de texto
+								cont++;
+						}
+					}
+				});
 			}
 		};
 
@@ -78,7 +77,21 @@ public class Hist_Assassin {
 
 				vet.Escolha1Assassin(2);
 				geral.escolhas_0(t1, vet);
-				t1.getContinuar().addActionListener(continuar);
+				t1.getContinuar().addActionListener(new ActionListener() {
+					int cont = 0; // Contador para verificar a posi��o do vetor de texto
+
+					public void actionPerformed(ActionEvent e) {
+
+						if (geral.isFlag()) {
+							if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							} else // Atualiza o contador para verificar a posi��o do vetor de texto
+								cont++;
+						}
+					}
+				});
 
 			}
 		};
@@ -161,6 +174,7 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		vet.TorreArcanaAssassin();
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -187,6 +201,7 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		vet.posLabirinto(2);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -217,6 +232,7 @@ public class Hist_Assassin {
 		this.player.setEnigma(2, true);
 		this.player.passaDia();
 
+		vet.posLabirinto(1);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -242,6 +258,7 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		vet.Catederal();
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -297,6 +314,7 @@ public class Hist_Assassin {
 		this.player.setEnigma(1, true);
 		this.player.passaDia();
 
+		vet.posHidra();
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -349,6 +367,8 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		vet.EnigmaPortaAssasin(2);
+
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -379,24 +399,30 @@ public class Hist_Assassin {
 		this.player.setEnigma(0, true);
 		this.player.passaDia();
 
-		geral.escolhas_0(t1, vet);
+		vet.EnigmaPortaAssasin(1);
 
-		continuar = new ActionListener() {
-			int cont = 0;
+		geral.escolhas_2(t1, vet);
+
+		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
 
 			public void actionPerformed(ActionEvent e) {
-				if (geral.isFlag()) {
-					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
-					} else
-						cont++;
-				}
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+
 			}
 		};
 
-		t1.getContinuar().addActionListener(continuar);
+		escolha2 = new ActionListener() {// Action caso escolha a 2� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
 
 	}
 
@@ -404,6 +430,7 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		vet.finalAssassin();
 		geral.escolhas_0(t1, vet);
 		continuar = new ActionListener() {
 			int cont = 0;
@@ -425,92 +452,167 @@ public class Hist_Assassin {
 	}
 
 	public void guerraVitoria() {
-		Geral geral = new Geral();
-		Texto t1 = new Texto();
-
 		switch (player.getQtd()) {
 		case 1:
+			vet.vitoria3Recrutados();
 			break;
 		case 2:
+			vet.vitoriaDoisRecrutados();
 			break;
 		case 3:
+			vet.vitoriaUmRecrutado();
 			break;
 		default:
+			vet.derrotaComBonusOuVitoriaSemRecrutas();
 			break;
 		}
+		if (player.getQtd() > 0) {
+			Geral geral = new Geral();
+			Texto t1 = new Texto();
+			geral.escolhas_0(t1, vet);
+			continuar = new ActionListener() {
+				int cont = 0;
 
-		geral.escolhas_0(t1, vet);
-		continuar = new ActionListener() {
-			int cont = 0;
+				public void actionPerformed(ActionEvent e) {
+					if (geral.isFlag()) {
+						if (cont == (vet.getTx().length - 1)) {
+							t1.getContinuar().removeActionListener(continuar);
+							t1.getTexto().dispose();
+							Creditos cr = new Creditos();
 
-			public void actionPerformed(ActionEvent e) {
-				if (geral.isFlag()) {
-					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						Creditos cr = new Creditos();
-
-						new Thread() {
-							public void run() {
-								try {
-									sleep(5000);
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
+							new Thread() {
+								public void run() {
+									try {
+										sleep(5000);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									cr.setVisible(false);
+									new Menu_inicial();
 								}
-								cr.setVisible(false);
-								new Menu_inicial();
-							}
-						}.start();
+							}.start();
 
-						cr.mostraCreditos();
-					} else
-						cont++;
+							cr.mostraCreditos();
+						} else
+							cont++;
+					}
 				}
-			}
-		};
+			};
 
-		t1.getContinuar().addActionListener(continuar);
+			t1.getContinuar().addActionListener(continuar);
+
+		}
 
 	}
 
 	public void guerraDerrota() {
-		Geral geral = new Geral();
-		Texto t1 = new Texto();
 
-		geral.escolhas_0(t1, vet);
-		continuar = new ActionListener() {
-			int cont = 0;
+		if (player.isBonus_inicio()) {
 
-			public void actionPerformed(ActionEvent e) {
-				if (geral.isFlag()) {
-					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						Creditos cr = new Creditos();
+		} else {
+			Geral geral = new Geral();
+			Texto t1 = new Texto();
+			vet.derrotaSemBonus();
+			geral.escolhas_0(t1, vet);
+			continuar = new ActionListener() {
+				int cont = 0;
 
-						new Thread() {
-							public void run() {
-								try {
-									sleep(5000);
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
+				public void actionPerformed(ActionEvent e) {
+					if (geral.isFlag()) {
+						if (cont == (vet.getTx().length - 1)) {
+							t1.getContinuar().removeActionListener(continuar);
+							t1.getTexto().dispose();
+							Creditos cr = new Creditos();
+
+							new Thread() {
+								public void run() {
+									try {
+										sleep(5000);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									cr.setVisible(false);
+									new Menu_inicial();
 								}
-								cr.setVisible(false);
-								new Menu_inicial();
-							}
-						}.start();
+							}.start();
 
-						cr.mostraCreditos();
-					} else
-						cont++;
+							cr.mostraCreditos();
+						} else
+							cont++;
+					}
 				}
-			}
-		};
+			};
 
-		t1.getContinuar().addActionListener(continuar);
+			t1.getContinuar().addActionListener(continuar);
+
+		}
 
 	}
 
+	public void guerraBon_Zero() {
+		Geral geral = new Geral();
+		Texto t1 = new Texto();
+		vet.derrotaComBonusOuVitoriaSemRecrutas();
+
+		geral.escolhas_2(t1, vet);
+
+		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1()); // "apaga" os componentes do frame,
+																		// deixando
+																		// apenas uma "tela em branco"
+				vet.derrotaComBonusOuVitoriaSemRecrutas2(1); // Chama o pr�ximo componente da hist�ria
+				geral.escolhas_0(t1, vet);
+				t1.getContinuar().addActionListener(new ActionListener() {
+					int cont = 0; // Contador para verificar a posi��o do vetor de texto
+
+					public void actionPerformed(ActionEvent e) {
+
+						if (geral.isFlag()) {
+							if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							} else // Atualiza o contador para verificar a posi��o do vetor de texto
+								cont++;
+						}
+					}
+				});
+			}
+		};
+
+		escolha2 = new ActionListener() {// Action caso escolha a 2� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+
+				vet.derrotaComBonusOuVitoriaSemRecrutas2(2);
+				geral.escolhas_0(t1, vet);
+				t1.getContinuar().addActionListener(new ActionListener() {
+					int cont = 0; // Contador para verificar a posi��o do vetor de texto
+
+					public void actionPerformed(ActionEvent e) {
+
+						if (geral.isFlag()) {
+							if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							} else // Atualiza o contador para verificar a posi��o do vetor de texto
+								cont++;
+						}
+					}
+				});
+
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+	}
 }

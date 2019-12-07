@@ -14,6 +14,7 @@ import enigmas.Hidra;
 import enigmas.Labirinto;
 import enigmas.Porta;
 import graficos.Geral;
+import graficos.Loading;
 import graficos.Texto;
 import mapas.Maps;
 import menus.Creditos;
@@ -178,7 +179,8 @@ public class Hist_Guerreior {
 	public void torre() {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-
+		Loading carregar = new Loading();
+		
 		if (player.getFirstTry(2)) {
 			vet.grr_3_torre();
 			player.setFirstTry(2, false);
@@ -194,7 +196,8 @@ public class Hist_Guerreior {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						new Labirinto(player, t1.getTexto());
+						new Labirinto(player,t1.getTexto());
+						
 					} else
 						cont++;
 				}

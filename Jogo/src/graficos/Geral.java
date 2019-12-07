@@ -38,7 +38,6 @@ public class Geral { // Classe base para criação dos textos
 			int cont = 0; // Contador para verificar a posição do vetor de texto
 
 			public void actionPerformed(ActionEvent actionEvent) {
-				System.out.println(1);
 				if (flag) {
 //					flag = false;
 
