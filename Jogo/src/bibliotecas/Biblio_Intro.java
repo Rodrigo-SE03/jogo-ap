@@ -8,18 +8,17 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
-	 * \u00EA é \u00E9 ê \u00C9 É
+	 * \u00EA ê \u00E9 é \u00C9 É
 	 * 
 	 * \u00ED í
 	 * 
 	 * \u00FA ú
 	 * 
-	 * \u00F3 Ó \u00F4 ô \u00F5 õ
+	 * \u00F3 ó \u00F4 ô \u00F5 õ
 	 * 
 	 */
-
 	public void inicio() {
 		tx = new String[23];
 
@@ -84,21 +83,21 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 		tx[18] = "Voc\u00EA acorda lentamente, ainda   abalado pelo pesadelo. Havia se"
 				+ " passado apenas uma semana desde o ocorrido. Voc\u00EA est\u00E1 na parte de tr\u00E1s"
 				+ " de uma carro\u00E7a guiada pelo homem  que o salvou no momento da "
-				+ " destrui\u00E7\u00E3o. Em todo esse tempo n\u00E3o  houve nenhuma conversa al\u00E1m do "
+				+ " destrui\u00E7\u00E3o. Em todo esse tempo n\u00E3o  houve nenhuma conversa al\u00EAm do "
 				+ " necess\u00E1rio entre voc\u00EAs.";
 
 		tx[19] = "A carro\u00E7a para. Voc\u00EA escuta o homem  descendo e conversando algo com "
 				+ " algu\u00E9m. Voc\u00EA desce da carro\u00E7a.";
 
 		tx[20] = "Cocheiro:\n\nEssa \u00E9 a pessoa de quem eu  falei. Sua fam\u00EDlia foi morta pelos "
-				+ " soldados imperiais e ele est\u00E1  desabrigado. Voc\u00EAs aceitam"
+				+ " soldados imperiais. Voc\u00EAs aceitam"
 				+ " refugiados n\u00E3o \u00E9? Pois ent\u00E3o, pode ficar.";
 
 		tx[21] = "O homem volta para a carro\u00E7a sem te  falar mais uma palavra sequer e vai "
 				+ " embora. O guarda com quem ele  conversava se dirige a voc\u00EA.";
 
-		tx[22] = "Guarda: \n\nOl\u00E1, voc\u00EA \u00E9 muito bem vindo "
-				+ " em nossa cidade. Para entrar basta  preencher esse formul\u00E1rio.";
+		tx[22] = "Guarda: \n\nOl\u00E1, nossa cidade está aberta para receber qualquer pessoa.  "
+				+ "Para entrar basta  preencher esse formul\u00E1rio.";
 	}
 
 	public void inicio2() {
@@ -128,7 +127,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 				+ "  ainda conseguir\u00E1 alcan\u00E7\u00E3-lo.  O que far\u00E1? ";
 
 		op1 = "Correr atr\u00E1s do Homem";
-		op2 = "Deix\u00E1-lo ir embora";
+		op2 = "Deix\u00E0-lo ir embora";
 
 	}
 
@@ -154,14 +153,14 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 		if (player.getSexo() == 0) {
 
 			tx[4] = "Estranho de capuz: \n\nMeu nome \u00E9 Artemisia, sou uma  "
-					+ " arcana da Torre Anci\u00E3 E. Quanto ao  que eu quero, percebo em voc\u00EA tem "
+					+ " arcana da Torre Anci\u00E3 .E, quanto ao  que eu quero, percebo em voc\u00EA tem "
 					+ " um potencial raro, uma for\u00E7a de  vontade, determina\u00E7\u00E3o e  "
 					+ " principalmente bondade e controle  para se tornar um arcano. ";
 
 		} else {
 
 			tx[4] = "Estranho de capuz: \n\nMeu nome \u00E9 Artemisia, sou uma  "
-					+ " arcana da Torre Anci\u00E3 E. Quanto ao  que eu quero, percebo em voc\u00EA tem "
+					+ " arcana da Torre Anci\u00E3 .E, quanto ao  que eu quero, percebo em voc\u00EA tem "
 					+ " um potencial raro, uma for\u00E7a de  vontade, determina\u00E7\u00E3o e  "
 					+ " principalmente bondade e controle  para se tornar uma arcana. ";
 
@@ -178,7 +177,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 		tx[3] = "Estranho de capuz: \n\nE, quando o capturou, mostrou "
 				+ " compaix\u00E3o com o ladr\u00E3o. J\u00E1 tinha  recuperado seus pertences, controlou "
-				+ " a raiva que pulsava em seus olhos e o  liberou. N\u00E3o \u00E9 algo que se veja todos "
+				+ " a raiva que pulsava em seus olhos e o  liberou. N\u00E3o \u00E9 algo que se v\u00E9 todos "
 				+ " os dias. ";
 
 		tx[5] = "Artemisia: \n\nSe voc\u00EA tiver interesse venha me  "
@@ -320,7 +319,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 		tx[0] = "Voc\u00EA se encaminha para a Torre Arcana. Chegando, voc\u00EA v\u00EA uma "
 				+ " enorme torre branca, com expans\u00F5es  laterais que parece estarem flutuando. "
-				+ " Ela \u00E9 impressionante, uma torre como  nunca se v\u00EA outra na vida. ";
+				+ " Ela \u00E9 impressionante, uma torre como  nunca se viu outra na vida. ";
 
 		tx[1] = "Voc\u00EA se aproxima do port\u00E3o,que se  abre sozinho. A ala de entrada est\u00E1 "
 				+ " totalmente vazia, na verdade, parece  que a torre inteira est\u00E1 vazia, at\u00E9 que "
@@ -358,8 +357,8 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 		choice = "Voc\u00EA a encara e responde: ";
 		op1 = "Provavelmente burrice";
-		op2 = "Um pouco de loucura nunca fez mal a ningu\u00EAm";
-		op3 = "Sou apenas algu\u00EAm sem nada a perder";
+		op2 = "Um pouco de loucura nunca fez mal a ningu\u00E9m";
+		op3 = "Sou apenas algu\u00E9m sem nada a perder";
 	}
 
 	public void ignorar_voz() {
@@ -386,7 +385,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 		tx[0] = "Voc\u00EA come\u00E7a a andar pela torre  procurando algo que nem voc\u00EA sabe o" + " que \u00E9.  ";
 
-		tx[1] = "De repente se depara com uma  pequena sala aparentemente vazia ou "
+		tx[1] = "De repente se depara com uma  pequena sala aparentemente vazia, ou "
 				+ " quase vazia, existe um pequeno pilar  com uma esp\u00E9cie de pedra em cima.  ";
 
 		tx[2] = "Voc\u00EA n\u00E3o tinha notado antes, mas  duas vozes estavam te chamando e, "
@@ -398,8 +397,8 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 		choice = "Voc\u00EA a encara e responde: ";
 		op1 = "Provavelmente burrice";
-		op2 = "Um pouco de loucura nunca fez mal a ningu\u00EAm";
-		op3 = "Sou apenas algu\u00EAm sem nada a perder";
+		op2 = "Um pouco de loucura nunca fez mal a ningu\u00E9m";
+		op3 = "Sou apenas algu\u00E9m sem nada a perder";
 
 	}
 

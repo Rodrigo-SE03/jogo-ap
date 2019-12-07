@@ -2,6 +2,7 @@ package enigmas;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +28,18 @@ public class Cartola {
 	private JFrame frame;
 	private Musica musica;
 
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Cartola window = new Cartola(new Jogador(), new Texto());
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+//	
 	public Cartola(Jogador player, Texto t1) {
 		initialize(player, t1);
 		musica = new Musica();
@@ -38,7 +51,7 @@ public class Cartola {
 		frame = new JFrame();
 		frame.setSize(680, 375);
 		frame.setLocationRelativeTo(null);
-		frame.setLocation(100, 100);
+		frame.setLocation(frame.getLocation().x-350, frame.getLocation().y);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -85,20 +98,19 @@ public class Cartola {
 				if (resp.getText().equalsIgnoreCase("ASS")) {
 					JOptionPane.showMessageDialog(null,
 							"Hahaha, parabéns! Gostou da charadinha? Bem, agora você é um dos nossos.");
-					frame.dispose();
 					caixa.getFrame().dispose();
 					musica.stop();
 					if (!player.isBonus_inicio())
 						player.setBonus_inicio(true);
-					new Hist_Assassin(player).assassin1(t1);
+					vai(player, t1);
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Parece que essa não é a resposta, uma pena. Mesmo assim\nvocê ainda foi aceito, isso"
+							"Parece que essa não é a resposta, uma pena. Mesmo assim\r\nvocê ainda foi aceito. isso "
 									+ "foi apenas uma brincadeira minha hahaha.");
-					frame.dispose();
 					caixa.getFrame().dispose();
 					musica.stop();
-					new Hist_Assassin(player).assassin1(t1);
+					vai(player, t1);
+
 				}
 			}
 		});
@@ -133,6 +145,42 @@ public class Cartola {
 				musica.setVolume(0.6f);
 			}
 		}.start();
+	}
+
+	private void vai(Jogador player, Texto t1) {
+
+		JFrame pass = new JFrame();
+		Thread delay = new Thread() {
+			public void run() {
+
+				pass.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
+				pass.setSize(556, 556);
+				pass.setLocationRelativeTo(null);
+				pass.setUndecorated(true);
+				pass.setResizable(false);
+
+				JLabel gif = new JLabel(new ImageIcon("src/imagens/passagem.gif"));
+				pass.getContentPane().add(gif);
+
+				pass.setVisible(true);
+
+			}
+		};
+		Thread jogo = new Thread() {
+			public void run() {
+				try {
+					sleep(3800);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				pass.dispose();
+				new Hist_Assassin(player).assassin1(t1);
+			}
+		};
+		delay.start();
+		jogo.start();
+		frame.dispose();
 	}
 
 }

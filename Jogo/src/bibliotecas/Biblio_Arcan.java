@@ -8,7 +8,7 @@ public class Biblio_Arcan extends Biblioteca {
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
 	 * \u00EA ê \u00E9 é \u00C9 É
 	 * 
@@ -19,7 +19,6 @@ public class Biblio_Arcan extends Biblioteca {
 	 * \u00F3 ó \u00F4 ô \u00F5 õ
 	 * 
 	 */
-
 	public void arcan1() {
 
 		tx = new String[13];

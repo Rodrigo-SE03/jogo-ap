@@ -1,6 +1,7 @@
 package enigmas;
 
 import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,11 +22,17 @@ public class Roda {
 	private JFrame frame;
 	private Musica musica;
 
-	/*
-	 * public static void main(String[] args) { EventQueue.invokeLater(new
-	 * Runnable() { public void run() { try { Roda window = new Roda(); } catch
-	 * (Exception e) { e.printStackTrace(); } } }); }
-	 */
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Roda window = new Roda(new Jogador(), new Texto());
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	public Roda(Jogador player, Texto t1) {
 		initialize(player, t1);
@@ -74,9 +81,9 @@ public class Roda {
 				JOptionPane.showMessageDialog(null,
 						"Estou decepcionada, mas não tem problema, estamos precisando de mais gente mesmo.");
 				musica.stop();
-				frame.dispose();
 				caixa.getFrame().dispose();
-				new Hist_Arcan(player).arcan1(t1);
+				vai(player,t1);
+
 			}
 
 		};
@@ -91,9 +98,9 @@ public class Roda {
 				if (!player.isBonus_inicio()) {
 					player.setBonus_inicio(true);
 				}
-				frame.dispose();
 				caixa.getFrame().dispose();
-				new Hist_Arcan(player).arcan1(t1);
+				vai(player,t1);
+				
 			}
 
 		};
@@ -140,6 +147,42 @@ public class Roda {
 				musica.setVolume(0.6f);
 			}
 		}.start();
+	}
+	
+	private void vai(Jogador player,Texto t1) {
+		
+		JFrame pass = new JFrame();
+		Thread delay = new Thread() {
+			public void run() {
+				
+				pass.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
+				pass.setSize(556, 556);
+				pass.setLocationRelativeTo(null);
+				pass.setUndecorated(true);
+				pass.setResizable(false);
+
+				JLabel gif = new JLabel(new ImageIcon("src/imagens/passagem.gif"));
+				pass.getContentPane().add(gif);
+
+				pass.setVisible(true);
+
+			}
+		};
+		Thread jogo = new Thread() {
+			public void run() {
+				try {
+					sleep(3800);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				pass.dispose();
+				new Hist_Arcan(player).arcan1(t1);
+			}
+		};
+		delay.start();
+		jogo.start();
+		frame.dispose();
 	}
 
 }
