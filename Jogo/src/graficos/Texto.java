@@ -16,7 +16,7 @@ public class Texto {
 	private JButton continuar;
 	private JTextPane txt;
 	private JLabel fundo;
-	
+
 	public JFrame getTexto() {
 		return frame;
 	}
@@ -30,7 +30,7 @@ public class Texto {
 	}
 
 	private void initialize() {
-		
+
 		frame = new JFrame();
 		frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
 		frame.setSize(610, 438);

@@ -11,6 +11,10 @@ import javax.swing.border.EmptyBorder;
 
 public class Contador extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPanel = new JPanel();
 	public Teste teste;
 	private JLabel mortos;
@@ -64,7 +68,6 @@ public class Contador extends JDialog {
 		new Thread() {
 			public void run() {
 				while (teste.fase.isEmJogo()) {
-					// System.out.println(teste.fase.getCont());
 					mortos.setText("Inimigos mortos: " + teste.fase.getCont());
 					passaram.setText("Inimigos que entraram: " + teste.fase.getContP());
 				}

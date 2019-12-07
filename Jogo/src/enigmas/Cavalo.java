@@ -1,7 +1,5 @@
 package enigmas;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -26,23 +24,10 @@ public class Cavalo {
 	private int cont;
 	private Musica musica;
 
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Cavalo window = new Cavalo();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
 	public Cavalo(Jogador player, Texto t1) {
 		for (int i = 0; i < 6; i++)
 			isSelect[i] = false;
-		initialize(player,t1);
+		initialize(player, t1);
 		musica = new Musica();
 		testaMusica();
 	}
@@ -66,12 +51,15 @@ public class Cavalo {
 		Texto_enigma caixa = new Texto_enigma();
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
+
 		caixa.getTxt1().setText("\r\n"
-				+ "Equipes de cavalos estão participando de partidas do cabo de guerra. Todas as equipes são sorteadas a partir de um estábulo de oito cavalos. As três primeiras partidas terminam em empates, como mostrado:\r\n"
-				+ "\r\n" + "Jogo 1: A B C D x E F G H\r\n" + "Jogo 2: H C B x G A\r\n" + "Jogo 3: D A x F H E\r\n"
-				+ "\r\n"
-				+ "Se você deseja que a quarta partida também resulte em um empate, quais cavalos devem estar no time que está puxando contra E e F?\r\n"
-				+ "\r\n" + "Toque em um cavalo para adicioná-lo à equipe");
+				+ "Equipes de cavalos estão participando de partidas do cabo de guerra. Todas as equipes são "
+				+ "sorteadas a partir de um estábulo de oito cavalos. As três primeiras partidas terminam em empates, "
+				+ "como mostrado:\r\n" + "\r\n" + "Jogo 1: A B C D x E F G H\r\n" + "Jogo 2: H C B x G A\r\n"
+				+ "Jogo 3: D A x F H E\r\n" + "\r\n"
+				+ "Se você deseja que a quarta partida também resulte em um empate, quais cavalos devem estar no time que "
+				+ "está puxando contra E e F?\r\n" + "\r\n" + "Toque em um cavalo para adicioná-lo à equipe");
+
 		caixa.resize(0, 100);
 
 		frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
@@ -132,30 +120,48 @@ public class Cavalo {
 							k++;
 					}
 					if (k == 1) {
-						JOptionPane.showMessageDialog(null, "Uau! Ninguém aqui do castelo tinha conseguido resolver isso. Parabéns, é um dos nossos agora.");
-						if(!player.isBonus_inicio()) {
+
+						JOptionPane.showMessageDialog(null,
+								"Uau! Ninguém aqui do castelo tinha conseguido resolver isso."
+										+ " Parabéns, é um dos nossos agora.");
+
+						if (!player.isBonus_inicio()) {
+
 							player.setBonus_inicio(true);
 						}
+
 						musica.stop();
 						frame.dispose();
 						caixa.getFrame().dispose();
 						new Hist_Guerreior(player).guerreiro1(t1);
+
 					} else {
-						JOptionPane.showMessageDialog(null, "Hahaha, não é como se eu esperasse que você fosse conseguir, nem eu sei resolver isso. Mas por ter tentado já está aceito, é um dos nossos agora.");
+
+						JOptionPane.showMessageDialog(null,
+								"Hahaha, não é como se eu esperasse que você fosse conseguir, nem eu sei resolver isso."
+										+ " Mas por ter tentado já está aceito, é um dos nossos agora.");
+
 						musica.stop();
 						frame.dispose();
 						caixa.getFrame().dispose();
 						k = 0;
 						new Hist_Guerreior(player).guerreiro1(t1);
+
 					}
+
 				} else {
-					JOptionPane.showMessageDialog(null, "Hahaha, não é como se eu esperasse que você fosse conseguir, nem eu sei resolver isso. Mas por ter tentado já está aceito, é um dos nossos agora.");
+
+					JOptionPane.showMessageDialog(null,
+							"Hahaha, não é como se eu esperasse que você fosse conseguir, nem eu sei resolver isso. "
+									+ "Mas por ter tentado já está aceito, é um dos nossos agora.");
+
 					musica.stop();
 					frame.dispose();
 					caixa.getFrame().dispose();
 					new Hist_Guerreior(player).guerreiro1(t1);
 				}
 			}
+
 		});
 		panel.add(confirmar);
 
@@ -165,13 +171,16 @@ public class Cavalo {
 		Fundo.setIcon(enigma);
 		Fundo.setBounds(0, 0, 513, 387);
 		panel.add(Fundo);
-		
+
 		frame.setVisible(true);
+
 	}
-	
+
 	public void testaMusica() {
+
 		new Thread() {
 			public void run() {
+
 				while (!frame.isVisible()) {
 					System.out.println("");
 				}
@@ -179,6 +188,6 @@ public class Cavalo {
 				musica.setVolume(0.6f);
 			}
 		}.start();
-	}
 
+	}
 }

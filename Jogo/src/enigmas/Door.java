@@ -3,7 +3,6 @@ package enigmas;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
@@ -26,18 +25,6 @@ public class Door {
 	private JButton[][] portas = new JButton[10][4];
 	private ActionListener passar, perder;
 	private int cont = 0;
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Door window = new Door();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	public Door() {
 		initialize();

@@ -2,31 +2,49 @@ package personagens;
 
 public class Jogador extends Character {
 
-	private int clase = 2;
+	private boolean[] enigma = new boolean[3], firstTry = new boolean[3];
+	private boolean andarPelaTorreArcan, RecAriandra, bonus_inicio, sacrificio;
+	private int clase, dias, horas, qtd;
 
-	private boolean bonus_inicio = false;
-	private boolean andarPelaTorreArcan = false;
-	private boolean RecAriandra = false;
-
-	private boolean[] enigma = new boolean[3];
-	private boolean firstTry[] = new boolean[3];
-
-	private boolean sacrificio = false;
+//	private boolean[] firstTry = new boolean[3];
 
 	public Jogador() {
+
+		super("Pedro", 0);
+
+		// Arcan
+		andarPelaTorreArcan = false;
+		sacrificio = false;
+
+		// Assassin
+		RecAriandra = false;
+
+		bonus_inicio = false;
+		enigma = new boolean[3];
+		firstTry = new boolean[3];
+
 		for (int i = 0; i < 3; i++) {
 			this.enigma[i] = false;
 			this.firstTry[i] = true;
 		}
+
+		clase = 0;
+		dias = 3;
+		horas = 3;
+		qtd = 0;
 	}
+
+//	public void setDias(int dias) {
+//		this.dias = dias;
+//	}
+
+//	public void setHoras(int horas) {
+//		this.horas = horas;
+//	}
 
 	public void setRecAriandra(boolean recAriandra) {
 		RecAriandra = recAriandra;
 	}
-
-	private int dias = 3;
-	private int horas = 3;
-	private int qtd = 0;
 
 	public int getClase() {
 		return clase;
@@ -56,16 +74,8 @@ public class Jogador extends Character {
 		return dias;
 	}
 
-	public void setDias(int dias) {
-		this.dias = dias;
-	}
-
 	public int getHoras() {
 		return horas;
-	}
-
-	public void setHoras(int horas) {
-		this.horas = horas;
 	}
 
 	public boolean getEnigma(int x) {
@@ -103,7 +113,8 @@ public class Jogador extends Character {
 			if (enigma[i])
 				qtd++;
 		}
-		if(RecAriandra) qtd --;
+		if (RecAriandra)
+			qtd--;
 	}
 
 	public int getQtd() {

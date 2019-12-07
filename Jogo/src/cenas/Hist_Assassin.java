@@ -24,7 +24,7 @@ import personagens.Jogador;
 import sons.Musica;
 
 public class Hist_Assassin {
-	private ActionListener continuar, escolha1, escolha2, escolha3;
+	private ActionListener continuar, escolha1, escolha2;
 	private Biblio_Assassin vet = new Biblio_Assassin(); // Vetor de texto
 	private static Musica musica = new Musica();
 	private Musica musica2 = new Musica();
@@ -403,7 +403,6 @@ public class Hist_Assassin {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
-				// System.out.println(cont);
 				if (geral.isFlag()) {
 					switch (cont) {
 					case 0:

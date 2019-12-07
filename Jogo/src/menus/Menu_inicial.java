@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import cenas.Hist_Inicio;
-import enigmas.Labirinto;
 import graficos.Janela;
 import graficos.Loading;
 import sons.Musica;
@@ -77,7 +76,6 @@ public class Menu_inicial extends Janela {
 				musica.stop();
 				menu.dispose();
 				new Hist_Inicio().inicio();
-
 //            		Loading load = new Loading();
 //					load.start();
 //					new Thread() {

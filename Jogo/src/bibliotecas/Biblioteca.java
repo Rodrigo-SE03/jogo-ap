@@ -6,7 +6,6 @@ public abstract class Biblioteca {
 	
 	protected String[] tx; // textos
 	protected String choice, op1, op2, op3; // Strings para a interface de escolhas
-	protected int[] linhas; // variavel para ajustar o JLabel ao tamanho do texto
 	protected Jogador player; // variavel para corrigir o g\u00EAnero do personagem nos textos
 	protected boolean masculino;
 

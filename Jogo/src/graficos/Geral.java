@@ -39,7 +39,7 @@ public class Geral { // Classe base para criação dos textos
 
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
-//					flag = false;
+					flag = false;
 
 					if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
 						cont++;
@@ -70,13 +70,13 @@ public class Geral { // Classe base para criação dos textos
 	public void escolhas_2(Texto t1, Biblioteca vet) { // 2 opções de escolha no final
 
 		t1.atualizaTexto(vet.getTx(0));
-		
+
 		t1.getContinuar().addActionListener(new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
-//					flag = false;
+					flag = false;
 
 					if (cont < (vet.getTx().length - 1)) {
 						cont++;
@@ -119,7 +119,7 @@ public class Geral { // Classe base para criação dos textos
 
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
-//					flag = false;
+					flag = false;
 
 					if (cont < (vet.getTx().length - 1)) {
 						cont++;

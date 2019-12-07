@@ -40,11 +40,11 @@ public class Teste {
 //		}
 
 	/**
-		 * Create the application.
-		 */
-		public Teste() {
-			initialize();
-		}
+	 * Create the application.
+	 */
+	public Teste() {
+		initialize();
+	}
 
 	/**
 	 * Initialize the contents of the frame.
@@ -71,7 +71,7 @@ public class Teste {
 
 		// botão continuar
 		continuar = new JButton();
-		continuar.setIcon(new ImageIcon(Yo.class.getResource("/imagens/continuar.png")));
+		continuar.setIcon(new ImageIcon("src/imagens/continuar.png"));
 		this.frame.getContentPane().add(continuar);
 		this.continuar.setLayout(null);
 		this.continuar.setVisible(true);

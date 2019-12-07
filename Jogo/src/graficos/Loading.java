@@ -54,7 +54,6 @@ public class Loading extends Thread {
 
 	public void setCarregando(boolean carregando) {
 		this.carregando = carregando;
-		System.out.println(carregando);
 	}
 
 	public static void main(String[] args) {

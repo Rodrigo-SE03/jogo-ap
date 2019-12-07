@@ -132,20 +132,19 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 	}
 
-	public void inicio_correr() { // 2 op\u00E7\u00F5es
+	public void inicio_correr() {
 
 		tx = new String[1];
-		linhas = new int[1];
 
 		tx[0] = "Voc\u00EA corre atr\u00E1s do bandido e pula  em cima dele, voc\u00EA o est\u00E1 segurando, "
 				+ " ele est\u00E1 em sua posse, a rua n\u00E3o est\u00E1   totalmente movimentada e nem"
 				+ " totalmente vazia. Duas pessoas se  destacam em meio as outras: um "
 				+ " guarda e algu\u00EAm que se esconde  atr\u00E1s de um capuz.  ";
-		linhas[0] = 8;
 
 		choice = "O que voc\u00EA far\u00E1? ";
 		op1 = "Recuperar seu dinheiro e deix\u00E1-lo ir";
 		op2 = "Recuperar seu dinheiro e mant\u00EA-lo preso";
+
 	}
 
 	public void inicio_artemis() {
@@ -950,11 +949,9 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 	}
 
-
 	public void jardins() {
 
 		tx = new String[1];
-		linhas = new int[1];
 
 		tx[0] = "O caminho pelos jardins est\u00E1 livre, voc\u00EA consegue entrar no castelo. Mas"
 				+ " voc\u00EA est\u00E1 perdido, n\u00E3o sabe onde \u00E9 a sala do capit\u00E3o.";
@@ -962,16 +959,15 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 		choice = "Dois soldados se aproximam  lentamente ";
 		op1 = "Falar com eles";
 		op2 = "Se esconder";
+
 	}
 
 	public void estabulos() {
 
 		tx = new String[1];
-		linhas = new int[1];
 
 		tx[0] = "Os est\u00E1bulos est\u00E3o vazios quase   totalmente vazios, exceto por um "
 				+ " soldado b\u00EAbado desacordado. ";
-		linhas[0] = 2;
 
 		choice = "Pegar as vestes dele pode ser uma   boa ideia para se camuflar, mas elas "
 				+ "  s\u00E3o grandes e pesadas. O que voc\u00EA ";

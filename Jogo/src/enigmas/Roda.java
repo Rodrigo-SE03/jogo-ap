@@ -1,7 +1,6 @@
 package enigmas;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,26 +21,20 @@ public class Roda {
 	private JFrame frame;
 	private Musica musica;
 
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Roda window = new Roda();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
+	/*
+	 * public static void main(String[] args) { EventQueue.invokeLater(new
+	 * Runnable() { public void run() { try { Roda window = new Roda(); } catch
+	 * (Exception e) { e.printStackTrace(); } } }); }
+	 */
 
-	public Roda(Jogador player,Texto t1) {
-		initialize(player,t1);
+	public Roda(Jogador player, Texto t1) {
+		initialize(player, t1);
 		musica = new Musica();
 		testaMusica();
 	}
 
-	private void initialize(Jogador player,Texto t1) {
-		
+	private void initialize(Jogador player, Texto t1) {
+
 		frame = new JFrame();
 		frame.setBounds(100, 100, 527, 423);
 		frame.setResizable(false);
@@ -59,10 +52,12 @@ public class Roda {
 		Texto_enigma caixa = new Texto_enigma();
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
-		caixa.getTxt1().setText(
-				"Na parte de trás de um antigo pátio do castelo, há uma roda velha e deformada no chão, como mostrado abaixo. Uma estrela está apontando para o seu eixo. Embora não seja mais funcional, a roda é interessante porque, quando rolada em uma superfície plana, seu eixo traça um padrão engraçado do lado.\r\n" + 
-				"\r\n" + 
-				"Dos cinco diagramas abaixo, qual deles representa a trajetória real do eixo?");
+
+		caixa.getTxt1().setText("Na parte de trás de um antigo pátio do castelo, há uma roda velha e deformada no chão,"
+				+ " como mostrado ao lado. Uma estrela está apontando para o seu eixo. Embora não seja mais funcional, "
+				+ "a roda é interessante porque, quando rolada em uma superfície plana, seu eixo traça um padrão engraçado"
+				+ " do lado.\r\n" + "\r\n"
+				+ "Dos cinco diagramas abaixo, qual deles representa a trajetória real do eixo?");
 
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		frame.setIconImage(icone.getImage());
@@ -76,7 +71,8 @@ public class Roda {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				JOptionPane.showMessageDialog(null, "Estou decepcionada, mas não tem problema, estamos precisando de mais gente mesmo.");
+				JOptionPane.showMessageDialog(null,
+						"Estou decepcionada, mas não tem problema, estamos precisando de mais gente mesmo.");
 				musica.stop();
 				frame.dispose();
 				caixa.getFrame().dispose();
@@ -92,7 +88,7 @@ public class Roda {
 				// TODO Auto-generated method stub
 				JOptionPane.showMessageDialog(null, "Parabéns! Você sabe pensar! Está aceito na Ordem dos Arcanos");
 				musica.stop();
-				if(!player.isBonus_inicio()) {
+				if (!player.isBonus_inicio()) {
 					player.setBonus_inicio(true);
 				}
 				frame.dispose();
@@ -101,20 +97,20 @@ public class Roda {
 			}
 
 		};
-		
+
 		JButton[] opcao = new JButton[5];
-		for(int i = 0; i < 5; i++) {
+		for (int i = 0; i < 5; i++) {
 			opcao[i] = new JButton();
 			opcao[i].setFocusPainted(false);
 			opcao[i].setBorderPainted(false);
 			opcao[i].setBorder(null);
 			opcao[i].setContentAreaFilled(false);
 			opcao[i].setSelectedIcon(null);
-			opcao[i].setSize(33,36);
+			opcao[i].setSize(33, 36);
 			opcao[i].addActionListener(perdeu);
 			panel.add(opcao[i]);
 		}
-		
+
 		opcao[0].setLocation(159, 37);
 		opcao[1].setLocation(159, 98);
 		opcao[2].setLocation(159, 170);
@@ -130,10 +126,10 @@ public class Roda {
 		Fundo.setIcon(enigma);
 		Fundo.setBounds(0, 0, 513, 387);
 		panel.add(Fundo);
-		
+
 		frame.setVisible(true);
 	}
-	
+
 	public void testaMusica() {
 		new Thread() {
 			public void run() {

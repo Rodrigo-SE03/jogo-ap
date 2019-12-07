@@ -19,7 +19,7 @@ public class Biblio_Arcan extends Biblioteca {
 	 * \u00F3 ó \u00F4 ô \u00F5 õ
 	 * 
 	 */
-	
+
 	public void arcan1() {
 
 		tx = new String[13];
@@ -398,7 +398,7 @@ public class Biblio_Arcan extends Biblioteca {
 				+ " sei se o senhor sabe, mas Bethesda est\u00E1  se aproximando e ela vai destruir todos "
 				+ " n\u00F3s. ";
 
-		tx[5] = "Bispo: <br/Todos voc\u00EAs no caso. Bethesda   compartilha da mesma f\u00E9 que Helaria, "
+		tx[5] = "Bispo: Todos voc\u00EAs no caso. Bethesda   compartilha da mesma f\u00E9 que Helaria, "
 				+ " eles n\u00E3o s\u00E3o uma amea\u00E7a \u00E0  Igreja.  ";
 
 		tx[6] = "Voc\u00EA:\n\nComo voc\u00EA pode ser t\u00E3o ego\u00EDsta? Pense "
@@ -508,7 +508,7 @@ public class Biblio_Arcan extends Biblioteca {
 				+ " as catacumbas est\u00E3o cheias guerreiros  mortos segurando suas espadas. ";
 
 		tx[3 + x] = "Voc\u00EA corre para pegar a espada de um  dos cad\u00E1veres e se vira para encarar o  "
-				+ " monstro que est\u00E1 entre voc\u00EA e a j\u00F3ia do <br/tempo. ";
+				+ " monstro que est\u00E1 entre voc\u00EA e a j\u00F3ia do tempo. ";
 
 	}
 
@@ -569,7 +569,7 @@ public class Biblio_Arcan extends Biblioteca {
 
 		}
 
-		tx[1] = "Chega a madrugada e voc\u00EA acorda  <br/com algu\u00E9m chamando o seu nome. "
+		tx[1] = "Chega a madrugada e voc\u00EA acorda  com algu\u00E9m chamando o seu nome. "
 				+ " Rapidamente voc\u00EA vai em dire\u00E7\u00E3o ao   chamado at\u00E9 que se depara com uma "
 				+ " sala totalmente diferente de qualquer  coisa que j\u00E1 tenha visto antes.  ";
 
@@ -839,7 +839,7 @@ public class Biblio_Arcan extends Biblioteca {
 
 		tx[2] = "Seus últimos combatentes perecem    lutando. Você e Artemisia morrem  "
 				+ " lado a lado em paz na certeza de terem dado o seu melhor.E assim "
-				+ "<br/termina a história de Helaria.";
+				+ "termina a história de Helaria.";
 
 	}
 
@@ -883,7 +883,7 @@ public class Biblio_Arcan extends Biblioteca {
 				+ " acorda para iniciar os preparativos  para o feitiço.";
 
 		tx[2] = "Os preparativos logo estão prontos,   vocês só estão esperando os alarmes "
-				+ "<br/da cidade soarem para poderem lançar o feitiço. ";
+				+ "da cidade soarem para poderem lançar o feitiço. ";
 
 		tx[3] = "Os alarmes soam. Helaria está sendo invadida, agora é o momento.";
 
@@ -945,7 +945,6 @@ public class Biblio_Arcan extends Biblioteca {
 
 	}
 
-		
 	public void vitoriaMin() {
 
 		tx = new String[3];
@@ -966,7 +965,6 @@ public class Biblio_Arcan extends Biblioteca {
 	public void derrotaMin() {
 
 		tx = new String[3];
-		linhas = new int[3];
 
 		tx[0] = "As tropas inimigas são muitas, vocês não conseguem contê-las. Helaria é "
 				+ " invadida e não demorará muito a cair.";
@@ -979,4 +977,5 @@ public class Biblio_Arcan extends Biblioteca {
 				+ " termina a história de Helaria.";
 
 	}
+	
 }

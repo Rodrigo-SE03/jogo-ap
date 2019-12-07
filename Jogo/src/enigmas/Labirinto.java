@@ -25,14 +25,13 @@ import javax.swing.JTextPane;
 import cenas.Hist_Arcan;
 import cenas.Hist_Assassin;
 import cenas.Hist_Guerreior;
-import graficos.Loading;
 import personagens.Jogador;
 import sons.Musica;
 
 public class Labirinto {
 
 	private JFrame frame;
-	private JDialog dica,relogio;
+	private JDialog dica, relogio;
 	private JPanel panel;
 	private JLabel[] parede, livros;
 	private JLabel playerImg, fundo, piso;
@@ -51,7 +50,7 @@ public class Labirinto {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new Labirinto(new Jogador());
+					new Labirinto(new Jogador()).go();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -60,16 +59,20 @@ public class Labirinto {
 	}
 
 	public Labirinto(Jogador player) {
+
 		this.player = player;
 		this.icone = new ImageIcon("src/imagens/Icone.png");
 		this.size = Toolkit.getDefaultToolkit().getScreenSize();
+
 		musica = new Musica();
 		initialize();
 		testaMusica();
+
 		this.time = 90;
 		this.min = 1;
 		this.seg = 30;
 		tempo(player);
+
 	}
 
 	private void initialize() {
@@ -119,13 +122,12 @@ public class Labirinto {
 		piso.setSize(size);
 		piso.setLocation(0, 0);
 		panel.add(piso);
-		
-		
+
 		relogio = new JDialog(frame);
 		relogio.setSize(150, 80);
 		relogio.setUndecorated(true);
 		relogio.setAlwaysOnTop(true);
-		relogio.setLocation(frame.getLocation().x,frame.getLocation().y+frame.getHeight()-80);
+		relogio.setLocation(frame.getLocation().x, frame.getLocation().y + frame.getHeight() - 80);
 
 		text = new JTextPane();
 		text.setBounds(0, 0, 200, 100);
@@ -141,12 +143,11 @@ public class Labirinto {
 		fundo1.setSize(relogio.getSize());
 		fundo1.setVisible(true);
 		relogio.getContentPane().add(fundo1);
-		
 
 	}
-	
+
 	public void go() {
-		
+
 		frame.setVisible(true);
 		dica.setVisible(true);
 	}
@@ -174,7 +175,34 @@ public class Labirinto {
 
 	public void criarPlayer() {
 
-		ImageIcon img1 = new ImageIcon("src/imagens/mago.png");
+		ImageIcon img1;
+
+		switch (player.getClase()) {
+
+		case 1:
+
+			if (player.getSexo() == 0) {
+				img1 = new ImageIcon("src/modelo/lad_masc.png");
+
+			} else {
+				img1 = new ImageIcon("src/modelo/lad_fem.png");
+			}
+			break;
+
+		case 2:
+
+			if (player.getSexo() == 0) {
+				img1 = new ImageIcon("src/modelo/guerr_male.png");
+
+			} else {
+				img1 = new ImageIcon("src/modelo/guerr_fem.png");
+			}
+			break;
+
+		default:
+			img1 = new ImageIcon("src/imagens/mago.png");
+		}
+
 		img1.setImage(img1.getImage().getScaledInstance(50, 50, 100));
 		playerImg = new JLabel(img1);
 		playerImg.setBounds(10, 568, 60, 60);
@@ -237,7 +265,7 @@ public class Labirinto {
 		continuar.setBounds(430, 400, 150, 50);
 		continuar.setContentAreaFilled(false);
 		continuar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -246,15 +274,14 @@ public class Labirinto {
 			}
 		});
 		dica.add(continuar);
-		
+
 		ImageIcon background = new ImageIcon("src/imagens/fundo_dialogo.png");
 		background.setImage(background.getImage().getScaledInstance(610, 500, 100));
 
 		JLabel back = new JLabel(background);
 		back.setBounds(0, 0, 610, 500);
 		dica.add(back);
-		
-	
+
 		ImageIcon lampada = new ImageIcon("src/imagens/lampada.png");
 		lampada.setImage(lampada.getImage().getScaledInstance(50, 50, 100));
 
@@ -585,40 +612,46 @@ public class Labirinto {
 	}
 
 	public void testaMusica() {
+
 		new Thread() {
+
 			public void run() {
 				while (!frame.isVisible()) {
 					System.out.println("");
 				}
 				musica.TocaMusica("src/sons/labirinto.wav");
 				musica.setVolume(0.6f);
+
 			}
 		}.start();
+
 	}
-	
+
 	public void tempo(Jogador player) {
 
 		new Thread() {
+
 			public void run() {
-				try {			
-					while (time>0) {
-						
+				try {
+					while (time > 0) {
+
 						if (seg < 10) {
 							text.setText(" " + min + ":" + "0" + seg);
-						} else{
+						} else {
 							text.setText(" " + min + ":" + seg);
 						}
 						Thread.sleep(1000);
 						time--;
 						seg = time;
-						min = seg/60;
-						seg = seg%60;
+						min = seg / 60;
+						seg = seg % 60;
 					}
 					perder();
 
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-					}
-			}}.start();
+				}
+			}
+		}.start();
 	}
 }

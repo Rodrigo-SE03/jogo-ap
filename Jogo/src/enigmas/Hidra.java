@@ -1,7 +1,6 @@
 package enigmas;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
@@ -32,20 +31,20 @@ public class Hidra {
 	private int numb, numero, min, seg;
 	private int time;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					@SuppressWarnings("unused")
-					Hidra window = new Hidra(new Jogador());
-
-					// window.frame[cont].setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					@SuppressWarnings("unused")
+//					Hidra window = new Hidra(new Jogador());
+//
+//					// window.frame[cont].setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the application.
@@ -270,21 +269,21 @@ public class Hidra {
 
 		new Thread() {
 			public void run() {
-				try {			
+				try {
 					while (time > 0 && !perdeu) {
-						
+
 						if (seg < 10) {
 							text.setText(" " + min + ":" + "0" + seg);
-						} else{
+						} else {
 							text.setText(" " + min + ":" + seg);
 						}
 						Thread.sleep(1000);
 						time--;
 						seg = time;
-						min = seg/60;
-						seg = seg%60;
+						min = seg / 60;
+						seg = seg % 60;
 					}
-					
+
 					perdeu = true;
 					if (perdeu && !ganhou) {
 						musica.stop();

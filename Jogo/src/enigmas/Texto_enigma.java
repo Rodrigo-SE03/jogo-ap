@@ -39,7 +39,7 @@ public class Texto_enigma {
 	}
 
 	private void initialize() {
-		
+
 		frame = new JFrame();
 		frame.setBounds(100, 100, 607, 417);
 		frame.setResizable(false);
@@ -54,7 +54,6 @@ public class Texto_enigma {
 				}
 			}
 		});
-		//frame.setUndecorated(true);
 
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -79,6 +78,7 @@ public class Texto_enigma {
 	}
 
 	public void resize(int x, int y) {
+
 		frame.setSize(frame.getSize().width + x, frame.getSize().height + y);
 		txt1.setSize(txt1.getSize().width + x, txt1.getSize().height + y);
 		fundo.setSize(fundo.getWidth() + x, fundo.getHeight() + y);

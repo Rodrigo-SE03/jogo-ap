@@ -162,7 +162,6 @@ public class Fase extends JPanel implements ActionListener {
 			for (int j = 0; j < inimigo1.size(); j++) {
 				Inimigo1 in = inimigo1.get(j);
 				if (in.getX() < 0) {
-					System.out.println("yo");
 					setContP(contP + 1);
 					if (contP >= 50) {
 						emJogo = false;
@@ -219,7 +218,6 @@ public class Fase extends JPanel implements ActionListener {
 	}
 
 	public void terminar() {
-		System.out.println(jogador.getClase());
 		frame.dispose();
 		switch (jogador.getClase()) {
 		case 0:

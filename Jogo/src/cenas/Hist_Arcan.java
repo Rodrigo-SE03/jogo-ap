@@ -28,7 +28,6 @@ public class Hist_Arcan {
 	private ActionListener continuar, escolha1, escolha2;
 	private Biblio_Arcan vet = new Biblio_Arcan(); // Vetor de texto
 	private static Musica musica = new Musica();
-	private Musica[] musicasSegunda;
 	private Jogador player;
 
 	public Hist_Arcan(Jogador player) {
@@ -48,7 +47,6 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					// System.out.println(cont);
 					switch (cont) {
 					case 0:
 						musica.TocaMusica("src/sons/reuniaoArcana.wav");
@@ -382,7 +380,6 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					// System.out.println(cont);
 					switch (cont) {
 //					case 0:
 //						if (musica.isPlaying()) {

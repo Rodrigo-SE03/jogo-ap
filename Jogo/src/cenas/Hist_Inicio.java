@@ -30,7 +30,6 @@ public class Hist_Inicio {
 
 	public void admin(Jogador player) {
 		if (!musica.isPlaying()) {
-			// System.out.println("yo");
 			musica.TocaMusica("src/sons/mercado.wav");
 			musica.setVolume(0.7f);
 		}
@@ -106,7 +105,7 @@ public class Hist_Inicio {
 
 		Texto t1 = new Texto(); // Cria o JFrame e instancia a classe que gera os textos
 		JButton pular = new JButton("Pular");
-		
+
 		ImageIcon pul = new ImageIcon("src/imagens/pular.png");
 		pul.setImage(pul.getImage().getScaledInstance(130, 35, 100));
 		pular.setIcon(pul);
@@ -125,7 +124,6 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					// System.out.println(cont);
 					switch (cont) {
 					case 10:
 						musica.reduzVolume(0.4f, 90);
@@ -205,12 +203,10 @@ public class Hist_Inicio {
 
 		continuar = new ActionListener() { // ActionListener para regir o destino do programa ao fim dos textos
 			int cont = 0; // Contador para verificar a posi��o do vetor de texto
-			int no = 0;
 
 			public void actionPerformed(ActionEvent e) {
 
 				if (geral.isFlag()) {
-					// System.out.println(cont);
 					switch (cont) {
 					case 3:
 						// musica.reduzVolume(0.3f, 10);
@@ -428,7 +424,6 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					// System.out.println(cont);
 					switch (cont) {
 					default:
 						break;

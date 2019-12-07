@@ -18,7 +18,6 @@ public class Player {
 	private int altura, largura;
 	private List<Ataque> ataques;
 	private boolean isVisivel;
-	private Jogador jogador;
 	private ImageIcon tiro;
 	private ImageIcon referencia;
 
@@ -26,10 +25,9 @@ public class Player {
 	public Player(Jogador jogador) {
 		this.x = 10;
 		this.y = 800;
-		this.jogador = jogador;
+
 		switch (jogador.getClase()) {
 		case 1:
-			System.out.println(1);
 			tiro = new ImageIcon(getClass().getResource("faca.png"));
 			if (jogador.getSexo() == 0) {
 				referencia = new ImageIcon(getClass().getResource("lad_masc.png"));
@@ -39,7 +37,6 @@ public class Player {
 			}
 			break;
 		case 2:
-			System.out.println(2);
 			tiro = new ImageIcon(getClass().getResource("flecha.png"));
 			if (jogador.getSexo() == 0) {
 				referencia = new ImageIcon(getClass().getResource("guerr_male.png"));
@@ -53,6 +50,7 @@ public class Player {
 			tiro = new ImageIcon(getClass().getResource("tiro.jpeg"));
 			break;
 		}
+
 		tiro.setImage(tiro.getImage().getScaledInstance(30, 30, 100));
 		referencia.setImage(referencia.getImage().getScaledInstance(60, 80, 100));
 		isVisivel = true;
@@ -76,7 +74,7 @@ public class Player {
 
 	// ataques sair da posição do player
 	public void ataqueSimples() {
-		this.ataques.add(new Ataque(x + largura, y + (altura / 2),tiro));
+		this.ataques.add(new Ataque(x + largura, y + (altura / 2), tiro));
 	}
 
 	// p/ checar colisões

@@ -137,9 +137,7 @@ public class Porta {
 		Fundo.setIcon(new ImageIcon(Porta.class.getResource("/imagens/senha.png")));
 		Fundo.setBounds(0, 0, 513, 387);
 		panel.add(Fundo);
-		
-		
-		
+
 		relogio = new JDialog(frame);
 		relogio.setSize(150, 80);
 		relogio.setUndecorated(true);
@@ -160,8 +158,7 @@ public class Porta {
 		fundo1.setSize(relogio.getSize());
 		fundo1.setVisible(true);
 		relogio.getContentPane().add(fundo1);
-		
-		
+
 		relogio.setVisible(true);
 		frame.setVisible(true);
 	}
@@ -209,30 +206,31 @@ public class Porta {
 
 		}
 	}
-	
+
 	public void tempo(Jogador player) {
 
 		new Thread() {
 			public void run() {
-				try {			
-					while (time>0) {
-						
+				try {
+					while (time > 0) {
+
 						if (seg < 10) {
 							text.setText(" " + min + ":" + "0" + seg);
-						} else{
+						} else {
 							text.setText(" " + min + ":" + seg);
 						}
 						Thread.sleep(1000);
 						time--;
 						seg = time;
-						min = seg/60;
-						seg = seg%60;
+						min = seg / 60;
+						seg = seg % 60;
 					}
 					perder(player);
 
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-					}
-			}}.start();
+				}
+			}
+		}.start();
 	}
 }

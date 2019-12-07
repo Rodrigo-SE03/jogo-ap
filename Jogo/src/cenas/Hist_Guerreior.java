@@ -50,7 +50,6 @@ public class Hist_Guerreior {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					// System.out.println(cont);
 					switch (cont) {
 					case 0:
 						musica.TocaMusica("src/sons/mercado.wav");
@@ -207,7 +206,6 @@ public class Hist_Guerreior {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		Loading carregar = new Loading();
 
 		if (player.getFirstTry(2)) {
 			vet.grr_3_torre();
