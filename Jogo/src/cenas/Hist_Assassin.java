@@ -25,8 +25,8 @@ import sons.Musica;
 public class Hist_Assassin {
 	private ActionListener continuar, escolha1, escolha2, escolha3;
 	private Biblio_Assassin vet = new Biblio_Assassin(); // Vetor de texto
-	private Musica musica = new Musica();
-	private Musica[] musicasSegunda;
+	private static Musica musica = new Musica();
+	private Musica musica2 = new Musica();
 	private Jogador player;
 
 	public Hist_Assassin(Jogador player) {
@@ -37,10 +37,36 @@ public class Hist_Assassin {
 
 	public void assassin1(Texto t1) {
 		Geral geral = new Geral();
+		
+		
 
 		vet.hpAssassin();
 
 		geral.escolhas_2(t1, vet);
+		
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					switch(cont) {
+					case 0:
+						musica.TocaMusica("src/sons/reuniaoArcana.wav");
+						musica.setVolume(0.0f);
+						musica.aumentaVolume(0.7f,80);
+						break;
+					default:
+						break;
+					}
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
 
@@ -101,7 +127,14 @@ public class Hist_Assassin {
 	}
 
 	public void destino() {
-
+		
+		if(musica.isPlaying()) {
+			musica.stop();
+		}
+		if(musica2.isPlaying()) {
+			musica2.stop();
+		}
+		
 		if (player.getDias() != 0) {
 
 			JFrame frame = new JFrame();
@@ -189,8 +222,17 @@ public class Hist_Assassin {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont){
+					case 0:
+						musica.TocaMusica("src/sons/torre.wav");
+						musica.setVolume(0.6f);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						musica.setVolume(0.0f);
 						new Labirinto(player, t1.getTexto());
 					} else
 						cont++;
@@ -203,7 +245,6 @@ public class Hist_Assassin {
 	}
 
 	public void torreDerrota() {
-
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -215,6 +256,13 @@ public class Hist_Assassin {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch (cont) {
+					case 0:
+						musica.aumentaVolume(0.6f, 50);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
@@ -231,7 +279,6 @@ public class Hist_Assassin {
 	}
 
 	public void torreVitoria() {
-
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -246,6 +293,13 @@ public class Hist_Assassin {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch (cont) {
+					case 0:
+						musica.aumentaVolume(0.6f, 50);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
@@ -276,9 +330,18 @@ public class Hist_Assassin {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 0:
+						musica.TocaMusica("src/sons/prisao.wav");
+						musica.setVolume(0.9f);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.setVolume(0.0f);
 						new Hidra(player);
 					} else
 						cont++;
@@ -318,7 +381,7 @@ public class Hist_Assassin {
 	}
 
 	public void catedralVitoria() {
-
+		
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -332,7 +395,15 @@ public class Hist_Assassin {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+				//System.out.println(cont);
 				if (geral.isFlag()) {
+					switch (cont) {
+					case 0:
+						musica.aumentaVolume(0.9f, 50);
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
@@ -350,7 +421,10 @@ public class Hist_Assassin {
 	public void CasaNobre() {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-
+		
+		musica.TocaMusica("src/sons/casaNobre.wav");
+		musica.setVolume(0.7f);
+		
 		if (player.getFirstTry(0)) {
 			vet.CasaNobreAssassin();
 			player.setFirstTry(0, false);
@@ -380,6 +454,7 @@ public class Hist_Assassin {
 
 	public void CasaNobreDerrota() {
 
+		musica.stop();
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -605,6 +680,8 @@ public class Hist_Assassin {
 	}
 
 	public void guerra() {
+		musica.TocaMusica("src/sons/preGuerra.wav");
+		musica.setVolume(0.6f);
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -618,6 +695,7 @@ public class Hist_Assassin {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
+						musica.stop();
 						new Teste(player);
 					} else
 						cont++;
@@ -630,6 +708,8 @@ public class Hist_Assassin {
 	}
 
 	public void guerraVitoria() {
+		musica.TocaMusica("src/sons/final.wav");
+		musica.setVolume(0.7f);
 		switch (player.getQtd()) {
 		case 1:
 			vet.vitoria3Recrutados();
@@ -656,6 +736,7 @@ public class Hist_Assassin {
 						if (cont == (vet.getTx().length - 1)) {
 							t1.getContinuar().removeActionListener(continuar);
 							t1.getTexto().dispose();
+							musica.stop();
 							Creditos cr = new Creditos();
 
 							new Thread() {
@@ -686,6 +767,9 @@ public class Hist_Assassin {
 
 	public void guerraDerrota() {
 
+		musica.TocaMusica("src/sons/final.wav");
+		musica.setVolume(0.7f);
+		
 		if (player.isBonus_inicio()) {
 
 		} else {
@@ -702,7 +786,7 @@ public class Hist_Assassin {
 							t1.getContinuar().removeActionListener(continuar);
 							t1.getTexto().dispose();
 							Creditos cr = new Creditos();
-
+							musica.stop();
 							new Thread() {
 								public void run() {
 									try {
