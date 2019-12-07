@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import bibliotecas.Biblio_Intro;
+import enigmas.Cartola;
 import enigmas.Cavalo;
 import enigmas.Roda;
 import graficos.Escolhas;
@@ -781,7 +782,9 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(1);
-						new Hist_Assassin(vet.getPlayer()).assassin1(t1);
+						t1.getTexto().dispose();
+						new Cartola(vet.getPlayer(),t1);
+						//new Hist_Assassin(vet.getPlayer()).assassin1(t1);
 					} else
 						cont++;
 
