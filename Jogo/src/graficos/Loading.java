@@ -10,13 +10,13 @@ public class Loading extends Thread {
 	private JFrame frame;
 	private ImageIcon[] icone = new ImageIcon[10];
 	private boolean carregando = true;
+	private boolean vai = true;
 
-	public Loading() {
-
+	public boolean isVai() {
+		return vai;
 	}
 
-	public void run() {
-		int i = 0;
+	public Loading() {
 		this.frame = new JFrame();
 		this.frame.setIconImage(new ImageIcon("src/imagens/Icone.png").getImage());
 		this.frame.setAlwaysOnTop(true);
@@ -34,7 +34,13 @@ public class Loading extends Thread {
 			icone[i1].setImage(icone[i1].getImage().getScaledInstance(500, 500, 100));
 		}
 
+	}
+
+	public void run() {
+		int i = 0;
+		
 		this.frame.setVisible(true);
+		vai = false;
 		while (carregando) {
 			System.out.println(carregando);
 			fundo.setIcon(icone[i]);
@@ -45,8 +51,12 @@ public class Loading extends Thread {
 				e.printStackTrace();
 			}
 			i++;
-			if (i == 10)
+			if (i == 10) {
 				i = 0;
+				vai = false;
+				System.out.println(vai);
+			}
+				
 		}
 		frame.dispose();
 

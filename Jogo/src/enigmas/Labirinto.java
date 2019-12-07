@@ -60,11 +60,13 @@ public class Labirinto {
 		this.icone = new ImageIcon("src/imagens/Icone.png");
 		this.size = Toolkit.getDefaultToolkit().getScreenSize();
 		musica = new Musica();
-		initialize(carregar);
+		initialize();
 		testaMusica();
+		go();
+		carregar.dispose();
 	}
 
-	private void initialize(JFrame carregar) {
+	private void initialize() {
 
 		frame = new JFrame();
 		frame.setSize(size);
@@ -111,11 +113,13 @@ public class Labirinto {
 		piso.setSize(size);
 		piso.setLocation(0, 0);
 		panel.add(piso);
-		frame.setVisible(true);
-//		carregar.setCarregando(false);
-		carregar.dispose();
-		dica.setVisible(true);
+		
 
+	}
+	
+	private void go() {
+		frame.setVisible(true);
+		dica.setVisible(true);
 	}
 
 	private void Criarlistener() {
