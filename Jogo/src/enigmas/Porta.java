@@ -1,16 +1,20 @@
 package enigmas;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 import cenas.Hist_Arcan;
 import cenas.Hist_Assassin;
@@ -20,7 +24,12 @@ import personagens.Jogador;
 public class Porta {
 
 	private JFrame frame;
+	private JDialog relogio;
+	private JTextPane text;
 	private int i;
+	private int min, seg;
+	private int time;
+	private Texto_enigma caixa;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -37,6 +46,10 @@ public class Porta {
 
 	public Porta(Jogador player) {
 		initialize(player);
+		this.time = 180;
+		this.min = 3;
+		this.seg = 0;
+		tempo(player);
 	}
 
 	private void initialize(Jogador player) {
@@ -55,7 +68,7 @@ public class Porta {
 			}
 		});
 
-		Texto_enigma caixa = new Texto_enigma();
+		caixa = new Texto_enigma();
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
 		caixa.getTxt1()
@@ -124,11 +137,37 @@ public class Porta {
 		Fundo.setIcon(new ImageIcon(Porta.class.getResource("/imagens/senha.png")));
 		Fundo.setBounds(0, 0, 513, 387);
 		panel.add(Fundo);
+		
+		
+		
+		relogio = new JDialog(frame);
+		relogio.setSize(150, 80);
+		relogio.setUndecorated(true);
+		relogio.setAlwaysOnTop(true);
+		relogio.setLocation(frame.getLocation());
+
+		text = new JTextPane();
+		text.setBounds(0, 0, 200, 100);
+		text.setOpaque(false);
+		text.setFont(new Font("Georgia", Font.BOLD, 50));
+		text.setForeground(Color.black);
+		relogio.getContentPane().add(text);
+
+		ImageIcon back = new ImageIcon("src/imagens/caixa_de_texto_enigma.png");
+		back.setImage(back.getImage().getScaledInstance(relogio.getSize().width, relogio.getSize().height, 100));
+		JLabel fundo1 = new JLabel(back);
+		fundo1.setLocation(0, 0);
+		fundo1.setSize(relogio.getSize());
+		fundo1.setVisible(true);
+		relogio.getContentPane().add(fundo1);
+		
+		
+		relogio.setVisible(true);
 		frame.setVisible(true);
 	}
 
 	public void perder(Jogador player) {
-
+		caixa.getFrame().dispose();
 		switch (player.getClase()) {
 
 		case 0:
@@ -169,5 +208,31 @@ public class Porta {
 			break;
 
 		}
+	}
+	
+	public void tempo(Jogador player) {
+
+		new Thread() {
+			public void run() {
+				try {			
+					while (time>0) {
+						
+						if (seg < 10) {
+							text.setText(" " + min + ":" + "0" + seg);
+						} else{
+							text.setText(" " + min + ":" + seg);
+						}
+						Thread.sleep(1000);
+						time--;
+						seg = time;
+						min = seg/60;
+						seg = seg%60;
+					}
+					perder(player);
+
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					}
+			}}.start();
 	}
 }

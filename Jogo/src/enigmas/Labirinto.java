@@ -20,6 +20,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 import cenas.Hist_Arcan;
 import cenas.Hist_Assassin;
@@ -31,7 +32,7 @@ import sons.Musica;
 public class Labirinto {
 
 	private JFrame frame;
-	private JDialog dica;
+	private JDialog dica,relogio;
 	private JPanel panel;
 	private JLabel[] parede, livros;
 	private JLabel playerImg, fundo, piso;
@@ -42,6 +43,9 @@ public class Labirinto {
 	private int x, y;
 	private boolean amarelo, azul;
 	private Musica musica;
+	private int min, seg;
+	private int time;
+	private JTextPane text;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -64,6 +68,10 @@ public class Labirinto {
 		testaMusica();
 		go();
 		carregar.dispose();
+		this.time = 90;
+		this.min = 1;
+		this.seg = 30;
+		tempo(player);
 	}
 
 	private void initialize() {
@@ -114,10 +122,33 @@ public class Labirinto {
 		piso.setLocation(0, 0);
 		panel.add(piso);
 		
+		
+		relogio = new JDialog(frame);
+		relogio.setSize(150, 80);
+		relogio.setUndecorated(true);
+		relogio.setAlwaysOnTop(true);
+		relogio.setLocation(frame.getLocation().x,frame.getLocation().y+frame.getHeight()-80);
+
+		text = new JTextPane();
+		text.setBounds(0, 0, 200, 100);
+		text.setOpaque(false);
+		text.setFont(new Font("Georgia", Font.BOLD, 50));
+		text.setForeground(Color.black);
+		relogio.getContentPane().add(text);
+
+		ImageIcon back = new ImageIcon("src/imagens/parede.png");
+		back.setImage(back.getImage().getScaledInstance(relogio.getSize().width, relogio.getSize().height, 100));
+		JLabel fundo1 = new JLabel(back);
+		fundo1.setLocation(0, 0);
+		fundo1.setSize(relogio.getSize());
+		fundo1.setVisible(true);
+		relogio.getContentPane().add(fundo1);
+		
 
 	}
 	
 	private void go() {
+		
 		frame.setVisible(true);
 		dica.setVisible(true);
 	}
@@ -213,7 +244,7 @@ public class Labirinto {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				dica.setVisible(false);
-				
+				relogio.setVisible(true);
 			}
 		});
 		dica.add(continuar);
@@ -565,5 +596,31 @@ public class Labirinto {
 				musica.setVolume(0.6f);
 			}
 		}.start();
+	}
+	
+	public void tempo(Jogador player) {
+
+		new Thread() {
+			public void run() {
+				try {			
+					while (time>0) {
+						
+						if (seg < 10) {
+							text.setText(" " + min + ":" + "0" + seg);
+						} else{
+							text.setText(" " + min + ":" + seg);
+						}
+						Thread.sleep(1000);
+						time--;
+						seg = time;
+						min = seg/60;
+						seg = seg%60;
+					}
+					perder();
+
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					}
+			}}.start();
 	}
 }
