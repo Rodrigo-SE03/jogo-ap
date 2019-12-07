@@ -31,7 +31,7 @@ public class Hist_Assassin {
 
 	public Hist_Assassin(Jogador player) {
 		this.player = player;
-		this.player.setClase(2);
+		this.player.setClase(1);
 		vet.setPlayer(this.player);
 	}
 
@@ -136,6 +136,7 @@ public class Hist_Assassin {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
+					catedral();
 				}
 
 			};
@@ -145,6 +146,7 @@ public class Hist_Assassin {
 				public void actionPerformed(ActionEvent e) {
 					frame.dispose();
 					player.passaHora();
+					torre();
 				}
 
 			};

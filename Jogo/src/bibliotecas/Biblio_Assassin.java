@@ -456,9 +456,9 @@ public class Biblio_Assassin extends Biblioteca {
 									+ "<html>";
 					      linhas[4] =3;    
 					      
-					      tx[5] =  "<html> Uma mulher que voc\u00EA julga ser Terraira diz.:" + "<br/><br/>Bem-vindo,"+player.getNome()
+					      tx[5] =  "<html> Uma mulher que voc\u00EA julga ser Terraira<br/> diz:" + "<br/><br/>Bem-vindo,"+player.getNome()
 						    		  + "<html>";
-						      linhas[5] =2;
+						      linhas[5] =3;
 						      
 						      tx[6] =  "<html> Voc\u00EA:" + "<br/><br/>Como voc\u00EA sabe meu nome?"
 						    		  + "<html>";
@@ -481,7 +481,7 @@ public class Biblio_Assassin extends Biblioteca {
 						    		  + "<br/>ajudar ao inv\u00E9s de"  
 						    		  + "<br/>lutar com os meus?"  
 						    		  + "<html>";
-						      linhas[9] =5;
+						      linhas[9] =6;
 						      
 						      
 						      tx[10] =  "<html> Voc\u00EA:" + "<br/><br/>Porque n\u00F3s temos um plano para..."
@@ -500,9 +500,9 @@ public class Biblio_Assassin extends Biblioteca {
 						      
 						      tx[13] =  "<html> Terraira:" + "<br/><br/>Finalmente fomos ao que interessa."
 						    		  + "<br/>Se eu for lutar com voc\u00EA,"  
-						    		  + "<br/>vou precisar que busque um livro para mim."  
+						    		  + "<br/>vou precisar que busque um livro para <br/>mim."  
 						    		  + "<html>";
-						      linhas[13] =4;
+						      linhas[13] =5;
 						      
 						      tx[14] =  "<html> Voc\u00EA:" + "<br/><br/>Qual livro e onde?"
 						    		  + "<html>";
@@ -555,7 +555,7 @@ public class Biblio_Assassin extends Biblioteca {
 				}
 			}
 			
-			public void Catederal()
+			/*public void Catederal()
 			{tx = new String[5];
 			linhas = new int[5];
 			
@@ -597,7 +597,7 @@ public class Biblio_Assassin extends Biblioteca {
 					+ "<html>";
 	      linhas[4] =3; 
 	     
-			}
+			}*/
 			
 			public void posHidra(int x) {
 				switch (x) {
@@ -887,11 +887,11 @@ public class Biblio_Assassin extends Biblioteca {
 			tx[2] = "<html>O dia termina e voc\u00EA" + "<br/>volta para a Alameda"
 					+ "<br/>dos Tr\u00EAs Ponteiros, mas" + "<br/>sem a ajuda de Ariandra." + "<html>";
 			linhas[2] = 3;
-			break;
+			//break;
 		}
-	}
+	
 
-	public void TorreArcanaAssassin() {
+	/*public void TorreArcanaAssassin() {
 		tx = new String[18];
 		linhas = new int[18];
 		tx[0] = "<html>Voc\u00EA pega seu caminho para a" + "<br/>Torre Arcana e consegue"
@@ -964,9 +964,9 @@ public class Biblio_Assassin extends Biblioteca {
 		tx[17] = "<html>  Terraira:" + "<br/><br/>\u00C9 o que veremos." + "<html>";
 		linhas[17] = 2;
 
-	}
+	}*/
 
-	public void posLabirinto(int x) {
+	/*public void posLabirinto(int x) {
 		switch (x) {
 		case 1:
 			tx = new String[2];
@@ -985,7 +985,7 @@ public class Biblio_Assassin extends Biblioteca {
 					+ "<br/>voc\u00EA acorda na enfermaria." + "<html>";
 			linhas[1] = 2;
 		}
-	}
+	}*/
 
 	public void Catederal() {
 		tx = new String[5];
@@ -1060,21 +1060,21 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx[9] = "<html> Letos:" + "<br/><br/>E voc\u00EA s\u00F3 vai" + "<br/>me libertar se eu"
 				+ "<br/>me juntar a voc\u00EA?" + "<html>";
-		linhas[9] = 3;
+		linhas[9] = 4;
 
 		tx[10] = "<html> Voc\u00EA:" + "<br/><br/>Precisamente." + "<html>";
 		linhas[10] = 2;
 
 		tx[11] = "<html> Letos:" + "<br/><br/>Muito bem," + "<br/>estou dentro. Afinal, o que"
 				+ "<br/>eu tenho a perder?" + "<html>";
-		linhas[11] = 3;
+		linhas[11] = 4;
 
 		tx[12] = "<html>Voc\u00EA abre a cela." + "<br/>O dia est\u00E1 terminando " + "<br/>e voc\u00EA retorna para "
 				+ "<br/>a Alameda dos Tr\u00EAs Ponteiros" + "<br/> com Letos, o An\u00E3o. Vit\u00F3ria." + "<html>";
 		linhas[12] = 4;
 	}
 
-	public void finalAssassin() {
+	/*public void finalAssassin() {
 		tx = new String[5];
 		linhas = new int[5];
 		tx[0] = "<html>Termina o terceiro dia e" + "<br/> voc\u00EA vai para seu quarto"
@@ -1147,9 +1147,9 @@ public class Biblio_Assassin extends Biblioteca {
 		choice = "<html>O que voc\u00EA ir\u00E1 fazer?" + "<html>";
 		op1 = "Lutar";
 		op2 = "Fugir";
-	}
+	}*/
 
-	public void derrotaComBonusOuVitoriaSemRecrutas2(int x) {
+	/*public void derrotaComBonusOuVitoriaSemRecrutas2(int x) {
 		switch (x) {
 		case 1:
 			tx = new String[4];
@@ -1187,9 +1187,9 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[1] = 5;
 			break;
 		}
-	}
+	}*/
 
-	public void vitoria3Recrutados() {
+	/*public void vitoria3Recrutados() {
 		tx = new String[5];
 		linhas = new int[5];
 		tx[0] = "<html>Voc\u00EAs conseguem conter" + "<br/>nas chamas uma for\u00E7a"
@@ -1216,7 +1216,7 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>de um lugar ideal" + "<br/>a se viver." + "<br/>PARAB\u00C9NS!" + "<br/>VOCÊ TERMINOU O JOGO!"
 				+ "<html>";
 		linhas[4] = 6;
-	}
+	}*/
 
 	public void vitoriaDoisRecrutados() {
 		tx = new String[6];
