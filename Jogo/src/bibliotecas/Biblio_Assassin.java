@@ -21,14 +21,34 @@ public class Biblio_Assassin extends Biblioteca {
 	 */
 
 	public void hpAssassin() {
-		tx = new String[18];
-		linhas = new int[18];
+		tx = new String[17];
+		linhas = new int[17];
 
-		tx[0] = "<html>Quinze anos se passaram desde que" + "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante."
-				+ "<br/>Voc\u00EA se tornou um membro " + "<br/>valioso, um assassino  r\u00E1pido e eficiente,  "
-				+ "<br/>completou in\u00FAmeras miss\u00F5es, deixou " + "<br/>in\u00FAmeros cad\u00E1veres."
-				+ "<html>";
-		linhas[0] = 5;
+		if (masculino) {
+			tx[0] = "<html>Quinze anos se passaram desde que" + "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante."
+					+ "<br/>Voc\u00EA se tornou um membro " + "<br/>valioso, um assassino  r\u00E1pido e eficiente,  "
+					+ "<br/>completou in\u00FAmeras miss\u00F5es, deixou " + "<br/>in\u00FAmeros cad\u00E1veres."
+					+ "<html>";
+			linhas[0] = 5;
+
+			tx[13] = "<html>Pelo seu tom ficou claro para todos que "
+					+ "<br/>conhecem um pouco da sua hist\u00F3ria que "
+					+ "<br/>voc\u00EA est\u00E1 disposto a tudo para " + "<br/>obter vingan\u00E7a." + "<html>";
+			linhas[13] = 3;
+
+		} else {
+
+			tx[0] = "<html>Quinze anos se passaram desde que" + "<br/>Voc\u00EA se juntou \u00E0 Guilda Vigilante."
+					+ "<br/>Voc\u00EA se tornou um membro " + "<br/>valioso, uma assassina  r\u00E1pido e eficiente,  "
+					+ "<br/>completou in\u00FAmeras miss\u00F5es, deixou " + "<br/>in\u00FAmeros cad\u00E1veres."
+					+ "<html>";
+			linhas[0] = 5;
+
+			tx[13] = "<html>Pelo seu tom ficou claro para todos que "
+					+ "<br/>conhecem um pouco da sua hist\u00F3ria que "
+					+ "<br/>voc\u00EA est\u00E1 disposta a tudo para " + "<br/>obter vingan\u00E7a." + "<html>";
+			linhas[13] = 3;
+		}
 
 		tx[1] = "<html>" + "<br/>Em todos esses anos as pessoas da Ordem"
 				+ "<br/>se tornaram sua fam\u00EDlia, em especial "
@@ -59,7 +79,7 @@ public class Biblio_Assassin extends Biblioteca {
 		tx[5] = "<html>Todos come\u00E7am a se agitar e debater o" + "<br/>que Homero estava dizendo, afinal, que"
 				+ "<br/>amea\u00E7a poderia ser t\u00E3o grande para"
 				+ "<br/>destruir toda a Guilda? No passado voc\u00EAs"
-				+ "<br/>j\u00E1 tinham tido in\u00FAmeros conflitos com a" + "<br/>Guarda Real, mas nenhum representou"
+				+ "<br/>j\u00E1 tiveram in\u00FAmeros conflitos com a" + "<br/>Guarda Real, mas nenhum representou"
 				+ "<br/>amea\u00E7a t\u00E3o grande." + "<html>";
 		linhas[5] = 6;
 
@@ -92,10 +112,6 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>destruiu sua vila, queimou sua casa e" + "<br/>matou sua fam\u00EDlia." + "<html>";
 		linhas[12] = 3;
 
-		tx[13] = "<html>Pelo seu tom ficou claro para todos que " + "<br/>conhecem um pouco da sua hist\u00F3ria que "
-				+ "<br/>voc\u00EA est\u00E1 disposto a tudo para " + "<br/>obter vingan\u00E7a." + "<html>";
-		linhas[13] = 3;
-
 		tx[14] = "<html>Homero:" + "<br/><br/>Percebo que" + "<br/>posso contar com voc\u00EA nessa guerra,<br/>"
 				+ player.getNome() + "." + "<html>";
 		linhas[14] = 4;
@@ -106,15 +122,8 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>previs\u00E3o de chegar dentro de tr\u00EAs dias." + "<html>";
 		linhas[15] = 4;
 
-		tx[16] = "<html>Nesse per\u00EDodo voc\u00EA ser\u00E1 apresentado \u00E0"
-				+ "<br/>algumas miss\u00F5es e poder\u00E1 completar" + "<br/>uma parte delas, mas lembre-se que elas"
-				+ "<br/>ter\u00E3o consequ\u00EAncias, ent\u00E3o escolha bem"
-				+ "<br/>quais voc\u00E9 ir\u00E1 fazer, pois assim que uma"
-				+ "<br/>miss\u00E3o for iniciada, voc\u00EA n\u00E3o poder\u00E1"
-				+ "<br/>iniciar outra at\u00E9 que termine a primeira." + "<html>";
-		linhas[16] = 6;
-		tx[17] = "<html>No final da reunião Cassius" + "<br/>te chama para conversar." + "<html>";
-		linhas[17] = 1;
+		tx[16] = "<html>No final da reuni\u00E3o Cassius" + "<br/>te chama para conversar." + "<html>";
+		linhas[16] = 1;
 
 		choice = "<html>Cassius:" + "<br/><br/>Voc\u00EA est\u00E1 bem?" + "<html>";
 		op1 = "Mentir";
@@ -134,45 +143,52 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[1] = 2;
 			break;
 		case 2:// dizer a verdade
-			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Não estou confortável com Bethesda,"
-					+ "<br/>mas isso não atrapalhará minha luta" + "<html>";
+			if (masculino) {
+				tx[1] = "<html>Cassius:" + "<br/><br/>Fique tranquilo, n\u00F3s vamos passar por " + "<br/>isso juntos."
+						+ "<html>";
+				linhas[1] = 3;
+			} else {
+				tx[1] = "<html>Cassius:" + "<br/><br/>Fique tranquila, n\u00F3s vamos passar por " + "<br/>isso juntos."
+						+ "<html>";
+				linhas[1] = 3;
+			}
+			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>N\u00E3o estou confort\u00E1vel com Bethesda,"
+					+ "<br/>mas isso n\u00E3o atrapalhar\u00E1 minha luta" + "<html>";
 			linhas[0] = 3;
 
-			tx[1] = "<html>Cassius:" + "<br/><br/>Fique tranquilo, nós vamos passar por " + "<br/>isso juntos."
-					+ "<html>";
-			linhas[1] = 3;
 			break;
 		}
-		tx[2] = "<html>Voc\u00EA:" + "<br/><br/>Mas não foi só para ver como" + "<br/>estou que você me chamou aqui"
-				+ "<html>";
+		tx[2] = "<html>Voc\u00EA:" + "<br/><br/>Mas n\u00E3o foi s\u00F3 para ver como"
+				+ "<br/>estou que voc\u00EA me chamou aqui, certo?" + "<html>";
 		linhas[2] = 3;
 
-		tx[3] = "<html>Cassius:" + "<br/><br/>Eu preciso que você recrute" + "<br/>algumas pessoas para nos ajudar."
-				+ "<html>";
+		tx[3] = "<html>Cassius:" + "<br/><br/>Eu preciso que voc\u00EA recrute"
+				+ "<br/>algumas pessoas para nos ajudar." + "<html>";
 		linhas[3] = 3;
 
 		tx[4] = "<html>Voc\u00EA:" + "<br/><br/>Quem?" + "<html>";
 		linhas[4] = 2;
 
 		tx[5] = "<html>Cassius:" + "<br/><br/>Ariandra, a Elfa arqueira que"
-				+ "<br/>recentemente chegou em Helaria, ela vive" + "<br/>na Casa Nobre Letos, o Anão, que "
-				+ "<br/>está preso dentro da Catedral. " + "<br/>E Terraira, uma sacerdotisa da<br/>Torre Arcana."
+				+ "<br/>recentemente chegou em Helaria, ela vive" + "<br/>na Casa Nobre Letos, o An\u00E3o, que "
+				+ "<br/>est\u00E1 preso dentro da Catedral. " + "<br/>E Terraira, uma sacerdotisa da<br/>Torre Arcana."
 				+ "<html>";
 		linhas[5] = 7;
 
-		tx[6] = "<html>Voc\u00EA:" + "<br/><br/>E por que o interesse" + "<br/>nessas pessoas em específico?"
+		tx[6] = "<html>Voc\u00EA:" + "<br/><br/>E por que o interesse" + "<br/>nessas pessoas em espec\u00EDfico?"
 				+ "<html>";
 		linhas[6] = 3;
 
-		tx[7] = "<html>Cassius:" + "<br/><br/>Eles são os melhores no que" + "<br/>fazem e nós vamos montar um pequeno"
-				+ "<br/> grupo para atacar os acampamentos" + "<br/>de Bethesda antes da guerra começar." + "<html>";
+		tx[7] = "<html>Cassius:" + "<br/><br/>Eles s\u00E3o os melhores no que"
+				+ "<br/>fazem e n\u00F3s vamos montar um pequeno" + "<br/> grupo para atacar os acampamentos"
+				+ "<br/>de Bethesda antes da guerra come\u00E7ar." + "<html>";
 		linhas[7] = 5;
 
 		tx[8] = "<html>Voc\u00EA:" + "<br/><br/>Entendo." + "<html>";
 		linhas[8] = 2;
 
-		tx[9] = "<html>Jogador agora você terá três opções" + "<br/>de locais para ir,"
-				+ "<br/>faça sua escolha com sabedoria. " + "<html>";
+		tx[9] = "<html>Jogador agora voc\u00EA ter\u00E1 tr\u00EAs op\u00E7\u00F5es" + "<br/>de locais para ir,"
+				+ "<br/>fa\u00E7a sua escolha com sabedoria. " + "<html>";
 		linhas[9] = 2;
 	}
 
@@ -180,16 +196,30 @@ public class Biblio_Assassin extends Biblioteca {
 		tx = new String[2];
 		linhas = new int[2];
 
-		tx[0] = "<html>Você chega nas proximidades da Casa" + "<br/>Nobre, mas ela é extremamente vigiada,"
-				+ "<br/>entrar pela porta da frente" + "<br/>é impossível." + "<br/>Tem um sistema de esgotos que"
-				+ "<br/>talvez possa te" + "<br/>levar para dentro dela," + "<br/>você decide usá-lo. " + "<html>";
+		tx[0] = "<html>Voc\u00EA chega nas proximidades da Casa" + "<br/>Nobre, mas ela \u00E9 extremamente vigiada,"
+				+ "<br/>entrar pela porta da frente" + "<br/>\u00E9 imposs\u00EDvel."
+				+ "<br/>Tem um sistema de esgotos que" + "<br/>talvez possa te" + "<br/>levar para dentro dela,"
+				+ "<br/>voc\u00EA decide us\u00E1-lo. " + "<html>";
 		linhas[0] = 7;
 
-		tx[1] = "<html>Os esgotos são úmidos e imundos" + "<br/>e a travessia é cansativa, mas você"
-				+ "<br/>entra nas fronteiras da casa." + "<br/>Você continua prosseguindo até chegar "
+		tx[1] = "<html>Os esgotos s\u00E3o \u00FAmidos e imundos" + "<br/>e a travessia \u00E9 cansativa, mas voc\u00EA"
+				+ "<br/>entra nas fronteiras da casa." + "<br/>Voc\u00EA continua prosseguindo at\u00E9 chegar "
 				+ "<br/>no ponto em que deve sair,no entanto" + "<br/> uma porta impede seu caminho. " + "<html>";
 		linhas[1] = 5;
 
+	}
+
+	public void EnigmaPortaAssassin2() {
+		tx = new String[1];
+		linhas = new int[1];
+		if (masculino) {
+			tx[0] = "<html>Voc\u00EA chega nas proximidades da Casa" + "<br/>Nobre, e se dirige aos esgostos,"
+					+ "<br/>obstinado a tentar abrir" + "<br/>aquela maldita porta" + "<html>";
+			linhas[0] = 3;
+		} else
+			tx[0] = "<html>Voc\u00EA chega nas proximidades da Casa" + "<br/>Nobre, e se dirige aos esgostos,"
+					+ "<br/>obstinada a tentar abrir" + "<br/>aquela maldita porta" + "<html>";
+		linhas[0] = 3;
 	}
 
 	public void EnigmaPortaAssasin(int x) {
@@ -200,9 +230,8 @@ public class Biblio_Assassin extends Biblioteca {
 
 			tx[0] = "<html>A porta se abre e voc\u00EA consegue" + "<br/>entrar dentro da casa."
 					+ "<br/>Ariandra est\u00E1 no quarto de h\u00F3spedes e \u00E9"
-					+ "<br/>para l\u00E1 que com cautela voc\u00EA se"
-					+ "<br/>encaminha.A porta do quarto est\u00E1" + "<br/> aberta e voc\u00EA entra."
-					+ "<br/>Uma flecha voa na sua dire\u00E7\u00E3o,"
+					+ "<br/>para l\u00E1 que com cautela voc\u00EA se" + "<br/>encaminha.A porta do quarto est\u00E1"
+					+ "<br/> aberta e voc\u00EA entra." + "<br/>Uma flecha voa na sua dire\u00E7\u00E3o,"
 					+ "<br/>mas voc\u00EA consegue desviar por pouco. " + "<html>";
 			linhas[0] = 7;
 			choice = "<html>Ariandra:" + "<br/><br/>Quem \u00E9 voc\u00EA e o que quer aqui?" + "<html>";
@@ -215,14 +244,6 @@ public class Biblio_Assassin extends Biblioteca {
 					+ "<br/>pode tentar outra vez ou em outro local." + "<html>";
 			linhas[0] = 4;
 		}
-	}
-
-	public void EnigmaPortaAssassin2() {
-		tx = new String[1];
-		linhas = new int[1];
-		tx[0] = "<html>Voc\u00EA chega nas proximidades da Casa" + "<br/>Nobre, e se dirige aos esgostos,"
-				+ "<br/>obstinado a tentar abrir" + "<br/>aquela maldita porta" + "<html>";
-		linhas[0] = 3;
 	}
 
 	public void OQueVoceQuerAssassin(int x) {
@@ -243,14 +264,15 @@ public class Biblio_Assassin extends Biblioteca {
 			op2 = "<html>Bethesda est\u00E1 se aproximando, ele quer sua ajuda<br/> para lutar.<html>";
 			break;
 		case 2:// sou...
-			tx[0] = "<html>Ariandra:\" + \"<br/><br/>Ajuda para que??" + "<html>";
+			tx[0] = "<html>Ariandra:" + "<br/><br/>Ajuda para que??" + "<html>";
 			linhas[0] = 2;
 
-			tx[1] = "<html>Voc\u00EA:\" + \"<br/><br/>Bethesda est\u00E1 se aproximando"
+			tx[1] = "<html>Voc\u00EA:" + "<br/><br/>Bethesda est\u00E1 se aproximando"
 					+ "<br/>de Helaria e com seu talento podemos" + "<br/>er uma chance de vencer." + "<html>";
 			linhas[1] = 4;
 
 			choice = "<html>Ariandra:" + "<br/><br/>Por que eu deveria me importar com isso?" + "<html>";
+
 			op1 = "Algu\u00E9m com quem voc\u00EA se importa.";
 			op2 = "N\u00E3o se importa com todas as vidas perdidas?";
 			break;
@@ -258,9 +280,9 @@ public class Biblio_Assassin extends Biblioteca {
 	}
 
 	public void CassiusmeMandou(int x) {
-		
+
 		switch (x) {
-		case 1:// voce é uma...
+		case 1:// voce \u00E9 uma...
 			tx = new String[8];
 			linhas = new int[8];
 			tx[0] = "<html>Ela baixa um pouco a guarda" + "<br/>e afrouxa a corda do arco." + "<html>";
@@ -294,7 +316,7 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[7] = 2;
 
 			break;
-		case 2:// Bethesheda está chegando
+		case 2:// Bethesheda est\u00E1 chegando
 			tx = new String[0];
 			linhas = new int[0];
 
@@ -335,7 +357,7 @@ public class Biblio_Assassin extends Biblioteca {
 					+ "<br/>Tr\u00EAs Ponteiros, vit\u00F3ria." + "<html>";
 			linhas[4] = 2;
 			break;
-		case 2:// suas habilidades são unicas
+		case 2:// suas habilidades s\u00E3o unicas
 			tx = new String[2];
 			linhas = new int[2];
 
@@ -346,7 +368,7 @@ public class Biblio_Assassin extends Biblioteca {
 
 			tx[1] = "<html>O dia acaba e voc\u00EA volta para" + "<br/>a Alameda dos Tr\u00EAs Ponteiros,"
 					+ "<br/>mas sem a ajuda de Ariandra." + "<html>";
-			linhas[4] = 2;
+			linhas[1] = 2;
 			break;
 		}
 	}
@@ -380,9 +402,9 @@ public class Biblio_Assassin extends Biblioteca {
 					+ "<br/>dos Tr\u00EAs Ponteiros, vit\u00F3ria." + "<html>";
 			linhas[4] = 2;
 			break;
-		case 2:// não se importa com as vidas perdidas
-			tx = new String[5];
-			linhas = new int[5];
+		case 2:// n\u00E3o se importa com as vidas perdidas
+			tx = new String[3];
+			linhas = new int[3];
 			tx[0] = "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA n\u00E3o se preocupa com"
 					+ "<br/>todos que ir\u00E3o morrer, com o massacre" + "<br/>que acontecer\u00E1?" + "<html>";
 			linhas[0] = 4;
@@ -472,7 +494,7 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>labirinto for restabelecido." + "<html>";
 		linhas[16] = 7;
 
-		tx[17] = "<html>Você:<br/><br/> Muito bem, qual \u00E9 o poema." + "<html>";
+		tx[17] = "<html>Voc\u00EA:<br/><br/> Muito bem, qual \u00E9 o poema." + "<html>";
 		linhas[17] = 2;
 
 		tx[18] = "<html>Terraira te entrega um velho pergaminho " + "<br/com o poema" + "<html>";
@@ -489,7 +511,7 @@ public class Biblio_Assassin extends Biblioteca {
 		tx = new String[1];
 		linhas = new int[1];
 		tx[0] = "<html>Voc\u00EA rapidamente pega seu caminho para a" + "<br/>Torre Arcana e vai ter com Terraira"
-				+ "<br/>novamente, dessa vez voc\\u00EA" + "<br/>desvedera o enigma do labirinto" + "<html>";
+				+ "<br/>novamente, dessa vez voc\u00EA" + "<br/>desvedera o enigma do labirinto" + "<html>";
 		linhas[0] = 3;
 	}
 
@@ -506,9 +528,12 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[1] = 2;
 			break;
 		case 2:
-			tx[1] = "<html>Voc\u00EA sente uma forte dor de cabe\u00E7a" + "<br/>e desmaia. Pouco depois "
+			tx = new String[1];
+			linhas = new int[1];
+			tx[0] = "<html>Voc\u00EA sente uma forte dor de cabe\u00E7a" + "<br/>e desmaia. Pouco depois "
 					+ "<br/>voc\u00EA acorda na enfermaria." + "<html>";
-			linhas[1] = 2;
+			linhas[0] = 2;
+			break;
 		}
 	}
 
@@ -573,9 +598,15 @@ public class Biblio_Assassin extends Biblioteca {
 			tx[3] = "<html> Letos:" + "<br/><br/>Com toda certeza," + "<br/> mas quem \u00E9 voc\u00EA?" + "<html>";
 			linhas[3] = 3;
 
-			tx[4] = "<html> Voc\u00EA:" + "<br/><br/>Sou um enviado de Cassius." + "<br/> Precisamos da sua ajuda?"
-					+ "<html>";
-			linhas[4] = 3;
+			if (masculino) {
+				tx[4] = "<html> Voc\u00EA:" + "<br/><br/>Sou um enviado de Cassius." + "<br/> Precisamos da sua ajuda?"
+						+ "<html>";
+				linhas[4] = 3;
+			} else {
+				tx[4] = "<html> Voc\u00EA:" + "<br/><br/>Sou uma enviada de Cassius." + "<br/> Precisamos da sua ajuda?"
+						+ "<html>";
+				linhas[4] = 3;
+			}
 
 			tx[5] = "<html> Letos:" + "<br/><br/>No que eu" + "<br/> poderia ajudar?" + "<html>";
 			linhas[5] = 3;
@@ -610,8 +641,11 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[12] = 4;
 			break;
 		case 2:// se perder
-			tx[0] = "<html>Voc\u00EA não consegue superar a" + "<br/> Hidra, ela é muito forte"
-					+ "<br/> com o pouco de força que" + "<br/> ainda lhe resta Voc\u00EA, " + "<br/> foge" + "<html>";
+			tx = new String[1];
+			linhas = new int[1];
+			tx[0] = "<html>Voc\u00EA n\u00E3o consegue superar a" + "<br/> Hidra, ela \u00E9 muito forte"
+					+ "<br/> com o pouco de for\u00E7a que" + "<br/> ainda lhe resta Voc\u00EA, " + "<br/> foge"
+					+ "<html>";
 			linhas[0] = 4;
 			break;
 
@@ -632,10 +666,50 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>  em uma sa\u00EDda da cidade." + "<html>";
 		linhas[1] = 5;
 
-		tx[2] = "<html>Seu grupo \u00E9 composto" + "<br/>  por voc\u00EA, Cassius,"
-				+ "<br/>(aqueles que voc\u00EA conseguiu" + "<br/>recrutar), e dois" + "<br/> outros assassinos."
-				+ "<html>";
-		linhas[2] = 4;
+		player.setQtd();
+		switch (player.getQtd()) {
+		case 0:
+			tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius e dois"
+					+ "<br/> outros assassinos." + "<html>";
+			linhas[2] = 1;
+			break;
+		case 1:
+			if (player.getEnigma(1)) {
+				tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius, Letos e dois"
+						+ "<br/> outros assassinos." + "<html>";
+				linhas[2] = 2;
+			} else if (player.getEnigma(2)) {
+				tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius, Terraira  e dois"
+						+ "<br/> outros assassinos." + "<html>";
+				linhas[2] = 2;
+			} else {
+				tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius, Ariandra  e dois"
+						+ "<br/> outros assassinos." + "<html>";
+				linhas[2] = 2;
+			}
+			break;
+		case 2:
+			if (!player.getEnigma(1)) {
+				tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius, Terraira, Ariandra e "
+						+ "<br/> dois outros assassinos." + "<html>";
+				linhas[2] = 2;
+			} else if (!player.getEnigma(2)) {
+				tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius, Ariandra, Letos e "
+						+ "<br/>dois outros assassinos." + "<html>";
+				linhas[2] = 2;
+			} else {
+				tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius, Letos, Terraira e "
+						+ "<br/>dois outros assassinos." + "<html>";
+				linhas[2] = 2;
+			}
+			break;
+		case 3:
+			tx[2] = "<html>Seu grupo \u00E9 composto por voc\u00EA" + "<br/>  , Cassius, Letos, Terraira, Ariandra"
+					+ "<br/>e dois outros assassinos." + "<html>";
+			linhas[2] = 2;
+			break;
+
+		}
 
 		tx[3] = "<html>Furtivamente voc\u00EAs saem" + "<br/>da cidade e se encaminham"
 				+ "<br/>para o acampamento inimigo" + "<br/> enquanto todos est\u00E3o dormindo"
@@ -736,18 +810,30 @@ public class Biblio_Assassin extends Biblioteca {
 	public void vitoria3Recrutados() {
 		tx = new String[5];
 		linhas = new int[5];
-		tx[0] = "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA n\u00E3o se preocupa com"
-				+ "<br/>todos que ir\u00E3o morrer, com o massacre" + "<br/>que acontecer\u00E1?" + "<html>";
-		linhas[0] = 4;
+		tx[0] = "<html>Voc\u00EAs conseguem conter" + "<br/>nas chamas uma for\u00E7a"
+				+ "<br/>significativa de Bethesda." + "<br/>Agora com as tropas" + "<br/> flageladas, Bethesda j\u00E1"
+				+ "<br/>n\u00E3o representa uma" + "<br/>amea\u00E7a t\u00E3o grande." + "<html>";
+		linhas[0] = 6;
 
-		tx[1] = "<html> Ariandra:" + "<br/><br/>Um massacre acontecer\u00E1 de qualquer"
-				+ "<br/>forma, seja de um lado ou de outro." + "<br/>Agora v\u00E1 embora antes que eu me irrite."
+		tx[1] = "<html>Helaria v\u00EA as chamas" + "<br/>e envia suas tropas" + "<br/>para acabar com o que"
+				+ "<br/>resta das tropas de Bethesda." + "<br/>Uma violenta batalha se"
+				+ "<br/>inicia e voc\u00EA e seu" + "<br/>grupo tomam parte." + "<html>";
+		linhas[1] = 6;
+
+		tx[2] = "<html>As tropas de Bethesda" + "<br/>s\u00E3o dizimadas enquanto" + "<br/>que as de Helaria est\u00E3o"
+				+ "<br/>quase inteiras. O rei." + "<br/>deseja saber quem foi" + "<br/>o respons\u00E1vel por essa"
+				+ "<br/>vit\u00F3ria e encontra voc\u00EAs." + "<html>";
+		linhas[2] = 6;
+
+		tx[3] = "<html>Todos recebem o t\u00EDtulo" + "<br/>de Guardi\u00E3o Protetor de"
+				+ "<br/>Helaria e sempre ser\u00E3o" + "<br/>ouvidos nas reuni\u00F5es reais"
+				+ "<br/>Helaria muda muito depois" + "<br/>da guerra e de sua " + "<br/>ascens\u00E3o" + "<html>";
+		linhas[3] = 6;
+
+		tx[4] = "<html>O povo passa a ter" + "<br/>mais voz e cada" + "<br/>vez mais se aproxima"
+				+ "<br/>de um lugar ideal" + "<br/>a se viver." + "<br/>PARAB\u00C9NS!" + "<br/>VOCÊ TERMINOU O JOGO!"
 				+ "<html>";
-		linhas[1] = 4;
-
-		tx[2] = "<html>O dia termina e voc\u00EA" + "<br/>volta para a Alameda" + "<br/>dos Tr\u00EAs Ponteiros, mas"
-				+ "<br/>sem a ajuda de Ariandra." + "<html>";
-		linhas[2] = 3;
+		linhas[4] = 6;
 
 	}
 
@@ -783,8 +869,8 @@ public class Biblio_Assassin extends Biblioteca {
 	}
 
 	public void vitoriaUmRecrutado() {
-		tx = new String[6];
-		linhas = new int[6];
+		tx = new String[8];
+		linhas = new int[8];
 		tx[0] = "<html>As tropas inimigas s\u00E3o" + "<br/>muito numerosas e voc\u00EAs"
 				+ "<br/>conseguem eliminar apenas" + "<br/>uma parte delas." + "<br/>O inc\u00EAndio desperta"
 				+ "<br/>o restante das tropas" + "<br/>de Bethesda" + "<html>";
@@ -820,8 +906,14 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<br/>que deram suas vidas" + "<br/>para salvar a cidade." + "<html>";
 		linhas[6] = 4;
 
-		tx[7] = "<html>PARAB\u00C9NS AVENTUREIRO!" + "<br/>VOCÊ TERMINOU O JOGO! " + "<html>";
-		linhas[7] = 1;
+		if (masculino) {
+			tx[7] = "<html>PARAB\u00C9NS AVENTUREIRO!" + "<br/>VOCÊ TERMINOU O JOGO! " + "<html>";
+			linhas[7] = 1;
+		} else {
+			tx[7] = "<html>PARAB\u00C9NS AVENTUREIRA!" + "<br/>VOCÊ TERMINOU O JOGO! " + "<html>";
+			linhas[7] = 1;
+		}
+
 	}
 
 //	  tx[] = "<html>"

@@ -37,23 +37,21 @@ public class Hist_Assassin {
 
 	public void assassin1(Texto t1) {
 		Geral geral = new Geral();
-		
-		
 
 		vet.hpAssassin();
 
 		geral.escolhas_2(t1, vet);
-		
+
 		continuar = new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch(cont) {
+					switch (cont) {
 					case 0:
 						musica.TocaMusica("src/sons/reuniaoArcana.wav");
 						musica.setVolume(0.0f);
-						musica.aumentaVolume(0.7f,80);
+						musica.aumentaVolume(0.7f, 80);
 						break;
 					default:
 						break;
@@ -127,14 +125,14 @@ public class Hist_Assassin {
 	}
 
 	public void destino() {
-		
-		if(musica.isPlaying()) {
+
+		if (musica.isPlaying()) {
 			musica.stop();
 		}
-		if(musica2.isPlaying()) {
+		if (musica2.isPlaying()) {
 			musica2.stop();
 		}
-		
+
 		if (player.getDias() != 0) {
 
 			JFrame frame = new JFrame();
@@ -222,7 +220,7 @@ public class Hist_Assassin {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch(cont){
+					switch (cont) {
 					case 0:
 						musica.TocaMusica("src/sons/torre.wav");
 						musica.setVolume(0.6f);
@@ -330,7 +328,7 @@ public class Hist_Assassin {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch(cont) {
+					switch (cont) {
 					case 0:
 						musica.TocaMusica("src/sons/prisao.wav");
 						musica.setVolume(0.9f);
@@ -381,7 +379,7 @@ public class Hist_Assassin {
 	}
 
 	public void catedralVitoria() {
-		
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -395,7 +393,7 @@ public class Hist_Assassin {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
-				//System.out.println(cont);
+				// System.out.println(cont);
 				if (geral.isFlag()) {
 					switch (cont) {
 					case 0:
@@ -421,10 +419,10 @@ public class Hist_Assassin {
 	public void CasaNobre() {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		
+
 		musica.TocaMusica("src/sons/casaNobre.wav");
 		musica.setVolume(0.7f);
-		
+
 		if (player.getFirstTry(0)) {
 			vet.CasaNobreAssassin();
 			player.setFirstTry(0, false);
@@ -602,8 +600,9 @@ public class Hist_Assassin {
 	public void casaNobreVitoria1_3(Texto t1, int x) {
 		Geral geral = new Geral();
 
+		if (x == 2)
+			player.setRecAriandra(true);
 		vet.voceEstaLouco(x);
-		geral.escolhas_0(t1, vet);
 
 		geral.escolhas_0(t1, vet);
 		continuar = new ActionListener() {
@@ -657,8 +656,11 @@ public class Hist_Assassin {
 
 	public void casaNobreVitoria2_1(Texto t1, int x) {
 		Geral geral = new Geral();
+		if (x == 2)
+			player.setRecAriandra(true);
 
 		vet.porqueDeveriaMeImportar(x);
+
 		geral.escolhas_0(t1, vet);
 		continuar = new ActionListener() {
 			int cont = 0;
@@ -769,7 +771,7 @@ public class Hist_Assassin {
 
 		musica.TocaMusica("src/sons/final.wav");
 		musica.setVolume(0.7f);
-		
+
 		if (player.isBonus_inicio()) {
 
 		} else {

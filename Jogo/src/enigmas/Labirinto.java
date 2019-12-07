@@ -43,17 +43,17 @@ public class Labirinto {
 	private boolean amarelo, azul;
 	private Musica musica;
 
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					new Labirinto(new Jogador(), new Loading(new JFrame()));
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					new Labirinto(new Jogador(), new JFrame());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public Labirinto(Jogador player, JFrame carregar) {
 		this.player = player;
@@ -169,7 +169,7 @@ public class Labirinto {
 		JLabel txtdica = new JLabel();
 		txtdica.setFont(new Font("Georgia", Font.BOLD, 25));
 		txtdica.setForeground(Color.black);
-		txtdica.setBounds(50, 50, 500, 500);
+		txtdica.setBounds(50, 10, 500, 380);
 
 		switch (player.getClase()) {
 		case 0:
@@ -198,16 +198,34 @@ public class Labirinto {
 		dica = new JDialog();
 		dica.setIconImage(icone.getImage());
 		dica.setModal(true);
-		dica.setBounds(((size.width / 2) - 350), ((size.height / 2) - 350), 700, 700);
+		dica.setSize(610, 500);
+		dica.setLocationRelativeTo(null);
 		dica.add(txtdica);
 
+		JButton continuar = new JButton();
+		continuar.setIcon(new ImageIcon("src/imagens/continuar.png"));
+		continuar.setLayout(null);
+		continuar.setBounds(430, 400, 150, 50);
+		continuar.setContentAreaFilled(false);
+		continuar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				dica.setVisible(false);
+				
+			}
+		});
+		dica.add(continuar);
+		
 		ImageIcon background = new ImageIcon("src/imagens/fundo_dialogo.png");
-		background.setImage(background.getImage().getScaledInstance(700, 700, 100));
+		background.setImage(background.getImage().getScaledInstance(610, 500, 100));
 
 		JLabel back = new JLabel(background);
-		back.setBounds(0, 0, 700, 700);
+		back.setBounds(0, 0, 610, 500);
 		dica.add(back);
-
+		
+	
 		ImageIcon lampada = new ImageIcon("src/imagens/lampada.png");
 		lampada.setImage(lampada.getImage().getScaledInstance(50, 50, 100));
 

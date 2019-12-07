@@ -517,8 +517,14 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[16] = "<html>Muriel te entrega um velho pergaminho " + "<br/com o poema" + "<html>";
 		linhas[16] = 1;
 
-		tx[17] = "<html>Você:<br/><br/> Obrigado, agora se prepare para se " + "<br/>juntar a minha equipe." + "<html>";
-		linhas[17] = 3;
+		if(masculino) {
+			tx[17] = "<html>Você:<br/><br/> Obrigado, agora se prepare para se " + "<br/>juntar a minha equipe." + "<html>";
+			linhas[17] = 3;
+		}else {
+			tx[17] = "<html>Você:<br/><br/> Obrigada, agora se prepare para se " + "<br/>juntar a minha equipe." + "<html>";
+			linhas[17] = 3;
+		}
+		
 
 		tx[18] = "<html>Voc\u00EA vai para o labirinto." + "<html>";
 		linhas[18] = 1;

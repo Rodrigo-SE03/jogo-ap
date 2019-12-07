@@ -1,6 +1,7 @@
 package enigmas;
 
 import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,18 +22,18 @@ public class Porta {
 	private JFrame frame;
 	private int i;
 
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Porta window = new Porta(new Player());
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Porta window = new Porta(new Jogador());
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public Porta(Jogador player) {
 		initialize(player);
@@ -102,7 +103,9 @@ public class Porta {
 			panel.add(botao[i]);
 		}
 
-		JButton confirma = new JButton("confirma");
+		ImageIcon confirm = new ImageIcon("src/imagens/Botão confirm.png");
+		confirm.setImage(confirm.getImage().getScaledInstance(100, 60, 100));
+		JButton confirma = new JButton(confirm);
 		confirma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				caixa.getFrame().dispose();
@@ -114,7 +117,7 @@ public class Porta {
 				}
 			}
 		});
-		confirma.setBounds(422, 350, 89, 23);
+		confirma.setBounds(410, 300, 100, 60);
 		panel.add(confirma);
 
 		JLabel Fundo = new JLabel();

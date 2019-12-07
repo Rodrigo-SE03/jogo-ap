@@ -2,10 +2,11 @@ package personagens;
 
 public class Jogador extends Character {
 
-	private int clase = 5;
+	private int clase = 0;
 
 	private boolean bonus_inicio = false;
 	private boolean andarPelaTorreArcan = false;
+	private boolean RecAriandra = false;
 
 	private boolean[] enigma = new boolean[3];
 	private boolean firstTry[] = new boolean[3];
@@ -17,6 +18,10 @@ public class Jogador extends Character {
 			this.enigma[i] = false;
 			this.firstTry[i] = true;
 		}
+	}
+
+	public void setRecAriandra(boolean recAriandra) {
+		RecAriandra = recAriandra;
 	}
 
 	private int dias = 3;
@@ -93,10 +98,12 @@ public class Jogador extends Character {
 	}
 
 	public void setQtd() {
+		qtd = 0;
 		for (int i = 0; i < 3; i++) {
 			if (enigma[i])
 				qtd++;
 		}
+		if(RecAriandra) qtd --;
 	}
 
 	public int getQtd() {
