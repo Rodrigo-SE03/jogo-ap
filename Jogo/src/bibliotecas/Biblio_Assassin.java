@@ -216,6 +216,16 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[0] = 4;
 		}
 	}
+	public void EnigmaPortaAssassin2() {
+		tx = new String[1];
+		linhas = new int[1];
+		 tx[0] = "<html>Voc\u00EA chega nas proximidades da Casa"
+					+ "<br/>Nobre, e se dirige aos esgostos,"
+					+ "<br/>obstinado a tentar abrir"
+					+ "<br/>aquela maldita porta"
+					+ "<html>";
+	       linhas[0] =3;
+	}
 
 	public void OQueVoceQuerAssassin(int x) {
 		tx = new String[2];
@@ -554,6 +564,16 @@ public class Biblio_Assassin extends Biblioteca {
 				      linhas[1] =2;    
 				}
 			}
+	public void labirinto2() {
+				tx = new String[1];
+				linhas = new int[1];
+				 tx[0] = "<html>Voc\u00EA rapidamente pega seu caminho para a"
+						 + "<br/>Torre Arcana e vai ter com Terraira"  
+						 + "<br/>novamente, dessa vez voc\\u00EA"  
+						 + "<br/>desvedera o enigma do labirinto" 
+						+ "<html>";
+		      linhas[0] =3;    
+			}
 			
 			/*public void Catederal()
 			{tx = new String[5];
@@ -699,6 +719,16 @@ public class Biblio_Assassin extends Biblioteca {
 						break;
 		      
 				}
+			}
+	public void Hidra2(){
+				tx = new String[1];
+				linhas = new int[1];
+				tx[0] = "<html>Voc\u00EA vai rapidamente para os limites da Catedral"
+						 + "<br/> e segue pelo esgoto, dessa vez"  
+						 + "<br/> voc\\u00EA derrotara a hidra"  
+						 + "<br/> de uma vez por todas" 
+						+ "<html>";
+		      linhas[0] =3; 
 			}
 			
 			public void finalAssassin()
