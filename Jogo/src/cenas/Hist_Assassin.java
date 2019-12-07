@@ -712,6 +712,7 @@ public class Hist_Assassin {
 	public void guerraVitoria() {
 		musica.TocaMusica("src/sons/final.wav");
 		musica.setVolume(0.7f);
+		
 		switch (player.getQtd()) {
 		case 1:
 			vet.vitoria3Recrutados();
@@ -723,10 +724,10 @@ public class Hist_Assassin {
 			vet.vitoriaUmRecrutado();
 			break;
 		default:
-			vet.derrotaComBonusOuVitoriaSemRecrutas();
+			guerraBon_Zero();
 			break;
 		}
-		if (player.getQtd() > 0) {
+		if (player.getQtd() > 0 ) {
 			Geral geral = new Geral();
 			Texto t1 = new Texto();
 			geral.escolhas_0(t1, vet);
@@ -773,7 +774,7 @@ public class Hist_Assassin {
 		musica.setVolume(0.7f);
 
 		if (player.isBonus_inicio()) {
-
+			guerraBon_Zero();
 		} else {
 			Geral geral = new Geral();
 			Texto t1 = new Texto();

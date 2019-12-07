@@ -39,7 +39,7 @@ public class Geral { // Classe base para criação dos textos
 
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
-//					flag = false;
+					flag = false;
 
 					if (cont < (vet.getTx().length - 1)) { // Verifica se ainda há vetores de texto
 						cont++;
@@ -76,7 +76,7 @@ public class Geral { // Classe base para criação dos textos
 
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
-//					flag = false;
+					flag = false;
 
 					if (cont < (vet.getTx().length - 1)) {
 						cont++;
@@ -119,7 +119,7 @@ public class Geral { // Classe base para criação dos textos
 
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
-//					flag = false;
+					flag = false;
 
 					if (cont < (vet.getTx().length - 1)) {
 						cont++;

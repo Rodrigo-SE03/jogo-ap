@@ -4,7 +4,7 @@ public abstract class Character { // NPCs têm os msm atributos
 	
 	private String nome;
 	private String profissão;
-	private int sexo;
+	private int sexo = 1;
 	private int idade;
 
 	public Character() {

@@ -2,7 +2,7 @@ package personagens;
 
 public class Jogador extends Character {
 
-	private int clase = 0;
+	private int clase = 2;
 
 	private boolean bonus_inicio = false;
 	private boolean andarPelaTorreArcan = false;

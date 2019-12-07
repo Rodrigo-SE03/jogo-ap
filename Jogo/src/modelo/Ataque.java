@@ -5,6 +5,8 @@ import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
+import personagens.Jogador;
+
 public class Ataque {
 	//atributos
 	private Image imagem;
@@ -13,17 +15,19 @@ public class Ataque {
 	private boolean isVisible;
 	private static final int distancia = 938;
 	private static int velocidade = 2;
+	private ImageIcon referencia;
 	
 	//construtor
-	public Ataque(int x, int y) {
+	public Ataque(int x, int y, ImageIcon referencia) {
 		this.x=x;
 		this.y=y;
 		isVisible=true;
+		this.referencia = referencia;
 	}
 	
 	//carregar imagem
 	public void load() {
-		ImageIcon referencia= new ImageIcon(getClass().getResource("tiro.jpeg"));
+
 		imagem=referencia.getImage();
 		
 		this.largura=imagem.getWidth(null);

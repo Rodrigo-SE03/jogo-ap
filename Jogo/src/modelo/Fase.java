@@ -64,7 +64,7 @@ public class Fase extends JPanel implements ActionListener {
 		fundo = a.getImage();
 
 		// chamar player
-		player = new Player();
+		player = new Player(jogador);
 		player.load();
 
 		// teclado
