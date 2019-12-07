@@ -688,6 +688,15 @@ public class Biblio_Assassin extends Biblioteca {
 						+ "<html>";
 		      linhas[12] =4; 
 		      break;
+					case 2://se perder
+					tx[0] = "<html>Voc\u00EA não consegue superar a"
+							 + "<br/> Hidra, ela é muito forte"  
+							 + "<br/> com o pouco de força que"  
+							 + "<br/> ainda lhe resta Voc\\u00EA, "  
+							 + "<br/> foge" 
+							+ "<html>";
+			      linhas[0] =4; 
+						break;
 		      
 				}
 			}
