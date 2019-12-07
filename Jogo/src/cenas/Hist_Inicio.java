@@ -422,7 +422,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					System.out.println(cont);
+					//System.out.println(cont);
 					switch (cont) {
 					default:
 						break;
