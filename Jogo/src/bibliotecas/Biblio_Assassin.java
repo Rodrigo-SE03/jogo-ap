@@ -239,6 +239,9 @@ public class Biblio_Assassin extends Biblioteca {
 			op2 = "Sou " + player.getNome() + " e vim pedir sua ajuda.";
 			break;
 		case 2:// se errar
+			tx = new String[1];
+			linhas = new int[1];
+
 			tx[0] = "<html>A porta n\u00E3o se abre e um alarme" + "<br/>\u00E9 disparado, \u00E9 melhor voc\u00EA ir "
 					+ "<br/>embora antes que seja capturado." + "<br/>O tempo passa e voc\u00EA"
 					+ "<br/>pode tentar outra vez ou em outro local." + "<html>";

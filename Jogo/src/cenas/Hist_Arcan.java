@@ -130,7 +130,7 @@ public class Hist_Arcan {
 		if (musica.isPlaying()) {
 			musica.stop();
 		}
-		if (player.getDias() != 0 && !(player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2))) {
+		if (player.getDias() > 0 && !(player.getEnigma(0) && player.getEnigma(1) && player.getEnigma(2))) {
 
 			JFrame frame = new JFrame();
 			JLabel dias = new JLabel("faltam " + player.getDias() + " dias");
@@ -900,15 +900,24 @@ public class Hist_Arcan {
 						t1.getTexto().dispose();
 						musica.stop();
 						Creditos cr = new Creditos();
+						try {
+							Thread.sleep(2000);
+						} catch (InterruptedException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						musica.TocaMusica("src/sons/creditos.wav");
+						musica.setVolume(0.9f);
 
 						new Thread() {
 							public void run() {
 								try {
-									sleep(5000);
+									sleep(10000);
 								} catch (InterruptedException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
+								musica.stop();
 								cr.setVisible(false);
 								new Menu_inicial();
 							}
@@ -955,15 +964,24 @@ public class Hist_Arcan {
 						t1.getTexto().dispose();
 						musica.stop();
 						Creditos cr = new Creditos();
+						try {
+							Thread.sleep(2000);
+						} catch (InterruptedException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						musica.TocaMusica("src/sons/creditos.wav");
+						musica.setVolume(0.9f);
 
 						new Thread() {
 							public void run() {
 								try {
-									sleep(5000);
+									sleep(10000);
 								} catch (InterruptedException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
+								musica.stop();
 								cr.setVisible(false);
 								new Menu_inicial();
 							}

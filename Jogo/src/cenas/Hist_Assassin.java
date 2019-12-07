@@ -133,7 +133,7 @@ public class Hist_Assassin {
 			musica2.stop();
 		}
 
-		if (player.getDias() != 0) {
+		if (player.getDias() > 0) {
 
 			JFrame frame = new JFrame();
 			JLabel dias = new JLabel("faltam " + player.getDias() + " dias");
@@ -741,15 +741,24 @@ public class Hist_Assassin {
 							t1.getTexto().dispose();
 							musica.stop();
 							Creditos cr = new Creditos();
+							try {
+								Thread.sleep(2000);
+							} catch (InterruptedException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							musica.TocaMusica("src/sons/creditos.wav");
+							musica.setVolume(0.9f);
 
 							new Thread() {
 								public void run() {
 									try {
-										sleep(5000);
+										sleep(10000);
 									} catch (InterruptedException e) {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
+									musica.stop();
 									cr.setVisible(false);
 									new Menu_inicial();
 								}
@@ -790,14 +799,23 @@ public class Hist_Assassin {
 							t1.getTexto().dispose();
 							Creditos cr = new Creditos();
 							musica.stop();
+							try {
+								Thread.sleep(2000);
+							} catch (InterruptedException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							musica.TocaMusica("src/sons/creditos.wav");
+							musica.setVolume(0.9f);
 							new Thread() {
 								public void run() {
 									try {
-										sleep(5000);
+										sleep(10000);
 									} catch (InterruptedException e) {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
+									musica.stop();
 									cr.setVisible(false);
 									new Menu_inicial();
 								}
