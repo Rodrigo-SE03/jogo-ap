@@ -42,7 +42,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		} else {
 
 			tx[0] = "<html>Quinze anos se passaram desde que " + "<br/>voc\u00EA entrou para a Guarda Real. Voc\u00EA "
-					+ "<br/>foi acolhido e eles se tornaram sua " + "<br/>nova fam\u00EDlia, em especial o Capit\u00E3o"
+					+ "<br/>foi acolhida e eles se tornaram sua " + "<br/>nova fam\u00EDlia, em especial o Capit\u00E3o"
 					+ "<br/>Alexander, atualmente General " + "<br/>Alexander e voc\u00EA \u00E9 a nova Capit\u00E3 do "
 					+ "<br/>mesmo S\u00E9timo Comando. " + "<html>";
 			linhas[0] = 6;

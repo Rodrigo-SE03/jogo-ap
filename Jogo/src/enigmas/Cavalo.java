@@ -5,6 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import cenas.Hist_Guerreior;
+import graficos.Texto;
+import personagens.Jogador;
+import sons.Musica;
+
 import java.awt.BorderLayout;
 
 import javax.swing.JLabel;
@@ -19,8 +24,9 @@ public class Cavalo {
 	private JFrame frame;
 	private boolean[] isSelect = new boolean[6];
 	private int cont;
+	private Musica musica;
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -31,15 +37,17 @@ public class Cavalo {
 				}
 			}
 		});
-	}
+	}*/
 
-	public Cavalo() {
+	public Cavalo(Jogador player, Texto t1) {
 		for (int i = 0; i < 6; i++)
 			isSelect[i] = false;
-		initialize();
+		initialize(player,t1);
+		musica = new Musica();
+		testaMusica();
 	}
 
-	private void initialize() {
+	private void initialize(Jogador player, Texto t1) {
 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 527, 423);
@@ -124,13 +132,28 @@ public class Cavalo {
 							k++;
 					}
 					if (k == 1) {
-						JOptionPane.showMessageDialog(null, "nice");
+						JOptionPane.showMessageDialog(null, "Uau! Ninguém aqui do castelo tinha conseguido resolver isso. Parabéns, é um dos nossos agora.");
+						if(!player.isBonus_inicio()) {
+							player.setBonus_inicio(true);
+						}
+						musica.stop();
+						frame.dispose();
+						caixa.getFrame().dispose();
+						new Hist_Guerreior(player).guerreiro1(t1);
 					} else {
-						JOptionPane.showMessageDialog(null, "errrrrrrrrou");
+						JOptionPane.showMessageDialog(null, "Hahaha, não é como se eu esperasse que você fosse conseguir, nem eu sei resolver isso. Mas por ter tentado já está aceito, é um dos nossos agora.");
+						musica.stop();
+						frame.dispose();
+						caixa.getFrame().dispose();
 						k = 0;
+						new Hist_Guerreior(player).guerreiro1(t1);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "errrrrrrrrou");
+					JOptionPane.showMessageDialog(null, "Hahaha, não é como se eu esperasse que você fosse conseguir, nem eu sei resolver isso. Mas por ter tentado já está aceito, é um dos nossos agora.");
+					musica.stop();
+					frame.dispose();
+					caixa.getFrame().dispose();
+					new Hist_Guerreior(player).guerreiro1(t1);
 				}
 			}
 		});
@@ -142,6 +165,20 @@ public class Cavalo {
 		Fundo.setIcon(enigma);
 		Fundo.setBounds(0, 0, 513, 387);
 		panel.add(Fundo);
+		
+		frame.setVisible(true);
+	}
+	
+	public void testaMusica() {
+		new Thread() {
+			public void run() {
+				while (!frame.isVisible()) {
+					System.out.println("");
+				}
+				musica.TocaMusica("src/sons/puzzle.wav");
+				musica.setVolume(0.6f);
+			}
+		}.start();
 	}
 
 }

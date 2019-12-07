@@ -42,7 +42,7 @@ public class Player {
 			System.out.println(2);
 			tiro = new ImageIcon(getClass().getResource("flecha.png"));
 			if (jogador.getSexo() == 0) {
-				referencia = new ImageIcon(getClass().getResource("guerr_masc.png"));
+				referencia = new ImageIcon(getClass().getResource("guerr_male.png"));
 
 			} else {
 				referencia = new ImageIcon(getClass().getResource("guerr_fem.png"));

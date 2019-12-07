@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import bibliotecas.Biblio_Intro;
+import enigmas.Cavalo;
 import enigmas.Roda;
 import graficos.Escolhas;
 import graficos.Geral;
@@ -841,7 +842,10 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(2);
-						new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
+						t1.getTexto().dispose();
+						musica.stop();
+						//new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
+						new Cavalo(vet.getPlayer(),t1);
 					} else
 						cont++;
 
@@ -963,7 +967,10 @@ public class Hist_Inicio {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(2);
-						new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
+						t1.getTexto().dispose();
+						musica.stop();
+						//new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
+						new Cavalo(vet.getPlayer(),t1);
 					} else
 						cont++;
 				}
