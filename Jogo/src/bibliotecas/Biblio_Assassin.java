@@ -8,7 +8,7 @@ public class Biblio_Assassin extends Biblioteca {
 	 * 
 	 * \u00E7 ç
 	 * 
-	 * \u00E0 à  \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
+	 * \u00E0 à \u00E1 á \u00E2 â \u00E3 ã \u00C1 Á
 	 * 
 	 * \u00EA ê \u00E9 é \u00C9 É
 	 * 
@@ -126,14 +126,14 @@ public class Biblio_Assassin extends Biblioteca {
 		linhas = new int[10];
 
 		switch (a) {
-		case 1://mentir
+		case 1:// mentir
 			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Estou bem, nenhum problema com isso." + "<html>";
 			linhas[0] = 2;
 
 			tx[1] = "<html>Cassius:" + "<br/><br/>Fico feliz de ouvir isso." + "<html>";
 			linhas[1] = 2;
 			break;
-		case 2://dizer a verdade
+		case 2:// dizer a verdade
 			tx[0] = "<html>Voc\u00EA:" + "<br/><br/>Não estou confortável com Bethesda,"
 					+ "<br/>mas isso não atrapalhará minha luta" + "<html>";
 			linhas[0] = 3;
@@ -200,8 +200,8 @@ public class Biblio_Assassin extends Biblioteca {
 
 			tx[0] = "<html>A porta se abre e voc\u00EA consegue" + "<br/>entrar dentro da casa."
 					+ "<br/>Ariandra est\u00E1 no quarto de h\u00F3spedes e \u00E9"
-					+ "<br/>para l\u00E1 que com cautela voc\u00EA se encaminha."
-					+ "<br/>A porta do quarto est\u00E1 aberta" + "<br/>e voc\u00EA entra."
+					+ "<br/>para l\u00E1 que com cautela voc\u00EA se"
+					+ "<br/>encaminha.A porta do quarto est\u00E1" + "<br/> aberta e voc\u00EA entra."
 					+ "<br/>Uma flecha voa na sua dire\u00E7\u00E3o,"
 					+ "<br/>mas voc\u00EA consegue desviar por pouco. " + "<html>";
 			linhas[0] = 7;
@@ -216,15 +216,13 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[0] = 4;
 		}
 	}
+
 	public void EnigmaPortaAssassin2() {
 		tx = new String[1];
 		linhas = new int[1];
-		 tx[0] = "<html>Voc\u00EA chega nas proximidades da Casa"
-					+ "<br/>Nobre, e se dirige aos esgostos,"
-					+ "<br/>obstinado a tentar abrir"
-					+ "<br/>aquela maldita porta"
-					+ "<html>";
-	       linhas[0] =3;
+		tx[0] = "<html>Voc\u00EA chega nas proximidades da Casa" + "<br/>Nobre, e se dirige aos esgostos,"
+				+ "<br/>obstinado a tentar abrir" + "<br/>aquela maldita porta" + "<html>";
+		linhas[0] = 3;
 	}
 
 	public void OQueVoceQuerAssassin(int x) {
@@ -232,33 +230,27 @@ public class Biblio_Assassin extends Biblioteca {
 		linhas = new int[2];
 
 		switch (x) {
-		case 1://cassius me mandou
-			tx[0] = "<html>Ariandra:\" + \"<br/><br/>Cassius?"
-					+ "<html>";
-	      linhas[0] =2;
-	      
-	      tx[1] = "<html>Voc\u00EA:\" + \"<br/><br/>Membro da Guilda Vigilante,"
-	    		    + "<br/>ele me mandou para"  
-	    		    + "<br/>pedir sua ajuda."  
-					+ "<html>";
-	      linhas[1] =4;
-	      
-	      choice = "<html>Ariandra:" + "<br/><br/>E que ajuda eu poderia oferecer a Cassius?" + "<html>";
-			op1 = "Voc\u00EA \u00E9 uma ex\u00EDmia arqueira, que ajuda n\u00E3o poderia oferecer?";
-			op2 = "Bethesda est\u00E1 se aproximando, ele quer sua ajuda para lutar.";
+		case 1:// cassius me mandou
+			tx[0] = "<html>Ariandra:" + "<br/><br/>Cassius?" + "<html>";
+			linhas[0] = 2;
+
+			tx[1] = "<html>Voc\u00EA:" + "<br/><br/>Membro da Guilda Vigilante," + "<br/>ele me mandou para"
+					+ "<br/>pedir sua ajuda." + "<html>";
+			linhas[1] = 4;
+
+			choice = "<html>Ariandra:" + "<br/><br/>E que ajuda eu poderia oferecer a Cassius?" + "<html>";
+			op1 = "<html>Voc\u00EA \u00E9 uma ex\u00EDmia arqueira, que ajuda n\u00E3o<br/> poderia oferecer?<html>";
+			op2 = "<html>Bethesda est\u00E1 se aproximando, ele quer sua ajuda<br/> para lutar.<html>";
 			break;
-		case 2://sou...
-			tx[0] = "<html>Ariandra:\" + \"<br/><br/>Ajuda para que??"
-					+ "<html>";
-	      linhas[0] =2;
-	      
-	      tx[1] = "<html>Voc\u00EA:\" + \"<br/><br/>Bethesda est\u00E1 se aproximando"
-	    		    + "<br/>de Helaria e com seu talento podemos"  
-	    		    + "<br/>er uma chance de vencer."  
-					+ "<html>";
-	      linhas[1] =4;
-	      
-	      choice = "<html>Ariandra:" + "<br/><br/>Por que eu deveria me importar com isso?" + "<html>";
+		case 2:// sou...
+			tx[0] = "<html>Ariandra:\" + \"<br/><br/>Ajuda para que??" + "<html>";
+			linhas[0] = 2;
+
+			tx[1] = "<html>Voc\u00EA:\" + \"<br/><br/>Bethesda est\u00E1 se aproximando"
+					+ "<br/>de Helaria e com seu talento podemos" + "<br/>er uma chance de vencer." + "<html>";
+			linhas[1] = 4;
+
+			choice = "<html>Ariandra:" + "<br/><br/>Por que eu deveria me importar com isso?" + "<html>";
 			op1 = "Algu\u00E9m com quem voc\u00EA se importa.";
 			op2 = "N\u00E3o se importa com todas as vidas perdidas?";
 			break;
@@ -266,653 +258,130 @@ public class Biblio_Assassin extends Biblioteca {
 	}
 
 	public void CassiusmeMandou(int x) {
-		tx = new String[9];
-		linhas = new int[9];
+		
 		switch (x) {
-		case 1://voce é uma...
-			tx[0] = "<html>Ela baixa um pouco a guarda"
-					 + "<br/>e afrouxa a corda do arco."  
-					+ "<html>";
-			linhas[1] = 3;
+		case 1:// voce é uma...
+			tx = new String[8];
+			linhas = new int[8];
+			tx[0] = "<html>Ela baixa um pouco a guarda" + "<br/>e afrouxa a corda do arco." + "<html>";
+			linhas[0] = 3;
 
-			tx[2] = "<html>Voc\u00EA:" + "<br/><br/>N\u00F3s estamos formando um?"
+			tx[1] = "<html>Voc\u00EA:" + "<br/><br/>N\u00F3s estamos formando um?"
 					+ "<br/>pequeno grupo para proteger Helaria"
 					+ "<br/>Sua participa\u00E7\u00E3o ser\u00E1 de grande valor." + "<html>";
-			linhas[2] = 4;
+			linhas[1] = 4;
 
-			tx[3] = "<html>Ariandra:" + "<br/><br/>Quem mais" + "<br/>est\u00E1 nesse grupo?" + "<html>";
+			tx[2] = "<html>Ariandra:" + "<br/><br/>Quem mais" + "<br/>est\u00E1 nesse grupo?" + "<html>";
+			linhas[2] = 3;
+
+			tx[3] = "<html>Voc\u00EA:" + "<br/><br/>O an\u00E3o Letos," + "<br/>a sacerdotisa Terraira, Cassius e eu."
+					+ "<html>";
 			linhas[3] = 3;
 
-			tx[4] = "<html>Voc\u00EA:" + "<br/><br/>O an\u00E3o Letos," + "<br/>a sacerdotisa Terraira, Cassius e eu."
-					+ "<html>";
-			linhas[4] = 3;
-
-			tx[5] = "<html>Ariandra:" + "<br/><br/>Voc\u00EA conseguiu reunir" + "<br/>um grupo e tanto"
+			tx[4] = "<html>Ariandra:" + "<br/><br/>Voc\u00EA conseguiu reunir" + "<br/>um grupo e tanto"
 					+ "<br/>E suas habilidades tamb\u00E9m n\u00E3o" + "<br/>s\u00E3o porcas, n\u00E3o \u00E9 qualquer"
 					+ "<br/>um que consegue desviar" + "<br/>das minhas flechas." + "<html>";
-			linhas[5] = 7;
+			linhas[4] = 7;
 
-			tx[6] = "<html>Voc\u00EA:" + "<br/><br/>Ent\u00E3o voc\u00EA est\u00E1 dentro?" + "<html>";
+			tx[5] = "<html>Voc\u00EA:" + "<br/><br/>Ent\u00E3o voc\u00EA est\u00E1 dentro?" + "<html>";
+			linhas[5] = 2;
+
+			tx[6] = "<html>Ariandra:" + "<br/><br/>Pode contar comigo" + "<html>";
 			linhas[6] = 2;
 
-			tx[7] = "<html>Ariandra:" + "<br/><br/>Pode contar comigo" + "<html>";
+			tx[7] = "<html>O dia termina e voc\u00EA volta" + "<br/>para a Alameda dos"
+					+ "<br/>Tr\u00EAs Ponteiros, vit\u00F3ria." + "<html>";
 			linhas[7] = 2;
 
-			tx[8] = "<html>O dia termina e voc\u00EA volta" + "<br/>para a Alameda dos"
-					+ "<br/>Tr\u00EAs Ponteiros, vit\u00F3ria." + "<html>";
-			linhas[8] = 2;
-
 			break;
-		case 2://Bethesheda está chegando
-			
-	      choice = "<html>Ariandra:" + "<br/><br/>Essa guerra \u00E9 imposs\u00EDvel. Voc\u00EA est\u00E1 louco?" + "<html>";
+		case 2:// Bethesheda está chegando
+			tx = new String[0];
+			linhas = new int[0];
+
+			choice = "<html>Ariandra:" + "<br/><br/>Essa guerra \u00E9 imposs\u00EDvel. Voc\u00EA est\u00E1 louco?"
+					+ "<html>";
 			op1 = "\u00C9 loucura querer proteger sua cidade? Se for ent\u00E3o estou louco.";
 			op2 = "Suas habilidades s\u00E3o \u00FAnicas, com sua ajuda podemos vencer.";
-	      break;}
-	}
-		
-		public void voceEstaLouco(int x) {
-			switch (x)
-			{
-			case 1://locura querer protegr a cidade?
-				tx = new String[5];
-				linhas = new int[5];
-				 tx[0] =  "<html>Ariandra:" + "<br/><br/>Voc\u00EA tem determina\u00E7\u00E3o, mas s\u00F3 isso"
-						 + "<br/>n\u00E3o \u00E9 suficiente."  
-						 + "<br/>Qual \u00E9 seu plano?"  
-			    		  + "<html>";
-			      linhas[0] =2;
-			      
-			      tx[1] =  "<html> Voc\u00EA:" + "<br/><br/>N\u00F3s estamos montando um pequeno"
-							 + "<br/>grupo para atacar os acampamentos de Bethesda"  
-							 + "<br/>antes da guerra iniciar diminuindo"  
-							 + "<br/>suas for\u00E7as. Esse \u00E9 o plano."  
-				    		  + "<html>";
-				      linhas[1] =2;
-				      
-				      tx[2] =  "<html>Ariandra:" + "<br/><br/>Quem est\u00E1 nesse grupo?"
-					    		  + "<html>";
-					      linhas[2] =2;
-					      
-					      tx[3] =  "<html> Voc\u00EA:" + "<br/><br/>Eu, Cassius, o an\u00E3o Letos"
-									 + "<br/>e a sacerdotisa Terraira." 
-						    		  + "<html>";
-						      linhas[3] =3;
-						      
-						      tx[3] =  "<html> Ariandra:" + "<br/><br/>\u00C9 um grupo de peso."
-										 + "<br/>Tudo bem, pode contar comigo." 
-							    		  + "<html>";
-							      linhas[3] =3;
-							      
-							      tx[4] = "<html>O dia termina e voc\u00EA volta"
-											 + "<br/>para a Alameda dos"  
-											 + "<br/>Tr\u00EAs Ponteiros, vit\u00F3ria."  
-											+ "<html>";
-							      linhas[4] =2;   
-			      break;
-			case 2://suas habilidades são unicas
-				tx = new String[2];
-				linhas = new int[2];
-				
-				 tx[0] =  "<html> Ariandra:" + "<br/><br/>Caso voc\u00EA n\u00E3o saiba eu estou"
-						 + "<br/>aposentada, n\u00E3o fa\u00E7o mais esse tipo" 
-						 + "<br/>de servi\u00E7o. Agora v\u00E1 embora"  
-						 + "<br/>antes que eu me enfure\u00E7a." 
-			    		  + "<html>";
-			      linhas[0] =5;
-			      
-			      tx[1] = "<html>O dia acaba e voc\u00EA volta para"
-							 + "<br/>a Alameda dos Tr\u00EAs Ponteiros,"  
-							 + "<br/>mas sem a ajuda de Ariandra."  
-							+ "<html>";
-			      linhas[4] =2;  
-			      break;
-			}
+			break;
 		}
-		
-		public void porqueDeveriaMeImportar(int x) {
-			switch (x) {
-			
-			case 1://alguem com quem voce se importa
-				
+	}
+
+	public void voceEstaLouco(int x) {
+		switch (x) {
+		case 1:// locura querer protegr a cidade?
 			tx = new String[5];
 			linhas = new int[5];
-			
-			tx[0] =  "<html> Voc\u00EA:" + "<br/><br/>Porque tem algu\u00E9m aqui com"
-					 + "<br/>quem voc\u00EA se importa, que" 
-					 + "<br/>mesmo que voc\u00EAs fossem embora, esse algu\u00E9m"  
-					 + "<br/>nunca esqueceria seu lar perdido de Helaria." 
-		    		  + "<html>";
-		      linhas[0] =5;
-		      
-		      tx[1] =  "<html> Ariandra:" + "<br/><br/>Como voc\u00EA sabe disso?"
-			    		  + "<html>";
-			      linhas[1] =2;
-			      
-			      tx[2] =  "<html> Voc\u00EA:" + "<br/><br/>Eu n\u00E3o sei, apenas imaginei."
-							 + "<br/>N\u00E3o \u00E9 qualquer pessoa que" 
-							 + "<br/>consegue se hospedar nessa casa."  
-				    		  + "<html>";
-				      linhas[2] =4;
-				      
-				      tx[3] = "<html> Ariandra:" + "<br/><br/>Voc\u00EA est\u00E1 certo, eu lutarei"
-				    		  + "<br/>por Helaria. Agora v\u00E1" 
-				    		  + "<br/>embora antes que eu mude de ideia." 
-		    		  + "<html>";
-		      linhas[3] =4;
-		      
-		      tx[4] = "<html>O dia termina e voc\u00EA"
-						 + "<br/>volta para a Alameda"  
-						 + "<br/>dos Tr\u00EAs Ponteiros, vit\u00F3ria."  
-						+ "<html>";
-		      linhas[4] =2;  
-		      break;
-			case 2:// não se importa com as vidas perdidas
-				tx = new String[5];
-				linhas = new int[5];
-				tx[0] =  "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA n\u00E3o se preocupa com"
-						 + "<br/>todos que ir\u00E3o morrer, com o massacre" 
-						 + "<br/>que acontecer\u00E1?" 
-			    		  + "<html>";
-			      linhas[0] =4;
-			      
-			      tx[1] =  "<html> Ariandra:" + "<br/><br/>Um massacre acontecer\u00E1 de qualquer"
-			    		  + "<br/>forma, seja de um lado ou de outro." 
-			    		  + "<br/>Agora v\u00E1 embora antes que eu me irrite." 
-			    		  + "<html>";
-			      linhas[1] =4;
-			      
-			      tx[2] = "<html>O dia termina e voc\u00EA"
-							 + "<br/>volta para a Alameda"  
-							 + "<br/>dos Tr\u00EAs Ponteiros, mas"  
-							 + "<br/>sem a ajuda de Ariandra." 
-							+ "<html>";
-			      linhas[2] =3;     
-			      break;}
-		}
-			
-			public void TorreArcanaAssassin() {
-				tx = new String[18];
-				linhas = new int[18];
-				 tx[0] = "<html>Voc\u00EA pega seu caminho para a"
-						 + "<br/>Torre Arcana e consegue"  
-						 + "<br/>entrar sem problemas."  
-						 + "<br/>\u00C9 recebido por dois arcanos de" 
-						 + "<br/>baixo grau que perguntam" 
-						 + "<br/>o que voc\u00EA quer." 
-						+ "<html>";
-		      linhas[0] =5;    
-		      
-		      tx[1] =  "<html> Voc\u00EA:" + "<br/><br/>Procuro a Sacerdotisa Terraira."
-						 + "<br/>\u00C9 um assunto urgente que tenho" 
-						 + "<br/>para falar com ela." 
-			    		  + "<html>";
-			      linhas[1] =4;
-			      
-			      tx[2] =  "<html> Arcanos:" + "<br/><br/>Ela est\u00E1 em seus aposentos."
-							 + "<br/>\u00C9 s\u00F3 subir as escadas at\u00E9 o quarto" 
-							 + "<br/>piso e virar no segundo quarto a esquerda." 
-				    		  + "<html>";
-				      linhas[2] =4;
-				      
-				      tx[3] =  "<html> Voc\u00EA:" + "<br/><br/>Obrigado."
-					    		  + "<html>";
-					      linhas[3] =2;
-					      
-					      tx[4] = "<html>Voc\u00EA pega o caminho que te"
-									 + "<br/>informaram e chega em um quarto"  
-									 + "<br/>com a porta fechada,"  
-									 + "<br/>voc\u00EA bate na porta e ela se abre." 
-									+ "<html>";
-					      linhas[4] =3;    
-					      
-					      tx[5] =  "<html> Uma mulher que voc\u00EA julga ser Terraira<br/> diz:" + "<br/><br/>Bem-vindo,"+player.getNome()
-						    		  + "<html>";
-						      linhas[5] =3;
-						      
-						      tx[6] =  "<html> Voc\u00EA:" + "<br/><br/>Como voc\u00EA sabe meu nome?"
-						    		  + "<html>";
-						      linhas[6] =2;
-						      
-						      tx[7] =  "<html> Terraira:" + "<br/><br/>Eu sou uma sacerdotisa,"
-						    		  + "<br/>sei muitas coisas."  
-						    		  + "<br/>Agora vem a quest\u00E3o do"  
-						    		  + "<br/>que voc\u00EA quer aqui."  
-						    		  + "<html>";
-						      linhas[7] =5;
-						      
-						      tx[8] =  "<html> Voc\u00EA:" + "<br/><br/>Eu preciso..."
-						    		  + "<html>";
-						      linhas[8] =2;
-						      
-						      tx[9] =  "<html> Terraira:" + "<br/><br/>Eu sei o que voc\u00EA quer"
-						    		  + "<br/>e o que voc\u00EA precisa,"  
-						    		  + "<br/>eu sei da guerra, mas por que eu deveria te"  
-						    		  + "<br/>ajudar ao inv\u00E9s de"  
-						    		  + "<br/>lutar com os meus?"  
-						    		  + "<html>";
-						      linhas[9] =6;
-						      
-						      
-						      tx[10] =  "<html> Voc\u00EA:" + "<br/><br/>Porque n\u00F3s temos um plano para..."
-						    		  + "<html>";
-						      linhas[10] =2;
-						      
-						      tx[11] =  "<html> Terraira:" + "<br/><br/>Foi uma pergunta ret\u00F3rica."
-						    		  + "<br/>Eu sei seus planos,"  
-						    		  + "<br/>s\u00F3 n\u00E3o sei seu valor."  
-						    		  + "<html>";
-						      linhas[11] =4;
-						      
-						      tx[12] =  "<html> Voc\u00EA:" + "<br/><br/>O que voc\u00EA quer que eu fa\u00E7a?"
-						    		  + "<html>";
-						      linhas[12] =2;
-						      
-						      tx[13] =  "<html> Terraira:" + "<br/><br/>Finalmente fomos ao que interessa."
-						    		  + "<br/>Se eu for lutar com voc\u00EA,"  
-						    		  + "<br/>vou precisar que busque um livro para <br/>mim."  
-						    		  + "<html>";
-						      linhas[13] =5;
-						      
-						      tx[14] =  "<html> Voc\u00EA:" + "<br/><br/>Qual livro e onde?"
-						    		  + "<html>";
-						      linhas[14] =2;
-						      
-						      tx[15] =  "<html> Terraira:" + "<br/><br/>Mem\u00F3rias de Mago Esquecido."
-						    		  + "<br/>\u00C9 um livro que cont\u00E9m"  
-						    		  + "<br/>alguns feiti\u00E7os antigos."  
-						    		  + "<br/>E, quanto ao local, ele est\u00E1 aqui,"  
-						    		  + "<br/>em uma sala que cont\u00E9m um labirinto,"  
-						    		  + "<br/>se voc\u00EA conseguir me trazer at\u00E9 o final"  
-						    		  + "<br/>do dia eu me juntarei a voc\u00EA." 
-						    		  + "<html>";
-						      linhas[15] =8;
-						      
-						      tx[16] =  "<html> Voc\u00EA:" + "<br/><br/>Muito bem, ent\u00E3o pode se arrumar."
-						    		  + "<html>";
-						      linhas[16] =2;
-						      
-						      tx[17] =  "<html>  Terraira:" + "<br/><br/>\u00C9 o que veremos."
-						    		  + "<html>";
-						      linhas[17] =2;
-						     			      
-			}
-			
-			public void posLabirinto(int x) {
-				switch (x){
-				case 1://ganhar
-					tx = new String[2];
-					linhas = new int[2];
-					
-					 tx[0] =  "<html>  Terraira:" + "<br/><br/>Muito bem, voc\u00EA"
-							 + "<br/>me provou suas capacidades,"  
-							 + "<br/>eu irei contigo." 
-				    		  + "<html>";
-				      linhas[0] =4;
-				      
-				      tx[1] = "<html>O dia termina e voc\u00EA volta"
-								 + "<br/>para a Alameda dos Tr\u00EAs"  
-								 + "<br/>Ponteiros. Vit\u00F3ria."  
-								+ "<html>";
-				      linhas[1] =2;    
-				      break;
-				case 2://perder
-					   tx[1] = "<html>Voc\u00EA sente uma forte dor de cabe\u00E7a"
-								 + "<br/>e desmaia. Pouco depois "  
-								 + "<br/>voc\u00EA acorda na enfermaria."  
-								+ "<html>";
-				      linhas[1] =2;    
-				}
-			}
-	public void labirinto2() {
-				tx = new String[1];
-				linhas = new int[1];
-				 tx[0] = "<html>Voc\u00EA rapidamente pega seu caminho para a"
-						 + "<br/>Torre Arcana e vai ter com Terraira"  
-						 + "<br/>novamente, dessa vez voc\\u00EA"  
-						 + "<br/>desvedera o enigma do labirinto" 
-						+ "<html>";
-		      linhas[0] =3;    
-			}
-			
-			/*public void Catederal()
-			{tx = new String[5];
-			linhas = new int[5];
-			
-			 tx[0] = "<html>Voc\u00EA vai para os limites da Catedral"
-					 + "<br/> at\u00E9 encontrar uma entrada para o"  
-					 + "<br/> esgoto. Para algu\u00E9m como"  
-					 + "<br/> voc\u00EA n\u00E3o existe "  
-					 + "<br/> outro meio de acesso a"  
-					 + "<br/> esse local, especialmente"  
-					 + "<br/> a sua pris\u00E3o. "  
+			tx[0] = "<html>Ariandra:" + "<br/><br/>Voc\u00EA tem determina\u00E7\u00E3o, mas s\u00F3 isso"
+					+ "<br/>n\u00E3o \u00E9 suficiente." + "<br/>Qual \u00E9 seu plano?" + "<html>";
+			linhas[0] = 2;
+
+			tx[1] = "<html> Voc\u00EA:" + "<br/><br/>N\u00F3s estamos montando um pequeno"
+					+ "<br/>grupo para atacar os acampamentos de Bethesda" + "<br/>antes da guerra iniciar diminuindo"
+					+ "<br/>suas for\u00E7as. Esse \u00E9 o plano." + "<html>";
+			linhas[1] = 2;
+
+			tx[2] = "<html>Ariandra:" + "<br/><br/>Quem est\u00E1 nesse grupo?" + "<html>";
+			linhas[2] = 2;
+
+			tx[3] = "<html> Voc\u00EA:" + "<br/><br/>Eu, Cassius, o an\u00E3o Letos" + "<br/>e a sacerdotisa Terraira."
 					+ "<html>";
 			linhas[3] = 3;
 
 			tx[3] = "<html> Ariandra:" + "<br/><br/>\u00C9 um grupo de peso." + "<br/>Tudo bem, pode contar comigo."
 					+ "<html>";
-	      linhas[1] =5;  
-	      
-	      tx[2] = "<html>se existir um inferno na Terra"
-					 + "<br/> com certeza aqui"  
-					 + "<br/> est\u00E1 pr\u00F3ximo, voc\u00EA pensa."  
-					 + "<br/> Para entrar na ala"  
-					 + "<br/> onde est\u00E3o as celas voc\u00EA "  
-					 + "<br/> precisa passar por "
-					 + "<br/> uma grande porta."
-					+ "<html>";
-	      linhas[2] =6;  
-	      
-	      tx[3] = "<html>Voc\u00EA se aproxima, pronto"
-					 + "<br/> para destranc\u00E1-la, mas"  
-					 + "<br/> ela j\u00E1 est\u00E1 aberta"  
-					 + "<br/> e voc\u00EA entra. "  
-					+ "<html>";
-	      linhas[3] =3; 
-	      
-	      tx[4] = "<html>Uma enorme Hidra"
-					 + "<br/>est\u00E1 guardando a sala e a porta"  
-					 + "<br/>se fechou, para sobreviver"  
-					 + "<br/>voc\u00EA precisa derrotar a Hidra."  
-					+ "<html>";
-	      linhas[4] =3; 
-	     
-			}*/
-			
-			public void posHidra(int x) {
-				switch (x) {
-				case 1://ganhar
-				tx = new String[13];
-				linhas = new int[13];
-				tx[0] = "<html>Voc\u00EA consegue superar a"
-						 + "<br/> Hidra e entrar na pris\u00E3o."  
-						 + "<br/> Ela \u00E9 pouco vigiada, afinal"  
-						 + "<br/> j\u00E1 tinha um monstro"  
-						 + "<br/> guardando-a. Apenas um"  
-						 + "<br/> guarda adormecido com as"  
-						 + "<br/> chaves"  
-						+ "<html>";
-		      linhas[0] =6; 
-		      
-		      tx[1] = "<html>Furtivamente voc\u00EA vai at\u00E9 ele e se"
-						 + "<br/> apropria delas e vai"  
-						 + "<br/> em busca de Letos,"  
-						 + "<br/>  An\u00E3o. Em uma cela "  
-						 + "<br/> distante l\u00E1 est\u00E1 ele,"  
-						 + "<br/> dormindo. Voc\u00EA o acorda."  
-						+ "<html>";
-		      linhas[1] =5; 
-		      
-		      tx[2] =  "<html> Voc\u00EA:" + "<br/><br/>Est\u00E1 interessado em"
-		    		  + "<br/> ir embora deste inferno?"
-		    		  + "<html>";
-		      linhas[2] =3;
-		      
-		      tx[3] =  "<html> Letos:" + "<br/><br/>Com toda certeza,"
-		    		  + "<br/> mas quem \u00E9 voc\u00EA?"
-		    		  + "<html>";
-		      linhas[3] =3;
-		      
-		      tx[4] =  "<html> Voc\u00EA:" + "<br/><br/>Sou um enviado de Cassius."
-		    		  + "<br/> Precisamos da sua ajuda?"
-		    		  + "<html>";
-		      linhas[4] =3;
-		      
-		      tx[5] =  "<html> Letos:" + "<br/><br/>No que eu"
-		    		  + "<br/> poderia ajudar?"
-		    		  + "<html>";
-		      linhas[5] =3;
-		      
-		      tx[6] =  "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA est\u00E1 preso por"
-		    		  + "<br/>matar quinze pessoas numa"
-		    		  + "<br/>briga de bar com um"
-		    		  + "<br/>machado. Treze delas"
-		    		  + "<br/>eram soldados altamente treinados"
-		    		  + "<html>";
-		      linhas[6] =6;
-		      
-		      tx[7] =  "<html> Letos:" + "<br/><br/>E o que voc\u00EAs"
-		    		  + "<br/> querem que eu fa\u00E7a?"
-		    		  + "<html>";
-		      linhas[7] =3;
-		      
-		      tx[8] =  "<html> Voc\u00EA:" + "<br/><br/>Helaria ser\u00E1 invadida por"
-		    		  + "<br/>Bethesda dentro de pouco"
-		    		  + "<br/>tempo, n\u00F3s estamos montando"
-		    		  + "<br/>um grupo para lutar contra"
-		    		  + "<br/>e sua presen\u00E7a ser\u00E1 valiosa."
-		    		  + "<html>";
-		      linhas[8] =6;
-		      
-		      tx[9] =  "<html> Letos:" + "<br/><br/>E voc\u00EA s\u00F3 vai"
-		    		  + "<br/>me libertar se eu"
-		    		  + "<br/>me juntar a voc\u00EA?"
-		    		  + "<html>";
-		      linhas[9] =3;
-		      
-		      tx[10] =  "<html> Voc\u00EA:" + "<br/><br/>Precisamente."
-		    		  + "<html>";
-		      linhas[10] =2;
-		      
-		      tx[11] =  "<html> Letos:" + "<br/><br/>Muito bem,"
-		    		  + "<br/>estou dentro. Afinal, o que"
-		    		  + "<br/>eu tenho a perder?"
-		    		  + "<html>";
-		      linhas[11] =3;
-		      
-		      tx[12] = "<html>Voc\u00EA abre a cela."
-						 + "<br/>O dia est\u00E1 terminando "  
-						 + "<br/>e voc\u00EA retorna para "  
-						 + "<br/>a Alameda dos Tr\u00EAs Ponteiros"  
-						 + "<br/> com Letos, o An\u00E3o. Vit\u00F3ria."  
-						+ "<html>";
-		      linhas[12] =4; 
-		      break;
-					case 2://se perder
-					tx[0] = "<html>Voc\u00EA não consegue superar a"
-							 + "<br/> Hidra, ela é muito forte"  
-							 + "<br/> com o pouco de força que"  
-							 + "<br/> ainda lhe resta Voc\\u00EA, "  
-							 + "<br/> foge" 
-							+ "<html>";
-			      linhas[0] =4; 
-						break;
-		      
-				}
-			}
-	public void Hidra2(){
-				tx = new String[1];
-				linhas = new int[1];
-				tx[0] = "<html>Voc\u00EA vai rapidamente para os limites da Catedral"
-						 + "<br/> e segue pelo esgoto, dessa vez"  
-						 + "<br/> voc\\u00EA derrotara a hidra"  
-						 + "<br/> de uma vez por todas" 
-						+ "<html>";
-		      linhas[0] =3; 
-			}
-			
-			public void finalAssassin()
-			{tx = new String[5];
+			linhas[3] = 3;
+
+			tx[4] = "<html>O dia termina e voc\u00EA volta" + "<br/>para a Alameda dos"
+					+ "<br/>Tr\u00EAs Ponteiros, vit\u00F3ria." + "<html>";
+			linhas[4] = 2;
+			break;
+		case 2:// suas habilidades são unicas
+			tx = new String[2];
+			linhas = new int[2];
+
+			tx[0] = "<html> Ariandra:" + "<br/><br/>Caso voc\u00EA n\u00E3o saiba eu estou"
+					+ "<br/>aposentada, n\u00E3o fa\u00E7o mais esse tipo"
+					+ "<br/>de servi\u00E7o. Agora v\u00E1 embora" + "<br/>antes que eu me enfure\u00E7a." + "<html>";
+			linhas[0] = 5;
+
+			tx[1] = "<html>O dia acaba e voc\u00EA volta para" + "<br/>a Alameda dos Tr\u00EAs Ponteiros,"
+					+ "<br/>mas sem a ajuda de Ariandra." + "<html>";
+			linhas[4] = 2;
+			break;
+		}
+	}
+
+	public void porqueDeveriaMeImportar(int x) {
+		switch (x) {
+
+		case 1:// alguem com quem voce se importa
+
+			tx = new String[5];
 			linhas = new int[5];
-				tx[0] = "<html>Termina o terceiro dia e"
-					 + "<br/> voc\u00EA vai para seu quarto"  
-					 + "<br/> descansar. Voc\u00EA s\u00F3 ter\u00E1"  
-					 + "<br/> algumas poucas horas"  
-					 + "<br/> de sono antes de"  
-					 + "<br/> sa\u00EDrem para colocar"  
-					 + "<br/> o plano em pr\u00E1tica,"  
-					+ "<html>";
-	      linhas[0] =6; 
-	      
-	      tx[1] = "<html>ent\u00E3o \u00E9 melhor"
-					 + "<br/> fazer valer o tempo."  
-					 + "<br/> Chega a hora e voc\u00EA"  
-					 + "<br/> se levanta e se prepara."  
-					 + "<br/> Voc\u00EAs se encontram"  
-					 + "<br/>  em uma sa\u00EDda da cidade."  
-					+ "<html>";
-	      linhas[1] =5; 
-	      
-	      tx[2] = "<html>Seu grupo \u00E9 composto"
-					 + "<br/>  por voc\u00EA, Cassius,"  
-					 + "<br/>(aqueles que voc\u00EA conseguiu"  
-					 + "<br/>recrutar), e dois"  
-					 + "<br/> outros assassinos." 
-					+ "<html>";
-	      linhas[2] =4; 
-	      
-	      tx[3] = "<html>Furtivamente voc\u00EAs saem"
-					 + "<br/>da cidade e se encaminham"  
-					 + "<br/>para o acampamento inimigo"  
-					 + "<br/> enquanto todos est\u00E3o dormindo"  
-					 + "<br/>No acampamento voc\u00EAs" 
-					 + "<br/>pretendem causar um inc\u00EAndio."  
-					+ "<html>";
-	      linhas[3] =5; 
-	      
-	      tx[3] = "<html>O inc\u00EAndio tem in\u00EDcio"
-					 + "<br/>e as tropas come\u00E7am a acordar."  
-					 + "<br/>Seu objetivo \u00E9 garantir que elas"  
-					 + "<br/> fiquem o m\u00E1ximo poss\u00EDvel"  
-					 + "<br/>no foco do fogo para" 
-					 + "<br/>que pere\u00E7am"  
-					+ "<html>";
-	      linhas[3] =5; 
-				
-	      tx[4] = "<html>todos voc\u00EAs retiram"
-					 + "<br/>suas armas e come\u00E7a"  
-					 + "<br/>a primeira batalha da guerra."  
-					+ "<html>";
-	      linhas[4] =2 ; 
-			}
-			
-			public void derrotaSemBonus() {
-				tx = new String[4];
-				linhas = new int[4];
-					tx[0] = "<html>S\u00E3o muitos soldados"
-						 + "<br/>e voc\u00EAs n\u00E3o conseguem"  
-						 + "<br/>cont\u00EA-los. Eles conseguem"  
-						 + "<br/>fugir do inc\u00EAndio"  
-						 + "<br/>quase intactos e est\u00E3o"  
-						 + "<br/>prontos para a guerra."  
-						+ "<html>";
-		      linhas[0] =5; 
-		      
-		      tx[1] = "<html>Todo seu grupo \u00E9"
-						 + "<br/>massacrado e voc\u00EA"  
-						 + "<br/>perece em batalha."  
-						 + "<br/>Com as tropas de"  
-						 + "<br/>Bethesda despertas e"  
-						 + "<br/>prontas, Helaria \u00E9"  
-						 + "<br/>invadida"  
-						+ "<html>";
-		      linhas[1] =6; 
-		      
-		      tx[2] = "<html>Helaria ir\u00E1 cair."
-						 + "<br/>Milhares de vidas s\u00E3o"  
-						 + "<br/>perdidas e a cidade"  
-						 + "<br/>\u00E9 massacrada, a hist\u00F3ria"  
-						 + "<br/>de Helaria \u00E9 esquecida" 
-						 + "<br/> assim como seu povo."  
-						+ "<html>";
-		      linhas[2] =6; 
-		      
-		      tx[3] = "<html>FIM DE JOGO!"
-		    		  + "<br/>..."
-						+ "<html>";
-		      linhas[3] =1; 
-			}
-			
-			public void derrotaComBonusOuVitoriaSemRecrutas() {
-				tx = new String[2];
-				linhas = new int[2];
-				
-				tx[0] = "<html>S\u00E3o muitos soldados"
-						 + "<br/>e voc\u00EAs n\u00E3o conseguem"  
-						 + "<br/>cont\u00EA-los. mesmo com "  
-						 + "<br/>v\u00E1rios ca\u00EDdos eles conseguem"  
-						 + "<br/>fugir do inc\u00EAndio"  
-						 + "<br/>em grande n\u00FAmero"  
-						 + "<br/>e est\u00E3o prontos para a guerra."  
-						+ "<html>";
-		      linhas[0] =6; 
-		      
-		      tx[1] = "<html>Todo seu grupo \u00E9"
-						 + "<br/>massacrado, no entanto"  
-						 + "<br/>voc\u00EA ainda est\u00E1 vivo."  
-						+ "<html>";
-		      linhas[1] =2; 
-		      
-		      choice = "<html>O que voc\u00EA ir\u00E1 fazer?" + "<html>";
-				op1 = "Lutar";
-				op2 = "Fugir";
-			}
-			
-			public void derrotaComBonusOuVitoriaSemRecrutas2(int x) {
-				switch (x) {
-				case 1://lutar
-					tx = new String[4];
-					linhas = new int[4];
-					tx[0] = "<html>Voc\u00EA fugiu uma vez de Bethesda"
-							 + "<br/>em sua adolesc\u00EAncia,"  
-							 + "<br/>n\u00E3o ir\u00E1 fugir agora."  
-							 + "<br/>Voc\u00EA volta para"  
-							 + "<br/>Helaria para ter"  
-							 + "<br/>sua \u00FAltima batalha."  
-							+ "<html>";
-			      linhas[0] =5; 
-			      
-			      tx[1] = "<html>Helaria n\u00E3o est\u00E1 preparada"
-							 + "<br/>e nem tem for\u00E7as"  
-							 + "<br/>suficientes para resistir"  
-							 + "<br/>um ataque massivo"  
-							 + "<br/>e Bethesda, n\u00E3o existem"  
-							 + "<br/>esperan\u00E7as, Helaria cair\u00E1"  
-							+ "<html>";
-			      linhas[1] =5; 
-			      
-			      tx[2] = "<html>E Helaria cai, voc\u00EA cai,"
-							 + "<br/>um massacre acontece e"  
-							 + "<br/>grande parte de seu povo"  
-							 + "<br/>desaparece, mas ainda"  
-							 + "<br/>existe uma parcela que est\u00E1"  
-							 + "<br/>viva e eles ser\u00E3o os respons\u00E1veis"  
-							 + "<br/>em contar a hist\u00F3ria de Helaria,"  
-							+ "<html>";
-			      linhas[2] =6; 
-			      
-			      tx[3] = "<html>FIM DE JOGO!"
-			    		  + "<br/>..."
-							+ "<html>";
-			      linhas[3] =1; 
-			      break;
-				case 2://fugir
-					tx = new String[2];
-					linhas = new int[2];
-					tx[0] = "<html>N\u00E3o \u00E9 porque Helaria"
-							 + "<br/>cair\u00E1 que voc\u00EA tamb\u00E9m"  
-							 + "<br/>precisa cair."  
-							 + "<br/>Voc\u00EA vai embora"  
-							 + "<br/> e atravessa as montanhas,"  
-							 + "<br/>pronto para come\u00E7ar"  
-							 + "<br/>uma nova vida." 
-							+ "<html>";
-			      linhas[0] =6; 
-			      
-			      tx[1] = "<html>Chega em terras distantes"
-							 + "<br/>e passa a viver nelas"  
-							 + "<br/>como um simples alde\u00E3o,"  
-							 + "<br/>da mesma forma que sua"  
-							 + "<br/>vida tinha come\u00E7ado."  
-							 + "<br/>FIM DE JOGO!"  
-							+ "<html>";
-			      linhas[1] =5; 
-			      break;
-				}
-			}
-			
-			public void vitoria3Recrutados() {
-				tx = new String[5];
+
+			tx[0] = "<html> Voc\u00EA:" + "<br/><br/>Porque tem algu\u00E9m aqui com"
+					+ "<br/>quem voc\u00EA se importa, que"
+					+ "<br/>mesmo que voc\u00EAs fossem embora, esse algu\u00E9m"
+					+ "<br/>nunca esqueceria seu lar perdido de Helaria." + "<html>";
+			linhas[0] = 5;
+
+			tx[1] = "<html> Ariandra:" + "<br/><br/>Como voc\u00EA sabe disso?" + "<html>";
+			linhas[1] = 2;
+
+			tx[2] = "<html> Voc\u00EA:" + "<br/><br/>Eu n\u00E3o sei, apenas imaginei."
+					+ "<br/>N\u00E3o \u00E9 qualquer pessoa que" + "<br/>consegue se hospedar nessa casa." + "<html>";
+			linhas[2] = 4;
+
+			tx[3] = "<html> Ariandra:" + "<br/><br/>Voc\u00EA est\u00E1 certo, eu lutarei"
+					+ "<br/>por Helaria. Agora v\u00E1" + "<br/>embora antes que eu mude de ideia." + "<html>";
+			linhas[3] = 4;
+
+			tx[4] = "<html>O dia termina e voc\u00EA" + "<br/>volta para a Alameda"
+					+ "<br/>dos Tr\u00EAs Ponteiros, vit\u00F3ria." + "<html>";
+			linhas[4] = 2;
+			break;
+		case 2:// não se importa com as vidas perdidas
+			tx = new String[5];
 			linhas = new int[5];
 			tx[0] = "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA n\u00E3o se preocupa com"
 					+ "<br/>todos que ir\u00E3o morrer, com o massacre" + "<br/>que acontecer\u00E1?" + "<html>";
@@ -926,13 +395,13 @@ public class Biblio_Assassin extends Biblioteca {
 			tx[2] = "<html>O dia termina e voc\u00EA" + "<br/>volta para a Alameda"
 					+ "<br/>dos Tr\u00EAs Ponteiros, mas" + "<br/>sem a ajuda de Ariandra." + "<html>";
 			linhas[2] = 3;
-			//break;
+			break;
 		}
-	
+	}
 
-	/*public void TorreArcanaAssassin() {
-		tx = new String[18];
-		linhas = new int[18];
+	public void TorreArcanaAssassin() {
+		tx = new String[21];
+		linhas = new int[21];
 		tx[0] = "<html>Voc\u00EA pega seu caminho para a" + "<br/>Torre Arcana e consegue"
 				+ "<br/>entrar sem problemas." + "<br/>\u00C9 recebido por dois arcanos de"
 				+ "<br/>baixo grau que perguntam" + "<br/>o que voc\u00EA quer." + "<html>";
@@ -997,24 +466,41 @@ public class Biblio_Assassin extends Biblioteca {
 				+ "<html>";
 		linhas[15] = 8;
 
-		tx[16] = "<html> Voc\u00EA:" + "<br/><br/>Muito bem, ent\u00E3o pode se arrumar." + "<html>";
-		linhas[16] = 2;
+		tx[16] = "<html>Terraira:<br/><br/> As partes precisam ser unidas em uma"
+				+ "<br/>ordem espec\u00EDfica de acordo com um" + "<br/>poema, se pegar uma parte errada, ser\u00E1"
+				+ "<br/>obrigado a sair e tentar de novo algumas" + "<br/>horas depois, quando o equil\u00EDbrio do "
+				+ "<br/>labirinto for restabelecido." + "<html>";
+		linhas[16] = 7;
 
-		tx[17] = "<html>  Terraira:" + "<br/><br/>\u00C9 o que veremos." + "<html>";
+		tx[17] = "<html>Você:<br/><br/> Muito bem, qual \u00E9 o poema." + "<html>";
 		linhas[17] = 2;
 
-	}*/
+		tx[18] = "<html>Terraira te entrega um velho pergaminho " + "<br/com o poema" + "<html>";
+		linhas[18] = 1;
 
-	/*public void posLabirinto(int x) {
+		tx[19] = "<html>Voc\u00EA:" + "<br/><br/>Muito bem, ent\u00E3o pode se arrumar." + "<html>";
+		linhas[19] = 2;
+
+		tx[20] = "<html>Terraira:" + "<br/><br/>\u00C9 o que veremos." + "<html>";
+		linhas[20] = 2;
+	}
+
+	public void labirinto2() {
+		tx = new String[1];
+		linhas = new int[1];
+		tx[0] = "<html>Voc\u00EA rapidamente pega seu caminho para a" + "<br/>Torre Arcana e vai ter com Terraira"
+				+ "<br/>novamente, dessa vez voc\\u00EA" + "<br/>desvedera o enigma do labirinto" + "<html>";
+		linhas[0] = 3;
+	}
+
+	public void posLabirinto(int x) {
 		switch (x) {
 		case 1:
 			tx = new String[2];
 			linhas = new int[2];
-
 			tx[0] = "<html>  Terraira:" + "<br/><br/>Muito bem, voc\u00EA" + "<br/>me provou suas capacidades,"
 					+ "<br/>eu irei contigo." + "<html>";
 			linhas[0] = 4;
-
 			tx[1] = "<html>O dia termina e voc\u00EA volta" + "<br/>para a Alameda dos Tr\u00EAs"
 					+ "<br/>Ponteiros. Vit\u00F3ria." + "<html>";
 			linhas[1] = 2;
@@ -1024,7 +510,7 @@ public class Biblio_Assassin extends Biblioteca {
 					+ "<br/>voc\u00EA acorda na enfermaria." + "<html>";
 			linhas[1] = 2;
 		}
-	}*/
+	}
 
 	public void Catederal() {
 		tx = new String[5];
@@ -1057,63 +543,82 @@ public class Biblio_Assassin extends Biblioteca {
 
 	}
 
-	public void posHidra() {
-		tx = new String[13];
-		linhas = new int[13];
-		tx[0] = "<html>Voc\u00EA consegue superar a" + "<br/> Hidra e entrar na pris\u00E3o."
-				+ "<br/> Ela \u00E9 pouco vigiada, afinal" + "<br/> j\u00E1 tinha um monstro"
-				+ "<br/> guardando-a. Apenas um" + "<br/> guarda adormecido com as" + "<br/> chaves" + "<html>";
-		linhas[0] = 6;
-
-		tx[1] = "<html>Furtivamente voc\u00EA vai at\u00E9 ele e se" + "<br/> apropria delas e vai"
-				+ "<br/> em busca de Letos," + "<br/>  An\u00E3o. Em uma cela "
-				+ "<br/> distante l\u00E1 est\u00E1 ele," + "<br/> dormindo. Voc\u00EA o acorda." + "<html>";
-		linhas[1] = 5;
-
-		tx[2] = "<html> Voc\u00EA:" + "<br/><br/>Est\u00E1 interessado em" + "<br/> ir embora deste inferno?"
-				+ "<html>";
-		linhas[2] = 3;
-
-		tx[3] = "<html> Letos:" + "<br/><br/>Com toda certeza," + "<br/> mas quem \u00E9 voc\u00EA?" + "<html>";
-		linhas[3] = 3;
-
-		tx[4] = "<html> Voc\u00EA:" + "<br/><br/>Sou um enviado de Cassius." + "<br/> Precisamos da sua ajuda?"
-				+ "<html>";
-		linhas[4] = 3;
-
-		tx[5] = "<html> Letos:" + "<br/><br/>No que eu" + "<br/> poderia ajudar?" + "<html>";
-		linhas[5] = 3;
-
-		tx[6] = "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA est\u00E1 preso por" + "<br/>matar quinze pessoas numa"
-				+ "<br/>briga de bar com um" + "<br/>machado. Treze delas" + "<br/>eram soldados altamente treinados"
-				+ "<html>";
-		linhas[6] = 6;
-
-		tx[7] = "<html> Letos:" + "<br/><br/>E o que voc\u00EAs" + "<br/> querem que eu fa\u00E7a?" + "<html>";
-		linhas[7] = 3;
-
-		tx[8] = "<html> Voc\u00EA:" + "<br/><br/>Helaria ser\u00E1 invadida por" + "<br/>Bethesda dentro de pouco"
-				+ "<br/>tempo, n\u00F3s estamos montando" + "<br/>um grupo para lutar contra"
-				+ "<br/>e sua presen\u00E7a ser\u00E1 valiosa." + "<html>";
-		linhas[8] = 6;
-
-		tx[9] = "<html> Letos:" + "<br/><br/>E voc\u00EA s\u00F3 vai" + "<br/>me libertar se eu"
-				+ "<br/>me juntar a voc\u00EA?" + "<html>";
-		linhas[9] = 4;
-
-		tx[10] = "<html> Voc\u00EA:" + "<br/><br/>Precisamente." + "<html>";
-		linhas[10] = 2;
-
-		tx[11] = "<html> Letos:" + "<br/><br/>Muito bem," + "<br/>estou dentro. Afinal, o que"
-				+ "<br/>eu tenho a perder?" + "<html>";
-		linhas[11] = 4;
-
-		tx[12] = "<html>Voc\u00EA abre a cela." + "<br/>O dia est\u00E1 terminando " + "<br/>e voc\u00EA retorna para "
-				+ "<br/>a Alameda dos Tr\u00EAs Ponteiros" + "<br/> com Letos, o An\u00E3o. Vit\u00F3ria." + "<html>";
-		linhas[12] = 4;
+	public void Hidra2() {
+		tx = new String[1];
+		linhas = new int[1];
+		tx[0] = "<html>Voc\u00EA vai rapidamente para os limites da Catedral" + "<br/> e segue pelo esgoto, dessa vez"
+				+ "<br/> voc\u00EA derrotar\u00E1 a hidra" + "<br/> de uma vez por todas" + "<html>";
+		linhas[0] = 3;
 	}
 
-	/*public void finalAssassin() {
+	public void posHidra(int x) {
+		switch (x) {
+		case 1:// ganhar
+			tx = new String[13];
+			linhas = new int[13];
+			tx[0] = "<html>Voc\u00EA consegue superar a" + "<br/> Hidra e entrar na pris\u00E3o."
+					+ "<br/> Ela \u00E9 pouco vigiada, afinal" + "<br/> j\u00E1 tinha um monstro"
+					+ "<br/> guardando-a. Apenas um" + "<br/> guarda adormecido com as" + "<br/> chaves" + "<html>";
+			linhas[0] = 6;
+
+			tx[1] = "<html>Furtivamente voc\u00EA vai at\u00E9 ele e se" + "<br/> apropria delas e vai"
+					+ "<br/> em busca de Letos," + "<br/>  An\u00E3o. Em uma cela "
+					+ "<br/> distante l\u00E1 est\u00E1 ele," + "<br/> dormindo. Voc\u00EA o acorda." + "<html>";
+			linhas[1] = 5;
+
+			tx[2] = "<html> Voc\u00EA:" + "<br/><br/>Est\u00E1 interessado em" + "<br/> ir embora deste inferno?"
+					+ "<html>";
+			linhas[2] = 3;
+
+			tx[3] = "<html> Letos:" + "<br/><br/>Com toda certeza," + "<br/> mas quem \u00E9 voc\u00EA?" + "<html>";
+			linhas[3] = 3;
+
+			tx[4] = "<html> Voc\u00EA:" + "<br/><br/>Sou um enviado de Cassius." + "<br/> Precisamos da sua ajuda?"
+					+ "<html>";
+			linhas[4] = 3;
+
+			tx[5] = "<html> Letos:" + "<br/><br/>No que eu" + "<br/> poderia ajudar?" + "<html>";
+			linhas[5] = 3;
+
+			tx[6] = "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA est\u00E1 preso por" + "<br/>matar quinze pessoas numa"
+					+ "<br/>briga de bar com um" + "<br/>machado. Treze delas"
+					+ "<br/>eram soldados altamente treinados" + "<html>";
+			linhas[6] = 6;
+
+			tx[7] = "<html> Letos:" + "<br/><br/>E o que voc\u00EAs" + "<br/> querem que eu fa\u00E7a?" + "<html>";
+			linhas[7] = 3;
+
+			tx[8] = "<html> Voc\u00EA:" + "<br/><br/>Helaria ser\u00E1 invadida por" + "<br/>Bethesda dentro de pouco"
+					+ "<br/>tempo, n\u00F3s estamos montando" + "<br/>um grupo para lutar contra"
+					+ "<br/>e sua presen\u00E7a ser\u00E1 valiosa." + "<html>";
+			linhas[8] = 6;
+
+			tx[9] = "<html> Letos:" + "<br/><br/>E voc\u00EA s\u00F3 vai" + "<br/>me libertar se eu"
+					+ "<br/>me juntar a voc\u00EA?" + "<html>";
+			linhas[9] = 3;
+
+			tx[10] = "<html> Voc\u00EA:" + "<br/><br/>Precisamente." + "<html>";
+			linhas[10] = 2;
+
+			tx[11] = "<html> Letos:" + "<br/><br/>Muito bem," + "<br/>estou dentro. Afinal, o que"
+					+ "<br/>eu tenho a perder?" + "<html>";
+			linhas[11] = 3;
+
+			tx[12] = "<html>Voc\u00EA abre a cela." + "<br/>O dia est\u00E1 terminando "
+					+ "<br/>e voc\u00EA retorna para " + "<br/>a Alameda dos Tr\u00EAs Ponteiros"
+					+ "<br/> com Letos, o An\u00E3o. Vit\u00F3ria." + "<html>";
+			linhas[12] = 4;
+			break;
+		case 2:// se perder
+			tx[0] = "<html>Voc\u00EA não consegue superar a" + "<br/> Hidra, ela é muito forte"
+					+ "<br/> com o pouco de força que" + "<br/> ainda lhe resta Voc\u00EA, " + "<br/> foge" + "<html>";
+			linhas[0] = 4;
+			break;
+
+		}
+	}
+
+	public void finalAssassin() {
 		tx = new String[5];
 		linhas = new int[5];
 		tx[0] = "<html>Termina o terceiro dia e" + "<br/> voc\u00EA vai para seu quarto"
@@ -1186,11 +691,11 @@ public class Biblio_Assassin extends Biblioteca {
 		choice = "<html>O que voc\u00EA ir\u00E1 fazer?" + "<html>";
 		op1 = "Lutar";
 		op2 = "Fugir";
-	}*/
+	}
 
-	/*public void derrotaComBonusOuVitoriaSemRecrutas2(int x) {
+	public void derrotaComBonusOuVitoriaSemRecrutas2(int x) {
 		switch (x) {
-		case 1:
+		case 1:// lutar
 			tx = new String[4];
 			linhas = new int[4];
 			tx[0] = "<html>Voc\u00EA fugiu uma vez de Bethesda" + "<br/>em sua adolesc\u00EAncia,"
@@ -1212,7 +717,7 @@ public class Biblio_Assassin extends Biblioteca {
 			tx[3] = "<html>FIM DE JOGO!" + "<br/>..." + "<html>";
 			linhas[3] = 1;
 			break;
-		case 2:
+		case 2:// fugir
 			tx = new String[2];
 			linhas = new int[2];
 			tx[0] = "<html>N\u00E3o \u00E9 porque Helaria" + "<br/>cair\u00E1 que voc\u00EA tamb\u00E9m"
@@ -1226,36 +731,25 @@ public class Biblio_Assassin extends Biblioteca {
 			linhas[1] = 5;
 			break;
 		}
-	}*/
+	}
 
-	/*public void vitoria3Recrutados() {
+	public void vitoria3Recrutados() {
 		tx = new String[5];
 		linhas = new int[5];
-		tx[0] = "<html>Voc\u00EAs conseguem conter" + "<br/>nas chamas uma for\u00E7a"
-				+ "<br/>significativa de Bethesda." + "<br/>Agora com as tropas" + "<br/> flageladas, Bethesda j\u00E1"
-				+ "<br/>n\u00E3o representa uma" + "<br/>amea\u00E7a t\u00E3o grande." + "<html>";
-		linhas[0] = 6;
+		tx[0] = "<html> Voc\u00EA:" + "<br/><br/>Voc\u00EA n\u00E3o se preocupa com"
+				+ "<br/>todos que ir\u00E3o morrer, com o massacre" + "<br/>que acontecer\u00E1?" + "<html>";
+		linhas[0] = 4;
 
-		tx[1] = "<html>Helaria v\u00EA as chamas" + "<br/>e envia suas tropas" + "<br/>para acabar com o que"
-				+ "<br/>resta das tropas de Bethesda." + "<br/>Uma violenta batalha se"
-				+ "<br/>inicia e voc\u00EA e seu" + "<br/>grupo tomam parte." + "<html>";
-		linhas[1] = 6;
-
-		tx[2] = "<html>As tropas de Bethesda" + "<br/>s\u00E3o dizimadas enquanto" + "<br/>que as de Helaria est\u00E3o"
-				+ "<br/>quase inteiras. O rei." + "<br/>deseja saber quem foi" + "<br/>o respons\u00E1vel por essa"
-				+ "<br/>vit\u00F3ria e encontra voc\u00EAs." + "<html>";
-		linhas[2] = 6;
-
-		tx[3] = "<html>Todos recebem o t\u00EDtulo" + "<br/>de Guardi\u00E3o Protetor de"
-				+ "<br/>Helaria e sempre ser\u00E3o" + "<br/>ouvidos nas reuni\u00F5es reais"
-				+ "<br/>Helaria muda muito depois" + "<br/>da guerra e de sua " + "<br/>ascens\u00E3o" + "<html>";
-		linhas[3] = 6;
-
-		tx[4] = "<html>O povo passa a ter" + "<br/>mais voz e cada" + "<br/>vez mais se aproxima"
-				+ "<br/>de um lugar ideal" + "<br/>a se viver." + "<br/>PARAB\u00C9NS!" + "<br/>VOCÊ TERMINOU O JOGO!"
+		tx[1] = "<html> Ariandra:" + "<br/><br/>Um massacre acontecer\u00E1 de qualquer"
+				+ "<br/>forma, seja de um lado ou de outro." + "<br/>Agora v\u00E1 embora antes que eu me irrite."
 				+ "<html>";
-		linhas[4] = 6;
-	}*/
+		linhas[1] = 4;
+
+		tx[2] = "<html>O dia termina e voc\u00EA" + "<br/>volta para a Alameda" + "<br/>dos Tr\u00EAs Ponteiros, mas"
+				+ "<br/>sem a ajuda de Ariandra." + "<html>";
+		linhas[2] = 3;
+
+	}
 
 	public void vitoriaDoisRecrutados() {
 		tx = new String[6];
@@ -1329,7 +823,6 @@ public class Biblio_Assassin extends Biblioteca {
 		tx[7] = "<html>PARAB\u00C9NS AVENTUREIRO!" + "<br/>VOCÊ TERMINOU O JOGO! " + "<html>";
 		linhas[7] = 1;
 	}
-}
 
 //	  tx[] = "<html>"
 //		 + "<br/>"
@@ -1337,3 +830,5 @@ public class Biblio_Assassin extends Biblioteca {
 //		 + "<br/>"
 //		 +"<html>";
 //linhas[] = ;
+
+}

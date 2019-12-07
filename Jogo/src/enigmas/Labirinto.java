@@ -181,6 +181,12 @@ public class Labirinto {
 					+ "<br/>E, embaixo de todos est\u00E1 o vermelho da terra."
 					+ "<br/>Junte-os corretamente e o pr\u00EAmio conseguir\u00E1. ”" + "<html>");
 			break;
+		case 1:
+			txtdica.setText(
+					"<html>“Abaixo das nuvens, o Sol brilha" + "<br/>O c\u00E9u azul reflete o verde das \u00E1rvores"
+							+ "<br/>E, embaixo de todos est\u00E1 o vermelho da terra."
+							+ "<br/>Junte-os corretamente e o pr\u00EAmio conseguir\u00E1. ”" + "<html>");
+			break;
 		case 2:
 			txtdica.setText(
 					"<html>“Abaixo das nuvens, o Sol brilha" + "<br/>O c\u00E9u azul reflete o verde das \u00E1rvores"

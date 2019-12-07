@@ -176,7 +176,12 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		vet.TorreArcanaAssassin();
+		if (player.getFirstTry(1)) {
+			vet.TorreArcanaAssassin();
+			player.setFirstTry(2, false);
+		} else
+			vet.labirinto2();
+
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -186,7 +191,6 @@ public class Hist_Assassin {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-//						t1.getTexto().dispose();
 						new Labirinto(player, t1.getTexto());
 					} else
 						cont++;
@@ -260,7 +264,11 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		vet.Catederal();
+		if (player.getFirstTry(1)) {
+			vet.Catederal();
+			player.setFirstTry(1, false);
+		} else
+			vet.Hidra2();
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -287,6 +295,7 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		vet.posHidra(2);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -316,7 +325,7 @@ public class Hist_Assassin {
 		this.player.setEnigma(1, true);
 		this.player.passaDia();
 
-		vet.posHidra();
+		vet.posHidra(1);
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -342,7 +351,12 @@ public class Hist_Assassin {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		vet.CasaNobreAssassin();
+		if (player.getFirstTry(0)) {
+			vet.CasaNobreAssassin();
+			player.setFirstTry(0, false);
+		} else
+			vet.EnigmaPortaAssassin2();
+
 		geral.escolhas_0(t1, vet);
 
 		continuar = new ActionListener() {
@@ -410,7 +424,7 @@ public class Hist_Assassin {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
-
+				casaNobreVitoria1(t1);
 			}
 		};
 
@@ -419,12 +433,174 @@ public class Hist_Assassin {
 			public void actionPerformed(ActionEvent e) {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				casaNobreVitoria2(t1);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void casaNobreVitoria1(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.OQueVoceQuerAssassin(1);
+		geral.escolhas_2(t1, vet);
+
+		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				casaNobreVitoria1_1(t1);
+			}
+		};
+
+		escolha2 = new ActionListener() {// Action caso escolha a 2� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				casaNobreVitoria1_2(t1);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void casaNobreVitoria1_1(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.CassiusmeMandou(1);
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
+						destino();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void casaNobreVitoria1_2(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.CassiusmeMandou(2);
+		geral.escolhas_2(t1, vet);
+
+		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				casaNobreVitoria1_3(t1, 1);
+			}
+		};
+
+		escolha2 = new ActionListener() {// Action caso escolha a 2� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				casaNobreVitoria1_3(t1, 2);
+			}
+		};
+
+		geral.getChoice().getOpcao1().addActionListener(escolha1);
+		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void casaNobreVitoria1_3(Texto t1, int x) {
+		Geral geral = new Geral();
+
+		vet.voceEstaLouco(x);
+		geral.escolhas_0(t1, vet);
+
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
+						destino();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
+
+	}
+
+	public void casaNobreVitoria2(Texto t1) {
+		Geral geral = new Geral();
+
+		vet.OQueVoceQuerAssassin(2);
+		geral.escolhas_2(t1, vet);
+
+		escolha1 = new ActionListener() { // Action caso escolha a 1� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				casaNobreVitoria2_1(t1, 1);
+			}
+		};
+
+		escolha2 = new ActionListener() {// Action caso escolha a 2� op��o
+
+			public void actionPerformed(ActionEvent e) {
+
+				t1.getTexto().remove(geral.getChoice().getPanel_1());
+				casaNobreVitoria2_1(t1, 2);
 
 			}
 		};
 
 		geral.getChoice().getOpcao1().addActionListener(escolha1);
 		geral.getChoice().getOpcao2().addActionListener(escolha2);
+
+	}
+
+	public void casaNobreVitoria2_1(Texto t1, int x) {
+		Geral geral = new Geral();
+
+		vet.porqueDeveriaMeImportar(x);
+		geral.escolhas_0(t1, vet);
+		continuar = new ActionListener() {
+			int cont = 0;
+
+			public void actionPerformed(ActionEvent e) {
+				if (geral.isFlag()) {
+					if (cont == (vet.getTx().length - 1)) {
+						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
+						destino();
+					} else
+						cont++;
+				}
+			}
+		};
+
+		t1.getContinuar().addActionListener(continuar);
 
 	}
 

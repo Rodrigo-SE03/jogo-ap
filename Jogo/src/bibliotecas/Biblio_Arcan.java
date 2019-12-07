@@ -662,10 +662,8 @@ public class Biblio_Arcan extends Biblioteca {
 				+ "<br/>come\u00E7a a correr pelas catacumbas, por " + "<br/>sorte voc\u00EA encontra uma passagem que"
 				+ "<br/>d\u00E1 nos esgotos da cidade. Depois de "
 				+ "<br/>restaurar suas for\u00E7as voc\u00EA pode tentar"
-				+ "<br/>enfrentar a besta de novo, mas ser\u00E1 que  "
-				+ "<br/>que voc\u00EA n\u00E3o encontrou o livro de " + "<br/>Merlin. Voc\u00EA pode tentar novamente, "
-				+ "<br/>h\u00E1 tempo para isso?" + "<html>";
-		linhas[1] = 8;
+				+ "<br/>enfrentar a besta de novo, mas ser\u00E1 que  " + "<br/>h\u00E1 tempo para isso?" + "<html>";
+		linhas[1] = 6;
 	}
 
 	public void catedralVitoria() {

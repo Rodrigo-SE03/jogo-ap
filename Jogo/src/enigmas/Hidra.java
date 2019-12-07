@@ -250,8 +250,6 @@ public class Hidra {
 				case 2:
 					new Hist_Guerreior(player).catedralVitoria();
 					break;
-				default:
-					break;
 				}
 
 			}
