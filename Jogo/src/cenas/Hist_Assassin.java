@@ -14,6 +14,7 @@ import enigmas.Hidra;
 import enigmas.Labirinto;
 import enigmas.Porta;
 import graficos.Geral;
+import graficos.Loading;
 import graficos.Texto;
 import mapas.Maps;
 import menus.Creditos;
@@ -231,7 +232,16 @@ public class Hist_Assassin {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						musica.setVolume(0.0f);
-						new Labirinto(player, t1.getTexto());
+						t1.getTexto().dispose();
+						Loading load = new Loading();
+						load.start();
+						new Thread() {
+							public void run() {
+								Labirinto lab = new Labirinto(player);
+								load.setCarregando(false);
+								lab.go();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -712,7 +722,7 @@ public class Hist_Assassin {
 	public void guerraVitoria() {
 		musica.TocaMusica("src/sons/final.wav");
 		musica.setVolume(0.7f);
-		
+
 		switch (player.getQtd()) {
 		case 1:
 			vet.vitoria3Recrutados();
@@ -727,7 +737,7 @@ public class Hist_Assassin {
 			guerraBon_Zero();
 			break;
 		}
-		if (player.getQtd() > 0 ) {
+		if (player.getQtd() > 0) {
 			Geral geral = new Geral();
 			Texto t1 = new Texto();
 			geral.escolhas_0(t1, vet);

@@ -51,7 +51,7 @@ public class Labirinto {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new Labirinto(new Jogador(), new JFrame());
+					new Labirinto(new Jogador());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -59,15 +59,13 @@ public class Labirinto {
 		});
 	}
 
-	public Labirinto(Jogador player, JFrame carregar) {
+	public Labirinto(Jogador player) {
 		this.player = player;
 		this.icone = new ImageIcon("src/imagens/Icone.png");
 		this.size = Toolkit.getDefaultToolkit().getScreenSize();
 		musica = new Musica();
 		initialize();
 		testaMusica();
-		go();
-		carregar.dispose();
 		this.time = 90;
 		this.min = 1;
 		this.seg = 30;
@@ -147,7 +145,7 @@ public class Labirinto {
 
 	}
 	
-	private void go() {
+	public void go() {
 		
 		frame.setVisible(true);
 		dica.setVisible(true);

@@ -46,27 +46,28 @@ public class Hist_Guerreior {
 
 		continuar = new ActionListener() {
 			int cont = 0;
-			int no=0;
+			int no = 0;
+
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					//System.out.println(cont);
-					switch(cont) {
+					// System.out.println(cont);
+					switch (cont) {
 					case 0:
 						musica.TocaMusica("src/sons/mercado.wav");
 						musica.setVolume(0.0f);
-						musica.aumentaVolume(0.6f,60);
+						musica.aumentaVolume(0.6f, 60);
 						break;
 					case 6:
-						musica.reduzVolume(0.0f,60);
+						musica.reduzVolume(0.0f, 60);
 						musica2.TocaMusica("src/sons/sarcificio.wav");
 						musica2.setVolume(0.0f);
-						musica2.aumentaVolume(0.6f,60);
+						musica2.aumentaVolume(0.6f, 60);
 						break;
 					default:
 						break;
 					}
-					if (cont == 20 && no==0) {
-						no=1;
+					if (cont == 20 && no == 0) {
+						no = 1;
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
 						destino();
@@ -117,10 +118,10 @@ public class Hist_Guerreior {
 	}
 
 	public void destino() {
-		if(musica.isPlaying()) {
+		if (musica.isPlaying()) {
 			musica.stop();
 		}
-		if(musica2.isPlaying()) {
+		if (musica2.isPlaying()) {
 			musica2.stop();
 		}
 
@@ -203,11 +204,11 @@ public class Hist_Guerreior {
 	public void torre() {
 		musica.TocaMusica("src/sons/torre.wav");
 		musica.setVolume(0.6f);
-		
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 		Loading carregar = new Loading();
-		
+
 		if (player.getFirstTry(2)) {
 			vet.grr_3_torre();
 			player.setFirstTry(2, false);
@@ -223,9 +224,18 @@ public class Hist_Guerreior {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						t1.getTexto().dispose();
 						musica.stop();
-						new Labirinto(player,t1.getTexto());
-						
+						Loading load = new Loading();
+						load.start();
+						new Thread() {
+							public void run() {
+								Labirinto lab = new Labirinto(player);
+								load.setCarregando(false);
+								lab.go();
+							}
+						}.start();
+
 					} else
 						cont++;
 				}
@@ -324,11 +334,9 @@ public class Hist_Guerreior {
 
 		musica.TocaMusica("src/sons/prisao.wav");
 		musica.setVolume(0.9f);
-		
+
 		vet.grr_3_catedral();
 		geral.escolhas_3(t1, vet);
-		
-		
 
 		escolha1 = new ActionListener() {
 
@@ -444,7 +452,7 @@ public class Hist_Guerreior {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						if(musica.isPlaying())
+						if (musica.isPlaying())
 							musica.stop();
 						new Hidra(player);
 					} else
@@ -540,10 +548,10 @@ public class Hist_Guerreior {
 	}
 
 	public void alameda() {
-		
+
 		musica.TocaMusica("src/sons/alameda.wav");
 		musica.setVolume(0.6f);
-		
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -656,7 +664,7 @@ public class Hist_Guerreior {
 	public void guerra() {
 		musica.TocaMusica("src/sons/preGuerra.wav");
 		musica.setVolume(0.6f);
-		
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -689,7 +697,7 @@ public class Hist_Guerreior {
 	public void guerraVitoria() {
 		musica.TocaMusica("src/sons/final.wav");
 		musica.setVolume(1.0f);
-		
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -767,7 +775,7 @@ public class Hist_Guerreior {
 	public void guerraDerrota() {
 		musica.TocaMusica("src/sons/final.wav");
 		musica.setVolume(1.0f);
-		
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 

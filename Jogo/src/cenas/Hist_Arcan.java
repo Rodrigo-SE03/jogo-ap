@@ -25,7 +25,7 @@ import sons.Musica;
 
 public class Hist_Arcan {
 
-	private ActionListener continuar, escolha1, escolha2, escolha3;
+	private ActionListener continuar, escolha1, escolha2;
 	private Biblio_Arcan vet = new Biblio_Arcan(); // Vetor de texto
 	private static Musica musica = new Musica();
 	private Musica[] musicasSegunda;
@@ -250,17 +250,17 @@ public class Hist_Arcan {
 					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-//						t1.getTexto().dispose();
+						t1.getTexto().dispose();
 						musica.stop();
-//						Loading load = new Loading();
-//						load.start();
-//						try {
-//							Thread.sleep(5000);
-//						} catch (InterruptedException e1) {
-//							// TODO Auto-generated catch block
-//							e1.printStackTrace();
-//						}
-						new Labirinto(player, t1.getTexto());
+						Loading load = new Loading();
+						load.start();
+						new Thread() {
+							public void run() {
+								Labirinto lab = new Labirinto(player);
+								load.setCarregando(false);
+								lab.go();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -363,13 +363,13 @@ public class Hist_Arcan {
 	}
 
 	public void catedral() {
-		
+
 		if (musica.isPlaying()) {
 			musica.stop();
 		}
 		musica.TocaMusica("src/sons/prisao.wav");
 		musica.setVolume(1.0f);
-		
+
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -729,7 +729,7 @@ public class Hist_Arcan {
 		}
 
 		geral.escolhas_2(t1, vet);
-		
+
 		continuar = new ActionListener() {
 			int cont = 0;
 
@@ -739,7 +739,7 @@ public class Hist_Arcan {
 					case 0:
 						musica.TocaMusica("src/sons/sarcificio.wav");
 						musica.setVolume(0.0f);
-						musica.aumentaVolume(0.6f,60);
+						musica.aumentaVolume(0.6f, 60);
 						break;
 					default:
 						break;
@@ -852,7 +852,7 @@ public class Hist_Arcan {
 					case 0:
 						musica.TocaMusica("src/sons/sacrificio.wav");
 						musica.setVolume(0.0f);
-						musica.aumentaVolume(0.6f,60);
+						musica.aumentaVolume(0.6f, 60);
 						break;
 					default:
 						break;

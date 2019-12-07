@@ -4,6 +4,7 @@ package cenas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -104,6 +105,14 @@ public class Hist_Inicio {
 	public void inicio() { // 1� parte do pr�logo
 
 		Texto t1 = new Texto(); // Cria o JFrame e instancia a classe que gera os textos
+		JButton pular = new JButton("Pular");
+		
+		ImageIcon pul = new ImageIcon("src/imagens/pular.png");
+		pul.setImage(pul.getImage().getScaledInstance(130, 35, 100));
+		pular.setIcon(pul);
+		pular.setBounds(470, 10, 120, 30);
+		t1.getTexto().add(pular);
+
 		Geral geral = new Geral(); // Classe geral para manipular a gera��o dos textos
 		vet.inicio(); // Instancia os vetores de texto para o conjunto de textos do metodo inicio
 		geral.escolhas_0(t1, vet); // Chama a fun�ao para manipular a gera��o de textos
@@ -166,9 +175,6 @@ public class Hist_Inicio {
 				}
 			}
 		};
-		JButton pular = new JButton("Pular");
-		pular.setBounds(500, 0, 100, 30);
-		t1.getTexto().add(pular);
 
 		pular.addActionListener(new ActionListener() {
 
@@ -422,7 +428,7 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					//System.out.println(cont);
+					// System.out.println(cont);
 					switch (cont) {
 					default:
 						break;
@@ -631,8 +637,8 @@ public class Hist_Inicio {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(0);
 						t1.getTexto().dispose();
-						new Roda(vet.getPlayer(),t1);
-						//new Hist_Arcan(vet.getPlayer()).arcan1(t1);
+						new Roda(vet.getPlayer(), t1);
+						// new Hist_Arcan(vet.getPlayer()).arcan1(t1);
 					} else
 						cont++;
 
@@ -642,7 +648,6 @@ public class Hist_Inicio {
 
 		t1.getContinuar().addActionListener(continuar);
 	}
-	
 
 	public void alameda3(Texto t1) {
 		if (musica.isPlaying()) {
@@ -783,8 +788,8 @@ public class Hist_Inicio {
 						t1.getContinuar().removeActionListener(continuar);
 						vet.getPlayer().setClase(1);
 						t1.getTexto().dispose();
-						new Cartola(vet.getPlayer(),t1);
-						//new Hist_Assassin(vet.getPlayer()).assassin1(t1);
+						new Cartola(vet.getPlayer(), t1);
+						// new Hist_Assassin(vet.getPlayer()).assassin1(t1);
 					} else
 						cont++;
 
@@ -847,8 +852,8 @@ public class Hist_Inicio {
 						vet.getPlayer().setClase(2);
 						t1.getTexto().dispose();
 						musica.stop();
-						//new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
-						new Cavalo(vet.getPlayer(),t1);
+						// new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
+						new Cavalo(vet.getPlayer(), t1);
 					} else
 						cont++;
 
@@ -972,8 +977,8 @@ public class Hist_Inicio {
 						vet.getPlayer().setClase(2);
 						t1.getTexto().dispose();
 						musica.stop();
-						//new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
-						new Cavalo(vet.getPlayer(),t1);
+						// new Hist_Guerreior(vet.getPlayer()).guerreiro1(t1);
+						new Cavalo(vet.getPlayer(), t1);
 					} else
 						cont++;
 				}
