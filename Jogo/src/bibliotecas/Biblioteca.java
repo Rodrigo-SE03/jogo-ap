@@ -8,11 +8,11 @@ public abstract class Biblioteca {
 	protected int[] linhas; // variavel para ajustar o JLabel ao tamanho do texto
 	protected Jogador player; // variavel para corrigir o g\u00EAnero do personagem nos textos
 	protected boolean masculino;
-	
+
 	// Getters and Setters
 	public void setPlayer(Jogador player) {
 		this.player = player;
-		if(this.player.getSexo() == 0)
+		if (this.player.getSexo() == 0)
 			masculino = true;
 	}
 
@@ -43,10 +43,5 @@ public abstract class Biblioteca {
 	public String getTx(int x) {
 		return tx[x];
 	}
-
-	public int getLinhas(int x) {
-		return linhas[x];
-	}
-
 	// Fim dos Getter and Setters
 }

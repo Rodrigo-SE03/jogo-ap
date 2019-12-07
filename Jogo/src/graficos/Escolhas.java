@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 public class Escolhas {
 
@@ -15,7 +16,7 @@ public class Escolhas {
 	private JButton opcao1 = new JButton();
 	private JButton opcao2 = new JButton();
 	private JButton opcao3 = new JButton();
-	private JLabel txt = new JLabel();
+	private JTextPane txt = new JTextPane();
 
 	public JPanel getPanel_1() {
 		return panel_1;
@@ -40,9 +41,11 @@ public class Escolhas {
 		panel_1.setLayout(null);
 
 		txt.setText(tex);
+		txt.setOpaque(false);
+		txt.setEditable(false);
 		txt.setForeground(Color.BLACK);
 		txt.setFont(new Font("Georgia", Font.BOLD, 25));
-		txt.setBounds(50, 11, 532, 179);
+		txt.setBounds(50, 50, 532, 150);
 		panel_1.add(txt);
 
 		opcao1.setText(op1);
@@ -83,10 +86,12 @@ public class Escolhas {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
-		JLabel txt = new JLabel(tex);
+		txt.setText(tex);
+		txt.setOpaque(false);
+		txt.setEditable(false);
 		txt.setForeground(Color.BLACK);
 		txt.setFont(new Font("Georgia", Font.BOLD, 25));
-		txt.setBounds(50, 11, 532, 179);
+		txt.setBounds(50, 50, 532, 150);
 		panel_1.add(txt);
 
 		opcao1.setText(op1);

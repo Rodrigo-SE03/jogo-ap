@@ -8,12 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextPane;
 
 public class Texto {
 
 	private JFrame frame;
 	private JButton continuar;
-	private JLabel txt;
+	private JTextPane txt;
 	private JLabel fundo;
 	
 	public JFrame getTexto() {
@@ -22,10 +23,6 @@ public class Texto {
 
 	public JButton getContinuar() {
 		return continuar;
-	}
-
-	public void setTxt(JLabel txt) {
-		this.txt = txt;
 	}
 
 	public Texto() {
@@ -57,7 +54,9 @@ public class Texto {
 		this.frame.getContentPane().add(continuar);
 
 		// definição do texto da janela
-		txt = new JLabel();
+		txt = new JTextPane();
+		txt.setOpaque(false);
+		txt.setEditable(false);
 		this.frame.getContentPane().add(txt);
 
 		// fundo
@@ -67,7 +66,7 @@ public class Texto {
 		this.frame.getContentPane().add(fundo);
 	}
 
-	public void atualizaTexto(String tex, int pulalinha) {
+	public void atualizaTexto(String tex) {
 
 		// botão continuar
 		this.frame.add(continuar);
@@ -78,7 +77,7 @@ public class Texto {
 
 		// definição do texto da janela
 		this.txt.setText(tex);
-		this.txt.setBounds(50, 52, tex.length() * 10, 30 * (1 + pulalinha));
+		this.txt.setBounds(50, 50, 500, 400);
 		this.txt.setFont(new Font("Georgia", Font.BOLD, 25));
 		this.txt.setForeground(Color.black);
 		this.txt.setVisible(true);
