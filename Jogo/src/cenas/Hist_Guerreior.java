@@ -322,7 +322,7 @@ public class Hist_Guerreior {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
-		musica.TocaMusica("src/sons/catedral.wav");
+		musica.TocaMusica("src/sons/prisao.wav");
 		musica.setVolume(0.9f);
 		
 		vet.grr_3_catedral();

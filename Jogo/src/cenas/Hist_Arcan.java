@@ -363,6 +363,13 @@ public class Hist_Arcan {
 	}
 
 	public void catedral() {
+		
+		if (musica.isPlaying()) {
+			musica.stop();
+		}
+		musica.TocaMusica("src/sons/prisao.wav");
+		musica.setVolume(1.0f);
+		
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -377,13 +384,13 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					// System.out.println(cont);
 					switch (cont) {
-					case 0:
-						if (musica.isPlaying()) {
-							musica.stop();
-						}
-						musica.TocaMusica("src/sons/catedral.wav");
-						musica.setVolume(0.9f);
-						break;
+//					case 0:
+//						if (musica.isPlaying()) {
+//							musica.stop();
+//						}
+//						musica.TocaMusica("src/sons/prisao.wav");
+//						musica.setVolume(0.9f);
+//						break;
 					default:
 						break;
 					}
@@ -516,7 +523,7 @@ public class Hist_Arcan {
 	}
 
 	public void catedralVitoria() {
-
+		musica.aumentaVolume(1.0f, 40);
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
@@ -531,13 +538,13 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch (cont) {
-					case 0:
-						musica.aumentaVolume(0.9f, 50);
-						break;
-					default:
-						break;
-					}
+//					switch (cont) {
+//					case 0:
+//						musica.aumentaVolume(0.9f, 50);
+//						break;
+//					default:
+//						break;
+//					}
 					if (cont == (vet.getTx().length - 1)) {
 						new Thread() {
 							public void run() {
@@ -567,6 +574,10 @@ public class Hist_Arcan {
 	}
 
 	public void alameda() {
+		if (musica.isPlaying())
+			musica.stop();
+		musica.TocaMusica("src/sons/alameda.wav");
+		musica.setVolume(0.3f);
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
@@ -586,12 +597,12 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					switch (cont) {
-					case 0:
-						if (musica.isPlaying())
-							musica.stop();
-						musica.TocaMusica("src/sons/alameda.wav");
-						musica.setVolume(0.3f);
-						break;
+//					case 0:
+//						if (musica.isPlaying())
+//							musica.stop();
+//						musica.TocaMusica("src/sons/alameda.wav");
+//						musica.setVolume(0.3f);
+//						break;
 					case 2:
 						musica.aumentaVolume(0.6f, 50);
 						break;
