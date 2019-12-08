@@ -372,9 +372,22 @@ public class Hist_Inicio {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+					switch(cont) {
+					case 6:
+						if(musica.isPlaying()) {
+							musica.reduzVolume(0.0f,40);
+							musica.verifica();
+						}
+						if(musica2.isPlaying()) {
+							musica2.reduzVolume(0.0f,40);
+							musica2.verifica();
+						}
+						break;
+					default:
+						break;
+					}
 					if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
 						t1.getContinuar().removeActionListener(continuar);
-						musica2.stop();
 						alameda3(t1);
 					} else // Atualiza o contador para verificar a posi��o do vetor de texto
 						cont++;
