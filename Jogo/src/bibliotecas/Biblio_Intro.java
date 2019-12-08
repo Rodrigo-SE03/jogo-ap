@@ -381,7 +381,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 			tx[5] = "Arcana:\n\nO que te trouxe aqui? Voc\u00EA entra sem "
 					+ " convite na torre dos maiores arcanos conhecidos, me pergunto se voc\u00EA \u00E9 "
 					+ " nunca ouviu falar e voc\u00EA vem sem hesitar, me pergunto se \u00E9 sinal de "
-					+ " loucura ou burrisse.... ";
+					+ " loucura ou burrice.... ";
 		}
 
 		tx[0] = "Voc\u00EA come\u00E7a a andar pela torre procurando algo que nem voc\u00EA sabe o" + " que \u00E9. ";
