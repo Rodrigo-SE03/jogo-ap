@@ -149,15 +149,15 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		}
 
-		tx[0] = "O mapa est\u00E1 nos arquivos daIgreja, mas n\u00E3o ser\u00E1 f\u00E1cil "
-				+ " conseguir. J\u00E1 tem alguns anosque a Igreja rompeu com a "
-				+ " Guarda Real e se recusa acooperar em diversos assuntos, "
-				+ " inclusive relativos \u00E0 seguran\u00E7anacional. ";
+		tx[0] = "O mapa est\u00E1 nos arquivos da Igreja, mas n\u00E3o ser\u00E1 f\u00E1cil "
+				+ " conseguir. J\u00E1 tem alguns anos que a Igreja rompeu com a "
+				+ " Guarda Real e se recusa a cooperar em diversos assuntos, "
+				+ " inclusive relativos \u00E0 seguran\u00E7a nacional. ";
 
-		tx[1] = "Voc\u00EA deve conseguir o mapacom a Igreja de qualquer forma, "
-				+ " mas primeiro voc\u00EA deve tentarvias diplom\u00E1ticas. ";
+		tx[1] = "Voc\u00EA deve conseguir o mapa com a Igreja de qualquer forma, "
+				+ " mas primeiro voc\u00EA deve tentar vias diplom\u00E1ticas. ";
 
-		tx[2] = "Na mesma manh\u00E3 voc\u00EA seencaminha para a Catedral, "
+		tx[2] = "Na mesma manh\u00E3 voc\u00EA se encaminha para a Catedral, "
 				+ " chegando l\u00E1 pede para falar com o Bispo. Ele te atende e"
 				+ " ent\u00E3o come\u00E7a a discuss\u00E3o. ";
 
@@ -181,12 +181,12 @@ public class Biblio_Guerreiro extends Biblioteca {
 			if (masculino) {
 
 				tx[0] = "Bispo: \n\nNada melhor que um bom e "
-						+ " tradicional vinho, n\u00E3o \u00E9 mesmocapit\u00E3o? ";
+						+ " tradicional vinho, n\u00E3o \u00E9 mesmo capit\u00E3o? ";
 
 			} else {
 
 				tx[0] = "Bispo: \n\nNada melhor que um bom e "
-						+ " tradicional vinho, n\u00E3o \u00EA mesmocapit\u00E3? ";
+						+ " tradicional vinho, n\u00E3o \u00EA mesmo capit\u00E3? ";
 
 			}
 
@@ -198,7 +198,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 			y = 2;
 			tx = new String[12];
 
-			tx[0] = "Bispo:\n\nVejo que voc\u00EA tem um paladarrefinado. ";
+			tx[0] = "Bispo:\n\nVejo que voc\u00EA tem um paladar refinado. ";
 
 			tx[1] = "Voc\u00EA\n\nNada melhor do que frutas com \u00E1lcool.";
 			break;
@@ -208,7 +208,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 			y = 1;
 			tx = new String[11];
 
-			tx[0] = "Bispo: \n\nSe este \u00E9 o seu desejo, nadaposso fazer. ";
+			tx[0] = "Bispo: \n\nSe este \u00E9 o seu desejo, nada posso fazer. ";
 			break;
 
 		}
@@ -225,37 +225,37 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		}
 
-		tx[y + 1] = "Voc\u00EA:\n\nVim a mando do GeneralAlexander, tem algo em posse"
-				+ " da Catedral que interessa aGuarda Real.";
+		tx[y + 1] = "Voc\u00EA:\n\nVim a mando do General Alexander. Tem algo em posse"
+				+ " da Catedral que interessa a Guarda Real.";
 
 		tx[y + 2] = "Bispo:\n\nE o que seria isso?";
 
-		tx[y + 3] = "Voc\u00EA:\n\nMapas, do subterr\u00E2neo da "
-				+ " cidade, preciso de todos que aIgreja possuir. ";
+		tx[y + 3] = "Voc\u00EA:\n\nMapas do subterr\u00E2neo da "
+				+ " cidade, preciso de todos que a Igreja possuir. ";
 
-		tx[y + 4] = "Bispo:\n\nE por que eu daria para voc\u00EA?O que n\u00F3s vamos ganhar comisso? ";
+		tx[y + 4] = "Bispo:\n\nE por que eu os daria para voc\u00EA? O que n\u00F3s vamos ganhar comisso? ";
 
 		tx[y + 5] = "Voc\u00EA:\n\nA prote\u00E7\u00E3o da cidade, n\u00E3o sei "
-				+ " se o senhor sabe, mas Bethesdaest\u00E1 se aproximando e ela vaidestruir todos n\u00F3s. ";
+				+ " se o senhor sabe, mas Bethesda est\u00E1 se aproximando e ela vai destruir todos n\u00F3s. ";
 
 		tx[y + 6] = "Bispo:\n\nTodos voc\u00EAs no caso. ";
 
-		tx[y + 7] = "Bispo:\n\nBethesda compartilha damesma f\u00EA que Helaria, eles "
+		tx[y + 7] = "Bispo:\n\nBethesda compartilha da mesma f\u00EA que Helaria, eles "
 				+ " nunca amea\u00E7ariam a Igreja.";
 
 		tx[y + 8] = "Voc\u00EA:\n\nComo voc\u00EA pode ser t\u00E3o "
-				+ " ego\u00EDsta? Pense em quantaspessoas v\u00E3o morrer se n\u00F3s "
-				+ " falharmos em proteger acidade. ";
+				+ " ego\u00EDsta? Pense em quantas pessoas v\u00E3o morrer se n\u00F3s "
+				+ " falharmos em proteger a cidade. ";
 
 		tx[y + 9] = "Bispo:\n\nHelarianos v\u00E3o morrer se "
-				+ " voc\u00EAs falharem e Bethesdencesir\u00E3o morrer se voc\u00EAs vencerem. "
-				+ " A Igreja n\u00E3o pode escolhersobre a vida de dois fi\u00EAis.";
+				+ " voc\u00EAs falharem e Bethesdences ir\u00E3o morrer se voc\u00EAs vencerem. "
+				+ " A Igreja n\u00E3o pode escolher sobre a vida de dois fi\u00EAis.";
 
 		choice = "Qual \u00E9 sua resposta? ";
 
 		op1 = "Seu cinismo me impressiona.";
 
-		op2 = "A quest\u00E3o do mapa nuncachegou a ser um pedido. ";
+		op2 = "A quest\u00E3o do mapa nunca chegou a ser um pedido. ";
 
 	}
 
@@ -265,7 +265,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx[0] = "Bispo:\n\nN\u00E3o \u00E9 cinismo, \u00E9 quest\u00E3o de "
 				+ " \u00E9tica. Todas as vidas s\u00E3o iguais perante os deuses. N\u00E3o temos o "
-				+ " direito de priorizar esta emdetrimento daquela.";
+				+ " direito de priorizar esta em detrimento daquela.";
 
 		tx[1] = "Voc\u00EA:\n\nPasse bem.";
 
@@ -274,7 +274,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[3] = "Voc\u00EA vai embora da Catedral, mas agora precisa pensar em "
 				+ " uma outra forma de obter esse mapa. ";
 
-		tx[4] = "Voc\u00EA volta para o castelo parareportar os acontecimentos parao General Alexander. ";
+		tx[4] = "Voc\u00EA volta para o castelo para reportar os acontecimentos ao General Alexander. ";
 
 		tx[5] = "Alexander:\n\nEntendo.";
 
@@ -284,23 +284,23 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ " que existe dentro da Catedral?\u00C9 l\u00E1 que eles mant\u00E9m os infi\u00EAis "
 				+ " at\u00EA o julgamento. ";
 
-		tx[8] = "Voc\u00EA:\n\nSim, j\u00E1 ouvi falar, emboranunca tenha ido.";
+		tx[8] = "Voc\u00EA:\n\nSim, j\u00E1 ouvi falar, embora nunca tenha ido.";
 
-		tx[9] = "Alexander:\n\nSegundo o que se diz essa pris\u00E3o tem acesso a diversas"
+		tx[9] = "Alexander:\n\nSegundo o que se diz, essa pris\u00E3o tem acesso a diversas"
 				+ " partes da Catedral, inclusive aos arquivos confidenciais.";
 
-		tx[10] = "Voc\u00EA:\n\nVoc\u00EA quer que eu invada apris\u00E3o, \u00E9 isso? ";
+		tx[10] = "Voc\u00EA:\n\nVoc\u00EA quer que eu invada a pris\u00E3o, \u00E9 isso? ";
 
-		tx[11] = "Alexander:\n\nE me traga os mapas, mastome cuidado, dizem que l\u00E1 \u00E9um labirinto. ";
+		tx[11] = "Alexander:\n\nE me traga os mapas, mas tome cuidado, dizem que l\u00E1 \u00E9 um labirinto. ";
 
-		tx[12] = "Voc\u00EA\n\nMuito bem, quando devopartir? ";
+		tx[12] = "Voc\u00EA\n\nMuito bem, quando devo partir? ";
 
 		tx[13] = "Alexander:\n\nEsta noite, \u00E9 mais seguro.";
 
-		tx[14] = "Voc\u00EA vai para a Catedral, masantes de chegar entra em bueiro "
+		tx[14] = "Voc\u00EA vai para a Catedral, mas antes de chegar entra em um bueiro "
 				+ " e abre seu caminho em dire\u00E7\u00E3o "
-				+ " \u00E0 pris\u00E3o. Chegando l\u00E1 voc\u00EAcome\u00E7a a procurar pelos "
-				+ " arquivos, mas, quando chega no local v\u00EA que est\u00E1 guardado por "
+				+ " \u00E0 pris\u00E3o. Chegando l\u00E1 voc\u00EA come\u00E7a a procurar pelos "
+				+ " arquivos mas, quando chega no local v\u00EA que est\u00E1 guardado por "
 				+ " um terr\u00EDvel monstro de muitas cabe\u00E7as.";
 
 		tx[15] = "Aparentemente ele responde \u00E0uma espec\u00EDfica m\u00E1quina de "
@@ -315,25 +315,25 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		if (masculino) {
 
-			tx[1] = "Por conta de suas a\u00E7\u00F5esvoc\u00EA \u00E9 jogado na pris\u00E3o dentro "
-					+ " da Catedral e agora precisaconseguir o mapa e escaparantes que seja tarde demais. ";
+			tx[1] = "Por conta de suas a\u00E7\u00F5es voc\u00EA \u00E9 jogado na pris\u00E3o dentro "
+					+ " da Catedral e agora precisa conseguir o mapa e escapar antes que seja tarde demais. ";
 
 		} else {
 
-			tx[1] = "Por conta de suas a\u00E7\u00F5esvoc\u00EA \u00EA jogada na pris\u00E3o dentro "
-					+ " da Catedral e agora precisaconseguir o mapa e escaparantes que seja tarde demais. ";
+			tx[1] = "Por conta de suas a\u00E7\u00F5es voc\u00EA \u00E9 jogada na pris\u00E3o dentro "
+					+ " da Catedral e agora precisa conseguir o mapa e escapar antes que seja tarde demais. ";
 
 		}
 
-		tx[0] = "Voc\u00EA retira sua espada e vaiatacar o Bispo. Mas ele grita"
-				+ " pelos guardas e eles chegam antes antes que voc\u00EA consiga acertaro Sacerdote. ";
+		tx[0] = "Voc\u00EA retira sua espada e vai atacar o Bispo. Mas ele grita"
+				+ " pelos guardas e eles chegam antes antes que voc\u00EA consiga acert\u00E1-lo. ";
 
-		tx[2] = "Chega \u00E0 noite e os guardasest\u00E3o dormindo, voc\u00EA consegue "
-				+ " arrombar a porta sem grandesproblemas. ";
+		tx[2] = "Chega a noite e os guardas est\u00E3o dormindo. Voc\u00EA consegue "
+				+ " arrombar a porta sem grandes problemas.";
 
-		tx[3] = "Voc\u00EA foge e procura pelosarquivos, encontra a entrada, "
-				+ " mas primeiro voc\u00EA precisapassar por uma terr\u00EDvel criatura "
-				+ " que guarda a sala com apenasuma pequena espada que voc\u00EAencontrou. ";
+		tx[3] = "Voc\u00EA foge e procura pelos arquivos. Encontra a entrada, "
+				+ " mas primeiro voc\u00EA precisa passar por uma terr\u00EDvel criatura "
+				+ " que guarda a sala. Sua \u00FAnica posse \u00E9 uma pequena espada que voc\u00EA encontrou. ";
 
 	}
 
@@ -341,8 +341,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[1];
 
-		tx[0] = "Voc\u00EA vai para a Catedral, masantes de chegar entra em bueiro "
-				+ " e abre seu caminho em dire\u00E7\u00E3o\u00E0 aos arquivos à hidra ";
+		tx[0] = "Voc\u00EA vai para a Catedral, mas antes de chegar entra em bueiro "
+				+ " e abre seu caminho em dire\u00E7\u00E3o\u00E0 aos arquivos e \u00E0 hidra ";
 
 	}
 
@@ -351,8 +351,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx = new String[1];
 
 		tx[0] = "Agora a porta para os arquivos est\u00E1 aberta e voc\u00EA pode entrar. Demora "
-				+ " algumas horas, mas eventualmente voc\u00EAconsegue encontrar o livro que cont\u00E9m os"
-				+ " mapas. Assim que o encontra, voc\u00EA fogeda Catedral e volta para o Castelo da "
+				+ " algumas horas, mas eventualmente voc\u00EA consegue encontrar o livro que cont\u00E9m os"
+				+ " mapas. Assim que o encontra, voc\u00EA foge da Catedral e volta para o Castelo da "
 				+ " Guarda Real para descansar.";
 
 	}
@@ -364,20 +364,20 @@ public class Biblio_Guerreiro extends Biblioteca {
 		switch (x) {
 		case 1:
 
-			tx[0] = "A luta torna - se muito longa, voc\u00EA n\u00E3o "
+			tx[0] = "A luta torna-se muito longa, voc\u00EA n\u00E3o "
 					+ " conseguir\u00E1 batalhar por muito mais tempo.";
 			break;
 
 		case 2:
 
-			tx[0] = "A Hidra \u00E9 forte de mais e a cada ataque"
-					+ " ela cresce mais. Voc\u00EA n\u00E3o tem chancesde venc\u00EA-la agora.";
+			tx[0] = "A Hidra \u00E9 muito forte e a cada ataque"
+					+ " ela cresce mais. Voc\u00EA n\u00E3o tem chances de venc\u00EA-la agora.";
 			break;
 
 		}
 
-		tx[1] = "Sua \u00FAnica op\u00E7\u00E3o \u00E9 fugir, voc\u00EA se vira e "
-				+ " come\u00E7a a correr, voc\u00EA encontra umapassagem que "
+		tx[1] = "Sua \u00FAnica op\u00E7\u00E3o \u00E9 fugir. Voc\u00EA se vira e "
+				+ " come\u00E7a a correr. Voc\u00EA encontra uma passagem que "
 				+ " d\u00E1 nos esgotos da cidade. Depois de "
 				+ " restaurar suas for\u00E7as voc\u00EA pode tentar enfrentar a besta de novo.";
 
@@ -397,26 +397,26 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		}
 
-		tx[0] = "Voc\u00EA precisa recrutar alguns arcanistaspara lutar ao seu lado nesta guerra. Para"
-				+ " isso voc\u00EA vai para a Torre Arcana e \u00E9recebido por arcanistas menores. "
-				+ " Voc\u00EA explica o que quer l\u00E1 e eles teencaminham para a sala onde os "
-				+ " arcanistas especializados em batalhatreinam. ";
+		tx[0] = "Voc\u00EA precisa recrutar alguns arcanistas para lutar ao seu lado nesta guerra. Para"
+				+ " isso voc\u00EA vai para a Torre Arcana e \u00E9 recebido por arcanistas menores. "
+				+ " Voc\u00EA explica o que quer l\u00E1 e eles te encaminham para a sala onde os "
+				+ " arcanistas especializados em batalha treinam. ";
 
 		tx[1] = "L\u00E1 voc\u00EA conversa com Muriel, a l\u00EDder dessa inst\u00E2ncia da Ordem Arcana.";
 
 		tx[2] = "Muriel:\n\nO que voc\u00EA procura aqui, " + player.getNome() + " ? ";
 
 		tx[3] = "Você:\n\nPreciso da ajuda de voc\u00EAs. A guerra"
-				+ " contra Bethesda se aproxima e sua ajudaser\u00E1 imprescind\u00EDvel.";
+				+ " contra Bethesda se aproxima e sua ajuda ser\u00E1 imprescind\u00EDvel.";
 
 		tx[4] = "Muriel:\n\nMuito bem, voc\u00EA quer nossa ajuda e n\u00F3s"
-				+ " queremos te ajudar, mas primeiro precisoque voc\u00EA prove que tipo de pessoa voc\u00EA "
-				+ " \u00E9, para sabermos se vale a pena lutar aoseu lado.";
+				+ " queremos te ajudar, mas primeiro preciso que voc\u00EA prove que tipo de pessoa voc\u00EA "
+				+ " \u00E9, para sabermos se vale a pena lutar ao seu lado.";
 
-		tx[5] = "Você:\n\nMuito bem, o que voc\u00EA quer que eufa\u00E7a?";
+		tx[5] = "Você:\n\nMuito bem, o que voc\u00EA quer que eu fa\u00E7a?";
 
 		tx[6] = "Muriel:\n\nExiste um livro de feiti\u00E7os dentro de um "
-				+ " labirinto aqui. O Tratado da Magia, \u00E9 seu "
+				+ " labirinto aqui. O Tratado da Magia \u00E9 seu "
 				+ " nome. Eu preciso que voc\u00EA o traga para mim at\u00E9 o final do dia.";
 
 		tx[7] = "Você:\n\nAh, mas vai ser f\u00E1cil ent\u00E3o.";
@@ -431,14 +431,14 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx[11] = "Você:\n\nTudo bem, antes do fim do dia voc\u00EA ter\u00E1 esse livro.";
 
-		tx[12] = "Quando voc\u00EA est\u00E1 no caminho para olabirinto Muriel te chama.";
+		tx[12] = "Quando voc\u00EA est\u00E1 no caminho para o labirinto Muriel te chama.";
 
 		tx[13] = "Muriel:\n\nEspere, tem algo que preciso te dizer.";
 
 		tx[14] = "Muriel:\n\nAs partes precisam ser unidas em uma"
 				+ " ordem espec\u00EDfica de acordo com um poema, se pegar uma parte errada, ser\u00E1"
 				+ " obrigado a sair e tentar de novo algumas horas depois, quando o equil\u00EDbrio do "
-				+ " labirinto for restabelecido.";
+				+ " labirinto for reestabelecido.";
 
 		tx[15] = "Você:\n\nMuito bem, qual \u00E9 o poema.";
 
@@ -470,9 +470,9 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[1];
 
-		tx[0] = "Voc\u00EA sente uma grande energia indo emsua dire\u00E7\u00E3o e precisa sair do labirinto "
+		tx[0] = "Voc\u00EA sente uma grande energia indo em sua dire\u00E7\u00E3o e precisa sair do labirinto "
 				+ " para que o equil\u00EDbrio seja reestabelecido. "
-				+ " Algumas horas se passam e voc\u00EA podetentar novamente.";
+				+ " Algumas horas se passam e voc\u00EA pode tentar novamente.";
 
 	}
 
@@ -484,9 +484,9 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 			tx[2] = "Voz:\n\nParem, ele \u00E9 meu.";
 
-			tx[4] = "Kelastar:\n\nSou Kelastar. Ouvi que estavaprocurando por mim e vim pessoalmente "
+			tx[4] = "Kelastar:\n\nSou Kelastar. Ouvi que estava procurando por mim e vim pessoalmente "
 					+ " ao seu encontro. N\u00E3o \u00E9 sempre que um "
-					+ " Capit\u00E3o da Guarda Real vem meprocurar, pelo menos n\u00E3o em paz eusuponho. ";
+					+ " Capit\u00E3o da Guarda Real vem me procurar, pelo menos n\u00E3o em paz eu suponho. ";
 
 			tx[8] = "Kelastar:\n\nO que voc\u00EA quer comigo, capit\u00E3o? ";
 
@@ -494,9 +494,9 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 			tx[2] = "Voz:\n\nParem, ela \u00E9 minha.";
 
-			tx[4] = "Kelastar:\n\nSou Kelastar. Ouvi que estavaprocurando por mim e vim pessoalmente "
+			tx[4] = "Kelastar:\n\nSou Kelastar. Ouvi que estava procurando por mim e vim pessoalmente "
 					+ " ao seu encontro. N\u00E3o \u00E9 sempre que uma "
-					+ " Capit\u00E3 da Guarda Real vem meprocurar, pelo menos n\u00E3o em paz eusuponho. ";
+					+ " Capit\u00E3 da Guarda Real vem me procurar, pelo menos n\u00E3o em paz eu suponho. ";
 
 			tx[8] = "Kelastar:\n\nO que voc\u00EA quer comigo, capit\u00E3? ";
 
@@ -518,7 +518,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[7] = "Kelastar lidera o caminho e voc\u00EA o segue"
 				+ " O escrit\u00F3rio \u00E9 um lugar sujo e feio, tudo l\u00E1 "
 				+ " lembra decad\u00EAncia e corrup\u00E7\u00E3o, mas "
-				+ " voc\u00EAs est\u00E3o sozinhos e \u00E9 isso queimporta.";
+				+ " voc\u00EAs est\u00E3o sozinhos e \u00E9 isso que importa.";
 
 		tx[9] = "Voc\u00EA:\n\nVoc\u00EA \u00E9 um dos ladr\u00F5es mais habilidosos"
 				+ " dessa cidade, dizem que n\u00E3o exista uma "
@@ -527,7 +527,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[10] = "Kalastar:\n\n Ok, al\u00E9m de afirmar o \u00F3bvio, o que voc\u00EA veio fazer aqui?";
 
 		tx[11] = "Voc\u00EA:\n\nPreciso das suas habilidades. Uma "
-				+ " guerra est\u00E1 vindo e estou montando umaequipe. Os melhores da Guarda Real, da"
+				+ " guerra est\u00E1 vindo e estou montando uma equipe. Os melhores da Guarda Real, da"
 				+ " Torre Arcana e da Alameda dos Tr\u00EAs"
 				+ " Ponteiros e n\u00F3s queremos voc\u00EA e os seus dentro.";
 
@@ -585,8 +585,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[4];
 
-		tx[0] = "O terceiro dia est\u00E1 chegando ao fim eAlexander analisou os mapas. Voc\u00EAs ir\u00E3o"
-				+ " montar uma linha de defesa nos esgotosabaixo do mercado. \u00C9 um ponto fr\u00E1gil e"
+		tx[0] = "O terceiro dia est\u00E1 chegando ao fim e Alexander analisou os mapas. Voc\u00EAs ir\u00E3o"
+				+ " montar uma linha de defesa nos esgotos abaixo do mercado. \u00C9 um ponto fr\u00E1gil e"
 				+ " que o inimigo pode usar para um r\u00E1pido acesso ao interior da cidade.";
 
 		tx[1] = "Voc\u00EA vai dormir para se preparar para o dia seguinte.";
@@ -612,8 +612,8 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ " consegue uma vit\u00F3ria f\u00E1cil. Todos voc\u00EAs "
 				+ " conseguem gl\u00F3ria perante a cidade, t\u00EDtulos e ouro, como Kelastar queria.";
 
-		tx[2] = "Depois da guerra Helaria se torna umlocal melhor para se viver com a uni\u00E3o de"
-				+ " seus habitantes e voc\u00EA teve um papelimportante nisso.";
+		tx[2] = "Depois da guerra Helaria se torna um local melhor para se viver com a uni\u00E3o de"
+				+ " seus habitantes e voc\u00EA teve um papel importante nisso.";
 
 	}
 
@@ -621,18 +621,18 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[3];
 
-		tx[0] = "Voc\u00EAs est\u00E3o conseguindo conter grandeparte das tropas inimigas, mas uma "
+		tx[0] = "Voc\u00EAs est\u00E3o conseguindo conter grande parte das tropas inimigas, mas uma "
 				+ " quantidade significativa ainda consegue passar por voc\u00EAs. Bethesda consegue "
 				+ " invadir um peda\u00E7o da cidade e tanto l\u00E1 "
 				+ " em cima, como aqui em baixo est\u00E1 tendo uma violenta batalha.";
 
 		tx[1] = "No fim do dia as tropas de Bethesda minguam e Helaria sai vencedora da "
 				+ " guerra, no entanto uma parte significativa"
-				+ " da cidade foi destru\u00EDda e muitas pessoasforam mortas.";
+				+ " da cidade foi destru\u00EDda e muitas pessoas foram mortas.";
 
 		tx[2] = "Voc\u00EAs s\u00E3o homenageados pelo rei e"
 				+ " recebem t\u00EDtulos e posses. Agora voc\u00EA \u00E9"
-				+ " escutado pelo rei. Voc\u00EA pretende levarHelaria para um novo rumo e "
+				+ " escutado pelo rei. Voc\u00EA pretende levar Helaria para um novo rumo e "
 				+ " provavelmente conseguir\u00E1.";
 
 	}
@@ -641,7 +641,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[2];
 
-		tx[0] = "As tropas inimigas s\u00E3o muitas e umaparte significativa delas consegue passar "
+		tx[0] = "As tropas inimigas s\u00E3o muitas e uma parte significativa delas consegue passar "
 				+ " por voc\u00EAs. Na cidade e embaixo dela se d\u00E3o batalhas violentas.";
 
 		tx[1] = "Voc\u00EAs resistem at\u00E9 suas \u00FAltimas for\u00E7as,"
@@ -656,11 +656,11 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx = new String[2];
 
 		tx[0] = "As tropas inimigas s\u00E3o muito numerosas, elas conseguem esmagar suas defesas e "
-				+ " passar sem problemas, deixando umamancha com seu sangue no ch\u00E3o. "
+				+ " passar sem problemas, deixando uma mancha com seu sangue no ch\u00E3o. "
 				+ " Helaria \u00E9 totalmente invadida e n\u00E3o tem"
-				+ " esperan\u00E7as de sobreviv\u00EAncia, destinadaao esquecimento.";
+				+ " esperan\u00E7as de sobreviv\u00EAncia, destinada ao esquecimento.";
 
-		tx[1] = "Esse \u00E9 o mesmo destino de seu corpoinerte, ser esquecido e devorado pelos"
+		tx[1] = "Esse \u00E9 o mesmo destino de seu corpo inerte, ser esquecido e devorado pelos"
 				+ " vermes. Um her\u00F3i esquecido de uma cidade esquecida. ";
 	}
 
@@ -668,14 +668,14 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[3];
 
-		tx[0] = "O terceiro dia chega, mas sem osmapas da cidade \u00E9 imposs\u00EDvel verificar os "
-				+ " pontos de fraqueza subterr\u00E2neos, porisso sua equipe \u00E9 encarregada de"
+		tx[0] = "O terceiro dia chega, mas sem os mapas da cidade \u00E9 imposs\u00EDvel verificar os "
+				+ " pontos de fraqueza subterr\u00E2neos, por isso sua equipe \u00E9 encarregada de"
 				+ " defender o port\u00E3o principal.";
 
 		tx[1] = "De noite voc\u00EA vai para seu quartoe descansa at\u00E9 o dia seguinte. Amanhece"
-				+ " e chega a hora, voc\u00EA deve se arrumarpara a batalha.";
+				+ " e chega a hora, voc\u00EA deve se arrumar para a batalha.";
 
-		tx[2] = "Voc\u00EA encontra seus companheirosna porta da cidade, prontos para morrer "
+		tx[2] = "Voc\u00EA encontra seus companheiros na porta da cidade, prontos para morrer "
 				+ " por ela. Os inimigos se aproximam. ";
 
 	}
@@ -692,7 +692,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[1] = "A batalha est\u00E1 complicada, mas voc\u00EA tem"
 				+ " os n\u00FAmeros necess\u00E1rios para a vit\u00F3ria. "
 				+ " Mesmo com voc\u00EAs lutando em duas frentes Bethesda come\u00E7a a recuar e n\u00E3o "
-				+ " demora muito a ser derrotada. Umapequena parte de Helaria \u00E9 destru\u00EDda, e "
+				+ " demora muito a ser derrotada. Uma pequena parte de Helaria \u00E9 destru\u00EDda, e "
 				+ " muitas vidas foram perdidas, mas Helaria permanece.";
 
 		tx[2] = "Voc\u00EAs s\u00E3o homenageados pelo rei e"
@@ -707,19 +707,19 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx = new String[3];
 
 		tx[0] = "Voc\u00EAs est\u00E3o conseguindo segurar as "
-				+ " tropas inimigas com relativa facilidade,mas s\u00E3o surpreendidos por um ataque"
+				+ " tropas inimigas com relativa facilidade, mas s\u00E3o surpreendidos por um ataque"
 				+ " traseiro, Bethesda invadiu Helaria pelos subterr\u00E2neos. A mais violenta batalha j\u00E1 "
 				+ " vista tem in\u00EDcio. Muitos s\u00E3o os mortos e"
 				+ " uma grande parte da cidade \u00E9 destru\u00EDda, "
-				+ " mas no fim do dia as tropas de Bethesdaminguam e Helaria sai vitoriosa.";
+				+ " mas no fim do dia as tropas de Bethesda minguam e Helaria sai vitoriosa.";
 
 		tx[1] = "O Rei decide homenagear sua equipe por ser a primeira linha de defesa da cidade."
 				+ " Todos que sobreviveram recebem t\u00EDtulos "
 				+ " e posses e voc\u00EA recebe um lugar especia no Conselho da Guerra Real. O Rei"
 				+ " planeja militarizar a cidade e voc\u00EA tem um"
-				+ " voc\u00EA tem um papel importante nessesplanos.";
+				+ " papel importante nesses planos.";
 
-		tx[2] = "Helaria um Estado Militar. At\u00E9 o dia de sua morte voc\u00EA se perguntou se "
+		tx[2] = "Helaria \u00E9 um Estado Militar. At\u00E9 o dia de sua morte voc\u00EA se perguntou se "
 				+ " suas decis\u00F5es na vida e na guerra foramas corretas.";
 
 	}
@@ -728,24 +728,24 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[5];
 
-		tx[0] = "Voc\u00EAs est\u00E3o conseguindo contercom dificuldade as tropas inimigas, eles "
+		tx[0] = "Voc\u00EAs est\u00E3o conseguindo conter com dificuldade as tropas inimigas, eles "
 				+ " est\u00E3o em um n\u00FAmero muito maior. Ent\u00E3o, "
-				+ " uma grande quantidade de tropas deBethesda ataca voc\u00EAs por tr\u00E1s, elas"
+				+ " uma grande quantidade de tropas de Bethesda ataca voc\u00EAs por tr\u00E1s, elas"
 				+ " chegaram pelos subterr\u00E2neos da cidade. ";
 
 		tx[1] = "Voc\u00EAs est\u00E3o em uma grande desvantagem num\u00E9rica, de dez para um, "
 				+ " mas como se diz, um soldado de Helaria vale por dez outros."
 				+ "\n\nVoc\u00EAs lutam at\u00E9 suas \u00FAltimas"
 				+ " for\u00E7as, at\u00E9 o \u00FAltimo soldado de Bethesda"
-				+ " cair por suas m\u00E3os nuas, contigo caindotamb\u00E9m.";
+				+ " cair por suas m\u00E3os, contigo caindo tamb\u00E9m.";
 
 		tx[2] = "Helaria sai vitoriosa, mas \u00E9 quase totalmente destru\u00EDda. Todos os que"
 				+ " lutaram ao seu lado caem junto contigo. A "
-				+ " \u00FAnica coisa que ainda os mantinha vivosera a necessidade de proteger Helaria,"
-				+ " mas quando o \u00FAltimo soldado de Bethesda caem eles sabem que podemmorrer em paz.";
+				+ " \u00FAnica coisa que ainda os mantinha vivos era a necessidade de proteger Helaria,"
+				+ " mas quando o \u00FAltimo soldado de Bethesda caiu, eles souberam que podiam morrer em paz.";
 
-		tx[3] = "O Rei decide homenagear todosaqueles que ca\u00EDram para proteger a "
-				+ " cidade com um monumento que est\u00E1sendo constru\u00EDdo ao mesmo tempo que a "
+		tx[3] = "O Rei decide homenagear todos aqueles que ca\u00EDram para proteger a "
+				+ " cidade com um monumento que est\u00E1 sendo constru\u00EDdo ao mesmo tempo que a "
 				+ " cidade \u00E9 reconstru\u00EDda.";
 
 		tx[4] = "Todos se lembrar\u00E3o para sempre dos her\u00F3is que morreram para proteger "
@@ -762,13 +762,13 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ " subterr\u00E2neos.";
 
 		tx[1] = "Voc\u00EAs est\u00E3o em menor n\u00FAmero e"
-				+ " lutando em duas frentes, n\u00E3o tem comoconseguir a vit\u00F3ria.";
+				+ " lutando em duas frentes, n\u00E3o tem como conseguir a vit\u00F3ria.";
 
-		tx[2] = "Helaria cai e com ela caem ossonhos e as esperan\u00E7as de todos seus"
-				+ " habitantes, reduzidos a manchas desangue no ch\u00E3o. Uma cidade destru\u00EDda"
+		tx[2] = "Helaria cai e com ela caem os sonhos e as esperan\u00E7as de todos seus"
+				+ " habitantes, reduzidos a manchas de sangue no ch\u00E3o. Uma cidade destru\u00EDda"
 				+ " que ser\u00E1 esquecida pelo tempo.";
 
-		tx[3] = "Essa \u00E9 a hist\u00F3ria de Helaria e de seuHer\u00F3i ca\u00EDdo.";
+		tx[3] = "Essa \u00E9 a hist\u00F3ria de Helaria e de seu Her\u00F3i ca\u00EDdo.";
 
 	}
 
