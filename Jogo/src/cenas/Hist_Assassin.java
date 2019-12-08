@@ -291,7 +291,8 @@ public class Hist_Assassin {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(2, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.posLabirinto(1);
 		geral.escolhas_0(t1, vet);
@@ -394,7 +395,8 @@ public class Hist_Assassin {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(1, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.posHidra(1);
 		geral.escolhas_0(t1, vet);
@@ -495,7 +497,8 @@ public class Hist_Assassin {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(0, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.EnigmaPortaAssasin(1);
 
@@ -805,7 +808,7 @@ public class Hist_Assassin {
 					if (geral.isFlag()) {
 						if (cont == (vet.getTx().length - 1)) {
 							t1.getContinuar().removeActionListener(continuar);
-						
+
 							Creditos cr = new Creditos();
 							musica.stop();
 							try {

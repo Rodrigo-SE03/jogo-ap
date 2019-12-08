@@ -29,6 +29,7 @@ public class Creditos extends JDialog {
 		pp.setBounds(424, 90, 340, 41);
 		rod.setBounds(500, 30, 264, 41);
 		this.setModal(true);
+		this.setLocationRelativeTo(null);
 	}
 	public void mostraCreditos() {
 		

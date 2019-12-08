@@ -315,7 +315,8 @@ public class Hist_Arcan {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(2, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.torreVitoria();
 		geral.escolhas_0(t1, vet);
@@ -492,7 +493,9 @@ public class Hist_Arcan {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+
 				if (geral.isFlag()) {
+
 					if (cont == (vet.getTx().length - 1)) {
 						new Thread() {
 							public void run() {
@@ -525,7 +528,8 @@ public class Hist_Arcan {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(0, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.catedralVitoria();
 		geral.escolhas_0(t1, vet);
@@ -666,7 +670,8 @@ public class Hist_Arcan {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(1, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.alamedaVitoria();
 		geral.escolhas_0(t1, vet);
@@ -790,8 +795,24 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
+						Creditos cr = new Creditos();
 						musica.stop();
-						new Creditos();
+						new Thread() {
+							public void run() {
+								try {
+									sleep(10000);
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								musica.stop();
+								cr.setVisible(false);
+								new Menu_inicial();
+							}
+						}.start();
+						cr.setUndecorated(true);
+						t1.getTexto().dispose();
+						cr.mostraCreditos();
 					} else
 						cont++;
 				}
@@ -894,7 +915,6 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
 						musica.stop();
 						Creditos cr = new Creditos();
 						try {
@@ -919,7 +939,8 @@ public class Hist_Arcan {
 								new Menu_inicial();
 							}
 						}.start();
-
+						cr.setUndecorated(true);
+						t1.getTexto().dispose();
 						cr.mostraCreditos();
 					} else
 						cont++;
@@ -958,7 +979,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
+
 						musica.stop();
 						Creditos cr = new Creditos();
 						try {
@@ -983,7 +1004,8 @@ public class Hist_Arcan {
 								new Menu_inicial();
 							}
 						}.start();
-
+						cr.setUndecorated(true);
+						t1.getTexto().dispose();
 						cr.mostraCreditos();
 					} else
 						cont++;

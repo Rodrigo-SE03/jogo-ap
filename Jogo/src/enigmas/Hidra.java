@@ -1,6 +1,7 @@
 package enigmas;
 
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
@@ -32,20 +33,20 @@ public class Hidra {
 	private int time;
 	private Thread tempo;
 
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					@SuppressWarnings("unused")
-//					Hidra window = new Hidra(new Jogador());
-//
-//					// window.frame[cont].setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					@SuppressWarnings("unused")
+					Hidra window = new Hidra(new Jogador());
+
+					// window.frame[cont].setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the application.
@@ -288,12 +289,12 @@ public class Hidra {
 
 					perdeu = true;
 					if (perdeu && !ganhou) {
+						
 						musica.stop();
 						background.dispose();
 						relogio.dispose();
 						time = 0;
-						Thread.currentThread().interrupt();
-						
+
 						if (mtcabeca) {
 							switch (player.getClase()) {
 							case 0:

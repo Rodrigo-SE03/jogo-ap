@@ -26,20 +26,20 @@ public class Biblio_Assassin extends Biblioteca {
 
 		if (masculino) {
 			tx[0] = "Quinze anos se passaram desde que Voc\u00EA se juntou \u00E0 Guilda Vigilante."
-					+ " Voc\u00EA se tornou um membro  valioso, um assassino  r\u00E1pido e eficiente,  "
-					+ " completou in\u00FAmeras miss\u00F5es, deixou  in\u00FAmeros cad\u00E1veres.";
+					+ " Voc\u00EA se tornou um membrovalioso, um assassinor\u00E1pido e eficiente,"
+					+ " completou in\u00FAmeras miss\u00F5es, deixouin\u00FAmeros cad\u00E1veres.";
 
 			tx[13] = "Pelo seu tom ficou claro para todos que " + " conhecem um pouco da sua hist\u00F3ria que "
-					+ " voc\u00EA est\u00E1 disposto a tudo para  obter vingan\u00E7a.";
+					+ " voc\u00EA est\u00E1 disposto a tudo paraobter vingan\u00E7a.";
 
 		} else {
 
 			tx[0] = "Quinze anos se passaram desde que Voc\u00EA se juntou \u00E0 Guilda Vigilante."
-					+ " Voc\u00EA se tornou um membro  valioso, uma assassina  r\u00E1pido e eficiente,  "
-					+ " completou in\u00FAmeras miss\u00F5es, deixou  in\u00FAmeros cad\u00E1veres.";
+					+ " Voc\u00EA se tornou um membrovalioso, uma assassinar\u00E1pido e eficiente,"
+					+ " completou in\u00FAmeras miss\u00F5es, deixouin\u00FAmeros cad\u00E1veres.";
 
 			tx[13] = "Pelo seu tom ficou claro para todos que " + " conhecem um pouco da sua hist\u00F3ria que "
-					+ " voc\u00EA est\u00E1 disposta a tudo para  obter vingan\u00E7a.";
+					+ " voc\u00EA est\u00E1 disposta a tudo paraobter vingan\u00E7a.";
 		}
 
 		tx[1] = "Em todos esses anos as pessoas da Ordem" + " se tornaram sua fam\u00EDlia, em especial "
@@ -47,11 +47,11 @@ public class Biblio_Assassin extends Biblioteca {
 				+ " amigo e um mentor para voc\u00EA. Te ajudou a superar a morte da sua fam\u00EDlia e a"
 				+ " destrui\u00E7\u00E3o de seu lar, te ofereceu uma nova casa e uma nova fam\u00EDlia.";
 
-		tx[2] = "Hoje foi marcada uma reuni\u00E3o com  todos os membros da Guilda."
-				+ " Isso n\u00E3o \u00E9 um bom sinal,  geralmente significam ou morte"
-				+ "  ou problemas, mas, hoje em especial, parece significar os dois ";
+		tx[2] = "Hoje foi marcada uma reuni\u00E3o comtodos os membros da Guilda."
+				+ " Isso n\u00E3o \u00E9 um bom sinal,geralmente significam ou morte"
+				+ "ou problemas, mas, hoje em especial, parece significar os dois ";
 		tx[3] = "Os diversos membros come\u00E7am a se " + " juntar e o l\u00EDder da Guilda, por defini\u00E7\u00E3o,"
-				+ "  o membro mais antigo vivo, Homero, come\u00E7a a falar:";
+				+ "o membro mais antigo vivo, Homero, come\u00E7a a falar:";
 
 		tx[4] = "Homero:\n\nDurante muito tempo vivemos em um" + " per\u00EDodo de relativa paz. Tivemos nossos"
 				+ " conflitos internos e externos, \u00E9 claro, mas" + " nunca enfrentamos amea\u00E7a que pudesse"
@@ -77,8 +77,8 @@ public class Biblio_Assassin extends Biblioteca {
 		tx[9] = "Homero:\n\ndestru\u00EDdas e culturas apagadas, e, \u00E9 isso"
 				+ " que acontecer\u00E1 com Helaria se n\u00E3o fizermos nada.";
 
-		tx[10] = "Um homem irritado:\n\n  Mas por que n\u00F3s far\u00EDamos"
-				+ "  alguma coisa por Helaria se Helaria nunca fez nada por n\u00F3s?!";
+		tx[10] = "Um homem irritado:\n\nMas por que n\u00F3s far\u00EDamos"
+				+ "alguma coisa por Helaria se Helaria nunca fez nada por n\u00F3s?!";
 
 		tx[11] = "Voc\u00EA:\n\n Porque n\u00F3s vivemos aqui seu imbecil!";
 
@@ -115,11 +115,11 @@ public class Biblio_Assassin extends Biblioteca {
 
 			if (masculino) {
 
-				tx[1] = "Cassius:\n\nFique tranquilo, n\u00F3s vamos passar por  isso juntos.";
+				tx[1] = "Cassius:\n\nFique tranquilo, n\u00F3s vamos passar porisso juntos.";
 
 			} else {
 
-				tx[1] = "Cassius:\n\nFique tranquila, n\u00F3s vamos passar por  isso juntos.";
+				tx[1] = "Cassius:\n\nFique tranquila, n\u00F3s vamos passar porisso juntos.";
 
 			}
 
@@ -138,12 +138,12 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx[5] = "Cassius:\n\nAriandra, a Elfa arqueira que"
 				+ " recentemente chegou em Helaria, ela vive na Casa Nobre Letos, o An\u00E3o, que "
-				+ " est\u00E1 preso dentro da Catedral.  E Terraira, uma sacerdotisa da Torre Arcana.";
+				+ " est\u00E1 preso dentro da Catedral.E Terraira, uma sacerdotisa da Torre Arcana.";
 
 		tx[6] = "Voc\u00EA:\n\nE por que o interesse nessas pessoas em espec\u00EDfico?";
 
 		tx[7] = "Cassius:\n\nEles s\u00E3o os melhores no que"
-				+ " fazem e n\u00F3s vamos montar um pequeno  grupo para atacar os acampamentos"
+				+ " fazem e n\u00F3s vamos montar um pequenogrupo para atacar os acampamentos"
 				+ " de Bethesda antes da guerra come\u00E7ar.";
 
 		tx[8] = "Voc\u00EA:\n\nEntendo.";
@@ -163,7 +163,7 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx[1] = "Os esgotos s\u00E3o \u00FAmidos e imundos e a travessia \u00E9 cansativa, mas voc\u00EA"
 				+ " entra nas fronteiras da casa. Voc\u00EA continua prosseguindo at\u00E9 chegar "
-				+ " no ponto em que deve sair,no entanto  uma porta impede seu caminho. ";
+				+ " no ponto em que deve sair,no entantouma porta impede seu caminho. ";
 
 	}
 
@@ -195,7 +195,7 @@ public class Biblio_Assassin extends Biblioteca {
 			tx[0] = "A porta se abre e voc\u00EA consegue entrar dentro da casa."
 					+ " Ariandra est\u00E1 no quarto de h\u00F3spedes e \u00E9"
 					+ " para l\u00E1 que com cautela voc\u00EA se encaminha.A porta do quarto est\u00E1"
-					+ "  aberta e voc\u00EA entra. Uma flecha voa na sua dire\u00E7\u00E3o,"
+					+ "aberta e voc\u00EA entra. Uma flecha voa na sua dire\u00E7\u00E3o,"
 					+ " mas voc\u00EA consegue desviar por pouco. ";
 
 			choice = "Ariandra:\n\nQuem \u00E9 voc\u00EA e o que quer aqui?";
@@ -269,7 +269,7 @@ public class Biblio_Assassin extends Biblioteca {
 
 			} else if (player.getEnigma(2)) {
 
-				tx[3] = "Voc\u00EA:\n\nEu, Cassius, a sacerdotisa Terraira" + "  o an\u00E3o Letos.";
+				tx[3] = "Voc\u00EA:\n\nEu, Cassius, a sacerdotisa Terraira" + "o an\u00E3o Letos.";
 
 			} else {
 
@@ -314,7 +314,7 @@ public class Biblio_Assassin extends Biblioteca {
 					+ " n\u00E3o \u00E9 suficiente. Qual \u00E9 seu plano?";
 
 			tx[1] = "Voc\u00EA:\n\nN\u00F3s estamos montando um pequeno"
-					+ " grupo para atacar os acampamentos de  Bethesda antes da guerra iniciar "
+					+ " grupo para atacar os acampamentos deBethesda antes da guerra iniciar "
 					+ " diminuindosuas for\u00E7as. Esse \u00E9 o plano.";
 
 			tx[2] = "Ariandra:\n\nQuem mais estar\u00E1 nesse grupo?";
@@ -329,7 +329,7 @@ public class Biblio_Assassin extends Biblioteca {
 
 			} else if (player.getEnigma(2)) {
 
-				tx[3] = "Voc\u00EA:\n\nEu, Cassius, a sacerdotisa Terraira" + "  o an\u00E3o Letos.";
+				tx[3] = "Voc\u00EA:\n\nEu, Cassius, a sacerdotisa Terraira" + "o an\u00E3o Letos.";
 
 			} else {
 
@@ -497,21 +497,21 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx = new String[5];
 
-		tx[0] = "Voc\u00EA vai para os limites da Catedral  at\u00E9 encontrar uma entrada para o"
-				+ "  esgoto. Para algu\u00E9m como  voc\u00EA n\u00E3o existe "
-				+ "  outro meio de acesso a  esse local, especialmente  a sua pris\u00E3o. ";
+		tx[0] = "Voc\u00EA vai para os limites da Catedralat\u00E9 encontrar uma entrada para o"
+				+ "esgoto. Para algu\u00E9m comovoc\u00EA n\u00E3o existe "
+				+ "outro meio de acesso aesse local, especialmentea sua pris\u00E3o. ";
 
-		tx[1] = "Voc\u00EA segue pelo esgoto  at\u00E9 encontrar uma entrada para a parte"
-				+ "  subterr\u00E2nea da Catedral,  onde fica a pris\u00E3o."
-				+ "  \u00C9 um lugar escuro e \u00FAmido,  fede a medo e morte.";
+		tx[1] = "Voc\u00EA segue pelo esgotoat\u00E9 encontrar uma entrada para a parte"
+				+ "subterr\u00E2nea da Catedral,onde fica a pris\u00E3o."
+				+ "\u00C9 um lugar escuro e \u00FAmido,fede a medo e morte.";
 
-		tx[2] = "se existir um inferno na Terra  com certeza aqui"
-				+ "  est\u00E1 pr\u00F3ximo, voc\u00EA pensa.  Para entrar na ala"
-				+ "  onde est\u00E3o as celas voc\u00EA   precisa passar por   uma grande porta.";
+		tx[2] = "se existir um inferno na Terracom certeza aqui"
+				+ "est\u00E1 pr\u00F3ximo, voc\u00EA pensa.Para entrar na ala"
+				+ "onde est\u00E3o as celas voc\u00EA precisa passar por uma grande porta.";
 		;
 
-		tx[3] = "Voc\u00EA se aproxima, pronto  para destranc\u00E1-la, mas"
-				+ "  ela j\u00E1 est\u00E1 aberta  e voc\u00EA entra. ";
+		tx[3] = "Voc\u00EA se aproxima, prontopara destranc\u00E1-la, mas"
+				+ "ela j\u00E1 est\u00E1 abertae voc\u00EA entra. ";
 
 		tx[4] = "Uma enorme Hidra est\u00E1 guardando a sala e a porta"
 				+ " se fechou, para sobreviver voc\u00EA precisa derrotar a Hidra.";
@@ -522,8 +522,8 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx = new String[1];
 
-		tx[0] = "Voc\u00EA vai rapidamente para os limites da Catedral  e segue pelo esgoto, dessa vez"
-				+ "  voc\u00EA derrotar\u00E1 a hidra  de uma vez por todas";
+		tx[0] = "Voc\u00EA vai rapidamente para os limites da Catedrale segue pelo esgoto, dessa vez"
+				+ "voc\u00EA derrotar\u00E1 a hidrade uma vez por todas";
 
 	}
 
@@ -536,32 +536,32 @@ public class Biblio_Assassin extends Biblioteca {
 
 			if (masculino) {
 
-				tx[4] = "Voc\u00EA:\n\nSou um enviado de Cassius.  Precisamos da sua ajuda?";
+				tx[4] = "Voc\u00EA:\n\nSou um enviado de Cassius.Precisamos da sua ajuda?";
 
 			} else {
 
-				tx[4] = "Voc\u00EA:\n\nSou uma enviada de Cassius.  Precisamos da sua ajuda?";
+				tx[4] = "Voc\u00EA:\n\nSou uma enviada de Cassius.Precisamos da sua ajuda?";
 
 			}
 
-			tx[0] = "Voc\u00EA consegue superar a  Hidra e entrar na pris\u00E3o."
-					+ "  Ela \u00E9 pouco vigiada, afinal  j\u00E1 tinha um monstro"
-					+ "  guardando-a. Apenas um  guarda adormecido com as  chaves";
+			tx[0] = "Voc\u00EA consegue superar aHidra e entrar na pris\u00E3o."
+					+ "Ela \u00E9 pouco vigiada, afinalj\u00E1 tinha um monstro"
+					+ "guardando-a. Apenas umguarda adormecido com aschaves";
 
-			tx[1] = "Furtivamente voc\u00EA vai at\u00E9 ele e se  apropria delas e vai"
-					+ "  em busca de Letos,   An\u00E3o. Em uma cela "
-					+ "  distante l\u00E1 est\u00E1 ele,  dormindo. Voc\u00EA o acorda.";
+			tx[1] = "Furtivamente voc\u00EA vai at\u00E9 ele e seapropria delas e vai"
+					+ "em busca de Letos, An\u00E3o. Em uma cela "
+					+ "distante l\u00E1 est\u00E1 ele,dormindo. Voc\u00EA o acorda.";
 
-			tx[2] = "Voc\u00EA:\n\nEst\u00E1 interessado em  ir embora deste inferno?";
+			tx[2] = "Voc\u00EA:\n\nEst\u00E1 interessado emir embora deste inferno?";
 
-			tx[3] = "Letos:\n\nCom toda certeza,  mas quem \u00E9 voc\u00EA?";
+			tx[3] = "Letos:\n\nCom toda certeza,mas quem \u00E9 voc\u00EA?";
 
-			tx[5] = "Letos:\n\nNo que eu  poderia ajudar?";
+			tx[5] = "Letos:\n\nNo que eupoderia ajudar?";
 
 			tx[6] = "Voc\u00EA:\n\nVoc\u00EA est\u00E1 preso por matar quinze pessoas numa"
 					+ " briga de bar com um machado. Treze delas" + " eram soldados altamente treinados";
 
-			tx[7] = "Letos:\n\nE o que voc\u00EAs  querem que eu fa\u00E7a?";
+			tx[7] = "Letos:\n\nE o que voc\u00EAsquerem que eu fa\u00E7a?";
 
 			tx[8] = "Voc\u00EA:\n\nHelaria ser\u00E1 invadida por Bethesda dentro de pouco"
 					+ " tempo, n\u00F3s estamos montando um grupo para lutar contra"
@@ -574,15 +574,15 @@ public class Biblio_Assassin extends Biblioteca {
 			tx[11] = "Letos:\n\nMuito bem, estou dentro. Afinal, o que" + " eu tenho a perder?";
 
 			tx[12] = "Voc\u00EA abre a cela. O dia est\u00E1 terminando "
-					+ " e voc\u00EA retorna para  a Alameda dos Tr\u00EAs Ponteiros"
-					+ "  com Letos, o An\u00E3o. Vit\u00F3ria.";
+					+ " e voc\u00EA retorna paraa Alameda dos Tr\u00EAs Ponteiros"
+					+ "com Letos, o An\u00E3o. Vit\u00F3ria.";
 			break;
 
 		case 2:// se perder
 
 			tx = new String[1];
-			tx[0] = "Voc\u00EA n\u00E3o consegue superar a  Hidra, ela \u00E9 muito forte"
-					+ "  com o pouco de for\u00E7a que  ainda lhe resta Voc\u00EA,   foge";
+			tx[0] = "Voc\u00EA n\u00E3o consegue superar aHidra, ela \u00E9 muito forte"
+					+ "com o pouco de for\u00E7a queainda lhe resta Voc\u00EA, foge";
 			break;
 
 		}
@@ -592,35 +592,35 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx = new String[5];
 
-		tx[0] = "Termina o terceiro dia e  voc\u00EA vai para seu quarto"
-				+ "  descansar. Voc\u00EA s\u00F3 ter\u00E1  algumas poucas horas"
-				+ "  de sono antes de  sa\u00EDrem para colocar  o plano em pr\u00E1tica,";
+		tx[0] = "Termina o terceiro dia evoc\u00EA vai para seu quarto"
+				+ "descansar. Voc\u00EA s\u00F3 ter\u00E1algumas poucas horas"
+				+ "de sono antes desa\u00EDrem para colocaro plano em pr\u00E1tica,";
 
-		tx[1] = "ent\u00E3o \u00E9 melhor  fazer valer o tempo.  Chega a hora e voc\u00EA"
-				+ "  se levanta e se prepara.  Voc\u00EAs se encontram" + "   em uma sa\u00EDda da cidade.";
+		tx[1] = "ent\u00E3o \u00E9 melhorfazer valer o tempo.Chega a hora e voc\u00EA"
+				+ "se levanta e se prepara.Voc\u00EAs se encontram" + " em uma sa\u00EDda da cidade.";
 
 		player.setQtd();
 		switch (player.getQtd()) {
 		case 0:
 
-			tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius e dois" + "  outros assassinos.";
+			tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius e dois" + "outros assassinos.";
 			break;
 
 		case 1:
 
 			if (player.getEnigma(1)) {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius, Letos e dois" + "  outros assassinos.";
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Letos e dois" + "outros assassinos.";
 
 			} else if (player.getEnigma(2)) {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius, Terraira  e dois"
-						+ "  outros assassinos.";
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Terrairae dois"
+						+ "outros assassinos.";
 
 			} else {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius, Ariandra  e dois"
-						+ "  outros assassinos.";
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Ariandrae dois"
+						+ "outros assassinos.";
 
 			}
 			break;
@@ -629,17 +629,17 @@ public class Biblio_Assassin extends Biblioteca {
 
 			if (!player.getEnigma(1)) {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius, Terraira, Ariandra e "
-						+ "  dois outros assassinos.";
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Terraira, Ariandra e "
+						+ "dois outros assassinos.";
 
 			} else if (!player.getEnigma(2)) {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius, Ariandra, Letos e "
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Ariandra, Letos e "
 						+ " dois outros assassinos.";
 
 			} else {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius, Letos, Terraira e "
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Letos, Terraira e "
 						+ " dois outros assassinos.";
 
 			}
@@ -647,18 +647,18 @@ public class Biblio_Assassin extends Biblioteca {
 
 		case 3:
 
-			tx[2] = "Seu grupo \u00E9 composto por voc\u00EA   , Cassius, Letos, Terraira, Ariandra"
+			tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Letos, Terraira, Ariandra"
 					+ " e dois outros assassinos.";
 			break;
 
 		}
 
 		tx[3] = "Furtivamente voc\u00EAs saem da cidade e se encaminham"
-				+ " para o acampamento inimigo  enquanto todos est\u00E3o dormindo"
+				+ " para o acampamento inimigoenquanto todos est\u00E3o dormindo"
 				+ " No acampamento voc\u00EAs pretendem causar um inc\u00EAndio.";
 
 		tx[3] = "O inc\u00EAndio tem in\u00EDcio e as tropas come\u00E7am a acordar."
-				+ " Seu objetivo \u00E9 garantir que elas  fiquem o m\u00E1ximo poss\u00EDvel"
+				+ " Seu objetivo \u00E9 garantir que elasfiquem o m\u00E1ximo poss\u00EDvel"
 				+ " no foco do fogo para que pere\u00E7am";
 
 		tx[4] = "todos voc\u00EAs retiram suas armas e come\u00E7a" + " a primeira batalha da guerra.";
@@ -676,7 +676,7 @@ public class Biblio_Assassin extends Biblioteca {
 				+ " Com as tropas de Bethesda despertas e prontas, Helaria \u00E9" + " invadida";
 
 		tx[2] = "Helaria ir\u00E1 cair. Milhares de vidas s\u00E3o perdidas e a cidade"
-				+ " \u00E9 massacrada, a hist\u00F3ria de Helaria \u00E9 esquecida" + "  assim como seu povo.";
+				+ " \u00E9 massacrada, a hist\u00F3ria de Helaria \u00E9 esquecida" + "assim como seu povo.";
 
 		tx[3] = "FIM DE JOGO! ...";
 
@@ -687,7 +687,7 @@ public class Biblio_Assassin extends Biblioteca {
 		tx = new String[2];
 
 		tx[0] = "S\u00E3o muitos soldados e voc\u00EAs n\u00E3o conseguem"
-				+ " cont\u00EA-los. mesmo com  v\u00E1rios ca\u00EDdos eles conseguem"
+				+ " cont\u00EA-los. mesmo comv\u00E1rios ca\u00EDdos eles conseguem"
 				+ " fugir do inc\u00EAndio em grande n\u00FAmero" + " e est\u00E3o prontos para a guerra.";
 
 		tx[1] = "Todo seu grupo \u00E9 massacrado, no entanto voc\u00EA ainda est\u00E1 vivo.";
@@ -726,7 +726,7 @@ public class Biblio_Assassin extends Biblioteca {
 			tx = new String[2];
 
 			tx[0] = "N\u00E3o \u00E9 porque Helaria cair\u00E1 que voc\u00EA tamb\u00E9m"
-					+ " precisa cair. Voc\u00EA vai embora  e atravessa as montanhas,"
+					+ " precisa cair. Voc\u00EA vai emborae atravessa as montanhas,"
 					+ " pronto para come\u00E7ar uma nova vida.";
 
 			tx[1] = "Chega em terras distantes e passa a viver nelas"
@@ -743,7 +743,7 @@ public class Biblio_Assassin extends Biblioteca {
 		tx = new String[5];
 
 		tx[0] = "Voc\u00EAs conseguem conter nas chamas uma for\u00E7a"
-				+ " significativa de Bethesda. Agora com as tropas  flageladas, Bethesda j\u00E1"
+				+ " significativa de Bethesda. Agora com as tropasflageladas, Bethesda j\u00E1"
 				+ " n\u00E3o representa uma amea\u00E7a t\u00E3o grande.";
 
 		tx[1] = "Helaria v\u00EA as chamas e envia suas tropas para acabar com o que"
@@ -756,7 +756,7 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx[3] = "Todos recebem o t\u00EDtulo de Guardi\u00E3o Protetor de"
 				+ " Helaria e sempre ser\u00E3o ouvidos nas reuni\u00F5es reais"
-				+ " Helaria muda muito depois da guerra e de sua  ascens\u00E3o";
+				+ " Helaria muda muito depois da guerra e de suaascens\u00E3o";
 
 		tx[4] = "O povo passa a ter mais voz e cada vez mais se aproxima"
 				+ " de um lugar ideal a se viver. PARAB\u00C9NS! VOCÊ TERMINOU O JOGO!";
@@ -768,10 +768,10 @@ public class Biblio_Assassin extends Biblioteca {
 		tx = new String[6];
 
 		tx[0] = "Grande parte das tropas do acampamento s\u00E3o mortas ou aleijadas, mas ainda"
-				+ " tem uma quantidade  significativa pronta para lutar.";
+				+ " tem uma quantidadesignificativa pronta para lutar.";
 
 		tx[1] = "Uma batalha se inicia e tropas de Bethesda e Helaria alertadas"
-				+ "  pelo inc\u00EAndio chegam para participar";
+				+ "pelo inc\u00EAndio chegam para participar";
 
 		tx[2] = "A batalha \u00E9 violenta e muitos soldados dos dois lados s\u00E3o mortos,"
 				+ " mas no final Helaria vence e a cidade permanece intacta.";
@@ -807,7 +807,7 @@ public class Biblio_Assassin extends Biblioteca {
 				+ " o restante das tropas de Bethesda";
 
 		tx[1] = "Uma violenta batalha \u00E9 iniciada marcada no in\u00EDcio pelo avan\u00E7o"
-				+ "  de Bethesda at\u00E9 entrar nos muros da cidade.";
+				+ "de Bethesda at\u00E9 entrar nos muros da cidade.";
 
 		tx[2] = "Quando a guerra chega no interior da cidade, Helaria come\u00E7a a virar"
 				+ " a situa\u00E7\u00E3o e Bethesda come\u00E7a a perder.";
