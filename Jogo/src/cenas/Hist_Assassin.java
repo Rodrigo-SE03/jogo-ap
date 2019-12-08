@@ -126,6 +126,7 @@ public class Hist_Assassin {
 	}
 
 	public void destino() {
+		
 
 		if (musica.isPlaying()) {
 			musica.stop();
@@ -200,6 +201,7 @@ public class Hist_Assassin {
 		} else {
 			player.setQtd();
 			guerra();
+			
 		}
 
 	}
@@ -698,12 +700,13 @@ public class Hist_Assassin {
 		musica.setVolume(0.6f);
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-
+		
 		vet.finalAssassin();
 		geral.escolhas_0(t1, vet);
+		
 		continuar = new ActionListener() {
 			int cont = 0;
-
+			
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
@@ -873,6 +876,14 @@ public class Hist_Assassin {
 								t1.getContinuar().removeActionListener(continuar);
 								musica.stop();
 								Creditos cr = new Creditos();
+								try {
+									Thread.sleep(2000);
+								} catch (InterruptedException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+								musica.TocaMusica("src/sons/creditos.wav");
+								musica.setVolume(0.9f);
 								new Thread() {
 									public void run() {
 										try {
@@ -916,6 +927,14 @@ public class Hist_Assassin {
 								t1.getContinuar().removeActionListener(continuar);
 								musica.stop();
 								Creditos cr = new Creditos();
+								try {
+									Thread.sleep(2000);
+								} catch (InterruptedException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+								musica.TocaMusica("src/sons/creditos.wav");
+								musica.setVolume(0.9f);
 								new Thread() {
 									public void run() {
 										try {

@@ -746,7 +746,7 @@ public class Hist_Guerreior {
 						new Thread() {
 							public void run() {
 								try {
-									sleep(5000);
+									sleep(10000);
 								} catch (InterruptedException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();

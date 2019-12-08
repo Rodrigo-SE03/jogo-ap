@@ -173,12 +173,12 @@ public class Biblio_Assassin extends Biblioteca {
 
 		if (masculino) {
 
-			tx[0] = "Voc\u00EA chega nas proximidades da Casa Nobre, e se dirige aos esgostos,"
+			tx[0] = "Voc\u00EA chega nas proximidades da Casa Nobre, e se dirige aos esgotos,"
 					+ " obstinado a tentar abrir aquela maldita porta";
 
 		} else {
 
-			tx[0] = "Voc\u00EA chega nas proximidades da Casa Nobre, e se dirige aos esgostos,"
+			tx[0] = "Voc\u00EA chega nas proximidades da Casa Nobre, e se dirige aos esgotos,"
 					+ " obstinada a tentar abrir aquela maldita porta";
 
 		}
@@ -207,9 +207,9 @@ public class Biblio_Assassin extends Biblioteca {
 
 			tx = new String[1];
 
-			tx[0] = "A porta n\u00E3o se abre e um alarme>\u00E9 disparado, \u00E9 melhor voc\u00EA ir "
-					+ ">embora antes que seja capturado.>O tempo passa e voc\u00EA"
-					+ ">pode tentar outra vez ou em outro local.";
+			tx[0] = "A porta n\u00E3o se abre e um alarme \u00E9 disparado, \u00E9 melhor voc\u00EA ir "
+					+ "embora antes que seja capturado. O tempo passa e voc\u00EA "
+					+ "pode tentar outra vez ou em outro local.";
 
 		}
 	}
@@ -589,37 +589,38 @@ public class Biblio_Assassin extends Biblioteca {
 	}
 
 	public void finalAssassin() {
-
+		
+		
 		tx = new String[6];
 
 		tx[0] = "Termina o terceiro dia e voc\u00EA vai para seu quarto"
 				+ " descansar. Voc\u00EA s\u00F3 ter\u00E1 algumas poucas horas"
 				+ " de sono antes de sa\u00EDrem para colocar o plano em pr\u00E1tica,";
 
-		tx[1] = "ent\u00E3o \u00E9 melhor fazer valer o tempo.Chega a hora e voc\u00EA"
-				+ " se levanta e se prepara.Voc\u00EAs se encontram" + " em uma sa\u00EDda da cidade.";
+		tx[1] = "ent\u00E3o \u00E9 melhor fazer valer o tempo. Chega a hora e voc\u00EA"
+				+ " se levanta e se prepara. Voc\u00EAs se encontram" + " em uma sa\u00EDda da cidade.";
 
 		player.setQtd();
 		switch (player.getQtd()) {
 		case 0:
 
-			tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius e dois" + "outros assassinos.";
+			tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius e dois " + "outros assassinos.";
 			break;
 
 		case 1:
 
 			if (player.getEnigma(1)) {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Letos e dois" + "outros assassinos.";
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Letos e dois " + "outros assassinos.";
 
 			} else if (player.getEnigma(2)) {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Terrairae dois"
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Terrairae dois "
 						+ "outros assassinos.";
 
 			} else {
 
-				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Ariandrae dois"
+				tx[2] = "Seu grupo \u00E9 composto por voc\u00EA , Cassius, Ariandrae dois "
 						+ "outros assassinos.";
 
 			}
@@ -654,12 +655,12 @@ public class Biblio_Assassin extends Biblioteca {
 		}
 
 		tx[3] = "Furtivamente voc\u00EAs saem da cidade e se encaminham"
-				+ " para o acampamento inimigoenquanto todos est\u00E3o dormindo"
+				+ " para o acampamento inimigo enquanto todos est\u00E3o dormindo"
 				+ " No acampamento voc\u00EAs pretendem causar um inc\u00EAndio.";
 
 		tx[4] = "O inc\u00EAndio tem in\u00EDcio e as tropas come\u00E7am a acordar."
 				+ " Seu objetivo \u00E9 garantir que elas fiquem o m\u00E1ximo poss\u00EDvel"
-				+ " no foco do fogo para que pere\u00E7am";
+				+ " no foco do fogo para que pere\u00E7am.";
 
 		tx[5] = "todos voc\u00EAs retiram suas armas e come\u00E7a" + " a primeira batalha da guerra.";
 	}
@@ -676,7 +677,7 @@ public class Biblio_Assassin extends Biblioteca {
 				+ " Com as tropas de Bethesda despertas e prontas, Helaria \u00E9" + " invadida";
 
 		tx[2] = "Helaria ir\u00E1 cair. Milhares de vidas s\u00E3o perdidas e a cidade"
-				+ " \u00E9 massacrada, a hist\u00F3ria de Helaria \u00E9 esquecida" + "assim como seu povo.";
+				+ " \u00E9 massacrada, a hist\u00F3ria de Helaria \u00E9 esquecida" + " assim como seu povo.";
 
 		tx[3] = "FIM DE JOGO! ...";
 

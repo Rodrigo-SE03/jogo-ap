@@ -868,7 +868,7 @@ public class Hist_Arcan {
 				if (geral.isFlag()) {
 					switch (cont) {
 					case 0:
-						musica.TocaMusica("src/sons/sacrificio.wav");
+						musica.TocaMusica("src/sons/preGuerra.wav");
 						musica.setVolume(0.0f);
 						musica.aumentaVolume(0.6f, 60);
 						break;
