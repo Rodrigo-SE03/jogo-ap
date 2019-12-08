@@ -20,6 +20,7 @@ public class Jogador extends Character {
 		RecAriandra = false;
 
 		bonus_inicio = false;
+
 		enigma = new boolean[3];
 		firstTry = new boolean[3];
 
@@ -27,6 +28,9 @@ public class Jogador extends Character {
 			this.enigma[i] = false;
 			this.firstTry[i] = true;
 		}
+//		enigma[0] = true;
+//		enigma[1] = true;
+//		enigma[2] = true;
 
 		clase = 0;
 		dias = 3;

@@ -896,6 +896,7 @@ public class Hist_Arcan {
 		musica.TocaMusica("src/sons/final.wav");
 		musica.setVolume(1.0f);
 
+		player.setQtd();
 		if (player.getQtd() == 3) {
 			if (player.isSacrificio())
 				vet.vitoriaPerfectMatar();
@@ -958,6 +959,7 @@ public class Hist_Arcan {
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
 
+		player.setQtd();
 		if (player.getQtd() == 3) {
 			if (player.isSacrificio()) {
 				if (player.isBonus_inicio())
@@ -966,8 +968,10 @@ public class Hist_Arcan {
 					vet.derrotaPerfectMatar();
 			} else
 				vet.derrotaPerfectPoup();
-		} else if (player.getQtd() == 2 && player.isBonus_inicio())
+		} else if (player.getQtd() == 2 && player.isBonus_inicio()) {
 			vet.itens2BIDerrota();
+		}
+
 		else
 			vet.derrotaMin();
 

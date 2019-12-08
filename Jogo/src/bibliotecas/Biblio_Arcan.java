@@ -767,7 +767,7 @@ public class Biblio_Arcan extends Biblioteca {
 
 		tx[1] = "Algo está te puxando, das profundezas da sua própria mente, "
 				+ " uma força terrível e maligna, uma força cheia de ódio e de dor, "
-				+ " Maelstrom. Ou seria você mesmo?.";
+				+ " Maelstrom. Ou seria você mesmo?";
 
 		tx[2] = "Maelstrom potencializa tudo aquilo que está dentro de você, era isso o "
 				+ " que dizia o livro, você agora entende.";

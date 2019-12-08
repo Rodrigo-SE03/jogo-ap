@@ -289,7 +289,7 @@ public class Hidra {
 
 					perdeu = true;
 					if (perdeu && !ganhou) {
-						
+
 						musica.stop();
 						background.dispose();
 						relogio.dispose();
@@ -306,8 +306,6 @@ public class Hidra {
 							case 2:
 								new Hist_Guerreior(player).catedralDerrota(2);
 								break;
-							default:
-								break;
 							}
 						} else {
 							switch (player.getClase()) {
@@ -320,13 +318,8 @@ public class Hidra {
 							case 2:
 								new Hist_Guerreior(player).catedralDerrota(1);
 								break;
-							default:
-								break;
 							}
 						}
-						// SÓ PRA SINALIZAR QUE PERDEU MESMO, DEPOIS TIRA ISSO
-						text.setFont(new Font("Georgia", Font.BOLD, 50));
-						text.setText("perdeste");
 					}
 
 				} catch (InterruptedException e) {
