@@ -72,7 +72,7 @@ public class Labirinto {
 		this.time = 90;
 		this.min = 1;
 		this.seg = 30;
-		tempo(player);
+		
 
 	}
 
@@ -283,6 +283,7 @@ public class Labirinto {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				dica.setVisible(false);
+				tempo(player);
 				relogio.setVisible(true);
 			}
 		});
