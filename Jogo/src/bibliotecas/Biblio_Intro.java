@@ -940,7 +940,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 				+ " pal\u00E1cio. Voc\u00EA consegue entrar no castelo gra\u00E7as a uma falha no muro "
 				+ " que voc\u00EA consegue escalar, mas a guarda do lado de dentro \u00E9 grande. ";
 
-		choice = "Existem tr\u00EAs caminhos poss\u00EDveis, pelos jardins pelos est\u00E1bulos, "
+		choice = "Existem tr\u00EAs caminhos poss\u00EDveis: pelos jardins pelos est\u00E1bulos, "
 				+ " anexados \u00E0 parte central ou por uma porta aparentemente sem guardas. ";
 
 		op1 = "Jardins";

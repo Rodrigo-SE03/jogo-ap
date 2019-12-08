@@ -66,7 +66,8 @@ public class Cavalo {
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
 
-		caixa.getTxt1().setText("\r\n"
+		caixa.getTxt1().setText(
+				 "\r\n O capitão te propõe o seguinte desafio:\r\n"
 				+ "Equipes de cavalos estão participando de partidas do cabo de guerra. Todas as equipes são "
 				+ "sorteadas a partir de um estábulo de oito cavalos. As três primeiras partidas terminam em empates, "
 				+ "como mostrado:\r\n" + "\r\n" + "Jogo 1: A B C D x E F G H\r\n" + "Jogo 2: H C B x G A\r\n"

@@ -207,7 +207,7 @@ public class Fase extends JPanel implements ActionListener {
 					tempInimigo1.setVisible(false);
 					tempAtaque.setVisible(false);
 					setCont(cont + 1);
-					if (cont > 1) {
+					if (cont > 49) {
 						situacao = 1;
 						vitoria = true;
 						emJogo = false;
