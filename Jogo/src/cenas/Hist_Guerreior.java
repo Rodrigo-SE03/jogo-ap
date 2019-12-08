@@ -665,7 +665,7 @@ public class Hist_Guerreior {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-
+	
 		if (player.getEnigma(1))
 			vet.grr_5_com_map();
 		else

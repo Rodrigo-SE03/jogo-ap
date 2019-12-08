@@ -28,6 +28,11 @@ public class Texto {
 	public Texto() {
 		initialize();
 	}
+	
+	public void destruir() {
+		frame.dispose();
+		Thread.currentThread().interrupt();
+	}
 
 	private void initialize() {
 

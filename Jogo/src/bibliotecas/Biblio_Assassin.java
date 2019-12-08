@@ -595,9 +595,9 @@ public class Biblio_Assassin extends Biblioteca {
 
 		tx[0] = "Termina o terceiro dia e voc\u00EA vai para seu quarto"
 				+ " descansar. Voc\u00EA s\u00F3 ter\u00E1 algumas poucas horas"
-				+ " de sono antes de sa\u00EDrem para colocar o plano em pr\u00E1tica,";
+				+ " de sono antes de sa\u00EDrem para colocar o plano em pr\u00E1tica.";
 
-		tx[1] = "ent\u00E3o \u00E9 melhor fazer valer o tempo. Chega a hora e voc\u00EA"
+		tx[1] = "Ent\u00E3o \u00E9 melhor fazer valer o tempo. Chega a hora e voc\u00EA"
 				+ " se levanta e se prepara. Voc\u00EAs se encontram" + " em uma sa\u00EDda da cidade.";
 
 		player.setQtd();

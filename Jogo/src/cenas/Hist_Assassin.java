@@ -126,7 +126,6 @@ public class Hist_Assassin {
 	}
 
 	public void destino() {
-		
 
 		if (musica.isPlaying()) {
 			musica.stop();
@@ -134,7 +133,6 @@ public class Hist_Assassin {
 		if (musica2.isPlaying()) {
 			musica2.stop();
 		}
-
 		if (player.getDias() > 0) {
 
 			JFrame frame = new JFrame();
@@ -199,9 +197,8 @@ public class Hist_Assassin {
 				mapa.getBtnTorreArcana().addActionListener(torre);
 			}
 		} else {
-			player.setQtd();
 			guerra();
-			
+
 		}
 
 	}
@@ -274,10 +271,21 @@ public class Hist_Assassin {
 						break;
 					}
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
-
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -312,9 +320,21 @@ public class Hist_Assassin {
 						break;
 					}
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -378,10 +398,21 @@ public class Hist_Assassin {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
-
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -416,9 +447,21 @@ public class Hist_Assassin {
 						break;
 					}
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -479,10 +522,21 @@ public class Hist_Assassin {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
-
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -625,9 +679,21 @@ public class Hist_Assassin {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -682,9 +748,21 @@ public class Hist_Assassin {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
-						destino();
+						new Thread() {
+							public void run() {
+								while (!geral.isGo()) {
+									try {
+										sleep(100);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								t1.getContinuar().removeActionListener(continuar);
+								t1.getTexto().dispose();
+								destino();
+							}
+						}.start();
 					} else
 						cont++;
 				}
@@ -700,13 +778,13 @@ public class Hist_Assassin {
 		musica.setVolume(0.6f);
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-		
+
 		vet.finalAssassin();
 		geral.escolhas_0(t1, vet);
-		
+
 		continuar = new ActionListener() {
 			int cont = 0;
-			
+
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {

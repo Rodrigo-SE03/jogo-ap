@@ -325,6 +325,7 @@ public class Hist_Arcan {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
+
 				if (geral.isFlag()) {
 					switch (cont) {
 					case 1:
@@ -351,9 +352,11 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
+
 					} else
 						cont++;
 				}
+
 			}
 		};
 
@@ -493,9 +496,7 @@ public class Hist_Arcan {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
-
 				if (geral.isFlag()) {
-
 					if (cont == (vet.getTx().length - 1)) {
 						new Thread() {
 							public void run() {
@@ -512,7 +513,6 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
-
 					} else
 						cont++;
 				}
@@ -558,12 +558,10 @@ public class Hist_Arcan {
 									}
 								}
 								t1.getContinuar().removeActionListener(continuar);
-								musica.reduzVolume(0.0f, 40);
 								t1.getTexto().dispose();
 								destino();
 							}
 						}.start();
-
 					} else
 						cont++;
 				}
@@ -632,6 +630,7 @@ public class Hist_Arcan {
 		vet.alamedaDerrota();
 		geral.escolhas_0(t1, vet);
 
+
 		continuar = new ActionListener() {
 			int cont = 0;
 
@@ -653,7 +652,6 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
-
 					} else
 						cont++;
 				}
