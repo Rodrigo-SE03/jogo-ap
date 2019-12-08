@@ -522,8 +522,11 @@ public class Hist_Assassin {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
+
 						new Thread() {
+
 							public void run() {
+
 								while (!geral.isGo()) {
 									try {
 										sleep(100);
@@ -532,11 +535,14 @@ public class Hist_Assassin {
 										e.printStackTrace();
 									}
 								}
+
 								t1.getContinuar().removeActionListener(continuar);
 								t1.getTexto().dispose();
 								destino();
 							}
+
 						}.start();
+
 					} else
 						cont++;
 				}

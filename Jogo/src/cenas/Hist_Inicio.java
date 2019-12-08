@@ -182,6 +182,7 @@ public class Hist_Inicio {
 				// TODO Auto-generated method stub
 				musica2.stop();
 				// musicasSegunda[0].stop();
+				musica3.stop();
 				new Formulario(); // Chama a fun��o para abrir o formul�rio
 				t1.getTexto().dispose();
 			}

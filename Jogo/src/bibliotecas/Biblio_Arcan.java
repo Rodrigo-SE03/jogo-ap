@@ -447,13 +447,14 @@ public class Biblio_Arcan extends Biblioteca {
 						+ " al\u00E9m de explorar as catacumbas.";
 
 			} else {
+				
 				tx[2] = "Bispo: \n\nEu lhe disse que te guiaria at\u00E9 as "
 						+ " catacumbas, nunca disse que voc\u00EA iria voltar viva.";
 
 				tx[3] = "A fala do bispo te deixa confusa e "
 						+ " preocupada. Mas voc\u00EA n\u00E3o tem op\u00E7\u00E3o "
 						+ " al\u00E9m de explorar as catacumbas.";
-
+				
 			}
 
 			break;

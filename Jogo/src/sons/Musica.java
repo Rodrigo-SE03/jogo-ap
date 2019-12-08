@@ -13,20 +13,25 @@ public class Musica {
 	private boolean isPlaying = false;
 
 	public void TocaMusica(String local) {
+		
+		new Thread() {
+			public void run() {
+				try {
+					
+					caminho = new File(local);
+					AudioInputStream audioInput = AudioSystem.getAudioInputStream(caminho);
+					clip = AudioSystem.getClip();
+					clip.open(audioInput);
+					clip.start();
+					clip.loop(Clip.LOOP_CONTINUOUSLY);
+					isPlaying = true;
 
-		try {
-			this.caminho = new File(local);
-
-			AudioInputStream audioInput = AudioSystem.getAudioInputStream(caminho);
-			clip = AudioSystem.getClip();
-			clip.open(audioInput);
-			clip.start();
-			clip.loop(Clip.LOOP_CONTINUOUSLY);
-			isPlaying = true;
-
-		} catch (Exception ex) {
-			System.out.println(ex.getMessage());
-		}
+				} catch (Exception ex) {
+					System.out.println(ex.getMessage());
+				}
+			}
+		}.start();
+		
 	}
 
 	public void stop() {
