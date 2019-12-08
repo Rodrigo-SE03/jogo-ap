@@ -39,7 +39,7 @@ public class Cartola {
 //			}
 //		});
 //	}
-//	
+	
 	public Cartola(Jogador player, Texto t1) {
 		initialize(player, t1);
 		musica = new Musica();
@@ -158,10 +158,10 @@ public class Cartola {
 				pass.setLocationRelativeTo(null);
 				pass.setUndecorated(true);
 				pass.setResizable(false);
+				pass.setDefaultCloseOperation(0);
 
 				JLabel gif = new JLabel(new ImageIcon("src/imagens/passagem.gif"));
 				pass.getContentPane().add(gif);
-
 				pass.setVisible(true);
 
 			}

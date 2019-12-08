@@ -45,6 +45,7 @@ public class Labirinto {
 	private int min, seg;
 	private int time;
 	private JTextPane text;
+	Thread tempo;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -178,11 +179,18 @@ public class Labirinto {
 		ImageIcon img1;
 
 		switch (player.getClase()) {
+		case 0:
+			if (player.getSexo() == 0) {
+				img1 = new ImageIcon("src/modelo/arc_male.png");
+
+			} else {
+				img1 = new ImageIcon("src/modelo/arc_fem.png");
+			}
 
 		case 1:
 
 			if (player.getSexo() == 0) {
-				img1 = new ImageIcon("src/modelo/lad_masc.png");
+				img1 = new ImageIcon("src/modelo/lad_male.png");
 
 			} else {
 				img1 = new ImageIcon("src/modelo/lad_fem.png");
@@ -257,6 +265,11 @@ public class Labirinto {
 		dica.setModal(true);
 		dica.setSize(610, 500);
 		dica.setLocationRelativeTo(null);
+		dica.addWindowListener(new java.awt.event.WindowAdapter() {
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+				relogio.setVisible(true);
+			}
+		});
 		dica.add(txtdica);
 
 		JButton continuar = new JButton();
@@ -450,6 +463,8 @@ public class Labirinto {
 	}
 
 	public void perder() {
+
+		tempo.interrupt();
 		musica.stop();
 		switch (player.getClase()) {
 
@@ -472,6 +487,8 @@ public class Labirinto {
 	}
 
 	public void vencer() {
+
+		tempo.interrupt();
 		musica.stop();
 		switch (player.getClase()) {
 
@@ -629,7 +646,7 @@ public class Labirinto {
 
 	public void tempo(Jogador player) {
 
-		new Thread() {
+		tempo = new Thread() {
 
 			public void run() {
 				try {
@@ -649,9 +666,11 @@ public class Labirinto {
 					perder();
 
 				} catch (InterruptedException e) {
-					e.printStackTrace();
+					Thread.currentThread().interrupt();
 				}
 			}
-		}.start();
+		};
+
+		tempo.start();
 	}
 }

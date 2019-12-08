@@ -58,7 +58,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 		tx[4] = "Hoje voc\u00EA acorda com a chegada de   um mensageiro em seus aposentos, "
 				+ "  General Alexander pede seu  comparecimento imediato em seus  aposentos.";
 
-		choice = "Nos aposentos do general voc\u00EA tem   algumas op\u00E7\u00F3es para comer, o que ser\u00E1?";
+		choice = "Nos aposentos do general voc\u00EA tem   algumas op\u00E7\u00F5es para comer, o que ser\u00E1?";
 
 		op1 = "Caf\u00E9 com p\u00E3es e roscas ";
 
@@ -190,7 +190,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 			}
 
-			tx[1] = "Voc\u00EA\n\n N\u00E3o posso dizer que discordo de voc\u00EA.";
+			tx[1] = "Voc\u00EA\n\nN\u00E3o posso dizer que discordo de voc\u00EA.";
 			break;
 
 		case 2:
@@ -200,7 +200,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 			tx[0] = "Bispo:\n\nVejo que voc\u00EA tem um paladar  refinado. ";
 
-			tx[1] = "Voc\u00EA\n\n Nada melhor do que frutas com \u00E1lcool.";
+			tx[1] = "Voc\u00EA\n\nNada melhor do que frutas com \u00E1lcool.";
 			break;
 
 		case 3:
@@ -389,11 +389,11 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		if (masculino) {
 
-			tx[17] = "Você:\n\n Obrigado, agora se prepare para se  juntar a minha equipe.";
+			tx[17] = "Você:\n\nObrigado, agora se prepare para se  juntar a minha equipe.";
 
 		} else {
 
-			tx[17] = "Você:\n\n Obrigada, agora se prepare para se  juntar a minha equipe.";
+			tx[17] = "Você:\n\nObrigada, agora se prepare para se  juntar a minha equipe.";
 
 		}
 
@@ -404,43 +404,43 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx[1] = "L\u00E1 voc\u00EA conversa com Muriel, a l\u00EDder dessa inst\u00E2ncia da Ordem Arcana.";
 
-		tx[2] = "Muriel:\n\n O que voc\u00EA procura aqui," + player.getNome() + " ? ";
+		tx[2] = "Muriel:\n\nO que voc\u00EA procura aqui, " + player.getNome() + " ? ";
 
-		tx[3] = "Você:\n\n Preciso da ajuda de voc\u00EAs. A guerra"
+		tx[3] = "Você:\n\nPreciso da ajuda de voc\u00EAs. A guerra"
 				+ " contra Bethesda se aproxima e sua ajuda  ser\u00E1 imprescind\u00EDvel.";
 
-		tx[4] = "Muriel:\n\n Muito bem, voc\u00EA quer nossa ajuda e n\u00F3s"
+		tx[4] = "Muriel:\n\nMuito bem, voc\u00EA quer nossa ajuda e n\u00F3s"
 				+ " queremos te ajudar, mas primeiro preciso  que voc\u00EA prove que tipo de pessoa voc\u00EA "
 				+ " \u00E9, para sabermos se vale a pena lutar ao  seu lado.";
 
-		tx[5] = "Você:\n\n Muito bem, o que voc\u00EA quer que eu  fa\u00E7a?";
+		tx[5] = "Você:\n\nMuito bem, o que voc\u00EA quer que eu  fa\u00E7a?";
 
-		tx[6] = "Muriel:\n\n Existe um livro de feiti\u00E7os dentro de um "
+		tx[6] = "Muriel:\n\nExiste um livro de feiti\u00E7os dentro de um "
 				+ " labirinto aqui. O Tratado da Magia, \u00E9 seu "
 				+ " nome. Eu preciso que voc\u00EA o traga para mim at\u00E9 o final do dia.";
 
-		tx[7] = "Você:\n\n Ah, mas vai ser f\u00E1cil ent\u00E3o.";
+		tx[7] = "Você:\n\nAh, mas vai ser f\u00E1cil ent\u00E3o.";
 
-		tx[8] = "Muriel:\n\n A\u00ED que voc\u00EA se engana apenas aqueles "
+		tx[8] = "Muriel:\n\nA\u00ED que voc\u00EA se engana apenas aqueles "
 				+ " que s\u00E3o puros de cora\u00E7\u00E3o conseguir\u00E3o "
 				+ " juntar corretamente suas tr\u00EAs partes. ";
 
-		tx[9] = "Você:\n\n S\u00E3o tr\u00EAs partes?";
+		tx[9] = "Você:\n\nS\u00E3o tr\u00EAs partes?";
 
-		tx[10] = "Muriel:\n\n Precisamente, espalhadas pelo labirinto. ";
+		tx[10] = "Muriel:\n\nPrecisamente, espalhadas pelo labirinto. ";
 
-		tx[11] = "Você:\n\n Tudo bem, antes do fim do dia voc\u00EA ter\u00E1 esse livro.";
+		tx[11] = "Você:\n\nTudo bem, antes do fim do dia voc\u00EA ter\u00E1 esse livro.";
 
 		tx[12] = "Quando voc\u00EA est\u00E1 no caminho para o  labirinto Muriel te chama.";
 
-		tx[13] = "Muriel:\n\n Espere, tem algo que preciso te dizer.";
+		tx[13] = "Muriel:\n\nEspere, tem algo que preciso te dizer.";
 
-		tx[14] = "Muriel:\n\n As partes precisam ser unidas em uma"
+		tx[14] = "Muriel:\n\nAs partes precisam ser unidas em uma"
 				+ " ordem espec\u00EDfica de acordo com um poema, se pegar uma parte errada, ser\u00E1"
 				+ " obrigado a sair e tentar de novo algumas horas depois, quando o equil\u00EDbrio do "
 				+ " labirinto for restabelecido.";
 
-		tx[15] = "Você:\n\n Muito bem, qual \u00E9 o poema.";
+		tx[15] = "Você:\n\nMuito bem, qual \u00E9 o poema.";
 
 		tx[16] = "Muriel te entrega um velho pergaminho com o poema";
 
@@ -488,7 +488,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 					+ " ao seu encontro. N\u00E3o \u00E9 sempre que um "
 					+ " Capit\u00E3o da Guarda Real vem me  procurar, pelo menos n\u00E3o em paz eu  suponho. ";
 
-			tx[8] = "Kelastar:\n\n O que voc\u00EA quer comigo, capit\u00E3o? ";
+			tx[8] = "Kelastar:\n\nO que voc\u00EA quer comigo, capit\u00E3o? ";
 
 		} else {
 
@@ -498,7 +498,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 					+ " ao seu encontro. N\u00E3o \u00E9 sempre que uma "
 					+ " Capit\u00E3 da Guarda Real vem me  procurar, pelo menos n\u00E3o em paz eu  suponho. ";
 
-			tx[8] = "Kelastar:\n\n O que voc\u00EA quer comigo, capit\u00E3? ";
+			tx[8] = "Kelastar:\n\nO que voc\u00EA quer comigo, capit\u00E3? ";
 
 		}
 
@@ -513,38 +513,38 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx[5] = "Voc\u00EA:\n\nEu n\u00E3o diria paz... Podemos conversar em um local um pouco mais privado? ";
 
-		tx[6] = "Kalastar:\n\n Vamos para meu escrit\u00F3rio ent\u00E3o. ";
+		tx[6] = "Kalastar:\n\nVamos para meu escrit\u00F3rio ent\u00E3o. ";
 
 		tx[7] = "Kelastar lidera o caminho e voc\u00EA o segue"
 				+ " O escrit\u00F3rio \u00E9 um lugar sujo e feio, tudo l\u00E1 "
 				+ " lembra decad\u00EAncia e corrup\u00E7\u00E3o, mas "
 				+ " voc\u00EAs est\u00E3o sozinhos e \u00E9 isso que  importa.";
 
-		tx[9] = "Voc\u00EA:\n\n Voc\u00EA \u00E9 um dos ladr\u00F5es mais habilidosos"
+		tx[9] = "Voc\u00EA:\n\nVoc\u00EA \u00E9 um dos ladr\u00F5es mais habilidosos"
 				+ " dessa cidade, dizem que n\u00E3o exista uma "
 				+ " porta que voc\u00EA n\u00E3o consiga arrombar, um local que n\u00E3o consiga roubar.";
 
-		tx[10] = "Kalastar:\n\n  Ok, al\u00E9m de afirmar o \u00F3bvio, o que voc\u00EA veio fazer aqui?";
+		tx[10] = "Kalastar:\n\n Ok, al\u00E9m de afirmar o \u00F3bvio, o que voc\u00EA veio fazer aqui?";
 
-		tx[11] = "Voc\u00EA:\n\n Preciso das suas habilidades. Uma "
+		tx[11] = "Voc\u00EA:\n\nPreciso das suas habilidades. Uma "
 				+ " guerra est\u00E1 vindo e estou montando uma  equipe. Os melhores da Guarda Real, da"
 				+ " Torre Arcana e da Alameda dos Tr\u00EAs"
 				+ " Ponteiros e n\u00F3s queremos voc\u00EA e os seus dentro.";
 
-		tx[12] = "Kalastar:\n\n Hum... Parece interessante, mas o que  eu ganho com isso?";
+		tx[12] = "Kalastar:\n\nHum... Parece interessante, mas o que  eu ganho com isso?";
 
-		tx[13] = "Voc\u00EA:\n\n Sobreviv\u00EAncia, se voc\u00EA n\u00E3o nos ajudar a cidade cair\u00E1.";
+		tx[13] = "Voc\u00EA:\n\nSobreviv\u00EAncia, se voc\u00EA n\u00E3o nos ajudar a cidade cair\u00E1.";
 
-		tx[14] = "Kalastar:\n\n  Disso eu sei, mas quero saber al\u00E9m "
+		tx[14] = "Kalastar:\n\n Disso eu sei, mas quero saber al\u00E9m "
 				+ " disso. Estou falando de dinheiro, t\u00EDtulos.";
 
-		tx[15] = "Voc\u00EA:\n\n N\u00E3o posso prometer t\u00EDtulos, mas ter\u00E1 "
+		tx[15] = "Voc\u00EA:\n\nN\u00E3o posso prometer t\u00EDtulos, mas ter\u00E1 "
 				+ " todo o dinheiro com que puder sonhar. ";
 
-		tx[16] = "Kalastar:\n\n  Eu posso sonhar com quantidades bem  altas... De qualquer forma, eu preciso "
+		tx[16] = "Kalastar:\n\n Eu posso sonhar com quantidades bem  altas... De qualquer forma, eu preciso "
 				+ " saber se posso confiar em voc\u00EA, s\u00F3 que ao modo de Tr\u00EAs Ponteiros.";
 
-		tx[17] = "Voc\u00EA:\n\n O que voc\u00EA quer que eu fa\u00E7a?";
+		tx[17] = "Voc\u00EA:\n\nO que voc\u00EA quer que eu fa\u00E7a?";
 
 		tx[18] = "Kalastar:\n\nEst\u00E1 vendo aquela porta? Prove para"
 				+ " mim que voc\u00EA consegue abri-la com sua "
@@ -564,10 +564,10 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx = new String[3];
 
-		tx[0] = "Kalastar:\n\n Voc\u00EA tem seu valor. A Alameda dos Tr\u00EAs"
+		tx[0] = "Kalastar:\n\nVoc\u00EA tem seu valor. A Alameda dos Tr\u00EAs"
 				+ " Ponteiros lutar\u00E1 ao seu lado.";
 
-		tx[1] = "Voc\u00EA:\n\n Agrade\u00E7o.";
+		tx[1] = "Voc\u00EA:\n\nAgrade\u00E7o.";
 
 		tx[2] = "O dia est\u00E1 acabando e voc\u00EA volta vitorioso para o castelo.";
 

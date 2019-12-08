@@ -255,7 +255,7 @@ public class Hist_Arcan {
 						new Thread() {
 							public void run() {
 								Labirinto lab = new Labirinto(player);
-								load.setCarregando(false);
+								load.interrupt();
 								lab.go();
 							}
 						}.start();

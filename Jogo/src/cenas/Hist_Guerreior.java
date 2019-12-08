@@ -220,6 +220,7 @@ public class Hist_Guerreior {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 						t1.getTexto().dispose();
@@ -229,10 +230,11 @@ public class Hist_Guerreior {
 						new Thread() {
 							public void run() {
 								Labirinto lab = new Labirinto(player);
-								load.setCarregando(false);
+								load.interrupt();
 								lab.go();
 							}
 						}.start();
+						Thread.currentThread().interrupt();
 
 					} else
 						cont++;
@@ -342,7 +344,6 @@ public class Hist_Guerreior {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				catedral1(t1, 1);
-				t1.getContinuar().addActionListener(continuar);
 
 			}
 		};
@@ -353,7 +354,6 @@ public class Hist_Guerreior {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				catedral1(t1, 2);
-				t1.getContinuar().addActionListener(continuar);
 			}
 		};
 
@@ -363,7 +363,7 @@ public class Hist_Guerreior {
 
 				t1.getTexto().remove(geral.getChoice().getPanel_1());
 				catedral1(t1, 3);
-				t1.getContinuar().addActionListener(continuar);
+
 			}
 		};
 
@@ -732,7 +732,6 @@ public class Hist_Guerreior {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
 						musica.stop();
 						Creditos cr = new Creditos();
 						try {
@@ -758,6 +757,7 @@ public class Hist_Guerreior {
 							}
 						}.start();
 						cr.setUndecorated(true);
+						t1.getTexto().dispose();
 						cr.mostraCreditos();
 
 					} else
@@ -790,7 +790,6 @@ public class Hist_Guerreior {
 				if (geral.isFlag()) {
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
-						t1.getTexto().dispose();
 						musica.stop();
 						Creditos cr = new Creditos();
 						try {
@@ -815,7 +814,9 @@ public class Hist_Guerreior {
 							}
 						}.start();
 						cr.setUndecorated(true);
+						t1.getTexto().dispose();
 						cr.mostraCreditos();
+
 					} else
 						cont++;
 				}

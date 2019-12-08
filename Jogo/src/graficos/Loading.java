@@ -9,7 +9,6 @@ public class Loading extends Thread {
 	private JLabel fundo;
 	private JFrame frame;
 	private ImageIcon[] icone = new ImageIcon[10];
-	private boolean carregando = true;
 
 	public Loading() {
 		this.frame = new JFrame();
@@ -35,25 +34,21 @@ public class Loading extends Thread {
 		int i = 0;
 
 		this.frame.setVisible(true);
-		while (carregando) {
+		while (true) {
 			fundo.setIcon(icone[i]);
 			try {
 				sleep(250);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				frame.dispose();
+				Thread.currentThread().interrupt();
 			}
 			i++;
 			if (i == 10)
 				i = 0;
 
 		}
-		frame.dispose();
+		
 
-	}
-
-	public void setCarregando(boolean carregando) {
-		this.carregando = carregando;
 	}
 
 	public static void main(String[] args) {

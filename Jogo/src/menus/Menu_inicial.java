@@ -87,7 +87,7 @@ public class Menu_inicial extends Janela {
 //								e.printStackTrace();
 //							}
 //							Hist_Inicio jogo = new Hist_Inicio();
-//							load.setCarregando(false);
+//							load.interrupt();
 //							jogo.inicio();
 //						}
 //					}.start();

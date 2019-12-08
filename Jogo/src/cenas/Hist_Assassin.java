@@ -238,7 +238,7 @@ public class Hist_Assassin {
 						new Thread() {
 							public void run() {
 								Labirinto lab = new Labirinto(player);
-								load.setCarregando(false);
+								load.interrupt();
 								lab.go();
 							}
 						}.start();
@@ -747,7 +747,6 @@ public class Hist_Assassin {
 					if (geral.isFlag()) {
 						if (cont == (vet.getTx().length - 1)) {
 							t1.getContinuar().removeActionListener(continuar);
-							t1.getTexto().dispose();
 							musica.stop();
 							Creditos cr = new Creditos();
 							try {
@@ -772,7 +771,8 @@ public class Hist_Assassin {
 									new Menu_inicial();
 								}
 							}.start();
-
+							cr.setUndecorated(true);
+							t1.getTexto().dispose();
 							cr.mostraCreditos();
 						} else
 							cont++;
@@ -805,7 +805,7 @@ public class Hist_Assassin {
 					if (geral.isFlag()) {
 						if (cont == (vet.getTx().length - 1)) {
 							t1.getContinuar().removeActionListener(continuar);
-							t1.getTexto().dispose();
+						
 							Creditos cr = new Creditos();
 							musica.stop();
 							try {
@@ -829,7 +829,8 @@ public class Hist_Assassin {
 									new Menu_inicial();
 								}
 							}.start();
-
+							cr.setUndecorated(true);
+							t1.getTexto().dispose();
 							cr.mostraCreditos();
 						} else
 							cont++;
@@ -867,8 +868,25 @@ public class Hist_Assassin {
 						if (geral.isFlag()) {
 							if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
 								t1.getContinuar().removeActionListener(continuar);
+								musica.stop();
+								Creditos cr = new Creditos();
+								new Thread() {
+									public void run() {
+										try {
+											sleep(10000);
+										} catch (InterruptedException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+										musica.stop();
+										cr.setVisible(false);
+										new Menu_inicial();
+									}
+								}.start();
+								cr.setUndecorated(true);
 								t1.getTexto().dispose();
-								destino();
+								cr.mostraCreditos();
+
 							} else // Atualiza o contador para verificar a posi��o do vetor de texto
 								cont++;
 						}
@@ -893,8 +911,25 @@ public class Hist_Assassin {
 						if (geral.isFlag()) {
 							if (cont == (vet.getTx().length - 1)) {// Verifica se acabaram os vetores de texto
 								t1.getContinuar().removeActionListener(continuar);
+								musica.stop();
+								Creditos cr = new Creditos();
+								new Thread() {
+									public void run() {
+										try {
+											sleep(10000);
+										} catch (InterruptedException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+										musica.stop();
+										cr.setVisible(false);
+										new Menu_inicial();
+									}
+								}.start();
+								cr.setUndecorated(true);
 								t1.getTexto().dispose();
-								destino();
+								cr.mostraCreditos();
+
 							} else // Atualiza o contador para verificar a posi��o do vetor de texto
 								cont++;
 						}

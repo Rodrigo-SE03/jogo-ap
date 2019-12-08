@@ -30,6 +30,7 @@ public class Hidra {
 	private boolean perdeu, ganhou, mtcabeca, hasCoracao;
 	private int numb, numero, min, seg;
 	private int time;
+	private Thread tempo;
 
 //	public static void main(String[] args) {
 //		EventQueue.invokeLater(new Runnable() {
@@ -239,6 +240,7 @@ public class Hidra {
 				relogio.dispose();
 				time = 0;
 				ganhou = true;
+				tempo.interrupt();
 				switch (player.getClase()) {
 				case 0:
 					new Hist_Arcan(player).catedralVitoria();
@@ -267,7 +269,7 @@ public class Hidra {
 
 	public void tempo() {
 
-		new Thread() {
+		tempo = new Thread() {
 			public void run() {
 				try {
 					while (time > 0 && !perdeu) {
@@ -290,7 +292,8 @@ public class Hidra {
 						background.dispose();
 						relogio.dispose();
 						time = 0;
-
+						Thread.currentThread().interrupt();
+						
 						if (mtcabeca) {
 							switch (player.getClase()) {
 							case 0:
@@ -326,10 +329,11 @@ public class Hidra {
 					}
 
 				} catch (InterruptedException e) {
-					e.printStackTrace();
+					Thread.currentThread().interrupt();
 				}
 			}
-		}.start();
+		};
+		tempo.start();
 	}
 
 }

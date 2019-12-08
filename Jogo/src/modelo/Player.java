@@ -27,10 +27,21 @@ public class Player {
 		this.y = 800;
 
 		switch (jogador.getClase()) {
+		case 0:
+			tiro = new ImageIcon(getClass().getResource("tiro.jpeg"));
+			tiro.setImage(tiro.getImage().getScaledInstance(30, 10, 100));
+			if (jogador.getSexo() == 0) {
+				referencia = new ImageIcon(getClass().getResource("arc_male.png"));
+
+			} else {
+				referencia = new ImageIcon(getClass().getResource("arc_fem.png"));
+			}
+			break;
 		case 1:
 			tiro = new ImageIcon(getClass().getResource("faca.png"));
+			tiro.setImage(tiro.getImage().getScaledInstance(30, 30, 100));
 			if (jogador.getSexo() == 0) {
-				referencia = new ImageIcon(getClass().getResource("lad_masc.png"));
+				referencia = new ImageIcon(getClass().getResource("lad_male.png"));
 
 			} else {
 				referencia = new ImageIcon(getClass().getResource("lad_fem.png"));
@@ -38,6 +49,7 @@ public class Player {
 			break;
 		case 2:
 			tiro = new ImageIcon(getClass().getResource("flecha.png"));
+			tiro.setImage(tiro.getImage().getScaledInstance(30, 30, 100));
 			if (jogador.getSexo() == 0) {
 				referencia = new ImageIcon(getClass().getResource("guerr_male.png"));
 
@@ -48,10 +60,10 @@ public class Player {
 		default:
 			referencia = new ImageIcon(getClass().getResource("TESTE.jpeg"));
 			tiro = new ImageIcon(getClass().getResource("tiro.jpeg"));
+			tiro.setImage(tiro.getImage().getScaledInstance(30, 30, 100));
 			break;
 		}
 
-		tiro.setImage(tiro.getImage().getScaledInstance(30, 30, 100));
 		referencia.setImage(referencia.getImage().getScaledInstance(60, 80, 100));
 		isVisivel = true;
 		ataques = new ArrayList<Ataque>();

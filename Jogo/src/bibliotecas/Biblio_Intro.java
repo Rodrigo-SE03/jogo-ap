@@ -104,9 +104,11 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 		tx = new String[4];
 
 		if (player.getSexo() == 0) {
+
 			tx[0] = "Guarda:\n\nTudo certo, mas antes de voc\u00EA entrar, me permita lhe dar um"
 					+ " conselho: pense muito bem nas suas primeiras a\u00E7\u00F5es aqui na cidade de "
 					+ " Helaria, pois elas definir\u00E3o como ser\u00E1  seu futuro aqui. Boa sorte garoto!";
+
 		} else {
 			tx[0] = "Guarda:\n\nTudo certo, mas antes de voc\u00EA entrar, me permita lhe dar um"
 					+ " conselho: pense muito bem nas suas primeiras a\u00E7\u00F5es aqui na cidade de "
@@ -127,7 +129,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 				+ "  ainda conseguir\u00E1 alcan\u00E7\u00E3-lo.  O que far\u00E1? ";
 
 		op1 = "Correr atr\u00E1s do Homem";
-		op2 = "Deix\u00E0-lo ir embora";
+		op2 = "Deix\u00E1-lo ir embora";
 
 	}
 

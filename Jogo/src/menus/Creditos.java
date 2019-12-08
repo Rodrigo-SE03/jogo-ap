@@ -13,8 +13,7 @@ public class Creditos extends JDialog {
 	JLabel mig = new JLabel(new ImageIcon("src/imagens/mig.png"));
 	JLabel dan = new JLabel(new ImageIcon("src/imagens/dan.png"));
 	JLabel fundo = new JLabel(new ImageIcon("src/imagens/pac_mano.gif"));
-
-	public void mostraCreditos() {
+	public Creditos() {
 		ImageIcon icone = new ImageIcon("src/imagens/Icone.png");
 		this.setIconImage(icone.getImage());
 		this.add(rod);
@@ -30,6 +29,9 @@ public class Creditos extends JDialog {
 		pp.setBounds(424, 90, 340, 41);
 		rod.setBounds(500, 30, 264, 41);
 		this.setModal(true);
+	}
+	public void mostraCreditos() {
+		
 		this.setVisible(true);
 	}
 	

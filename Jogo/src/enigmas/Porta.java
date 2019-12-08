@@ -30,6 +30,7 @@ public class Porta {
 	private int min, seg;
 	private int time;
 	private Texto_enigma caixa;
+	private Thread tempo;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -164,6 +165,7 @@ public class Porta {
 	}
 
 	public void perder(Jogador player) {
+		tempo.interrupt();
 		caixa.getFrame().dispose();
 		switch (player.getClase()) {
 
@@ -187,6 +189,7 @@ public class Porta {
 	}
 
 	public void vencer(Jogador player) {
+		tempo.interrupt();
 		switch (player.getClase()) {
 
 		case 0:
@@ -209,7 +212,7 @@ public class Porta {
 
 	public void tempo(Jogador player) {
 
-		new Thread() {
+		tempo = new Thread() {
 			public void run() {
 				try {
 					while (time > 0) {
@@ -228,9 +231,10 @@ public class Porta {
 					perder(player);
 
 				} catch (InterruptedException e) {
-					e.printStackTrace();
+					Thread.currentThread().interrupt();
 				}
 			}
-		}.start();
+		};
+		tempo.start();
 	}
 }

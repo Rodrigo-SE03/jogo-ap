@@ -160,6 +160,7 @@ public class Roda {
 				pass.setLocationRelativeTo(null);
 				pass.setUndecorated(true);
 				pass.setResizable(false);
+				pass.setDefaultCloseOperation(0);
 
 				JLabel gif = new JLabel(new ImageIcon("src/imagens/passagem.gif"));
 				pass.getContentPane().add(gif);

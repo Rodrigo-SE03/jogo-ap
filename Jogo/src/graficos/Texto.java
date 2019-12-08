@@ -77,6 +77,8 @@ public class Texto {
 
 		// definição do texto da janela
 		this.txt.setText(tex);
+		txt.setOpaque(false);
+		txt.setEditable(false);
 		this.txt.setBounds(50, 50, 500, 400);
 		this.txt.setFont(new Font("Georgia", Font.BOLD, 25));
 		this.txt.setForeground(Color.black);

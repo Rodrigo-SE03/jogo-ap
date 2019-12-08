@@ -10,7 +10,7 @@ public class Jogador extends Character {
 
 	public Jogador() {
 
-		super("Pedro", 0);
+		super("Pedro", 1);
 
 		// Arcan
 		andarPelaTorreArcan = false;
