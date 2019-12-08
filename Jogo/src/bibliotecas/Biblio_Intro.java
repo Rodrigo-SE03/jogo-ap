@@ -126,7 +126,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 				+ " comprar sua t\u00E3o sonhada refei\u00E7\u00E3o percebe que est\u00E1 sem seu dinheiro ";
 
 		choice = "O homem que esbarrou em voc\u00EA ainda est\u00E1 \u00E0 vista, se voc\u00EA correr"
-				+ " ainda conseguir\u00E1 alcan\u00E1\u00E3-lo. O que far\u00E1? ";
+				+ " ainda conseguir\u00E1 alcan\u00E7\u00E1-lo. O que far\u00E1? ";
 
 		op1 = "Correr atr\u00E1s do Homem";
 		op2 = "Deix\u00E1-lo ir embora";
@@ -852,7 +852,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 				tx[3] = "Capit\u00E3o Alexander:\n\nSuponho que voc\u00EA seja o garoto que "
 						+ " meu irm\u00E3o Erebor encontrou mais cedo. N\u00E3o se preocupe, ele j\u00E1 me"
-						+ " contou sua hist\u00F3ria.Ent\u00E3o voc\u00EA acha "
+						+ " contou sua hist\u00F3ria. Ent\u00E3o voc\u00EA acha "
 						+ " que tem o que \u00E9 preciso para entrar na Guarda Real? ";
 
 				tx[4] = "Voc\u00EA n\u00E3o tem nenhuma d\u00FAvida ao responder que sim. ";
@@ -872,7 +872,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 				tx[3] = "Capit\u00E3o Alexander:\n\nSuponho que voc\u00EA seja a garota que "
 						+ " meu irm\u00E3o Erebor encontrou mais cedo. N\u00E3o se preocupe, ele j\u00E1 me"
-						+ " contou sua hist\u00F3ria.Ent\u00E3o voc\u00EA acha "
+						+ " contou sua hist\u00F3ria. Ent\u00E3o voc\u00EA acha "
 						+ " que tem o que \u00E9 preciso para entrar na Guarda Real? ";
 
 				tx[4] = "Voc\u00EA n\u00E3o tem nenhuma d\u00FAvida ao responder que sim. ";

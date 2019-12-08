@@ -26,37 +26,37 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		if (masculino) {
 
-			tx[0] = "Quinze anos se passaram desde quevoc\u00EA entrou para a Guarda Real. Voc\u00EA "
-					+ " foi acolhido e eles se tornaram suanova fam\u00EDlia, em especial o Capit\u00E3o"
+			tx[0] = "Quinze anos se passaram desde que voc\u00EA entrou para a Guarda Real. Voc\u00EA "
+					+ " foi acolhido e eles se tornaram sua nova fam\u00EDlia, em especial o Capit\u00E3o"
 					+ " Alexander, atualmente General "
-					+ " Alexander e voc\u00EA \u00E9 o novo Capit\u00E3o domesmo S\u00E9timo Comando. ";
+					+ " Alexander. Voc\u00EA \u00E9 o novo Capit\u00E3o do mesmo S\u00E9timo Comando. ";
 
-			tx[2] = "Hoje voc\u00EA \u00E9 um dos melhorescombatentes que Helaria j\u00E1 viu um "
-					+ " diplomata extremamente habilidoso,tudo isso gra\u00E7as a Alexander e a seu "
-					+ " irm\u00E3o, assassinado h\u00E1 poucos anospela Guilda Vigilante. ";
+			tx[2] = "Hoje voc\u00EA \u00E9 um dos melhores combatentes que Helaria j\u00E1 viu um "
+					+ " diplomata extremamente habilidoso, tudo isso gra\u00E7as a Alexander e a seu "
+					+ " irm\u00E3o, assassinado h\u00E1 poucos anos pela Guilda Vigilante. ";
 
 		} else {
 
 			tx[0] = "Quinze anos se passaram desde quevoc\u00EA entrou para a Guarda Real. Voc\u00EA "
 					+ " foi acolhida e eles se tornaram suanova fam\u00EDlia, em especial o Capit\u00E3o"
-					+ " Alexander, atualmente GeneralAlexander e voc\u00EA \u00E9 a nova Capit\u00E3 do "
+					+ " Alexander, atualmente General Alexander e voc\u00EA \u00E9 a nova Capit\u00E3 do "
 					+ " mesmo S\u00E9timo Comando. ";
 
-			tx[2] = "Hoje voc\u00EA \u00E9 uma das melhorescombatentes que Helaria j\u00E1 viu uma "
+			tx[2] = "Hoje voc\u00EA \u00E9 uma das melhores combatentes que Helaria j\u00E1 viu, uma "
 					+ " diplomata extremamente habilidosa,tudo isso gra\u00E7as a Alexander e a seu "
-					+ " irm\u00E3o, assassinado h\u00E1 poucos anospela Guilda Vigilante. ";
+					+ " irm\u00E3o, assassinado h\u00E1 poucos anos pela Guilda Vigilante. ";
 
 		}
 
-		tx[1] = "Em todo esse per\u00EDodo Alexanderatuou como um pai para voc\u00EA, um"
+		tx[1] = "Em todo esse per\u00EDodo Alexander atuou como um pai para voc\u00EA, um"
 				+ " amigo nos momentos em que voc\u00EAprecisava e, principalmente um "
-				+ " mentor em todos os momentos, tetreinou nas artes de combate e nadiplomacia. ";
+				+ " mentor em todos os momentos, tetreinou nas artes de combate e na diplomacia. ";
 
-		tx[3] = "Voc\u00EAs sentem muita falta dele, afinalele era um membro da fam\u00EDlia, mas "
-				+ " juntos conseguiram superar suamorte, por\u00E9m nunca conseguiram prender os culpados. ";
+		tx[3] = "Voc\u00EAs sentem muita falta dele, afinal ele era um membro da fam\u00EDlia, mas "
+				+ " juntos conseguiram superar sua morte, por\u00E9m nunca conseguiram prender os culpados. ";
 
-		tx[4] = "Hoje voc\u00EA acorda com a chegada de um mensageiro em seus aposentos, "
-				+ "General Alexander pede seucomparecimento imediato em seusaposentos.";
+		tx[4] = "Hoje voc\u00EA acorda com a chegada de um mensageiro em seu quarto, "
+				+ "General Alexander pede seu comparecimento imediato em seus aposentos.";
 
 		choice = "Nos aposentos do general voc\u00EA tem algumas op\u00E7\u00F5es para comer, o que ser\u00E1?";
 
@@ -75,44 +75,44 @@ public class Biblio_Guerreiro extends Biblioteca {
 		switch (x) {
 		case 1:
 
-			tx[0] = "Alexander: \n\nVoc\u00EA sempre gostou das coisasmais b\u00E1sicas.";
+			tx[0] = "Alexander: \n\nVoc\u00EA sempre gostou das coisas mais b\u00E1sicas.";
 			break;
 
 		case 2:
 
-			tx[0] = "Alexander: \n\nParece que algu\u00E9m tem umapetite por doces";
+			tx[0] = "Alexander: \n\nParece que algu\u00E9m tem um apetite por doces";
 			break;
 
 		case 3:
 
-			tx[0] = "Alexander: \n\nUma refei\u00E7\u00E3o refinada paraalgu\u00E9m de h\u00E1bitos refinados";
+			tx[0] = "Alexander: \n\nUma refei\u00E7\u00E3o refinada para algu\u00E9m de h\u00E1bitos refinados";
 			break;
 
 		}
 
 		tx[1] = "Voc\u00EA:\n\nAgora que terminamos de comer, por que me chamou aqui t\u00E3o de repente?";
 
-		tx[2] = "Alexander:\n\nOntem de noite o Imp\u00E9rio deBethesda declarou guerra contra Helaria. ";
+		tx[2] = "Alexander:\n\nOntem de noite o Imp\u00E9rio de Bethesda declarou guerra contra Helaria. ";
 
-		tx[3] = "Voc\u00EA fica em choque com essainforma\u00E7\u00E3o, uma guerra sendo "
+		tx[3] = "Voc\u00EA fica em choque com essa informa\u00E7\u00E3o, uma guerra sendo "
 				+ " iniciada sem nenhum precedente, de forma t\u00E3o s\u00FAbita. ";
-		tx[4] = "Desde que voc\u00EA entrou na GuardaReal isso nunca tinha acontecido, "
-				+ " ainda mais que o oponente emquest\u00E3o \u00E9 o Imp\u00E9rio Bethesda";
+		tx[4] = "Desde que voc\u00EA entrou na Guarda Real isso nunca tinha acontecido, "
+				+ " ainda mais que o oponente em quest\u00E3o \u00E9 o Imp\u00E9rio Bethesda";
 
-		tx[5] = "Voc\u00EA:\n\nO que voc\u00EA quer dizer com isso,General? ";
+		tx[5] = "Voc\u00EA:\n\nO que voc\u00EA quer dizer com isso, General? ";
 
-		tx[6] = "Alexander:\n\nAparentemente Bethesda teminteresse nestas ricas terras de "
-				+ " Helaria e, para eles conseguirem oque querem, n\u00F3s precisamos sair. ";
+		tx[6] = "Alexander:\n\nAparentemente Bethesda tem interesse nestas ricas terras de "
+				+ " Helaria e, para eles conseguirem o que querem, n\u00F3s precisamos sair. ";
 
 		tx[7] = "Voc\u00EA:\n\nMas, Bethesda? ";
 
-		tx[8] = "Alexander:\n\nForam eles que destru\u00EDram sua vila emataram sua fam\u00EDlia, n\u00E3o foi?";
+		tx[8] = "Alexander:\n\nForam eles que destru\u00EDram sua vila e mataram sua fam\u00EDlia, n\u00E3o foi?";
 
 		tx[9] = "Voc\u00EA:\n\nSim... ";
 
 		tx[10] = "Alexander:\n\n" + player.getNome() + ", pe\u00E7o que mantenha sua "
-				+ " cabe\u00E7a no lugar nesta guerra que seaproxima. Sei o quanto deseja se "
-				+ " vingar deles, mas est\u00E1 em jogo algomuito maior.";
+				+ " cabe\u00E7a no lugar nesta guerra que se aproxima. Sei o quanto deseja se "
+				+ " vingar deles, mas est\u00E1 em jogo algo muito maior.";
 
 		tx[11] = "Alexander:\n\nN\u00E3o deixe que seu \u00F3dio eseu desejo de vingan\u00E7a tomem conta"
 				+ " de suas a\u00E7\u00F5es. \u00C1s vezes as atitudes"
@@ -122,16 +122,16 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ " minhas emo\u00E7\u00F5es tomarem conta de mim e farei o que for preciso para"
 				+ " proteger Helaria e vencer a guerra.";
 
-		tx[13] = "A conversa continua por mais algumtempo, Alexander te esclarece sobre os "
+		tx[13] = "A conversa continua por mais algum tempo, Alexander te esclarece sobre os "
 				+ " detalhes conhecidos da guerra e voc\u00EA fica sabendo que as tropas de Bethesda "
-				+ " est\u00E3o se aproximando de Helaria e temprevis\u00E3o de chegada de tr\u00EAs dias. ";
+				+ " est\u00E3o se aproximando de Helaria e tem previs\u00E3o de chegada de tr\u00EAs dias. ";
 
-		tx[14] = "Voc\u00EA sai dos aposentos do GeneralAlexander com tr\u00EAs miss\u00F5es, conseguir "
+		tx[14] = "Voc\u00EA sai dos aposentos do General Alexander com tr\u00EAs miss\u00F5es: conseguir "
 				+ " os mapas do subterr\u00E2neo da cidade naCatedral, recrutar os arcanos treinados "
 				+ " em combate na Torre Arcana e conseguir a ajuda do ladr\u00E3o Kelastar, na Alameda "
-				+ " dos Tr\u00EAs Ponteiros. Para onde voc\u00EA ir\u00E1 ";
+				+ " dos Tr\u00EAs Ponteiros.";
 
-		tx[15] = "Para onde voc\u00EA ir\u00E1 primeiro ? ";
+		tx[15] = "Para onde voc\u00EA ir\u00E1 primeiro? ";
 
 	}
 
