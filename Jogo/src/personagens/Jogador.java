@@ -9,9 +9,7 @@ public class Jogador extends Character {
 //	private boolean[] firstTry = new boolean[3];
 
 	public Jogador() {
-
-		super("Pedro", 1);
-
+		
 		// Arcan
 		andarPelaTorreArcan = false;
 		sacrificio = false;

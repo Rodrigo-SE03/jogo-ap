@@ -3,7 +3,6 @@ package enigmas;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -47,18 +46,6 @@ public class Labirinto {
 	private JTextPane text;
 	Thread tempo;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					new Labirinto(new Jogador()).go();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	public Labirinto(Jogador player) {
 
 		this.player = player;
@@ -72,7 +59,6 @@ public class Labirinto {
 		this.time = 90;
 		this.min = 1;
 		this.seg = 30;
-		
 
 	}
 
@@ -179,13 +165,16 @@ public class Labirinto {
 		ImageIcon img1;
 
 		switch (player.getClase()) {
+
 		case 0:
+			
 			if (player.getSexo() == 0) {
 				img1 = new ImageIcon("src/modelo/arc_male.png");
 
 			} else {
 				img1 = new ImageIcon("src/modelo/arc_fem.png");
 			}
+			break;
 
 		case 1:
 

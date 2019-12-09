@@ -175,7 +175,8 @@ public class Formulario {
 							player.setSexo(1);
 
 						frame.dispose();
-						new Hist_Inicio().admin(player);
+//						new Hist_Inicio().admin(player);
+						new Hist_Inicio().inicio2(player);
 					}
 				}
 			}

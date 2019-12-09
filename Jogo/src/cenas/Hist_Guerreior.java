@@ -44,6 +44,10 @@ public class Hist_Guerreior {
 		vet.grr_1();
 		geral.escolhas_3(t1, vet);
 
+		musica.TocaMusica("src/sons/mercado.wav");
+		musica.setVolume(0.0f);
+		musica.aumentaVolume(0.6f, 60);
+
 		continuar = new ActionListener() {
 			int cont = 0;
 			int no = 0;
@@ -51,18 +55,11 @@ public class Hist_Guerreior {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					switch (cont) {
-					case 0:
-						musica.TocaMusica("src/sons/mercado.wav");
-						musica.setVolume(0.0f);
-						musica.aumentaVolume(0.6f, 60);
-						break;
 					case 6:
 						musica.reduzVolume(0.0f, 60);
 						musica2.TocaMusica("src/sons/sarcificio.wav");
 						musica2.setVolume(0.0f);
 						musica2.aumentaVolume(0.6f, 60);
-						break;
-					default:
 						break;
 					}
 					if (cont == 20 && no == 0) {
@@ -292,7 +289,8 @@ public class Hist_Guerreior {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(2, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.grr_4_torre_win();
 		geral.escolhas_0(t1, vet);
@@ -509,7 +507,8 @@ public class Hist_Guerreior {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(1, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.grr_6();
 		geral.escolhas_0(t1, vet);
@@ -625,7 +624,8 @@ public class Hist_Guerreior {
 		Texto t1 = new Texto();
 
 		this.player.setEnigma(0, true);
-		this.player.passaDia();
+		if (player.getHoras() != 3)
+			this.player.passaDia();
 
 		vet.grr_4_alameda_win();
 		geral.escolhas_0(t1, vet);
@@ -665,7 +665,7 @@ public class Hist_Guerreior {
 
 		Geral geral = new Geral();
 		Texto t1 = new Texto();
-	
+
 		if (player.getEnigma(1))
 			vet.grr_5_com_map();
 		else

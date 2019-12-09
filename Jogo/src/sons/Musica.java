@@ -11,10 +11,10 @@ public class Musica {
 	private File caminho;
 	private Clip clip;
 	private boolean isPlaying = false;
+	private Thread mus;
 
 	public void TocaMusica(String local) {
-		
-		new Thread() {
+		mus = new Thread() {
 			public void run() {
 				try {
 					
@@ -27,10 +27,11 @@ public class Musica {
 					isPlaying = true;
 
 				} catch (Exception ex) {
-					System.out.println(ex.getMessage());
+					Thread.currentThread().interrupt();
 				}
 			}
-		}.start();
+		};
+		mus.start();
 		
 	}
 
@@ -38,8 +39,10 @@ public class Musica {
 		try {
 			clip.stop();
 			isPlaying = false;
+			mus.interrupt();
 		} catch (Exception NullPointerException) {
 		}
+
 	}
 
 	public File getCaminho() {
@@ -97,8 +100,6 @@ public class Musica {
 							setVolume(getVolume() + 0.01f);
 						}
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
 				}
 			}

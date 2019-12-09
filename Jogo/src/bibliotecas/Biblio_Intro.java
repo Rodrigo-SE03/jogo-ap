@@ -83,7 +83,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 		tx[18] = "Voc\u00EA acorda lentamente, ainda abalado pelo pesadelo. Havia se"
 				+ " passado apenas uma semana desde o ocorrido. Voc\u00EA est\u00E1 na parte de tr\u00E1s"
 				+ " de uma carro\u00E7a guiada pelo homem que o salvou no momento da "
-				+ " destrui\u00E7\u00E3o. Em todo esse tempo n\u00E3o houve nenhuma conversa al\u00EAm do "
+				+ " destrui\u00E7\u00E3o. Em todo esse tempo n\u00E3o houve nenhuma conversa al\u00E9m do "
 				+ " necess\u00E1rio entre voc\u00EAs.";
 
 		tx[19] = "A carro\u00E7a para. Voc\u00EA escuta o homem descendo e conversando algo com "
@@ -343,7 +343,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 
 			tx[1] = "Artemisia:\n\nO que te trouxe aqui? Uma mulher desconhecida numa cidade estranha "
 					+ " te chama para um lugar no qual voc\u00EA nunca ouviu falar e voc\u00EA vem sem "
-					+ " hesitar, me pergunto se \u00E9 loucura ou burrisse... ";
+					+ " hesitar, me pergunto se \u00E9 loucura ou burrice... ";
 
 		} else {
 
@@ -352,7 +352,7 @@ public class Biblio_Intro extends Biblioteca { // Classe que armazena os vetores
 			tx[1] = "Arcana:\n\nO que te trouxe aqui? Voc\u00EA entra sem "
 					+ " convite na torre dos maiores arcanos conhecidos, me pergunto se voc\u00EA \u00E9 "
 					+ " nunca ouviu falar e voc\u00EA vem sem hesitar, me pergunto se \u00E9 sinal de "
-					+ " loucura ou burrisse.... ";
+					+ " loucura ou burrice.... ";
 
 		}
 

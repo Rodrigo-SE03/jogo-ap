@@ -2,7 +2,6 @@ package enigmas;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,19 +31,6 @@ public class Porta {
 	private Texto_enigma caixa;
 	private Thread tempo;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Porta window = new Porta(new Jogador());
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	public Porta(Jogador player) {
 		initialize(player);
 		this.time = 180;
@@ -69,7 +55,7 @@ public class Porta {
 			}
 		});
 
-		caixa = new Texto_enigma();
+		caixa = new Texto_enigma(frame);
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
 		caixa.getTxt1()

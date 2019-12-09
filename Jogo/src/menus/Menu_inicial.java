@@ -1,5 +1,7 @@
 package menus;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,13 +17,13 @@ import sons.Musica;
 public class Menu_inicial extends Janela {
 
 	private static final long serialVersionUID = 1L;
-	Musica musica = new Musica();
-	Janela menu = new Janela();
-	JButton iniciar = new JButton(new ImageIcon("src/imagens/botao_iniciar.png"));
-	JButton creditos = new JButton(new ImageIcon("src/imagens/Creditos.png"));
-	JLabel titulo = new JLabel(new ImageIcon("src/imagens/titulo.png"));
-	JLabel fundo = new JLabel(new ImageIcon("src/imagens/menu.png"));
-
+	private Musica musica = new Musica();
+	private Janela menu = new Janela();
+	private JButton iniciar = new JButton(new ImageIcon("src/imagens/botao_iniciar.png"));
+	private JButton creditos = new JButton(new ImageIcon("src/imagens/Creditos.png"));
+	private JLabel titulo = new JLabel(new ImageIcon("src/imagens/titulo.png"));
+	private JLabel fundo = new JLabel(new ImageIcon("src/imagens/menu.png"));
+	private Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
 	public Menu_inicial() {
 		// Redimensionar e reposicionar!!!
 
@@ -30,9 +32,11 @@ public class Menu_inicial extends Janela {
 		// Titulo
 		this.menu.add(titulo);
 		this.titulo.setLayout(null);
-		this.titulo.setBounds(0, 730, 700, 200);
+		this.titulo.setBounds(0, 750, 900, 200);
+		if(this.titulo.getLocation().y>(size.getHeight() + 200));
+			this.titulo.setLocation(0, (int) (size.getHeight() - 220));
 
-		// Creditos
+		// Creditos)
 		this.menu.add(creditos);
 		this.creditos.setLayout(null);
 		this.creditos.setVisible(true);
@@ -75,22 +79,22 @@ public class Menu_inicial extends Janela {
 			public void actionPerformed(ActionEvent e) {
 				musica.stop();
 				menu.dispose();
-				new Hist_Inicio().inicio();
-//            		Loading load = new Loading();
-//					load.start();
-//					new Thread() {
-//						public void run() {
-//							try {
-//								sleep(5000);
-//							} catch (InterruptedException e) {
-//								// TODO Auto-generated catch block
-//								e.printStackTrace();
-//							}
-//							Hist_Inicio jogo = new Hist_Inicio();
-//							load.interrupt();
-//							jogo.inicio();
-//						}
-//					}.start();
+//				new Hist_Inicio().inicio();
+            		Loading load = new Loading();
+					load.start();
+					new Thread() {
+						public void run() {
+							try {
+								sleep(5000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							Hist_Inicio jogo = new Hist_Inicio();
+							load.interrupt();
+							jogo.inicio();
+						}
+					}.start();
 
 			}
 		});

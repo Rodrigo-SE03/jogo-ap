@@ -53,7 +53,7 @@ public class Geral { // Classe base para criação dos textos
 					new Thread() {
 						public void run() {
 							try {
-								sleep(500);
+								sleep(350);
 								flag = true;
 							} catch (InterruptedException e) {
 								// TODO Auto-generated catch block
@@ -77,7 +77,8 @@ public class Geral { // Classe base para criação dos textos
 			public void actionPerformed(ActionEvent actionEvent) {
 				if (flag) {
 					flag = false;
-
+					go = true;
+					
 					if (cont < (vet.getTx().length - 1)) {
 						cont++;
 						t1.atualizaTexto(vet.getTx(cont));
@@ -94,7 +95,7 @@ public class Geral { // Classe base para criação dos textos
 					new Thread() {
 						public void run() {
 							try {
-								sleep(500);
+								sleep(350);
 								flag = true;
 							} catch (InterruptedException e) {
 								// TODO Auto-generated catch block
@@ -125,6 +126,7 @@ public class Geral { // Classe base para criação dos textos
 						cont++;
 						t1.atualizaTexto(vet.getTx(cont));
 					} else {
+						go = true;
 						t1.zerar();
 						choice.doEscolhas_3(t1.getTexto(), vet.getChoice(), vet.getOp1(), vet.getOp2(), vet.getOp3());
 						cont = 0;
@@ -133,7 +135,7 @@ public class Geral { // Classe base para criação dos textos
 					new Thread() {
 						public void run() {
 							try {
-								sleep(500);
+								sleep(350);
 								flag = true;
 							} catch (InterruptedException e) {
 								// TODO Auto-generated catch block

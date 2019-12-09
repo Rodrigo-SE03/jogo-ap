@@ -127,7 +127,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ " est\u00E3o se aproximando de Helaria e tem previs\u00E3o de chegada de tr\u00EAs dias. ";
 
 		tx[14] = "Voc\u00EA sai dos aposentos do General Alexander com tr\u00EAs miss\u00F5es: conseguir "
-				+ " os mapas do subterr\u00E2neo da cidade naCatedral, recrutar os arcanos treinados "
+				+ " os mapas do subterr\u00E2neo da cidade na Catedral, recrutar os arcanos treinados "
 				+ " em combate na Torre Arcana e conseguir a ajuda do ladr\u00E3o Kelastar, na Alameda "
 				+ " dos Tr\u00EAs Ponteiros.";
 
@@ -462,7 +462,7 @@ public class Biblio_Guerreiro extends Biblioteca {
 
 		tx[0] = "Voc\u00EA consegue juntar todas as partes eentrega o livro para Muriel. Ela e sua"
 				+ " equipe ir\u00E3o se juntar a voc\u00EA nesta guerra. "
-				+ " Voc\u00EA volta para o Castelo da GuardaReal para descansar.";
+				+ " Voc\u00EA volta para o Castelo da Guarda Real para descansar.";
 
 	}
 
@@ -645,9 +645,9 @@ public class Biblio_Guerreiro extends Biblioteca {
 				+ " por voc\u00EAs. Na cidade e embaixo dela se d\u00E3o batalhas violentas.";
 
 		tx[1] = "Voc\u00EAs resistem at\u00E9 suas \u00FAltimas for\u00E7as,"
-				+ " mas quando o \u00FAltimo soldado deBethesda cai por suas m\u00E3os, voc\u00EA cai "
+				+ " mas quando o \u00FAltimo soldado de Bethesda cai por suas m\u00E3os, voc\u00EA cai "
 				+ " junto com ele. Helaria conseguiu vencer a "
-				+ " guerra e voc\u00EA sabe disso, agora voc\u00EApode morrer em paz.";
+				+ " guerra e voc\u00EA sabe disso, agora voc\u00EA pode morrer em paz.";
 
 	}
 

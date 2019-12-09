@@ -42,23 +42,22 @@ public class Hist_Arcan {
 		vet.arcan1();
 		geral.escolhas_2(t1, vet);
 
+		musica.TocaMusica("src/sons/reuniaoArcana.wav");
+		musica.setVolume(0.0f);
+		musica.aumentaVolume(0.2f, 80);
+
 		continuar = new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
+
 					switch (cont) {
-					case 0:
-						musica.TocaMusica("src/sons/reuniaoArcana.wav");
-						musica.setVolume(0.0f);
-						musica.aumentaVolume(0.2f, 80);
-						break;
 					case 4:
 						musica.aumentaVolume(0.6f, 50);
 						break;
-					default:
-						break;
 					}
+
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 					} else
@@ -298,7 +297,7 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
-
+						Thread.currentThread().interrupt();
 					} else
 						cont++;
 				}
@@ -352,7 +351,7 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
-
+						Thread.currentThread().interrupt();
 					} else
 						cont++;
 				}
@@ -378,32 +377,6 @@ public class Hist_Arcan {
 		vet.catedral();
 
 		geral.escolhas_2(t1, vet);
-
-		continuar = new ActionListener() {
-			int cont = 0;
-
-			public void actionPerformed(ActionEvent e) {
-				if (geral.isFlag()) {
-					switch (cont) {
-//					case 0:
-//						if (musica.isPlaying()) {
-//							musica.stop();
-//						}
-//						musica.TocaMusica("src/sons/prisao.wav");
-//						musica.setVolume(0.9f);
-//						break;
-					default:
-						break;
-					}
-					if (cont == (vet.getTx().length - 1)) {
-						t1.getContinuar().removeActionListener(continuar);
-					} else
-						cont++;
-				}
-			}
-		};
-
-		t1.getContinuar().addActionListener(continuar);
 
 		escolha1 = new ActionListener() {
 
@@ -513,6 +486,7 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
+						Thread.currentThread().interrupt();
 					} else
 						cont++;
 				}
@@ -539,13 +513,6 @@ public class Hist_Arcan {
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-//					switch (cont) {
-//					case 0:
-//						musica.aumentaVolume(0.9f, 50);
-//						break;
-//					default:
-//						break;
-//					}
 					if (cont == (vet.getTx().length - 1)) {
 						new Thread() {
 							public void run() {
@@ -562,6 +529,7 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
+						Thread.currentThread().interrupt();
 					} else
 						cont++;
 				}
@@ -596,16 +564,8 @@ public class Hist_Arcan {
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
 					switch (cont) {
-//					case 0:
-//						if (musica.isPlaying())
-//							musica.stop();
-//						musica.TocaMusica("src/sons/alameda.wav");
-//						musica.setVolume(0.3f);
-//						break;
 					case 2:
 						musica.aumentaVolume(0.6f, 50);
-						break;
-					default:
 						break;
 					}
 					if (cont == (vet.getTx().length - 1)) {
@@ -630,7 +590,6 @@ public class Hist_Arcan {
 		vet.alamedaDerrota();
 		geral.escolhas_0(t1, vet);
 
-
 		continuar = new ActionListener() {
 			int cont = 0;
 
@@ -652,6 +611,7 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
+						Thread.currentThread().interrupt();
 					} else
 						cont++;
 				}
@@ -703,7 +663,7 @@ public class Hist_Arcan {
 								destino();
 							}
 						}.start();
-
+						Thread.currentThread().interrupt();
 					} else
 						cont++;
 				}

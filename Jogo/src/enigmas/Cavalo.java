@@ -3,14 +3,12 @@ package enigmas;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import cenas.Hist_Arcan;
 import cenas.Hist_Guerreior;
 import graficos.Texto;
 import personagens.Jogador;
 import sons.Musica;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -25,18 +23,6 @@ public class Cavalo {
 	private boolean[] isSelect = new boolean[6];
 	private int cont;
 	private Musica musica;
-	
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Cavalo window = new Cavalo(new Jogador(), new Texto());
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
 	public Cavalo(Jogador player, Texto t1) {
 		for (int i = 0; i < 6; i++)
@@ -62,7 +48,7 @@ public class Cavalo {
 			}
 		});
 
-		Texto_enigma caixa = new Texto_enigma();
+		Texto_enigma caixa = new Texto_enigma(frame);
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
 

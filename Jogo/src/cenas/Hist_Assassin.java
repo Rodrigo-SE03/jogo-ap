@@ -42,21 +42,16 @@ public class Hist_Assassin {
 		vet.hpAssassin();
 
 		geral.escolhas_2(t1, vet);
+		
+		musica.TocaMusica("src/sons/reuniaoArcana.wav");
+		musica.setVolume(0.0f);
+		musica.aumentaVolume(0.7f, 80);
 
 		continuar = new ActionListener() {
 			int cont = 0;
 
 			public void actionPerformed(ActionEvent e) {
 				if (geral.isFlag()) {
-					switch (cont) {
-					case 0:
-						musica.TocaMusica("src/sons/reuniaoArcana.wav");
-						musica.setVolume(0.0f);
-						musica.aumentaVolume(0.7f, 80);
-						break;
-					default:
-						break;
-					}
 					if (cont == (vet.getTx().length - 1)) {
 						t1.getContinuar().removeActionListener(continuar);
 					} else

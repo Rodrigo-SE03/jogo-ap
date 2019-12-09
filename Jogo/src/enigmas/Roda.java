@@ -1,7 +1,6 @@
 package enigmas;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,18 +20,6 @@ public class Roda {
 
 	private JFrame frame;
 	private Musica musica;
-
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Roda window = new Roda(new Jogador(), new Texto());
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
 	public Roda(Jogador player, Texto t1) {
 		initialize(player, t1);
@@ -56,7 +43,7 @@ public class Roda {
 			}
 		});
 
-		Texto_enigma caixa = new Texto_enigma();
+		Texto_enigma caixa = new Texto_enigma(frame);
 		caixa.getFrame().setBounds(frame.getX() + frame.getWidth() + 100, frame.getY(), caixa.getFrame().getWidth(),
 				caixa.getFrame().getHeight());
 

@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -13,7 +14,7 @@ import javax.swing.JTextPane;
 
 public class Texto_enigma {
 
-	private JFrame frame;
+	private JDialog frame;
 	private JTextPane txt1;
 	private JLabel fundo;
 	private ImageIcon icon;
@@ -26,21 +27,17 @@ public class Texto_enigma {
 		this.txt1 = txt1;
 	}
 
-	public JFrame getFrame() {
+	public JDialog getFrame() {
 		return frame;
 	}
 
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
+	public Texto_enigma(JFrame parent) {
+		initialize(parent);
 	}
 
-	public Texto_enigma() {
-		initialize();
-	}
+	private void initialize(JFrame parent) {
 
-	private void initialize() {
-
-		frame = new JFrame();
+		frame = new JDialog(parent);
 		frame.setBounds(100, 100, 607, 417);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
